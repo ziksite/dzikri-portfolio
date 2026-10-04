@@ -7,27 +7,51 @@ category: Internal System
 status: PRIVATE
 client: Confidential
 year: '2026'
-description: |-
-  Purchasing decisions backed by data, not gut feel. Synced hourly to the warehouse system, it forecasts demand, flags stockouts and overstock before they happen, and recommends exactly what to reorder — and when.
-
-  Under the hood: reorder-point and EOQ calculators, ABC classification, true-COGS building, and a supplier scorecard, with automated email and WhatsApp alerts.
-
-  Turns data that already existed into purchasing decisions that finally use it.
 image: /images/projects/foodstocks-purchasing-intelligence/image.webp
 imageContain: false
 link: '#'
+summary: Purchasing decisions backed by data, not gut feel. Synced hourly to the warehouse system, it forecasts demand, flags stockouts and overstock before they happen, and recommends exactly what to reorder — and when.
+challenge: |-
+  Purchasing relied on gut feel even though the warehouse system already held the data.
+
+  Without forecasts or alerts, stockouts and overstock were only noticed after they had already happened.
+solution: |-
+  Under the hood: reorder-point and EOQ calculators, ABC classification, true-COGS building, and a supplier scorecard, with automated email and WhatsApp alerts.
+
+  Turns data that already existed into purchasing decisions that finally use it.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 200+
     label: SKUs TRACKED
+    labelId: SKU DIPANTAU
   - value: HOURLY
     label: DATA SYNC
+    labelId: SINKRON DATA
   - value: AUTO
     label: REORDER ALERTS
+    labelId: ALERT REORDER
 tags:
   - Next.js
   - Redis
   - REST API
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Foodstocks Purchasing Intelligence
+  type: SISTEM ANALITIK PEMBELIAN
+  category: Sistem Internal
+  summary: Keputusan pembelian berbasis data, bukan feeling. Tersinkron setiap jam dengan sistem gudang, sistem ini memproyeksikan permintaan, menandai potensi stockout dan overstock sebelum terjadi, dan merekomendasikan apa yang perlu di-reorder — beserta waktunya.
+  challenge: |-
+    Pembelian masih mengandalkan feeling, padahal data sudah tersedia di sistem gudang.
+
+    Tanpa proyeksi atau alert, stockout dan overstock baru ketahuan setelah terjadi.
+  solution: |-
+    Di balik layar: kalkulator reorder point dan EOQ, klasifikasi ABC, perhitungan true-COGS, dan scorecard supplier, dilengkapi alert otomatis via email dan WhatsApp.
+
+    Mengubah data yang sebenarnya sudah ada menjadi keputusan pembelian yang benar-benar memanfaatkannya.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

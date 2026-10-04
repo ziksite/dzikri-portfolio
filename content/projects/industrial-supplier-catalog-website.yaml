@@ -7,27 +7,45 @@ category: E-Commerce
 status: LIVE
 client: Confidential
 year: '2026'
-description: |-
-  A B2B supplier's full catalog, built for buyers in a hurry. Browse, add to cart, and send an inquiry — product discovery without the friction, on any device.
-
-  The site combines a structured catalog, cart, blog, and company profile into one clean experience, with a layout optimized for product discovery across devices.
-
-  Delivered from an HTML prototype into a maintainable WordPress build.
 image: /images/projects/industrial-supplier-catalog-website/image.webp
 imageContain: false
 link: '#'
+summary: A B2B supplier's full catalog, built for buyers in a hurry. Browse, add to cart, and send an inquiry — product discovery without the friction, on any device.
+challenge: B2B buyers needed to find products and send inquiries quickly on any device — and the supplier needed a catalog its own team could maintain, not just a static prototype.
+solution: |-
+  The site combines a structured catalog, cart, blog, and company profile into one clean experience, with a layout optimized for product discovery across devices.
+
+  Delivered from an HTML prototype into a maintainable WordPress build.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 50+
     label: PRODUCTS
+    labelId: PRODUK
   - value: CART
     label: + INQUIRY FLOW
+    labelId: + ALUR INQUIRY
   - value: 100%
     label: RESPONSIVE
+    labelId: RESPONSIF
 tags:
   - WordPress
   - Catalog
   - Responsive UI
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Website Katalog Supplier Industri
+  type: WEBSITE KATALOG PRODUK
+  category: E-Commerce
+  summary: Katalog lengkap supplier B2B, dibuat untuk pembeli yang butuh cepat. Jelajahi, masukkan ke keranjang, dan kirim inquiry — pencarian produk tanpa hambatan, di perangkat apa pun.
+  challenge: Pembeli B2B perlu menemukan produk dan mengirim inquiry dengan cepat di perangkat apa pun — dan supplier membutuhkan katalog yang bisa dikelola timnya sendiri, bukan sekadar prototipe statis.
+  solution: |-
+    Website menggabungkan katalog terstruktur, keranjang, blog, dan profil perusahaan dalam satu pengalaman yang rapi, dengan layout yang dioptimasi untuk pencarian produk di berbagai perangkat.
+
+    Dikembangkan dari prototipe HTML menjadi build WordPress yang mudah dikelola.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

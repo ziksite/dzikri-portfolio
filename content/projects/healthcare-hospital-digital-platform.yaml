@@ -7,27 +7,45 @@ category: Company Profile
 status: LIVE
 client: Confidential
 year: '2024'
-description: |-
-  Healthcare information patients can actually find — fast. This hospital platform turns a maze of services, schedules, and promotions into a clean, mobile-first experience that earns trust from the first click.
-
-  The platform provides a streamlined experience for visitors to explore hospital services, promotions, and medical information while maintaining a clean and professional healthcare interface.
-
-  Built with a responsive architecture to ensure smooth browsing across desktop and mobile devices.
 image: /images/projects/healthcare-hospital-digital-platform/image.jpg
 imageContain: false
 link: '#'
+summary: Healthcare information patients can actually find — fast. This hospital platform turns a maze of services, schedules, and promotions into a clean, mobile-first experience that earns trust from the first click.
+challenge: Hospital services, schedules, and promotions were hard for patients to navigate — especially on mobile — which weakened trust from the very first visit.
+solution: |-
+  The platform provides a streamlined experience for visitors to explore hospital services, promotions, and medical information while maintaining a clean and professional healthcare interface.
+
+  Built with a responsive architecture to ensure smooth browsing across desktop and mobile devices.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 38%
     label: FASTER LOAD
+    labelId: LEBIH CEPAT
   - value: 95/100
     label: SEO SCORE
+    labelId: SKOR SEO
   - value: 24/7
     label: INFO ACCESS
+    labelId: AKSES INFO
 tags:
   - WordPress
   - Elementor
   - Custom UI Optimization
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Platform Digital Rumah Sakit
+  type: WEBSITE KESEHATAN
+  category: Company Profile
+  summary: Informasi kesehatan yang benar-benar mudah ditemukan pasien — dengan cepat. Platform rumah sakit ini mengubah labirin layanan, jadwal, dan promo menjadi pengalaman mobile-first yang bersih dan membangun kepercayaan sejak klik pertama.
+  challenge: Layanan, jadwal, dan promo rumah sakit sulit dinavigasi pasien — terutama di mobile — sehingga melemahkan kepercayaan sejak kunjungan pertama.
+  solution: |-
+    Platform ini memberikan pengalaman yang ringkas bagi pengunjung untuk menjelajahi layanan, promo, dan informasi medis rumah sakit, dengan antarmuka kesehatan yang bersih dan profesional.
+
+    Dibangun dengan arsitektur responsif agar nyaman diakses di desktop maupun mobile.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

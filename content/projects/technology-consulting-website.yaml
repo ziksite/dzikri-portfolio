@@ -7,27 +7,45 @@ category: Company Profile
 status: LIVE
 client: Confidential
 year: '2026'
-description: |-
-  Opening doors to the public sector. A credibility-first site for a consultancy that helps technology companies break into government and state-owned-enterprise markets.
-
-  The site presents services such as government relations, software license compliance, legal support, and corporate training in a clear, credibility-first structure.
-
-  Built with a clean, professional layout optimized for performance and SEO.
 image: /images/projects/technology-consulting-website/image.webp
 imageContain: false
 link: '#'
+summary: Opening doors to the public sector. A credibility-first site for a consultancy that helps technology companies break into government and state-owned-enterprise markets.
+challenge: A consultancy that helps technology companies enter government and state-owned-enterprise markets needed a site that establishes credibility quickly with a formal, demanding audience.
+solution: |-
+  The site presents services such as government relations, software license compliance, legal support, and corporate training in a clear, credibility-first structure.
+
+  Built with a clean, professional layout optimized for performance and SEO.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: GOV
     label: '& BUMN FOCUS'
+    labelId: '& FOKUS BUMN'
   - value: <2s
     label: LOAD TIME
+    labelId: WAKTU MUAT
   - value: 100%
     label: RESPONSIVE
+    labelId: RESPONSIF
 tags:
   - WordPress
   - SEO
   - Responsive UI
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Website Konsultan Teknologi
+  type: WEBSITE PROFIL PERUSAHAAN
+  category: Company Profile
+  summary: Membuka pintu ke sektor publik. Website yang mengutamakan kredibilitas untuk konsultan yang membantu perusahaan teknologi masuk ke pasar pemerintahan dan BUMN.
+  challenge: Konsultan yang membantu perusahaan teknologi masuk ke pasar pemerintahan dan BUMN membutuhkan website yang cepat membangun kredibilitas di mata audiens yang formal dan menuntut.
+  solution: |-
+    Website menampilkan layanan seperti government relations, kepatuhan lisensi software, dukungan legal, dan corporate training dalam struktur yang jelas dan mengutamakan kredibilitas.
+
+    Dibangun dengan layout yang bersih dan profesional, dioptimasi untuk performa dan SEO.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

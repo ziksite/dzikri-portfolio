@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// The CMS is its own root layout (the site's root layout lives under app/[lang])
 export default function KeystaticLayout() {
   if (!isCmsEnabled) notFound();
-  return <KeystaticApp />;
+  return (
+    <html lang="en">
+      <body>
+        <KeystaticApp />
+      </body>
+    </html>
+  );
 }

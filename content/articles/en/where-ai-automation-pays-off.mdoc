@@ -1,0 +1,57 @@
+---
+title: Where AI Automation Actually Pays Off — and Where It Doesn't
+publishedAt: 2026-10-04
+draft: false
+excerpt: >-
+  AI is easy to demo and hard to run reliably. A practical way to decide where
+  automation is worth it, what has to be in place first, and why the human
+  handover matters as much as the model.
+tags:
+  - Automation & AI
+  - WhatsApp
+---
+Almost every business conversation about technology now includes AI. The demos are impressive, and the tools are more accessible than ever. But between a convincing demo and a system that runs reliably every day, there is a lot of design work — and some use cases simply aren't worth it.
+
+Here is how I decide where AI automation pays off.
+
+## Good candidates share three traits
+
+**1. High volume, repetitive work.** If a task happens a handful of times a week, automating it rarely justifies the setup and maintenance. If it happens dozens of times a day, the math changes.
+
+**2. Answers that can be grounded in real data.** AI is most reliable when it retrieves and explains information that already exists — prices, service details, policies, order status — rather than inventing it.
+
+**3. A clear point where a human takes over.** The best automations handle the routine part and hand off the judgment call. They don't try to replace the decision-maker.
+
+## Example: a WhatsApp sales agent
+
+One system I built is an AI sales agent that answers prospect chats on WhatsApp around the clock. It fits all three traits:
+
+- **Volume:** prospect chats arrive at all hours, and many of them ask the same questions about prices and services.
+- **Grounding:** every answer about prices, services, and policies is pulled from a knowledge base and a price database (retrieval-augmented generation), not generated from the model's imagination. The bot also has strict topic boundaries and politely declines anything off-topic.
+- **Handover:** hot leads are flagged straight to the owner's WhatsApp, meetings are booked into Google Calendar, and the bot steps aside automatically the moment the owner takes over a chat.
+
+The result is not "AI replaces sales". It is that prospects get a consistent first response at any hour, and the owner spends time on the conversations that actually need them.
+
+## Where AI automation usually doesn't pay off
+
+- **Processes that aren't defined yet.** If the team can't explain how a decision is made, an AI can't make it consistently either. Fix the process first.
+- **Data that is scattered or untrusted.** Grounded answers require a reliable source. Without one, the output is only as good as the mess it reads from.
+- **High-stakes decisions with no review step.** Pricing exceptions, contracts, or anything with legal or financial consequences should keep a human in the loop.
+- **Low-volume tasks.** Sometimes a clear template or a simple rule-based workflow does the job better and costs less to maintain.
+
+## What has to be in place first
+
+Before adding AI, I check that the basics are solid:
+
+1. **A defined workflow** — what triggers the automation, what it should do, and when it should stop.
+2. **A single, maintained source of data** for anything the AI is allowed to say.
+3. **Guardrails** — topic scope, fallback responses, and logging, so mistakes are visible and correctable.
+4. **An owner** who reviews how it performs and updates the knowledge it relies on.
+
+## The real goal
+
+The point of automation is not to use AI. It is to remove repetitive work, respond faster, and give people more time for the decisions that matter. Sometimes that takes an AI agent. Sometimes it takes a well-designed form and a few automated notifications. The right answer starts with the problem, not the technology.
+
+---
+
+*Considering automation for a repetitive part of your operations? [Let's talk](/#contact).*

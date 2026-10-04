@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import type { Dictionary } from "@/i18n";
+import { whatsappUrl } from "@/lib/site";
 
 const WhatsAppIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -10,7 +12,7 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-export function FloatingWhatsApp() {
+export function FloatingWhatsApp({ t }: { t: Dictionary["whatsapp"] }) {
   const [visible, setVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -40,19 +42,19 @@ export function FloatingWhatsApp() {
                 transition={{ duration: 0.2 }}
                 className="bg-white text-black text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl shadow-lg whitespace-nowrap border-2 border-black/10"
               >
-                Hubungi Saya 👋
+                {t.tooltip}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Button */}
           <a
-            href="https://wa.me/6289630557191"
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
-            aria-label="Chat on WhatsApp"
+            aria-label={t.label}
             className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.5)] hover:shadow-[0_4px_30px_rgba(37,211,102,0.8)] hover:scale-110 transition-all duration-300"
           >
             {/* Pulse ring */}

@@ -7,27 +7,51 @@ category: Internal System
 status: PRIVATE
 client: Confidential
 year: '2026'
-description: |-
-  ClickUp, Looker, and WhatsApp — replaced by one platform. An internal agency operating system with a role-based dashboard for every seat, from CEO forecasts to staff task lists, powered by real-time performance data.
-
-  It delivers role-based home dashboards for every position — from CEO revenue pipeline and forecasting to PM kanban boards and staff task lists — with real-time performance data, client health scoring, and a branded client portal.
-
-  Built on a realtime database with row-level security so each role sees exactly what they need, nothing more.
 image: /images/projects/boost-engine-agency-platform/image.webp
 imageContain: false
 link: '#'
+summary: ClickUp, Looker, and WhatsApp — replaced by one platform. An internal agency operating system with a role-based dashboard for every seat, from CEO forecasts to staff task lists, powered by real-time performance data.
+challenge: |-
+  Agency operations were spread across ClickUp, Looker, and WhatsApp.
+
+  Every role — from leadership to staff — had to piece together its own picture of tasks, performance, and pipeline from separate tools.
+solution: |-
+  It delivers role-based home dashboards for every position — from CEO revenue pipeline and forecasting to PM kanban boards and staff task lists — with real-time performance data, client health scoring, and a branded client portal.
+
+  Built on a realtime database with row-level security so each role sees exactly what they need, nothing more.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 3→1
     label: TOOLS REPLACED
+    labelId: TOOLS DIGANTIKAN
   - value: '7'
     label: ROLE DASHBOARDS
+    labelId: DASHBOARD PER ROLE
   - value: 8-MO
     label: REVENUE FORECAST
+    labelId: PROYEKSI REVENUE
 tags:
   - Next.js
   - PostgreSQL
   - Recharts
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Boost Engine — Platform Agency
+  type: PLATFORM MANAJEMEN AGENCY
+  category: Sistem Internal
+  summary: ClickUp, Looker, dan WhatsApp — digantikan satu platform. Sistem operasional agency internal dengan dashboard berbasis role untuk setiap posisi, dari forecast CEO hingga daftar task staf, didukung data performa real-time.
+  challenge: |-
+    Operasional agency tersebar di ClickUp, Looker, dan WhatsApp.
+
+    Setiap role — dari pimpinan hingga staf — harus merangkai sendiri gambaran task, performa, dan pipeline dari tools yang terpisah.
+  solution: |-
+    Platform ini menyediakan dashboard beranda berbasis role untuk setiap posisi — dari pipeline revenue dan forecasting untuk CEO hingga kanban board PM dan daftar task staf — dengan data performa real-time, health score klien, dan portal klien yang branded.
+
+    Dibangun di atas database real-time dengan row-level security sehingga setiap role melihat persis apa yang mereka butuhkan, tidak lebih.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

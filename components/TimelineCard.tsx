@@ -5,16 +5,16 @@ import { Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface TimelineCardProps {
+  stage?: string;
   role: string;
   company: string;
   jobType?: string;
   description: string;
   tags: string[];
   year: string;
-  index: number;
 }
 
-export function TimelineCard({ role, company, jobType, description, tags, year, index }: TimelineCardProps) {
+export function TimelineCard({ stage, role, company, jobType, description, tags, year }: TimelineCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -50,6 +50,9 @@ export function TimelineCard({ role, company, jobType, description, tags, year, 
                  "flex flex-col",
                  "md:group-odd:items-end md:group-even:items-start"
                )}>
+                  <span className="text-[10px] font-black tracking-widest text-gray-500 uppercase mb-1">
+                    {year}{stage && stage !== role ? ` · ${stage}` : ""}
+                  </span>
                   <h4 className="text-xl md:text-2xl font-black tracking-tight text-foreground uppercase">{role}</h4>
                   <p className="text-sm font-bold tracking-widest text-[#666666] uppercase mb-2">{company}</p>
                   {jobType && (

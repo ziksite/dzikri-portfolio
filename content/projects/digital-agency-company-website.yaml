@@ -7,25 +7,39 @@ category: Company Profile
 status: LIVE
 client: Confidential
 year: '2024'
-description: |-
-  A digital agency's credibility, captured in a single scroll. Services, portfolio, and consultation paths presented with the polish that turns visitors into leads.
-
-  The platform showcases services, portfolio work, and consultation opportunities to help businesses discover digital solutions that support their growth. The design combines modern visuals with a structured service presentation.
 image: /images/projects/digital-agency-company-website/image.jpg
 imageContain: false
 link: '#'
+summary: A digital agency's credibility, captured in a single scroll. Services, portfolio, and consultation paths presented with the polish that turns visitors into leads.
+challenge: A digital agency needed its own website to demonstrate the quality it sells — presenting services and portfolio clearly, and turning visitors into consultation requests.
+solution: The platform showcases services, portfolio work, and consultation opportunities to help businesses discover digital solutions that support their growth. The design combines modern visuals with a structured service presentation.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: +35%
     label: CONSULT INQUIRIES
+    labelId: PERMINTAAN KONSULTASI
   - value: 97/100
     label: PERFORMANCE
+    labelId: PERFORMA
   - value: 100%
     label: RESPONSIVE
+    labelId: RESPONSIF
 tags:
   - WordPress
   - Elementor
   - Custom UI Development
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Website Perusahaan Digital Agency
+  type: WEBSITE AGENCY
+  category: Company Profile
+  summary: Kredibilitas digital agency, terangkum dalam satu scroll. Layanan, portofolio, dan jalur konsultasi disajikan dengan kualitas yang mengubah pengunjung menjadi lead.
+  challenge: Digital agency membutuhkan website sendiri yang menunjukkan kualitas yang mereka jual — menyajikan layanan dan portofolio dengan jelas, serta mengubah pengunjung menjadi permintaan konsultasi.
+  solution: Platform ini menampilkan layanan, portofolio, dan kesempatan konsultasi untuk membantu bisnis menemukan solusi digital yang mendukung pertumbuhan mereka. Desainnya memadukan visual modern dengan penyajian layanan yang terstruktur.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

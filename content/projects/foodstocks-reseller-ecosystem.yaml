@@ -7,27 +7,51 @@ category: Internal System
 status: PRIVATE
 client: Confidential
 year: '2026'
-description: |-
-  A B2B ordering portal that turns resellers into a loyal community. They browse the catalog, place orders, and track shipments and payments end to end — while points, tiers, leaderboards, and rewards keep them coming back.
-
-  Built as a split web + API architecture with a full admin back office for catalog, access control, and reseller management.
-
-  Designed to scale a reseller network with structure instead of spreadsheets.
 image: /images/projects/foodstocks-reseller-ecosystem/image.webp
 imageContain: false
 link: '#'
+summary: A B2B ordering portal that turns resellers into a loyal community. They browse the catalog, place orders, and track shipments and payments end to end — while points, tiers, leaderboards, and rewards keep them coming back.
+challenge: |-
+  The reseller network was managed through spreadsheets and manual communication, which made ordering, shipment, and payment tracking hard to scale.
+
+  Resellers also had little reason to stay engaged beyond the next order.
+solution: |-
+  Built as a split web + API architecture with a full admin back office for catalog, access control, and reseller management.
+
+  Designed to scale a reseller network with structure instead of spreadsheets.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 15+
     label: RESELLER MODULES
+    labelId: MODUL RESELLER
   - value: GAMIFIED
     label: TIERS & REWARDS
+    labelId: TIER & REWARD
   - value: E2E
     label: ORDER → SHIPMENT
+    labelId: ORDER → PENGIRIMAN
 tags:
   - Next.js
   - Prisma
   - PostgreSQL
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Foodstocks Reseller Ecosystem
+  type: PLATFORM RESELLER
+  category: Sistem Internal
+  summary: Portal pemesanan B2B yang mengubah reseller menjadi komunitas yang loyal. Reseller menjelajah katalog, memesan, serta melacak pengiriman dan pembayaran dari awal sampai akhir — sementara poin, tier, leaderboard, dan reward membuat mereka terus kembali.
+  challenge: |-
+    Jaringan reseller dikelola lewat spreadsheet dan komunikasi manual, sehingga pemesanan, pelacakan pengiriman, dan pembayaran sulit diskalakan.
+
+    Reseller juga tidak punya banyak alasan untuk tetap engaged selain order berikutnya.
+  solution: |-
+    Dibangun dengan arsitektur web + API terpisah dan back office admin lengkap untuk katalog, kontrol akses, dan manajemen reseller.
+
+    Dirancang untuk menskalakan jaringan reseller dengan struktur, bukan spreadsheet.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

@@ -7,27 +7,45 @@ category: Company Profile
 status: LIVE
 client: Confidential
 year: '2026'
-description: |-
-  Premium group travel that finally looks premium. A B2C-first redesign — cleaner, more confident — engineered to turn visitors into WhatsApp bookings.
-
-  The redesign strengthens the brand's positioning and guides visitors toward a clear WhatsApp booking flow, while improving readability and SEO across the whole site.
-
-  Built by modifying the existing WordPress theme rather than rebuilding from scratch, keeping the brand's history intact.
 image: /images/projects/premium-group-transport-website/image.webp
 imageContain: false
 link: '#'
+summary: Premium group travel that finally looks premium. A B2C-first redesign — cleaner, more confident — engineered to turn visitors into WhatsApp bookings.
+challenge: The brand offered a premium group-travel service, but its website didn't reflect that positioning — and lacked a clear path from visit to booking for individual (B2C) customers.
+solution: |-
+  The redesign strengthens the brand's positioning and guides visitors toward a clear WhatsApp booking flow, while improving readability and SEO across the whole site.
+
+  Built by modifying the existing WordPress theme rather than rebuilding from scratch, keeping the brand's history intact.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: B2C
     label: REPOSITIONED
+    labelId: REPOSISI
   - value: 24/7
     label: WHATSAPP BOOKING
+    labelId: BOOKING WHATSAPP
   - value: 100%
     label: MOBILE-FIRST
+    labelId: MOBILE-FIRST
 tags:
   - WordPress
   - Custom Theme
   - SEO
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Website Transportasi Rombongan Premium
+  type: WEBSITE TRAVEL & TRANSPORTASI
+  category: Company Profile
+  summary: Perjalanan rombongan premium yang akhirnya terlihat premium. Redesign yang mengutamakan B2C — lebih bersih, lebih percaya diri — dirancang untuk mengubah pengunjung menjadi booking via WhatsApp.
+  challenge: Brand ini menawarkan layanan perjalanan rombongan premium, tetapi website-nya belum mencerminkan positioning tersebut — dan belum punya alur yang jelas dari kunjungan ke booking untuk pelanggan individu (B2C).
+  solution: |-
+    Redesign ini memperkuat positioning brand dan mengarahkan pengunjung ke alur booking WhatsApp yang jelas, sambil meningkatkan keterbacaan dan SEO di seluruh website.
+
+    Dibangun dengan memodifikasi tema WordPress yang ada alih-alih membangun ulang dari nol, sehingga sejarah brand tetap terjaga.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

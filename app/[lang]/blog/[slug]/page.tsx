@@ -5,28 +5,40 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Markdoc from "@markdoc/markdoc";
 import { ArrowLeft } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SiteShell } from "@/components/SiteShell";
 import { formatDate, getArticle, getArticles } from "@/lib/content";
+import { getDictionary } from "@/i18n";
+import { isLocale, localePath, locales, SITE_URL, type Locale } from "@/lib/i18n";
 
-type Params = { params: Promise<{ slug: string }> };
-
-export const dynamicParams = false;
+type Params = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateStaticParams() {
-  const articles = await getArticles();
-  return articles.map((a) => ({ slug: a.slug }));
+  const perLang = await Promise.all(
+    locales.map(async (lang) => (await getArticles(lang)).map((a) => ({ lang, slug: a.slug })))
+  );
+  return perLang.flat();
+}
+
+// hreflang only for the languages this article actually exists in
+async function articleAlternates(slug: string) {
+  const available = await Promise.all(locales.map(async (l) => ((await getArticle(l, slug)) ? l : null)));
+  return available.filter((l): l is Locale => l !== null);
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const article = await getArticle((await params).slug);
+  const { lang, slug } = await params;
+  if (!isLocale(lang)) return {};
+  const article = await getArticle(lang, slug);
   if (!article) return {};
+  const langs = await articleAlternates(slug);
   const images = article.coverImage ? [{ url: article.coverImage }] : undefined;
   return {
     title: `${article.title} - Dzikri Ramadhan`,
     description: article.excerpt,
-    alternates: { canonical: `/blog/${article.slug}` },
+    alternates: {
+      canonical: localePath(lang, `/blog/${slug}`),
+      languages: Object.fromEntries(langs.map((l) => [l, `${SITE_URL}${localePath(l, `/blog/${slug}`)}`])),
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -38,31 +50,33 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function ArticlePage({ params }: Params) {
-  const article = await getArticle((await params).slug);
+  const { lang, slug } = await params;
+  if (!isLocale(lang)) notFound();
+  const article = await getArticle(lang, slug);
   if (!article) notFound();
+  const t = getDictionary(lang).blog;
 
   const body = Markdoc.renderers.react(Markdoc.transform(article.node), React);
 
   return (
-    <>
-      <Navbar showBlog />
+    <SiteShell lang={lang}>
       <main className="min-h-screen pt-32 md:pt-40 pb-20 md:pb-32 px-4 md:px-6">
         <article className="max-w-3xl mx-auto">
           <Link
-            href="/blog"
+            href={localePath(lang, "/blog")}
             className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-500 hover:text-black transition-colors mb-8 md:mb-10"
           >
             <ArrowLeft size={14} strokeWidth={3} />
-            All articles
+            {t.allArticles}
           </Link>
 
           <div className="flex items-center gap-3 flex-wrap mb-4">
             <span className="text-gray-500 font-bold tracking-widest text-xs uppercase">
-              {formatDate(article.publishedAt)}
+              {formatDate(article.publishedAt, lang)}
             </span>
             {article.draft && (
               <span className="px-2.5 py-1 border-2 border-black rounded-full text-[9px] font-bold uppercase tracking-widest">
-                Draft
+                {t.draft}
               </span>
             )}
           </div>
@@ -103,8 +117,6 @@ export default async function ArticlePage({ params }: Params) {
           )}
         </article>
       </main>
-      <Footer />
-      <FloatingWhatsApp />
-    </>
+    </SiteShell>
   );
 }

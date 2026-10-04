@@ -7,25 +7,39 @@ category: Landing Page
 status: LIVE
 client: Confidential
 year: '2024'
-description: |-
-  A snack brand's bundles, packaged to sell. A bold, visual-first landing page that grabs attention and sends shoppers straight to checkout on the marketplace.
-
-  The design emphasizes strong product visuals, promotional messaging, and a direct path to purchase through marketplace integration. The layout was optimized to capture attention and guide users toward product discovery.
 image: /images/projects/snack-product-campaign-landing-page/image.jpg
 imageContain: false
 link: '#'
+summary: A snack brand's bundles, packaged to sell. A bold, visual-first landing page that grabs attention and sends shoppers straight to checkout on the marketplace.
+challenge: A snack brand's bundle campaign needed to grab attention and move shoppers to the marketplace checkout in as few steps as possible.
+solution: The design emphasizes strong product visuals, promotional messaging, and a direct path to purchase through marketplace integration. The layout was optimized to capture attention and guide users toward product discovery.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: +45%
     label: PRODUCT VISIBILITY
+    labelId: VISIBILITAS PRODUK
   - value: 1-CLICK
     label: TO MARKETPLACE
+    labelId: KE MARKETPLACE
   - value: 94/100
     label: PERFORMANCE
+    labelId: PERFORMA
 tags:
   - WordPress
   - Elementor
   - Landing Page Optimization
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Landing Page Kampanye Produk Snack
+  type: LANDING PAGE PRODUK
+  category: Landing Page
+  summary: Paket bundling brand snack, dikemas untuk terjual. Landing page yang berani dan visual-first, menarik perhatian dan mengarahkan pembeli langsung ke checkout di marketplace.
+  challenge: Kampanye bundling brand snack perlu menarik perhatian dan membawa pembeli ke checkout marketplace dengan langkah sesedikit mungkin.
+  solution: Desainnya menonjolkan visual produk yang kuat, pesan promo, dan jalur pembelian langsung melalui integrasi marketplace. Layout dioptimasi untuk menangkap perhatian dan memandu pengguna menemukan produk.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

@@ -7,27 +7,45 @@ category: Internal System
 status: PRIVATE
 client: Confidential
 year: '2026'
-description: |-
-  Employee training people actually finish. An internal LMS that turns ad-hoc onboarding into structured paths, with points, leaderboards, and real rewards that make progress feel earned.
-
-  Employees follow async training paths, complete assessments, earn points, and redeem real rewards — with progress, leaderboards, and streaks that make every learning action feel meaningful.
-
-  Admins create programs and grade submissions in as few clicks as possible, while managers track team progress without logging into individual accounts.
 image: /images/projects/banana-academy-internal-lms/image.webp
 imageContain: false
 link: '#'
+summary: Employee training people actually finish. An internal LMS that turns ad-hoc onboarding into structured paths, with points, leaderboards, and real rewards that make progress feel earned.
+challenge: 'Onboarding and training were ad hoc: there was no structured path for employees, limited visibility for managers, and little incentive to actually finish learning programs.'
+solution: |-
+  Employees follow async training paths, complete assessments, earn points, and redeem real rewards — with progress, leaderboards, and streaks that make every learning action feel meaningful.
+
+  Admins create programs and grade submissions in as few clicks as possible, while managers track team progress without logging into individual accounts.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: 100%
     label: STRUCTURED TRAINING
+    labelId: TRAINING TERSTRUKTUR
   - value: GAMIFIED
     label: POINTS & LEADERBOARD
+    labelId: POIN & LEADERBOARD
   - value: '3'
     label: ROLES SUPPORTED
+    labelId: ROLE DIDUKUNG
 tags:
   - Next.js
   - PostgreSQL
   - Drizzle
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Banana Academy — LMS Internal
+  type: LEARNING MANAGEMENT SYSTEM
+  category: Sistem Internal
+  summary: Training karyawan yang benar-benar diselesaikan. LMS internal yang mengubah onboarding seadanya menjadi learning path terstruktur, dengan poin, leaderboard, dan reward nyata yang membuat progres terasa berarti.
+  challenge: 'Onboarding dan training berjalan seadanya: tidak ada jalur terstruktur untuk karyawan, visibilitas manajer terbatas, dan hampir tidak ada insentif untuk menyelesaikan program belajar.'
+  solution: |-
+    Karyawan mengikuti learning path secara async, menyelesaikan assessment, mengumpulkan poin, dan menukarnya dengan reward nyata — dengan progres, leaderboard, dan streak yang membuat setiap aktivitas belajar terasa bermakna.
+
+    Admin membuat program dan menilai submission dengan klik seminimal mungkin, sementara manajer memantau progres tim tanpa harus login ke akun masing-masing.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''

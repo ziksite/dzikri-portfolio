@@ -5,11 +5,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, ChevronDown, Globe, Lock } from "lucide-react";
 import type { Project } from "@/lib/content";
+import type { Dictionary } from "@/i18n";
+import { localePath, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const pluralize = (label: string) => (label.endsWith("s") ? label : `${label}s`);
-
-export function ProjectGrid({ projects }: { projects: Project[] }) {
+export function ProjectGrid({
+  projects,
+  lang,
+  t,
+}: {
+  projects: Project[];
+  lang: Locale;
+  t: Dictionary["projects"];
+}) {
   const [activeFilter, setActiveFilter] = useState("All");
   const filters = ["All", ...Array.from(new Set(projects.map((p) => p.kind)))];
   const visible = activeFilter === "All" ? projects : projects.filter((p) => p.kind === activeFilter);
@@ -21,12 +29,12 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
           <select
             value={activeFilter}
             onChange={(e) => setActiveFilter(e.target.value)}
-            aria-label="Filter projects by type"
+            aria-label={t.filterLabel}
             className="appearance-none bg-white border-[3px] border-black rounded-full pl-5 pr-12 py-2.5 md:py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none"
           >
             {filters.map((filter) => (
               <option key={filter} value={filter}>
-                {filter === "All" ? "All Projects" : pluralize(filter)}
+                {filter === "All" ? t.allProjects : t.kinds[filter] ?? filter}
               </option>
             ))}
           </select>
@@ -37,7 +45,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
           />
         </div>
         <span className="text-gray-500 text-xs font-bold uppercase tracking-widest">
-          {visible.length} projects
+          {visible.length} {t.count}
         </span>
       </div>
 
@@ -45,7 +53,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
         {visible.map((project) => (
           <Link
             key={project.slug}
-            href={`/projects/${project.slug}`}
+            href={localePath(lang, `/projects/${project.slug}`)}
             className="group flex flex-col bg-white border-[3px] border-black rounded-[24px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
           >
             <div className="relative aspect-[16/10] border-b-[3px] border-black bg-[#0f0f0f] overflow-hidden">
@@ -77,10 +85,10 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
               </div>
               <h2 className="text-lg md:text-xl font-black uppercase leading-tight mb-3">{project.title}</h2>
               <p className="text-gray-600 text-sm font-medium leading-relaxed line-clamp-3 mb-5">
-                {project.description.split("\n\n")[0]}
+                {project.summary}
               </p>
               <span className="mt-auto inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest">
-                View project
+                {t.viewCaseStudy}
                 <ArrowUpRight
                   size={14}
                   strokeWidth={3}

@@ -7,25 +7,39 @@ category: Landing Page
 status: LIVE
 client: Confidential
 year: '2024'
-description: |-
-  A fiber-internet campaign engineered to convert. Sharp messaging and strong visual branding turn curiosity about faster internet into real service inquiries.
-
-  The platform delivers clear promotional messaging and strong visual branding to attract potential customers and guide them toward service inquiries. The design prioritizes clarity, speed, and accessibility across devices.
 image: /images/projects/isp-promotional-campaign-website/image.jpg
 imageContain: false
 link: '#'
+summary: A fiber-internet campaign engineered to convert. Sharp messaging and strong visual branding turn curiosity about faster internet into real service inquiries.
+challenge: An internet service provider's fiber campaign needed to turn curiosity about faster internet into real service inquiries, with a clear message that works on every device.
+solution: The platform delivers clear promotional messaging and strong visual branding to attract potential customers and guide them toward service inquiries. The design prioritizes clarity, speed, and accessibility across devices.
+features: []
+gallery: []
+impact: ''
 metrics:
   - value: +42%
     label: CAMPAIGN ENGAGEMENT
+    labelId: ENGAGEMENT KAMPANYE
   - value: <2s
     label: LOAD TIME
+    labelId: WAKTU MUAT
   - value: 100%
     label: MOBILE READY
+    labelId: SIAP MOBILE
 tags:
   - WordPress
   - Elementor
   - UI Optimization
-testimonial: ''
-overview: ''
-features: []
 role: ''
+testimonial: ''
+translation:
+  title: Website Kampanye Promosi ISP
+  type: WEBSITE KAMPANYE MARKETING
+  category: Landing Page
+  summary: Kampanye internet fiber yang dirancang untuk konversi. Pesan yang tajam dan branding visual yang kuat mengubah rasa penasaran akan internet cepat menjadi inquiry layanan yang nyata.
+  challenge: Kampanye fiber dari penyedia layanan internet perlu mengubah rasa penasaran akan internet cepat menjadi inquiry layanan yang nyata, dengan pesan jelas yang bekerja di semua perangkat.
+  solution: Platform ini menyampaikan pesan promo yang jelas dan branding visual yang kuat untuk menarik calon pelanggan dan mengarahkan mereka ke inquiry layanan. Desainnya mengutamakan kejelasan, kecepatan, dan aksesibilitas di semua perangkat.
+  features: []
+  impact: ''
+  role: ''
+  testimonial: ''
