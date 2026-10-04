@@ -20,7 +20,6 @@ export function Navbar({ lang, t }: { lang: Locale; t: Dictionary["nav"] }) {
     { name: t.home, href: localePath(lang, "/") + "#home", page: null },
     { name: t.about, href: localePath(lang, "/") + "#about", page: null },
     { name: t.projects, href: localePath(lang, "/projects"), page: "/projects" },
-    { name: t.journey, href: localePath(lang, "/") + "#journey", page: null },
     { name: t.blog, href: localePath(lang, "/blog"), page: "/blog" },
     { name: t.contact, href: localePath(lang, "/") + "#contact", page: null },
   ];

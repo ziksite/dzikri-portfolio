@@ -176,6 +176,19 @@ export function AboutSection({
                 </li>
               ))}
             </ol>
+            <div className="mt-8 pt-6 border-t-2 border-foreground/10">
+              <h4 className="text-[10px] font-black tracking-widest text-gray-400 uppercase mb-3">{whatIDo.buildHeading}</h4>
+              <ul className="flex flex-wrap gap-2">
+                {whatIDo.builds.map((item) => (
+                  <li
+                    key={item}
+                    className="px-3 py-1.5 bg-foreground text-white rounded-full text-[10px] font-black uppercase tracking-wider"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
           {/* Tech Stack */}

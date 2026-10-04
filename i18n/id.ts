@@ -14,7 +14,6 @@ export const id: Dictionary = {
     home: "Beranda",
     about: "Tentang",
     projects: "Proyek",
-    journey: "Perjalanan",
     blog: "Blog",
     contact: "Kontak",
     openMenu: "Buka menu",
@@ -25,6 +24,7 @@ export const id: Dictionary = {
   hero: {
     eyebrow: "Halo, saya",
     role: "Technology & Innovation Leader",
+    handsOn: "Saya merancang, membangun, dan merilisnya.",
     supporting:
       "Saya membangun sistem digital, produk, dan otomasi yang mengubah tantangan bisnis menjadi solusi yang scalable.",
     labels: [
@@ -39,10 +39,10 @@ export const id: Dictionary = {
   },
 
   quickInfo: [
-    { label: "Fokus", value: "Teknologi & Inovasi" },
-    { label: "Spesialisasi", value: "Transformasi Digital" },
-    { label: "Membangun", value: "Sistem · Produk · Otomasi" },
-    { label: "Berbasis di", value: "Jakarta, Indonesia" },
+    { label: "Fokus", value: "Teknologi & Inovasi", live: false },
+    { label: "Membangun", value: "Sistem · Produk · Otomasi", live: false },
+    { label: "Terbuka untuk", value: "Proyek remote & freelance", live: true },
+    { label: "Berbasis di", value: "Jakarta, Indonesia · GMT+7", live: false },
   ],
 
   about: {
@@ -81,6 +81,13 @@ export const id: Dictionary = {
         title: "Kepemimpinan Teknologi",
         text: "Memimpin tim, proyek, dan inisiatif teknologi dari strategi hingga eksekusi.",
       },
+    ],
+    buildHeading: "Yang saya bangun",
+    builds: [
+      "Website & aplikasi web",
+      "Sistem internal & dashboard",
+      "Otomasi AI & WhatsApp",
+      "Integrasi sistem & API",
     ],
   },
 

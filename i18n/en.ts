@@ -13,7 +13,6 @@ export const en = {
     home: "Home",
     about: "About",
     projects: "Projects",
-    journey: "Journey",
     blog: "Blog",
     contact: "Contact",
     openMenu: "Open menu",
@@ -24,6 +23,7 @@ export const en = {
   hero: {
     eyebrow: "Hi, I'm",
     role: "Technology & Innovation Leader",
+    handsOn: "I plan it, build it, and ship it.",
     supporting:
       "I build digital systems, products, and automation that turn business challenges into scalable solutions.",
     labels: [
@@ -37,11 +37,12 @@ export const en = {
     ctaSecondary: "Let's connect",
   },
 
+  // `live` shows a green availability dot
   quickInfo: [
-    { label: "Focus", value: "Technology & Innovation" },
-    { label: "Specialty", value: "Digital Transformation" },
-    { label: "Building", value: "Systems · Products · Automation" },
-    { label: "Based in", value: "Jakarta, Indonesia" },
+    { label: "Focus", value: "Technology & Innovation", live: false },
+    { label: "Building", value: "Systems · Products · Automation", live: false },
+    { label: "Open to", value: "Remote & freelance projects", live: true },
+    { label: "Based in", value: "Jakarta, Indonesia · GMT+7", live: false },
   ],
 
   about: {
@@ -80,6 +81,13 @@ export const en = {
         title: "Tech Leadership",
         text: "Leading teams, projects, and technology initiatives from strategy to execution.",
       },
+    ],
+    buildHeading: "What I build",
+    builds: [
+      "Websites & web apps",
+      "Internal systems & dashboards",
+      "AI & WhatsApp automation",
+      "System integration & APIs",
     ],
   },
 

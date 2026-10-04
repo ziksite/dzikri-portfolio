@@ -49,7 +49,7 @@ export function HeroSection({ t, name }: { t: Dictionary["hero"]; name: string }
             whileDrag={{ scale: 1.1, cursor: "grabbing" }}
             animate={{ y: [0, -15, 0], rotate: [pos.rotate, pos.rotate + 3, pos.rotate] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: pos.delay }}
-            className="absolute hidden lg:block z-20 cursor-grab"
+            className="absolute hidden xl:block z-20 cursor-grab"
             style={{ top: pos.top, left: pos.left }}
           >
             <span className="px-5 py-2.5 border-[3px] border-foreground rounded-[2rem] text-xs font-black uppercase tracking-widest bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap">
@@ -70,7 +70,7 @@ export function HeroSection({ t, name }: { t: Dictionary["hero"]; name: string }
             whileDrag={{ scale: 1.1, cursor: "grabbing" }}
             animate={{ y: [0, -15, 0], rotate: [item.rotate, item.rotate + 5, item.rotate] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: item.delay }}
-            className="absolute hidden lg:flex z-20 cursor-grab items-center justify-center w-12 h-12 border-[3px] border-foreground rounded-full bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            className="absolute hidden xl:flex z-20 cursor-grab items-center justify-center w-12 h-12 border-[3px] border-foreground rounded-full bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             style={{ top: item.top, left: item.left }}
           >
             <Icon size={20} strokeWidth={2.5} />
@@ -89,7 +89,7 @@ export function HeroSection({ t, name }: { t: Dictionary["hero"]; name: string }
             whileDrag={{ scale: 1.1, cursor: "grabbing" }}
             animate={{ y: [0, -10, 0], rotate: [idx % 2 === 0 ? -2 : 2, 0, idx % 2 === 0 ? -2 : 2] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: idx * 0.5 }}
-            className="absolute lg:hidden z-20 cursor-grab"
+            className="absolute xl:hidden z-20 cursor-grab"
             style={pos}
           >
             <span className="px-4 py-2 border-[2px] border-foreground rounded-[2rem] text-[10px] font-black uppercase tracking-widest bg-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap">
@@ -110,7 +110,7 @@ export function HeroSection({ t, name }: { t: Dictionary["hero"]; name: string }
             whileDrag={{ scale: 1.1, cursor: "grabbing" }}
             animate={{ y: [0, -10, 0], rotate: [item.rotate, item.rotate + 5, item.rotate] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: item.delay }}
-            className="absolute lg:hidden z-20 cursor-grab flex items-center justify-center w-10 h-10 border-[2px] border-foreground rounded-full bg-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+            className="absolute xl:hidden z-20 cursor-grab flex items-center justify-center w-10 h-10 border-[2px] border-foreground rounded-full bg-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
             style={{ top: item.top, left: item.left, right: item.right }}
           >
             <Icon size={16} strokeWidth={2.5} />
@@ -142,9 +142,10 @@ export function HeroSection({ t, name }: { t: Dictionary["hero"]; name: string }
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="max-w-2xl mx-auto flex flex-col items-center gap-7 md:gap-8 pointer-events-auto"
         >
-          <p className="text-base md:text-xl text-gray-600 font-medium leading-relaxed px-2">
-            {t.supporting}
-          </p>
+          <div className="flex flex-col items-center gap-2 px-2">
+            <p className="text-base md:text-xl text-gray-600 font-medium leading-relaxed">{t.supporting}</p>
+            <p className="text-sm md:text-base font-black uppercase tracking-widest text-foreground">{t.handsOn}</p>
+          </div>
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
             <a
               href="#projects"
