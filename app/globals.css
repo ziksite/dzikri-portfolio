@@ -51,6 +51,10 @@ body {
 .article-body li + li { margin-top: 0.4em; }
 .article-body blockquote { border-left: 4px solid #000; padding-left: 1.1em; font-style: italic; color: #404040; }
 .article-body img { width: 100%; height: auto; border-radius: 16px; border: 3px solid #000; }
+/* An italic line right after an image reads as its caption */
+.article-body > article > p:has(> img:only-child) + p > em:only-child {
+  display: block; margin-top: -0.6em; font-size: 0.875rem; color: #6b7280; text-align: center;
+}
 .article-body hr { border: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5em 0; }
 .article-body code { font-size: 0.9em; background: #e5e5e5; padding: 0.15em 0.4em; border-radius: 6px; }
 .article-body pre { background: #0a0a0a; color: #f5f5f5; padding: 1.1em 1.25em; border-radius: 16px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6; }

@@ -45,7 +45,7 @@ export default async function ProjectsIndex({ params }: Props) {
             <span>{t.projects.disclaimer}</span>
           </p>
 
-          <ProjectGrid projects={projects} lang={lang} t={t.projects} />
+          <ProjectGrid projects={projects} lang={lang} t={t.projects} pagination={t.pagination} />
         </div>
       </main>
     </SiteShell>

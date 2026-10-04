@@ -115,7 +115,6 @@ export const id: Dictionary = {
     previous: "Proyek sebelumnya",
     next: "Proyek berikutnya",
     goToSlide: "Ke slide",
-    count: "proyek",
   },
 
   projectsPage: {
@@ -259,6 +258,14 @@ export const id: Dictionary = {
     readArticle: "Baca artikel",
     allArticles: "Semua artikel",
     draft: "Draft",
+    languageNote: "",
+  },
+
+  pagination: {
+    label: "Navigasi halaman",
+    previous: "Halaman sebelumnya",
+    next: "Halaman berikutnya",
+    page: "Halaman",
   },
 
   notFound: {

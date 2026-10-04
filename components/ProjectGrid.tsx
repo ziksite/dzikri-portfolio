@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, ChevronDown, Globe, Lock } from "lucide-react";
@@ -8,27 +8,44 @@ import type { Project } from "@/lib/content";
 import type { Dictionary } from "@/i18n";
 import { localePath, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { Pagination } from "@/components/Pagination";
+
+const PAGE_SIZE = 9;
 
 export function ProjectGrid({
   projects,
   lang,
   t,
+  pagination,
 }: {
   projects: Project[];
   lang: Locale;
   t: Dictionary["projects"];
+  pagination: Dictionary["pagination"];
 }) {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [page, setPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
   const filters = ["All", ...Array.from(new Set(projects.map((p) => p.kind)))];
-  const visible = activeFilter === "All" ? projects : projects.filter((p) => p.kind === activeFilter);
+  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.kind === activeFilter);
+  const pageCount = Math.ceil(filtered.length / PAGE_SIZE);
+  const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const goToPage = (n: number) => {
+    setPage(n);
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <>
-      <div className="flex items-center justify-between gap-4 mb-8 md:mb-10">
+      <div ref={topRef} className="flex items-center gap-4 mb-8 md:mb-10 scroll-mt-28">
         <div className="relative inline-block">
           <select
             value={activeFilter}
-            onChange={(e) => setActiveFilter(e.target.value)}
+            onChange={(e) => {
+              setActiveFilter(e.target.value);
+              setPage(1);
+            }}
             aria-label={t.filterLabel}
             className="appearance-none bg-white border-[3px] border-black rounded-full pl-5 pr-12 py-2.5 md:py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none"
           >
@@ -44,9 +61,6 @@ export function ProjectGrid({
             className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
           />
         </div>
-        <span className="text-gray-500 text-xs font-bold uppercase tracking-widest">
-          {visible.length} {t.count}
-        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -99,6 +113,8 @@ export function ProjectGrid({
           </Link>
         ))}
       </div>
+
+      <Pagination page={page} pageCount={pageCount} onChange={goToPage} t={pagination} />
     </>
   );
 }

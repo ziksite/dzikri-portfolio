@@ -15,16 +15,7 @@ function localized(path: string, langs: readonly Locale[], extra: Omit<Entry, "u
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [projects, articlesEn, articlesId] = await Promise.all([
-    getProjects("en"),
-    getArticles("en"),
-    getArticles("id"),
-  ]);
-
-  const articleSlugs = new Map<string, Locale[]>();
-  for (const [lang, list] of [["en", articlesEn], ["id", articlesId]] as const) {
-    for (const a of list) articleSlugs.set(a.slug, [...(articleSlugs.get(a.slug) ?? []), lang]);
-  }
+  const [projects, articles] = await Promise.all([getProjects("en"), getArticles()]);
 
   return [
     ...localized("/", locales, { lastModified: new Date(), changeFrequency: "monthly", priority: 1 }),
@@ -33,8 +24,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       localized(`/projects/${p.slug}`, locales, { changeFrequency: "yearly", priority: 0.8 })
     ),
     ...localized("/blog", locales, { changeFrequency: "weekly", priority: 0.8 }),
-    ...[...articleSlugs].flatMap(([slug, langs]) =>
-      localized(`/blog/${slug}`, langs, { changeFrequency: "monthly", priority: 0.7 })
+    // Articles exist in Indonesian only
+    ...articles.flatMap((a) =>
+      localized(`/blog/${a.slug}`, ["id"], { lastModified: a.publishedAt, changeFrequency: "monthly", priority: 0.7 })
     ),
   ];
 }

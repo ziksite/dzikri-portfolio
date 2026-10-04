@@ -97,11 +97,9 @@ export interface ArticleSummary {
 // Drafts are visible in `next dev` so they can be previewed, never in production builds
 const showDrafts = process.env.NODE_ENV === "development";
 
-const articleCollection = (lang: Locale) =>
-  lang === "id" ? reader.collections.articlesId : reader.collections.articles;
-
-export async function getArticles(lang: Locale): Promise<ArticleSummary[]> {
-  const entries = await articleCollection(lang).all();
+// Articles are Indonesian only; both language versions of the site list the same entries
+export async function getArticles(): Promise<ArticleSummary[]> {
+  const entries = await reader.collections.articles.all();
   return entries
     .filter(({ entry }) => showDrafts || !entry.draft)
     .sort((a, b) => b.entry.publishedAt.localeCompare(a.entry.publishedAt))
@@ -115,8 +113,8 @@ export async function getArticles(lang: Locale): Promise<ArticleSummary[]> {
     }));
 }
 
-export async function getArticle(lang: Locale, slug: string) {
-  const entry = await articleCollection(lang).read(slug);
+export async function getArticle(slug: string) {
+  const entry = await reader.collections.articles.read(slug);
   if (!entry || (entry.draft && !showDrafts)) return null;
   const { node } = await entry.content();
   return { ...entry, slug, node };

@@ -2,7 +2,10 @@ import { config, collection, fields } from "@keystatic/core";
 
 // GitHub mode (edits become commits → Vercel redeploys) switches on once the GitHub App
 // env vars exist; otherwise local mode, where edits write straight to files in this repo.
-export const isGithubMode = !!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG;
+// NEXT_PUBLIC_KEYSTATIC_SETUP=github forces GitHub mode locally to run Keystatic's
+// one-time "create GitHub App" wizard, which then writes the real env vars to .env.
+export const isGithubMode =
+  !!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG || process.env.NEXT_PUBLIC_KEYSTATIC_SETUP === "github";
 
 // Local mode can only write to disk on a dev machine, so the CMS is disabled in production without GitHub mode
 export const isCmsEnabled = isGithubMode || process.env.NODE_ENV === "development";
@@ -13,58 +16,52 @@ const storage = isGithubMode
 
 const paragraphs = "Pisahkan paragraf dengan baris kosong.";
 
-// Same schema for both article collections (one per language)
-function articleCollection(label: string, lang: "en" | "id") {
-  return collection({
-    label,
-    slugField: "title",
-    path: `content/articles/${lang}/*`,
-    format: { contentField: "content" },
-    entryLayout: "content",
-    columns: ["title", "publishedAt", "draft"],
-    schema: {
-      title: fields.slug({
-        name: { label: "Title" },
-        slug: {
-          label: "Slug (URL)",
-          description:
-            "Samakan slug dengan versi bahasa lainnya agar tombol EN/ID membuka artikel yang sama.",
-        },
-      }),
-      publishedAt: fields.date({
-        label: "Published date",
-        defaultValue: { kind: "today" },
-        validation: { isRequired: true },
-      }),
-      draft: fields.checkbox({
-        label: "Draft",
-        description: "Draft tidak tampil di website",
-        defaultValue: true,
-      }),
-      excerpt: fields.text({
-        label: "Excerpt",
-        description: "Ringkasan 1–2 kalimat untuk list artikel & meta description",
-        multiline: true,
-        validation: { length: { min: 1, max: 300 } },
-      }),
-      coverImage: fields.image({
-        label: "Cover image",
-        directory: "public/images/articles",
-        publicPath: "/images/articles/",
-      }),
-      tags: fields.array(fields.text({ label: "Tag" }), {
-        label: "Tags",
-        itemLabel: (props) => props.value,
-      }),
-      content: fields.markdoc({
-        label: "Content",
-        options: {
-          image: { directory: "public/images/articles", publicPath: "/images/articles/" },
-        },
-      }),
-    },
-  });
-}
+// Articles are written in Indonesian only; the English site lists them and links to /id/blog
+const articles = collection({
+  label: "Articles",
+  slugField: "title",
+  path: "content/articles/*",
+  format: { contentField: "content" },
+  entryLayout: "content",
+  columns: ["title", "publishedAt", "draft"],
+  schema: {
+    title: fields.slug({
+      name: { label: "Judul" },
+      slug: { label: "Slug (URL)", description: "Alamat artikel: /id/blog/<slug>" },
+    }),
+    publishedAt: fields.date({
+      label: "Published date",
+      defaultValue: { kind: "today" },
+      validation: { isRequired: true },
+    }),
+    draft: fields.checkbox({
+      label: "Draft",
+      description: "Draft tidak tampil di website",
+      defaultValue: true,
+    }),
+    excerpt: fields.text({
+      label: "Excerpt",
+      description: "Ringkasan 1–2 kalimat untuk list artikel & meta description",
+      multiline: true,
+      validation: { length: { min: 1, max: 300 } },
+    }),
+    coverImage: fields.image({
+      label: "Cover image",
+      directory: "public/images/articles",
+      publicPath: "/images/articles/",
+    }),
+    tags: fields.array(fields.text({ label: "Tag" }), {
+      label: "Tags",
+      itemLabel: (props) => props.value,
+    }),
+    content: fields.markdoc({
+      label: "Content",
+      options: {
+        image: { directory: "public/images/articles", publicPath: "/images/articles/" },
+      },
+    }),
+  },
+});
 
 export default config({
   storage,
@@ -72,7 +69,7 @@ export default config({
     brand: { name: "Ziksite CMS" },
     navigation: {
       Portfolio: ["projects"],
-      Blog: ["articles", "articlesId"],
+      Blog: ["articles"],
     },
   },
   collections: {
@@ -220,7 +217,6 @@ export default config({
       },
     }),
 
-    articles: articleCollection("Articles (EN)", "en"),
-    articlesId: articleCollection("Articles (ID)", "id"),
+    articles,
   },
 });

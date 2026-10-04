@@ -2,47 +2,36 @@ import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Markdoc from "@markdoc/markdoc";
 import { ArrowLeft } from "lucide-react";
 import { SiteShell } from "@/components/SiteShell";
 import { formatDate, getArticle, getArticles } from "@/lib/content";
 import { getDictionary } from "@/i18n";
-import { isLocale, localePath, locales, SITE_URL, type Locale } from "@/lib/i18n";
+import { isLocale, localePath } from "@/lib/i18n";
 
 type Params = { params: Promise<{ lang: string; slug: string }> };
 
+// Articles are Indonesian only: /id/blog/<slug> is the page; the old English URLs redirect there
 export async function generateStaticParams() {
-  const perLang = await Promise.all(
-    locales.map(async (lang) => (await getArticles(lang)).map((a) => ({ lang, slug: a.slug })))
-  );
-  return perLang.flat();
-}
-
-// hreflang only for the languages this article actually exists in
-async function articleAlternates(slug: string) {
-  const available = await Promise.all(locales.map(async (l) => ((await getArticle(l, slug)) ? l : null)));
-  return available.filter((l): l is Locale => l !== null);
+  return (await getArticles()).map((a) => ({ lang: "id", slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { lang, slug } = await params;
-  if (!isLocale(lang)) return {};
-  const article = await getArticle(lang, slug);
+  if (lang !== "id") return {};
+  const article = await getArticle(slug);
   if (!article) return {};
-  const langs = await articleAlternates(slug);
   const images = article.coverImage ? [{ url: article.coverImage }] : undefined;
   return {
     title: `${article.title} - Dzikri Ramadhan`,
     description: article.excerpt,
-    alternates: {
-      canonical: localePath(lang, `/blog/${slug}`),
-      languages: Object.fromEntries(langs.map((l) => [l, `${SITE_URL}${localePath(l, `/blog/${slug}`)}`])),
-    },
+    alternates: { canonical: localePath("id", `/blog/${slug}`) },
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: "article",
+      locale: "id_ID",
       publishedTime: article.publishedAt,
       images,
     },
@@ -52,7 +41,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function ArticlePage({ params }: Params) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
-  const article = await getArticle(lang, slug);
+  if (lang !== "id") permanentRedirect(localePath("id", `/blog/${slug}`));
+  const article = await getArticle(slug);
   if (!article) notFound();
   const t = getDictionary(lang).blog;
 

@@ -115,7 +115,6 @@ export const en = {
     previous: "Previous project",
     next: "Next project",
     goToSlide: "Go to slide",
-    count: "projects",
   },
 
   projectsPage: {
@@ -260,6 +259,14 @@ export const en = {
     readArticle: "Read article",
     allArticles: "All articles",
     draft: "Draft",
+    languageNote: "Articles are written in Bahasa Indonesia.",
+  },
+
+  pagination: {
+    label: "Pagination",
+    previous: "Previous page",
+    next: "Next page",
+    page: "Page",
   },
 
   notFound: {
