@@ -82,13 +82,6 @@ export const en = {
         text: "Leading teams, projects, and technology initiatives from strategy to execution.",
       },
     ],
-    buildHeading: "What I build",
-    builds: [
-      "Websites & web apps",
-      "Internal systems & dashboards",
-      "AI & WhatsApp automation",
-      "System integration & APIs",
-    ],
   },
 
   techStack: {

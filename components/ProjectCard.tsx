@@ -14,7 +14,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, href, labels }: ProjectCardProps) {
-  const { title, type, status, year, summary, metrics, tags, imageUrl, imageContain } = project;
+  const { title, type, status, year, summary, metrics, tags, imageUrl } = project;
 
   return (
     <motion.div
@@ -29,15 +29,13 @@ export function ProjectCard({ project, href, labels }: ProjectCardProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           {/* Image Block */}
-          <div className="w-full lg:w-2/5 relative aspect-square lg:aspect-auto lg:self-stretch overflow-hidden lg:border-r-[3px] lg:border-b-0 border-b-[3px] border-white/10 shrink-0 rounded-t-[21px] lg:rounded-t-none lg:rounded-l-[21px]">
+          {/* Whole screenshot on a dark frame, the same treatment for every project */}
+          <div className="w-full lg:w-2/5 relative aspect-[16/10] lg:aspect-auto lg:self-stretch overflow-hidden lg:border-r-[3px] lg:border-b-0 border-b-[3px] border-white/10 shrink-0 rounded-t-[21px] lg:rounded-t-none lg:rounded-l-[21px] bg-[#0f0f0f]">
             <Image
               src={imageUrl}
               alt={title}
               fill
-              className={cn(
-                "bg-[#0f0f0f] group-hover/card:scale-105 transition-transform duration-700 ease-out",
-                imageContain ? "object-contain object-center p-3 md:p-4" : "object-contain lg:object-cover object-top"
-              )}
+              className="object-contain object-center p-3 md:p-4 group-hover/card:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>

@@ -82,13 +82,6 @@ export const id: Dictionary = {
         text: "Memimpin tim, proyek, dan inisiatif teknologi dari strategi hingga eksekusi.",
       },
     ],
-    buildHeading: "Yang saya bangun",
-    builds: [
-      "Website & aplikasi web",
-      "Sistem internal & dashboard",
-      "Otomasi AI & WhatsApp",
-      "Integrasi sistem & API",
-    ],
   },
 
   techStack: {
