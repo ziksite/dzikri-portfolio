@@ -1,0 +1,33 @@
+title: Defense MRO Corporate Website
+order: 160
+hidden: false
+type: CORPORATE PROFILE WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2026'
+description: |-
+  Built to verify, not to sell. A defense MRO corporate site that proves who the company is, what it can do, and who already trusts it — within the first ten seconds — to government and military partners.
+
+  The site answers three questions within the first ten seconds — who the company is, what they can do, and who already trusts them — for government, military, and private partners verifying the company's capability.
+
+  Delivered as a multilingual WordPress build with a custom theme aligned to strict brand guidelines.
+image: /images/projects/defense-mro-corporate-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: ID / EN
+    label: BILINGUAL
+  - value: 10s
+    label: CREDIBILITY TEST
+  - value: 95/100
+    label: SEO SCORE
+tags:
+  - WordPress
+  - Polylang
+  - Custom Theme
+testimonial: ''
+overview: ''
+features: []
+role: ''

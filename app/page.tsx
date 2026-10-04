@@ -8,16 +8,19 @@ import { AboutSection } from "@/sections/AboutSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { TimelineSection } from "@/sections/TimelineSection";
 import { ContactSection } from "@/sections/ContactSection";
+import { getArticles, getProjects } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const [projects, articles] = await Promise.all([getProjects(), getArticles()]);
+
   return (
     <>
-      <Navbar />
+      <Navbar showBlog={articles.length > 0} />
       <main className="flex flex-col min-h-screen">
         <HeroSection />
         <InfoBar />
         <AboutSection />
-        <ProjectsSection />
+        <ProjectsSection projects={projects} />
         <TimelineSection />
         <ContactSection />
       </main>

@@ -1,0 +1,31 @@
+title: Snack Product Campaign Landing Page
+order: 190
+hidden: false
+type: PRODUCT LANDING PAGE
+kind: Website
+category: Landing Page
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  A snack brand's bundles, packaged to sell. A bold, visual-first landing page that grabs attention and sends shoppers straight to checkout on the marketplace.
+
+  The design emphasizes strong product visuals, promotional messaging, and a direct path to purchase through marketplace integration. The layout was optimized to capture attention and guide users toward product discovery.
+image: /images/projects/snack-product-campaign-landing-page/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: +45%
+    label: PRODUCT VISIBILITY
+  - value: 1-CLICK
+    label: TO MARKETPLACE
+  - value: 94/100
+    label: PERFORMANCE
+tags:
+  - WordPress
+  - Elementor
+  - Landing Page Optimization
+testimonial: ''
+overview: ''
+features: []
+role: ''

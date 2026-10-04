@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dzikri.ziksite.my.id"),
   title: "Dzikri Ramadhan - Website Developer",
   description: "High-end modern developer portfolio of a website developer and tech innovator.",
   openGraph: {

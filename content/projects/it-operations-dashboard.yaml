@@ -1,0 +1,33 @@
+title: IT Operations Dashboard
+order: 60
+hidden: false
+type: IT OPS DASHBOARD
+kind: Internal System
+category: Internal System
+status: PRIVATE
+client: Confidential
+year: '2026'
+description: |-
+  Two companies, one IT team, zero lost tickets. An internal dashboard that turns scattered WhatsApp requests into tracked tickets and tasks — with clear visibility into team capacity.
+
+  It replaces untracked WhatsApp requests and verbal briefs with a structured ticketing and task system, giving the team clear visibility into workload, priorities, and performance.
+
+  Designed around a priority system that keeps support requests and development work from colliding.
+image: /images/projects/it-operations-dashboard/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: '2'
+    label: COMPANIES SERVED
+  - value: 30+
+    label: ACTIVE USERS
+  - value: 100%
+    label: TICKETS TRACKED
+tags:
+  - Next.js
+  - Prisma
+  - NextAuth
+testimonial: ''
+overview: ''
+features: []
+role: ''

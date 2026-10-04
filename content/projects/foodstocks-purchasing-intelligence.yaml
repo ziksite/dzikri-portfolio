@@ -1,0 +1,33 @@
+title: Foodstocks Purchasing Intelligence
+order: 30
+hidden: false
+type: PURCHASING ANALYTICS SYSTEM
+kind: Internal System
+category: Internal System
+status: PRIVATE
+client: Confidential
+year: '2026'
+description: |-
+  Purchasing decisions backed by data, not gut feel. Synced hourly to the warehouse system, it forecasts demand, flags stockouts and overstock before they happen, and recommends exactly what to reorder — and when.
+
+  Under the hood: reorder-point and EOQ calculators, ABC classification, true-COGS building, and a supplier scorecard, with automated email and WhatsApp alerts.
+
+  Turns data that already existed into purchasing decisions that finally use it.
+image: /images/projects/foodstocks-purchasing-intelligence/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 200+
+    label: SKUs TRACKED
+  - value: HOURLY
+    label: DATA SYNC
+  - value: AUTO
+    label: REORDER ALERTS
+tags:
+  - Next.js
+  - Redis
+  - REST API
+testimonial: ''
+overview: ''
+features: []
+role: ''

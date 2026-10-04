@@ -1,0 +1,33 @@
+title: Healthcare Hospital Digital Platform
+order: 170
+hidden: false
+type: HEALTHCARE WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  Healthcare information patients can actually find — fast. This hospital platform turns a maze of services, schedules, and promotions into a clean, mobile-first experience that earns trust from the first click.
+
+  The platform provides a streamlined experience for visitors to explore hospital services, promotions, and medical information while maintaining a clean and professional healthcare interface.
+
+  Built with a responsive architecture to ensure smooth browsing across desktop and mobile devices.
+image: /images/projects/healthcare-hospital-digital-platform/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: 38%
+    label: FASTER LOAD
+  - value: 95/100
+    label: SEO SCORE
+  - value: 24/7
+    label: INFO ACCESS
+tags:
+  - WordPress
+  - Elementor
+  - Custom UI Optimization
+testimonial: ''
+overview: ''
+features: []
+role: ''

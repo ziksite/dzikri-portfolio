@@ -1,0 +1,31 @@
+title: ISP Promotional Campaign Website
+order: 210
+hidden: false
+type: MARKETING CAMPAIGN WEBSITE
+kind: Website
+category: Landing Page
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  A fiber-internet campaign engineered to convert. Sharp messaging and strong visual branding turn curiosity about faster internet into real service inquiries.
+
+  The platform delivers clear promotional messaging and strong visual branding to attract potential customers and guide them toward service inquiries. The design prioritizes clarity, speed, and accessibility across devices.
+image: /images/projects/isp-promotional-campaign-website/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: +42%
+    label: CAMPAIGN ENGAGEMENT
+  - value: <2s
+    label: LOAD TIME
+  - value: 100%
+    label: MOBILE READY
+tags:
+  - WordPress
+  - Elementor
+  - UI Optimization
+testimonial: ''
+overview: ''
+features: []
+role: ''

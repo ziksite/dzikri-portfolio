@@ -1,0 +1,33 @@
+title: F&B Reseller Program Landing Page
+order: 220
+hidden: false
+type: BUSINESS LANDING PAGE
+kind: Website
+category: Landing Page
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  A reseller program that sells itself. A conversion-focused landing page that lays out the margins, the products, and the path to partnership — then makes signing up effortless.
+
+  The platform highlights the benefits of joining the reseller program, including product variety, competitive margins, and a streamlined ordering system. The layout was designed to clearly communicate the opportunity and encourage visitors to register as partners.
+
+  The responsive interface ensures a smooth experience across both desktop and mobile devices, making it easy for potential resellers to explore the program and start their journey.
+image: /images/projects/f-and-b-reseller-program-landing-page/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: +30%
+    label: PARTNER SIGNUPS
+  - value: 50+
+    label: PRODUCTS LISTED
+  - value: 1-STEP
+    label: ONBOARDING
+tags:
+  - WordPress
+  - Elementor
+  - Landing Page Optimization
+testimonial: ''
+overview: ''
+features: []
+role: ''

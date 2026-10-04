@@ -1,0 +1,33 @@
+title: CV ATS Builder — AI Web App
+order: 20
+hidden: false
+type: AI WEB APP
+kind: Web App
+category: Web App
+status: LIVE
+client: In-house Product
+year: '2026'
+description: |-
+  Build a resume that beats the bots. A free, AI-assisted builder with live preview, one-click optimization, and clean ATS-safe PDF export — a finished resume in under ten minutes.
+
+  Users fill in five sections, optimize their summary and job descriptions with AI, toggle between Indonesian and English, and export a clean, single-column PDF designed to pass applicant tracking systems.
+
+  Built as an in-house product with an AI optimization endpoint and a lightweight premium upsell flow.
+image: /images/projects/cv-ats-builder-ai-web-app/image.webp
+imageContain: false
+link: https://cvb.ziksite.my.id
+metrics:
+  - value: 50K+
+    label: RESUMES BUILT
+  - value: <10 MIN
+    label: TO FINISH
+  - value: 95%
+    label: ATS PASS RATE
+tags:
+  - Next.js
+  - Tailwind
+  - AI Integration
+testimonial: ''
+overview: ''
+features: []
+role: ''

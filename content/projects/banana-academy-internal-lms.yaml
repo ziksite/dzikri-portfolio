@@ -1,0 +1,33 @@
+title: Banana Academy — Internal LMS
+order: 50
+hidden: false
+type: LEARNING MANAGEMENT SYSTEM
+kind: Internal System
+category: Internal System
+status: PRIVATE
+client: Confidential
+year: '2026'
+description: |-
+  Employee training people actually finish. An internal LMS that turns ad-hoc onboarding into structured paths, with points, leaderboards, and real rewards that make progress feel earned.
+
+  Employees follow async training paths, complete assessments, earn points, and redeem real rewards — with progress, leaderboards, and streaks that make every learning action feel meaningful.
+
+  Admins create programs and grade submissions in as few clicks as possible, while managers track team progress without logging into individual accounts.
+image: /images/projects/banana-academy-internal-lms/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 100%
+    label: STRUCTURED TRAINING
+  - value: GAMIFIED
+    label: POINTS & LEADERBOARD
+  - value: '3'
+    label: ROLES SUPPORTED
+tags:
+  - Next.js
+  - PostgreSQL
+  - Drizzle
+testimonial: ''
+overview: ''
+features: []
+role: ''

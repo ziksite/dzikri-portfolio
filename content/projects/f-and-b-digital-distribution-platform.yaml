@@ -1,0 +1,31 @@
+title: F&B Digital Distribution Platform
+order: 200
+hidden: false
+type: E-COMMERCE PLATFORM
+kind: Website
+category: E-Commerce
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  One storefront for an entire food & beverage catalog. A structured, scalable e-commerce experience that makes browsing, exploring, and ordering effortless on every device.
+
+  The platform enables users to browse products, explore categories, and place orders through a structured interface optimized for both mobile and desktop devices. The system was built with scalability in mind to support future product expansion.
+image: /images/projects/f-and-b-digital-distribution-platform/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: 50+
+    label: SKUs ONLINE
+  - value: '1'
+    label: UNIFIED STOREFRONT
+  - value: 96/100
+    label: UX SCORE
+tags:
+  - WordPress
+  - WooCommerce
+  - Custom UI Development
+testimonial: ''
+overview: ''
+features: []
+role: ''

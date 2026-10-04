@@ -1,0 +1,33 @@
+title: Advertising & Media Agency Website
+order: 120
+hidden: false
+type: AGENCY WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2026'
+description: |-
+  A nationwide out-of-home ad network, presented at scale. Twenty-plus pages of services and coverage, unified by one consistent, brand-true design.
+
+  The build went through a full QA pass — fixing navigation, brand fonts, favicon, and sitemap alignment — to ship a polished, responsive site across more than twenty pages.
+
+  Structured around a clear sitemap so visitors can navigate services and coverage areas with ease.
+image: /images/projects/advertising-and-media-agency-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 35+
+    label: CITIES COVERED
+  - value: '21'
+    label: PAGES SHIPPED
+  - value: 100%
+    label: BRAND-CONSISTENT
+tags:
+  - HTML/CSS
+  - Custom UI
+  - Responsive UI
+testimonial: ''
+overview: ''
+features: []
+role: ''

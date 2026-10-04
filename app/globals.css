@@ -33,6 +33,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Article body rendered from Markdoc (blog) */
+.article-body {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #262626;
+}
+/* Markdoc wraps the rendered content in its own <article> */
+.article-body > article > * + * { margin-top: 1.25em; }
+.article-body h2 { margin-top: 2.2em; font-size: 1.75rem; line-height: 1.2; font-weight: 900; letter-spacing: -0.02em; }
+.article-body h3 { margin-top: 1.8em; font-size: 1.3rem; line-height: 1.3; font-weight: 800; }
+.article-body h4 { margin-top: 1.5em; font-weight: 800; }
+.article-body a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.article-body strong { font-weight: 800; color: #000; }
+.article-body ul { list-style: disc; padding-left: 1.4em; }
+.article-body ol { list-style: decimal; padding-left: 1.4em; }
+.article-body li + li { margin-top: 0.4em; }
+.article-body blockquote { border-left: 4px solid #000; padding-left: 1.1em; font-style: italic; color: #404040; }
+.article-body img { width: 100%; height: auto; border-radius: 16px; border: 3px solid #000; }
+.article-body hr { border: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5em 0; }
+.article-body code { font-size: 0.9em; background: #e5e5e5; padding: 0.15em 0.4em; border-radius: 6px; }
+.article-body pre { background: #0a0a0a; color: #f5f5f5; padding: 1.1em 1.25em; border-radius: 16px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6; }
+.article-body pre code { background: none; padding: 0; color: inherit; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; display: block; overflow-x: auto; }
+.article-body th, .article-body td { border: 2px solid #000; padding: 0.5em 0.75em; text-align: left; }
+.article-body th { background: #000; color: #fff; font-weight: 800; }
+
 /* Base custom styles */
 ::selection {
   background-color: var(--primary);

@@ -1,0 +1,33 @@
+title: Industrial Supplier Catalog Website
+order: 130
+hidden: false
+type: PRODUCT CATALOG WEBSITE
+kind: Website
+category: E-Commerce
+status: LIVE
+client: Confidential
+year: '2026'
+description: |-
+  A B2B supplier's full catalog, built for buyers in a hurry. Browse, add to cart, and send an inquiry — product discovery without the friction, on any device.
+
+  The site combines a structured catalog, cart, blog, and company profile into one clean experience, with a layout optimized for product discovery across devices.
+
+  Delivered from an HTML prototype into a maintainable WordPress build.
+image: /images/projects/industrial-supplier-catalog-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 50+
+    label: PRODUCTS
+  - value: CART
+    label: + INQUIRY FLOW
+  - value: 100%
+    label: RESPONSIVE
+tags:
+  - WordPress
+  - Catalog
+  - Responsive UI
+testimonial: ''
+overview: ''
+features: []
+role: ''

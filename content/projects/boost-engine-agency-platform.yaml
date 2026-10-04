@@ -1,0 +1,33 @@
+title: Boost Engine — Agency Platform
+order: 70
+hidden: false
+type: AGENCY MANAGEMENT PLATFORM
+kind: Internal System
+category: Internal System
+status: PRIVATE
+client: Confidential
+year: '2026'
+description: |-
+  ClickUp, Looker, and WhatsApp — replaced by one platform. An internal agency operating system with a role-based dashboard for every seat, from CEO forecasts to staff task lists, powered by real-time performance data.
+
+  It delivers role-based home dashboards for every position — from CEO revenue pipeline and forecasting to PM kanban boards and staff task lists — with real-time performance data, client health scoring, and a branded client portal.
+
+  Built on a realtime database with row-level security so each role sees exactly what they need, nothing more.
+image: /images/projects/boost-engine-agency-platform/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 3→1
+    label: TOOLS REPLACED
+  - value: '7'
+    label: ROLE DASHBOARDS
+  - value: 8-MO
+    label: REVENUE FORECAST
+tags:
+  - Next.js
+  - PostgreSQL
+  - Recharts
+testimonial: ''
+overview: ''
+features: []
+role: ''

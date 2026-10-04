@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, Lock, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,28 +17,20 @@ interface ProjectCardProps {
   metrics?: { value: string; label: string }[];
   tags: string[];
   imageUrl: string;
-  link: string;
+  href: string;
   index: number;
-  onOpenDetail?: () => void;
   imageContain?: boolean;
 }
 
-export function ProjectCard({ title, type, status, client, year, testimonial, description, metrics, tags, imageUrl, link, index, onOpenDetail, imageContain }: ProjectCardProps) {
-  // Detail-mode cards (no public URL) open an overview modal instead of navigating.
-  const hasDetail = !!onOpenDetail;
-  // Use the real project URL when provided; otherwise fall back to WhatsApp contact.
-  const href = link && link !== "#" ? link : "https://wa.me/6289630557191";
-
-  const animation = {
-    initial: { opacity: 0, y: 50 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.6, delay: 0.1 },
-    className: "group block drop-shadow-sm w-full text-left",
-  } as const;
-
-  const cardBody = (
-    <>
+export function ProjectCard({ title, type, status, client, year, testimonial, description, metrics, tags, imageUrl, href, index, imageContain }: ProjectCardProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+    >
+    <Link href={href} className="group block drop-shadow-sm w-full text-left">
       <div className="flex flex-col lg:flex-row bg-[#0A0A0A] border-[3px] border-white/20 group-hover:border-white shadow-sm hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-2 rounded-[24px] transition-all duration-300 relative overflow-hidden group/card text-white w-full">
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -98,7 +91,7 @@ export function ProjectCard({ title, type, status, client, year, testimonial, de
           )}
 
           {/* Trust Metrics */}
-          {metrics && (
+          {metrics && metrics.length > 0 && (
             <div className="mb-4 md:mb-6">
               <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <BadgeCheck size={14} className="text-blue-400" />
@@ -129,26 +122,13 @@ export function ProjectCard({ title, type, status, client, year, testimonial, de
             </div>
 
             <div className="inline-flex items-center justify-center gap-2 bg-white text-black px-5 py-3.5 rounded-lg font-black uppercase tracking-widest text-[9px] group-hover/card:bg-gray-200 transition-colors w-full lg:w-auto shrink-0 group/btn">
-              {hasDetail ? "View Overview" : status === "PRIVATE" ? "Request Access" : "View Live Project"}
+              View Project
               <ArrowUpRight size={16} strokeWidth={3} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
-
-  if (hasDetail) {
-    return (
-      <motion.button type="button" onClick={onOpenDetail} {...animation}>
-        {cardBody}
-      </motion.button>
-    );
-  }
-
-  return (
-    <motion.a href={href} target="_blank" rel="noopener noreferrer" {...animation}>
-      {cardBody}
-    </motion.a>
+    </Link>
+    </motion.div>
   );
 }

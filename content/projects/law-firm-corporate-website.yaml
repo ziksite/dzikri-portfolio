@@ -1,0 +1,37 @@
+title: Law Firm Corporate Website
+order: 90
+hidden: false
+type: LEGAL SERVICES WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2026'
+description: >-
+  Authority you can feel before you call. A law firm's corporate site presenting
+  a deep bench of practice areas with a tone that earns trust from individuals
+  and corporations alike.
+
+
+  The site presents a broad set of practice areas — from civil and criminal
+  litigation to corporate, banking, intellectual property, and insolvency
+  matters — in a structure that builds trust and makes it easy to get in touch.
+
+
+  Designed with a professional, authoritative tone and a responsive, SEO-ready
+  build.
+image: /images/projects/law-firm-corporate-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 10+
+    label: PRACTICE AREAS
+  - value: 100%
+    label: MOBILE-FIRST
+  - value: SEO
+    label: READY
+tags:
+  - WordPress
+  - SEO
+  - Responsive UI
+features: []

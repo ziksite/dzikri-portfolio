@@ -1,0 +1,33 @@
+title: Foodstocks Reseller Ecosystem
+order: 40
+hidden: false
+type: RESELLER PLATFORM
+kind: Internal System
+category: Internal System
+status: PRIVATE
+client: Confidential
+year: '2026'
+description: |-
+  A B2B ordering portal that turns resellers into a loyal community. They browse the catalog, place orders, and track shipments and payments end to end — while points, tiers, leaderboards, and rewards keep them coming back.
+
+  Built as a split web + API architecture with a full admin back office for catalog, access control, and reseller management.
+
+  Designed to scale a reseller network with structure instead of spreadsheets.
+image: /images/projects/foodstocks-reseller-ecosystem/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: 15+
+    label: RESELLER MODULES
+  - value: GAMIFIED
+    label: TIERS & REWARDS
+  - value: E2E
+    label: ORDER → SHIPMENT
+tags:
+  - Next.js
+  - Prisma
+  - PostgreSQL
+testimonial: ''
+overview: ''
+features: []
+role: ''

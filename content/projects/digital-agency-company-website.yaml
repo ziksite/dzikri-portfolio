@@ -1,0 +1,31 @@
+title: Digital Agency Company Website
+order: 230
+hidden: false
+type: AGENCY WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  A digital agency's credibility, captured in a single scroll. Services, portfolio, and consultation paths presented with the polish that turns visitors into leads.
+
+  The platform showcases services, portfolio work, and consultation opportunities to help businesses discover digital solutions that support their growth. The design combines modern visuals with a structured service presentation.
+image: /images/projects/digital-agency-company-website/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: +35%
+    label: CONSULT INQUIRIES
+  - value: 97/100
+    label: PERFORMANCE
+  - value: 100%
+    label: RESPONSIVE
+tags:
+  - WordPress
+  - Elementor
+  - Custom UI Development
+testimonial: ''
+overview: ''
+features: []
+role: ''

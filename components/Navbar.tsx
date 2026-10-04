@@ -6,17 +6,22 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { name: "HOME", href: "#home" },
-  { name: "ABOUT", href: "#about" },
-  { name: "PROJECTS", href: "#projects" },
-  { name: "JOURNEY", href: "#journey" },
-  { name: "CONTACT", href: "#contact" },
+// Absolute "/#..." hrefs so the links also work from /blog pages
+const sectionLinks = [
+  { name: "HOME", href: "/#home" },
+  { name: "ABOUT", href: "/#about" },
+  { name: "PROJECTS", href: "/#projects" },
+  { name: "JOURNEY", href: "/#journey" },
+  { name: "CONTACT", href: "/#contact" },
 ];
 
-export function Navbar() {
+export function Navbar({ showBlog = false }: { showBlog?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // The blog link only appears once at least one article is published
+  const navLinks = showBlog
+    ? [...sectionLinks.slice(0, 4), { name: "BLOG", href: "/blog" }, sectionLinks[4]]
+    : sectionLinks;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -32,7 +37,7 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="#home" className="z-10 flex items-center gap-2">
+        <Link href="/#home" className="z-10 flex items-center gap-2">
           <Image src="/images/logo.png" alt="Dzikri Logo" width={120} height={38} className="h-10 w-auto object-contain" />
           <span className="text-xl font-black tracking-tighter inline-block">ZIKSITE</span>
         </Link>

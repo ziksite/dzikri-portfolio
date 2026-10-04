@@ -1,0 +1,33 @@
+title: Investment Management Firm Website
+order: 110
+hidden: false
+type: FINANCIAL SERVICES WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2026'
+description: |-
+  Trust, communicated clearly. An OJK-registered investment manager's site that turns a regulated mutual-fund offering into an approachable, confidence-building experience — from how-to-invest to downloadable forms.
+
+  The site guides visitors through how to invest, how to buy and sell, downloadable forms, FAQs, and articles — turning a regulated financial offering into a clear, approachable experience.
+
+  A full revamp of the firm's previous site with a refreshed brand palette and typography.
+image: /images/projects/investment-management-firm-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: OJK
+    label: LICENSED
+  - value: 100%
+    label: MOBILE READY
+  - value: 95/100
+    label: SEO SCORE
+tags:
+  - HTML/CSS
+  - Custom UI
+  - SEO
+testimonial: ''
+overview: ''
+features: []
+role: ''

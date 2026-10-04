@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /keystatic
+Disallow: /api/
 
 Sitemap: https://dzikri.ziksite.my.id/sitemap.xml

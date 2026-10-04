@@ -1,0 +1,33 @@
+title: Property & Boarding House Rental Website
+order: 140
+hidden: false
+type: PROPERTY RENTAL WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2026'
+description: |-
+  Find your next room in seconds. A rental platform for boarding houses and apartments with per-room pricing, real-time availability, and a WhatsApp flow that closes the gap between browsing and booking.
+
+  Each room shows its own specifications, price range, and real-time availability status, with a waiting-list and inquiry flow that hands off to WhatsApp for follow-up.
+
+  Designed around a clear order flow and availability database so prospective tenants can quickly find and ask about the right unit.
+image: /images/projects/property-and-boarding-house-rental-website/image.webp
+imageContain: false
+link: '#'
+metrics:
+  - value: '3'
+    label: LOCATIONS
+  - value: LIVE
+    label: ROOM AVAILABILITY
+  - value: 1-TAP
+    label: WA INQUIRY
+tags:
+  - WordPress
+  - Custom Theme
+  - Booking Flow
+testimonial: ''
+overview: ''
+features: []
+role: ''

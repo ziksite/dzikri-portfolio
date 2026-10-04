@@ -1,0 +1,47 @@
+title: AI Sales Agent — WhatsApp Automation
+order: 10
+hidden: false
+type: WHATSAPP SALES AUTOMATION
+kind: AI Automation
+category: AI Automation
+status: LIVE
+client: In-house Product
+year: '2026'
+description: |-
+  An AI sales rep that never sleeps. It answers prospect chats on WhatsApp 24/7 — qualifying needs, quoting prices and services from real data (never made up), logging leads, and booking meetings straight into Google Calendar.
+
+  The bot acts as a friendly, natural-sounding first responder that uncovers needs, recommends the right package, and steers prospects toward a consultation — while leaving every final decision to the owner.
+
+  Built anti-hallucination by design: prices, services, and policies are pulled from real data sources, never invented, with strict topic scoping that politely declines anything off-topic.
+image: /images/projects/ai-sales-agent-whatsapp-automation/image.png
+imageContain: true
+link: '#'
+metrics:
+  - value: 24/7
+    label: AUTO-REPLY
+  - value: ANTI-HALU
+    label: GROUNDED (RAG)
+  - value: AUTO
+    label: CALENDAR BOOKING
+tags:
+  - n8n
+  - OpenAI GPT-4o-mini
+  - Supabase (pgvector / RAG)
+  - WhatsApp (WAHA)
+  - Google Calendar
+  - PostgreSQL
+  - Self-hosted VPS
+testimonial: ''
+overview: |-
+  A WhatsApp sales automation system built to answer prospect chats automatically around the clock — no manual standby required. The bot acts as a friendly, natural first responder: uncovering needs, recommending the right package, and steering prospects toward a consultation, while keeping the owner in full control of the final decision.
+
+  Designed on an anti-hallucination principle: every answer — prices, services, policies — is drawn from real data sources, not invented. The bot also has firm topic boundaries — focused on the services, politely refusing out-of-context questions.
+features:
+  - 💬 Auto-replies to WhatsApp chats 24/7 in a natural conversational tone
+  - 🧠 AI agent with permanent conversation memory (remembers each customer's context)
+  - 📚 Knowledge base (RAG) + price database — accurate, grounded answers
+  - 📅 Automatic meeting booking synced to Google Calendar
+  - 🔔 Hot-lead notifications sent straight to the owner's WhatsApp
+  - ⏸️ Auto-handover — the bot steps aside the moment the owner takes over a chat
+  - 🛡️ Anti-hallucination & strict topic scoping
+role: Architecture design, system integration, and end-to-end implementation.

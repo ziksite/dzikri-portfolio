@@ -1,0 +1,31 @@
+title: Laundry Service Business Website
+order: 180
+hidden: false
+type: SERVICE BUSINESS WEBSITE
+kind: Website
+category: Company Profile
+status: LIVE
+client: Confidential
+year: '2024'
+description: |-
+  A laundry service that books customers before they call. Clear messaging and a frictionless pickup-request flow turn casual visitors into orders, on any device.
+
+  The website focuses on clear messaging, service visibility, and simple interaction so users can quickly understand the service offerings and contact the business. The responsive design ensures a smooth experience across both mobile and desktop platforms.
+image: /images/projects/laundry-service-business-website/image.jpg
+imageContain: false
+link: '#'
+metrics:
+  - value: +40%
+    label: PICKUP REQUESTS
+  - value: 1-TAP
+    label: WA ORDERING
+  - value: '0'
+    label: DOWNTIME
+tags:
+  - WordPress
+  - Elementor
+  - Responsive UI Design
+testimonial: ''
+overview: ''
+features: []
+role: ''
