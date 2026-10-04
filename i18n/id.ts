@@ -3,7 +3,7 @@ import type { Dictionary } from "./en";
 // Site copy (Bahasa Indonesia)
 export const id: Dictionary = {
   meta: {
-    title: "Dzikri Ramadhan - Technology & Innovation Leader",
+    title: "Dzikri Ramadhan - Technology & Innovation",
     description:
       "Saya menjembatani bisnis dan teknologi untuk membangun sistem digital, produk, dan otomasi yang menyelesaikan masalah bisnis nyata.",
     siteName: "Dzikri Ramadhan",
@@ -23,7 +23,7 @@ export const id: Dictionary = {
 
   hero: {
     eyebrow: "Halo, saya",
-    role: "Technology & Innovation Leader",
+    role: "Technology & Innovation",
     handsOn: "Saya merancang, membangun, dan merilisnya.",
     supporting:
       "Saya membangun sistem digital, produk, dan otomasi yang mengubah tantangan bisnis menjadi solusi yang scalable.",
@@ -49,7 +49,7 @@ export const id: Dictionary = {
     heading: "Tentang Saya",
     greeting: "Halo, saya Dzikri.",
     paragraphs: [
-      "Saya seorang Technology & Innovation Leader yang fokus membangun sistem digital, produk, dan otomasi untuk menyelesaikan masalah bisnis nyata.",
+      "Saya bergerak di bidang teknologi dan inovasi, membangun sistem digital, produk, dan otomasi untuk menyelesaikan masalah bisnis nyata.",
       "Pekerjaan saya berada di persimpangan **teknologi, produk, bisnis, dan operasional** — mengubah ide dan tantangan operasional menjadi solusi yang praktis dan scalable.",
       "Dari platform digital dan sistem internal hingga CRM, analitik, AI, dan otomasi, saya memastikan teknologi bekerja sebagai **penggerak bisnis**, bukan sekadar alat tambahan.",
     ],
@@ -243,7 +243,7 @@ export const id: Dictionary = {
   },
 
   footer: {
-    tagline: "Technology & Innovation Leader",
+    tagline: "Technology & Innovation",
     sub: "Membangun sistem, produk & otomasi untuk bisnis yang lebih baik.",
   },
 

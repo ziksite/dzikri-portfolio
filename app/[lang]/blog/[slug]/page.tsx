@@ -79,16 +79,31 @@ export default async function ArticlePage({ params }: Params) {
           </p>
 
           {article.coverImage && (
-            <div className="relative aspect-[16/9] mb-10 md:mb-12 overflow-hidden rounded-[24px] border-[3px] border-black bg-[#0f0f0f]">
-              <Image
-                src={article.coverImage}
-                alt={article.title}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
-            </div>
+            <figure className="mb-10 md:mb-12">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] border-[3px] border-black bg-[#0f0f0f]">
+                <Image
+                  src={article.coverImage}
+                  alt={article.title}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+              {article.coverCredit && (
+                <figcaption className="mt-2 text-right text-xs text-gray-500 font-medium">
+                  Foto:{" "}
+                  {article.coverCreditUrl ? (
+                    <a href={article.coverCreditUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">
+                      {article.coverCredit}
+                    </a>
+                  ) : (
+                    article.coverCredit
+                  )}{" "}
+                  / Unsplash
+                </figcaption>
+              )}
+            </figure>
           )}
 
           <div className="article-body">{body}</div>

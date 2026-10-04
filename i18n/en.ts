@@ -2,7 +2,7 @@
 // Text wrapped in **double asterisks** renders bold where the component supports it.
 export const en = {
   meta: {
-    title: "Dzikri Ramadhan - Technology & Innovation Leader",
+    title: "Dzikri Ramadhan - Technology & Innovation",
     description:
       "I bridge business and technology to build digital systems, products, and automation that solve real business problems.",
     siteName: "Dzikri Ramadhan",
@@ -22,7 +22,7 @@ export const en = {
 
   hero: {
     eyebrow: "Hi, I'm",
-    role: "Technology & Innovation Leader",
+    role: "Technology & Innovation",
     handsOn: "I plan it, build it, and ship it.",
     supporting:
       "I build digital systems, products, and automation that turn business challenges into scalable solutions.",
@@ -49,7 +49,7 @@ export const en = {
     heading: "About Me",
     greeting: "Hi, I'm Dzikri.",
     paragraphs: [
-      "I'm a Technology & Innovation Leader focused on building digital systems, products, and automation that solve real business problems.",
+      "I work in technology and innovation, building digital systems, products, and automation that solve real business problems.",
       "My work sits at the intersection of **technology, product, business, and operations** — turning ideas and operational challenges into practical, scalable solutions.",
       "From digital platforms and internal systems to CRM, analytics, AI, and automation, I focus on making technology work as a **business enabler**, not just another tool.",
     ],
@@ -244,7 +244,7 @@ export const en = {
   },
 
   footer: {
-    tagline: "Technology & Innovation Leader",
+    tagline: "Technology & Innovation",
     sub: "Building systems, products & automation for better business.",
   },
 

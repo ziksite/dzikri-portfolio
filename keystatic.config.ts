@@ -50,6 +50,14 @@ const articles = collection({
       directory: "public/images/articles",
       publicPath: "/images/articles/",
     }),
+    coverCredit: fields.text({
+      label: "Kredit foto cover",
+      description: "Nama fotografer, mis. dari Unsplash. Tampil sebagai \"Foto: <nama> / Unsplash\".",
+    }),
+    coverCreditUrl: fields.url({
+      label: "Link sumber foto",
+      description: "Halaman foto di Unsplash (opsional)",
+    }),
     tags: fields.array(fields.text({ label: "Tag" }), {
       label: "Tags",
       itemLabel: (props) => props.value,
