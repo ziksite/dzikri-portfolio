@@ -101,11 +101,13 @@ export function Select({
   value,
   options,
   onChange,
+  emptyLabel = "—",
 }: {
   label: string;
   value: string;
   options: readonly string[];
   onChange: (v: string) => void;
+  emptyLabel?: string;
 }) {
   const id = useId();
   return (
@@ -113,7 +115,7 @@ export function Select({
       <select id={id} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass}>
         {options.map((o) => (
           <option key={o} value={o}>
-            {o}
+            {o || emptyLabel}
           </option>
         ))}
       </select>

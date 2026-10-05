@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Loader2, Save, Trash2 } from "lucide-react";
 import { deleteProject, saveProject, type ProjectInput } from "@/app/admin-cms/actions";
-import { PROJECT_KINDS, emptyProjectText, type ProjectText } from "@/lib/cms-types";
+import { INDUSTRIES, PROJECT_KINDS, emptyProjectText, type ProjectText } from "@/lib/cms-types";
 import { slugify } from "@/lib/slugify";
 import { cn } from "@/lib/utils";
 import { ImageUpload, ListEditor, Select, TagsInput, TextArea, TextInput, Toggle, inputClass } from "./fields";
@@ -48,14 +48,14 @@ function ContentFields({
       <TextArea label="01 · Challenge" hint={PARAGRAPH_HINT} value={value.challenge} onChange={set("challenge")} rows={5} />
       <TextArea label="02 · Solution" hint={PARAGRAPH_HINT} value={value.solution} onChange={set("solution")} rows={5} />
       <ListEditor
-        label="Key features"
+        label="Fitur utama / modul utama"
+        hint="Tampil sebagai section 03 di halaman project. Untuk Sistem Internal judulnya “Modul Utama”."
         items={value.features}
         onChange={set("features")}
         create={() => ""}
         addLabel="Tambah fitur"
         render={(item, update) => <input value={item} onChange={(e) => update(e.target.value)} className={inputClass} />}
       />
-      <TextArea label="04 · Impact" hint={`Opsional, tampil di atas metrics. ${PARAGRAPH_HINT}`} value={value.impact} onChange={set("impact")} rows={3} />
       <TextArea label="Peran saya" value={value.role} onChange={set("role")} rows={2} />
       <TextArea label="Testimonial" value={value.testimonial} onChange={set("testimonial")} rows={2} />
     </>
@@ -70,6 +70,7 @@ export function ProjectForm({ initial, id }: { initial?: ProjectInput; id?: stri
       sort_order: 100,
       hidden: false,
       kind: "Website",
+      industry: "",
       status: "LIVE",
       client: "Confidential",
       year: String(new Date().getFullYear()),
@@ -121,8 +122,9 @@ export function ProjectForm({ initial, id }: { initial?: ProjectInput; id?: stri
             set("slug")(slugify(v));
           }}
         />
-        <div className="grid sm:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Select label="Jenis (filter)" value={p.kind} options={PROJECT_KINDS} onChange={set("kind")} />
+          <Select label="Industri (filter)" value={p.industry} options={["", ...INDUSTRIES]} emptyLabel="— Pilih industri —" onChange={set("industry")} />
           <Select label="Status" value={p.status} options={["LIVE", "PRIVATE"]} onChange={(v) => set("status")(v as "LIVE" | "PRIVATE")} />
           <TextInput label="Urutan" hint="Angka kecil tampil lebih dulu" type="number" value={String(p.sort_order)} onChange={(v) => set("sort_order")(Number(v))} />
         </div>
@@ -165,7 +167,7 @@ export function ProjectForm({ initial, id }: { initial?: ProjectInput; id?: stri
         )}
       </Card>
 
-      <Card title="Impact metrics" hint="Tampil di card & bagian Dampak. Maksimal 3 yang ideal.">
+      <Card title="Metrics" hint="Tampil di card project (homepage & carousel). Maksimal 3 yang ideal.">
         <ListEditor
           label="Metrics"
           items={p.metrics}
@@ -182,7 +184,7 @@ export function ProjectForm({ initial, id }: { initial?: ProjectInput; id?: stri
         />
       </Card>
 
-      <Card title="Galeri fitur" hint="Screenshot fitur — tampil sebagai grid di halaman case study, klik untuk memperbesar.">
+      <Card title="04 · Galeri fitur" hint="Screenshot fitur — tampil sebagai grid di halaman case study, klik untuk memperbesar.">
         <ListEditor
           label="Gambar"
           items={p.gallery}

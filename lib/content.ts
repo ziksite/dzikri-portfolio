@@ -11,6 +11,7 @@ export interface Project {
   title: string;
   type?: string;
   kind: string;
+  industry?: string;
   category?: string;
   status?: string;
   client?: string;
@@ -20,7 +21,6 @@ export interface Project {
   solution: string[];
   features: string[];
   gallery: { image: string; caption?: string }[];
-  impact: string[];
   metrics: { value: string; label: string }[];
   tags: string[];
   imageUrl: string;
@@ -48,6 +48,7 @@ function toProject(row: ProjectRow, lang: Locale): Project {
     title: pick("title"),
     type: opt(pick("type")),
     kind: row.kind,
+    industry: opt(row.industry),
     category: opt(pick("category")),
     status: row.status,
     client: opt(row.client),
@@ -59,7 +60,6 @@ function toProject(row: ProjectRow, lang: Locale): Project {
     gallery: (row.gallery ?? [])
       .filter((g) => g.image)
       .map((g) => ({ image: g.image, caption: opt(lang === "id" ? g.captionId || g.caption : g.caption) })),
-    impact: paras(pick("impact")),
     metrics: (row.metrics ?? []).map((m) => ({ value: m.value, label: lang === "id" && m.labelId ? m.labelId : m.label })),
     tags: row.tags ?? [],
     imageUrl: row.image_url,

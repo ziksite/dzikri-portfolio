@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, Globe, Lock, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Globe, Lock, MessageCircle } from "lucide-react";
 import { SiteShell } from "@/components/SiteShell";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
 import { getProjects, getProjectWithNeighbors } from "@/lib/content";
@@ -61,11 +61,14 @@ export default async function CaseStudyPage({ params }: Params) {
   const data = await getProjectWithNeighbors(lang, slug);
   if (!data) notFound();
   const { project, prev, next } = data;
-  const t = getDictionary(lang).caseStudy;
+  const dict = getDictionary(lang);
+  const t = dict.caseStudy;
+  const industries = dict.projects.industries;
 
   const liveUrl = project.link && project.link !== "#" ? project.link : null;
   const waLink = whatsappUrl(t.whatsappMessage.replace("{title}", project.title));
-  const hasImpact = project.impact.length > 0 || project.metrics.length > 0 || !!project.testimonial;
+  // Internal systems list "main modules"; everything else lists "key features"
+  const isSystem = project.kind === "Internal System";
 
   // Number only the sections that have content, so the sequence never skips
   let n = 0;
@@ -74,6 +77,7 @@ export default async function CaseStudyPage({ params }: Params) {
   const facts = [
     { label: t.client, value: project.client },
     { label: t.category, value: project.category },
+    { label: t.industry, value: project.industry ? industries[project.industry] ?? project.industry : undefined },
     { label: t.year, value: project.year },
     { label: t.status, value: project.status },
   ].filter((f) => f.value);
@@ -140,27 +144,29 @@ export default async function CaseStudyPage({ params }: Params) {
                 </section>
               )}
 
-              {(project.solution.length > 0 || project.features.length > 0) && (
+              {project.solution.length > 0 && (
                 <section>
                   <SectionHeading number={num()}>{t.solution}</SectionHeading>
                   <Paragraphs items={project.solution} />
-                  {project.features.length > 0 && (
-                    <div className="mt-8">
-                      <h3 className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-4">
-                        {t.keyFeatures}
-                      </h3>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {project.features.map((feature, i) => (
-                          <li
-                            key={i}
-                            className="bg-white border-2 border-black/10 rounded-xl p-4 text-sm md:text-[15px] font-medium leading-relaxed"
-                          >
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                </section>
+              )}
+
+              {project.features.length > 0 && (
+                <section>
+                  <SectionHeading number={num()}>{isSystem ? t.mainModules : t.keyFeatures}</SectionHeading>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {project.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 bg-white border-2 border-black/10 rounded-xl p-4 text-sm md:text-[15px] font-medium leading-relaxed"
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-white">
+                          <Check size={13} strokeWidth={3} />
+                        </span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </section>
               )}
 
@@ -171,39 +177,13 @@ export default async function CaseStudyPage({ params }: Params) {
                 </section>
               )}
 
-              {hasImpact && (
-                <section>
-                  <SectionHeading number={num()}>{t.impact}</SectionHeading>
-                  {project.impact.length > 0 && <Paragraphs items={project.impact} />}
-                  {project.metrics.length > 0 && (
-                    <div className={cn("bg-[#0A0A0A] text-white rounded-[24px] p-6 md:p-8", project.impact.length > 0 && "mt-8")}>
-                      <div className="flex items-center gap-2 mb-5 md:mb-6">
-                        <BadgeCheck size={14} className="text-blue-400" />
-                        <span className="text-[9px] font-bold uppercase tracking-widest text-blue-400">{t.impact}</span>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8">
-                        {project.metrics.map((m, i) => (
-                          <div key={i} className="flex flex-col border-l-[3px] border-white/15 pl-4 min-w-0">
-                            <span className="text-2xl md:text-[1.75rem] xl:text-3xl font-black leading-tight">{m.value}</span>
-                            <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">
-                              {m.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {project.testimonial && (
-                    <blockquote className="relative bg-white border-[3px] border-black rounded-[24px] p-6 md:p-8 mt-8">
-                      <span className="absolute top-3 left-5 text-5xl leading-none font-serif text-black/15" aria-hidden="true">
-                        &ldquo;
-                      </span>
-                      <p className="relative italic text-base md:text-lg font-medium leading-relaxed pl-6">
-                        {project.testimonial}
-                      </p>
-                    </blockquote>
-                  )}
-                </section>
+              {project.testimonial && (
+                <blockquote className="relative bg-white border-[3px] border-black rounded-[24px] p-6 md:p-8">
+                  <span className="absolute top-3 left-5 text-5xl leading-none font-serif text-black/15" aria-hidden="true">
+                    &ldquo;
+                  </span>
+                  <p className="relative italic text-base md:text-lg font-medium leading-relaxed pl-6">{project.testimonial}</p>
+                </blockquote>
               )}
             </div>
 

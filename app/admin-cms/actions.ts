@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin-auth";
 import { supabase } from "@/lib/supabase";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
-import { PROJECT_KINDS, type GalleryItem, type ProjectMetric, type ProjectText } from "@/lib/cms-types";
+import { INDUSTRIES, PROJECT_KINDS, type GalleryItem, type ProjectMetric, type ProjectText } from "@/lib/cms-types";
 
 export type ActionResult = { ok: true; id: string } | { ok: false; error: string };
 
@@ -40,6 +40,7 @@ export interface ProjectInput {
   sort_order: number;
   hidden: boolean;
   kind: string;
+  industry: string;
   status: "LIVE" | "PRIVATE";
   client: string;
   year: string;
@@ -61,6 +62,7 @@ export async function saveProject(input: ProjectInput): Promise<ActionResult> {
     sort_order: Number.isFinite(input.sort_order) ? Math.round(input.sort_order) : 100,
     hidden: !!input.hidden,
     kind: (PROJECT_KINDS as readonly string[]).includes(input.kind) ? input.kind : "Website",
+    industry: (INDUSTRIES as readonly string[]).includes(input.industry) ? input.industry : "",
     status: input.status === "PRIVATE" ? "PRIVATE" : "LIVE",
     client: str(input.client),
     year: str(input.year),

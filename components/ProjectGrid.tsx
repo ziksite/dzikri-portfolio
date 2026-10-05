@@ -11,6 +11,44 @@ import { cn } from "@/lib/utils";
 import { Pagination } from "@/components/Pagination";
 
 const PAGE_SIZE = 9;
+const ALL = "__all";
+
+function FilterSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: { value: string; label: string }[];
+  onChange: (value: string) => void;
+}) {
+  return (
+    <div className="relative inline-block">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        aria-label={label}
+        className={cn(
+          "appearance-none w-full sm:w-auto bg-white border-[3px] border-black rounded-full pl-5 pr-12 py-2.5 md:py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none focus-visible:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+          value !== ALL && "bg-black text-white"
+        )}
+      >
+        {options.map((o) => (
+          <option key={o.value} value={o.value} className="bg-white text-black">
+            {o.label}
+          </option>
+        ))}
+      </select>
+      <ChevronDown
+        size={16}
+        strokeWidth={3}
+        className={cn("absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none", value !== ALL && "text-white")}
+      />
+    </div>
+  );
+}
 
 export function ProjectGrid({
   projects,
@@ -23,11 +61,20 @@ export function ProjectGrid({
   t: Dictionary["projects"];
   pagination: Dictionary["pagination"];
 }) {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [kind, setKind] = useState(ALL);
+  const [industry, setIndustry] = useState(ALL);
   const [page, setPage] = useState(1);
   const topRef = useRef<HTMLDivElement>(null);
-  const filters = ["All", ...Array.from(new Set(projects.map((p) => p.kind)))];
-  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.kind === activeFilter);
+
+  // Only offer options that exist in the data, sorted by their translated label
+  const kinds = Array.from(new Set(projects.map((p) => p.kind)));
+  const industries = Array.from(new Set(projects.map((p) => p.industry).filter((v): v is string => !!v))).sort((x, y) =>
+    (t.industries[x] ?? x).localeCompare(t.industries[y] ?? y)
+  );
+
+  const filtered = projects.filter(
+    (p) => (kind === ALL || p.kind === kind) && (industry === ALL || p.industry === industry)
+  );
   const pageCount = Math.ceil(filtered.length / PAGE_SIZE);
   const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -35,33 +82,43 @@ export function ProjectGrid({
     setPage(n);
     topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  const resetFilters = () => {
+    setKind(ALL);
+    setIndustry(ALL);
+    setPage(1);
+  };
 
   return (
     <>
-      <div ref={topRef} className="flex items-center gap-4 mb-8 md:mb-10 scroll-mt-28">
-        <div className="relative inline-block">
-          <select
-            value={activeFilter}
-            onChange={(e) => {
-              setActiveFilter(e.target.value);
+      <div ref={topRef} className="flex flex-col sm:flex-row sm:items-center gap-3 mb-8 md:mb-10 scroll-mt-28">
+        <FilterSelect
+          label={t.filterLabel}
+          value={kind}
+          onChange={(v) => {
+            setKind(v);
+            setPage(1);
+          }}
+          options={[{ value: ALL, label: t.allProjects }, ...kinds.map((k) => ({ value: k, label: t.kinds[k] ?? k }))]}
+        />
+        {industries.length > 0 && (
+          <FilterSelect
+            label={t.industryFilterLabel}
+            value={industry}
+            onChange={(v) => {
+              setIndustry(v);
               setPage(1);
             }}
-            aria-label={t.filterLabel}
-            className="appearance-none bg-white border-[3px] border-black rounded-full pl-5 pr-12 py-2.5 md:py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none"
-          >
-            {filters.map((filter) => (
-              <option key={filter} value={filter}>
-                {filter === "All" ? t.allProjects : t.kinds[filter] ?? filter}
-              </option>
-            ))}
-          </select>
-          <ChevronDown
-            size={16}
-            strokeWidth={3}
-            className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+            options={[{ value: ALL, label: t.allIndustries }, ...industries.map((i) => ({ value: i, label: t.industries[i] ?? i }))]}
           />
-        </div>
+        )}
+        {(kind !== ALL || industry !== ALL) && (
+          <button type="button" onClick={resetFilters} className="self-start sm:self-auto text-[11px] font-black uppercase tracking-widest underline underline-offset-4 hover:text-gray-500">
+            {t.resetFilters}
+          </button>
+        )}
       </div>
+
+      {filtered.length === 0 && <p className="text-gray-500 font-medium py-10">{t.noResults}</p>}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {visible.map((project) => (

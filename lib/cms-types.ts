@@ -31,6 +31,7 @@ export interface ProjectRow {
   sort_order: number;
   hidden: boolean;
   kind: string;
+  industry: string;
   status: "LIVE" | "PRIVATE";
   client: string;
   year: string;
@@ -61,6 +62,28 @@ export interface ArticleRow {
 }
 
 export const PROJECT_KINDS = ["AI Automation", "Web App", "Internal System", "Website"] as const;
+
+// Client industries for the /projects filter. English keys; the site translates them (i18n projects.industries).
+export const INDUSTRIES = [
+  "Consulting & Research",
+  "Construction & Engineering",
+  "Consumer Services",
+  "Defense & Aerospace",
+  "Education & Training",
+  "Energy",
+  "Financial Services",
+  "Food & Beverage",
+  "Healthcare",
+  "HR & Recruitment",
+  "Industrial & Manufacturing",
+  "IT & Technology",
+  "Legal",
+  "Marketing & Agency",
+  "Media & Advertising",
+  "Property",
+  "Telecommunications",
+  "Transportation & Travel",
+] as const;
 
 export const emptyProjectText = (): ProjectText => ({
   title: "",

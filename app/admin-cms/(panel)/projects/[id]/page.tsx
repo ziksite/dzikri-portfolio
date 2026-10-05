@@ -25,6 +25,7 @@ export default async function EditProject({ params }: { params: Promise<{ id: st
           sort_order: p.sort_order,
           hidden: p.hidden,
           kind: p.kind,
+          industry: p.industry ?? "",
           status: p.status,
           client: p.client,
           year: p.year,
