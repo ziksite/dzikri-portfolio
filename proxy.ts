@@ -1,10 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLocale, locales } from "@/lib/i18n";
+import { SESSION_COOKIE, verifySessionToken } from "@/lib/cms-auth";
 
-// English is served without a prefix: "/projects" is rewritten to "/en/projects" internally,
-// and an explicit "/en/..." URL redirects to the unprefixed canonical one.
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Admin gate: everything under /admin-cms/ (except the login page itself) and the admin API
+  // require a valid login session. Pages and server actions re-check it (lib/admin-auth.ts).
+  if (pathname.startsWith("/admin-cms/") || pathname.startsWith("/api/admin/")) {
+    const token = request.cookies.get(SESSION_COOKIE)?.value;
+    if (await verifySessionToken(token, process.env.CMS_SESSION_SECRET)) return NextResponse.next();
+    if (pathname.startsWith("/api/")) return new NextResponse("Unauthorized", { status: 401 });
+    const login = new URL("/admin-cms", request.url);
+    login.searchParams.set("next", pathname);
+    return NextResponse.redirect(login);
+  }
+
+  // English is served without a prefix: "/projects" is rewritten to "/en/projects" internally,
+  // and an explicit "/en/..." URL redirects to the unprefixed canonical one.
   const first = pathname.split("/")[1];
 
   if (first === defaultLocale) {
@@ -21,6 +34,11 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals, the CMS, API routes, metadata routes and any file with an extension
-  matcher: ["/((?!_next|api|keystatic|sitemap.xml|robots.txt|favicon.ico|.*\\..*).*)"],
+  matcher: [
+    // Site pages: skip Next internals, APIs, the admin panel, metadata routes and files with an extension
+    "/((?!_next|api|admin-cms|sitemap.xml|robots.txt|favicon.ico|.*\\..*).*)",
+    // Admin routes, for the login gate
+    "/admin-cms/:path+",
+    "/api/admin/:path*",
+  ],
 };

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
-import Markdoc from "@markdoc/markdoc";
 import { ArrowLeft } from "lucide-react";
 import { SiteShell } from "@/components/SiteShell";
 import { formatDate, getArticle, getArticles } from "@/lib/content";
+import { sanitizeArticleHtml } from "@/lib/sanitize";
 import { getDictionary } from "@/i18n";
 import { isLocale, localePath } from "@/lib/i18n";
 
@@ -46,7 +45,7 @@ export default async function ArticlePage({ params }: Params) {
   if (!article) notFound();
   const t = getDictionary(lang).blog;
 
-  const body = Markdoc.renderers.react(Markdoc.transform(article.node), React);
+  const bodyHtml = sanitizeArticleHtml(article.contentHtml);
 
   return (
     <SiteShell lang={lang}>
@@ -106,7 +105,10 @@ export default async function ArticlePage({ params }: Params) {
             </figure>
           )}
 
-          <div className="article-body">{body}</div>
+          {/* Sanitized HTML from the CMS rich text editor; the <article> wrapper matches the .article-body styles */}
+          <div className="article-body">
+            <article dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          </div>
 
           {article.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-12 pt-6 border-t-2 border-black/10">

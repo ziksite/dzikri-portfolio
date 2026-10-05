@@ -1,9 +1,10 @@
 import "server-only";
-import { createReader } from "@keystatic/core/reader";
-import keystaticConfig from "@/keystatic.config";
+import { supabase } from "@/lib/supabase";
+import type { ArticleRow, ProjectRow, ProjectText } from "@/lib/cms-types";
 import { dateLocales, type Locale } from "@/lib/i18n";
 
-const reader = createReader(process.cwd(), keystaticConfig);
+// Pages are rendered statically and re-rendered on demand when the CMS saves (revalidatePath),
+// so these queries run at build time and after each edit, not on every visit.
 
 export interface Project {
   slug: string;
@@ -31,49 +32,53 @@ export interface Project {
 
 // Empty strings from the CMS become undefined so components can use simple truthy checks
 const opt = (v: string | null | undefined) => v || undefined;
-const paras = (v: string | null | undefined) => (v ? v.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean) : []);
+const paras = (v: string | null | undefined) =>
+  v ? v.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean) : [];
+
+function toProject(row: ProjectRow, lang: Locale): Project {
+  const en = row.content_en;
+  const id = lang === "id" ? row.content_id : undefined;
+  // Indonesian falls back to English field by field
+  const pick = (key: Exclude<keyof ProjectText, "features">) => {
+    const value = id?.[key];
+    return value && value.trim() ? value : en[key] ?? "";
+  };
+  return {
+    slug: row.slug,
+    title: pick("title"),
+    type: opt(pick("type")),
+    kind: row.kind,
+    category: opt(pick("category")),
+    status: row.status,
+    client: opt(row.client),
+    year: opt(row.year),
+    summary: pick("summary"),
+    challenge: paras(pick("challenge")),
+    solution: paras(pick("solution")),
+    features: id?.features?.length ? id.features : en.features ?? [],
+    gallery: (row.gallery ?? [])
+      .filter((g) => g.image)
+      .map((g) => ({ image: g.image, caption: opt(lang === "id" ? g.captionId || g.caption : g.caption) })),
+    impact: paras(pick("impact")),
+    metrics: (row.metrics ?? []).map((m) => ({ value: m.value, label: lang === "id" && m.labelId ? m.labelId : m.label })),
+    tags: row.tags ?? [],
+    imageUrl: row.image_url,
+    imageContain: row.image_contain,
+    link: row.link || "#",
+    role: opt(pick("role")),
+    testimonial: opt(pick("testimonial")),
+  };
+}
 
 export async function getProjects(lang: Locale): Promise<Project[]> {
-  const entries = await reader.collections.projects.all();
-  return entries
-    .filter(({ entry }) => !entry.hidden)
-    .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
-    .map(({ slug, entry }) => {
-      // Indonesian falls back to English field by field
-      const tr = lang === "id" ? entry.translation : undefined;
-      const pick = (en: string, id?: string) => (id && id.trim() ? id : en);
-      return {
-        slug,
-        title: pick(entry.title, tr?.title),
-        type: opt(pick(entry.type, tr?.type)),
-        kind: entry.kind,
-        category: opt(pick(entry.category, tr?.category)),
-        status: entry.status,
-        client: opt(entry.client),
-        year: opt(entry.year),
-        summary: pick(entry.summary, tr?.summary),
-        challenge: paras(pick(entry.challenge, tr?.challenge)),
-        solution: paras(pick(entry.solution, tr?.solution)),
-        features: [...(tr && tr.features.length > 0 ? tr.features : entry.features)],
-        gallery: entry.gallery
-          .filter((g) => g.image)
-          .map((g) => ({
-            image: g.image as string,
-            caption: opt(lang === "id" ? g.captionId || g.caption : g.caption),
-          })),
-        impact: paras(pick(entry.impact, tr?.impact)),
-        metrics: entry.metrics.map((m) => ({
-          value: m.value,
-          label: lang === "id" && m.labelId ? m.labelId : m.label,
-        })),
-        tags: [...entry.tags],
-        imageUrl: entry.image,
-        imageContain: entry.imageContain,
-        link: entry.link || "#",
-        role: opt(pick(entry.role, tr?.role)),
-        testimonial: opt(pick(entry.testimonial, tr?.testimonial)),
-      };
-    });
+  const { data, error } = await supabase()
+    .from("projects")
+    .select("*")
+    .eq("hidden", false)
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: true });
+  if (error) throw new Error(`Failed to load projects: ${error.message}`);
+  return (data as ProjectRow[]).map((row) => toProject(row, lang));
 }
 
 // A project plus its neighbours in carousel order, for prev/next navigation on the detail page
@@ -99,25 +104,41 @@ const showDrafts = process.env.NODE_ENV === "development";
 
 // Articles are Indonesian only; both language versions of the site list the same entries
 export async function getArticles(): Promise<ArticleSummary[]> {
-  const entries = await reader.collections.articles.all();
-  return entries
-    .filter(({ entry }) => showDrafts || !entry.draft)
-    .sort((a, b) => b.entry.publishedAt.localeCompare(a.entry.publishedAt))
-    .map(({ slug, entry }) => ({
-      slug,
-      title: entry.title,
-      publishedAt: entry.publishedAt,
-      excerpt: entry.excerpt,
-      coverImage: entry.coverImage,
-      tags: [...entry.tags],
-    }));
+  let query = supabase()
+    .from("articles")
+    .select("slug, title, published_at, excerpt, cover_image, tags, draft")
+    .order("published_at", { ascending: false })
+    .order("created_at", { ascending: false });
+  if (!showDrafts) query = query.eq("draft", false);
+  const { data, error } = await query;
+  if (error) throw new Error(`Failed to load articles: ${error.message}`);
+  return (data as ArticleRow[]).map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    publishedAt: a.published_at,
+    excerpt: a.excerpt,
+    coverImage: a.cover_image || null,
+    tags: a.tags ?? [],
+  }));
 }
 
 export async function getArticle(slug: string) {
-  const entry = await reader.collections.articles.read(slug);
-  if (!entry || (entry.draft && !showDrafts)) return null;
-  const { node } = await entry.content();
-  return { ...entry, slug, node };
+  const { data, error } = await supabase().from("articles").select("*").eq("slug", slug).maybeSingle();
+  if (error) throw new Error(`Failed to load article: ${error.message}`);
+  const a = data as ArticleRow | null;
+  if (!a || (a.draft && !showDrafts)) return null;
+  return {
+    slug: a.slug,
+    title: a.title,
+    excerpt: a.excerpt,
+    contentHtml: a.content_html,
+    coverImage: a.cover_image || null,
+    coverCredit: a.cover_credit,
+    coverCreditUrl: a.cover_credit_url,
+    tags: a.tags ?? [],
+    publishedAt: a.published_at,
+    draft: a.draft,
+  };
 }
 
 export function formatDate(iso: string, lang: Locale) {
