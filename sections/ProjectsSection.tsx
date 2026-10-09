@@ -3,13 +3,13 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ArrowUpRight, ChevronLeft, ChevronRight, ChevronDown, Lock } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import type { Project } from "@/lib/content";
 import type { Dictionary } from "@/i18n";
 import { localePath, type Locale } from "@/lib/i18n";
 
 export function ProjectsSection({
-  projects: allProjects,
+  projects,
   lang,
   t,
 }: {
@@ -18,21 +18,8 @@ export function ProjectsSection({
   t: Dictionary["projects"];
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [activeFilter, setActiveFilter] = useState("All");
   const touchStartX = useRef<number | null>(null);
   const [headingFirst, ...headingRest] = t.heading.split(" ");
-
-  // Build the filter list dynamically from whatever kinds exist in the data
-  const kinds = Array.from(new Set(allProjects.map((p) => p.kind)));
-  const filters = ["All", ...kinds];
-
-  const projects =
-    activeFilter === "All" ? allProjects : allProjects.filter((p) => p.kind === activeFilter);
-
-  const selectFilter = (filter: string) => {
-    setActiveFilter(filter);
-    setCurrentIndex(0);
-  };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
@@ -76,29 +63,6 @@ export function ProjectsSection({
             </Link>
           </div>
         </div>
-
-        {/* Filter Dropdown */}
-        {filters.length > 1 && (
-          <div className="relative inline-block mb-8 md:mb-12">
-            <select
-              value={activeFilter}
-              onChange={(e) => selectFilter(e.target.value)}
-              aria-label={t.filterLabel}
-              className="appearance-none bg-[#1A1A1A] text-white border-2 border-white/20 hover:border-white/50 focus:border-white rounded-full pl-5 pr-12 py-2.5 md:py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none transition-colors duration-300"
-            >
-              {filters.map((filter) => (
-                <option key={filter} value={filter} className="bg-[#1A1A1A] text-white">
-                  {filter === "All" ? t.allProjects : t.kinds[filter] ?? filter}
-                </option>
-              ))}
-            </select>
-            <ChevronDown
-              size={16}
-              strokeWidth={3}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 pointer-events-none"
-            />
-          </div>
-        )}
 
         {/* Confidentiality disclaimer */}
         <p className="flex items-start gap-2 text-white/40 text-[11px] md:text-xs font-medium tracking-wide leading-relaxed mb-6 md:mb-8 max-w-2xl">

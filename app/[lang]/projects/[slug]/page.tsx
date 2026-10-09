@@ -9,6 +9,7 @@ import { getProjects, getProjectWithNeighbors } from "@/lib/content";
 import { getDictionary } from "@/i18n";
 import { isLocale, languageAlternates, localePath, locales } from "@/lib/i18n";
 import { whatsappUrl } from "@/lib/site";
+import { pageOpenGraph } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type Params = { params: Promise<{ lang: string; slug: string }> };
@@ -28,11 +29,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: `${project.title} - Dzikri Ramadhan`,
     description: project.summary,
     alternates: languageAlternates(lang, `/projects/${project.slug}`),
-    openGraph: {
+    openGraph: pageOpenGraph(lang, `/projects/${project.slug}`, {
       title: project.title,
       description: project.summary,
-      images: [{ url: project.imageUrl }],
-    },
+      image: project.imageUrl,
+    }),
   };
 }
 

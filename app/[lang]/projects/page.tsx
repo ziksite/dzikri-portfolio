@@ -6,6 +6,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { getProjects } from "@/lib/content";
 import { getDictionary } from "@/i18n";
 import { isLocale, languageAlternates } from "@/lib/i18n";
+import { pageOpenGraph } from "@/lib/seo";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t.title,
     description: t.description,
     alternates: languageAlternates(lang, "/projects"),
+    openGraph: pageOpenGraph(lang, "/projects", { title: t.title, description: t.description }),
   };
 }
 

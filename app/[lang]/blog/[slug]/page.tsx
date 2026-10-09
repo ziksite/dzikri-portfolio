@@ -8,6 +8,7 @@ import { formatDate, getArticle, getArticles } from "@/lib/content";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
 import { getDictionary } from "@/i18n";
 import { isLocale, localePath } from "@/lib/i18n";
+import { articleJsonLd, JsonLd, pageOpenGraph } from "@/lib/seo";
 
 type Params = { params: Promise<{ lang: string; slug: string }> };
 
@@ -21,19 +22,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (lang !== "id") return {};
   const article = await getArticle(slug);
   if (!article) return {};
-  const images = article.coverImage ? [{ url: article.coverImage }] : undefined;
   return {
     title: `${article.title} - Dzikri Ramadhan`,
     description: article.excerpt,
     alternates: { canonical: localePath("id", `/blog/${slug}`) },
-    openGraph: {
+    openGraph: pageOpenGraph("id", `/blog/${slug}`, {
       title: article.title,
       description: article.excerpt,
+      image: article.coverImage ?? undefined,
       type: "article",
-      locale: "id_ID",
       publishedTime: article.publishedAt,
-      images,
-    },
+    }),
   };
 }
 
@@ -50,6 +49,7 @@ export default async function ArticlePage({ params }: Params) {
   return (
     <SiteShell lang={lang}>
       <main className="min-h-screen pt-32 md:pt-40 pb-20 md:pb-32 px-4 md:px-6">
+        <JsonLd data={articleJsonLd(article)} />
         <article className="max-w-3xl mx-auto">
           <Link
             href={localePath(lang, "/blog")}

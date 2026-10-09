@@ -11,15 +11,20 @@ import { getProjects } from "@/lib/content";
 import { getDictionary } from "@/i18n";
 import { isLocale } from "@/lib/i18n";
 import { whatsappUrl } from "@/lib/site";
+import { homeJsonLd, JsonLd } from "@/lib/seo";
+
+// Selected Works shows only the first projects in CMS order; the full list lives on /projects
+const FEATURED_COUNT = 6;
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = getDictionary(lang);
-  const projects = await getProjects(lang);
+  const projects = (await getProjects(lang)).slice(0, FEATURED_COUNT);
 
   return (
     <SiteShell lang={lang}>
+      <JsonLd data={homeJsonLd(lang)} />
       <main className="flex flex-col min-h-screen">
         <HeroSection t={t.hero} name="Dzikri Ramadhan" />
         <InfoBar items={t.quickInfo} />

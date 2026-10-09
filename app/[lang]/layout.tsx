@@ -5,6 +5,7 @@ import Script from "next/script";
 import "../globals.css";
 import { getDictionary } from "@/i18n";
 import { isLocale, languageAlternates, locales, SITE_URL } from "@/lib/i18n";
+import { pageOpenGraph } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,15 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t.title,
     description: t.description,
     alternates: languageAlternates(lang, "/"),
-    openGraph: {
-      title: t.title,
-      description: t.description,
-      url: SITE_URL,
-      siteName: t.siteName,
-      images: [{ url: "/images/logo.png", width: 512, height: 512, alt: t.siteName }],
-      locale: t.ogLocale,
-      type: "website",
-    },
+    openGraph: pageOpenGraph(lang, "/", { title: t.title, description: t.description }),
+    twitter: { card: "summary_large_image" },
     icons: {
       icon: "/images/logo.png",
       shortcut: "/images/logo.png",

@@ -126,7 +126,7 @@ export function ProjectForm({ initial, id }: { initial?: ProjectInput; id?: stri
           <Select label="Jenis (filter)" value={p.kind} options={PROJECT_KINDS} onChange={set("kind")} />
           <Select label="Industri (filter)" value={p.industry} options={["", ...INDUSTRIES]} emptyLabel="— Pilih industri —" onChange={set("industry")} />
           <Select label="Status" value={p.status} options={["LIVE", "PRIVATE"]} onChange={(v) => set("status")(v as "LIVE" | "PRIVATE")} />
-          <TextInput label="Urutan" hint="Angka kecil tampil lebih dulu" type="number" value={String(p.sort_order)} onChange={(v) => set("sort_order")(Number(v))} />
+          <TextInput label="Urutan" hint="Angka kecil tampil lebih dulu. 6 teratas tampil di Selected Works homepage" type="number" value={String(p.sort_order)} onChange={(v) => set("sort_order")(Number(v))} />
         </div>
         <div className="grid sm:grid-cols-3 gap-5">
           <TextInput label="Klien" value={p.client} onChange={set("client")} />
