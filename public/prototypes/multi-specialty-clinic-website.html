@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klinik Utama Nirmala — Dokter spesialis di Jakarta Pusat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/lapak.css">
+<style>
+  /* Tema — mode SOLID, indigo dari brand asli dibuat lebih jenuh */
+  :root {
+    --font-display: "Instrument Sans", system-ui, sans-serif;
+    --brand: #2f3fb0; --brand-ink: #ffffff; --brand-text: #2a389e;
+    --accent: #e5761a; --r-base: 10px;
+  }
+  .display { font-weight: 650; letter-spacing: -0.035em; }
+  .h1, .h2 { font-weight: 650; letter-spacing: -0.025em; }
+
+  .hero { padding: var(--s-10) 0 var(--s-12); }
+  .hero__grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr); gap: var(--s-12); align-items: center; }
+  .hero .taskbar { max-width: 620px; }
+  .hero .img { border-radius: var(--r-lg); }
+  @media (max-width: 1024px) { .hero__grid { grid-template-columns: 1fr; } }
+
+  .today { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); }
+  .doc { display: flex; gap: var(--s-3); align-items: center; padding: var(--s-4); border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; }
+  .doc__name { font-weight: 600; font-size: 15px; line-height: 1.3; }
+  .doc__meta { font-size: 13px; color: var(--text-2); }
+  @media (max-width: 1024px) { .today { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 720px) { .today { grid-template-columns: 1fr; } }
+
+  .spec { display: flex; flex-direction: column; gap: var(--s-3); }
+  .spec .img { --ar: 4 / 3; }
+  .spec__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-3); }
+  .spec__list { font-size: 14px; color: var(--text-2); }
+
+  .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--s-3); }
+  .gallery figure { position: relative; margin: 0; }
+  .gallery figure:first-child { grid-row: span 2; }
+  .gallery .img { height: 100%; aspect-ratio: auto; min-height: 200px; }
+  .gallery figcaption { position: absolute; left: 10px; bottom: 10px; background: rgba(255,255,255,.94); padding: 4px 10px; border-radius: var(--r-sm); font-size: 13px; font-weight: 600; }
+  @media (max-width: 720px) { .gallery { grid-template-columns: 1fr 1fr; } .gallery figure:first-child { grid-column: span 2; grid-row: auto; } }
+
+  .doc-card { border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-4); background: #fff; }
+  .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 12px; }
+  .days span { padding: 6px 0; border-radius: var(--r-sm); background: var(--n-50); color: var(--text-3); font-weight: 600; }
+  .days span.on { background: var(--brand-soft); color: var(--brand-text); }
+  .avatar--xl { width: 56px; height: 56px; font-size: 17px; }
+  .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--s-2); }
+  .week button { border: 1px solid var(--line-strong); border-radius: var(--r-md); padding: 10px 0; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; color: var(--text-2); background: #fff; }
+  .week button b { font-size: 18px; color: var(--text); font-variant-numeric: tabular-nums; }
+  .week button.is-selected { background: var(--brand); border-color: var(--brand); color: rgba(255,255,255,.85); }
+  .week button.is-selected b { color: #fff; }
+  .week button.is-off { background: var(--n-50); color: var(--n-400); pointer-events: none; }
+  .week button.is-off b { color: var(--n-400); }
+  .choices--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 720px) { .choices--3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) { #docGrid { grid-template-columns: 1fr; } }
+  .sched td { text-align: center; }
+  .sched td:first-child { text-align: left; }
+  .sched .off { color: var(--n-300); }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="topbar"><div class="container">Buka setiap hari · Senin–Sabtu 10.00–19.00, Minggu 12.00–19.00 · <a href="#reservasi">Reservasi online</a></div></div>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#home">Klinik Utama Nirmala</a>
+      <div class="nav__links"><a href="#layanan-home">Layanan</a><a href="#dokter" data-nav="dokter">Dokter &amp; jadwal</a><a href="#fasilitas-home">Fasilitas</a><a href="#lokasi-home">Lokasi</a></div>
+      <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Chat dokter</a><a class="btn btn--primary btn--sm" href="#reservasi">Buat reservasi</a></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero__grid">
+      <div class="stack-6">
+        <span class="eyebrow">Klinik Utama · Jakarta Pusat · sejak 2012</span>
+        <h1 class="display">Enam layanan spesialis, satu klinik.</h1>
+        <p class="lead">Kulit, gigi, estetika, bedah plastik, ginekologi, dan andrologi. Pilih dokter dan jam kunjungan sendiri, tanpa menunggu balasan chat.</p>
+        <form class="taskbar" onsubmit="location.hash='reservasi';return false">
+          <label class="taskbar__field"><span class="taskbar__label">Layanan</span><select class="taskbar__value"><option>Gigi &amp; mulut</option><option>Kulit &amp; kelamin</option><option>Estetika &amp; anti-aging</option><option>Bedah umum &amp; plastik</option><option>Ginekologi</option><option>Andrologi</option></select></label>
+          <label class="taskbar__field"><span class="taskbar__label">Tanggal</span><select class="taskbar__value"><option>Senin, 19 Okt</option><option>Selasa, 20 Okt</option><option>Rabu, 21 Okt</option></select></label>
+          <button class="btn btn--primary btn--lg">Cari jadwal <i data-lucide="arrow-right" class="i-sm"></i></button>
+        </form>
+        <div class="facts">
+          <span><i data-lucide="train-front" class="i-sm"></i>Dekat stasiun KRL &amp; halte Transjakarta</span>
+          <span><i data-lucide="shield-check" class="i-sm"></i>Keluhan &amp; rekam medis dijaga rahasia</span>
+          <span><i data-lucide="flask-conical" class="i-sm"></i>Lab &amp; apotek di tempat</span>
+        </div>
+      </div>
+      <div class="img" style="--ar:1000/654" data-img="assets/multi-specialty-clinic-website/hero-tim-dokter.webp" data-alt="Tim dokter Klinik Utama Nirmala"></div>
+    </div>
+  </header>
+
+  <section class="section--tight" style="padding-top:0">
+    <div class="container stack">
+      <div class="row row--between"><h2 class="h4">Praktik hari ini · Minggu, 18 Okt</h2><a class="link body-sm" href="#dokter">Jadwal lengkap <i data-lucide="arrow-right" class="i-sm"></i></a></div>
+      <div class="today">
+        <div class="doc"><span class="avatar avatar--lg">RK</span><div class="list__main"><p class="doc__name">dr. Rani Kusuma</p><p class="doc__meta">Estetika</p><p class="doc__meta"><span class="num">12.00–18.00</span> · <b style="color:var(--ok)">sisa 4 slot</b></p></div></div>
+        <div class="doc"><span class="avatar avatar--lg">SP</span><div class="list__main"><p class="doc__name">drg. Salsabila Putri, Sp.Ort</p><p class="doc__meta">Ortodonti</p><p class="doc__meta"><span class="num">12.00–19.00</span> · <b style="color:var(--warn)">sisa 1 slot</b></p></div></div>
+        <div class="doc"><span class="avatar avatar--lg">AN</span><div class="list__main"><p class="doc__name">drg. Arief Nugroho</p><p class="doc__meta">Gigi umum</p><p class="doc__meta"><span class="num">12.00–17.00</span> · <b style="color:var(--ok)">sisa 6 slot</b></p></div></div>
+        <div class="doc"><span class="avatar avatar--lg">ML</span><div class="list__main"><p class="doc__name">dr. Maya Lestari, Sp.DVE</p><p class="doc__meta">Kulit &amp; kelamin</p><p class="doc__meta">Libur · praktik lagi Senin</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="layanan-home">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text"><h2 class="h2">Layanan spesialis</h2><p class="muted">54 tindakan dari enam spesialisasi. Konsultasi pertama menentukan tindakan yang dibutuhkan.</p></div>
+        <a class="link" href="#reservasi">Reservasi <i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+      <div class="grid-3" style="gap:var(--s-8) var(--s-6)">
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/tindakan-gigi.webp"></div><div class="spec__head"><h3 class="h3">Gigi &amp; mulut</h3><span class="caption">12 tindakan</span></div><p class="spec__list">Scaling, tambal, bleaching, behel, aligner, veneer, perawatan saluran akar</p></a>
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/konsultasi-kulit.webp"></div><div class="spec__head"><h3 class="h3">Kulit &amp; kelamin</h3><span class="caption">15 tindakan</span></div><p class="spec__list">Eksim, psoriasis, vitiligo, infeksi jamur, pemeriksaan &amp; terapi IMS</p></a>
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/tindakan-estetika.webp"></div><div class="spec__head"><h3 class="h3">Estetika &amp; anti-aging</h3><span class="caption">8 tindakan</span></div><p class="spec__list">Skin booster, chemical peeling, microneedling, face contouring, hair loss</p></a>
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/tindakan-bedah.webp"></div><div class="spec__head"><h3 class="h3">Bedah umum &amp; plastik</h3><span class="caption">3 tindakan</span></div><p class="spec__list">Blepharoplasty, rhinoplasty, sunat laser anak &amp; dewasa</p></a>
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/konsultasi-umum.webp"></div><div class="spec__head"><h3 class="h3">Ginekologi</h3><span class="caption">9 tindakan</span></div><p class="spec__list">Pap smear, keputihan, kista Bartholin, perawatan kewanitaan</p></a>
+        <a class="spec" href="#reservasi"><div class="img" data-img="assets/multi-specialty-clinic-website/laboratorium.webp"></div><div class="spec__head"><h3 class="h3">Andrologi</h3><span class="caption">7 tindakan</span></div><p class="spec__list">Disfungsi seksual, gangguan hormon, ejakulasi dini, gangguan libido</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fasilitas-home">
+    <div class="container">
+      <div class="section-head"><div class="section-head__text"><h2 class="h2">Pemeriksaan sampai obat, di satu lantai</h2><p class="muted">Ruang konsultasi, ruang tindakan, laboratorium, ruang infus, dan apotek ada di klinik. Hasil lab dasar keluar di hari yang sama.</p></div></div>
+      <div class="gallery">
+        <figure><div class="img" data-img="assets/multi-specialty-clinic-website/ruang-estetika.webp"></div><figcaption>Ruang tindakan estetika</figcaption></figure>
+        <figure><div class="img" data-img="assets/multi-specialty-clinic-website/konsultasi-dokter.webp"></div><figcaption>Ruang konsultasi</figcaption></figure>
+        <figure><div class="img" data-img="assets/multi-specialty-clinic-website/ruang-infus.webp"></div><figcaption>Ruang infus</figcaption></figure>
+        <figure><div class="img" data-img="assets/multi-specialty-clinic-website/terapi-led.webp"></div><figcaption>Terapi LED</figcaption></figure>
+        <figure><div class="img" data-img="assets/multi-specialty-clinic-website/nurse-station.webp"></div><figcaption>Nurse station</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container split" style="align-items:start">
+      <div class="stack-6">
+        <h2 class="h2">Reservasi dalam tiga langkah</h2>
+        <ol class="howto" style="grid-template-columns:1fr">
+          <li class="stack-2"><h3 class="h4">Pilih layanan, dokter, dan jam</h3><p class="muted body-sm">Slot yang sudah terisi tidak muncul. Tidak perlu menunggu admin membalas chat.</p></li>
+          <li class="stack-2"><h3 class="h4">Terima nomor reservasi</h3><p class="muted body-sm">Dikirim ke WhatsApp beserta pengingat H-1 dan dokumen yang perlu dibawa.</p></li>
+          <li class="stack-2"><h3 class="h4">Datang dan tunjukkan nomor</h3><p class="muted body-sm">Resepsionis langsung memanggil sesuai jam reservasi. Pembayaran setelah konsultasi.</p></li>
+        </ol>
+      </div>
+      <div class="stack-6">
+        <h2 class="h2">Kata pasien</h2>
+        <figure class="quote"><blockquote>"Selain dokternya ramah, pelayanannya nyaman dan alatnya modern, lengkap."</blockquote><figcaption><span class="avatar">D</span><span><b>Dania</b><br><span class="faint">Bleaching gigi</span></span></figcaption></figure>
+        <figure class="quote"><blockquote>"Staffnya ramah, suster-susternya bisa menenangkan, jadi nyaman banget buat treatment di sini. Hasilnya juga memuaskan."</blockquote><figcaption><span class="avatar">NC</span><span><b>Nadia C.</b><br><span class="faint">Perawatan estetika</span></span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--brand">
+    <div class="container" style="padding-top:var(--s-16);padding-bottom:var(--s-16)">
+      <div class="split" style="align-items:center">
+        <div class="stack-3"><h2 class="h1">Keluhan sensitif? Ceritakan ke dokter, bukan ke admin.</h2><p class="lead" style="opacity:.9">Kolom keluhan di form reservasi hanya dibaca dokter yang menangani. Nama yang dipanggil di ruang tunggu memakai nomor reservasi.</p></div>
+        <div class="row" style="justify-content:flex-end"><a class="btn btn--on-block btn--lg" href="#reservasi">Buat reservasi</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lokasi-home">
+    <div class="container split" style="align-items:center">
+      <div class="img" style="--ar:4/3" data-img="assets/multi-specialty-clinic-website/gedung.webp" data-alt="Gedung perkantoran tempat klinik"></div>
+      <div class="stack-6">
+        <h2 class="h2">Lantai dasar gedung perkantoran, Jakarta Pusat</h2>
+        <dl class="dl" style="grid-template-columns:150px 1fr">
+          <dt>Senin–Sabtu</dt><dd>10.00–19.00</dd>
+          <dt>Minggu</dt><dd>12.00–19.00</dd>
+          <dt>Transportasi</dt><dd>5 menit jalan kaki dari stasiun KRL, halte Transjakarta di depan gedung</dd>
+          <dt>Parkir</dt><dd>Basement gedung, tarif gedung</dd>
+          <dt>Kontak</dt><dd>WhatsApp 0812-3000-4100</dd>
+        </dl>
+        <div class="row row--wrap"><a class="btn btn--primary" href="#reservasi">Buat reservasi</a><a class="btn btn--secondary" href="#"><i data-lucide="map-pin" class="i-sm"></i>Buka di Maps</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="stack-3"><span class="nav__brand" style="color:#fff">Klinik Utama Nirmala</span><p>Klinik utama berizin dengan layanan spesialis, laboratorium, dan apotek. Jakarta Pusat.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#layanan-home">Gigi &amp; mulut</a></li><li><a href="#layanan-home">Kulit &amp; kelamin</a></li><li><a href="#layanan-home">Estetika</a></li><li><a href="#layanan-home">Bedah plastik</a></li></ul></div>
+        <div><h4>Pasien</h4><ul><li><a href="#reservasi">Reservasi</a></li><li><a href="#dokter">Jadwal dokter</a></li><li><a href="#">Artikel kesehatan</a></li></ul></div>
+        <div><h4>Klinik</h4><ul><li><a href="#">Tentang kami</a></li><li><a href="#">Legalitas</a></li><li><a href="#">Kebijakan privasi</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 Klinik Utama Nirmala</span><span>Informasi di situs ini tidak menggantikan pemeriksaan dokter</span></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= RESERVASI ================= -->
+<section data-screen="reservasi">
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#home">Klinik Utama Nirmala</a>
+      <div class="nav__links"><a href="#home">Beranda</a><a href="#dokter" data-nav="dokter">Dokter &amp; jadwal</a><a href="#reservasi" data-nav="reservasi">Reservasi</a></div>
+      <div class="nav__actions"><span class="caption hide-sm">Butuh bantuan? WhatsApp 0812-3000-4100</span></div>
+    </div>
+  </nav>
+  <div class="container" style="padding-top:var(--s-8);padding-bottom:var(--s-16)">
+    <form data-demo-form="#rsvDone" id="rsvForm">
+      <div class="split--form">
+        <div class="stack-6">
+          <ol class="steps"><li class="is-done">Layanan</li><li class="is-current">Dokter &amp; jadwal</li><li>Data pasien</li></ol>
+          <h1 class="h1" style="font-size:40px">Buat reservasi</h1>
+
+          <div class="stack-3">
+            <span class="label">Layanan</span>
+            <div class="choices choices--3" id="specPick">
+              <label class="choice"><input type="radio" name="spec" value="gigi" checked><span class="choice__title">Gigi &amp; mulut</span></label>
+              <label class="choice"><input type="radio" name="spec" value="kulit"><span class="choice__title">Kulit &amp; kelamin</span></label>
+              <label class="choice"><input type="radio" name="spec" value="estetika"><span class="choice__title">Estetika</span></label>
+              <label class="choice"><input type="radio" name="spec" value="bedah"><span class="choice__title">Bedah plastik</span></label>
+              <label class="choice"><input type="radio" name="spec" value="gine"><span class="choice__title">Ginekologi</span></label>
+              <label class="choice"><input type="radio" name="spec" value="andro"><span class="choice__title">Andrologi</span></label>
+            </div>
+          </div>
+
+          <div class="stack-3">
+            <span class="label">Dokter</span>
+            <div class="choices" style="grid-template-columns:1fr 1fr" id="docPick"></div>
+          </div>
+
+          <div class="stack-3">
+            <div class="row row--between"><span class="label">Tanggal</span><span class="caption">Hari tanpa jadwal dokter dinonaktifkan</span></div>
+            <div class="week" data-select="is-selected" id="weekPick"></div>
+          </div>
+
+          <div class="stack-3">
+            <span class="label">Jam</span>
+            <div class="slots" data-select="is-selected" id="slotPick"></div>
+          </div>
+
+          <div class="stack">
+            <span class="label">Data pasien</span>
+            <div class="form-grid">
+              <div class="field"><label class="label">Nama sesuai KTP</label><input class="input" value="Siti Rahmawati" required></div>
+              <div class="field"><label class="label">Tanggal lahir</label><input class="input" value="14/03/1993"></div>
+              <div class="field"><label class="label">No. WhatsApp</label><input class="input" value="0813-8842-1907" required></div>
+              <div class="field"><label class="label">Kunjungan</label><div class="segmented" data-select><button type="button" class="is-active">Pasien baru</button><button type="button">Kontrol</button></div></div>
+              <div class="field span-2"><label class="label">Keluhan <small>(opsional, hanya dibaca dokter)</small></label><textarea class="textarea" placeholder="Contoh: gigi geraham kiri bawah ngilu saat minum dingin sejak 2 minggu"></textarea></div>
+            </div>
+            <div class="alert"><i data-lucide="shield-check"></i><span><strong>Privasi pasien</strong>Di ruang tunggu Anda dipanggil dengan nomor reservasi, bukan nama.</span></div>
+          </div>
+        </div>
+
+        <aside class="sticky">
+          <div class="summary">
+            <span class="h4">Ringkasan reservasi</span>
+            <div class="row"><span class="avatar avatar--lg" id="sumAv">AN</span><div><p class="strong" id="sumDoc" style="font-weight:600">drg. Arief Nugroho</p><p class="caption" id="sumSpec">Gigi &amp; mulut</p></div></div>
+            <hr class="divider">
+            <div class="summary__line"><span>Tanggal</span><span id="sumDate">Senin, 19 Okt</span></div>
+            <div class="summary__line"><span>Jam</span><span id="sumTime">13.00</span></div>
+            <div class="summary__line"><span>Lokasi</span><span>Lantai dasar, Jakarta Pusat</span></div>
+            <div class="summary__line"><span>Biaya konsultasi</span><span>Dibayar di klinik</span></div>
+            <button class="btn btn--primary btn--block btn--lg">Konfirmasi reservasi</button>
+            <p class="caption">Pengingat dikirim ke WhatsApp H-1. Ubah atau batalkan sampai 3 jam sebelum jadwal.</p>
+          </div>
+        </aside>
+      </div>
+    </form>
+
+    <div id="rsvDone" hidden>
+      <div class="split" style="align-items:start;padding-top:var(--s-8)">
+        <div class="stack-6">
+          <span class="success__icon"><i data-lucide="check"></i></span>
+          <h1 class="h1" style="font-size:44px">Reservasi terkonfirmasi.</h1>
+          <p class="lead">Nomor reservasi dan pengingat sudah dikirim ke WhatsApp 0813-8842-1907. Tunjukkan nomor ini di resepsionis.</p>
+          <div class="row"><span class="ticket">RSV-1019-014</span></div>
+          <div class="row row--wrap"><a class="btn btn--primary" href="#"><i data-lucide="calendar-plus" class="i-sm"></i>Simpan ke kalender</a><a class="btn btn--secondary" href="#home">Kembali ke beranda</a></div>
+        </div>
+        <div class="summary">
+          <span class="h4">Sebelum datang</span>
+          <ul class="stack-3 body-sm">
+            <li class="row row--top"><i data-lucide="id-card" class="i-sm"></i>Bawa KTP untuk pasien baru</li>
+            <li class="row row--top"><i data-lucide="clock" class="i-sm"></i>Datang 15 menit lebih awal untuk mengisi riwayat kesehatan</li>
+            <li class="row row--top"><i data-lucide="file-text" class="i-sm"></i>Bawa hasil rontgen atau lab sebelumnya bila ada</li>
+            <li class="row row--top"><i data-lucide="credit-card" class="i-sm"></i>Pembayaran tunai, debit, kartu kredit, atau QRIS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOKTER & JADWAL ================= -->
+<section data-screen="dokter">
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#home">Klinik Utama Nirmala</a>
+      <div class="nav__links"><a href="#home">Beranda</a><a href="#dokter" data-nav="dokter">Dokter &amp; jadwal</a><a href="#reservasi" data-nav="reservasi">Reservasi</a></div>
+      <div class="nav__actions"><a class="btn btn--primary btn--sm" href="#reservasi">Buat reservasi</a></div>
+    </div>
+  </nav>
+  <div class="container" style="padding-top:var(--s-8);padding-bottom:var(--s-16)">
+    <div class="section-head">
+      <div class="section-head__text"><h1 class="h1" style="font-size:44px">Dokter &amp; jadwal praktik</h1><p class="muted">Minggu 19–25 Oktober 2026. Perubahan jadwal diumumkan paling lambat dua hari sebelumnya.</p></div>
+    </div>
+    <div class="chips" data-select id="docFilter" style="margin-bottom:var(--s-6)">
+      <button class="chip is-active" data-value="all">Semua</button>
+      <button class="chip" data-value="gigi">Gigi &amp; mulut</button>
+      <button class="chip" data-value="kulit">Kulit &amp; kelamin</button>
+      <button class="chip" data-value="estetika">Estetika</button>
+      <button class="chip" data-value="bedah">Bedah plastik</button>
+      <button class="chip" data-value="gine">Ginekologi</button>
+      <button class="chip" data-value="andro">Andrologi</button>
+    </div>
+    <div class="grid-4" id="docGrid"></div>
+
+    <div class="panel" style="margin-top:var(--s-10)">
+      <div class="panel__head"><div><p class="panel__title">Jadwal mingguan</p><p class="panel__sub">Jam praktik per dokter</p></div><button class="btn btn--secondary btn--sm"><i data-lucide="download" class="i-sm"></i>Unduh PDF</button></div>
+      <div class="table-wrap"><table class="table sched" id="schedTable"></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEPSIONIS ================= -->
+<div class="app" data-screen="admin">
+  <aside class="sidebar">
+    <div class="sidebar__brand"><span>Klinik Utama Nirmala<small>Resepsionis</small></span></div>
+    <div class="side-group">
+      <a class="side-link is-active" href="#admin"><i data-lucide="calendar-check"></i>Hari ini</a>
+      <a class="side-link" href="#admin"><i data-lucide="calendar-range"></i>Semua reservasi</a>
+      <a class="side-link" href="#admin"><i data-lucide="message-circle"></i>Chat konsultasi<span class="count">7</span></a>
+    </div>
+    <div class="side-group">
+      <span class="side-label">Klinik</span>
+      <a class="side-link" href="#admin"><i data-lucide="users"></i>Pasien</a>
+      <a class="side-link" href="#admin"><i data-lucide="stethoscope"></i>Dokter &amp; jadwal</a>
+      <a class="side-link" href="#admin"><i data-lucide="file-text"></i>Laporan</a>
+    </div>
+    <div class="sidebar__foot"><span class="avatar">WP</span><span><b>Wulan P.</b><br><span class="faint">Resepsionis · shift siang</span></span></div>
+  </aside>
+  <div class="main">
+    <div class="appbar">
+      <div class="input-group"><i data-lucide="search" class="i-sm"></i><input class="input" placeholder="Cari nomor reservasi, nama, atau no. WA…"></div>
+      <div class="appbar__right"><button class="icon-btn"><i data-lucide="bell"></i><span class="dot"></span></button><button class="btn btn--primary"><i data-lucide="plus" class="i-sm"></i>Reservasi walk-in</button></div>
+    </div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>Reservasi hari ini</h1><p>Senin, 19 Oktober 2026 · 13.20</p></div>
+        <div class="page-head__actions"><div class="segmented" data-select><button class="is-active">Kalender</button><button>Daftar</button></div></div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><span class="kpi__label">Reservasi</span><span class="kpi__value">38</span><span class="kpi__foot">29 online · 9 walk-in</span></div>
+        <div class="kpi"><span class="kpi__label">Sudah check-in</span><span class="kpi__value">17</span><span class="kpi__foot">rata-rata tunggu 9 menit</span></div>
+        <div class="kpi"><span class="kpi__label">Tidak datang</span><span class="kpi__value">2</span><span class="kpi__foot"><span class="delta delta--up">turun</span>dari 6 sebelum pengingat H-1</span></div>
+        <div class="kpi"><span class="kpi__label">Chat jadi reservasi</span><span class="kpi__value">41%</span><span class="kpi__foot">minggu ini · 7 chat belum dibalas</span></div>
+      </div>
+      <div class="with-aside">
+        <div class="panel">
+          <div class="panel__head"><div><p class="panel__title">Kalender dokter</p><p class="panel__sub">Per jam · klik blok untuk check-in</p></div><div class="row"><span class="pill pill--ok">Check-in</span><span class="pill pill--info">Terjadwal</span><span class="pill pill--warn">Belum konfirmasi</span></div></div>
+          <div class="table-wrap">
+            <div class="rescal" style="--cols:7;min-width:820px">
+              <div class="rescal__corner">Dokter</div>
+              <div class="rescal__col">Jam<b>12.00</b></div><div class="rescal__col is-today">Jam<b>13.00</b></div><div class="rescal__col">Jam<b>14.00</b></div><div class="rescal__col">Jam<b>15.00</b></div><div class="rescal__col">Jam<b>16.00</b></div><div class="rescal__col">Jam<b>17.00</b></div><div class="rescal__col">Jam<b>18.00</b></div>
+
+              <div class="rescal__row"><b>drg. Arief N.</b><span>Gigi umum · R. 3</span></div>
+              <div><div class="evt evt--ok"><b>RSV-011</b>Scaling</div></div><div><div class="evt evt--ok"><b>RSV-014</b>Tambal</div></div><div><div class="evt evt--info" style="--span:2"><b>RSV-019</b>Perawatan saluran akar</div></div><div></div><div><div class="evt evt--warn"><b>RSV-027</b>Cabut gigi</div></div><div></div><div></div>
+
+              <div class="rescal__row"><b>drg. Salsabila P.</b><span>Ortodonti · R. 4</span></div>
+              <div></div><div><div class="evt evt--ok"><b>RSV-012</b>Kontrol behel</div></div><div><div class="evt evt--info"><b>RSV-020</b>Konsul aligner</div></div><div><div class="evt evt--info"><b>RSV-022</b>Kontrol behel</div></div><div></div><div></div><div></div>
+
+              <div class="rescal__row"><b>dr. Rani K.</b><span>Estetika · R. 6</span></div>
+              <div><div class="evt evt--ok" style="--span:2"><b>RSV-009</b>Skin booster</div></div><div></div><div><div class="evt evt--info"><b>RSV-021</b>Chemical peel</div></div><div><div class="evt evt--warn"><b>RSV-024</b>Konsultasi</div></div><div><div class="evt evt--info" style="--span:2"><b>RSV-026</b>Microneedling</div></div><div></div><div></div>
+
+              <div class="rescal__row"><b>dr. Maya L.</b><span>Kulit &amp; kelamin · R. 2</span></div>
+              <div><div class="evt evt--idle"><b>Belum praktik</b></div></div><div><div class="evt evt--ok"><b>RSV-015</b>Konsultasi</div></div><div><div class="evt evt--info"><b>RSV-018</b>Kontrol eksim</div></div><div></div><div><div class="evt evt--info"><b>RSV-025</b>Konsultasi</div></div><div><div class="evt evt--warn"><b>RSV-028</b>Konsultasi</div></div><div></div>
+
+              <div class="rescal__row"><b>dr. Bayu P.</b><span>Andrologi · R. 5</span></div>
+              <div><div class="evt evt--idle" style="--span:3"><b>Belum praktik</b>Mulai 15.00</div></div><div></div><div></div><div><div class="evt evt--info"><b>RSV-023</b>Konsultasi</div></div><div></div><div><div class="evt evt--info"><b>RSV-029</b>Kontrol</div></div><div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><div><p class="panel__title">Chat konsultasi</p><p class="panel__sub">Dari tombol WhatsApp di situs</p></div><a class="link body-sm" href="#admin">Semua</a></div>
+          <ul class="list">
+            <li><span class="avatar">YS</span><div class="list__main"><p class="list__title">Yoga S.</p><p class="list__sub">Tanya biaya behel · 4 mnt lalu</p></div><span class="pill pill--warn pill--plain">Baru</span></li>
+            <li><span class="avatar">FA</span><div class="list__main"><p class="list__title">Fitri A.</p><p class="list__sub">Jerawat meradang · 18 mnt lalu</p></div><span class="pill pill--warn pill--plain">Baru</span></li>
+            <li><span class="avatar">DR</span><div class="list__main"><p class="list__title">Dimas R.</p><p class="list__sub">Konsultasi andrologi · 32 mnt</p></div><span class="pill pill--info pill--plain">Dibalas</span></li>
+            <li><span class="avatar">LK</span><div class="list__main"><p class="list__title">Lia K.</p><p class="list__sub">Skin booster · kemarin</p></div><span class="pill pill--ok pill--plain">RSV-026</span></li>
+            <li><span class="avatar">HP</span><div class="list__main"><p class="list__title">Hana P.</p><p class="list__sub">Scaling + bleaching · kemarin</p></div><span class="pill pill--ok pill--plain">RSV-019</span></li>
+          </ul>
+          <div class="panel__body" style="border-top:1px solid var(--line-soft)">
+            <button class="btn btn--secondary btn--block btn--sm"><i data-lucide="send" class="i-sm"></i>Kirim link reservasi</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><div><p class="panel__title">Berikutnya</p><p class="panel__sub">Pasien yang dijadwalkan 1 jam ke depan</p></div></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Jam</th><th>Reservasi</th><th>Pasien</th><th>Dokter</th><th>Layanan</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="num strong">14.00</td><td class="mono">RSV-1019-019</td><td><div class="cell-user"><span class="avatar avatar--sm">HP</span>Hana P. <span class="pill pill--plain">Kontrol</span></div></td><td>drg. Arief N.</td><td>Perawatan saluran akar</td><td><span class="pill pill--info">Terjadwal</span></td><td class="r"><button class="btn btn--secondary btn--sm">Check-in</button></td></tr>
+              <tr><td class="num strong">14.00</td><td class="mono">RSV-1019-018</td><td><div class="cell-user"><span class="avatar avatar--sm">RA</span>Rizal A. <span class="pill pill--plain">Baru</span></div></td><td>dr. Maya L.</td><td>Kontrol eksim</td><td><span class="pill pill--ok">Sudah datang</span></td><td class="r"><button class="btn btn--primary btn--sm">Panggil</button></td></tr>
+              <tr><td class="num strong">14.00</td><td class="mono">RSV-1019-020</td><td><div class="cell-user"><span class="avatar avatar--sm">MS</span>Mega S. <span class="pill pill--plain">Baru</span></div></td><td>drg. Salsabila P.</td><td>Konsultasi aligner</td><td><span class="pill pill--info">Terjadwal</span></td><td class="r"><button class="btn btn--secondary btn--sm">Check-in</button></td></tr>
+              <tr><td class="num strong">14.00</td><td class="mono">RSV-1019-021</td><td><div class="cell-user"><span class="avatar avatar--sm">TW</span>Tari W. <span class="pill pill--plain">Kontrol</span></div></td><td>dr. Rani K.</td><td>Chemical peeling</td><td><span class="pill pill--warn">Belum konfirmasi</span></td><td class="r"><button class="btn btn--secondary btn--sm">Kirim pengingat</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var DAYS = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+  var SPEC = { gigi: "Gigi & mulut", kulit: "Kulit & kelamin", estetika: "Estetika & anti-aging", bedah: "Bedah umum & plastik", gine: "Ginekologi", andro: "Andrologi" };
+  var DOCS = [
+    { id: "AN", name: "drg. Arief Nugroho", spec: "gigi", title: "Dokter gigi umum", days: [1,1,1,1,1,1,1], hours: "10.00–17.00", sun: "12.00–17.00", exp: "11 tahun" },
+    { id: "SP", name: "drg. Salsabila Putri, Sp.Ort", spec: "gigi", title: "Spesialis ortodonti", days: [0,1,0,1,0,0,1], hours: "12.00–19.00", exp: "8 tahun" },
+    { id: "ML", name: "dr. Maya Lestari, Sp.DVE", spec: "kulit", title: "Spesialis dermatologi, venereologi & estetika", days: [1,0,1,0,1,0,0], hours: "13.00–19.00", exp: "12 tahun" },
+    { id: "RK", name: "dr. Rani Kusuma", spec: "estetika", title: "Dokter estetika, Dipl. AAAM", days: [1,1,1,1,1,1,1], hours: "10.00–18.00", sun: "12.00–18.00", exp: "7 tahun" },
+    { id: "HW", name: "dr. Hendra Wijaya, Sp.BP-RE", spec: "bedah", title: "Spesialis bedah plastik", days: [0,0,1,0,0,1,0], hours: "10.00–15.00", exp: "15 tahun" },
+    { id: "LA", name: "dr. Laras Anindita, Sp.OG", spec: "gine", title: "Spesialis obstetri & ginekologi", days: [0,1,0,1,0,1,0], hours: "10.00–16.00", exp: "10 tahun" },
+    { id: "BP", name: "dr. Bayu Pratama, Sp.And", spec: "andro", title: "Spesialis andrologi", days: [1,1,1,1,1,0,0], hours: "15.00–19.00", exp: "9 tahun" }
+  ];
+  // Minggu depan: Senin 19 – Minggu 25 Oktober 2026
+  var WEEK = [19, 20, 21, 22, 23, 24, 25];
+  var FULL = { "AN-0": ["10.00", "11.00", "15.00"], "SP-1": ["12.00", "13.00"], "ML-0": ["14.00"], "RK-0": ["10.00", "11.00", "12.00"] };
+  var sel = { doc: "AN", day: 0, time: null };
+
+  function doc(id) { return DOCS.filter(function (d) { return d.id === id; })[0]; }
+  function daysHtml(d) { return '<div class="days">' + DAYS.map(function (n, i) { return '<span class="' + (d.days[i] ? "on" : "") + '">' + n + "</span>"; }).join("") + "</div>"; }
+
+  // Halaman dokter
+  function renderDocs(f) {
+    document.getElementById("docGrid").innerHTML = DOCS.filter(function (d) { return f === "all" || d.spec === f; }).map(function (d) {
+      return '<div class="doc-card"><div class="row"><span class="avatar avatar--xl">' + d.id + '</span><div><p class="doc__name">' + d.name + '</p><p class="doc__meta">' + d.title + '</p></div></div>' + daysHtml(d) +
+        '<div class="row row--between"><span class="caption">' + d.hours + " · " + d.exp + '</span><a class="link body-sm" href="#reservasi" data-book="' + d.id + '">Reservasi</a></div></div>';
+    }).join("");
+  }
+  document.getElementById("schedTable").innerHTML = "<thead><tr><th>Dokter</th>" + DAYS.map(function (n, i) { return "<th style=\"text-align:center\">" + n + " " + WEEK[i] + "</th>"; }).join("") + "</tr></thead><tbody>" +
+    DOCS.map(function (d) {
+      return '<tr><td class="strong">' + d.name + '<span class="sub">' + SPEC[d.spec] + "</span></td>" + d.days.map(function (on, i) {
+        return on ? '<td class="num">' + (i === 6 && d.sun ? d.sun : d.hours) + "</td>" : '<td class="off">—</td>';
+      }).join("") + "</tr>";
+    }).join("") + "</tbody>";
+  document.getElementById("docFilter").addEventListener("lapak:select", function (e) { renderDocs(e.detail.value); });
+
+  // Reservasi
+  function hoursOf(d, dayIdx) {
+    var range = (dayIdx === 6 && d.sun ? d.sun : d.hours).split("–");
+    var a = parseInt(range[0], 10), b = parseInt(range[1], 10), out = [];
+    for (var h = a; h < b; h++) out.push((h < 10 ? "0" : "") + h + ".00");
+    return out;
+  }
+  function renderDocPick(spec) {
+    var list = DOCS.filter(function (d) { return d.spec === spec; });
+    if (!list.some(function (d) { return d.id === sel.doc; })) sel.doc = list[0].id;
+    document.getElementById("docPick").innerHTML = list.map(function (d) {
+      return '<label class="choice"><input type="radio" name="doc" value="' + d.id + '"' + (d.id === sel.doc ? " checked" : "") + '><span class="avatar avatar--lg">' + d.id + '</span><span><span class="choice__title">' + d.name + '</span><br><span class="choice__desc">' + d.title + " · " + DAYS.filter(function (n, i) { return d.days[i]; }).join(", ") + "</span></span></label>";
+    }).join("");
+  }
+  function renderWeek() {
+    var d = doc(sel.doc);
+    if (!d.days[sel.day]) sel.day = d.days.indexOf(1);
+    document.getElementById("weekPick").innerHTML = WEEK.map(function (n, i) {
+      return '<button type="button" class="' + (!d.days[i] ? "is-off" : i === sel.day ? "is-selected" : "") + '" data-value="' + i + '">' + DAYS[i] + "<b>" + n + "</b></button>";
+    }).join("");
+  }
+  function renderSlots() {
+    var d = doc(sel.doc), full = FULL[d.id + "-" + sel.day] || [];
+    var hrs = hoursOf(d, sel.day);
+    if (!sel.time || hrs.indexOf(sel.time) < 0 || full.indexOf(sel.time) >= 0) sel.time = hrs.filter(function (h) { return full.indexOf(h) < 0; })[0];
+    document.getElementById("slotPick").innerHTML = hrs.map(function (h) {
+      var isFull = full.indexOf(h) >= 0;
+      return '<button type="button" class="slot' + (isFull ? " is-full" : h === sel.time ? " is-selected" : "") + '" data-value="' + h + '">' + h + "</button>";
+    }).join("");
+  }
+  function renderSummary() {
+    var d = doc(sel.doc);
+    document.getElementById("sumAv").textContent = d.id;
+    document.getElementById("sumDoc").textContent = d.name;
+    document.getElementById("sumSpec").textContent = SPEC[d.spec];
+    document.getElementById("sumDate").textContent = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"][sel.day] + ", " + WEEK[sel.day] + " Okt";
+    document.getElementById("sumTime").textContent = sel.time || "—";
+  }
+  function renderRsv() { renderWeek(); renderSlots(); renderSummary(); }
+
+  document.getElementById("specPick").addEventListener("change", function (e) { renderDocPick(e.target.value); renderRsv(); });
+  document.getElementById("docPick").addEventListener("change", function (e) { sel.doc = e.target.value; renderRsv(); });
+  document.getElementById("weekPick").addEventListener("lapak:select", function (e) { sel.day = Number(e.detail.value); renderSlots(); renderSummary(); });
+  document.getElementById("slotPick").addEventListener("lapak:select", function (e) { sel.time = e.detail.value; renderSummary(); });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-book]");
+    if (!b) return;
+    sel.doc = b.getAttribute("data-book");
+    var spec = doc(sel.doc).spec;
+    document.querySelector('#specPick input[value="' + spec + '"]').checked = true;
+    renderDocPick(spec); renderRsv();
+  });
+
+  renderDocs("all");
+  sel.time = "13.00";
+  renderDocPick("gigi");
+  renderRsv();
+  if (window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

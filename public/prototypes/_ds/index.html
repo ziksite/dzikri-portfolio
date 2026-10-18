@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="id" data-brand="kopi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lapak Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400..700&family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lapak.css">
+<style>
+  /* ---- Tema contoh: tiap prototype cukup menulis blok seperti ini ---- */
+  /* SOLID — satu warna jenuh di atas putih */
+  [data-brand="kopi"] {
+    --font-display: "Fraunces", Georgia, serif;
+    --brand: #e2401b; --brand-ink: #ffffff; --brand-text: #c2330f;
+    --accent: #111111; --r-base: 6px;
+  }
+  [data-brand="kopi"] .display, [data-brand="kopi"] .h1, [data-brand="kopi"] .h2 { font-weight: 560; letter-spacing: -0.02em; }
+  [data-brand="klinik"] {
+    --font-display: "Instrument Sans", system-ui, sans-serif;
+    --brand: #0a5cff; --brand-ink: #ffffff; --brand-text: #0a4fd9;
+    --accent: #e5341d; --r-base: 12px;
+  }
+  /* DUO — blok kuning penuh + aksi merah, khas toko/ekspedisi lokal */
+  [data-brand="toko"] {
+    --font-display: "Archivo", system-ui, sans-serif;
+    --brand: #d7261e; --brand-ink: #ffffff; --brand-text: #b71c15;
+    --block: #ffcc00; --block-ink: #111111;
+    --hero-bg: var(--block); --hero-ink: #111111;
+    --accent: #111111; --r-base: 3px;
+  }
+  [data-brand="toko"] .display, [data-brand="toko"] .h1, [data-brand="toko"] .h2, [data-brand="toko"] .h3 { font-stretch: 78%; font-weight: 750; letter-spacing: -0.01em; text-transform: uppercase; }
+  /* MONO — hitam-putih, warna datang dari foto */
+  [data-brand="lumira"] {
+    --font-display: "Instrument Serif", Georgia, serif;
+    --brand: #111111; --brand-ink: #ffffff; --brand-text: #111111;
+    --brand-soft: #f2f2f2; --block: #ededed; --block-ink: #111111;
+    --accent: #9b1c1c; --r-base: 0px;
+  }
+  [data-brand="lumira"] .display, [data-brand="lumira"] .h1, [data-brand="lumira"] .h2 { font-weight: 400; letter-spacing: -0.01em; }
+
+  /* ---- Khusus halaman dokumentasi ---- */
+  body { background: #fff; }
+  .ds-head { border-bottom: 1px solid var(--line); background: var(--n-25); }
+  .ds-head__inner { padding: var(--s-12) 0 var(--s-8); display: flex; flex-direction: column; gap: var(--s-5); }
+  .ds-switch { position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .ds-switch .container { height: 56px; display: flex; align-items: center; gap: var(--s-4); font-size: 14px; }
+  .ds-switch nav { display: flex; gap: var(--s-5); margin-left: auto; color: var(--text-2); font-weight: 500; }
+  .ds-switch nav a:hover { color: var(--text); }
+  .ds-sec { padding: var(--s-16) 0; border-bottom: 1px solid var(--line); }
+  .ds-sec > .container > header { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--s-10); max-width: 760px; }
+  .ds-num { font: 600 13px/1 var(--font-mono); color: var(--text-3); }
+  .ds-title { font: 700 30px/1.15 "Plus Jakarta Sans", sans-serif; letter-spacing: -0.02em; }
+  .ds-label { font: 600 12px/1 var(--font-mono); color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: var(--s-3); display: block; }
+  .ds-box { border: 1px solid var(--line); border-radius: 14px; padding: var(--s-6); background: #fff; }
+  .ds-frame { border: 1px solid var(--line-strong); border-radius: 14px; overflow: hidden; box-shadow: var(--sh-2); }
+  .ds-frame .nav { position: relative; }
+  .ds-frame .app { min-height: 0; }
+  .ds-frame .sidebar, .ds-frame .appbar { position: static; height: auto; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s-3); }
+  .sw { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 13px; }
+  .sw > div { height: 64px; }
+  .sw p { padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+  .sw code { font: 500 11.5px var(--font-mono); color: var(--text-3); }
+  .typerow { display: grid; grid-template-columns: 160px 1fr; gap: var(--s-6); align-items: baseline; padding: var(--s-4) 0; border-bottom: 1px solid var(--line-soft); }
+  .typerow code { font: 500 12px var(--font-mono); color: var(--text-3); }
+  .space { display: flex; align-items: flex-end; gap: var(--s-3); flex-wrap: wrap; }
+  .space div { background: var(--brand); border-radius: 2px; }
+  .space span { display: block; font: 500 11px var(--font-mono); color: var(--text-3); margin-top: 6px; text-align: center; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); }
+  .rules ul { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+  .rules li { display: flex; gap: 10px; }
+  .rules li svg { margin-top: 3px; width: 16px; height: 16px; }
+  .do svg { color: var(--ok); } .dont svg { color: var(--bad); }
+  @media (max-width: 900px) { .rules { grid-template-columns: 1fr; } .typerow { grid-template-columns: 1fr; gap: 4px; } .ds-switch nav { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ============ BAR TEMA ============ -->
+<div class="ds-switch">
+  <div class="container">
+    <strong>Lapak DS</strong>
+    <div class="segmented" data-select id="brandSwitch">
+      <button class="is-active" data-value="kopi">Kopi Senja · solid</button>
+      <button data-value="klinik">Klinik · solid</button>
+      <button data-value="toko">TB Sumber Rejeki · duo</button>
+      <button data-value="lumira">Lumira · mono</button>
+    </div>
+    <nav>
+      <a href="#fondasi">Fondasi</a>
+      <a href="#landing">Landing</a>
+      <a href="#flow">Form &amp; Flow</a>
+      <a href="#aplikasi">Aplikasi</a>
+      <a href="#aturan">Aturan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="ds-head">
+  <div class="container ds-head__inner">
+    <span class="ds-num">v1.1 · Oktober 2026</span>
+    <h1 class="ds-title" style="font-size:44px;max-width:20ch">Lapak — design system untuk 20 prototype study case UMKM</h1>
+    <p class="lead">Satu fondasi untuk semua prototype. Struktur, spasi, dan komponen sama; setiap brand hanya mengganti warna, font display, dan radius. Ganti tema di bar atas untuk melihat satu komponen dipakai tiga bisnis yang berbeda karakter.</p>
+    <div class="facts">
+      <span><i data-lucide="file-code"></i> lapak.css + lapak.js</span>
+      <span><i data-lucide="palette"></i> 3 mode warna: solid, duo, mono</span>
+      <span><i data-lucide="image"></i> Gambar via prompt AI, placeholder otomatis</span>
+      <span><i data-lucide="smartphone"></i> Responsif sampai 390px</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01 FONDASI ============ -->
+<section class="ds-sec" id="fondasi">
+  <div class="container">
+    <header>
+      <span class="ds-num">01</span>
+      <h2 class="ds-title">Fondasi</h2>
+      <p class="muted">Tiga mode warna, dipilih per kategori bisnis: <b>solid</b> (satu warna jenuh di atas putih), <b>duo</b> (blok warna penuh + warna aksi), <b>mono</b> (hitam-putih, warna dari foto). Tidak ada latar pastel. Netral murni, status tetap sama di semua brand.</p>
+    </header>
+
+    <span class="ds-label">Warna brand — di-override per prototype</span>
+    <div class="swatches" style="margin-bottom:var(--s-8)">
+      <div class="sw"><div style="background:var(--brand)"></div><p><b>--brand</b><code>tombol utama, aktif</code></p></div>
+      <div class="sw"><div style="background:var(--block)"></div><p><b>--block</b><code>blok besar, hero duo</code></p></div>
+      <div class="sw"><div style="background:var(--brand-text)"></div><p><b>--brand-text</b><code>link, eyebrow</code></p></div>
+      <div class="sw"><div style="background:var(--brand-soft)"></div><p><b>--brand-soft</b><code>otomatis 9%, elemen kecil saja</code></p></div>
+      <div class="sw"><div style="background:var(--accent)"></div><p><b>--accent</b><code>promo, hemat dipakai</code></p></div>
+      <div class="sw"><div style="background:var(--dark)"></div><p><b>--dark</b><code>topbar, footer</code></p></div>
+    </div>
+
+    <span class="ds-label">Netral &amp; status — tetap</span>
+    <div class="swatches" style="margin-bottom:var(--s-10)">
+      <div class="sw"><div style="background:var(--n-900)"></div><p><b>Teks</b><code>--n-900</code></p></div>
+      <div class="sw"><div style="background:var(--n-600)"></div><p><b>Teks sekunder</b><code>--n-600</code></p></div>
+      <div class="sw"><div style="background:var(--n-200)"></div><p><b>Garis</b><code>--n-200</code></p></div>
+      <div class="sw"><div style="background:var(--bg-app)"></div><p><b>Kanvas aplikasi</b><code>--bg-app</code></p></div>
+      <div class="sw"><div style="background:var(--ok-bg);border-bottom:3px solid var(--ok)"></div><p><b>Berhasil</b><code>--ok</code></p></div>
+      <div class="sw"><div style="background:var(--warn-bg);border-bottom:3px solid var(--warn)"></div><p><b>Menunggu</b><code>--warn</code></p></div>
+      <div class="sw"><div style="background:var(--bad-bg);border-bottom:3px solid var(--bad)"></div><p><b>Gagal / telat</b><code>--bad</code></p></div>
+      <div class="sw"><div style="background:var(--info-bg);border-bottom:3px solid var(--info)"></div><p><b>Info / proses</b><code>--info</code></p></div>
+    </div>
+
+    <div class="grid-2" style="gap:var(--s-12)">
+      <div>
+        <span class="ds-label">Tipografi — display ikut brand, body &amp; UI Plus Jakarta Sans</span>
+        <div class="typerow"><code>.display 76</code><p class="display" style="font-size:52px">Kopi pagi, siap diambil</p></div>
+        <div class="typerow"><code>.h1 52</code><p class="h1" style="font-size:38px">Pesan sebelum datang</p></div>
+        <div class="typerow"><code>.h2 36</code><p class="h2" style="font-size:28px">Menu minggu ini</p></div>
+        <div class="typerow"><code>.h3 20</code><p class="h3">Es Kopi Susu Aren</p></div>
+        <div class="typerow"><code>.lead 19</code><p class="lead">Pesan dari meja kerja, ambil tanpa antre.</p></div>
+        <div class="typerow"><code>body 16</code><p>Diseduh dari biji Java Preanger, sangrai medium.</p></div>
+        <div class="typerow"><code>.caption 13</code><p class="caption">Diperbarui 08.30 WIB · 12 pesanan menunggu</p></div>
+      </div>
+      <div class="stack-6">
+        <div>
+          <span class="ds-label">Spasi — kelipatan 4px</span>
+          <div class="space">
+            <div><div style="width:4px;height:4px"></div><span>4</span></div>
+            <div><div style="width:8px;height:8px"></div><span>8</span></div>
+            <div><div style="width:12px;height:12px"></div><span>12</span></div>
+            <div><div style="width:16px;height:16px"></div><span>16</span></div>
+            <div><div style="width:24px;height:24px"></div><span>24</span></div>
+            <div><div style="width:32px;height:32px"></div><span>32</span></div>
+            <div><div style="width:48px;height:48px"></div><span>48</span></div>
+            <div><div style="width:64px;height:64px"></div><span>64</span></div>
+            <div><div style="width:80px;height:80px"></div><span>80</span></div>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">Tombol</span>
+          <div class="row row--wrap">
+            <button class="btn btn--primary">Pesan sekarang</button>
+            <button class="btn btn--secondary">Lihat menu</button>
+            <button class="btn btn--ghost">Batal</button>
+            <button class="btn btn--dark btn--sm">Kecil</button>
+            <button class="btn btn--secondary btn--icon"><i data-lucide="heart"></i></button>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">Status &amp; badge</span>
+          <div class="row row--wrap">
+            <span class="pill pill--ok">Lunas</span>
+            <span class="pill pill--warn">Menunggu bayar</span>
+            <span class="pill pill--bad">Terlambat</span>
+            <span class="pill pill--info">Diproses</span>
+            <span class="pill">Draf</span>
+            <span class="badge badge--accent">-20%</span>
+            <span class="badge badge--soft">Pre-order</span>
+            <span class="badge">Terlaris</span>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">Placeholder gambar — terganti otomatis saat file ada</span>
+          <div class="grid-3" style="gap:var(--s-3)">
+            <div class="img" style="--ar:4/5" data-img="assets/kopi-senja/menu-aren.jpg"></div>
+            <div class="img" style="--ar:4/5" data-img="assets/kopi-senja/barista.jpg"></div>
+            <div class="img" style="--ar:4/5" data-img="assets/kopi-senja/interior.jpg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 LANDING ============ -->
+<section class="ds-sec" id="landing" style="background:var(--n-25)">
+  <div class="container">
+    <header>
+      <span class="ds-num">02</span>
+      <h2 class="ds-title">Pola landing</h2>
+      <p class="muted">Tiga jenis hero: <b>foto penuh</b> (fashion, villa, barbershop), <b>split</b> (klinik, bimbel, jasa), dan <b>task-first</b> — widget booking/cari/lacak sebagai hero (Fresha, Airbnb, SiCepat). Di bawah: contoh task-first.</p>
+    </header>
+  </div>
+  <div class="container-wide">
+    <div class="ds-frame">
+      <div class="topbar"><div class="container">Buka 07.00–22.00 · Pre-order sebelum 10.00 dapat potongan Rp5.000 · <a href="#">Lihat syarat</a></div></div>
+      <nav class="nav">
+        <div class="container nav__inner">
+          <a class="nav__brand" href="#"><span class="mark">KS</span>Kopi Senja</a>
+          <div class="nav__links"><a class="is-active" href="#">Menu</a><a href="#">Pre-order</a><a href="#">Poin &amp; promo</a><a href="#">Lokasi</a></div>
+          <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#">Masuk</a><a class="btn btn--primary btn--sm" href="#">Pesan</a></div>
+        </div>
+      </nav>
+
+      <div class="hero-task">
+        <div class="container">
+          <div class="split" style="align-items:end">
+            <div class="stack-6">
+              <span class="eyebrow">Jl. Braga 38, Bandung</span>
+              <h1 class="display">Pesan dulu, ambil tanpa antre.</h1>
+              <p class="lead">Pilih menu dari meja kerja, tentukan jam ambil, bayar di kasir. Pesananmu sudah siap di rak pickup saat kamu datang.</p>
+            </div>
+            <div class="img" style="--ar:5/4" data-img="assets/kopi-senja/hero.jpg"></div>
+          </div>
+          <form class="taskbar" style="margin-top:var(--s-8)" onsubmit="return false">
+            <label class="taskbar__field"><span class="taskbar__label">Cabang</span><select class="taskbar__value"><option>Braga</option><option>Dago</option></select></label>
+            <label class="taskbar__field"><span class="taskbar__label">Jam ambil</span><input class="taskbar__value" value="Hari ini, 08.15"></label>
+            <label class="taskbar__field"><span class="taskbar__label">Jumlah orang</span><input class="taskbar__value" value="1 orang"></label>
+            <button class="btn btn--primary btn--lg"><i data-lucide="arrow-right"></i>Pilih menu</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-head__text"><span class="eyebrow">Paling sering dipesan</span><h2 class="h2">Menu minggu ini</h2></div>
+            <a class="link" href="#">Semua menu <i data-lucide="arrow-right" class="i-sm"></i></a>
+          </div>
+          <div class="grid-4">
+            <article class="listing">
+              <div class="listing__media"><div class="img" style="--ar:4/5" data-img="assets/kopi-senja/menu-aren.jpg"></div><span class="badge listing__badge">Terlaris</span></div>
+              <div class="stack-1"><h3 class="listing__title">Es Kopi Susu Aren</h3><p class="listing__meta">Espresso, susu segar, gula aren <span class="dot"></span> 16 oz</p></div>
+              <div class="listing__foot"><span class="price">Rp24.000</span><span class="rating"><i data-lucide="star"></i>4,8</span></div>
+            </article>
+            <article class="listing">
+              <div class="listing__media"><div class="img" style="--ar:4/5" data-img="assets/kopi-senja/menu-v60.jpg"></div></div>
+              <div class="stack-1"><h3 class="listing__title">V60 Java Preanger</h3><p class="listing__meta">Manual brew <span class="dot"></span> 200 ml</p></div>
+              <div class="listing__foot"><span class="price">Rp28.000</span><span class="rating"><i data-lucide="star"></i>4,9</span></div>
+            </article>
+            <article class="listing">
+              <div class="listing__media"><div class="img" style="--ar:4/5" data-img="assets/kopi-senja/menu-croissant.jpg"></div><span class="badge badge--accent listing__badge">-Rp5.000</span></div>
+              <div class="stack-1"><h3 class="listing__title">Croissant Butter</h3><p class="listing__meta">Dipanggang tiap pagi <span class="dot"></span> sisa 6</p></div>
+              <div class="listing__foot"><span class="price">Rp22.000 <span class="strike">Rp27.000</span></span></div>
+            </article>
+            <article class="listing">
+              <div class="listing__media"><div class="img" style="--ar:4/5" data-img="assets/kopi-senja/menu-matcha.jpg"></div></div>
+              <div class="stack-1"><h3 class="listing__title">Matcha Latte</h3><p class="listing__meta">Matcha Uji, susu oat <span class="dot"></span> 16 oz</p></div>
+              <div class="listing__foot"><span class="price">Rp30.000</span><span class="rating"><i data-lucide="star"></i>4,7</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="container split" style="align-items:start">
+          <div class="stack-6">
+            <h2 class="h2">Cara pre-order</h2>
+            <ol class="howto" style="grid-template-columns:1fr">
+              <li><h3 class="h4">Pilih menu &amp; jam ambil</h3><p class="muted body-sm">Slot tiap 15 menit, maksimal 12 pesanan per slot supaya bar tidak menumpuk.</p></li>
+              <li><h3 class="h4">Terima nomor antrean</h3><p class="muted body-sm">Konfirmasi dan nomor dikirim ke WhatsApp.</p></li>
+              <li><h3 class="h4">Ambil di rak pickup</h3><p class="muted body-sm">Sebut nomor, bayar QRIS atau tunai.</p></li>
+            </ol>
+          </div>
+          <div class="stack-6">
+            <h2 class="h2">Pertanyaan</h2>
+            <div class="faq">
+              <details open><summary>Kalau terlambat ambil bagaimana?</summary><div>Pesanan ditahan 30 menit. Minuman dingin kami buat ulang kalau es sudah mencair.</div></details>
+              <details><summary>Bisa bayar di aplikasi?</summary><div>Untuk sekarang pembayaran di kasir lewat QRIS, debit, atau tunai.</div></details>
+              <details><summary>Ada minimal pesanan?</summary><div>Tidak ada. Potongan pre-order berlaku untuk pesanan sebelum 10.00.</div></details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section--brand">
+        <div class="container" style="padding-top:var(--s-16);padding-bottom:var(--s-16)">
+          <div class="split" style="align-items:center">
+            <div class="stack-3"><h2 class="h1">Pesan untuk kantor, minimal 10 cup.</h2><p class="lead" style="opacity:.85">Kirim daftar pesanan sehari sebelumnya, kami antar ke kantor di area Braga dan Asia Afrika tanpa ongkir.</p></div>
+            <div class="row" style="justify-content:flex-end"><a class="btn btn--on-block btn--lg" href="#">Kirim daftar pesanan</a></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__grid">
+            <div class="stack-3"><span class="nav__brand" style="color:#fff"><span class="mark">KS</span>Kopi Senja</span><p>Jl. Braga No. 38, Bandung<br>Setiap hari 07.00–22.00</p></div>
+            <div><h4>Menu</h4><ul><li><a href="#">Kopi</a></li><li><a href="#">Non-kopi</a></li><li><a href="#">Makanan</a></li></ul></div>
+            <div><h4>Layanan</h4><ul><li><a href="#">Pre-order</a></li><li><a href="#">Pesan untuk kantor</a></li><li><a href="#">Poin</a></li></ul></div>
+            <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li></ul></div>
+          </div>
+          <div class="footer__bottom"><span>© 2026 Kopi Senja</span><span>Harga sudah termasuk pajak</span></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 FORM & FLOW ============ -->
+<section class="ds-sec" id="flow">
+  <div class="container">
+    <header>
+      <span class="ds-num">03</span>
+      <h2 class="ds-title">Form &amp; flow</h2>
+      <p class="muted">Alur transaksi selalu dua kolom di desktop: langkah di kiri, ringkasan sticky di kanan (pola MOO, Stripe). Pilihan berupa kartu atau slot, bukan dropdown, supaya kapasitas dan harga terlihat sebelum dipilih.</p>
+    </header>
+
+    <div class="split--form">
+      <div class="ds-box stack-6">
+        <ol class="steps"><li class="is-done">Layanan</li><li class="is-current">Jadwal</li><li>Data pasien</li><li>Konfirmasi</li></ol>
+
+        <div class="stack-3">
+          <span class="label">Dokter</span>
+          <div class="choices" style="grid-template-columns:1fr 1fr">
+            <label class="choice"><input type="radio" name="dr" checked><span class="avatar avatar--lg" data-tone="1">RA</span><span><span class="choice__title">drg. Rina Amelia</span><br><span class="choice__desc">Konservasi gigi · Sen–Kam</span></span></label>
+            <label class="choice"><input type="radio" name="dr"><span class="avatar avatar--lg" data-tone="3">BH</span><span><span class="choice__title">drg. Bima Hartono, Sp.Ort</span><br><span class="choice__desc">Ortodonti · Jum–Sab</span></span></label>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:var(--s-8);align-items:start">
+          <div class="cal">
+            <div class="cal__head"><button class="btn btn--ghost btn--xs btn--icon"><i data-lucide="chevron-left" class="i-sm"></i></button>Oktober 2026<button class="btn btn--ghost btn--xs btn--icon"><i data-lucide="chevron-right" class="i-sm"></i></button></div>
+            <div class="cal__grid" data-select="is-selected">
+              <span class="cal__dow">Sen</span><span class="cal__dow">Sel</span><span class="cal__dow">Rab</span><span class="cal__dow">Kam</span><span class="cal__dow">Jum</span><span class="cal__dow">Sab</span><span class="cal__dow">Min</span>
+            </div>
+          </div>
+          <div class="stack-3">
+            <span class="label">Jam tersedia · Senin, 12 Okt</span>
+            <div class="slots" data-select="is-selected">
+              <button class="slot">09.00</button><button class="slot is-full">09.30</button><button class="slot is-selected">10.00</button>
+              <button class="slot">10.30</button><button class="slot is-full">11.00</button><button class="slot">13.00</button>
+              <button class="slot">13.30</button><button class="slot">14.00</button><button class="slot is-full">14.30</button>
+            </div>
+            <p class="help">Slot dicoret sudah terisi. Konfirmasi dikirim via WhatsApp H-1.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field"><label class="label">Nama pasien</label><input class="input" value="Siti Nurhaliza"></div>
+          <div class="field"><label class="label">No. WhatsApp</label><input class="input" value="0812-3456-7890"></div>
+          <div class="field span-2"><label class="label">Keluhan <small>(opsional)</small></label><textarea class="textarea" placeholder="Contoh: gigi geraham kiri bawah ngilu saat minum dingin"></textarea></div>
+        </div>
+        <div class="alert alert--warn"><i data-lucide="info"></i><span><strong>Datang 10 menit lebih awal</strong>Pasien baru mengisi formulir riwayat kesehatan di resepsionis.</span></div>
+      </div>
+
+      <aside class="stack sticky">
+        <div class="summary">
+          <span class="h4">Ringkasan janji</span>
+          <div class="lineitem"><span class="lineitem__qty">1×</span><span>Scaling &amp; polishing</span><span class="lineitem__price">Rp350.000</span></div>
+          <div class="lineitem"><span class="lineitem__qty">1×</span><span>Konsultasi dokter</span><span class="lineitem__price">Rp100.000</span></div>
+          <hr class="divider">
+          <div class="summary__line"><span>Dokter</span><span>drg. Rina Amelia</span></div>
+          <div class="summary__line"><span>Jadwal</span><span>Sen, 12 Okt · 10.00</span></div>
+          <div class="summary__total"><span>Estimasi biaya</span><span>Rp450.000</span></div>
+          <button class="btn btn--primary btn--block btn--lg">Lanjut ke data pasien</button>
+          <p class="caption">Bayar di klinik setelah tindakan. Bisa dibatalkan sampai 3 jam sebelum jadwal.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="grid-3" style="margin-top:var(--s-10);align-items:start">
+      <div class="ds-box stack">
+        <span class="ds-label">Tab + lacak</span>
+        <div class="tabs" data-select><button class="is-active">Lacak resi</button><button>Cek ongkir</button><button>Lokasi</button></div>
+        <ol class="timeline">
+          <li class="is-done"><span class="timeline__dot"></span><div><p class="timeline__title">Paket diterima di agen</p><p class="caption">Solo Baru</p></div><span class="timeline__time">08.12</span></li>
+          <li class="is-done"><span class="timeline__dot"></span><div><p class="timeline__title">Tiba di hub Solo</p></div><span class="timeline__time">11.40</span></li>
+          <li class="is-current"><span class="timeline__dot"></span><div><p class="timeline__title">Kurir mengantar</p><p class="caption">Andi · 0813-2200-1144</p></div><span class="timeline__time">14.05</span></li>
+          <li><span class="timeline__dot"></span><div><p class="timeline__title">Terkirim</p></div><span class="timeline__time">—</span></li>
+        </ol>
+      </div>
+      <div class="ds-box stack">
+        <span class="ds-label">Pilihan + stepper + segmented</span>
+        <div class="segmented" data-select><button class="is-active">Ambil</button><button>Antar</button></div>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="pk" checked><span><span class="choice__title">Paket 10 hari</span><br><span class="choice__desc">Senin–Jumat, 2 minggu</span></span><span class="choice__aside">Rp450.000</span></label>
+          <label class="choice"><input type="radio" name="pk"><span><span class="choice__title">Paket 20 hari</span><br><span class="choice__desc">Hemat Rp50.000</span></span><span class="choice__aside">Rp850.000</span></label>
+        </div>
+        <div class="row row--between"><span class="body-sm">Jumlah porsi</span><div class="stepper" data-stepper data-min="1"><button><i data-lucide="minus" class="i-sm"></i></button><output>2</output><button data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div>
+        <div class="chips" data-select><button class="chip is-active">Semua</button><button class="chip">Kopi</button><button class="chip">Non-kopi</button><button class="chip">Makanan</button></div>
+      </div>
+      <div class="ds-box stack">
+        <span class="ds-label">Upload + sukses</span>
+        <div class="upload"><i data-lucide="upload" class="i-lg"></i><b>Tarik file ke sini</b><span class="caption">PDF / AI / PNG · CMYK · 300 dpi · bleed 3 mm</span><button class="btn btn--secondary btn--sm">Pilih file</button></div>
+        <div class="file"><span class="file__icon">PDF</span><span class="list__main"><b>brosur-a5-final.pdf</b><br><span class="caption">4,2 MB · 2 halaman</span></span><span class="pill pill--ok">Lolos cek</span></div>
+        <div class="success" style="padding:var(--s-4) 0 0"><span class="success__icon"><i data-lucide="check"></i></span><b>Pesanan terkirim</b><span class="ticket">A-027</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 APLIKASI ============ -->
+<section class="ds-sec" id="aplikasi" style="background:var(--n-25)">
+  <div class="container">
+    <header>
+      <span class="ds-num">04</span>
+      <h2 class="ds-title">Pola aplikasi &amp; dashboard</h2>
+      <p class="muted">Kanvas abu-abu terang, panel putih dengan garis 1px (bukan bayangan), teks 14px, angka tabular. Sidebar dikelompokkan dengan label. Setiap dashboard menjawab "apa yang harus dikerjakan hari ini", bukan memajang grafik.</p>
+    </header>
+  </div>
+  <div class="container-wide">
+    <div class="ds-frame">
+      <div class="app">
+        <aside class="sidebar">
+          <div class="sidebar__brand"><span class="mark">SR</span><span>TB Sumber Rejeki<small>Cabang Bekasi Timur</small></span></div>
+          <div class="side-group">
+            <a class="side-link is-active" href="#"><i data-lucide="layout-dashboard"></i>Ringkasan</a>
+            <a class="side-link" href="#"><i data-lucide="shopping-cart"></i>Kasir</a>
+            <a class="side-link" href="#"><i data-lucide="receipt"></i>Transaksi</a>
+          </div>
+          <div class="side-group">
+            <span class="side-label">Gudang</span>
+            <a class="side-link" href="#"><i data-lucide="package"></i>Stok barang<span class="count">412</span></a>
+            <a class="side-link" href="#"><i data-lucide="truck"></i>Barang masuk</a>
+          </div>
+          <div class="side-group">
+            <span class="side-label">Keuangan</span>
+            <a class="side-link" href="#"><i data-lucide="wallet"></i>Piutang<span class="count">9</span></a>
+            <a class="side-link" href="#"><i data-lucide="file-text"></i>Laporan</a>
+          </div>
+          <div class="sidebar__foot"><span class="avatar" data-tone="2">HS</span><span><b>Hendra S.</b><br><span class="faint">Pemilik</span></span></div>
+        </aside>
+        <div class="main">
+          <div class="appbar">
+            <div class="input-group"><i data-lucide="search" class="i-sm"></i><input class="input" placeholder="Cari barang, nota, pelanggan…"></div>
+            <div class="appbar__right"><button class="icon-btn"><i data-lucide="bell"></i><span class="dot"></span></button><button class="btn btn--primary"><i data-lucide="plus" class="i-sm"></i>Transaksi baru</button></div>
+          </div>
+          <div class="content">
+            <div class="page-head">
+              <div><h1>Ringkasan hari ini</h1><p>Jumat, 9 Oktober 2026 · diperbarui 14.20</p></div>
+              <div class="page-head__actions"><div class="segmented" data-select><button class="is-active">Hari ini</button><button>7 hari</button><button>Bulan ini</button></div></div>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><span class="kpi__label">Penjualan</span><span class="kpi__value">Rp18,4 jt</span><span class="kpi__foot"><span class="delta delta--up">+12%</span>vs Jumat lalu</span></div>
+              <div class="kpi"><span class="kpi__label">Transaksi</span><span class="kpi__value">63</span><span class="kpi__foot">41 ritel · 22 kontraktor</span></div>
+              <div class="kpi"><span class="kpi__label">Stok menipis</span><span class="kpi__value">7 item</span><span class="kpi__foot"><span class="delta delta--down">3 habis</span>perlu PO</span></div>
+              <div class="kpi"><span class="kpi__label">Piutang jatuh tempo</span><span class="kpi__value">Rp42,7 jt</span><span class="kpi__foot">4 pelanggan minggu ini</span></div>
+            </div>
+            <div class="with-aside">
+              <div class="panel">
+                <div class="panel__head"><div><p class="panel__title">Stok perlu dipesan</p><p class="panel__sub">Di bawah batas minimum</p></div><button class="btn btn--secondary btn--sm"><i data-lucide="download" class="i-sm"></i>Buat PO</button></div>
+                <div class="toolbar"><div class="input-group"><i data-lucide="search" class="i-sm"></i><input class="input" placeholder="Cari barang"></div><select class="select"><option>Semua kategori</option></select><div class="toolbar__right"><span class="caption">7 dari 412 barang</span></div></div>
+                <div class="table-wrap">
+                  <table class="table">
+                    <thead><tr><th>Barang</th><th class="r">Stok</th><th class="r">Minimum</th><th>Status</th><th class="r">Harga kontraktor</th></tr></thead>
+                    <tbody>
+                      <tr><td class="strong">Semen Tiga Roda 40 kg<span class="sub">SMN-TR40</span></td><td class="num">12 sak</td><td class="num">50 sak</td><td><span class="pill pill--bad">Kritis</span></td><td class="num">Rp58.500</td></tr>
+                      <tr><td class="strong">Besi beton 10 mm SNI<span class="sub">BSI-10-SNI</span></td><td class="num">0 btg</td><td class="num">100 btg</td><td><span class="pill pill--bad">Habis</span></td><td class="num">Rp72.000</td></tr>
+                      <tr><td class="strong">Pasir Bangka<span class="sub">PSR-BGK</span></td><td class="num">1,5 m³</td><td class="num">4 m³</td><td><span class="pill pill--warn">Menipis</span></td><td class="num">Rp310.000</td></tr>
+                      <tr><td class="strong">Cat tembok Avian 5 kg putih<span class="sub">CAT-AV5-PT</span></td><td class="num">8 kaleng</td><td class="num">15 kaleng</td><td><span class="pill pill--warn">Menipis</span></td><td class="num">Rp96.000</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-foot"><span>Menampilkan 4 dari 7</span><button class="btn btn--ghost btn--sm">Lihat semua</button></div>
+              </div>
+              <div class="panel">
+                <div class="panel__head"><p class="panel__title">Piutang jatuh tempo</p><a class="link body-sm" href="#">Semua</a></div>
+                <ul class="list">
+                  <li><span class="avatar" data-tone="3">CV</span><div class="list__main"><p class="list__title">CV Bangun Karya</p><p class="list__sub">Jatuh tempo 10 Okt · 3 nota</p></div><span class="num strong">Rp18,2 jt</span></li>
+                  <li><span class="avatar" data-tone="1">PS</span><div class="list__main"><p class="list__title">Pak Sutrisno (mandor)</p><p class="list__sub">Lewat 4 hari</p></div><span class="pill pill--bad pill--plain">Rp6,5 jt</span></li>
+                  <li><span class="avatar" data-tone="4">RH</span><div class="list__main"><p class="list__title">Renovasi Harapan</p><p class="list__sub">Jatuh tempo 14 Okt</p></div><span class="num strong">Rp12,0 jt</span></li>
+                  <li><span class="avatar" data-tone="5">MJ</span><div class="list__main"><p class="list__title">Mitra Jaya Konstruksi</p><p class="list__sub">Jatuh tempo 16 Okt</p></div><span class="num strong">Rp6,0 jt</span></li>
+                </ul>
+                <div class="panel__body" style="border-top:1px solid var(--line-soft)">
+                  <p class="panel__sub" style="margin-bottom:4px">Penjualan 7 hari</p>
+                  <div class="bars">
+                    <div class="bars__col" style="--v:55%"><div class="bars__bar"></div><span class="bars__label">Sab</span></div>
+                    <div class="bars__col" style="--v:38%"><div class="bars__bar"></div><span class="bars__label">Min</span></div>
+                    <div class="bars__col" style="--v:72%"><div class="bars__bar"></div><span class="bars__label">Sen</span></div>
+                    <div class="bars__col" style="--v:64%"><div class="bars__bar"></div><span class="bars__label">Sel</span></div>
+                    <div class="bars__col" style="--v:80%"><div class="bars__bar"></div><span class="bars__label">Rab</span></div>
+                    <div class="bars__col" style="--v:69%"><div class="bars__bar"></div><span class="bars__label">Kam</span></div>
+                    <div class="bars__col is-hi" style="--v:88%"><div class="bars__bar"></div><span class="bars__label">Jum</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:var(--s-8);align-items:start">
+      <div class="panel">
+        <div class="panel__head"><div><p class="panel__title">Kalender sumber daya</p><p class="panel__sub">Baris = unit/dokter/kapster · kolom = hari</p></div></div>
+        <div class="table-wrap">
+          <div class="rescal" style="--cols:5;min-width:620px">
+            <div class="rescal__corner">Unit</div>
+            <div class="rescal__col">Kam<b>8</b></div><div class="rescal__col is-today">Jum<b>9</b></div><div class="rescal__col">Sab<b>10</b></div><div class="rescal__col">Min<b>11</b></div><div class="rescal__col">Sen<b>12</b></div>
+            <div class="rescal__row"><b>Villa Cemara</b><span>6 tamu</span></div>
+            <div></div><div><div class="evt evt--ok" style="--span:3"><b>Keluarga Wibowo</b>Lunas · 3 malam</div></div><div></div><div></div><div></div>
+            <div class="rescal__row"><b>Villa Pinus</b><span>4 tamu</span></div>
+            <div><div class="evt" style="--span:2"><b>Dewi A.</b>DP 50%</div></div><div></div><div><div class="evt evt--warn" style="--span:2"><b>Rombongan kantor</b>Menunggu DP</div></div><div></div><div></div>
+            <div class="rescal__row"><b>Villa Kabut</b><span>2 tamu</span></div>
+            <div></div><div></div><div><div class="evt evt--idle"><b>Perawatan</b>Ganti water heater</div></div><div></div><div><div class="evt evt--info"><b>Rizky &amp; Nadia</b>Baru masuk</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><div><p class="panel__title">Papan antrean</p><p class="panel__sub">Bengkel, servis AC, grooming, dapur</p></div></div>
+        <div class="panel__body">
+          <div class="board" style="grid-auto-columns:minmax(180px,1fr)">
+            <div class="board__col">
+              <div class="board__head">Menunggu <span class="count">2</span></div>
+              <div class="job"><div class="job__top"><span>B 4521 KJT</span><span>08.30</span></div><p class="job__title">Ganti oli + filter</p><p class="job__meta"><i data-lucide="bike" class="i-sm"></i>Vario 125</p></div>
+              <div class="job"><div class="job__top"><span>B 3310 UFA</span><span>09.00</span></div><p class="job__title">Servis CVT</p><p class="job__meta"><i data-lucide="bike" class="i-sm"></i>NMAX</p></div>
+            </div>
+            <div class="board__col">
+              <div class="board__head">Dikerjakan <span class="count">1</span></div>
+              <div class="job"><div class="job__top"><span>B 6677 PLQ</span><span class="pill pill--info pill--plain">Dodi</span></div><p class="job__title">Tune up + rem</p><p class="job__meta"><i data-lucide="clock" class="i-sm"></i>Estimasi selesai 10.15</p></div>
+            </div>
+            <div class="board__col">
+              <div class="board__head">Selesai <span class="count">1</span></div>
+              <div class="job"><div class="job__top"><span>B 2201 KKL</span><span class="pill pill--ok pill--plain">Lunas</span></div><p class="job__title">Ganti ban belakang</p><p class="job__meta">Rp285.000</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 ATURAN ============ -->
+<section class="ds-sec" id="aturan">
+  <div class="container">
+    <header>
+      <span class="ds-num">05</span>
+      <h2 class="ds-title">Aturan supaya tidak terlihat "AI slop"</h2>
+      <p class="muted">Diambil dari perbandingan referensi produk nyata (Fresha, Airbnb, MOO, Majoo, SiCepat) dengan pola template yang biasa dihasilkan AI.</p>
+    </header>
+    <div class="rules">
+      <div class="ds-box do"><span class="ds-label">Lakukan</span>
+        <ul>
+          <li><i data-lucide="check"></i>Konten spesifik bisnis di hero: alamat, jam buka, harga, slot. Bukan slogan.</li>
+          <li><i data-lucide="check"></i>Foto asli (via prompt) sebagai elemen utama; layout mengikuti fotonya.</li>
+          <li><i data-lucide="check"></i>Rata kiri. Judul section kiri, link "Semua →" di kanan.</li>
+          <li><i data-lucide="check"></i>Satu warna brand + netral. Accent hanya untuk promo/harga.</li>
+          <li><i data-lucide="check"></i>Data realistis UMKM: angka kecil yang masuk akal (63 transaksi, bukan 10K+).</li>
+          <li><i data-lucide="check"></i>Panel dashboard pakai garis 1px; status pakai pill dengan teks jelas.</li>
+          <li><i data-lucide="check"></i>Satu set ikon (Lucide, garis 1.75), ukuran 18px.</li>
+        </ul>
+      </div>
+      <div class="ds-box dont"><span class="ds-label">Hindari</span>
+        <ul>
+          <li><i data-lucide="x"></i>Gradien ungu-biru, blob, glassmorphism, glow.</li>
+          <li><i data-lucide="x"></i>Grid 3 fitur "ikon di lingkaran + judul + 1 kalimat".</li>
+          <li><i data-lucide="x"></i>Emoji sebagai ikon, ilustrasi 3D, stok foto generik.</li>
+          <li><i data-lucide="x"></i>Hero rata tengah dengan 2 tombol dan statistik palsu.</li>
+          <li><i data-lucide="x"></i>Copy umum: "Solusi terbaik", "Tingkatkan bisnis Anda", "Revolusioner".</li>
+          <li><i data-lucide="x"></i>Kartu KPI warna-warni dengan grafik dekoratif tanpa keputusan.</li>
+          <li><i data-lucide="x"></i>Semua sudut sangat bulat (24px+) dan bayangan tebal di setiap kartu.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="lapak.js"></script>
+<script>
+  // Ganti tema brand
+  document.getElementById("brandSwitch").addEventListener("lapak:select", function (e) {
+    document.documentElement.setAttribute("data-brand", e.detail.value);
+  });
+  // Isi kalender Oktober 2026 (1 Okt = Kamis)
+  (function () {
+    var grid = document.querySelector(".cal__grid");
+    var html = "";
+    for (var i = 0; i < 3; i++) html += '<span class="cal__day is-out">' + (28 + i) + "</span>";
+    for (var d = 1; d <= 31; d++) {
+      var dow = (d + 2) % 7; // 0 = Senin
+      var cls = "cal__day";
+      if (d < 9) cls += " is-out";
+      else if (dow === 6) cls += " is-off";
+      if (d === 9) cls += " is-today";
+      if (d === 12) cls += " is-selected";
+      html += '<button class="' + cls + '" data-value="' + d + '">' + d + "</button>";
+    }
+    grid.insertAdjacentHTML("beforeend", html);
+  })();
+</script>
+</body>
+</html>

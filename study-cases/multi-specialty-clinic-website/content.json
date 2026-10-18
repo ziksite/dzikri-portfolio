@@ -1,0 +1,58 @@
+{
+  "slug": "multi-specialty-clinic-website",
+  "kind": "Website",
+  "industry": "Healthcare",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Online Booking", "WhatsApp Reminder"],
+  "metrics": [
+    { "value": "6", "label": "SPECIALTIES", "labelId": "SPESIALISASI" },
+    { "value": "3", "label": "STEPS TO BOOK", "labelId": "LANGKAH RESERVASI" },
+    { "value": "H-1", "label": "WA REMINDER", "labelId": "PENGINGAT WA" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with specialty and date search in the hero", "captionId": "Beranda dengan pencarian layanan dan tanggal di hero" },
+    { "hash": "reservasi", "caption": "Self-service booking: specialty, doctor, date and time", "captionId": "Reservasi mandiri: layanan, dokter, tanggal, dan jam" },
+    { "hash": "dokter", "caption": "Doctor directory with weekly practice schedule", "captionId": "Direktori dokter dengan jadwal praktik mingguan" },
+    { "hash": "admin", "caption": "Front-desk dashboard: doctor calendar, check-ins and chat leads", "captionId": "Dashboard resepsionis: kalender dokter, check-in, dan chat masuk" }
+  ],
+  "content_en": {
+    "title": "Multi-Specialty Clinic Website",
+    "type": "CLINIC WEBSITE & BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign of a Jakarta clinic's website covering six specialties. Patients choose a doctor and an appointment slot themselves instead of waiting for a WhatsApp reply, and the front desk works from one calendar.",
+    "challenge": "The clinic offers six specialties and more than fifty treatments, but every call to action on the old site led to the same WhatsApp chat. Patients could not see which doctor practised on which day, so each booking took several messages, and the admin team turned chats into appointments by hand.\n\nThe homepage opened with a single specialty and a slogan, repeated the six specialties three times, and left opening hours, location and doctor schedules in the footer. Several sensitive specialties also made patients hesitant to explain their complaint to an admin.",
+    "solution": "The new homepage puts specialty and date search in the hero, followed by the doctors on duty today, the six specialties with their treatment counts, and the in-house facilities. A three-step booking flow lets patients pick a specialty, a doctor, a day and an open slot, with full slots removed and days without practice disabled. Complaints written in the form are visible to the treating doctor only, and patients are called by booking number in the waiting room.\n\nA front-desk dashboard shows each doctor's calendar by the hour, check-in status, patients due in the next hour, and incoming WhatsApp consultations that can be converted into bookings. The planned production stack is Next.js with Supabase, with WhatsApp reminders sent the day before.",
+    "features": [
+      "Specialty and date search in the hero",
+      "Today's doctors on duty with remaining slots",
+      "Three-step self-service booking with live slot availability",
+      "Doctor directory and weekly schedule with specialty filters",
+      "Private complaint field and booking-number calling",
+      "Front-desk calendar by doctor and hour with check-in",
+      "WhatsApp chat leads tracked through to bookings"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Klinik Multi-Spesialis",
+    "type": "WEBSITE & RESERVASI KLINIK",
+    "category": "Booking System",
+    "summary": "Redesign website klinik di Jakarta dengan enam layanan spesialis. Pasien memilih dokter dan jam kunjungan sendiri tanpa menunggu balasan WhatsApp, dan resepsionis bekerja dari satu kalender.",
+    "challenge": "Klinik ini punya enam layanan spesialis dan lebih dari lima puluh tindakan, tetapi semua tombol di situs lama mengarah ke chat WhatsApp yang sama. Pasien tidak bisa melihat dokter mana yang praktik di hari apa, sehingga satu reservasi butuh beberapa kali berbalas pesan, dan tim admin mengubah chat menjadi janji temu secara manual.\n\nBeranda dibuka dengan satu spesialisasi dan slogan, menampilkan enam layanan yang sama sampai tiga kali, dan menaruh jam buka, lokasi, serta jadwal dokter di footer. Beberapa layanan yang sensitif juga membuat pasien ragu menjelaskan keluhan kepada admin.",
+    "solution": "Beranda baru menaruh pencarian layanan dan tanggal di hero, diikuti dokter yang praktik hari ini, enam layanan spesialis beserta jumlah tindakannya, dan fasilitas di klinik. Alur reservasi tiga langkah memungkinkan pasien memilih layanan, dokter, hari, dan slot yang masih kosong; slot penuh tidak bisa dipilih dan hari tanpa jadwal dokter dinonaktifkan. Keluhan di form hanya bisa dibaca dokter yang menangani, dan pasien dipanggil dengan nomor reservasi di ruang tunggu.\n\nDashboard resepsionis menampilkan kalender setiap dokter per jam, status check-in, pasien satu jam ke depan, serta chat konsultasi WhatsApp yang bisa diubah menjadi reservasi. Stack produksi yang direncanakan adalah Next.js dengan Supabase, dengan pengingat WhatsApp H-1.",
+    "features": [
+      "Pencarian layanan dan tanggal di hero",
+      "Dokter praktik hari ini beserta sisa slot",
+      "Reservasi mandiri tiga langkah dengan ketersediaan slot langsung",
+      "Direktori dokter dan jadwal mingguan dengan filter spesialisasi",
+      "Kolom keluhan privat dan pemanggilan dengan nomor reservasi",
+      "Kalender resepsionis per dokter dan jam dengan check-in",
+      "Chat WhatsApp terpantau sampai menjadi reservasi"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
