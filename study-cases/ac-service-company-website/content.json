@@ -1,0 +1,58 @@
+{
+  "slug": "ac-service-company-website",
+  "kind": "Website",
+  "industry": "Consumer Services",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Field Service", "Online Booking"],
+  "metrics": [
+    { "value": "19", "label": "PRICE LIST ITEMS", "labelId": "ITEM DAFTAR HARGA" },
+    { "value": "2 HRS", "label": "VISIT WINDOW", "labelId": "JENDELA KUNJUNGAN" },
+    { "value": "30 DAYS", "label": "SERVICE WARRANTY", "labelId": "GARANSI SERVIS" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with a per-unit quote and the price list by PK", "captionId": "Beranda dengan estimasi per unit dan daftar harga per PK" },
+    { "hash": "booking", "caption": "Booking units at an address with a two-hour visit window", "captionId": "Booking unit di satu alamat dengan jendela kunjungan dua jam" },
+    { "hash": "lacak", "caption": "Live visit status and a report for every unit", "captionId": "Status kunjungan dan laporan untuk setiap unit" },
+    { "hash": "teknisi", "caption": "Technician app: today's jobs, unit checklist and address history", "captionId": "Aplikasi teknisi: job hari ini, checklist unit, dan riwayat alamat" }
+  ],
+  "content_en": {
+    "title": "AC Service Company Website",
+    "type": "AC SERVICE WEBSITE & FIELD APP",
+    "category": "Booking System",
+    "summary": "A redesign for an on-call air conditioner service covering cleaning, refrigerant top-ups, repairs and installation. Customers price jobs per unit and PK, book the units registered at their address into a two-hour window, follow the visit and receive a report for each unit; technicians work from a phone checklist.",
+    "challenge": "The old site was one long page of capitalised sales copy. Prices appeared twice in different formats, once as cards and again as a long numbered table, and the order form only asked for a service type and a quantity from one to five before handing everything to WhatsApp. Unit size, address and arrival time were all negotiated in chat.\n\nCustomers had no way of knowing when a technician would arrive or who it would be, even though a cancellation fee applied once the technician reached the door. Work done on each unit was not recorded, so warranty claims and repeat visits depended on memory, and offices and shophouses appeared only as a surcharge with no route to a maintenance contract.",
+    "solution": "The homepage opens with a quote bar for service, PK and number of units, followed by photo tiles for each service and a price table split into maintenance, refrigerant, installation and repair, with the building surcharge and cancellation rule stated beside it. Service areas list which days each district is covered, and offices are pointed to a maintenance contract with a single monthly invoice.\n\nBooking starts from the address: units already registered there are listed with brand, PK and last service, each with its own service choice, and new units are added with a stepper. A month calendar and two-hour windows show remaining crews, and the total stays in a bar at the bottom. On the day, the tracking page shows the technician, arrival log and progress, then a report per unit with before-and-after readings, photos and any extra work the customer approved. Technicians see today's jobs, a checklist with reading inputs per unit and the full history of the address. The planned production stack is Next.js with Supabase and the WhatsApp Business API.",
+    "features": [
+      "Quote bar for service, PK and number of units",
+      "Price table per PK across four service groups",
+      "Booking by registered units at an address, with a service per unit",
+      "Month calendar with two-hour visit windows and remaining crews",
+      "Visit tracking with technician, arrival log and progress",
+      "Per-unit report with before-and-after readings and photos",
+      "Technician phone app with checklist and address history"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Perusahaan Servis AC",
+    "type": "WEBSITE & APLIKASI SERVIS AC",
+    "category": "Booking System",
+    "summary": "Redesign untuk jasa servis AC panggilan yang menangani cuci, tambah freon, perbaikan, dan pemasangan. Pelanggan menghitung harga per unit dan PK, memesan unit yang terdaftar di alamatnya dalam jendela dua jam, memantau kunjungan, dan menerima laporan untuk setiap unit; teknisi bekerja dari checklist di HP.",
+    "challenge": "Situs lama berupa satu halaman panjang berisi teks promosi berhuruf kapital. Harga muncul dua kali dengan format berbeda, sekali sebagai kartu dan sekali lagi sebagai tabel bernomor yang panjang, dan form pemesanan hanya menanyakan jenis jasa dan jumlah satu sampai lima sebelum semuanya dialihkan ke WhatsApp. Ukuran unit, alamat, dan jam datang dibahas manual lewat chat.\n\nPelanggan tidak tahu kapan teknisi datang atau siapa orangnya, padahal biaya batal berlaku begitu teknisi tiba. Pekerjaan pada tiap unit tidak dicatat, sehingga klaim garansi dan kunjungan ulang bergantung pada ingatan, dan kantor serta ruko hanya muncul sebagai biaya tambahan tanpa jalur kontrak perawatan.",
+    "solution": "Beranda dibuka dengan bar estimasi untuk layanan, PK, dan jumlah unit, diikuti tile berfoto untuk tiap layanan dan tabel harga yang dibagi menjadi perawatan, freon, bongkar pasang, dan perbaikan, lengkap dengan biaya tambahan gedung dan aturan pembatalan. Area layanan mencantumkan hari kunjungan tiap wilayah, dan kantor diarahkan ke kontrak perawatan dengan satu tagihan bulanan.\n\nBooking dimulai dari alamat: unit yang sudah terdaftar tampil dengan merek, PK, dan servis terakhir, masing-masing dengan pilihan layanannya sendiri, dan unit baru ditambahkan lewat stepper. Kalender bulan dan jendela dua jam menunjukkan sisa tim, dan total selalu terlihat di bar bawah. Pada hari kunjungan, halaman lacak menampilkan teknisi, catatan waktu tiba, dan progres, lalu laporan per unit dengan pengukuran sebelum dan sesudah, foto, dan pekerjaan tambahan yang disetujui pelanggan. Teknisi melihat job hari ini, checklist dengan input pengukuran per unit, dan riwayat lengkap alamat. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan WhatsApp Business API.",
+    "features": [
+      "Bar estimasi untuk layanan, PK, dan jumlah unit",
+      "Tabel harga per PK dalam empat kelompok layanan",
+      "Booking berdasarkan unit terdaftar di alamat, layanan per unit",
+      "Kalender bulan dengan jendela kunjungan dua jam dan sisa tim",
+      "Lacak kunjungan dengan teknisi, catatan waktu, dan progres",
+      "Laporan per unit dengan pengukuran sebelum-sesudah dan foto",
+      "Aplikasi HP teknisi dengan checklist dan riwayat alamat"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

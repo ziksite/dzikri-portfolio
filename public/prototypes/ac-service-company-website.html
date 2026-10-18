@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adem Teknik — Servis AC per unit di Medan Raya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/ac-service-company-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="topbar"><div class="wrap"><span>Pelanggan baru: diskon 10% untuk kunjungan pertama</span><a href="#lacak"><i data-lucide="map-pin" class="i-sm"></i>Lacak kunjungan</a></div></div>
+  <header class="header">
+    <div class="wrap">
+      <a class="logo" href="#home">ademteknik</a>
+      <nav class="nav"><a href="#home">Layanan<i data-lucide="chevron-down" class="i-sm"></i></a><a href="#harga" onclick="document.getElementById('harga').scrollIntoView();return false">Harga</a><a href="#home">Area</a><a href="#home">Kontrak kantor</a></nav>
+      <div class="header__right"><a class="link" href="#home"><i data-lucide="phone" class="i-sm"></i>Telepon</a><a class="btn btn-orange btn-sm" href="#booking">Pesan teknisi</a></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <h1 class="t-hero">Servis AC dengan harga per unit dan jam kunjungan yang pasti.</h1>
+        <p class="t-lead" style="opacity:.85;max-width:560px">Cuci, isi freon, perbaikan, dan bongkar pasang untuk rumah, ruko, dan kantor di Medan, Binjai, dan Deli Serdang. Pilih jendela dua jam, lacak teknisi, dan terima laporan tiap unit setelah selesai.</p>
+        <form class="quote" onsubmit="location.hash='booking';return false">
+          <div class="quote__seg"><label for="qSvc">Layanan</label><select id="qSvc"><option value="cuci">Cuci AC</option><option value="tambah">Tambah freon</option><option value="isi">Isi freon</option><option value="bp">Bongkar pasang</option><option value="cek">Pengecekan</option></select></div>
+          <div class="quote__seg"><label for="qPk">Ukuran</label><select id="qPk"><option value="0">0,5–1 PK</option><option value="1">1,5–2 PK</option></select></div>
+          <div class="quote__seg"><label for="qQty">Jumlah</label><select id="qQty"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <button class="btn btn-orange">Pilih jadwal</button>
+        </form>
+        <p style="font-size:15px;opacity:.85">Estimasi <b id="qOut" class="num" style="color:#fff">Rp225.000</b> · bayar setelah selesai · garansi servis 30 hari</p>
+      </div>
+      <div class="hero__media">
+        <div class="photo" data-img="assets/ac-service-company-website/cuci-unit-outdoor.webp"></div>
+        <div class="notes">
+          <div class="note"><span class="note__ic"><i data-lucide="calendar-check" class="i-sm"></i></span><div><b>Kunjungan terjadwal</b><p>Sel, 20 Okt · 13.00–15.00 · 3 unit</p></div><time>baru</time></div>
+          <div class="note"><span class="note__ic note__ic--or"><i data-lucide="navigation" class="i-sm"></i></span><div><b>Teknisi berangkat</b><p>Rahmat tiba sekitar 10.21</p></div><time>09.58</time></div>
+          <div class="note"><span class="note__ic note__ic--ok"><i data-lucide="file-check-2" class="i-sm"></i></span><div><b>Laporan unit 1 siap</b><p>Suhu keluar 17,8 → 14,2 °C</p></div><time>10.52</time></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding:24px 0 40px">
+    <div class="wrap">
+      <div class="tiles">
+        <a class="tile" href="#booking" data-bg="assets/ac-service-company-website/cuci-unit-outdoor.webp"><span class="tile__label"><span>Cuci AC<small>mulai Rp75.000/unit</small></span><span class="tile__arrow"><i data-lucide="arrow-right"></i></span></span></a>
+        <a class="tile" href="#booking" data-bg="assets/ac-service-company-website/cek-tekanan-freon.webp"><span class="tile__label"><span>Freon<small>mulai Rp250.000/unit</small></span><span class="tile__arrow"><i data-lucide="arrow-right"></i></span></span></a>
+        <a class="tile" href="#booking" data-bg="assets/ac-service-company-website/vakum-unit-outdoor.webp"><span class="tile__label"><span>Bongkar pasang<small>mulai Rp450.000/unit</small></span><span class="tile__arrow"><i data-lucide="arrow-right"></i></span></span></a>
+        <a class="tile" href="#booking" data-bg="assets/ac-service-company-website/las-pipa-tembaga.webp"><span class="tile__label"><span>Perbaikan<small>cek Rp75.000/unit</small></span><span class="tile__arrow"><i data-lucide="arrow-right"></i></span></span></a>
+        <a class="tile" href="#home" data-bg="assets/ac-service-company-website/outdoor-gedung-atap.webp"><span class="tile__label"><span>Kontrak kantor<small>jadwal rutin, tagihan bulanan</small></span><span class="tile__arrow"><i data-lucide="arrow-right"></i></span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sky" id="harga">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="t-h1 duo">Harga per unit,<span>sebelum teknisi datang.</span></h2>
+        <p class="muted">Harga sudah termasuk jasa dan pengujian setelah pekerjaan. Kalau teknisi menemukan kerusakan lain, biayanya dikirim lewat WhatsApp dan baru dikerjakan setelah Anda setuju.</p>
+      </div>
+      <div class="seg" data-select data-tabs="harga" style="margin-bottom:20px">
+        <button class="is-active" data-value="rawat">Perawatan</button><button data-value="freon">Freon</button><button data-value="pasang">Bongkar pasang</button><button data-value="perbaikan">Perbaikan</button>
+      </div>
+      <div class="price" data-panel="harga:rawat">
+        <table>
+          <thead><tr><th>Layanan</th><th class="p">0,5–1 PK</th><th class="p">1,5–2 PK</th></tr></thead>
+          <tbody>
+            <tr><td class="svc"><b>Cuci AC</b><span>Filter, evaporator, blower, talang air, outdoor, uji fungsi</span></td><td class="p">Rp75.000</td><td class="p">Rp85.000</td></tr>
+            <tr><td class="svc"><b>Cuci AC inverter</b><span>Langkah sama, pengecekan modul inverter</span></td><td class="p" colspan="2">Rp100.000 · semua PK</td></tr>
+            <tr><td class="svc"><b>Flushing evaporator</b><span>Membilas jalur evaporator dari kotoran dan oli lama</span></td><td class="p" colspan="2">Rp275.000</td></tr>
+            <tr><td class="svc"><b>Vakum AC</b><span>Membuang udara dan uap air di jalur pipa</span></td><td class="p" colspan="2">Rp250.000</td></tr>
+            <tr><td class="svc"><b>Vakum &amp; flushing</b><span>Paket untuk unit yang sering beku atau tidak dingin</span></td><td class="p" colspan="2">Rp475.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="price" data-panel="harga:freon" hidden>
+        <table>
+          <thead><tr><th>Layanan</th><th class="p">0,5–1 PK</th><th class="p">1,5–2 PK</th></tr></thead>
+          <tbody>
+            <tr><td class="svc"><b>Tambah freon</b><span>Cek tekanan dan ampere, tambah sesuai tipe, cari penyebab berkurang</span></td><td class="p">Rp250.000</td><td class="p">Rp300.000</td></tr>
+            <tr><td class="svc"><b>Isi freon</b><span>Pengisian penuh setelah freon habis atau pipa diperbaiki</span></td><td class="p">Rp350.000</td><td class="p">Rp450.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="price" data-panel="harga:pasang" hidden>
+        <table>
+          <thead><tr><th>Layanan</th><th class="p">0,5–1 PK</th><th class="p">1,5–2 PK</th></tr></thead>
+          <tbody>
+            <tr><td class="svc"><b>Bongkar AC</b><span>Freon disimpan di outdoor, pipa dan kabel dilepas tanpa rusak</span></td><td class="p" colspan="2">Rp200.000</td></tr>
+            <tr><td class="svc"><b>Pasang AC</b><span>Indoor &amp; outdoor, pipa dan kabel hingga 5 m, uji fungsi</span></td><td class="p">Rp300.000</td><td class="p">Rp400.000</td></tr>
+            <tr><td class="svc"><b>Bongkar pasang AC</b><span>Pindah posisi atau pindah rumah, bobok maksimal 1 titik</span></td><td class="p">Rp450.000</td><td class="p">Rp550.000</td></tr>
+            <tr><td class="svc"><b>Bobok tembok</b><span>Titik tambahan untuk jalur pipa</span></td><td class="p" colspan="2">Rp150.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="price" data-panel="harga:perbaikan" hidden>
+        <table>
+          <thead><tr><th>Layanan</th><th class="p">Harga</th></tr></thead>
+          <tbody>
+            <tr><td class="svc"><b>Pengecekan AC</b><span>Tekanan, ampere, kompresor, kebocoran, motor fan, modul</span></td><td class="p">Rp75.000</td></tr>
+            <tr><td class="svc"><b>Ganti kapasitor 0,5–2 PK</b><span>Termasuk part</span></td><td class="p">Rp350.000–475.000</td></tr>
+            <tr><td class="svc"><b>Pengelasan pipa</b><span>Untuk kebocoran di sambungan atau pipa tembaga</span></td><td class="p">Rp175.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fine">
+        <span><i data-lucide="building-2" class="i-sm"></i>Apartemen, ruko, kantor, pabrik: +Rp25.000 per kunjungan</span>
+        <span><i data-lucide="circle-x" class="i-sm"></i>Batal setelah teknisi tiba: biaya kunjungan Rp50.000</span>
+        <span><i data-lucide="shield-check" class="i-sm"></i>Garansi servis 30 hari</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head"><h2 class="t-h1 duo">Dari pesan sampai laporan,<span>semua tercatat per unit.</span></h2></div>
+      <div class="bento">
+        <article class="bcard bcard--a">
+          <div class="bcard__photo" data-bg="assets/ac-service-company-website/vakum-unit-outdoor.webp"></div>
+          <div class="mini">
+            <p style="font-weight:800;margin-bottom:10px">Selasa, 20 Oktober</p>
+            <div class="slots"><div class="slot is-off"><b>10.00–12.00</b><small>penuh</small></div><div class="slot is-selected"><b>13.00–15.00</b><small>2 tim tersedia</small></div></div>
+          </div>
+          <div class="bcard__copy"><h3>Jendela dua jam</h3><p>Pilih jam yang benar-benar tersedia, bukan "teknisi datang hari ini".</p></div>
+        </article>
+        <article class="bcard bcard--b">
+          <div class="bcard__photo" data-bg="assets/ac-service-company-website/perbaikan-indoor-tangga.webp"></div>
+          <div class="bsplit">
+            <div class="bcard__copy"><h3>Lacak teknisi sampai depan pintu</h3><p>Nama teknisi, perkiraan tiba, dan unit yang sedang dikerjakan terlihat dari satu link.</p></div>
+            <div class="mini">
+              <div class="who"><span class="avatar avatar--sm">RS</span><div><b>Rahmat S.</b><p class="t-small">Dalam perjalanan · 4,2 km</p></div></div>
+              <div class="bar" style="margin:14px 0 8px"><i style="width:62%;background:var(--blue)"></i></div>
+              <p class="t-meta">Perkiraan tiba <b style="color:var(--ink)">10.21</b> · jendela 10.00–12.00</p>
+            </div>
+          </div>
+        </article>
+        <article class="bcard bcard--c">
+          <div class="bcard__photo" data-bg="assets/ac-service-company-website/manifold-tang-ampere.webp"></div>
+          <div class="mini" style="max-width:340px">
+            <table class="reading"><thead><tr><th>Kamar utama · 1 PK</th><th>Sebelum</th><th>Sesudah</th></tr></thead><tbody><tr><td>Suhu keluar</td><td>17,8 °C</td><td class="up">14,2 °C</td></tr><tr><td>Arus</td><td>4,6 A</td><td class="up">4,1 A</td></tr></tbody></table>
+          </div>
+          <div class="bcard__copy"><h3>Laporan tiap unit</h3><p>Ukuran sebelum dan sesudah, foto, dan pekerjaan yang dilakukan.</p></div>
+        </article>
+        <article class="bcard bcard--c">
+          <div class="bcard__photo" data-bg="assets/ac-service-company-website/oli-refrigerant.webp"></div>
+          <div class="mini" style="max-width:340px">
+            <ul class="hist"><li><b>14 Jun 2026 · Cuci + tambah freon</b><span class="t-small">Tekanan 60 → 72 psi</span></li><li><b>9 Feb 2026 · Cuci</b><span class="t-small">Talang air tersumbat, dibersihkan</span></li></ul>
+          </div>
+          <div class="bcard__copy"><h3>Riwayat unit per alamat</h3><p>Teknisi berikutnya tahu merek, PK, dan masalah sebelumnya sebelum datang.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sky">
+    <div class="wrap split">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <h2 class="t-h1 duo">Area layanan<span>Medan Raya.</span></h2>
+        <p class="muted">Teknisi berangkat dari dua pos: Medan Selayang dan Medan Tembung. Di luar daftar ini, kirim lokasi lewat WhatsApp untuk cek jadwal dan biaya transport.</p>
+        <a class="btn btn-line" href="#booking" style="align-self:flex-start"><i data-lucide="map-pin" class="i-sm"></i>Cek alamat saya</a>
+      </div>
+      <div class="areas">
+        <div class="area">Medan Selayang<span>tiap hari</span></div>
+        <div class="area">Medan Johor<span>tiap hari</span></div>
+        <div class="area">Medan Sunggal<span>tiap hari</span></div>
+        <div class="area">Medan Baru<span>tiap hari</span></div>
+        <div class="area">Medan Tembung<span>tiap hari</span></div>
+        <div class="area">Medan Kota<span>tiap hari</span></div>
+        <div class="area">Percut Sei Tuan<span>tiap hari</span></div>
+        <div class="area">Binjai<span>Sel, Kam, Sab</span></div>
+        <div class="area">Tanjung Morawa<span>Sen, Rab, Jum</span></div>
+        <div class="area">Lubuk Pakam<span>Rab, Sab</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="callbar">
+    <div class="wrap">
+      <span class="callbar__ic"><i data-lucide="building-2"></i></span>
+      <div><p>Kontrak perawatan untuk kantor, ruko, dan klinik</p><b>Cuci terjadwal tiap 3 bulan, laporan per unit, satu tagihan bulanan.</b></div>
+      <a class="btn btn-ghost-light" href="#teknisi">Minta penawaran</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="max-width:calc(880px + var(--gutter) * 2)">
+      <h2 class="t-h2" style="margin-bottom:8px">Pertanyaan yang sering masuk</h2>
+      <div class="faq">
+        <details open><summary>Bagaimana kalau ternyata AC perlu perbaikan lain?<i data-lucide="plus"></i></summary><p>Teknisi mengirim temuan, foto, dan harga ke WhatsApp Anda. Pekerjaan tambahan baru dimulai setelah Anda menekan setuju, dan semuanya masuk ke laporan unit.</p></details>
+        <details><summary>Merek dan tipe AC apa saja yang dikerjakan?<i data-lucide="plus"></i></summary><p>Split, split inverter, cassette, floor standing, split duct, dan multi split. Untuk chiller dan AC central, pengecekan dijadwalkan terpisah.</p></details>
+        <details><summary>Apa yang ditanggung garansi 30 hari?<i data-lucide="plus"></i></summary><p>Masalah yang sama pada unit yang sama setelah pekerjaan kami, misalnya AC menetes setelah dicuci. Kunjungan ulang tidak dikenakan biaya.</p></details>
+        <details><summary>Bayarnya kapan dan lewat apa?<i data-lucide="plus"></i></summary><p>Setelah semua unit selesai dan laporan terkirim: transfer, QRIS, atau tunai ke teknisi. Kontrak kantor ditagih bulanan dengan faktur.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">ademteknik</span><p style="max-width:300px">Servis AC rumah dan kantor di Medan Raya. Teknisi internal, harga per unit, garansi 30 hari.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#booking">Cuci AC</a></li><li><a href="#booking">Freon</a></li><li><a href="#booking">Bongkar pasang</a></li><li><a href="#booking">Perbaikan</a></li></ul></div>
+        <div><h4>Pelanggan</h4><ul><li><a href="#lacak">Lacak kunjungan</a></li><li><a href="#home">Riwayat unit</a></li><li><a href="#home">Syarat garansi</a></li></ul></div>
+        <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp 0812-6400-3170</a></li><li>Setiap hari 07.00–21.00</li><li>Medan Selayang, Medan</li></ul></div>
+      </div>
+      <div class="footer__base"><span>© 2026 Adem Teknik</span><span>Teknisi untuk tim? <a href="#teknisi" style="color:#fff;font-weight:700">Aplikasi teknisi</a></span></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section data-screen="booking">
+  <div class="flowbar"><div class="wrap">
+    <a class="logo" href="#home">ademteknik</a>
+    <div class="steps"><b>Unit &amp; layanan</b><i></i><b>Jadwal</b><i></i><span>Konfirmasi</span></div>
+  </div></div>
+
+  <form id="bkForm" data-demo-form="#bkDone">
+    <div class="book">
+      <div class="book__sec">
+        <header><div><h1 class="t-h1">Pesan kunjungan</h1><p class="t-meta" style="margin-top:6px">Pilih unit di alamat Anda dan layanan untuk masing-masing.</p></div></header>
+        <div class="card"><div class="card__body addr">
+          <span class="addr__ic"><i data-lucide="house"></i></span>
+          <div style="min-width:0"><p class="t-h3">Rumah · Jl. Setia Budi, Medan Selayang</p><p class="t-meta">4 unit terdaftar · kunjungan terakhir 14 Jun 2026</p></div>
+          <button type="button" class="btn btn-line btn-sm">Ganti</button>
+        </div>
+        <div class="card__foot"><span class="t-meta">Jenis bangunan</span><div class="seg" data-select id="bldPick" style="border-color:var(--line)"><button type="button" class="is-active" data-value="0">Rumah</button><button type="button" data-value="25000">Apartemen / ruko / kantor</button></div></div></div>
+      </div>
+
+      <div class="book__sec">
+        <header><h2 class="t-h2">Unit di alamat ini</h2><span class="t-meta">Data dari kunjungan sebelumnya</span></header>
+        <div class="card" id="units">
+          <div class="unit is-on" data-p="75000,250000,350000,75000">
+            <button type="button" class="check" aria-label="Pilih unit"><i data-lucide="check" class="i-xs"></i></button>
+            <div>
+              <div class="unit__top"><p class="unit__name">Kamar utama</p><span class="unit__price">Rp75.000</span></div>
+              <div class="meta" style="margin-top:4px"><span><i data-lucide="air-vent" class="i-sm"></i>Split 1 PK · Daikin</span><span><i data-lucide="history" class="i-sm"></i>Dicuci 14 Jun 2026</span></div>
+              <div class="svc-pick" data-select><button type="button" class="is-active" data-value="0">Cuci</button><button type="button" data-value="1">Tambah freon</button><button type="button" data-value="2">Isi freon</button><button type="button" data-value="3">Pengecekan</button></div>
+            </div>
+          </div>
+          <div class="unit is-on" data-p="100000,300000,450000,75000">
+            <button type="button" class="check" aria-label="Pilih unit"><i data-lucide="check" class="i-xs"></i></button>
+            <div>
+              <div class="unit__top"><p class="unit__name">Ruang keluarga</p><span class="unit__price">Rp100.000</span></div>
+              <div class="meta" style="margin-top:4px"><span><i data-lucide="air-vent" class="i-sm"></i>Split inverter 1,5 PK · Panasonic</span><span><i data-lucide="triangle-alert" class="i-sm"></i>Jun: tekanan freon 60 psi</span></div>
+              <div class="svc-pick" data-select><button type="button" class="is-active" data-value="0">Cuci inverter</button><button type="button" data-value="1">Tambah freon</button><button type="button" data-value="2">Isi freon</button><button type="button" data-value="3">Pengecekan</button></div>
+            </div>
+          </div>
+          <div class="unit is-on" data-p="75000,250000,350000,75000">
+            <button type="button" class="check" aria-label="Pilih unit"><i data-lucide="check" class="i-xs"></i></button>
+            <div>
+              <div class="unit__top"><p class="unit__name">Kamar anak</p><span class="unit__price">Rp75.000</span></div>
+              <div class="meta" style="margin-top:4px"><span><i data-lucide="air-vent" class="i-sm"></i>Split 0,5 PK · Sharp</span><span><i data-lucide="history" class="i-sm"></i>Dicuci 14 Jun 2026</span></div>
+              <div class="svc-pick" data-select><button type="button" class="is-active" data-value="0">Cuci</button><button type="button" data-value="1">Tambah freon</button><button type="button" data-value="2">Isi freon</button><button type="button" data-value="3">Pengecekan</button></div>
+            </div>
+          </div>
+          <div class="unit" data-p="75000,250000,350000,75000">
+            <button type="button" class="check" aria-label="Pilih unit"><i data-lucide="check" class="i-xs"></i></button>
+            <div>
+              <div class="unit__top"><p class="unit__name">Kamar tamu</p><span class="unit__price">Rp75.000</span></div>
+              <div class="meta" style="margin-top:4px"><span><i data-lucide="air-vent" class="i-sm"></i>Split 1 PK · LG</span><span><i data-lucide="history" class="i-sm"></i>Dicuci 9 Feb 2026</span></div>
+              <div class="svc-pick" data-select><button type="button" class="is-active" data-value="0">Cuci</button><button type="button" data-value="1">Tambah freon</button><button type="button" data-value="2">Isi freon</button><button type="button" data-value="3">Pengecekan</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="newrow"><div><p class="unit__name">Unit baru 0,5–1 PK</p><p class="t-meta">Cuci · belum terdaftar di alamat ini</p></div><div class="stepper" data-stepper data-min="0" data-max="9" data-new="75000"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div><span class="unit__price">Rp0</span></div>
+          <div class="newrow"><div><p class="unit__name">Unit baru 1,5–2 PK</p><p class="t-meta">Cuci · belum terdaftar di alamat ini</p></div><div class="stepper" data-stepper data-min="0" data-max="9" data-new="85000"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div><span class="unit__price">Rp0</span></div>
+        </div>
+      </div>
+
+      <div class="book__sec">
+        <header><h2 class="t-h2">Jendela kunjungan</h2><span class="t-meta">Teknisi tiba di dalam jendela dua jam</span></header>
+        <div class="card calbox">
+          <div>
+            <div class="cal__head"><p class="t-h3">Oktober 2026</p><div class="cal__nav"><button type="button"><i data-lucide="chevron-left" class="i-sm"></i></button><button type="button"><i data-lucide="chevron-right" class="i-sm"></i></button></div></div>
+            <div class="cal"><span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span></div>
+            <div class="cal" id="calPick" data-select="is-selected" style="margin-top:6px"></div>
+          </div>
+          <div>
+            <div class="cal__head"><p class="t-h3" id="dayLabel">Selasa, 20 Oktober</p><div class="toggle"><span class="is-on">2 jam</span><span>Pagi saja</span></div></div>
+            <div class="slots" id="slotPick" data-select="is-selected">
+              <button type="button" class="slot" data-value="08.00–10.00"><b>08.00–10.00</b><small>1 tim tersedia</small></button>
+              <button type="button" class="slot is-off" data-value="10.00–12.00"><b>10.00–12.00</b><small>penuh</small></button>
+              <button type="button" class="slot is-selected" data-value="13.00–15.00"><b>13.00–15.00</b><small>2 tim tersedia</small></button>
+              <button type="button" class="slot" data-value="15.00–17.00"><b>15.00–17.00</b><small>3 tim tersedia</small></button>
+              <button type="button" class="slot is-off" data-value="17.00–19.00"><b>17.00–19.00</b><small>penuh</small></button>
+              <button type="button" class="slot" data-value="19.00–21.00"><b>19.00–21.00</b><small>1 tim tersedia</small></button>
+            </div>
+            <p class="t-small" style="margin-top:12px">Durasi diperkirakan 35 menit per unit cuci. Dengan 3 unit, kunjungan sekitar 1 jam 45 menit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="book__sec">
+        <header><h2 class="t-h2">Kontak di lokasi</h2></header>
+        <div class="grid2">
+          <label class="field">Nama<input value="Rina Hutabarat"></label>
+          <label class="field">WhatsApp<input value="0813-7055-2214" inputmode="tel"></label>
+        </div>
+        <label class="field">Catatan untuk teknisi<textarea>Parkir motor di carport. Unit outdoor ruang keluarga di dak lantai 2, tangga lipat ada di rumah.</textarea></label>
+      </div>
+    </div>
+
+    <div class="totalbar"><div class="wrap">
+      <div class="totalbar__sum"><b id="tTotal">Rp250.000</b><p id="tLine">3 unit · Selasa, 20 Okt · 13.00–15.00</p></div>
+      <button class="btn btn-blue">Konfirmasi booking<i data-lucide="arrow-right" class="i-sm"></i></button>
+    </div></div>
+  </form>
+
+  <div id="bkDone" hidden>
+    <div class="book" style="padding-bottom:80px">
+      <span style="width:56px;height:56px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center"><i data-lucide="check"></i></span>
+      <div><h1 class="t-h1">Kunjungan terjadwal</h1><p class="muted" style="margin-top:8px">Konfirmasi dan link lacak dikirim ke WhatsApp 0813-7055-2214. Nama teknisi dikirim H-1 pukul 18.00.</p></div>
+      <div class="card">
+        <div class="card__body" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><div><p class="t-h3" id="dLine">Selasa, 20 Oktober · 13.00–15.00</p><p class="t-meta">Jl. Setia Budi, Medan Selayang</p></div><span class="pill">ADM-2436</span></div>
+        <div class="card__foot"><span class="t-meta" id="dUnits">3 unit</span><b class="num" id="dTotal">Rp250.000</b></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-blue" href="#lacak"><i data-lucide="map-pin" class="i-sm"></i>Contoh halaman lacak</a><a class="btn btn-line" href="#home">Kembali ke beranda</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LACAK & LAPORAN ================= -->
+<section data-screen="lacak">
+  <header class="header">
+    <div class="wrap"><a class="logo" href="#home">ademteknik</a><div class="header__right"><span class="t-meta">ADM-2417</span><a class="btn btn-line btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a></div></div>
+  </header>
+  <section class="trackhead">
+    <div class="wrap">
+      <div style="min-width:0">
+        <p style="opacity:.75;font-weight:600">Minggu, 18 Oktober · jendela 10.00–12.00 · Jl. Setia Budi, Medan Selayang</p>
+        <h1 class="t-h1" style="margin-top:10px">Sedang dikerjakan: unit 2 dari 3</h1>
+        <p style="margin-top:8px;opacity:.85">Perkiraan selesai <b>11.50</b>. Laporan tiap unit muncul di bawah begitu teknisi menyimpannya.</p>
+        <div class="prog"><div class="done">Dipesan</div><div class="done">Teknisi berangkat</div><div class="done">Tiba 10.21</div><div class="now">Dikerjakan</div><div>Laporan &amp; bayar</div></div>
+      </div>
+      <div class="techcard">
+        <div class="who"><span class="avatar">RS</span><div><p class="t-h3">Rahmat S.</p><p class="t-meta">Teknisi · dibantu Bayu</p></div><a class="btn btn-line btn-sm" href="#" style="margin-left:auto;padding:0 12px"><i data-lucide="phone" class="i-sm"></i></a></div>
+        <hr style="border:0;border-top:1px solid var(--line);margin:0">
+        <ul class="checks">
+          <li><i data-lucide="circle-check" class="i-sm"></i><span><b>09.58</b> berangkat dari pos Medan Selayang</span></li>
+          <li><i data-lucide="circle-check" class="i-sm"></i><span><b>10.21</b> tiba, dalam jendela</span></li>
+          <li><i data-lucide="circle-check" class="i-sm"></i><span><b>10.52</b> unit 1 selesai, laporan tersimpan</span></li>
+          <li><i data-lucide="circle-check" class="i-sm"></i><span><b>10.58</b> Anda setuju tambah freon unit 2</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-top:40px;padding-bottom:72px;display:flex;flex-direction:column;gap:24px">
+    <div class="section__head" style="margin-bottom:0"><h2 class="t-h2">Laporan per unit</h2><span class="t-meta">Diperbarui 11.06</span></div>
+    <div class="card">
+      <div class="report">
+        <div class="report__side">
+          <span class="pill pill--ok" style="align-self:flex-start"><i data-lucide="check"></i>Selesai 10.52</span>
+          <p class="t-h3">Unit 1 · Kamar utama</p>
+          <p class="t-meta">Split 1 PK · Daikin · R32</p>
+          <p class="t-meta">Cuci AC · Rp75.000</p>
+          <ul class="checks" style="margin-top:6px"><li><i data-lucide="check" class="i-sm"></i>Filter &amp; evaporator dicuci</li><li><i data-lucide="check" class="i-sm"></i>Talang air dibilas, aliran lancar</li><li><i data-lucide="check" class="i-sm"></i>Outdoor &amp; blower dicuci</li><li><i data-lucide="check" class="i-sm"></i>Uji fungsi 10 menit</li></ul>
+        </div>
+        <div class="report__main">
+          <table class="reading"><thead><tr><th>Pengukuran</th><th>Sebelum</th><th>Sesudah</th></tr></thead><tbody>
+            <tr><td>Suhu udara keluar</td><td>17,8 °C</td><td class="up">14,2 °C</td></tr>
+            <tr><td>Suhu ruang setelah 15 menit</td><td>28,5 °C</td><td class="up">25,0 °C</td></tr>
+            <tr><td>Arus kompresor</td><td>4,6 A</td><td class="up">4,1 A</td></tr>
+            <tr><td>Tekanan freon</td><td>72 psi</td><td>72 psi</td></tr>
+          </tbody></table>
+          <div class="ba"><div class="photo" data-img="assets/ac-service-company-website/cuci-unit-outdoor.webp"><span class="photo__tag">Cuci outdoor</span></div><div class="photo" data-img="assets/ac-service-company-website/cek-tekanan-freon.webp"><span class="photo__tag">Cek tekanan</span></div></div>
+        </div>
+      </div>
+      <div class="report">
+        <div class="report__side">
+          <span class="pill pill--warn" style="align-self:flex-start"><i data-lucide="wrench"></i>Dikerjakan sejak 10.55</span>
+          <p class="t-h3">Unit 2 · Ruang keluarga</p>
+          <p class="t-meta">Split inverter 1,5 PK · Panasonic · R32</p>
+          <p class="t-meta">Cuci inverter Rp100.000 + tambah freon Rp300.000</p>
+          <ul class="checks" style="margin-top:6px"><li><i data-lucide="check" class="i-sm"></i>Tekanan rendah: 58 psi</li><li><i data-lucide="check" class="i-sm"></i>Sambungan flare outdoor dicek, tidak bocor</li><li class="off"><i data-lucide="circle-dashed" class="i-sm"></i>Cuci indoor &amp; outdoor</li><li class="off"><i data-lucide="circle-dashed" class="i-sm"></i>Tambah freon, ukur ulang</li></ul>
+        </div>
+        <div class="report__main">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <table class="reading"><thead><tr><th>Pengukuran</th><th>Sebelum</th><th>Sesudah</th></tr></thead><tbody>
+              <tr><td>Tekanan freon</td><td>58 psi</td><td class="pend">menunggu</td></tr>
+              <tr><td>Arus kompresor</td><td>3,2 A</td><td class="pend">menunggu</td></tr>
+              <tr><td>Suhu udara keluar</td><td>19,4 °C</td><td class="pend">menunggu</td></tr>
+            </tbody></table>
+            <div style="background:var(--warn-soft);border-radius:var(--r-sm);padding:12px 14px;font-size:14px"><b>Pekerjaan tambahan disetujui 10.58.</b> Tekanan turun dari 72 psi di Juni ke 58 psi. Teknisi menyarankan cek kebocoran lagi bila turun di bawah 65 psi pada kunjungan berikutnya.</div>
+          </div>
+          <div class="ba"><div class="photo" data-img="assets/ac-service-company-website/manifold-tang-ampere.webp"><span class="photo__tag">Sebelum</span></div><div class="photo photo--empty"><span><i data-lucide="camera"></i><br>Foto sesudah<br>belum diunggah</span></div></div>
+        </div>
+      </div>
+      <div class="report">
+        <div class="report__side">
+          <span class="pill pill--mute" style="align-self:flex-start"><i data-lucide="clock"></i>Menunggu</span>
+          <p class="t-h3">Unit 3 · Kamar anak</p>
+          <p class="t-meta">Split 0,5 PK · Sharp · Cuci AC · Rp75.000</p>
+        </div>
+        <div class="report__main" style="grid-template-columns:1fr"><p class="t-meta">Dikerjakan setelah unit 2, sekitar 11.20.</p></div>
+      </div>
+    </div>
+
+    <div class="card"><div class="card__body bsplit" style="align-items:center">
+      <div><p class="t-h3">Total sementara Rp550.000</p><p class="t-meta">Cuci 2 unit Rp150.000 · cuci inverter Rp100.000 · tambah freon Rp300.000. Dibayar setelah laporan unit 3 tersimpan: transfer, QRIS, atau tunai. Garansi 30 hari berlaku sampai 17 Nov 2026.</p></div>
+      <button class="btn btn-line" type="button" disabled style="opacity:.55">Bayar setelah selesai</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- ================= APLIKASI TEKNISI ================= -->
+<section data-screen="teknisi">
+  <div class="stage">
+    <div class="wrap stage__bar"><a class="logo" href="#home">ademteknik<small>aplikasi teknisi</small></a><span class="t-meta" style="margin-left:auto">Contoh tampilan HP teknisi, Minggu 18 Oktober 11.06</span></div>
+    <div class="wrap">
+      <div class="phones">
+        <!-- HP 1: hari ini -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="phone">
+            <div class="phone__status"><span>11.06</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="phone__head"><p class="t-small" style="font-weight:700">Minggu, 18 Okt · Pos Medan Selayang</p><p class="t-h2">Halo, Rahmat</p></div>
+            <div class="phone__body">
+              <div class="stats"><div class="stat"><b>5</b><span>Job</span></div><div class="stat"><b>13</b><span>Unit</span></div><div class="stat"><b style="color:var(--ok)">2</b><span>Selesai</span></div><div class="stat"><b>31</b><span>km</span></div></div>
+              <div class="card" style="padding:12px;border-radius:12px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700"><span>Unit hari ini</span><span class="t-small">13 total</span></div><div class="bar"><i style="width:31%;background:var(--ok)"></i><i style="width:8%;background:var(--blue)"></i></div><div class="legend"><span style="--c:var(--ok)">Selesai 4</span><span style="--c:var(--blue)">Dikerjakan 1</span><span style="--c:var(--line-2)">Berikutnya 8</span></div></div>
+              <div class="job"><div class="job__top"><span class="job__id">ADM-2398</span><span class="pill pill--ok">Selesai</span></div><b>Ruko Jl. Dr. Mansyur</b><div class="meta"><span><i data-lucide="clock"></i>08.00–10.00</span><span><i data-lucide="air-vent"></i>2 unit · cuci</span></div></div>
+              <div class="job is-current"><div class="job__top"><span class="job__id">ADM-2417</span><span class="pill pill--warn">Unit 2/3</span></div><b>Rumah · Jl. Setia Budi</b><div class="meta"><span><i data-lucide="clock"></i>10.00–12.00</span><span><i data-lucide="air-vent"></i>3 unit · cuci, freon</span></div></div>
+              <div class="job"><div class="job__top"><span class="job__id">ADM-2421</span><span class="pill">Kontrak</span></div><b>Kantor notaris · Medan Johor</b><div class="meta"><span><i data-lucide="clock"></i>13.00–15.00</span><span><i data-lucide="air-vent"></i>5 unit · cuci rutin</span><span><i data-lucide="navigation"></i>6,8 km</span></div></div>
+              <div class="job"><div class="job__top"><span class="job__id">ADM-2425</span><span class="pill pill--mute">15.00</span></div><b>Rumah · Medan Sunggal</b><div class="meta"><span><i data-lucide="clock"></i>15.00–17.00</span><span><i data-lucide="air-vent"></i>1 unit · bongkar pasang</span></div></div>
+              <div class="job"><div class="job__top"><span class="job__id">ADM-2430</span><span class="pill pill--mute">19.00</span></div><b>Apartemen · Medan Baru</b><div class="meta"><span><i data-lucide="clock"></i>19.00–21.00</span><span><i data-lucide="air-vent"></i>2 unit · pengecekan</span></div></div>
+            </div>
+            <nav class="phone__tabs"><a class="is-active" href="#teknisi"><i data-lucide="layout-list"></i>Hari ini</a><a href="#teknisi"><i data-lucide="calendar"></i>Jadwal</a><span class="fab"><i data-lucide="plus"></i></span><a href="#teknisi"><i data-lucide="package"></i>Stok</a><a href="#teknisi"><i data-lucide="user"></i>Akun</a></nav>
+          </div>
+          <div class="cap"><b>Daftar job hari ini</b><p>Urut per jendela kunjungan, dengan jumlah unit dan jenis pekerjaan.</p></div>
+        </div>
+
+        <!-- HP 2: kerjakan unit -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="phone">
+            <div class="phone__status"><span>11.06</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="phone__head" style="display:flex;gap:10px;align-items:center"><i data-lucide="chevron-left"></i><div><p class="t-small" style="font-weight:700">ADM-2417 · unit 2 dari 3 · inverter 1,5 PK</p><p class="t-h3">Ruang keluarga</p></div></div>
+            <div class="phone__body">
+              <div style="background:var(--ok-soft);color:#0b6b3d;border-radius:10px;padding:10px 12px;font-size:12.5px;font-weight:700;display:flex;gap:8px;align-items:center"><i data-lucide="badge-check" class="i-sm"></i>Tambah freon Rp300.000 disetujui 10.58</div>
+              <div id="tickList">
+                <button type="button" class="tick is-on"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Ukur tekanan &amp; arus awal</button>
+                <button type="button" class="tick is-on"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Cek sambungan flare outdoor</button>
+                <button type="button" class="tick"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Cuci filter, evaporator, talang</button>
+                <button type="button" class="tick"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Cuci outdoor &amp; blower</button>
+                <button type="button" class="tick"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Tambah freon R32</button>
+                <button type="button" class="tick"><span class="check"><i data-lucide="check" class="i-xs"></i></span>Uji fungsi 10 menit</button>
+              </div>
+              <div class="readin" style="margin-top:4px"><span></span><span class="h">Sebelum</span><span class="h">Sesudah</span>
+                <span>Tekanan (psi)</span><input value="58"><input placeholder="–">
+                <span>Arus (A)</span><input value="3,2"><input placeholder="–">
+                <span>Suhu keluar (°C)</span><input value="19,4"><input placeholder="–">
+              </div>
+              <div class="ba" style="margin-top:4px"><div class="photo" style="--ar:1/1" data-img="assets/ac-service-company-website/manifold-tang-ampere.webp"><span class="photo__tag">Sebelum</span></div><button type="button" class="photo photo--empty" style="--ar:1/1"><span><i data-lucide="camera"></i><br>Foto sesudah</span></button></div>
+            </div>
+            <div class="phone__cta"><button class="btn btn-blue btn-block" type="button" id="saveUnit"><span id="tickCount">2/6 langkah</span> · Simpan unit</button></div>
+          </div>
+          <div class="cap"><b>Checklist dan pengukuran per unit</b><p>Angka sebelum dan sesudah serta foto langsung masuk ke halaman lacak pelanggan.</p></div>
+        </div>
+
+        <!-- HP 3: riwayat alamat -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="phone">
+            <div class="phone__status"><span>11.06</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="phone__head" style="display:flex;gap:10px;align-items:center"><i data-lucide="chevron-left"></i><div><p class="t-small" style="font-weight:700">Riwayat alamat</p><p class="t-h3">Jl. Setia Budi, Medan Selayang</p></div></div>
+            <div class="phone__body">
+              <div class="seg" data-select data-tabs="unitH" style="align-self:flex-start;border-color:var(--line)"><button type="button" data-value="u1">K. utama</button><button type="button" class="is-active" data-value="u2">R. keluarga</button><button type="button" data-value="u3">K. anak</button></div>
+              <div class="card" style="padding:12px;border-radius:12px;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div><span class="t-small">Merek</span><p style="font-weight:800">Panasonic</p></div><div><span class="t-small">Tipe</span><p style="font-weight:800">Inverter 1,5 PK</p></div>
+                <div><span class="t-small">Refrigeran</span><p style="font-weight:800">R32</p></div><div><span class="t-small">Dipasang</span><p style="font-weight:800">2021</p></div>
+              </div>
+              <ul class="hist" data-panel="unitH:u2" style="margin-top:6px">
+                <li><b>18 Okt 2026 · Cuci + tambah freon</b><span class="t-small">Rahmat S. · berjalan</span></li>
+                <li><b>14 Jun 2026 · Cuci + tambah freon</b><span class="t-small">Tekanan 60 → 72 psi · Hendra P.</span></li>
+                <li><b>9 Feb 2026 · Cuci</b><span class="t-small">Talang air tersumbat, dibersihkan · Hendra P.</span></li>
+                <li><b>3 Sep 2025 · Pengecekan</b><span class="t-small">Kapasitor fan outdoor diganti Rp350.000</span></li>
+              </ul>
+              <ul class="hist" data-panel="unitH:u1" style="margin-top:6px" hidden>
+                <li><b>18 Okt 2026 · Cuci</b><span class="t-small">Suhu keluar 17,8 → 14,2 °C · Rahmat S.</span></li>
+                <li><b>14 Jun 2026 · Cuci</b><span class="t-small">Hendra P.</span></li>
+                <li><b>9 Feb 2026 · Cuci</b><span class="t-small">Hendra P.</span></li>
+              </ul>
+              <ul class="hist" data-panel="unitH:u3" style="margin-top:6px" hidden>
+                <li><b>14 Jun 2026 · Cuci</b><span class="t-small">Remote diganti baterai · Hendra P.</span></li>
+                <li><b>9 Feb 2026 · Cuci</b><span class="t-small">Hendra P.</span></li>
+              </ul>
+              <div style="background:var(--sky);border-radius:10px;padding:10px 12px;font-size:12.5px"><b>Catatan pelanggan:</b> unit outdoor di dak lantai 2, tangga lipat tersedia di rumah.</div>
+            </div>
+            <nav class="phone__tabs"><a class="is-active" href="#teknisi"><i data-lucide="layout-list"></i>Hari ini</a><a href="#teknisi"><i data-lucide="calendar"></i>Jadwal</a><span class="fab"><i data-lucide="plus"></i></span><a href="#teknisi"><i data-lucide="package"></i>Stok</a><a href="#teknisi"><i data-lucide="user"></i>Akun</a></nav>
+          </div>
+          <div class="cap"><b>Riwayat unit per alamat</b><p>Merek, PK, refrigeran, dan masalah sebelumnya terbaca sebelum teknisi mengetuk pintu.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  // Foto: .photo[data-img] → <img> di dalam box; [data-bg] untuk tile & kartu bento
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.insertBefore(img, box.firstChild); }; img.src = box.getAttribute("data-img");
+  });
+  document.querySelectorAll("[data-bg]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.insertBefore(img, box.firstChild); }; img.src = box.getAttribute("data-bg");
+  });
+
+  // Kalkulator cepat di hero
+  var Q = { cuci: [75000, 85000], tambah: [250000, 300000], isi: [350000, 450000], bp: [450000, 550000], cek: [75000, 75000] };
+  function quote() {
+    var v = Q[qSvc.value][Number(qPk.value)] * Number(qQty.value);
+    document.getElementById("qOut").textContent = rupiah(v);
+  }
+  var qSvc = document.getElementById("qSvc"), qPk = document.getElementById("qPk"), qQty = document.getElementById("qQty");
+  [qSvc, qPk, qQty].forEach(function (el) { el.addEventListener("change", quote); });
+
+  // Kalender Oktober 2026 (1 Okt = Kamis), tersedia 19–31
+  var cal = document.getElementById("calPick"), h = "";
+  for (var i = 0; i < 4; i++) h += '<button type="button" disabled></button>';
+  var full = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  for (var d = 1; d <= 31; d++) {
+    var w = (d + 3) % 7, av = d >= 19;
+    h += '<button type="button" class="' + (av ? "av" : "") + (d === 20 ? " is-selected" : "") + '" data-value="' + full[w] + ", " + d + ' Oktober"' + (av ? "" : " disabled") + ">" + d + "</button>";
+  }
+  cal.innerHTML = h;
+
+  var state = { day: "Selasa, 20 Oktober", slot: "13.00–15.00", bld: 0 };
+  function short(day) { return day.replace(/^(\w+), (\d+) Oktober$/, "$1, $2 Okt"); }
+  function total() {
+    var sum = 0, n = 0;
+    document.querySelectorAll("#units .unit").forEach(function (u) {
+      var prices = u.getAttribute("data-p").split(",").map(Number);
+      var pick = u.querySelector(".svc-pick .is-active");
+      var p = prices[Number(pick.getAttribute("data-value"))];
+      u.querySelector(".unit__price").textContent = rupiah(p);
+      if (u.classList.contains("is-on")) { sum += p; n++; }
+    });
+    document.querySelectorAll("[data-new]").forEach(function (s) {
+      var q = Number(s.querySelector("output").textContent), p = Number(s.getAttribute("data-new"));
+      s.parentElement.querySelector(".unit__price").textContent = rupiah(q * p);
+      sum += q * p; n += q;
+    });
+    sum += n ? state.bld : 0;
+    var line = n + " unit · " + short(state.day) + " · " + state.slot + (state.bld ? " · +Rp25.000 gedung" : "");
+    document.getElementById("tTotal").textContent = rupiah(sum);
+    document.getElementById("tLine").textContent = line;
+    document.getElementById("dTotal").textContent = rupiah(sum);
+    document.getElementById("dUnits").textContent = n + " unit";
+    document.getElementById("dLine").textContent = state.day + " · " + state.slot;
+  }
+  document.getElementById("units").addEventListener("click", function (e) {
+    var c = e.target.closest(".check"); if (!c) return;
+    c.closest(".unit").classList.toggle("is-on"); total();
+  });
+  document.getElementById("units").addEventListener("lapak:select", total);
+  document.addEventListener("lapak:change", total);
+  document.getElementById("bldPick").addEventListener("lapak:select", function (e) { state.bld = Number(e.detail.value); total(); });
+  cal.addEventListener("lapak:select", function (e) { state.day = e.detail.value; document.getElementById("dayLabel").textContent = e.detail.value; total(); });
+  document.getElementById("slotPick").addEventListener("lapak:select", function (e) { state.slot = e.detail.value; total(); });
+  total();
+
+  // Checklist di HP teknisi
+  var ticks = document.getElementById("tickList");
+  function countTicks() { document.getElementById("tickCount").textContent = ticks.querySelectorAll(".is-on").length + "/6 langkah"; }
+  ticks.addEventListener("click", function (e) { var t = e.target.closest(".tick"); if (!t) return; t.classList.toggle("is-on"); countTicks(); });
+  countTicks();
+})();
+</script>
+</body>
+</html>

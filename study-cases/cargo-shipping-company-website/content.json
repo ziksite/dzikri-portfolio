@@ -1,0 +1,91 @@
+{
+  "slug": "cargo-shipping-company-website",
+  "kind": "Website",
+  "industry": "Logistics",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Rate Calculator",
+    "Shipment Tracking"
+  ],
+  "metrics": [
+    {
+      "value": "6",
+      "label": "SHIPPING MODES",
+      "labelId": "MODA PENGIRIMAN"
+    },
+    {
+      "value": "5",
+      "label": "TRACKING MILESTONES",
+      "labelId": "TAHAP PELACAKAN"
+    },
+    {
+      "value": "Rp3.900",
+      "label": "SEA FREIGHT FROM / KG",
+      "labelId": "TARIF LAUT MULAI / KG"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with tracking, rate check and pickup in one widget",
+      "captionId": "Beranda dengan lacak resi, cek tarif, dan minta jemput dalam satu widget"
+    },
+    {
+      "hash": "tarif",
+      "caption": "Rate quote from weight and dimensions, then pickup scheduling",
+      "captionId": "Tarif dari berat dan ukuran barang, lalu penjadwalan jemput"
+    },
+    {
+      "hash": "lacak",
+      "caption": "Shipment tracking with milestones and a dated history",
+      "captionId": "Pelacakan kiriman dengan tahapan dan riwayat bertanggal"
+    },
+    {
+      "hash": "gudang",
+      "caption": "Warehouse load plan for containers and trucks",
+      "captionId": "Rencana muat gudang untuk kontainer dan truk"
+    }
+  ],
+  "content_en": {
+    "title": "Cargo Shipping Company Website",
+    "type": "FREIGHT WEBSITE & TRACKING",
+    "category": "Logistics Platform",
+    "summary": "A redesign for an inter-island cargo company shipping by sea, land and air. Customers check a rate from weight and dimensions, book a pickup, and follow each waybill through clear milestones; business accounts keep invoices and documents in one place, and the warehouse plans container loading on a single board.",
+    "challenge": "The old homepage opened with a full orange banner, a long all-caps headline and a hero image that failed to load. Rates were scattered through long SEO articles, there was no rate calculator on the site, and there was no way to track a shipment, so every status question went to customer service.\n\nServices were shown as six island illustrations rather than shipping modes, so visitors could not compare sea LCL, full containers, trucking, air, vehicles or heavy equipment by transit time and minimum load. Free pickup was promised in several places but could only be arranged through one of three WhatsApp numbers, and corporate clients had no account, invoice history or shipping documents online.",
+    "solution": "The homepage opens with one widget for tracking, rate checks and pickup requests over a port photo, followed by a comparison of six shipping modes, a route table with sailing days, transit times and rates from the main warehouse, a business account section with sample invoices, and the two offices. The quote flow takes the number of parcels, weight and dimensions, shows actual, volumetric and chargeable weight, prices four services side by side, adds insurance or wooden crating, and books a pickup slot before the vessel cut-off.\n\nThe tracking page shows five milestones, a dated event history, the vessel, container and seal numbers, a loading photo, downloadable documents and the other shipments on the same business account. In the warehouse, a load plan lists weighed shipments waiting to be loaded next to each container and truck, with volume and weight bars that update as items are assigned. The planned production stack is Next.js with Supabase, WhatsApp notifications and PDF documents.",
+    "features": [
+      "Tracking, rate check and pickup request in one homepage widget",
+      "Comparison of six shipping modes with transit time and starting rate",
+      "Route table with sailing days, minimum load and island filter",
+      "Quote from weight and dimensions with chargeable weight explained",
+      "Pickup booking by date and time window before the vessel cut-off",
+      "Waybill tracking with milestones, history, vessel and container details",
+      "Warehouse load plan with live volume and weight per container"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Perusahaan Ekspedisi Kargo",
+    "type": "WEBSITE EKSPEDISI & PELACAKAN",
+    "category": "Logistics Platform",
+    "summary": "Redesign untuk perusahaan kargo antarpulau yang mengirim lewat laut, darat, dan udara. Pelanggan mengecek tarif dari berat dan ukuran barang, memesan jemput, dan mengikuti setiap resi lewat tahapan yang jelas; akun bisnis menyimpan tagihan dan dokumen di satu tempat, dan gudang merencanakan muat kontainer di satu papan.",
+    "challenge": "Beranda lama dibuka dengan banner oranye penuh, judul kapital yang panjang, dan gambar hero yang gagal dimuat. Tarif tersebar di artikel SEO yang panjang, tidak ada kalkulator tarif di situs, dan tidak ada cara melacak kiriman, sehingga setiap pertanyaan status masuk ke CS.\n\nLayanan ditampilkan sebagai enam ilustrasi pulau, bukan moda pengiriman, sehingga pengunjung tidak bisa membandingkan laut LCL, kontainer penuh, truk, udara, kendaraan, atau alat berat dari estimasi waktu dan minimal kirim. Jemput gratis dijanjikan di beberapa tempat tetapi hanya bisa diatur lewat salah satu dari tiga nomor WhatsApp, dan klien korporat tidak punya akun, riwayat tagihan, atau dokumen kiriman secara online.",
+    "solution": "Beranda dibuka dengan satu widget untuk lacak resi, cek tarif, dan minta jemput di atas foto pelabuhan, diikuti perbandingan enam moda pengiriman, tabel rute dengan hari keberangkatan kapal, estimasi, dan tarif dari gudang utama, bagian akun bisnis dengan contoh tagihan, serta dua kantor. Alur tarif menerima jumlah koli, berat, dan ukuran, menampilkan berat aktual, berat volume, dan berat tertagih, membandingkan harga empat layanan, menambahkan asuransi atau packing kayu, lalu memesan slot jemput sebelum cut-off kapal.\n\nHalaman lacak menampilkan lima tahapan, riwayat bertanggal, nomor kapal, kontainer, dan segel, foto muat, dokumen yang bisa diunduh, dan kiriman lain di akun bisnis yang sama. Di gudang, rencana muat menampilkan kiriman yang sudah ditimbang di samping setiap kontainer dan truk, dengan bar volume dan berat yang berubah saat kiriman dimuat. Stack produksi yang direncanakan adalah Next.js dengan Supabase, notifikasi WhatsApp, dan dokumen PDF.",
+    "features": [
+      "Lacak resi, cek tarif, dan minta jemput dalam satu widget beranda",
+      "Perbandingan enam moda pengiriman dengan estimasi dan tarif awal",
+      "Tabel rute dengan jadwal kapal, minimal kirim, dan filter pulau",
+      "Tarif dari berat dan ukuran dengan penjelasan berat tertagih",
+      "Pesan jemput per tanggal dan jam sebelum cut-off kapal",
+      "Pelacakan resi dengan tahapan, riwayat, detail kapal dan kontainer",
+      "Rencana muat gudang dengan volume dan berat per kontainer"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

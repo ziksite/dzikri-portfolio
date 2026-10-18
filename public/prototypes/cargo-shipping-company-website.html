@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bahtera Kargo — Ekspedisi antarpulau dari Surabaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/cargo-shipping-company-website.css">
+<style>
+  .track-row { grid-template-columns: minmax(0,1fr) auto auto; }
+  .eta { text-align: right; }
+  .list__row > .id-chip { justify-self: start; }
+  .home-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: end; padding: 48px 0 32px; }
+  .quote-row { grid-template-columns: 1.1fr 1.1fr .8fr 1.5fr auto; }
+  .dims { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .dims .input { padding: 0 10px; }
+  .modes .list__row { grid-template-columns: 44px minmax(0, 1.6fr) minmax(0, 1fr) 110px 170px 24px; }
+  .routes .list__row { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.1fr) 100px 170px; }
+  .biz { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: center; }
+  .offices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .load-row { grid-template-columns: 110px 1fr 1fr minmax(0, 1.4fr); }
+  .pick-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+  .shp-head { display: flex; justify-content: space-between; gap: 24px; align-items: start; flex-wrap: wrap; }
+  .mine .list__row { grid-template-columns: 170px minmax(0, 1fr) 150px 110px; }
+  @media (max-width: 1024px) {
+    .home-intro, .biz, .pick-grid { grid-template-columns: 1fr; gap: 24px; }
+    .quote-row { grid-template-columns: 1fr 1fr; }
+    .quote-row > :nth-child(4) { grid-column: 1 / -1; }
+  }
+  @media (max-width: 720px) {
+    .hide-m { display: none !important; }
+    .track-row { grid-template-columns: minmax(0,1fr) auto; }
+    .eta { text-align: left; }
+    .modes .list__row { gap: 6px 14px; }
+    .addon { grid-template-columns: 20px minmax(0,1fr); }
+    .addon > :last-child { grid-column: 2; }
+    .quote-row, .load-row { grid-template-columns: 1fr; }
+    .quote-row > :nth-child(4) { grid-column: auto; }
+    .offices { grid-template-columns: 1fr; }
+    .modes .list__row { grid-template-columns: 44px minmax(0, 1fr); padding: 16px; }
+    .modes .list__row > :nth-child(n+3) { grid-column: 2; }
+    .modes .list__row > :last-child { display: none; }
+    .modes .list__head { display: none; }
+    .inv { grid-template-columns: minmax(0, 1fr) auto; }
+    .inv > :nth-child(3) { grid-column: 1 / -1; justify-self: start; }
+    .mine .list__row { grid-template-columns: minmax(0, 1fr) auto; padding: 14px 16px; }
+    .mine .list__row > :nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+    .mine .list__row > :nth-child(3) { display: none; }
+    .mine .list__head { display: none; }
+    .opt { grid-template-columns: 22px minmax(0, 1fr); padding: 16px; }
+    .opt__price { grid-column: 2; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="wordmark" href="#home">bahtera<span>kargo</span></a>
+      <nav class="nav__links"><a href="#home" data-nav="home">Layanan</a><a href="#tarif" data-nav="tarif">Cek tarif</a><a href="#lacak" data-nav="lacak">Lacak</a><a href="#home">Akun bisnis</a><a href="#home">Kontak</a></nav>
+      <div class="nav__right"><a class="btn btn-secondary btn-sm" href="#lacak">Masuk</a><a class="btn btn-primary btn-sm" href="#tarif">Minta jemput</a></div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="home-intro">
+      <h1 class="t-hero">Kirim barang antarpulau dari Surabaya, dijemput di tempat.</h1>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="muted">Laut, darat, dan udara ke Kalimantan, Sulawesi, Maluku, Papua, dan Sumatera. Tarif langsung keluar dari berat dan ukuran barang, lalu jadwalkan jemputnya.</p>
+        <ul class="checks" style="font-size:14px">
+          <li><i data-lucide="check" class="i-sm"></i>Gratis jemput untuk area Kota Surabaya</li>
+          <li><i data-lucide="check" class="i-sm"></i>Asuransi gratis untuk nilai barang sampai Rp50 juta</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="banner"><div class="photo" data-img="assets/cargo-shipping-company-website/pelabuhan-kontainer.webp"></div></div>
+
+    <div class="widget">
+      <div class="seg" data-select data-tabs="w">
+        <button data-value="lacak"><i data-lucide="search" class="i-sm"></i>Lacak resi</button>
+        <button class="is-active" data-value="tarif"><i data-lucide="calculator" class="i-sm"></i>Cek tarif</button>
+        <button data-value="jemput"><i data-lucide="truck" class="i-sm"></i>Minta jemput</button>
+      </div>
+
+      <form data-panel="w:lacak" hidden style="margin-top:18px" onsubmit="location.hash='lacak';return false">
+        <div id="resiList" style="display:flex;flex-direction:column;gap:10px">
+          <div class="row" style="grid-template-columns:minmax(0,1fr) auto"><label class="input"><i data-lucide="search" class="i-sm"></i><input placeholder="Masukkan nomor resi" value="BHK-2610-48213"></label><button class="btn btn-primary">Lacak</button></div>
+        </div>
+        <button type="button" class="text-btn" id="addResi" style="margin-top:12px"><i data-lucide="plus" class="i-sm"></i>Tambah resi (maks. 5)</button>
+      </form>
+
+      <form data-panel="w:tarif" style="margin-top:18px" onsubmit="location.hash='tarif';return false">
+        <div class="row quote-row">
+          <label class="field"><span>Kota asal</span><div class="input"><i data-lucide="map-pin" class="i-sm"></i><select><option>Surabaya</option><option>Semarang</option></select></div></label>
+          <label class="field"><span>Kota tujuan</span><div class="input"><i data-lucide="flag" class="i-sm"></i><select><option>Makassar</option><option>Balikpapan</option><option>Banjarmasin</option><option>Pontianak</option><option>Ambon</option><option>Ternate</option><option>Jayapura</option><option>Sorong</option><option>Medan</option></select></div></label>
+          <label class="field"><span>Berat total</span><div class="input"><input value="540" inputmode="numeric"><span class="unit">kg</span></div></label>
+          <div class="field"><span>Ukuran per koli (P × L × T)</span><div class="dims"><label class="input"><input value="80"><span class="unit">cm</span></label><label class="input"><input value="60"><span class="unit">cm</span></label><label class="input"><input value="50"><span class="unit">cm</span></label></div></div>
+          <button class="btn btn-primary" style="height:46px">Cek tarif</button>
+        </div>
+        <p class="t-small" style="margin-top:12px">Tidak tahu ukurannya? Isi berat saja, petugas mengukur ulang saat jemput.</p>
+      </form>
+
+      <form data-panel="w:jemput" hidden style="margin-top:18px" onsubmit="location.hash='tarif';return false">
+        <div class="row" style="grid-template-columns:minmax(0,2fr) minmax(0,1fr) auto">
+          <label class="field"><span>Alamat jemput</span><div class="input"><i data-lucide="map-pin" class="i-sm"></i><input placeholder="Nama jalan, kawasan, kota"></div></label>
+          <label class="field"><span>Tanggal</span><div class="input"><i data-lucide="calendar" class="i-sm"></i><select><option>Senin, 19 Okt</option><option>Selasa, 20 Okt</option><option>Rabu, 21 Okt</option></select></div></label>
+          <button class="btn btn-primary" style="height:46px">Lanjut</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Moda -->
+  <section class="wrap" style="padding-top:72px">
+    <div class="sec-head"><div><h2 class="t-h2">Pilih moda pengiriman</h2><p class="t-meta">Estimasi dihitung dari Surabaya. Tarif final mengikuti berat tertagih setelah timbang ulang di gudang.</p></div><a class="link" href="#tarif">Hitung tarif kiriman saya</a></div>
+    <div class="list modes">
+      <div class="list__row list__head"><span></span><span>Moda</span><span>Cocok untuk</span><span>Estimasi</span><span>Mulai dari</span><span></span></div>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="package"></i></span><div><p class="t-h3">Laut LCL · gabung kontainer</p><p class="t-meta">Bayar sesuai berat atau volume, minimal 100 kg</p></div><div class="chips"><span class="meta-chip">Stok toko</span><span class="meta-chip">Spare part</span><span class="meta-chip">Pindahan</span></div><span class="num">3–9 hari</span><b class="num">Rp3.900<span class="t-small">/kg</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="container"></i></span><div><p class="t-h3">Laut FCL · kontainer penuh 20' / 40'</p><p class="t-meta">Satu kontainer untuk satu pengirim, segel dari gudang</p></div><div class="chips"><span class="meta-chip">Distributor</span><span class="meta-chip">Material proyek</span></div><span class="num">4–12 hari</span><b class="num">Rp9,8 jt<span class="t-small">/20'</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="truck"></i></span><div><p class="t-h3">Darat · truk & sewa armada</p><p class="t-meta">Jawa, Bali, dan Sumatera. CDE, CDD, Fuso, tronton</p></div><div class="chips"><span class="meta-chip">Sekali trip</span><span class="meta-chip">Kontrak bulanan</span></div><span class="num">1–6 hari</span><b class="num">Rp3,2 jt<span class="t-small">/trip</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="plane"></i></span><div><p class="t-h3">Udara</p><p class="t-meta">Dokumen dan barang mendesak, minimal 10 kg</p></div><div class="chips"><span class="meta-chip">Sampel</span><span class="meta-chip">Suku cadang darurat</span></div><span class="num">1–2 hari</span><b class="num">Rp24.000<span class="t-small">/kg</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="car"></i></span><div><p class="t-h3">Kendaraan · Roro & car carrier</p><p class="t-meta">Mobil dan motor, door to door atau port to port</p></div><div class="chips"><span class="meta-chip">Mobil pribadi</span><span class="meta-chip">Unit dealer</span></div><span class="num">3–7 hari</span><b class="num">Rp5 jt<span class="t-small">/mobil</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+      <a class="list__row" href="#tarif"><span class="icon-box"><i data-lucide="construction"></i></span><div><p class="t-h3">Alat berat & project cargo</p><p class="t-meta">RORO, LCT, flat rack. Survei dimensi sebelum muat</p></div><div class="chips"><span class="meta-chip">Ekskavator</span><span class="meta-chip">Material proyek Rp1.900/kg</span></div><span class="num">3–6 hari</span><b class="num">Rp19 jt<span class="t-small">/unit</span></b><i data-lucide="chevron-right" class="i-sm muted"></i></a>
+    </div>
+  </section>
+
+  <!-- Rute populer -->
+  <section class="wrap" style="padding-top:72px">
+    <div class="sec-head"><div><h2 class="t-h2">Jadwal & tarif rute dari Surabaya</h2><p class="t-meta">Barang harus masuk gudang paling lambat sehari sebelum kapal berangkat.</p></div>
+      <div class="chips" data-select id="islandPick"><button class="fchip is-active" data-value="all">Semua</button><button class="fchip" data-value="kal">Kalimantan</button><button class="fchip" data-value="sul">Sulawesi</button><button class="fchip" data-value="mal">Maluku & Papua</button><button class="fchip" data-value="sum">Sumatera</button></div>
+    </div>
+    <div class="scroll-x"><div class="list routes" id="routeList">
+      <div class="list__row list__head"><span>Tujuan</span><span>Moda</span><span>Kapal berangkat</span><span>Estimasi</span><span>Tarif</span></div>
+      <div class="list__row" data-island="kal"><b>Balikpapan</b><span>Laut LCL</span><span>Selasa & Jumat</span><span class="num">4–5 hari</span><span class="num"><b>Rp5.000/kg</b> <span class="t-small">min. 100 kg</span></span></div>
+      <div class="list__row" data-island="kal"><b>Pontianak</b><span>Laut LCL</span><span>Rabu</span><span class="num">3–4 hari</span><span class="num"><b>Rp3.900/kg</b> <span class="t-small">≥ 1.000 kg</span></span></div>
+      <div class="list__row" data-island="kal"><b>Banjarmasin</b><span>RORO · alat berat</span><span>Senin & Kamis</span><span class="num">4 hari</span><span class="num"><b>Rp19 jt</b> <span class="t-small">/unit</span></span></div>
+      <div class="list__row" data-island="sul"><b>Makassar</b><span>Laut LCL</span><span>Senin & Kamis</span><span class="num">3–4 hari</span><span class="num"><b>Rp4.600/kg</b> <span class="t-small">min. 100 kg</span></span></div>
+      <div class="list__row" data-island="sul"><b>Kendari</b><span>Laut LCL</span><span>Sabtu</span><span class="num">6–8 hari</span><span class="num"><b>Rp6.400/kg</b> <span class="t-small">min. 100 kg</span></span></div>
+      <div class="list__row" data-island="mal"><b>Ambon</b><span>Kapal cargo & Pelni</span><span>Setiap pekan</span><span class="num">7–9 hari</span><span class="num"><b>Rp7.800/kg</b> <span class="t-small">min. 50 kg</span></span></div>
+      <div class="list__row" data-island="mal"><b>Jayapura</b><span>Kapal cargo & Pelni</span><span>Dua pekan sekali</span><span class="num">12–16 hari</span><span class="num"><b>Rp11.500/kg</b> <span class="t-small">min. 50 kg</span></span></div>
+      <div class="list__row" data-island="sum"><b>Medan</b><span>Darat + laut</span><span>Truk setiap hari</span><span class="num">6–8 hari</span><span class="num"><b>Rp4.200/kg</b> <span class="t-small">min. 100 kg</span></span></div>
+    </div></div>
+  </section>
+
+  <!-- Akun bisnis -->
+  <section class="wrap" style="padding-top:80px">
+    <div class="biz">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 class="t-h2">Akun bisnis untuk pengirim rutin</h2>
+        <p class="muted">Untuk distributor, kontraktor, dan toko yang mengirim setiap minggu. Semua resi, dokumen, dan tagihan perusahaan ada di satu akun.</p>
+        <ul class="checks">
+          <li><i data-lucide="check" class="i-sm"></i><span><b style="font-weight:500">Harga kontrak per rute</b><br><span class="t-meta">Tarif tetap 6 bulan untuk rute yang dipakai rutin</span></span></li>
+          <li><i data-lucide="check" class="i-sm"></i><span><b style="font-weight:500">Tagihan bulanan, tempo 30 hari</b><br><span class="t-meta">Satu faktur per bulan, lengkap dengan faktur pajak</span></span></li>
+          <li><i data-lucide="check" class="i-sm"></i><span><b style="font-weight:500">Beberapa pengguna per perusahaan</b><br><span class="t-meta">Admin gudang membuat pesanan, bagian keuangan membayar tagihan</span></span></li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#">Ajukan akun bisnis</a><a class="btn btn-secondary" href="#lacak">Masuk</a></div>
+      </div>
+      <div class="card">
+        <div class="card__pad" style="display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)"><div><p class="t-small">Tagihan</p><p class="t-h3">PT Sinar Mulia Teknik</p></div><span class="pill pill--navy">Tempo 30 hari</span></div>
+        <div class="inv"><div><b class="num">INV-2610-0091</b><p class="t-small">Oktober 2026 · 23 resi berjalan</p></div><b class="num">Rp48.250.000</b><span class="pill pill--mute">Belum ditutup</span></div>
+        <div class="inv"><div><b class="num">INV-2609-0074</b><p class="t-small">September 2026 · 31 resi · jatuh tempo 30 Okt</p></div><b class="num">Rp61.900.000</b><span class="pill pill--warn">Belum dibayar</span></div>
+        <div class="inv"><div><b class="num">INV-2608-0058</b><p class="t-small">Agustus 2026 · 27 resi</p></div><b class="num">Rp54.120.000</b><span class="pill pill--ok">Lunas</span></div>
+        <div class="card__pad" style="border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px"><span class="t-meta">Limit kredit terpakai Rp110,2 jt dari Rp150 jt</span><a class="text-btn" href="#"><i data-lucide="download" class="i-sm"></i>Unduh PDF</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kantor -->
+  <section class="wrap" style="padding-top:80px">
+    <div class="sec-head"><h2 class="t-h2">Gudang & kantor</h2><span class="t-meta">Senin–Jumat 08.00–17.00 · Sabtu 08.00–13.00</span></div>
+    <div class="offices">
+      <div class="card office"><div style="display:flex;justify-content:space-between;gap:12px"><p class="t-h3">Surabaya · gudang utama</p><span class="pill pill--ok">Jemput gratis</span></div><p class="t-meta">Kawasan pergudangan Margomulyo, Surabaya</p><p class="t-meta">Area layanan: Surabaya, Sidoarjo, Gresik, Mojokerto</p><div style="display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin-top:4px"><a class="link" href="#">(031) 7480 2215</a><a class="link" href="#">WhatsApp</a><a class="link" href="#">Petunjuk arah</a></div></div>
+      <div class="card office"><div style="display:flex;justify-content:space-between;gap:12px"><p class="t-h3">Semarang · cabang</p><span class="pill pill--mute">Jemput berbayar</span></div><p class="t-meta">Kawasan industri Terboyo, Semarang</p><p class="t-meta">Area layanan: Kota Semarang, Kendal, Demak, Ungaran</p><div style="display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin-top:4px"><a class="link" href="#">(024) 7660 1928</a><a class="link" href="#">WhatsApp</a><a class="link" href="#">Petunjuk arah</a></div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="wordmark">bahtera<span>kargo</span></span><p class="t-meta" style="max-width:320px">Ekspedisi laut, darat, dan udara dari Surabaya dan Semarang ke seluruh Indonesia.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#tarif">Cek tarif</a></li><li><a href="#lacak">Lacak resi</a></li><li><a href="#tarif">Minta jemput</a></li><li><a href="#">Kalkulator volume</a></li></ul></div>
+        <div><h4>Bisnis</h4><ul><li><a href="#">Akun bisnis</a></li><li><a href="#">Sewa truk</a></li><li><a href="#">Project cargo</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Syarat pengiriman</a></li><li><a href="#">Klaim asuransi</a></li><li><a href="#">Karier</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Bahtera Kargo</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= TARIF → PESAN & JEMPUT ================= -->
+<section data-screen="tarif">
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="wordmark" href="#home">bahtera<span>kargo</span></a>
+      <nav class="nav__links"><a href="#home" data-nav="home">Layanan</a><a href="#tarif" data-nav="tarif">Cek tarif</a><a href="#lacak" data-nav="lacak">Lacak</a><a href="#home">Akun bisnis</a><a href="#home">Kontak</a></nav>
+      <div class="nav__right"><a class="btn btn-secondary btn-sm" href="#lacak">Masuk</a></div>
+    </div>
+  </header>
+
+  <form data-demo-form="#orderDone" id="orderForm">
+    <div class="wrap" style="padding-top:28px;padding-bottom:56px;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="steps"><b>1 Tarif & muatan</b><i data-lucide="chevron-right" class="i-sm"></i><span>2 Jadwal jemput</span><i data-lucide="chevron-right" class="i-sm"></i><span>3 Konfirmasi</span></div>
+        <h1 class="t-h1">Tarif kiriman</h1>
+        <div class="route">
+          <div class="route__end"><small>Dari</small><b>Surabaya</b><span class="t-small">Jemput di Rungkut Industri</span></div>
+          <span class="route__swap"><i data-lucide="arrow-right" class="i-sm"></i></span>
+          <div class="route__end"><small>Ke</small><b>Makassar</b><span class="t-small">Antar ke alamat penerima</span></div>
+          <div class="route__edit"><a class="text-btn" href="#home"><i data-lucide="pencil" class="i-sm"></i>Ubah rute</a></div>
+        </div>
+      </div>
+
+      <!-- Muatan -->
+      <div>
+        <h2 class="t-h2" style="margin-bottom:6px">Muatan</h2>
+        <p class="t-meta" style="margin-bottom:16px">Berat tertagih = yang lebih besar antara berat aktual dan berat volume.</p>
+        <div class="row load-row">
+          <div class="field"><span>Jumlah koli</span><div class="stepper" data-stepper data-min="1" data-max="200" id="qKoli"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>12</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div></div>
+          <label class="field"><span>Berat per koli</span><div class="input"><input id="qKg" value="45" inputmode="numeric"><span class="unit">kg</span></div></label>
+          <div class="field"><span>Ukuran per koli (P × L × T)</span><div class="dims"><label class="input"><input id="qP" value="80" inputmode="numeric"><span class="unit">cm</span></label><label class="input"><input id="qL" value="60" inputmode="numeric"><span class="unit">cm</span></label><label class="input"><input id="qT" value="50" inputmode="numeric"><span class="unit">cm</span></label></div></div>
+          <label class="field"><span>Isi barang</span><div class="input"><input value="Spare part mesin pompa, dus karton"></div></label>
+        </div>
+        <div class="card card--soft" style="margin-top:14px;padding:14px 20px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px">
+          <span>Berat aktual <b class="num" id="oAct">540 kg</b></span>
+          <span>Volume <b class="num" id="oVol">2,88 m³</b></span>
+          <span>Berat volume laut <b class="num" id="oVolKg">720 kg</b></span>
+          <span>Tertagih laut <b class="num" id="oChg" style="color:var(--brand-ink)">720 kg</b></span>
+        </div>
+      </div>
+
+      <!-- Layanan -->
+      <div>
+        <div class="sec-head" style="margin-bottom:16px"><div><h2 class="t-h2">Pilih layanan</h2><p class="t-meta">Surabaya → Makassar · harga sudah termasuk jemput dan antar</p></div></div>
+        <div class="list" data-select="is-selected" id="svcPick">
+          <button type="button" class="opt is-selected" data-value="lcl"><span class="opt__radio"></span><div><p class="t-h3">Laut LCL · gabung kontainer</p><div class="chips" style="margin-top:6px"><span class="meta-chip"><i data-lucide="ship"></i>Berangkat Kamis, 22 Okt</span><span class="meta-chip"><i data-lucide="clock"></i>Tiba 25–26 Okt</span><span class="meta-chip">Rp4.600/kg</span></div></div><div class="opt__price" data-price="lcl">Rp3.312.000<small>720 kg tertagih</small></div></button>
+          <button type="button" class="opt" data-value="pelni"><span class="opt__radio"></span><div><p class="t-h3">Laut · kapal penumpang (Pelni)</p><div class="chips" style="margin-top:6px"><span class="meta-chip"><i data-lucide="ship"></i>Berangkat Sabtu, 24 Okt</span><span class="meta-chip"><i data-lucide="clock"></i>Tiba 27–28 Okt</span><span class="meta-chip">Rp4.100/kg</span></div></div><div class="opt__price" data-price="pelni">Rp2.952.000<small>720 kg tertagih</small></div></button>
+          <button type="button" class="opt" data-value="fcl"><span class="opt__radio"></span><div><p class="t-h3">Laut FCL · kontainer 20' sendiri</p><div class="chips" style="margin-top:6px"><span class="meta-chip"><i data-lucide="ship"></i>Berangkat Kamis, 22 Okt</span><span class="meta-chip"><i data-lucide="clock"></i>Tiba 25–26 Okt</span><span class="meta-chip">Hemat di atas ±2.100 kg</span></div></div><div class="opt__price">Rp9.800.000<small>harga per kontainer</small></div></button>
+          <button type="button" class="opt" data-value="air"><span class="opt__radio"></span><div><p class="t-h3">Udara</p><div class="chips" style="margin-top:6px"><span class="meta-chip"><i data-lucide="plane"></i>Terbang Selasa, 20 Okt</span><span class="meta-chip"><i data-lucide="clock"></i>Tiba 21 Okt</span><span class="meta-chip">Rp24.000/kg</span></div></div><div class="opt__price" data-price="air">Rp12.960.000<small>540 kg tertagih</small></div></button>
+        </div>
+      </div>
+
+      <!-- Tambahan + jemput -->
+      <div class="pick-grid">
+        <div>
+          <h2 class="t-h2" style="margin-bottom:16px">Perlindungan</h2>
+          <div class="list">
+            <label class="addon"><input type="checkbox" id="aIns" checked><div><b style="font-weight:500">Asuransi</b><p class="t-meta">Gratis sampai nilai Rp50 juta. Di atasnya premi 0,2% dari nilai barang.</p><div class="input" style="margin-top:10px;max-width:260px"><span class="unit">Rp</span><input id="aVal" value="85.000.000" inputmode="numeric"></div></div><span class="num" id="aInsP">Rp170.000</span></label>
+            <label class="addon"><input type="checkbox" id="aPack"><div><b style="font-weight:500">Packing kayu</b><p class="t-meta">Peti kayu untuk mesin dan barang pecah belah, Rp45.000 per koli.</p></div><span class="num" id="aPackP">Rp540.000</span></label>
+          </div>
+        </div>
+        <div>
+          <h2 class="t-h2" style="margin-bottom:6px">Jadwal jemput</h2>
+          <p class="t-meta" style="margin-bottom:16px">Barang perlu masuk gudang Margomulyo sebelum Rabu, 21 Okt 16.00 untuk kapal Kamis.</p>
+          <div class="slots" data-select="is-selected" id="dayPick" style="margin-bottom:12px">
+            <button type="button" class="slot is-selected" data-value="Senin, 19 Okt"><b>Sen, 19 Okt</b><small>4 slot sisa</small></button>
+            <button type="button" class="slot" data-value="Selasa, 20 Okt"><b>Sel, 20 Okt</b><small>6 slot sisa</small></button>
+            <button type="button" class="slot" data-value="Rabu, 21 Okt"><b>Rab, 21 Okt</b><small>2 slot sisa</small></button>
+          </div>
+          <div class="slots" data-select="is-selected" id="timePick" style="margin-bottom:16px">
+            <button type="button" class="slot is-off" data-value="08.00–11.00"><b>08.00–11.00</b><small>penuh</small></button>
+            <button type="button" class="slot is-selected" data-value="11.00–14.00"><b>11.00–14.00</b><small>CDE boks</small></button>
+            <button type="button" class="slot" data-value="14.00–17.00"><b>14.00–17.00</b><small>CDE boks</small></button>
+          </div>
+          <div class="row" style="grid-template-columns:1fr 1fr">
+            <label class="field" style="grid-column:1/-1"><span>Alamat jemput</span><div class="input"><i data-lucide="map-pin" class="i-sm"></i><input value="Gudang 4B, Rungkut Industri, Surabaya"></div></label>
+            <label class="field"><span>Nama PIC</span><div class="input"><input value="Hendra Wijaya"></div></label>
+            <label class="field"><span>WhatsApp PIC</span><div class="input"><input value="0812-5530-1946"></div></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actionbar">
+      <div class="wrap actionbar__in">
+        <div class="actionbar__sum"><p class="t-h3" id="sumSvc">Laut LCL · 720 kg tertagih</p><p class="t-meta" id="sumPick">Jemput Senin, 19 Okt · 11.00–14.00 · gratis</p></div>
+        <div class="actionbar__total"><span class="t-small">Total perkiraan</span><b id="sumTotal">Rp3.482.000</b></div>
+        <button class="btn btn-primary">Pesan<span class="hide-m">&nbsp;&amp; jadwalkan jemput</span></button>
+      </div>
+    </div>
+  </form>
+
+  <div id="orderDone" hidden class="wrap" style="padding-top:56px;padding-bottom:96px">
+    <div style="max-width:640px;display:flex;flex-direction:column;gap:22px">
+      <span class="ok-badge"><i data-lucide="check"></i></span>
+      <h1 class="t-h1">Pesanan dibuat, jemput dijadwalkan</h1>
+      <p class="muted">Nomor resi dan detail jemput sudah dikirim ke WhatsApp 0812-5530-1946. Driver mengonfirmasi lewat WhatsApp satu jam sebelum datang.</p>
+      <div class="list">
+        <div class="list__row" style="grid-template-columns:minmax(0,1fr) auto"><div><p class="t-small">Nomor resi</p><p class="t-h3 num">BHK-2610-48327</p></div><a class="text-btn" href="#lacak">Lacak<i data-lucide="arrow-right" class="i-sm"></i></a></div>
+        <div class="list__row" style="grid-template-columns:minmax(0,1fr) auto"><div><p class="t-small">Jemput</p><p style="font-weight:500" id="doneWhen">Senin, 19 Okt · 11.00–14.00</p></div><span class="pill pill--ok">Gratis</span></div>
+        <div class="list__row" style="grid-template-columns:minmax(0,1fr) auto"><div><p class="t-small">Layanan</p><p style="font-weight:500" id="doneSvc">Laut LCL · Surabaya → Makassar</p></div><b class="num" id="doneTotal">Rp3.482.000</b></div>
+      </div>
+      <p class="t-small">Total final mengikuti timbang ulang di gudang. Tagihan dikirim setelah barang ditimbang, sebelum kapal berangkat.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#lacak">Lihat status kiriman</a><a class="btn btn-secondary" href="#">Unduh label koli</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LACAK ================= -->
+<section data-screen="lacak">
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="wordmark" href="#home">bahtera<span>kargo</span></a>
+      <nav class="nav__links"><a href="#home" data-nav="home">Layanan</a><a href="#tarif" data-nav="tarif">Cek tarif</a><a href="#lacak" data-nav="lacak">Lacak</a><a href="#home">Akun bisnis</a><a href="#home">Kontak</a></nav>
+      <div class="nav__right"><span class="avatar">SM</span><span class="t-meta hide-m" style="white-space:nowrap">PT Sinar Mulia Teknik</span></div>
+    </div>
+  </header>
+
+  <div class="wrap" style="padding-top:28px;padding-bottom:80px;display:flex;flex-direction:column;gap:28px">
+    <form class="row track-row" onsubmit="return false">
+      <label class="input"><i data-lucide="search" class="i-sm"></i><input value="BHK-2610-48213"></label>
+      <button type="button" class="btn btn-secondary hide-m" style="height:46px"><i data-lucide="plus" class="i-sm"></i>Tambah</button>
+      <button class="btn btn-primary" style="height:46px">Lacak</button>
+    </form>
+
+    <div class="card" style="padding:28px">
+      <div class="shp-head">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="id-chip">BHK-2610-48213</span><span class="pill pill--navy">Dalam pelayaran</span></div>
+          <h1 class="t-h1">Surabaya <span class="muted" style="font-weight:400">→</span> Makassar</h1>
+          <p class="t-meta">Laut LCL · 12 koli · 720 kg tertagih · penerima CV Karya Teknik</p>
+        </div>
+        <div class="eta"><p class="t-small">Perkiraan tiba di penerima</p><p class="t-h2">Selasa, 20 Okt</p><p class="t-small">Kapal sandar Senin 06.00 WITA</p></div>
+      </div>
+      <hr class="divider" style="margin:24px 0 28px">
+      <div class="miles">
+        <div class="mile is-done"><span class="mile__dot"><i data-lucide="check"></i></span><b>Dijemput</b><span>Sel, 13 Okt</span></div>
+        <div class="mile is-done"><span class="mile__dot"><i data-lucide="check"></i></span><b>Gudang Surabaya</b><span>13–15 Okt</span></div>
+        <div class="mile is-now"><span class="mile__dot"></span><b>Di kapal</b><span>Berangkat 16 Okt 21.00</span></div>
+        <div class="mile is-next"><span class="mile__dot"></span><b>Pelabuhan Makassar</b><span>Est. Sen, 19 Okt</span></div>
+        <div class="mile is-next"><span class="mile__dot"></span><b>Diterima</b><span>Est. Sel, 20 Okt</span></div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="card" style="padding:24px 28px">
+        <div class="sec-head" style="margin-bottom:22px"><h2 class="t-h2">Riwayat</h2><a class="text-btn" href="#"><i data-lucide="bell" class="i-sm"></i>Kabari lewat WhatsApp</a></div>
+        <div class="log">
+          <div class="log__item is-now"><div class="log__time"><b>Min, 18 Okt</b>08.00 WIB</div><span class="log__dot"></span><div class="log__body"><b>Dalam pelayaran</b><p>KM Nusa Bahari V.118 sesuai jadwal. Sandar di Makassar Senin, 19 Okt sekitar 06.00 WITA.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Jum, 16 Okt</b>21.00 WIB</div><span class="log__dot"></span><div class="log__body"><b>Kapal berangkat</b><p>Pelabuhan Surabaya, kontainer BKTU 302118-4.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Jum, 16 Okt</b>07.30 WIB</div><span class="log__dot"></span><div class="log__body"><b>Kontainer masuk pelabuhan</b><p>Gate-in terminal, menunggu muat.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Kam, 15 Okt</b>14.10 WIB</div><span class="log__dot"></span><div class="log__body"><b>Dimuat ke kontainer</b><p>Gabung dengan 9 kiriman lain tujuan Makassar. Segel 0041822.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Sel, 13 Okt</b>15.45 WIB</div><span class="log__dot"></span><div class="log__body"><b>Tiba di gudang Margomulyo</b><p>Timbang ulang: 540 kg, 2,88 m³. Berat tertagih 720 kg, sama dengan pesanan.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Sel, 13 Okt</b>10.20 WIB</div><span class="log__dot"></span><div class="log__body"><b>Dijemput</b><p>12 koli dari Rungkut Industri, Surabaya. Driver: Andri, CDE boks.</p></div></div>
+          <div class="log__item"><div class="log__time"><b>Sen, 12 Okt</b>16.02 WIB</div><span class="log__dot"></span><div class="log__body"><b>Pesanan dibuat</b><p>Oleh Hendra Wijaya, akun PT Sinar Mulia Teknik.</p></div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="card" style="overflow:hidden">
+          <div class="photo" style="aspect-ratio:16/9" data-img="assets/cargo-shipping-company-website/pelabuhan-kontainer.webp"></div>
+          <div style="padding:14px 20px"><p style="font-weight:500;font-size:14px">Muat di pelabuhan asal</p><p class="t-small">Foto petugas, Jum 16 Okt 18.40</p></div>
+        </div>
+        <div class="card" style="padding:20px 22px">
+          <p class="t-h3" style="margin-bottom:14px">Detail kiriman</p>
+          <dl class="kv" style="margin:0">
+            <dt>Pengirim</dt><dd>PT Sinar Mulia Teknik, Surabaya</dd>
+            <dt>Penerima</dt><dd>CV Karya Teknik, Makassar</dd>
+            <dt>Isi</dt><dd>Spare part mesin pompa</dd>
+            <dt>Koli</dt><dd class="num">12 dus · 540 kg · 2,88 m³</dd>
+            <dt>Kapal</dt><dd>KM Nusa Bahari V.118</dd>
+            <dt>Kontainer</dt><dd class="num">BKTU 302118-4 (20')</dd>
+            <dt>Asuransi</dt><dd>Nilai Rp85.000.000</dd>
+          </dl>
+        </div>
+        <div class="card" style="padding:8px 22px">
+          <div class="doc"><i data-lucide="file-text" class="i-sm"></i><span>Surat jalan</span><a class="text-btn" href="#">Unduh</a></div>
+          <div class="doc"><i data-lucide="list" class="i-sm"></i><span>Packing list</span><a class="text-btn" href="#">Unduh</a></div>
+          <div class="doc"><i data-lucide="receipt" class="i-sm"></i><span>Masuk tagihan INV-2610-0091</span><a class="text-btn" href="#home">Lihat</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-head"><h2 class="t-h2">Kiriman lain di akun ini</h2><a class="link" href="#">Semua 23 resi Oktober</a></div>
+      <div class="list mine">
+        <div class="list__row list__head"><span>Resi</span><span>Rute</span><span>Moda</span><span>Status</span></div>
+        <a class="list__row" href="#lacak"><span class="id-chip">BHK-2610-48177</span><span>Surabaya → Balikpapan · 4 koli</span><span class="t-meta">Laut LCL</span><span class="pill pill--ok">Diterima</span></a>
+        <a class="list__row" href="#lacak"><span class="id-chip">BHK-2610-48240</span><span>Surabaya → Ambon · 1 palet</span><span class="t-meta">Kapal cargo</span><span class="pill pill--warn">Tertahan cuaca</span></a>
+        <a class="list__row" href="#lacak"><span class="id-chip">BHK-2610-48290</span><span>Surabaya → Makassar · 6 koli</span><span class="t-meta">Laut LCL</span><span class="pill pill--mute">Di gudang</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN MUAT GUDANG ================= -->
+<section data-screen="gudang">
+  <div class="ops">
+    <div class="ops-bar">
+      <div class="ops-bar__in">
+        <a class="wordmark" href="#home" style="font-size:18px">bahtera<span>kargo</span></a>
+        <span class="t-meta hide-m">|</span>
+        <div><p class="t-h3">Rencana muat · Gudang Margomulyo</p><p class="t-small">Minggu, 18 Oktober · shift stuffing 07.00–15.00</p></div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span class="meta-chip"><i data-lucide="scale"></i>Timbang ulang 14/20</span>
+          <span class="meta-chip"><i data-lucide="forklift"></i>Forklift 2 unit</span>
+          <span class="avatar">DR</span><span class="t-meta hide-m">Dimas R. · checker</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="panel">
+        <div class="panel__head"><div><p class="t-h3">Menunggu dimuat</p><p class="t-small"><span id="waitCount">6</span> kiriman sudah ditimbang</p></div></div>
+        <div class="chips" data-select id="destPick" style="padding:12px 18px;border-bottom:1px solid var(--line)"><button class="fchip is-active" data-value="all">Semua</button><button class="fchip" data-value="mks">Makassar</button><button class="fchip" data-value="bpn">Balikpapan</button><button class="fchip" data-value="smg">Semarang</button></div>
+        <div id="waitList">
+          <div class="wait" data-dest="mks" data-m3="1.4" data-kg="310"><div><div class="wait__top"><span class="id-chip">BHK-2610-48290</span><span class="t-small">Makassar</span></div><p class="t-small" style="margin-top:6px">6 koli · 310 kg · 1,4 m³ · masuk 08.40</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+          <div class="wait" data-dest="mks" data-m3="1.9" data-kg="820"><div><div class="wait__top"><span class="id-chip">BHK-2610-48296</span><span class="t-small">Makassar</span><span class="pill pill--warn">Forklift</span></div><p class="t-small" style="margin-top:6px">1 palet mesin · 820 kg · 1,9 m³ · masuk 09.15</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+          <div class="wait" data-dest="bpn" data-m3="2.2" data-kg="460"><div><div class="wait__top"><span class="id-chip">BHK-2610-48301</span><span class="t-small">Balikpapan</span></div><p class="t-small" style="margin-top:6px">14 koli · 460 kg · 2,2 m³ · masuk 09.30</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+          <div class="wait" data-dest="smg" data-m3="1.1" data-kg="240"><div><div class="wait__top"><span class="id-chip">BHK-2610-48305</span><span class="t-small">Semarang</span></div><p class="t-small" style="margin-top:6px">8 koli · 240 kg · 1,1 m³ · masuk 10.05</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+          <div class="wait" data-dest="bpn" data-m3="0.9" data-kg="1150"><div><div class="wait__top"><span class="id-chip">BHK-2610-48311</span><span class="t-small">Balikpapan</span><span class="pill pill--warn">Forklift</span></div><p class="t-small" style="margin-top:6px">2 koli besi profil · 1.150 kg · 0,9 m³ · masuk 10.20</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+          <div class="wait" data-dest="mks" data-m3="3.6" data-kg="640"><div><div class="wait__top"><span class="id-chip">BHK-2610-48318</span><span class="t-small">Makassar</span></div><p class="t-small" style="margin-top:6px">22 koli · 640 kg · 3,6 m³ · masuk 10.48</p></div><button class="btn btn-secondary" type="button">Muat</button></div>
+        </div>
+        <p class="t-small" id="waitEmpty" hidden style="padding:24px 18px">Semua kiriman sudah dimuat.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div class="lanes">
+        <div class="lane" data-lane="mks" data-cap-m3="28" data-cap-kg="21700" data-m3="17.6" data-kg="7420">
+          <div class="lane__head">
+            <div class="lane__title"><div><b>20' · Makassar</b><span class="t-small">KM Nusa Bahari V.120</span></div><span class="pill pill--navy">Stuffing</span></div>
+            <div class="chips"><span class="meta-chip"><i data-lucide="clock"></i>Cut-off Sen 19 Okt 16.00</span><span class="meta-chip">Pintu 3</span></div>
+            <div class="lane__meters">
+              <div><div class="meter-label"><span>Volume</span><span><b data-out="m3">17,6</b> / 28 m³</span></div><div class="meter"><i data-bar="m3" style="--v:63%"></i></div></div>
+              <div><div class="meter-label"><span>Berat</span><span><b data-out="kg">7.420</b> / 21.700 kg</span></div><div class="meter meter--brand"><i data-bar="kg" style="--v:34%"></i></div></div>
+            </div>
+          </div>
+          <div class="lane__items">
+            <div class="load"><div><b>BHK-2610-48213</b><small>12 koli · 2,9 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>BHK-2610-48221</b><small>40 koli · 5,2 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>BHK-2610-48236</b><small>1 palet · 1,6 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>+ 6 resi lain</b><small>7,9 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+          </div>
+          <div class="lane__foot"><span data-out="count">9 resi</span><button class="text-btn" type="button">Packing list</button></div>
+        </div>
+
+        <div class="lane" data-lane="bpn" data-cap-m3="28" data-cap-kg="21700" data-m3="9.2" data-kg="4080">
+          <div class="lane__head">
+            <div class="lane__title"><div><b>20' · Balikpapan</b><span class="t-small">KM Tirta Kencana V.07</span></div><span class="pill pill--navy">Stuffing</span></div>
+            <div class="chips"><span class="meta-chip"><i data-lucide="clock"></i>Cut-off Sel 20 Okt 12.00</span><span class="meta-chip">Pintu 5</span></div>
+            <div class="lane__meters">
+              <div><div class="meter-label"><span>Volume</span><span><b data-out="m3">9,2</b> / 28 m³</span></div><div class="meter"><i data-bar="m3" style="--v:33%"></i></div></div>
+              <div><div class="meter-label"><span>Berat</span><span><b data-out="kg">4.080</b> / 21.700 kg</span></div><div class="meter meter--brand"><i data-bar="kg" style="--v:19%"></i></div></div>
+            </div>
+          </div>
+          <div class="lane__items">
+            <div class="load"><div><b>BHK-2610-48177</b><small>4 koli · 0,8 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>BHK-2610-48252</b><small>30 koli · 4,1 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>+ 3 resi lain</b><small>4,3 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+          </div>
+          <div class="lane__foot"><span data-out="count">5 resi</span><button class="text-btn" type="button">Packing list</button></div>
+        </div>
+
+        <div class="lane" data-lane="smg" data-cap-m3="16" data-cap-kg="5000" data-m3="13.1" data-kg="3900">
+          <div class="lane__head">
+            <div class="lane__title"><div><b>CDD · Semarang</b><span class="t-small">Truk darat · driver Yanto</span></div><span class="pill pill--warn">Hampir penuh</span></div>
+            <div class="chips"><span class="meta-chip"><i data-lucide="clock"></i>Berangkat hari ini 19.00</span><span class="meta-chip">Pintu 1</span></div>
+            <div class="lane__meters">
+              <div><div class="meter-label"><span>Volume</span><span><b data-out="m3">13,1</b> / 16 m³</span></div><div class="meter"><i data-bar="m3" style="--v:82%"></i></div></div>
+              <div><div class="meter-label"><span>Berat</span><span><b data-out="kg">3.900</b> / 5.000 kg</span></div><div class="meter meter--brand"><i data-bar="kg" style="--v:78%"></i></div></div>
+            </div>
+          </div>
+          <div class="lane__items">
+            <div class="load"><div><b>BHK-2610-48262</b><small>60 koli · 6,4 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>BHK-2610-48270</b><small>18 koli · 3,3 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+            <div class="load"><div><b>+ 2 resi lain</b><small>3,4 m³</small></div><span class="pill pill--ok">Dimuat</span></div>
+          </div>
+          <div class="lane__foot"><span data-out="count">4 resi</span><button class="text-btn" type="button">Packing list</button></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><div><p class="t-h3">Jemputan menuju gudang</p><p class="t-small">Barang yang akan masuk antrean timbang</p></div><span class="t-small">Diperbarui 11.05</span></div>
+        <div class="scroll-x"><div style="min-width:680px">
+          <div class="wait" style="grid-template-columns:150px minmax(0,1fr) auto"><span class="id-chip">BHK-2610-48322</span><div class="wait__top"><b style="font-weight:500;font-size:14px">Rungkut Industri → Gudang</b><span class="meta-chip"><i data-lucide="truck"></i>CDE · Andri</span><span class="meta-chip"><i data-lucide="clock"></i>ETA 11.40</span><span class="meta-chip">18 koli · tujuan Makassar</span></div><span class="pill pill--ok">Tepat waktu</span></div>
+          <div class="wait" style="grid-template-columns:150px minmax(0,1fr) auto"><span class="id-chip">BHK-2610-48325</span><div class="wait__top"><b style="font-weight:500;font-size:14px">Sidoarjo → Gudang</b><span class="meta-chip"><i data-lucide="truck"></i>CDD · Rudi</span><span class="meta-chip"><i data-lucide="clock"></i>ETA 12.30</span><span class="meta-chip">2 palet · tujuan Balikpapan</span></div><span class="pill pill--warn">Terlambat 25 mnt</span></div>
+          <div class="wait" style="grid-template-columns:150px minmax(0,1fr) auto"><span class="id-chip">BHK-2610-48326</span><div class="wait__top"><b style="font-weight:500;font-size:14px">Gresik → Gudang</b><span class="meta-chip"><i data-lucide="truck"></i>CDE · Sugeng</span><span class="meta-chip"><i data-lucide="clock"></i>ETA 13.15</span><span class="meta-chip">9 koli · tujuan Semarang</span></div><span class="pill pill--mute">Belum berangkat</span></div>
+        </div></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var rp = function (n) { return window.rupiah(n); };
+  var fmt = function (n, d) { return n.toLocaleString("id-ID", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
+
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+
+  // Beranda: tambah resi
+  var list = document.getElementById("resiList");
+  document.getElementById("addResi").addEventListener("click", function () {
+    if (list.children.length >= 5) return;
+    var row = document.createElement("label");
+    row.className = "input"; row.style.marginRight = "0";
+    row.innerHTML = '<i data-lucide="search" class="i-sm"></i><input placeholder="Nomor resi berikutnya">';
+    list.appendChild(row); if (window.lucide) lucide.createIcons();
+    row.querySelector("input").focus();
+  });
+
+  // Beranda: filter rute per pulau
+  document.getElementById("islandPick").addEventListener("lapak:select", function (e) {
+    var v = e.detail.value;
+    document.querySelectorAll("#routeList [data-island]").forEach(function (r) { r.hidden = v !== "all" && r.getAttribute("data-island") !== v; });
+  });
+
+  // Tarif
+  var num = function (id) { return Number(String(document.getElementById(id).value).replace(/\D/g, "")) || 0; };
+  var svc = "lcl", day = "Senin, 19 Okt", time = "11.00–14.00";
+  var names = { lcl: "Laut LCL", pelni: "Laut · Pelni", fcl: "Laut FCL 20'", air: "Udara" };
+  var freight = {};
+  function calc() {
+    var koli = Number(document.querySelector("#qKoli output").textContent) || 1;
+    var act = koli * num("qKg");
+    var vol = koli * num("qP") * num("qL") * num("qT");
+    var volSea = Math.ceil(vol / 4000), volAir = Math.ceil(vol / 6000);
+    var chgSea = Math.max(act, volSea, 100), chgAir = Math.max(act, volAir, 10);
+    freight = { lcl: chgSea * 4600, pelni: chgSea * 4100, fcl: 9800000, air: chgAir * 24000 };
+    document.getElementById("oAct").textContent = fmt(act) + " kg";
+    document.getElementById("oVol").textContent = fmt(vol / 1e6, 2) + " m³";
+    document.getElementById("oVolKg").textContent = fmt(volSea) + " kg";
+    document.getElementById("oChg").textContent = fmt(chgSea) + " kg";
+    ["lcl", "pelni", "air"].forEach(function (k) {
+      var el = document.querySelector('[data-price="' + k + '"]');
+      el.innerHTML = rp(freight[k]) + "<small>" + fmt(k === "air" ? chgAir : chgSea) + " kg tertagih</small>";
+    });
+    var val = num("aVal"), ins = document.getElementById("aIns").checked ? (val > 50000000 ? Math.round(val * 0.002) : 0) : 0;
+    var pack = document.getElementById("aPack").checked ? koli * 45000 : 0;
+    document.getElementById("aInsP").textContent = val > 50000000 ? rp(Math.round(val * 0.002)) : "Gratis";
+    document.getElementById("aPackP").textContent = rp(koli * 45000);
+    var total = freight[svc] + ins + pack;
+    var chgTxt = svc === "fcl" ? "1 kontainer 20'" : fmt(svc === "air" ? chgAir : chgSea) + " kg tertagih";
+    document.getElementById("sumSvc").textContent = names[svc] + " · " + chgTxt;
+    document.getElementById("sumPick").textContent = "Jemput " + day + " · " + time + " · gratis";
+    document.getElementById("sumTotal").textContent = rp(total);
+    document.getElementById("doneTotal").textContent = rp(total);
+    document.getElementById("doneWhen").textContent = day + " · " + time;
+    document.getElementById("doneSvc").textContent = names[svc] + " · Surabaya → Makassar";
+  }
+  document.getElementById("qKoli").addEventListener("lapak:change", calc);
+  ["qKg", "qP", "qL", "qT", "aVal"].forEach(function (id) { document.getElementById(id).addEventListener("input", calc); });
+  ["aIns", "aPack"].forEach(function (id) { document.getElementById(id).addEventListener("change", calc); });
+  document.getElementById("svcPick").addEventListener("lapak:select", function (e) { svc = e.detail.value; calc(); });
+  document.getElementById("dayPick").addEventListener("lapak:select", function (e) { day = e.detail.value; calc(); });
+  document.getElementById("timePick").addEventListener("lapak:select", function (e) { time = e.detail.value; calc(); });
+  calc();
+
+  // Gudang: filter + muat ke kontainer/truk sesuai tujuan
+  document.getElementById("destPick").addEventListener("lapak:select", function (e) {
+    var v = e.detail.value;
+    document.querySelectorAll("#waitList .wait").forEach(function (r) { r.hidden = v !== "all" && r.getAttribute("data-dest") !== v; });
+  });
+  document.getElementById("waitList").addEventListener("click", function (e) {
+    var btn = e.target.closest(".btn"); if (!btn) return;
+    var row = btn.closest(".wait"), lane = document.querySelector('[data-lane="' + row.getAttribute("data-dest") + '"]');
+    var m3 = Number(lane.getAttribute("data-m3")) + Number(row.getAttribute("data-m3"));
+    var kg = Number(lane.getAttribute("data-kg")) + Number(row.getAttribute("data-kg"));
+    var capM3 = Number(lane.getAttribute("data-cap-m3")), capKg = Number(lane.getAttribute("data-cap-kg"));
+    lane.setAttribute("data-m3", m3); lane.setAttribute("data-kg", kg);
+    lane.querySelector('[data-out="m3"]').textContent = fmt(m3, 1);
+    lane.querySelector('[data-out="kg"]').textContent = fmt(kg);
+    lane.querySelector('[data-bar="m3"]').style.setProperty("--v", Math.min(100, m3 / capM3 * 100) + "%");
+    lane.querySelector('[data-bar="kg"]').style.setProperty("--v", Math.min(100, kg / capKg * 100) + "%");
+    var cnt = lane.querySelector('[data-out="count"]'); cnt.textContent = (parseInt(cnt.textContent, 10) + 1) + " resi";
+    if (m3 / capM3 > 0.9) { var p = lane.querySelector(".lane__title .pill"); p.className = "pill pill--bad"; p.textContent = "Penuh"; }
+    else if (m3 / capM3 > 0.8) { var p2 = lane.querySelector(".lane__title .pill"); p2.className = "pill pill--warn"; p2.textContent = "Hampir penuh"; }
+    var id = row.querySelector(".id-chip").textContent, info = row.querySelector("p.t-small").textContent.split(" · ");
+    var item = document.createElement("div"); item.className = "load is-new";
+    item.innerHTML = "<div><b>" + id + "</b><small>" + info[0] + " · " + info[2] + "</small></div><span class=\"pill pill--navy\">Baru dimuat</span>";
+    lane.querySelector(".lane__items").prepend(item);
+    row.remove();
+    var left = document.querySelectorAll("#waitList .wait").length;
+    document.getElementById("waitCount").textContent = left;
+    document.getElementById("waitEmpty").hidden = left > 0;
+  });
+})();
+</script>
+</body>
+</html>
