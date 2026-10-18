@@ -1,0 +1,91 @@
+{
+  "slug": "catering-service-website",
+  "kind": "Website",
+  "industry": "Food & Beverage",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Menu Builder",
+    "Kitchen Production"
+  ],
+  "metrics": [
+    {
+      "value": "4",
+      "label": "BUFFET PACKAGES",
+      "labelId": "PAKET PRASMANAN"
+    },
+    {
+      "value": "Rp32K",
+      "label": "DAILY OFFICE MEAL",
+      "labelId": "CATERING HARIAN"
+    },
+    {
+      "value": "30%",
+      "label": "DEPOSIT TO HOLD A DATE",
+      "labelId": "DP KUNCI TANGGAL"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Menu-led homepage with boxed meals, office catering and buffets",
+      "captionId": "Beranda berbasis menu untuk nasi box, catering kantor, dan prasmanan"
+    },
+    {
+      "hash": "paket",
+      "caption": "Buffet builder with package limits, guest count and live total",
+      "captionId": "Penyusun prasmanan dengan batas menu per paket, jumlah tamu, dan total"
+    },
+    {
+      "hash": "jadwal",
+      "caption": "Event date from kitchen capacity, tasting and deposit schedule",
+      "captionId": "Tanggal acara dari kapasitas dapur, tasting, dan jadwal DP"
+    },
+    {
+      "hash": "dapur",
+      "caption": "Kitchen tablet with order tickets, batch production and dispatch",
+      "captionId": "Tablet dapur dengan tiket pesanan, produksi per batch, dan pengiriman"
+    }
+  ],
+  "content_en": {
+    "title": "Catering Service Website",
+    "type": "CATERING WEBSITE & ORDERING",
+    "category": "Ordering System",
+    "summary": "A redesign for a home-grown caterer that sells boxed meals, daily office lunches, buffets for weddings and corporate events, and tumpeng. Customers browse priced menus, build a buffet within each package's rules, pick a date from the kitchen's capacity and pay a deposit; the kitchen runs the day from a tablet.",
+    "challenge": "The old homepage opened with a banner image that carried the price as text, followed by a carousel repeating the same three products with zero-star ratings and twelve category tiles with no prices or links. The boxed-meal and daily office prices were only mentioned inside blog articles.\n\nBuffet packages were long lists, and the rules (minimum 300 guests, choose two mains, 10% service) appeared under only the first one. Every order went through a phone call or WhatsApp, with no way to check whether a date was free, request a tasting or see how the deposit worked.",
+    "solution": "The homepage leads with the menu: tabs for boxed meals, office catering, buffets and tumpeng, each card showing contents, price per box or guest and minimum order. Office customers see the daily Rp32,000 plan with this week's menu and a tasting request form. The buffet builder compares four packages, adjusts guest count in steps of 25 with each package's minimum, and limits menu choices per category while a bottom bar keeps the price per guest and total with service.\n\nThe next step shows a month calendar with remaining kitchen capacity per day, serving times, venue details, tasting options and a 30/40/30 payment schedule that follows the chosen date, ending in a held order with a virtual account. In the kitchen, a tablet lists order tickets by status, aggregates portions per dish into batches and lets the head cook check packing and hand orders to drivers. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Menu tabs with price per box or guest and minimum order",
+      "Daily office catering with weekly menu and tasting request",
+      "Buffet builder with package rules and guest count",
+      "Live price per guest and total including 10% service",
+      "Event calendar based on daily kitchen capacity",
+      "Tasting options and staged deposit schedule",
+      "Kitchen tablet for batch production and dispatch"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Jasa Catering",
+    "type": "WEBSITE & PEMESANAN CATERING",
+    "category": "Ordering System",
+    "summary": "Redesign untuk catering rumahan yang menjual nasi box, makan siang harian kantor, prasmanan untuk pernikahan dan acara kantor, serta tumpeng. Pelanggan melihat menu berharga, menyusun prasmanan sesuai aturan tiap paket, memilih tanggal dari kapasitas dapur, lalu membayar DP; dapur mengatur hari dari tablet.",
+    "challenge": "Beranda lama dibuka dengan banner gambar yang memuat harga sebagai teks, disusul carousel yang mengulang tiga produk yang sama dengan rating nol bintang, dan dua belas kotak kategori tanpa harga atau link. Harga nasi box dan catering harian kantor hanya disebut di dalam artikel blog.\n\nPaket prasmanan berupa daftar panjang, dan aturannya (minimal 300 pax, pilih dua menu utama, service 10%) hanya tertulis di paket pertama. Semua pesanan lewat telepon atau WhatsApp, tanpa cara mengecek tanggal kosong, meminta tasting, atau melihat skema DP.",
+    "solution": "Beranda dipimpin menu: tab nasi box, harian kantor, prasmanan, dan tumpeng, dengan kartu berisi isi, harga per box atau pax, dan minimal order. Pelanggan kantor melihat paket harian Rp32.000 beserta menu minggu ini dan form permintaan tasting. Penyusun prasmanan membandingkan empat paket, mengatur jumlah tamu per 25 pax sesuai minimum tiap paket, dan membatasi pilihan menu per kategori, sementara bar bawah menampilkan harga per pax dan total dengan service.\n\nLangkah berikutnya menampilkan kalender bulan dengan sisa kapasitas dapur per hari, waktu saji, detail lokasi, opsi tasting, dan jadwal bayar 30/40/30 yang mengikuti tanggal terpilih, lalu pesanan ditahan dengan virtual account. Di dapur, tablet menampilkan tiket pesanan per status, menggabungkan porsi per menu menjadi batch, dan membantu kepala dapur mengecek packing sebelum diserahkan ke driver. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Tab menu dengan harga per box atau pax dan minimal order",
+      "Catering harian kantor dengan menu mingguan dan permintaan tasting",
+      "Penyusun prasmanan dengan aturan paket dan jumlah tamu",
+      "Harga per pax dan total termasuk service 10% secara langsung",
+      "Kalender acara berdasarkan kapasitas dapur harian",
+      "Opsi tasting dan jadwal DP bertahap",
+      "Tablet dapur untuk produksi per batch dan pengiriman"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

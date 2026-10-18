@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lestari Catering — Nasi box, catering harian kantor, dan prasmanan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/catering-service-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <header class="header wrap" style="max-width:none">
+    <nav class="header__nav"><a href="#home" class="is-active">Menu</a><a href="#home">Harian kantor</a><a href="#paket">Prasmanan</a><a href="#home">Tentang</a></nav>
+    <a class="logo" href="#home">lestari</a>
+    <nav class="header__nav header__nav--right"><a href="#jadwal">Tasting</a><a href="#dapur">Masuk</a><a class="btn btn-primary btn-sm" href="#paket">Pesan</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero__body">
+      <p class="hero__kicker">Nasi box, catering harian kantor, dan prasmanan · Bandung</p>
+      <h1 class="t-hero">Makan siang tim,<br>tiba sebelum jam 12.</h1>
+      <div class="hero__actions">
+        <a class="btn btn-lime" href="#paket">Susun paket acara</a>
+        <a class="btn btn-ghost-light" href="#home">Langganan harian kantor</a>
+      </div>
+      <div class="hero__note"><span>Nasi box mulai <b>Rp35.000</b></span><span>Harian kantor <b>Rp32.000/pax</b></span><span>Prasmanan mulai <b>Rp90.000/pax</b></span></div>
+    </div>
+    <div class="hero__grid">
+      <div class="photo" data-img="assets/catering-service-website/nasibox-bali.webp"></div>
+      <div class="photo" data-img="assets/catering-service-website/nasibox-harian.webp"></div>
+      <div class="photo" data-img="assets/catering-service-website/snack-box.webp"></div>
+      <div class="photo" data-img="assets/catering-service-website/nasibox-daun.webp"></div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:72px var(--gutter) 88px">
+    <div class="menu-tabs" data-select data-tabs="menu">
+      <button class="is-active" data-value="box">Nasi box</button>
+      <button data-value="harian">Harian kantor</button>
+      <button data-value="prasmanan">Prasmanan</button>
+      <button data-value="tumpeng">Tumpeng</button>
+    </div>
+
+    <div class="menu-grid" style="margin-top:44px" data-panel="menu:box">
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/nasibox-daun.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Nasi box reguler</h3><span class="dish__price">Rp35.000</span></div>
+        <p class="dish__desc">Nasi bungkus daun, ayam goreng serundeng, tempe bacem, oseng daun pepaya, sambal merah</p>
+        <p class="dish__note">Min. 20 box · pesan H-1 sebelum 15.00</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/nasibox-harian.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Nasi box spesial</h3><span class="dish__price">Rp50.000</span></div>
+        <p class="dish__desc">Nasi daun, empal suwir, ayam serundeng, oseng teri cabai hijau, kerupuk, puding buah</p>
+        <p class="dish__note">Min. 20 box · cocok untuk rapat dan pengajian</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/nasibox-bali.webp"><span class="badge">Paling sering dipesan</span></div>
+        <div class="dish__row"><h3 class="t-item">Nasi box Bali</h3><span class="dish__price">Rp60.000</span></div>
+        <p class="dish__desc">Sate lilit, ayam suwir betutu, urap sayur, kacang goreng, sambal matah, nasi daun</p>
+        <p class="dish__note">Min. 20 box · sambal dikemas terpisah</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+
+    <div class="menu-grid" style="margin-top:44px" data-panel="menu:harian" hidden>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/nasi-besek.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Catering harian</h3><span class="dish__price">Rp32.000</span></div>
+        <p class="dish__desc">Nasi putih, lauk utama berganti setiap hari, sayur, sambal, buah. Diantar Senin–Jumat</p>
+        <p class="dish__note">Min. 15 pax per hari · langganan mingguan atau bulanan</p>
+        <a class="link-arrow" href="#jadwal">Mulai langganan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/snack-box.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Snack box rapat</h3><span class="dish__price">Rp18.000</span></div>
+        <p class="dish__desc">Mi goreng, risol, kerupuk udang, dan jeruk dalam kotak; air mineral terpisah</p>
+        <p class="dish__note">Min. 20 box · bisa ditambahkan ke langganan harian</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/bakul-liwetan.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Bakul liwetan</h3><span class="dish__price">Tanya admin</span></div>
+        <p class="dish__desc">Nasi liwet, ayam goreng, ikan asin, lalap, sambal dalam bakul anyaman untuk makan bersama</p>
+        <p class="dish__note">Untuk syukuran dan acara divisi</p>
+        <a class="link-arrow" href="#">Tanya lewat WhatsApp<i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+
+    <div class="menu-grid" style="margin-top:44px" data-panel="menu:prasmanan" hidden>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/prasmanan.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Prasmanan</h3><span class="dish__price">Rp90.000–150.000</span></div>
+        <p class="dish__desc">Empat paket per pax: Ekonomis, Alpha, Bravo, Charlie. Pilih nasi, soup, menu utama, pendamping, dan minuman sendiri</p>
+        <p class="dish__note">Min. 300 pax untuk paket Ekonomis · belum termasuk service 10%</p>
+        <a class="link-arrow" href="#paket">Susun menu<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/stall-gubukan.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Stall gubukan</h3><span class="dish__price">+Rp20.000</span></div>
+        <p class="dish__desc">Empal gentong, soto, bakso, atau zuppa dari gubukan terpisah, ditambahkan ke paket prasmanan</p>
+        <p class="dish__note">Per pax · min. 150 porsi per stall</p>
+        <a class="link-arrow" href="#paket">Tambahkan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/chicken-steak.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Chicken steak tray</h3><span class="dish__price">Rp450.000</span></div>
+        <p class="dish__desc">Ayam panggang saus barbeque, mashed potato, sayur rebus, dan salad jagung dalam satu tray</p>
+        <p class="dish__note">Untuk 8–10 orang</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+
+    <div class="menu-grid" style="margin-top:44px" data-panel="menu:tumpeng" hidden>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/tumpeng-mini.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Tumpeng mini</h3><span class="dish__price">Rp350.000</span></div>
+        <p class="dish__desc">Nasi kuning, ayam goreng, perkedel, sambal goreng ati, telur balado, urap, kerupuk</p>
+        <p class="dish__note">Untuk 8–10 orang · pesan H-2</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/nasi-kebuli.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Nasi kebuli</h3><span class="dish__price">Rp450.000</span></div>
+        <p class="dish__desc">Nasi kebuli rempah, daging kambing, acar, sambal, emping dalam tampah daun</p>
+        <p class="dish__note">Untuk 8–10 orang · pesan H-2</p>
+        <a class="link-arrow" href="#paket">Pesan<i data-lucide="arrow-right"></i></a>
+      </article>
+      <article class="dish">
+        <div class="photo" data-img="assets/catering-service-website/jajanan-tampah.webp"></div>
+        <div class="dish__row"><h3 class="t-item">Jajanan tampah</h3><span class="dish__price">Tanya admin</span></div>
+        <p class="dish__desc">Jagung, ubi, kacang rebus, pisang bakar, singkong, edamame. Isi menyesuaikan jumlah tamu</p>
+        <p class="dish__note">Untuk lamaran dan syukuran</p>
+        <a class="link-arrow" href="#">Tanya lewat WhatsApp<i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px">
+    <div class="split">
+      <div>
+        <h2 class="t-display">Satu langganan untuk makan siang seluruh kantor</h2>
+        <div class="offer-list">
+          <a href="#jadwal"><b>Catering harian</b><p>Rp32.000 per pax. Lauk berganti setiap hari, menu seminggu dikirim setiap Jumat.</p><span>Ubah jumlah porsi sampai pukul 15.00 sehari sebelumnya</span></a>
+          <a href="#paket"><b>Rapat &amp; coffee break</b><p>Snack box dan nasi box diantar ke ruang rapat, lengkap dengan alat makan.</p><span>Satu tagihan bulanan untuk semua divisi</span></a>
+          <a href="#"><b>Kantin kantor &amp; sekolah</b><p>Dapur dan kasir kantin dikelola tim kami, untuk sekitar 700 makan siang per hari.</p><span>Survei lokasi gratis</span></a>
+        </div>
+      </div>
+      <div class="photo" style="--ar:4/5" data-img="assets/catering-service-website/nasibox-harian.webp"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap" style="padding-top:88px;padding-bottom:88px">
+      <div class="split">
+        <div class="band-photos">
+          <div class="photo" style="--ar:3/4" data-img="assets/catering-service-website/prasmanan.webp"></div>
+          <div class="photo" style="--ar:3/4" data-img="assets/catering-service-website/stall-gubukan.webp"></div>
+        </div>
+        <div>
+          <h2 class="t-display">Pernikahan, lamaran, dan acara kantor</h2>
+          <p style="font-size:18px;margin-top:20px;max-width:520px">Prasmanan mulai Rp90.000 per pax untuk 100 sampai 1.500 tamu. Tasting lima menu gratis untuk acara 300 pax ke atas, dan DP 30% mengunci tanggal di dapur kami.</p>
+          <div class="hero__actions"><a class="btn btn-lime" href="#paket">Susun menu prasmanan</a><a class="btn btn-ghost-light" href="#jadwal">Cek tanggal kosong</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:88px;padding-bottom:96px">
+    <div class="rule-grid">
+      <div>
+        <h2 class="t-h2">Menu harian, 19–23 Oktober</h2>
+        <p class="t-meta" style="margin:6px 0 20px">Rp32.000 per pax · nasi putih, sambal, dan buah di setiap box</p>
+        <div class="week">
+          <div class="d">Senin<small>19 Okt</small></div><div>Ayam bakar kecap, tumis buncis wortel, pisang</div>
+          <div class="d">Selasa<small>20 Okt</small></div><div>Empal suwir, capcay goreng, semangka</div>
+          <div class="d">Rabu<small>21 Okt</small></div><div>Ikan fillet saus tiram, cah jagung muda, jeruk</div>
+          <div class="d">Kamis<small>22 Okt</small></div><div>Ayam bumbu sate, kentang dadu cabe ijo, melon</div>
+          <div class="d">Jumat<small>23 Okt</small></div><div>Beef teriyaki, tumis pakcoy jamur, pepaya</div>
+        </div>
+      </div>
+      <div>
+        <h2 class="t-h2">Minta tasting</h2>
+        <p class="t-meta" style="margin:6px 0 20px">Untuk langganan kantor atau acara di atas 300 pax. Admin membalas lewat WhatsApp di hari kerja.</p>
+        <form data-demo-form="#tasteOk" style="display:flex;flex-direction:column;gap:14px">
+          <div class="form-row"><label class="field">Nama<input class="input" value="Nadia Putri"></label><label class="field">Nomor WhatsApp<input class="input" value="0812-0000-4417"></label></div>
+          <div class="form-row"><label class="field">Kebutuhan<select class="input"><option>Catering harian kantor</option><option>Pernikahan</option><option>Acara kantor</option></select></label><label class="field">Perkiraan pax<input class="input" value="45 pax per hari"></label></div>
+          <button class="btn btn-primary" style="align-self:flex-start">Kirim permintaan</button>
+        </form>
+        <div id="tasteOk" hidden style="display:flex;flex-direction:column;gap:10px">
+          <p class="t-h3">Permintaan terkirim</p>
+          <p class="muted">Admin akan menawarkan jadwal tasting Sabtu, 24 Oktober di dapur Buahbatu atau mengirim tasting box ke kantor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">lestari</span><p class="t-small" style="max-width:300px">Catering rumahan sejak 2012. Dapur di Buahbatu, mengantar ke Bandung, Cimahi, dan Bandung Barat. Halal, tanpa MSG tambahan.</p></div>
+        <div><h4>Menu</h4><ul><li><a href="#home">Nasi box</a></li><li><a href="#home">Harian kantor</a></li><li><a href="#paket">Prasmanan</a></li><li><a href="#home">Tumpeng</a></li></ul></div>
+        <div><h4>Pesanan</h4><ul><li><a href="#jadwal">Cek tanggal</a></li><li><a href="#jadwal">Tasting</a></li><li><a href="#">Bantuan</a></li></ul></div>
+        <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp admin</a></li><li><a href="#">Instagram</a></li><li><a href="#">Senin–Sabtu 07.00–17.00</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Lestari Catering</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= SUSUN PAKET PRASMANAN ================= -->
+<section data-screen="paket">
+  <div class="wrap">
+    <div class="flow-top">
+      <a class="icon-btn" href="#home"><i data-lucide="arrow-left" class="i-sm"></i></a>
+      <a class="logo" href="#home" style="font-size:22px">lestari</a>
+      <div class="steps" style="margin-left:12px"><b class="cur">1. Paket &amp; menu</b><i data-lucide="chevron-right" class="i-sm"></i><span>2. Tanggal &amp; antar</span><i data-lucide="chevron-right" class="i-sm"></i><span>3. DP</span></div>
+    </div>
+
+    <div style="padding:40px 0 28px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <div>
+        <h1 class="t-h1">Susun prasmanan</h1>
+        <p class="t-meta" style="margin-top:8px">Harga per pax. Service 10% dan ongkir luar kota dihitung terpisah.</p>
+      </div>
+      <div class="chips" data-select>
+        <button class="chip is-active">Pernikahan</button><button class="chip">Lamaran</button><button class="chip">Acara kantor</button><button class="chip">Private event</button>
+      </div>
+    </div>
+
+    <div class="pkgs" id="pkgs" data-select="is-selected">
+      <button class="pkg" data-value="ekonomis"><span class="pkg__check"></span><span class="t-h3">Ekonomis</span><span class="pkg__price">Rp90.000 <small>/pax</small></span><span class="t-small">2 menu utama · 2 dessert · teh sereh atau lemon tea · min. 300 pax</span></button>
+      <button class="pkg is-selected" data-value="alpha"><span class="pkg__check"></span><span class="t-h3">Alpha</span><span class="pkg__price">Rp110.000 <small>/pax</small></span><span class="t-small">Soup · 3 menu utama · es buah atau jus · min. 100 pax</span></button>
+      <button class="pkg" data-value="bravo"><span class="pkg__check"></span><span class="t-h3">Bravo</span><span class="pkg__price">Rp125.000 <small>/pax</small></span><span class="t-small">Soup · 3 menu utama · salad · snack 2 macam · min. 100 pax</span></button>
+      <button class="pkg" data-value="charlie"><span class="pkg__check"></span><span class="t-h3">Charlie</span><span class="pkg__price">Rp150.000 <small>/pax</small></span><span class="t-small">Soup · 4 menu utama · salad · pasta · snack 3 macam · min. 100 pax</span></button>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:32px 0">
+      <div><p class="t-h3">Jumlah tamu</p><p class="t-small" id="paxHint">Naik turun per 25 pax · min. 100 pax</p></div>
+      <div class="stepper stepper--lg"><button type="button" id="paxDec" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output id="paxOut">300</output><button type="button" id="paxInc" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div>
+      <p class="t-meta">Jumlah final bisa diubah sampai H-3.</p>
+    </div>
+
+    <div id="cats">
+      <div class="cat" data-cat="nasi">
+        <div class="cat__head"><p class="t-h3">Nasi pilihan</p><p class="t-small">Disajikan bersama nasi putih</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">1</span> dipilih</p></div>
+        <div class="picks"><button class="pick is-on">Nasi liwet</button><button class="pick">Nasi goreng kampung</button><button class="pick">Nasi uduk</button><button class="pick">Nasi jeruk</button><button class="pick">Nasi ijo</button><button class="pick">Nasi goreng oriental</button></div>
+      </div>
+      <div class="cat" data-cat="soup">
+        <div class="cat__head"><p class="t-h3">Soup</p><p class="t-small">Alpha, Bravo, Charlie</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">0</span> dipilih</p></div>
+        <div class="picks"><button class="pick">Soup ayam jagung</button><button class="pick">Soup kimlo</button><button class="pick">Soup bakso tahu</button><button class="pick">Soto ayam ambengan</button><button class="pick">Soup sosis sayuran</button></div>
+      </div>
+      <div class="cat" data-cat="utama">
+        <div class="cat__head"><p class="t-h3">Menu utama</p><p class="t-small">Campur daging, ayam, dan ikan</p><p class="cat__count">Pilih <span class="lim">3</span> · <span class="cnt">2</span> dipilih</p></div>
+        <div class="picks">
+          <button class="pick is-on"><span>Sapi bumbu rujak<small>Daging</small></span></button><button class="pick"><span>Beef black pepper<small>Daging</small></span></button><button class="pick"><span>Dendeng sapi basah<small>Daging</small></span></button>
+          <button class="pick is-on"><span>Ayam bumbu sate<small>Ayam</small></span></button><button class="pick"><span>Ayam fillet cabai garam<small>Ayam</small></span></button><button class="pick"><span>Ayam tulang lunak<small>Ayam</small></span></button>
+          <button class="pick"><span>Ikan fillet saus mangga<small>Ikan</small></span></button><button class="pick"><span>Udang goreng mentega<small>Seafood</small></span></button><button class="pick"><span>Cumi asin tulang rawit<small>Seafood</small></span></button>
+        </div>
+      </div>
+      <div class="cat" data-cat="salad">
+        <div class="cat__head"><p class="t-h3">Salad</p><p class="t-small">Bravo dan Charlie</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">0</span> dipilih</p></div>
+        <div class="picks"><button class="pick">Salad Bangkok</button><button class="pick">Asinan Betawi</button><button class="pick">Mixed salad</button><button class="pick">Rujak pengantin</button></div>
+      </div>
+      <div class="cat" data-cat="pasta">
+        <div class="cat__head"><p class="t-h3">Pasta</p><p class="t-small">Charlie</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">0</span> dipilih</p></div>
+        <div class="picks"><button class="pick">Spaghetti bolognaise</button><button class="pick">Fettucini carbonara</button><button class="pick">Macaroni schotel</button><button class="pick">Mac and cheese</button></div>
+      </div>
+      <div class="cat" data-cat="pendamping">
+        <div class="cat__head"><p class="t-h3">Pendamping</p><p class="t-small">Sayur dan mi</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">1</span> dipilih</p></div>
+        <div class="picks"><button class="pick is-on">Tumis baby pakcoy jamur</button><button class="pick">Capcay goreng</button><button class="pick">Cah jagung muda wortel</button><button class="pick">Kentang dadu cabe ijo</button><button class="pick">Bihun goreng spesial</button></div>
+      </div>
+      <div class="cat" data-cat="dessert">
+        <div class="cat__head"><p class="t-h3">Dessert</p><p class="t-small">Paket lain sudah termasuk buah potong dan puding</p><p class="cat__count">Pilih <span class="lim">2</span> · <span class="cnt">0</span> dipilih</p></div>
+        <div class="picks"><button class="pick">Aneka buah potong</button><button class="pick">Aneka puding</button><button class="pick">Mini snacks</button></div>
+      </div>
+      <div class="cat" data-cat="minum">
+        <div class="cat__head"><p class="t-h3">Minuman</p><p class="t-small">Air mineral dan es teh manis selalu ada</p><p class="cat__count">Pilih <span class="lim">1</span> · <span class="cnt">1</span> dipilih</p></div>
+        <div class="picks"><button class="pick is-on">Es buah</button><button class="pick">Jus jambu</button><button class="pick">Jus sirsak</button><button class="pick">Jus jeruk</button><button class="pick">Jus semangka</button></div>
+      </div>
+      <div class="cat" style="padding-bottom:48px">
+        <div class="cat__head"><p class="t-h3">Tambahan</p><p class="t-small">Opsional, dihitung per pax</p></div>
+        <div>
+          <label class="opt" style="padding-top:0"><input type="checkbox" class="addon" data-price="20000"><div><b>Stall gubukan empal gentong</b><p>Satu gubukan dengan petugas, min. 150 porsi</p></div><span class="opt__price">+Rp20.000</span></label>
+          <label class="opt"><input type="checkbox" class="addon" data-price="15000"><div><b>Stall bakso kuah tulang iga</b><p>Satu gubukan dengan petugas, min. 150 porsi</p></div><span class="opt__price">+Rp15.000</span></label>
+          <label class="opt"><input type="checkbox" class="addon" data-price="8000" checked><div><b>Dekorasi meja prasmanan</b><p>Taplak, bunga meja, dan papan nama menu</p></div><span class="opt__price">+Rp8.000</span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="wrap bottom-bar__in">
+      <div class="bb-item"><span>Paket</span><b id="bbPkg">Alpha · 300 pax</b></div>
+      <div class="bb-item bb-hide-sm"><span>Menu dipilih</span><b id="bbMenu">5 dari 7</b></div>
+      <div class="bb-item bb-hide-sm"><span>Per pax</span><b id="bbPer">Rp118.000</b></div>
+      <div class="bb-item bb-total"><span>Estimasi total + service 10%</span><b id="bbTotal">Rp38.940.000</b></div>
+      <a class="btn btn-primary" href="#jadwal">Lanjut pilih tanggal<i data-lucide="arrow-right" class="i-sm"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TANGGAL, ANTAR, DP ================= -->
+<section data-screen="jadwal">
+  <form data-demo-form="#jdDone" id="jdForm">
+    <div class="wrap">
+      <div class="flow-top">
+        <a class="icon-btn" href="#paket"><i data-lucide="arrow-left" class="i-sm"></i></a>
+        <a class="logo" href="#home" style="font-size:22px">lestari</a>
+        <div class="steps" style="margin-left:12px"><span class="done">1. Paket &amp; menu</span><i data-lucide="chevron-right" class="i-sm"></i><b class="cur">2. Tanggal &amp; antar</b><i data-lucide="chevron-right" class="i-sm"></i><span>3. DP</span></div>
+      </div>
+
+      <div style="padding:40px 0 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+        <div><h1 class="t-h1">Pilih tanggal acara</h1><p class="t-meta" style="margin-top:8px">Kapasitas dapur 1.500 pax per hari. Tanggal penuh tidak bisa dipilih.</p></div>
+        <div style="display:flex;align-items:center;gap:10px"><button type="button" class="icon-btn"><i data-lucide="chevron-left" class="i-sm"></i></button><p class="t-h3" style="min-width:150px;text-align:center">November 2026</p><button type="button" class="icon-btn"><i data-lucide="chevron-right" class="i-sm"></i></button></div>
+      </div>
+      <div class="month" id="month" data-select="is-selected"></div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;padding:48px 0 16px">
+        <div>
+          <h2 class="t-h2">Waktu saji</h2>
+          <p class="t-meta" style="margin:6px 0 16px">Tim tiba 2,5 jam sebelumnya untuk setup meja prasmanan.</p>
+          <div class="chips" data-select="is-selected" id="timePick">
+            <button type="button" class="chip" data-value="11.00">11.00</button>
+            <button type="button" class="chip" data-value="12.00">12.00</button>
+            <button type="button" class="chip is-off">16.00 · penuh</button>
+            <button type="button" class="chip is-selected" data-value="18.30">18.30</button>
+            <button type="button" class="chip" data-value="19.00">19.00</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:28px">
+            <label class="field">Lokasi acara<input class="input" value="Gedung serbaguna, Jl. Sukajadi, Bandung"></label>
+            <div class="form-row">
+              <label class="field">Kota<select class="input"><option>Bandung</option><option>Cimahi</option><option>Bandung Barat</option><option>Luar kota (+ongkir)</option></select></label>
+              <label class="field">Kontak di lokasi<input class="input" value="Bpk. Hendra · 0813-0000-2290"></label>
+            </div>
+            <label class="field">Catatan akses<textarea class="input">Loading dock belakang gedung, lift barang ke lantai 2. Setup paling cepat 16.00.</textarea></label>
+          </div>
+        </div>
+        <div>
+          <h2 class="t-h2">Tasting</h2>
+          <p class="t-meta" style="margin:6px 0 4px">Gratis untuk 300 pax ke atas: lima menu yang kamu pilih, untuk 4 orang.</p>
+          <div data-select="is-selected" id="tastePick">
+            <label class="opt is-selected" data-value="dapur"><input type="radio" name="taste" checked><div><b>Datang ke dapur Buahbatu</b><p>Sabtu, 24 Oktober · 10.00 atau 13.00</p></div><span class="opt__price">Gratis</span></label>
+            <label class="opt" data-value="box"><input type="radio" name="taste"><div><b>Kirim tasting box</b><p>Diantar ke alamat di Bandung, Jumat 23 Oktober</p></div><span class="opt__price">Rp150.000</span></label>
+            <label class="opt" data-value="skip"><input type="radio" name="taste"><div><b>Lewati tasting</b><p>Menu bisa diganti sampai H-14</p></div><span class="opt__price">—</span></label>
+          </div>
+          <h2 class="t-h2" style="margin-top:40px">Jadwal pembayaran</h2>
+          <p class="t-meta" style="margin:6px 0 12px">DP mengunci tanggal dan kapasitas dapur. Transfer ke virtual account.</p>
+          <div class="scroll-x">
+            <table class="table" id="payTable">
+              <thead><tr><th>Tahap</th><th>Jatuh tempo</th><th class="r">Jumlah</th></tr></thead>
+              <tbody>
+                <tr><td><b>DP 30%</b><br><span class="t-small">Kunci tanggal</span></td><td>Hari ini</td><td class="r num" data-pay=".3">Rp11.682.000</td></tr>
+                <tr><td><b>Termin 40%</b><br><span class="t-small">Setelah tasting</span></td><td>Sab, 31 Okt</td><td class="r num" data-pay=".4">Rp15.576.000</td></tr>
+                <tr><td><b>Pelunasan 30%</b><br><span class="t-small">Disesuaikan dengan pax final</span></td><td id="payLast">Rab, 11 Nov</td><td class="r num" data-pay=".3">Rp11.682.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="wrap bottom-bar__in">
+        <div class="bb-item"><span>Acara</span><b id="jdWhen">Sabtu, 14 Nov · 18.30</b></div>
+        <div class="bb-item bb-hide-sm"><span>Paket</span><b id="jdPkg">Alpha · 300 pax</b></div>
+        <div class="bb-item bb-hide-sm"><span>Total</span><b id="jdTotal">Rp38.940.000</b></div>
+        <div class="bb-item bb-total"><span>Bayar DP hari ini</span><b id="jdDp">Rp11.682.000</b></div>
+        <button class="btn btn-primary">Bayar DP<i data-lucide="arrow-right" class="i-sm"></i></button>
+      </div>
+    </div>
+  </form>
+
+  <div id="jdDone" hidden class="wrap">
+    <div style="max-width:640px;margin:72px auto 96px;display:flex;flex-direction:column;gap:22px">
+      <a class="logo" href="#home">lestari</a>
+      <h1 class="t-h1">Tanggal kamu sudah ditahan</h1>
+      <p class="muted">Selesaikan DP dalam 2 jam lewat virtual account di bawah. Konfirmasi, menu, dan jadwal tasting dikirim ke WhatsApp 0812-0000-4417.</p>
+      <table class="table">
+        <tr><td>Nomor pesanan</td><td class="r"><b>LC-2611-0148</b></td></tr>
+        <tr><td>Acara</td><td class="r" id="okWhen">Sabtu, 14 Nov · 18.30</td></tr>
+        <tr><td>Paket</td><td class="r" id="okPkg">Alpha · 300 pax</td></tr>
+        <tr><td>Virtual account</td><td class="r num">8808 0200 2611 0148</td></tr>
+        <tr><td><b>DP 30%</b></td><td class="r num"><b id="okDp">Rp11.682.000</b></td></tr>
+      </table>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#"><i data-lucide="copy" class="i-sm"></i>Salin nomor VA</a><a class="btn btn-outline" href="#home">Kembali ke beranda</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAYAR PRODUKSI DAPUR (tablet) ================= -->
+<section data-screen="dapur">
+  <div class="kds">
+    <div class="kds__frame">
+      <div class="kds__top">
+        <span class="logo" style="font-size:20px">lestari</span>
+        <span class="pill pill--muted hide-sm">Dapur Buahbatu</span>
+        <div class="kds__search hide-sm"><i data-lucide="search" class="i-sm"></i>Cari pesanan, menu, atau driver</div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+          <span class="t-meta hide-sm">Minggu, 18 Okt · 09.40</span>
+          <span class="icon-btn" style="width:38px;height:38px"><i data-lucide="bell" class="i-sm"></i></span>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:600;font-size:13px">RS</span><div class="hide-sm"><p style="font-weight:600;font-size:14px;line-height:1.2">Ratna S.</p><p class="t-small">Kepala dapur</p></div></div>
+        </div>
+      </div>
+
+      <div class="kds__main">
+        <div class="uline-tabs" data-select>
+          <button class="is-active">Semua<span>(9)</span></button>
+          <button>Nasi box<span>(4)</span></button>
+          <button>Prasmanan<span>(2)</span></button>
+          <button>Tumpeng<span>(2)</span></button>
+          <button>Snack<span>(1)</span></button>
+        </div>
+        <div class="tickets" id="tickets" data-select>
+          <button class="ticket ticket--road" data-value="1866"><b>LC-1866</b><span>Nasi box reguler · 80</span><span>Antapani</span><span class="t-foot"><span>Kirim 09.00</span><span class="pill pill--muted">Di jalan</span></span></button>
+          <button class="ticket ticket--ready" data-value="1869"><b>LC-1869</b><span>Snack box · 60</span><span>Dago</span><span class="t-foot"><span>Kirim 09.45</span><span class="pill pill--ok">Siap kirim</span></span></button>
+          <button class="ticket ticket--pack is-active" data-value="1871"><b>LC-1871</b><span>Nasi box spesial · 120</span><span>Kopo</span><span class="t-foot"><span>Kirim 10.30</span><span class="pill pill--info">Packing</span></span></button>
+          <button class="ticket ticket--cook" data-value="1877"><b>LC-1877</b><span>Tumpeng mini · 2</span><span>Ambil di dapur</span><span class="t-foot"><span>Ambil 11.00</span><span class="pill pill--warn">Masak</span></span></button>
+          <button class="ticket ticket--cook" data-value="1874"><b>LC-1874</b><span>Prasmanan Alpha · 400</span><span>Cimahi</span><span class="t-foot"><span>Setup 15.30</span><span class="pill pill--warn">Masak</span></span></button>
+          <button class="ticket ticket--cook" data-value="1880"><b>LC-1880</b><span>Prasmanan Bravo · 250</span><span>Sukajadi</span><span class="t-foot"><span>Setup 16.00</span><span class="pill pill--warn">Masak</span></span></button>
+        </div>
+
+        <div class="uline-tabs" data-select style="margin-top:14px">
+          <button class="is-active">Lauk utama<span>(8)</span></button>
+          <button>Nasi<span>(4)</span></button>
+          <button>Sayur &amp; pendamping<span>(6)</span></button>
+          <button>Dessert &amp; minuman<span>(5)</span></button>
+        </div>
+        <div class="prod-grid" id="prodGrid">
+          <div class="prod" data-batch="4" data-done="3"><p class="prod__name">Ayam bumbu sate</p><p class="t-small">LC-1874 · LC-1880</p><div class="prod__row"><span class="prod__qty">650 <small>porsi</small></span><span class="pill pill--warn st">Batch 3/4</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Wajan 2 · Ujang</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="4" data-done="1"><p class="prod__name">Sapi bumbu rujak</p><p class="t-small">LC-1874</p><div class="prod__row"><span class="prod__qty">400 <small>porsi</small></span><span class="pill pill--warn st">Batch 1/4</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Panci 1 · Dedi</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="4" data-done="0"><p class="prod__name">Ikan fillet saus mangga</p><p class="t-small">LC-1874</p><div class="prod__row"><span class="prod__qty">400 <small>porsi</small></span><span class="pill pill--muted st">Batch 0/4</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Mulai 11.30</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="3" data-done="0"><p class="prod__name">Beef bulgogi</p><p class="t-small">LC-1880</p><div class="prod__row"><span class="prod__qty">250 <small>porsi</small></span><span class="pill pill--muted st">Batch 0/3</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Mulai 12.00</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="2" data-done="2"><p class="prod__name">Empal suwir</p><p class="t-small">LC-1871</p><div class="prod__row"><span class="prod__qty">120 <small>porsi</small></span><span class="pill pill--ok st">Selesai</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Selesai 08.50</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="2" data-done="2"><p class="prod__name">Ayam serundeng</p><p class="t-small">LC-1871 · LC-1866</p><div class="prod__row"><span class="prod__qty">200 <small>porsi</small></span><span class="pill pill--ok st">Selesai</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Selesai 07.40</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="1" data-done="0"><p class="prod__name">Ayam goreng tumpeng</p><p class="t-small">LC-1877</p><div class="prod__row"><span class="prod__qty">20 <small>potong</small></span><span class="pill pill--muted st">Batch 0/1</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Wajan 3 · Sari</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="prod" data-batch="3" data-done="0"><p class="prod__name">Udang telur asin</p><p class="t-small">LC-1880</p><div class="prod__row"><span class="prod__qty">250 <small>porsi</small></span><span class="pill pill--muted st">Batch 0/3</span></div><div class="bar"><i></i></div><div class="prod__row"><span class="t-small">Mulai 12.30</span><div class="stepper"><button type="button" class="dec"><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="inc"><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+        </div>
+      </div>
+
+      <aside class="kds__side" id="side">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div><h2 class="t-h2" id="sdId">LC-1871</h2><p class="t-meta" id="sdWho">PT Arunika Data · Kopo, Bandung</p><p class="t-small" id="sdPkg">Nasi box spesial · 120 box</p></div>
+          <div style="display:flex;gap:8px"><span class="icon-btn" style="width:38px;height:38px;border-radius:8px"><i data-lucide="printer" class="i-sm"></i></span><span class="icon-btn" style="width:38px;height:38px;border-radius:8px"><i data-lucide="pencil" class="i-sm"></i></span></div>
+        </div>
+        <div>
+          <p class="t-h3" style="margin-bottom:6px">Isi per box</p>
+          <div id="sdItems"></div>
+        </div>
+        <hr class="hr">
+        <div>
+          <div class="kv-line"><span>Driver</span><b id="sdDrv">Asep R. · D 8417 KZ</b></div>
+          <div class="kv-line"><span>Berangkat</span><b id="sdGo">09.55</b></div>
+          <div class="kv-line"><span>Tiba</span><b id="sdEta">10.30 · lobi lantai 1</b></div>
+        </div>
+        <hr class="hr">
+        <div>
+          <p class="t-h3" style="margin-bottom:4px">Cek sebelum berangkat</p>
+          <label class="check"><input type="checkbox" checked>Alat makan &amp; tisu 120 set</label>
+          <label class="check"><input type="checkbox" checked>Sambal dikemas terpisah</label>
+          <label class="check"><input type="checkbox">Label 4 box tanpa udang</label>
+          <label class="check"><input type="checkbox">Foto bukti packing dikirim ke klien</label>
+        </div>
+        <div>
+          <p class="t-h3" style="margin-bottom:10px">Status</p>
+          <div class="seg" data-select id="sdSeg"><button data-value="Masak"><i data-lucide="flame" class="i-sm"></i>Masak</button><button class="is-active" data-value="Packing"><i data-lucide="package" class="i-sm"></i>Packing</button><button data-value="Siap kirim"><i data-lucide="truck" class="i-sm"></i>Siap</button></div>
+        </div>
+        <button class="btn btn-primary btn-block" id="sdBtn" type="button" style="border-radius:var(--r-sm);height:52px">Tandai siap kirim</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+  // Foto: muat file ke .photo[data-img]
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.insertBefore(img, box.firstChild); }; img.src = box.getAttribute("data-img");
+  });
+
+  /* ---------- Susun paket ---------- */
+  var PKG = {
+    ekonomis: { name: "Ekonomis", price: 90000, min: 300, lim: { nasi: 1, soup: 0, utama: 2, salad: 0, pasta: 0, pendamping: 1, dessert: 2, minum: 0 } },
+    alpha:    { name: "Alpha",    price: 110000, min: 100, lim: { nasi: 1, soup: 1, utama: 3, salad: 0, pasta: 0, pendamping: 1, dessert: 0, minum: 1 } },
+    bravo:    { name: "Bravo",    price: 125000, min: 100, lim: { nasi: 1, soup: 1, utama: 3, salad: 1, pasta: 0, pendamping: 1, dessert: 0, minum: 1 } },
+    charlie:  { name: "Charlie",  price: 150000, min: 100, lim: { nasi: 1, soup: 1, utama: 4, salad: 1, pasta: 1, pendamping: 2, dessert: 0, minum: 1 } }
+  };
+  var st = { pkg: "alpha", pax: 300, day: "Sabtu, 14 Nov", time: "18.30" };
+  var cats = document.querySelectorAll("#cats [data-cat]");
+
+  function totals() {
+    var p = PKG[st.pkg], add = 0;
+    document.querySelectorAll(".addon").forEach(function (c) { if (c.checked) add += Number(c.dataset.price); });
+    var per = p.price + add, sub = per * st.pax, total = sub * 1.1;
+    return { per: per, total: total };
+  }
+  function render() {
+    var p = PKG[st.pkg], need = 0, got = 0;
+    cats.forEach(function (c) {
+      var lim = p.lim[c.dataset.cat];
+      c.hidden = !lim;
+      if (!lim) { c.querySelectorAll(".pick.is-on").forEach(function (x) { x.classList.remove("is-on"); }); return; }
+      var on = c.querySelectorAll(".pick.is-on");
+      // buang kelebihan jika batas turun
+      for (var i = lim; i < on.length; i++) on[i].classList.remove("is-on");
+      var n = Math.min(on.length, lim);
+      need += lim; got += n;
+      c.querySelector(".lim").textContent = lim;
+      c.querySelector(".cnt").textContent = n;
+      c.querySelector(".cat__count").classList.toggle("is-done", n === lim);
+      c.querySelectorAll(".pick").forEach(function (x) { x.classList.toggle("is-locked", lim > 1 && n >= lim && !x.classList.contains("is-on")); });
+    });
+    if (st.pax < p.min) st.pax = p.min;
+    document.getElementById("paxOut").textContent = st.pax;
+    document.getElementById("paxHint").textContent = "Naik turun per 25 pax · min. " + p.min + " pax";
+    var t = totals(), label = p.name + " · " + st.pax + " pax";
+    document.getElementById("bbPkg").textContent = label;
+    document.getElementById("bbMenu").textContent = got + " dari " + need;
+    document.getElementById("bbPer").textContent = rupiah(t.per);
+    document.getElementById("bbTotal").textContent = rupiah(t.total);
+    // layar jadwal
+    document.getElementById("jdPkg").textContent = label;
+    document.getElementById("okPkg").textContent = label;
+    document.getElementById("jdTotal").textContent = rupiah(t.total);
+    document.querySelectorAll("#payTable [data-pay]").forEach(function (td) { td.textContent = rupiah(t.total * Number(td.dataset.pay)); });
+    document.getElementById("jdDp").textContent = rupiah(t.total * .3);
+    document.getElementById("okDp").textContent = rupiah(t.total * .3);
+    var w = st.day + " · " + st.time;
+    document.getElementById("jdWhen").textContent = w;
+    document.getElementById("okWhen").textContent = w;
+  }
+  document.getElementById("pkgs").addEventListener("lapak:select", function (e) { st.pkg = e.detail.value; render(); });
+  document.getElementById("paxInc").addEventListener("click", function () { st.pax = Math.min(1500, st.pax + 25); render(); });
+  document.getElementById("paxDec").addEventListener("click", function () { st.pax = Math.max(PKG[st.pkg].min, st.pax - 25); render(); });
+  document.querySelectorAll(".addon").forEach(function (c) { c.addEventListener("change", render); });
+  document.getElementById("cats").addEventListener("click", function (e) {
+    var b = e.target.closest(".pick"); if (!b) return;
+    var c = b.closest("[data-cat]"), lim = PKG[st.pkg].lim[c.dataset.cat];
+    if (b.classList.contains("is-on")) b.classList.remove("is-on");
+    else if (lim === 1) { c.querySelectorAll(".pick.is-on").forEach(function (x) { x.classList.remove("is-on"); }); b.classList.add("is-on"); }
+    else if (c.querySelectorAll(".pick.is-on").length < lim) b.classList.add("is-on");
+    render();
+  });
+
+  /* ---------- Kalender November 2026 (1 Nov = Minggu) ---------- */
+  var dows = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"], full = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var load = { 1: 620, 7: 1500, 8: 1100, 14: 640, 15: 900, 21: 1500, 22: 1260, 28: 980, 29: 400, 6: 300, 13: 450, 20: 700, 27: 350 };
+  var html = dows.map(function (d) { return '<div class="month__dow">' + d + "</div>"; }).join("");
+  for (var d = 1; d <= 30; d++) {
+    var w = (d - 1) % 7, used = load[d] || (w === 0 || w === 6 ? 500 : 180 + (d * 37) % 220), left = 1500 - used;
+    var isFull = left <= 0;
+    var cls = "day" + (isFull ? " is-full" : "") + (d === 14 ? " is-selected" : "");
+    html += '<button type="button" class="' + cls + '" data-value="' + full[w] + ", " + d + ' Nov"><b>' + d + "</b><small>" + (isFull ? "Penuh" : "Sisa " + left.toLocaleString("id-ID") + " pax") + '</small><span class="cap"><i style="width:' + Math.round(used / 15) + '%"></i></span></button>';
+  }
+  for (var k = 0; k < 5; k++) html += '<div class="day is-blank"></div>';
+  var month = document.getElementById("month");
+  month.innerHTML = html;
+  month.addEventListener("lapak:select", function (e) {
+    st.day = e.detail.value; render();
+    var day = parseInt(st.day.split(", ")[1], 10), last = new Date(2026, 10, day - 3);
+    document.getElementById("payLast").textContent = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"][last.getDay()] + ", " + last.getDate() + " " + (last.getMonth() === 10 ? "Nov" : "Okt");
+  });
+  document.getElementById("timePick").addEventListener("lapak:select", function (e) { st.time = e.detail.value; render(); });
+  document.getElementById("tastePick").addEventListener("lapak:select", function (e) { var r = e.detail.item.querySelector("input"); if (r) r.checked = true; });
+
+  /* ---------- Layar dapur ---------- */
+  function prodRender(p) {
+    var b = Number(p.dataset.batch), dn = Number(p.dataset.done), st2 = p.querySelector(".st");
+    p.querySelector(".bar i").style.width = Math.round(dn / b * 100) + "%";
+    p.classList.toggle("is-done", dn >= b);
+    st2.className = "pill st " + (dn >= b ? "pill--ok" : dn > 0 ? "pill--warn" : "pill--muted");
+    st2.textContent = dn >= b ? "Selesai" : "Batch " + dn + "/" + b;
+  }
+  document.querySelectorAll(".prod").forEach(prodRender);
+  document.getElementById("prodGrid").addEventListener("click", function (e) {
+    var btn = e.target.closest(".inc, .dec"); if (!btn) return;
+    var p = btn.closest(".prod"), b = Number(p.dataset.batch), dn = Number(p.dataset.done);
+    p.dataset.done = Math.max(0, Math.min(b, dn + (btn.classList.contains("inc") ? 1 : -1)));
+    prodRender(p);
+  });
+  var ORD = {
+    "1866": { who: "Kantor notaris · Antapani, Bandung", pkg: "Nasi box reguler · 80 box", items: ["Nasi bungkus daun", "Ayam goreng serundeng", "Tempe bacem", "Oseng daun pepaya", "Sambal merah"], drv: "Dodi K. · D 1932 AB", go: "08.25", eta: "09.00 · diterima resepsionis", st: "Siap kirim" },
+    "1869": { who: "Kampus swasta · Dago, Bandung", pkg: "Snack box · 60 box", items: ["Mi goreng", "Risol mayo", "Kerupuk udang", "Jeruk", "Air mineral 330 ml"], drv: "Iwan P. · D 5521 TX", go: "09.15", eta: "09.45 · ruang seminar lt. 3", st: "Siap kirim" },
+    "1871": { who: "PT Arunika Data · Kopo, Bandung", pkg: "Nasi box spesial · 120 box", items: ["Nasi bungkus daun", "Empal suwir", "Ayam serundeng", "Oseng teri cabai hijau", "Kerupuk", "Puding buah"], drv: "Asep R. · D 8417 KZ", go: "09.55", eta: "10.30 · lobi lantai 1", st: "Packing" },
+    "1877": { who: "Ibu Wulan · ambil sendiri", pkg: "Tumpeng mini · 2 tumpeng", items: ["Nasi kuning", "Ayam goreng", "Perkedel", "Sambal goreng ati", "Telur balado", "Urap"], drv: "Diambil pelanggan", go: "—", eta: "11.00 · meja depan", st: "Masak" },
+    "1874": { who: "Keluarga Wiranata · gedung, Cimahi", pkg: "Prasmanan Alpha · 400 pax", items: ["Nasi liwet", "Soup kimlo", "Sapi bumbu rujak", "Ayam bumbu sate", "Ikan fillet saus mangga", "Tumis pakcoy jamur", "Es buah"], drv: "Truk 1 · Tim setup 6 orang", go: "13.00", eta: "13.45 · setup 15.30", st: "Masak" },
+    "1880": { who: "Keluarga Halim · Sukajadi, Bandung", pkg: "Prasmanan Bravo · 250 pax", items: ["Nasi goreng oriental", "Soup jagung", "Beef bulgogi", "Ayam bumbu sate", "Udang telur asin", "Salad Bangkok", "Jus sirsak"], drv: "Truk 2 · Tim setup 5 orang", go: "13.30", eta: "14.15 · setup 16.00", st: "Masak" }
+  };
+  function side(id) {
+    var o = ORD[id];
+    document.getElementById("sdId").textContent = "LC-" + id;
+    document.getElementById("sdWho").textContent = o.who;
+    document.getElementById("sdPkg").textContent = o.pkg;
+    document.getElementById("sdItems").innerHTML = o.items.map(function (x) { return '<div class="kv-line" style="padding:6px 0"><span style="color:var(--ink)">' + x + "</span><span>1×</span></div>"; }).join("");
+    document.getElementById("sdDrv").textContent = o.drv;
+    document.getElementById("sdGo").textContent = o.go;
+    document.getElementById("sdEta").textContent = o.eta;
+    document.querySelectorAll("#sdSeg button").forEach(function (b) { b.classList.toggle("is-active", b.dataset.value === o.st); });
+    document.getElementById("sdBtn").textContent = o.st === "Siap kirim" ? "Serahkan ke driver" : "Tandai siap kirim";
+  }
+  document.getElementById("tickets").addEventListener("lapak:select", function (e) { side(e.detail.value); });
+  document.getElementById("sdBtn").addEventListener("click", function () {
+    var t = document.querySelector("#tickets .is-active"), id = t.dataset.value, pill = t.querySelector(".pill");
+    ORD[id].st = "Siap kirim"; t.className = "ticket ticket--ready is-active"; pill.className = "pill pill--ok"; pill.textContent = "Siap kirim"; side(id);
+  });
+
+  side("1871");
+  render();
+  icons();
+})();
+</script>
+</body>
+</html>
