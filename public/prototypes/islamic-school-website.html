@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIT Annahl — KB, TK, SD, SMP, SMA Islam Terpadu di Sentul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/islamic-school-website.css">
+<style>
+  .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; }
+  .hero__notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .reg { display: grid; grid-template-columns: 260px minmax(0, 1fr) 340px; gap: 12px; margin-top: 12px; align-items: start; }
+  .st-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 12px; }
+  .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+  .flow .r { align-items: start; grid-template-columns: 1fr; gap: 8px; }
+  .flow__n { width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .side-sticky { position: sticky; top: 12px; }
+  .reg > *, .st-top > *, .hero > *, .two > * { min-width: 0; }
+  #kidSm { display: none; } @media (max-width: 720px) { #kidSm { display: flex; } }
+  @media (max-width: 1100px) { .reg { grid-template-columns: minmax(0, 1fr) 320px; } .reg > :first-child { grid-column: 1 / -1; } }
+  @media (max-width: 1024px) { .hero, .two, .st-top { grid-template-columns: 1fr; } .flow { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 820px) { .reg { grid-template-columns: 1fr; } .side-sticky { position: static; } }
+  @media (max-width: 600px) { .hero__notes, .feat, .flow { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="logo" href="#home">annahl<small class="hide-sm">Sekolah Islam Terpadu</small></a>
+      <nav class="nav"><a href="#home" data-nav="home">Beranda</a><a href="#home">Jenjang</a><a href="#home">Biaya</a><a href="#home">Agenda</a></nav>
+      <div class="topbar__right"><a class="btn btn-ghost btn-sm hide-sm" href="#status">Portal orang tua</a><a class="btn btn-primary btn-sm" href="#daftar">Daftar PPDB</a></div>
+    </header>
+
+    <section class="hero">
+      <div class="panel stack gap-24" style="padding:40px;justify-content:space-between">
+        <div class="stack gap-16">
+          <span class="pill pill--dark" style="align-self:flex-start">PPDB 2027/2028 · Gelombang 1 dibuka</span>
+          <h1 class="t-hero">Sekolah Islam terpadu dari KB sampai SMA, dalam satu kampus.</h1>
+          <p class="muted" style="font-size:17px;max-width:560px">Kurikulum Nasional dipadukan dengan kurikulum Islam terpadu, program tahfidz di setiap jenjang, dan sekolah sehari penuh 07.30–15.30. Kampus di Sentul, Kabupaten Bogor, dengan antar-jemput dan katering siswa.</p>
+        </div>
+        <div class="stack gap-16">
+          <div class="row gap-8" style="flex-wrap:wrap"><a class="btn btn-primary" href="#daftar">Daftar PPDB<i data-lucide="arrow-right" class="i-sm"></i></a><a class="btn btn-ghost" href="#biaya" onclick="document.getElementById('biaya').scrollIntoView({behavior:'smooth'});return false">Lihat rincian biaya</a></div>
+          <div class="chips"><span class="chip">Full day 07.30–15.30</span><span class="chip">Hafalan 2 juz di SMP</span><span class="chip">Bilingual Inggris–Arab</span><span class="chip">Antar-jemput</span></div>
+        </div>
+      </div>
+      <div class="stack gap-12">
+        <div class="photo" style="--ar:16/8" data-img="assets/islamic-school-website/campus-courtyard.webp"></div>
+        <div class="hero__notes">
+          <div class="note note--green">
+            <div class="note__top"><p class="t-h3">Potongan gelombang 1</p><span class="note__more"><i data-lucide="percent" class="i-sm"></i></span></div>
+            <p style="font:500 30px/1.1 var(--font);letter-spacing:-.02em">Rp2.500.000</p>
+            <p style="font-size:14px">Dari uang pangkal semua jenjang, ditambah potongan saudara kandung 10%.</p>
+            <p class="note__foot">26 Sep – 30 Nov 2026 · sisa 43 hari</p>
+          </div>
+          <div class="note note--blue">
+            <div class="note__top"><p class="t-h3">Open day &amp; trial class KB/TK</p><span class="note__more"><i data-lucide="calendar" class="i-sm"></i></span></div>
+            <p style="font-size:14px">Keliling kampus, ikut satu sesi sentra bersama guru, dan tanya jawab biaya dengan tim PPDB.</p>
+            <p class="note__foot">Sabtu, 24 Oktober 2026 · 08.00–11.00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jenjang -->
+    <section class="panel" style="margin-top:12px">
+      <div class="panel__head"><div class="stack gap-4"><h2 class="t-h2">Jenjang</h2><p class="t-meta">Empat unit dalam satu yayasan, dari bermain sampai persiapan kuliah</p></div><a class="btn-square" href="#daftar" aria-label="Daftar"><i data-lucide="plus"></i></a></div>
+      <div class="levels">
+        <article class="level">
+          <div class="level__top"><span class="level__code">KB/TK</span><span class="pill pill--green">Kuota 60</span></div>
+          <dl><dt>Usia</dt><dd>3–6 tahun</dd><dt>Jam belajar</dt><dd>07.30–11.30</dd><dt>Model</dt><dd>Sentra &amp; Montessori</dd></dl>
+          <ul><li><i data-lucide="check" class="i-sm"></i>Hafalan surat pendek, hadits &amp; doa harian</li><li><i data-lucide="check" class="i-sm"></i>Science experiment &amp; mini project</li><li><i data-lucide="check" class="i-sm"></i>Kiddy camp &amp; outing class</li><li><i data-lucide="check" class="i-sm"></i>Pembinaan siap SD</li></ul>
+        </article>
+        <article class="level">
+          <div class="level__top"><span class="level__code">SD</span><span class="pill pill--green">Kuota 56</span></div>
+          <dl><dt>Usia masuk</dt><dd>min. 6 tahun</dd><dt>Jam belajar</dt><dd>07.30–14.30</dd><dt>Target hafalan</dt><dd>Juz 30, 29, 28</dd></dl>
+          <ul><li><i data-lucide="check" class="i-sm"></i>Wisuda Al-Qur'an &amp; akselerasi tahfidz</li><li><i data-lucide="check" class="i-sm"></i>Kelas olimpiade matematika &amp; sains</li><li><i data-lucide="check" class="i-sm"></i>Mabit Al-Qur'an</li><li><i data-lucide="check" class="i-sm"></i>Fun cooking &amp; market day</li></ul>
+        </article>
+        <article class="level">
+          <div class="level__top"><span class="level__code">SMP</span><span class="pill pill--amber">Sisa 9 kursi</span></div>
+          <dl><dt>Kelas</dt><dd>7–9, putra/putri terpisah</dd><dt>Jam belajar</dt><dd>07.30–15.30</dd><dt>Target hafalan</dt><dd>min. 2 juz</dd></dl>
+          <ul><li><i data-lucide="check" class="i-sm"></i>English &amp; Arabic communication</li><li><i data-lucide="check" class="i-sm"></i>Student research &amp; IT skill</li><li><i data-lucide="check" class="i-sm"></i>Teenpreneur</li><li><i data-lucide="check" class="i-sm"></i>International edutrip</li></ul>
+        </article>
+        <article class="level">
+          <div class="level__top"><span class="level__code">SMA</span><span class="pill pill--green">Kuota 64</span></div>
+          <dl><dt>Kurikulum</dt><dd>Merdeka + JSIT</dd><dt>Jam belajar</dt><dd>07.30–15.30</dd><dt>Metode Qur'an</dt><dd>Ummi &amp; talaqqi</dd></dl>
+          <ul><li><i data-lucide="check" class="i-sm"></i>Project &amp; problem based learning</li><li><i data-lucide="check" class="i-sm"></i>Latihan dasar kepemimpinan</li><li><i data-lucide="check" class="i-sm"></i>Pendampingan masuk PTN</li><li><i data-lucide="check" class="i-sm"></i>Kerja sama kampus di Malaysia</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ciri khas -->
+    <section class="two" style="margin-top:12px">
+      <div class="panel">
+        <div class="panel__head"><h2 class="t-h2">Yang dijalankan setiap hari</h2></div>
+        <div class="feat">
+          <div class="task"><span class="task__title">Kurikulum terpadu</span><span class="pill pill--mute">Semua</span><div class="task__meta"><span>Nasional + jaringan sekolah Islam terpadu, tidak dipisah per mapel</span></div></div>
+          <div class="task"><span class="task__title">Setoran hafalan</span><span class="pill pill--blue">Harian</span><div class="task__meta"><span>Talaqqi langsung ke ustadz, dicatat di portal orang tua</span></div></div>
+          <div class="task"><span class="task__title">Pembiasaan adab</span><span class="pill pill--mute">KB–SD</span><div class="task__meta"><span>Adab makan, berbicara, belajar; shalat berjamaah &amp; dzikir</span></div></div>
+          <div class="task"><span class="task__title">Kepemimpinan</span><span class="pill pill--mute">SMP–SMA</span><div class="task__meta"><span>LDKS, mabit, dan organisasi siswa per angkatan</span></div></div>
+          <div class="task"><span class="task__title">Life skill</span><span class="pill pill--mute">Semua</span><div class="task__meta"><span>Market day, fun cooking, teenpreneur, bank sampah</span></div></div>
+          <div class="task"><span class="task__title">Komunikasi rumah–sekolah</span><span class="pill pill--blue">Mingguan</span><div class="task__meta"><span>Buku penghubung digital dan pertemuan wali kelas</span></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><h2 class="t-h2">Kampus</h2><span class="t-meta">Satu kampus · Sentul</span></div>
+        <div class="rows">
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="landmark"></i><span>Masjid sekolah untuk shalat berjamaah &amp; kajian</span><span class="t-meta">Semua jenjang</span></div>
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="bus"></i><span>Antar-jemput sekolah</span><span class="t-meta">Radius 10 km</span></div>
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="utensils"></i><span>Katering siswa, makan siang &amp; snack</span><span class="t-meta">Opsional</span></div>
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="cctv"></i><span>CCTV di area kelas dan gerbang</span><span class="t-meta">24 jam</span></div>
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="volleyball"></i><span>Lapangan olahraga &amp; area parkir luas</span><span class="t-meta">Drop-off pagi</span></div>
+          <div class="r" style="grid-template-columns:auto 1fr auto"><i data-lucide="store"></i><span>Koperasi sekolah: seragam, buku, alat tulis</span><span class="t-meta">07.00–15.00</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biaya -->
+    <section class="panel" id="biaya" style="margin-top:12px">
+      <div class="panel__head" style="flex-wrap:wrap">
+        <div class="stack gap-4"><h2 class="t-h2">Biaya 2027/2028</h2><p class="t-meta">SPP flat sampai lulus. Biaya formulir Rp350.000 sudah termasuk observasi/tes.</p></div>
+        <div class="chips" data-select id="feeMode"><button class="chip is-active" data-value="g1">Gelombang 1</button><button class="chip" data-value="n">Harga normal</button></div>
+      </div>
+      <div class="r-head cols-fee"><span>Jenjang</span><span>Uang pangkal</span><span>Seragam &amp; buku</span><span>SPP / bulan</span><span>Total daftar ulang</span></div>
+      <div class="rows" id="feeRows"></div>
+      <div class="feat" style="margin-top:12px">
+        <div class="task"><span class="task__title">Potongan saudara kandung</span><span class="pill pill--green">10%</span><div class="task__meta"><span>Dari uang pangkal adik, berlaku selama kakak masih aktif</span></div></div>
+        <div class="task"><span class="task__title">Bayar sekali hingga lulus</span><span class="pill pill--blue">Opsi</span><div class="task__meta"><span>Uang pangkal + SPP sampai lulus, potongan 5% SPP; termasuk daftar ulang tahunan</span></div></div>
+      </div>
+    </section>
+
+    <!-- Alur PPDB -->
+    <section class="panel" style="margin-top:12px">
+      <div class="panel__head"><div class="stack gap-4"><h2 class="t-h2">Alur PPDB</h2><p class="t-meta">Semua langkah dari HP; status setiap langkah terlihat di portal orang tua</p></div><a class="btn btn-primary btn-sm" href="#daftar">Mulai daftar</a></div>
+      <div class="flow">
+        <div class="r"><span class="flow__n">1</span><p class="t-h3">Isi formulir</p><p class="t-meta">Pilih jenjang, isi data calon murid dan orang tua, bayar formulir Rp350.000 via VA atau QRIS.</p></div>
+        <div class="r"><span class="flow__n">2</span><p class="t-h3">Unggah dokumen</p><p class="t-meta">Akta, KK, pas foto, KTP orang tua, rapor/ijazah. Diverifikasi maksimal 1×24 jam kerja.</p></div>
+        <div class="r"><span class="flow__n">3</span><p class="t-h3">Observasi atau tes</p><p class="t-meta">KB/TK observasi bermain, SD kesiapan sekolah, SMP/SMA tes akademik &amp; baca Al-Qur'an. Wawancara orang tua.</p></div>
+        <div class="r"><span class="flow__n">4</span><p class="t-h3">Pengumuman</p><p class="t-meta">Hasil keluar paling lambat 7 hari setelah observasi, di portal dan WhatsApp.</p></div>
+        <div class="r"><span class="flow__n">5</span><p class="t-h3">Daftar ulang</p><p class="t-meta">Bayar lunas, cicil 3×, atau sekali hingga lulus. Tenggat 14 hari setelah pengumuman.</p></div>
+      </div>
+    </section>
+
+    <!-- Agenda & FAQ -->
+    <section class="two" style="margin-top:12px">
+      <div class="panel">
+        <div class="panel__head"><h2 class="t-h2">Agenda</h2><div class="chips" data-select id="agFilter"><button class="chip is-active" data-value="all">Semua</button><button class="chip" data-value="ppdb">PPDB</button><button class="chip" data-value="sekolah">Sekolah</button></div></div>
+        <div class="rows" id="agRows">
+          <div class="agenda" data-k="ppdb" style="--c:var(--blue)"><span class="agenda__bar"></span><div class="stack gap-4"><span class="agenda__title">Open day &amp; trial class KB/TK</span><div class="agenda__meta"><span>Sab, 24 Okt</span><span>08.00–11.00</span><span>Gedung TK</span></div></div><span class="pill pill--blue">PPDB</span></div>
+          <div class="agenda" data-k="sekolah" style="--c:var(--ink)"><span class="agenda__bar"></span><div class="stack gap-4"><span class="agenda__title">Sumatif tengah semester ganjil</span><div class="agenda__meta"><span>26–30 Okt</span><span>SD–SMA</span></div></div><span class="pill pill--mute">Sekolah</span></div>
+          <div class="agenda" data-k="ppdb" style="--c:var(--blue)"><span class="agenda__bar"></span><div class="stack gap-4"><span class="agenda__title">Tes akademik SMP &amp; SMA sesi 3</span><div class="agenda__meta"><span>Sab, 7 Nov</span><span>07.30–11.30</span><span>Lab komputer</span></div></div><span class="pill pill--blue">PPDB</span></div>
+          <div class="agenda" data-k="sekolah" style="--c:var(--ink)"><span class="agenda__bar"></span><div class="stack gap-4"><span class="agenda__title">Market day SD</span><div class="agenda__meta"><span>Jum, 13 Nov</span><span>Lapangan utama</span></div></div><span class="pill pill--mute">Sekolah</span></div>
+          <div class="agenda" data-k="ppdb" style="--c:var(--red)"><span class="agenda__bar"></span><div class="stack gap-4"><span class="agenda__title">Gelombang 1 ditutup</span><div class="agenda__meta"><span>Sen, 30 Nov</span><span>Potongan Rp2.500.000 berakhir</span></div></div><span class="pill pill--red">Tenggat</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><h2 class="t-h2">Pertanyaan orang tua</h2></div>
+        <div class="rows">
+          <details class="faq" open><summary>Dokumen apa yang perlu disiapkan?<i data-lucide="plus" class="i-sm"></i></summary><p>Akta kelahiran, Kartu Keluarga, pas foto 3×4, KTP ayah dan ibu. SD ke atas ditambah rapor 2 semester terakhir; SMP dan SMA ditambah NISN. Semua bisa difoto dari HP.</p></details>
+          <details class="faq"><summary>Apakah anak harus sudah bisa membaca Al-Qur'an?<i data-lucide="plus" class="i-sm"></i></summary><p>Tidak untuk KB, TK, dan SD. Untuk SMP dan SMA, tes baca dipakai untuk menentukan kelompok tahsin, bukan syarat diterima.</p></details>
+          <details class="faq"><summary>Bisakah daftar ulang dicicil?<i data-lucide="plus" class="i-sm"></i></summary><p>Bisa, 3 kali tanpa biaya tambahan: saat daftar ulang, Desember, dan Februari.</p></details>
+          <details class="faq"><summary>Apakah ada kelas putra dan putri terpisah?<i data-lucide="plus" class="i-sm"></i></summary><p>Mulai SMP, kelas putra dan putri terpisah. KB, TK, dan SD kelas campuran.</p></details>
+          <details class="faq"><summary>Bagaimana jika gelombang 1 penuh?<i data-lucide="plus" class="i-sm"></i></summary><p>Pendaftar berikutnya masuk daftar tunggu dan dihubungi bila ada kursi yang dilepas setelah tenggat daftar ulang.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <div class="stack gap-12"><span class="logo">annahl</span><p class="t-meta" style="max-width:360px">Sekolah Islam Terpadu Annahl. KB, TK, SD, SMP, dan SMA di Sentul, Kabupaten Bogor. Senin–Jumat 07.30–15.30.</p><a class="btn btn-ghost btn-sm" href="#" style="align-self:flex-start"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp tim PPDB</a></div>
+        <div><h4>Jenjang</h4><ul><li>KB/TK</li><li>SD</li><li>SMP</li><li>SMA</li></ul></div>
+        <div><h4>PPDB</h4><ul><li><a href="#daftar">Daftar</a></li><li><a href="#status">Cek status</a></li><li>Biaya</li></ul></div>
+        <div><h4>Sekolah</h4><ul><li>Agenda</li><li>Galeri</li><li>Karier guru</li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:32px">© 2026 Yayasan Annahl</p>
+    </footer>
+  </div>
+</section>
+
+<!-- ================= PENDAFTARAN (DOKUMEN) ================= -->
+<section data-screen="daftar">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="logo" href="#home">annahl<small class="hide-sm">PPDB 2027/2028</small></a>
+      <div class="topbar__right"><span class="t-meta hide-sm">Tersimpan otomatis 09.42</span><a class="btn-square" href="#home" aria-label="Tutup"><i data-lucide="x"></i></a></div>
+    </header>
+
+    <div class="reg">
+      <aside class="panel stack gap-16">
+        <div class="stack gap-4"><p class="t-meta">No. pendaftaran</p><p style="font-weight:500" class="num">PPDB-27-TK-0273</p></div>
+        <div class="steps">
+          <div class="step is-done"><span class="step__n"><i data-lucide="check" style="width:13px;height:13px"></i></span>Jenjang</div>
+          <div class="step is-done"><span class="step__n"><i data-lucide="check" style="width:13px;height:13px"></i></span>Data anak &amp; orang tua</div>
+          <div class="step is-done"><span class="step__n"><i data-lucide="check" style="width:13px;height:13px"></i></span>Bayar formulir</div>
+          <div class="step is-active"><span class="step__n">4</span>Dokumen</div>
+          <div class="step"><span class="step__n">5</span>Jadwal observasi</div>
+        </div>
+        <div class="note note--blue hide-sm" style="min-height:0">
+          <p style="font-weight:500">Butuh bantuan?</p>
+          <p style="font-size:14px">Tim PPDB membalas WhatsApp Senin–Sabtu 08.00–16.00.</p>
+          <a class="btn btn-sm" href="#" style="background:#fff;color:var(--ink);align-self:flex-start">Chat tim PPDB</a>
+        </div>
+      </aside>
+
+      <div class="panel panel--white">
+        <form data-demo-form="#docOk" id="docForm" class="stack gap-24">
+          <div class="panel__head" style="margin:0;align-items:start">
+            <div class="stack gap-4"><h1 class="t-h1">Unggah dokumen</h1><p class="muted">Foto dari HP sudah cukup, asal tulisan terbaca. PDF, JPG, atau PNG maksimal 5 MB.</p></div>
+          </div>
+          <div class="stack gap-8">
+            <div class="row" style="justify-content:space-between"><span style="font-weight:500"><span id="docCount" class="num">3</span> dari 6 dokumen</span><span class="t-meta">Wajib untuk TK B</span></div>
+            <div class="prog"><span class="prog__done" id="docBar" style="width:50%"></span><span class="prog__rest"></span></div>
+          </div>
+          <div class="stack gap-8" id="docs" style="background:var(--panel);padding:8px;border-radius:20px">
+            <div class="doc is-up"><span class="doc__ic"><i data-lucide="file-check-2"></i></span><div class="stack"><span class="doc__name">Akta kelahiran</span><span class="t-meta">akta-kelahiran.pdf · 412 KB</span></div><button type="button" class="doc__btn">Ganti</button></div>
+            <div class="doc is-up"><span class="doc__ic"><i data-lucide="file-check-2"></i></span><div class="stack"><span class="doc__name">Kartu Keluarga</span><span class="t-meta">kk.jpg · 1,8 MB</span></div><button type="button" class="doc__btn">Ganti</button></div>
+            <div class="doc is-up"><span class="doc__ic"><i data-lucide="file-check-2"></i></span><div class="stack"><span class="doc__name">Pas foto 3×4</span><span class="t-meta">pas-foto.jpg · 640 KB</span></div><button type="button" class="doc__btn">Ganti</button></div>
+            <div class="doc"><span class="doc__ic"><i data-lucide="file-up"></i></span><div class="stack"><span class="doc__name">KTP ayah &amp; ibu</span><span class="t-meta">Satu file berisi dua KTP, atau unggah dua kali</span></div><button type="button" class="doc__btn"><i data-lucide="upload" class="i-sm"></i>Unggah</button></div>
+            <div class="doc"><span class="doc__ic"><i data-lucide="file-up"></i></span><div class="stack"><span class="doc__name">Kartu imunisasi / KMS</span><span class="t-meta">Halaman catatan imunisasi dasar</span></div><button type="button" class="doc__btn"><i data-lucide="upload" class="i-sm"></i>Unggah</button></div>
+            <div class="doc"><span class="doc__ic"><i data-lucide="file-up"></i></span><div class="stack"><span class="doc__name">Surat keterangan dari KB/PAUD asal</span><span class="t-meta">Bila sebelumnya bersekolah. Boleh menyusul.</span></div><button type="button" class="doc__btn"><i data-lucide="upload" class="i-sm"></i>Unggah</button></div>
+          </div>
+          <div class="field"><label for="note">Catatan untuk guru observasi (opsional)</label><textarea id="note" class="input" style="height:88px;padding:10px 12px;resize:vertical" placeholder="Misalnya alergi, kebiasaan tidur siang, atau kebutuhan khusus"></textarea></div>
+          <div class="row gap-8" style="justify-content:space-between;flex-wrap:wrap">
+            <a class="btn btn-ghost" href="#home"><i data-lucide="arrow-left" class="i-sm"></i>Kembali</a>
+            <button class="btn btn-primary" id="docSubmit">Kirim dokumen &amp; pilih jadwal<i data-lucide="arrow-right" class="i-sm"></i></button>
+          </div>
+        </form>
+        <div id="docOk" class="done" hidden>
+          <span class="done__ic"><i data-lucide="check"></i></span>
+          <h1 class="t-h1">Dokumen terkirim</h1>
+          <p class="muted" style="max-width:520px">Tim PPDB memverifikasi paling lambat Senin, 19 Oktober 2026. Sambil menunggu, jadwal observasi sudah bisa dipilih di portal orang tua.</p>
+          <a class="btn btn-primary" href="#status">Buka portal orang tua<i data-lucide="arrow-right" class="i-sm"></i></a>
+        </div>
+      </div>
+
+      <aside class="panel side-sticky stack gap-16">
+        <p class="t-h3">Ringkasan pendaftaran</p>
+        <div class="rows">
+          <div class="r" style="grid-template-columns:1fr auto;gap:4px 12px"><span class="t-meta">Calon murid</span><span class="t-meta">TK B</span><span style="font-weight:500">Hana Azzahra</span><span class="t-meta">5 th 4 bln</span></div>
+          <div class="r" style="grid-template-columns:1fr auto;gap:4px 12px"><span class="t-meta">Tahun pelajaran</span><span class="pill pill--green">Gelombang 1</span><span style="font-weight:500">2027/2028</span></div>
+        </div>
+        <div class="lines">
+          <div><span>Formulir &amp; observasi</span><span class="num">Rp350.000 <span class="pill pill--green" style="margin-left:4px">Lunas</span></span></div>
+          <div><span>Uang pangkal TK</span><span class="num">Rp11.000.000</span></div>
+          <div><span class="minus">Potongan gelombang 1</span><span class="num minus">−Rp2.500.000</span></div>
+          <div><span class="minus">Potongan saudara (10%)</span><span class="num minus">−Rp1.100.000</span></div>
+          <div><span>Seragam &amp; buku</span><span class="num">Rp1.450.000</span></div>
+          <div><span>Perkiraan daftar ulang</span><span class="num">Rp8.850.000</span></div>
+        </div>
+        <p class="t-small">Kakak terdaftar: Fathan, SMP kelas 7. Dibayar setelah pengumuman, bisa dicicil 3×.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAL ORANG TUA ================= -->
+<section data-screen="status">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="logo" href="#home">annahl<small class="hide-sm">Portal orang tua</small></a>
+      <div class="chips hide-sm" data-select data-tabs="kid" style="margin-left:24px">
+        <button class="chip is-active" data-value="kakak">Fathan <b>SMP 7</b></button>
+        <button class="chip" data-value="adik">Hana <b>TK B</b></button>
+      </div>
+      <div class="topbar__right"><span class="btn-square" aria-label="Notifikasi"><i data-lucide="bell"></i></span><div class="who"><span class="btn-square dark" style="width:36px;height:36px;border-radius:10px;font-size:13px">LK</span><div class="hide-sm"><b>Laila Kusuma</b><span>Ibu · 2 pendaftar</span></div></div></div>
+    </header>
+
+    <div class="chips" data-select data-tabs="kid" style="margin-top:12px" id="kidSm">
+      <button class="chip is-active" data-value="kakak">Fathan <b>SMP 7</b></button>
+      <button class="chip" data-value="adik">Hana <b>TK B</b></button>
+    </div>
+
+    <!-- Kakak: diterima, daftar ulang -->
+    <div data-panel="kid:kakak">
+      <div class="st-top" style="margin-top:12px">
+        <div class="stack gap-12">
+          <div class="note note--green" style="min-height:0;padding:24px">
+            <div class="note__top"><span class="pill pill--dark">Diterima</span><span class="note__more"><i data-lucide="more-horizontal" class="i-sm"></i></span></div>
+            <p class="t-h2">Alhamdulillah, Fathan diterima di SMP kelas 7 tahun pelajaran 2027/2028.</p>
+            <p style="font-size:14px">Kelas putra, kelompok tahsin B (sudah lancar membaca, mulai hafalan juz 30). Surat keputusan bisa diunduh dari tautan di bawah.</p>
+            <div class="row gap-8" style="flex-wrap:wrap"><a class="btn btn-sm btn-dark" href="#"><i data-lucide="download" class="i-sm"></i>Surat keputusan</a><a class="btn btn-sm" style="background:transparent;border:1px solid rgba(0,0,0,.3)" href="#">Hasil observasi</a></div>
+            <p class="note__foot">Diumumkan Sabtu, 17 Oktober 2026 · PPDB-27-SMP-0418</p>
+          </div>
+          <div class="panel">
+            <div class="panel__head" style="margin-bottom:14px"><p class="t-h3">Perjalanan pendaftaran</p><span class="t-meta">4 dari 5 selesai</span></div>
+            <div class="prog" style="margin-bottom:14px"><span class="prog__done" style="width:80%"></span><span class="prog__rest"></span></div>
+            <div class="rows">
+              <div class="task"><span class="task__title">Formulir &amp; pembayaran</span><span class="pill pill--green">Selesai</span><div class="task__meta"><span>Rp350.000 · VA</span><span>28 Sep</span></div></div>
+              <div class="task"><span class="task__title">Dokumen diverifikasi</span><span class="pill pill--green">Selesai</span><div class="task__meta"><span>5 dokumen</span><span>30 Sep</span></div></div>
+              <div class="task"><span class="task__title">Tes akademik &amp; baca Al-Qur'an</span><span class="pill pill--green">Selesai</span><div class="task__meta"><span>Wawancara orang tua 10.30</span><span>10 Okt</span></div></div>
+              <div class="task"><span class="task__title">Daftar ulang</span><span class="pill pill--red">13 hari lagi</span><div class="task__meta"><span>Kursi dilepas jika lewat tenggat</span><span>31 Okt</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><p class="t-h3">Oktober 2026</p><div class="row gap-8"><span class="btn-square"><i data-lucide="chevron-left" class="i-sm"></i></span><span class="btn-square dark"><i data-lucide="chevron-right" class="i-sm"></i></span></div></div>
+          <div class="dstrip" id="dstrip" data-select="is-selected"></div>
+          <div class="legend" style="margin:14px 0 18px"><span style="--c:var(--blue)">Observasi &amp; tes</span><span style="--c:#3BA62A">Persiapan masuk</span><span style="--c:var(--red)">Tenggat</span></div>
+          <div class="rows">
+            <div class="agenda is-next" style="--c:var(--blue)"><span class="agenda__bar"></span><div class="stack gap-4"><div class="agenda__meta"><span class="pill pill--blue">Observasi</span><span>Sab, 24 Okt · 08.00–09.30</span></div><span class="agenda__title">Observasi bermain Hana (TK B)</span><span class="t-meta">Ruang sentra balok · bawa botol minum &amp; baju ganti</span></div><span class="pill pill--red"><i data-lucide="alarm-clock" style="width:12px;height:12px"></i>6 hari</span></div>
+            <div class="agenda" style="--c:var(--blue)"><span class="agenda__bar"></span><div class="stack gap-4"><div class="agenda__meta"><span class="pill pill--dark">Wawancara</span><span>Sab, 24 Okt · 09.30–10.00</span></div><span class="agenda__title">Wawancara orang tua (ayah &amp; ibu)</span><span class="t-meta">Ruang PPDB lantai 1</span></div><span class="btn-square" style="width:36px;height:36px"><i data-lucide="chevron-right" class="i-sm"></i></span></div>
+            <div class="agenda" style="--c:#3BA62A"><span class="agenda__bar"></span><div class="stack gap-4"><div class="agenda__meta"><span class="pill pill--green">Persiapan</span><span>Rab, 28 Okt · 13.00–15.00</span></div><span class="agenda__title">Ukur seragam Fathan</span><span class="t-meta">Koperasi sekolah · setelah daftar ulang</span></div><span class="btn-square" style="width:36px;height:36px"><i data-lucide="chevron-right" class="i-sm"></i></span></div>
+            <div class="agenda" style="--c:var(--red)"><span class="agenda__bar"></span><div class="stack gap-4"><div class="agenda__meta"><span class="pill pill--red">Tenggat</span><span>Sab, 31 Okt · 23.59</span></div><span class="agenda__title">Daftar ulang Fathan (SMP)</span><span class="t-meta">Lunas atau cicilan pertama</span></div><span class="btn-square" style="width:36px;height:36px"><i data-lucide="chevron-right" class="i-sm"></i></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout daftar ulang -->
+      <section class="checkout" style="margin-top:12px" id="bayar">
+        <div class="checkout__l">
+          <div class="row gap-8"><span class="btn-square" style="width:32px;height:32px;border-radius:10px"><i data-lucide="arrow-left" class="i-sm"></i></span><span style="font-weight:500">Daftar ulang SMP · Fathan</span></div>
+          <div class="stack gap-4"><span class="t-meta" id="payLabel">Bayar lunas</span><span class="t-amount" id="payNow">Rp24.000.000</span></div>
+          <div class="stack gap-8" data-select="is-selected" id="payPlan">
+            <button type="button" class="opt is-selected" data-value="lunas"><span class="opt__radio"></span><span class="opt__body"><b style="font-weight:500">Lunas</b><span class="t-meta">Satu kali bayar sebelum 31 Okt</span></span><span class="opt__price">Rp24.000.000</span></button>
+            <button type="button" class="opt" data-value="cicil"><span class="opt__radio"></span><span class="opt__body"><b style="font-weight:500">Cicil 3×</b><span class="t-meta">31 Okt, 31 Des, 28 Feb · tanpa biaya tambahan</span></span><span class="opt__price">Rp8.000.000 / kali</span></button>
+            <button type="button" class="opt" data-value="lulus"><span class="opt__radio"></span><span class="opt__body"><b style="font-weight:500">Sekali hingga lulus</b><span class="t-meta">Termasuk SPP 36 bulan &amp; kegiatan 3 tahun, potongan 5% SPP</span></span><span class="opt__price">Rp77.860.000</span></button>
+          </div>
+          <div class="lines" id="payLines"></div>
+        </div>
+        <div class="checkout__r">
+          <form data-demo-form="#payOk" class="stack gap-16">
+            <div class="paybtns" data-select="is-selected" id="payMethod">
+              <button type="button" class="paybtn is-selected" data-value="VA BSI"><i data-lucide="landmark" class="i-sm"></i>VA BSI</button>
+              <button type="button" class="paybtn" data-value="VA Mandiri"><i data-lucide="landmark" class="i-sm"></i>VA Mandiri</button>
+              <button type="button" class="paybtn" data-value="QRIS"><i data-lucide="qr-code" class="i-sm"></i>QRIS</button>
+            </div>
+            <div class="or">atau bayar di loket keuangan sekolah</div>
+            <div class="field"><label for="pEmail">Email untuk kuitansi</label><input id="pEmail" class="input" value="laila.kusuma@contoh.id"></div>
+            <div class="field"><span class="lbl">Data pembayar</span>
+              <div class="input-group"><input class="input" value="Laila Kusuma" aria-label="Nama"><div class="split"><input class="input" value="Ibu" aria-label="Hubungan"><input class="input" value="0812-0000-4471" aria-label="WhatsApp"></div></div>
+            </div>
+            <div class="field"><label for="pNote">Catatan untuk bagian keuangan</label><select id="pNote" class="input"><option>Tidak ada</option><option>Minta kuitansi atas nama ayah</option><option>Pembayaran dari rekening kantor</option></select></div>
+            <button class="btn btn-primary btn-block" style="border-radius:var(--r-sm);height:48px" id="payBtn">Buat VA BSI · Rp24.000.000</button>
+            <p class="secure"><i data-lucide="lock" style="width:12px;height:12px"></i>Nomor VA berlaku sampai Sabtu, 31 Oktober 2026 23.59</p>
+          </form>
+          <div id="payOk" class="done" hidden>
+            <span class="done__ic"><i data-lucide="check"></i></span>
+            <p class="t-h2">Nomor VA dibuat</p>
+            <div class="r" style="width:100%;grid-template-columns:1fr auto;border:1px solid var(--line)"><div class="stack"><span class="t-meta" id="vaBank">VA BSI</span><span class="num" style="font:500 22px/1.2 var(--font);letter-spacing:.02em">9001 2704 1800 0418</span></div><button class="btn btn-ghost btn-sm" type="button"><i data-lucide="copy" class="i-sm"></i>Salin</button></div>
+            <p class="t-meta">Status daftar ulang berubah otomatis setelah pembayaran masuk. Kuitansi dikirim ke email dan WhatsApp.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Adik: observasi -->
+    <div data-panel="kid:adik" hidden>
+      <div class="st-top" style="margin-top:12px">
+        <div class="note note--blue" style="padding:24px">
+          <div class="note__top"><span class="pill" style="background:#fff;color:var(--blue)">Observasi terjadwal</span><span class="note__more"><i data-lucide="more-horizontal" class="i-sm"></i></span></div>
+          <p class="t-h2">Observasi bermain Hana: Sabtu, 24 Oktober 2026, 08.00.</p>
+          <p style="font-size:14px">Hana bermain di ruang sentra bersama dua guru selama 60–90 menit. Orang tua menunggu di ruang PPDB dan diwawancara pukul 09.30.</p>
+          <div class="row gap-8" style="flex-wrap:wrap"><a class="btn btn-sm" style="background:#fff;color:var(--ink)" href="#">Tambah ke kalender</a><a class="btn btn-sm" style="border:1px solid rgba(255,255,255,.5)" href="#">Ganti jadwal</a></div>
+          <p class="note__foot">PPDB-27-TK-0273 · dokumen 3 dari 6</p>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><p class="t-h3">Yang perlu disiapkan</p></div>
+          <div class="rows">
+            <div class="task"><span class="task__title">Lengkapi 3 dokumen</span><span class="pill pill--red">Sebelum 23 Okt</span><div class="task__meta"><span>KTP orang tua, kartu imunisasi, surat keterangan PAUD</span><a class="link" href="#daftar">Unggah</a></div></div>
+            <div class="task"><span class="task__title">Bawa botol minum &amp; baju ganti</span><span class="pill pill--mute">Hari H</span><div class="task__meta"><span>Ada kegiatan bermain air di sentra bahan alam</span></div></div>
+            <div class="task"><span class="task__title">Ayah dan ibu hadir</span><span class="pill pill--mute">09.30</span><div class="task__meta"><span>Wawancara 30 menit tentang pola asuh &amp; harapan</span></div></div>
+            <div class="task"><span class="task__title">Pengumuman</span><span class="pill pill--blue">Maks. 31 Okt</span><div class="task__meta"><span>Di portal ini dan WhatsApp</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEJA PPDB (STAF) ================= -->
+<section data-screen="admin">
+  <div class="wrap" style="max-width:none">
+    <header class="topbar">
+      <a class="logo" href="#home">annahl<small class="hide-sm">Meja PPDB</small></a>
+      <div class="chips" data-select id="lvFilter" style="margin-left:24px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none">
+        <button class="chip is-active" data-value="all">Semua</button><button class="chip" data-value="KB/TK">KB/TK</button><button class="chip" data-value="SD">SD</button><button class="chip" data-value="SMP">SMP</button><button class="chip" data-value="SMA">SMA</button>
+      </div>
+      <div class="topbar__right hide-sm"><span class="t-meta">Minggu, 18 Okt 2026</span><div class="who"><span class="btn-square dark" style="width:36px;height:36px;border-radius:10px;font-size:13px">RA</span><div><b>Rina A.</b><span>Admin PPDB</span></div></div></div>
+    </header>
+
+    <div class="quotas" style="margin-top:12px">
+      <div class="quota"><div class="row" style="justify-content:space-between"><b style="font-weight:500">KB/TK</b><span class="t-meta num">38 / 60</span></div><div class="quota__bar"><span style="width:63%"></span></div><span class="t-small">22 kursi tersisa</span></div>
+      <div class="quota"><div class="row" style="justify-content:space-between"><b style="font-weight:500">SD</b><span class="t-meta num">41 / 56</span></div><div class="quota__bar"><span style="width:73%"></span></div><span class="t-small">15 kursi tersisa</span></div>
+      <div class="quota"><div class="row" style="justify-content:space-between"><b style="font-weight:500">SMP putra</b><span class="t-meta num">29 / 32</span></div><div class="quota__bar"><span style="width:91%;background:var(--red)"></span></div><span class="t-small">3 kursi · daftar tunggu dibuka</span></div>
+      <div class="quota"><div class="row" style="justify-content:space-between"><b style="font-weight:500">SMP putri</b><span class="t-meta num">26 / 32</span></div><div class="quota__bar"><span style="width:81%"></span></div><span class="t-small">6 kursi tersisa</span></div>
+      <div class="quota"><div class="row" style="justify-content:space-between"><b style="font-weight:500">SMA</b><span class="t-meta num">33 / 64</span></div><div class="quota__bar"><span style="width:52%"></span></div><span class="t-small">31 kursi tersisa</span></div>
+    </div>
+
+    <div class="row" style="justify-content:space-between;margin:20px 4px 12px;gap:12px;flex-wrap:wrap"><h1 class="t-h2">Pendaftar gelombang 1</h1><div class="row gap-8"><a class="btn btn-ghost btn-sm" href="#"><i data-lucide="download" class="i-sm"></i>Ekspor</a><a class="btn btn-primary btn-sm" href="#"><i data-lucide="plus" class="i-sm"></i>Input pendaftar offline</a></div></div>
+
+    <div class="board" id="board">
+      <div class="lane" data-lane="0"><div class="lane__head"><i data-lucide="file-warning" class="i-sm"></i>Dokumen kurang<span class="cnt"></span></div></div>
+      <div class="lane" data-lane="1"><div class="lane__head"><i data-lucide="file-search" class="i-sm"></i>Perlu verifikasi<span class="cnt"></span></div></div>
+      <div class="lane" data-lane="2"><div class="lane__head"><i data-lucide="calendar-check" class="i-sm"></i>Observasi / tes<span class="cnt"></span></div></div>
+      <div class="lane" data-lane="3"><div class="lane__head"><i data-lucide="megaphone" class="i-sm"></i>Diterima<span class="cnt"></span></div></div>
+      <div class="lane" data-lane="4"><div class="lane__head"><i data-lucide="wallet" class="i-sm"></i>Daftar ulang lunas<span class="cnt"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var icons = function () { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); };
+
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+
+  // ---------- Biaya ----------
+  var fees = [
+    { j: "KB", s: "Usia 3–4 tahun", p: 9500000, b: 1250000, spp: 850000 },
+    { j: "TK A/B", s: "Usia 4–6 tahun", p: 11000000, b: 1450000, spp: 950000 },
+    { j: "SD", s: "Kelas 1", p: 18500000, b: 2250000, spp: 1350000 },
+    { j: "SMP", s: "Kelas 7", p: 21000000, b: 2750000, spp: 1550000 },
+    { j: "SMA", s: "Kelas 10", p: 22500000, b: 2950000, spp: 1650000 }
+  ];
+  function renderFees(mode) {
+    var cut = mode === "g1" ? 2500000 : 0;
+    document.getElementById("feeRows").innerHTML = fees.map(function (f) {
+      var p = f.p - cut;
+      return '<div class="r cols-fee"><div class="stack"><b style="font-weight:500">' + f.j + '</b><span class="t-meta">' + f.s + '</span></div>' +
+        '<span class="num" data-l="Uang pangkal">' + (cut ? '<s class="t-small" style="margin-right:6px">' + rupiah(f.p) + '</s>' : '') + rupiah(p) + '</span>' +
+        '<span class="num" data-l="Seragam & buku">' + rupiah(f.b) + '</span>' +
+        '<span class="num" data-l="SPP / bulan">' + rupiah(f.spp) + '</span>' +
+        '<b class="num" style="font-weight:500" data-l="Total daftar ulang">' + rupiah(p + f.b + f.spp) + '</b></div>';
+    }).join("");
+  }
+  renderFees("g1");
+  document.getElementById("feeMode").addEventListener("lapak:select", function (e) { renderFees(e.detail.value); });
+
+  // Agenda filter
+  document.getElementById("agFilter").addEventListener("lapak:select", function (e) {
+    document.querySelectorAll("#agRows .agenda").forEach(function (r) { r.hidden = e.detail.value !== "all" && r.getAttribute("data-k") !== e.detail.value; });
+  });
+
+  // ---------- Dokumen ----------
+  var docs = document.getElementById("docs");
+  function docUpd() {
+    var n = docs.querySelectorAll(".doc.is-up").length;
+    document.getElementById("docCount").textContent = n;
+    document.getElementById("docBar").style.width = (n / 6 * 100) + "%";
+  }
+  docs.addEventListener("click", function (e) {
+    var b = e.target.closest(".doc__btn"); if (!b) return;
+    var d = b.closest(".doc"); if (d.classList.contains("is-up")) return;
+    d.classList.add("is-up");
+    var ext = [".jpg", ".pdf", ".jpg"][Array.prototype.indexOf.call(docs.children, d) % 3];
+    d.querySelector(".t-meta").textContent = d.querySelector(".doc__name").textContent.toLowerCase().replace(/[^a-z]+/g, "-").replace(/-$/, "") + ext + " · " + (300 + Math.floor(Math.random() * 1200)) + " KB";
+    d.querySelector(".doc__ic").innerHTML = '<i data-lucide="file-check-2"></i>';
+    b.textContent = "Ganti";
+    icons(); docUpd();
+  });
+
+  // ---------- Kalender strip ----------
+  var names = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"], ev = { 24: "blue", 28: "green", 31: "red", 30: "", 26: "" }, h = "";
+  for (var d = 18; d <= 31; d++) {
+    var w = (d - 18) % 7;
+    h += '<button type="button" class="dday' + (d === 18 ? " is-today" : "") + (d === 24 ? " is-selected" : "") + (w === 0 && d !== 18 ? " is-off" : "") + '" data-value="' + d + '" data-d="' + (ev[d] || "") + '"><b>' + d + "</b><i></i><span>" + names[w] + "</span></button>";
+  }
+  document.getElementById("dstrip").innerHTML = h;
+
+  // ---------- Pembayaran daftar ulang ----------
+  var plans = {
+    lunas: { label: "Bayar lunas", now: 24000000, lines: [["Uang pangkal SMP", 21000000], ["Potongan gelombang 1", -2500000], ["Seragam & buku", 2750000], ["Kegiatan tahun pertama", 1200000], ["SPP Juli 2027", 1550000], ["Total", 24000000]] },
+    cicil: { label: "Cicilan 1 dari 3 · total Rp24.000.000", now: 8000000, lines: [["Cicilan 1 · 31 Okt 2026", 8000000], ["Cicilan 2 · 31 Des 2026", 8000000], ["Cicilan 3 · 28 Feb 2027", 8000000], ["Dibayar sekarang", 8000000]] },
+    lulus: { label: "Sekali bayar hingga lulus", now: 77860000, lines: [["Uang pangkal setelah potongan", 18500000], ["Seragam & buku", 2750000], ["Kegiatan 3 tahun", 3600000], ["SPP 36 bulan (Jul 2027 – Jun 2030)", 55800000], ["Potongan 5% SPP", -2790000], ["Total", 77860000]] }
+  };
+  var plan = "lunas", method = "VA BSI";
+  function payUpd() {
+    var p = plans[plan];
+    document.getElementById("payLabel").textContent = p.label;
+    document.getElementById("payNow").textContent = rupiah(p.now);
+    document.getElementById("payLines").innerHTML = p.lines.map(function (l) {
+      var neg = l[1] < 0;
+      return '<div><span' + (neg ? ' class="minus"' : '') + '>' + l[0] + '</span><span class="num' + (neg ? ' minus' : '') + '">' + (neg ? "−" + rupiah(-l[1]) : rupiah(l[1])) + "</span></div>";
+    }).join("");
+    document.getElementById("payBtn").textContent = (method === "QRIS" ? "Tampilkan QRIS" : "Buat " + method) + " · " + rupiah(p.now);
+    document.getElementById("vaBank").textContent = method;
+  }
+  document.getElementById("payPlan").addEventListener("lapak:select", function (e) { plan = e.detail.value; payUpd(); });
+  document.getElementById("payMethod").addEventListener("lapak:select", function (e) { method = e.detail.value; payUpd(); });
+  payUpd();
+
+  // ---------- Kanban PPDB ----------
+  var acts = ["Ingatkan", "Verifikasi", "Input hasil", "Tandai lunas", null];
+  var cards = [
+    [0, "Zidan Alfarizi", "SD", "Daftar 12 Okt", "Kurang: rapor TK, KTP ibu", "red", "5 hari"],
+    [0, "Hana Azzahra", "KB/TK", "TK B · daftar 15 Okt", "Kurang: KTP, imunisasi, ket. PAUD", "red", "Obs. 24 Okt"],
+    [0, "Bilal Mahendra", "SMA", "Daftar 16 Okt", "Kurang: NISN", "amber", "2 hari"],
+    [1, "Kirana Putri", "SMP", "Putri · daftar 17 Okt", "6 dokumen baru masuk", "blue", "Hari ini"],
+    [1, "Umar Fadhil", "KB/TK", "KB · daftar 17 Okt", "Akta perlu dicek ulang", "amber", "Kemarin"],
+    [1, "Aqila Rahma", "SD", "Daftar 18 Okt", "5 dokumen baru masuk", "blue", "Hari ini"],
+    [2, "Nayla Safitri", "KB/TK", "TK A · Sab 24 Okt 08.00", "Sentra balok · ruang 2", "blue", "6 hari"],
+    [2, "Rafif Hakim", "SMP", "Putra · Sab 24 Okt 07.30", "Tes akademik & baca Qur'an", "blue", "6 hari"],
+    [2, "Maryam Lestari", "SMA", "Sab 7 Nov 07.30", "Lab komputer sesi 3", "mute", "20 hari"],
+    [2, "Hafiz Yusran", "SD", "Sab 24 Okt 08.00", "Kesiapan sekolah", "blue", "6 hari"],
+    [3, "Fathan Ar-Rasyid", "SMP", "Putra · diumumkan 17 Okt", "Daftar ulang via VA, belum masuk", "red", "13 hari"],
+    [3, "Keisha Wulandari", "KB/TK", "TK B · diumumkan 17 Okt", "Pilih cicil 3×", "amber", "13 hari"],
+    [3, "Daffa Nugraha", "SMA", "Diumumkan 10 Okt", "Belum memilih skema bayar", "red", "6 hari"],
+    [4, "Salma Diningrat", "SD", "Lunas 14 Okt", "Ukur seragam 28 Okt", "green", "Selesai"],
+    [4, "Yusuf Ibrahim", "SMP", "Putra · sekali hingga lulus", "Ukur seragam 28 Okt", "green", "Selesai"],
+    [4, "Alya Tsabita", "KB/TK", "KB · lunas 9 Okt", "Kelas siap", "green", "Selesai"]
+  ];
+  var lanes = document.querySelectorAll("#board .lane"), filter = "all";
+  function initials(n) { return n.split(" ").map(function (x) { return x[0]; }).join("").slice(0, 2); }
+  function renderBoard() {
+    lanes.forEach(function (l) { l.querySelectorAll(".card").forEach(function (c) { c.remove(); }); });
+    var count = [0, 0, 0, 0, 0];
+    cards.forEach(function (c, i) {
+      if (filter !== "all" && c[2] !== filter) return;
+      count[c[0]]++;
+      var a = acts[c[0]];
+      var el = document.createElement("div"); el.className = "card";
+      el.innerHTML = '<div class="card__top"><span class="row gap-8"><span class="btn-square" style="width:30px;height:30px;border-radius:9px;font-size:12px;background:var(--panel);border:0">' + initials(c[1]) + '</span><span class="card__name">' + c[1].split(" ")[0] + " " + c[1].split(" ")[1][0] + '.</span></span><span class="pill pill--mute">' + c[2] + '</span></div>' +
+        '<div class="card__meta"><span>' + c[3] + '</span><span>' + c[4] + '</span></div>' +
+        '<div class="card__foot"><span class="pill pill--' + c[5] + '">' + c[6] + '</span>' + (a ? '<button class="card__act" data-i="' + i + '">' + a + '<i data-lucide="arrow-right" style="width:13px;height:13px"></i></button>' : '<i data-lucide="check-circle-2" class="i-sm" style="color:var(--green-ink)"></i>') + '</div>';
+      lanes[c[0]].appendChild(el);
+    });
+    lanes.forEach(function (l, i) { l.querySelector(".cnt").textContent = count[i]; });
+    icons();
+  }
+  var next = { 1: ["mute", "Jadwal 24 Okt"], 2: ["amber", "14 hari"], 3: ["green", "Selesai"] };
+  document.getElementById("board").addEventListener("click", function (e) {
+    var b = e.target.closest(".card__act"); if (!b) return;
+    var c = cards[+b.getAttribute("data-i")];
+    if (c[0] === 0) { c[5] = "mute"; c[6] = "Diingatkan"; c[4] = "Pengingat WhatsApp terkirim"; b.remove(); return; }
+    var n = next[c[0]]; c[0]++; c[5] = n[0]; c[6] = n[1];
+    c[4] = ["", "Dokumen lengkap", "Hasil: direkomendasikan", "Lunas 18 Okt"][c[0] - 1] || c[4];
+    renderBoard();
+  });
+  document.getElementById("lvFilter").addEventListener("lapak:select", function (e) { filter = e.detail.value; renderBoard(); });
+  renderBoard();
+})();
+</script>
+</body>
+</html>

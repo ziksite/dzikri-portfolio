@@ -1,0 +1,91 @@
+{
+  "slug": "medical-equipment-store-website",
+  "kind": "Website",
+  "industry": "Healthcare",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "E-commerce",
+    "B2B Quotation"
+  ],
+  "metrics": [
+    {
+      "value": "23",
+      "label": "PRODUCT CATEGORIES",
+      "labelId": "KATEGORI PRODUK"
+    },
+    {
+      "value": "3",
+      "label": "PROCUREMENT ROUTES",
+      "labelId": "JALUR PENGADAAN"
+    },
+    {
+      "value": "0%",
+      "label": "INSTALLMENTS UP TO 12 MONTHS",
+      "labelId": "CICILAN SAMPAI 12 BULAN"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Storefront with a price list by need, showing permit number, warranty and stock",
+      "captionId": "Etalase dengan daftar harga per kebutuhan, lengkap dengan izin edar, garansi, dan stok"
+    },
+    {
+      "hash": "produk",
+      "caption": "Product page with package options, 0% installment calculator and full specifications",
+      "captionId": "Halaman produk dengan pilihan paket, simulasi cicilan 0%, dan spesifikasi lengkap"
+    },
+    {
+      "hash": "faskes",
+      "caption": "Quotation request for clinics with procurement route and documents",
+      "captionId": "Permintaan penawaran untuk klinik dengan pilihan cara pengadaan dan dokumen"
+    },
+    {
+      "hash": "servis",
+      "caption": "Service and warranty ticket queue for the technician team",
+      "captionId": "Antrean tiket servis dan garansi untuk tim teknisi"
+    }
+  ],
+  "content_en": {
+    "title": "Medical Equipment Store Website",
+    "type": "MEDICAL EQUIPMENT E-COMMERCE",
+    "category": "E-commerce",
+    "summary": "A redesign for a medical equipment store and distributor that sells home-care devices to families and supplies clinics and hospitals. Every product shows its health ministry permit number, warranty and stock; facilities request formal quotations, and technicians work from a service and warranty queue.",
+    "challenge": "The old site opened with a carousel of promotional banners and brand logos, so the first screen did not say what was sold or to whom. Product pages carried only a title, price and stock, with no specifications or documents, and the health ministry permit number appeared only as small print inside some product images. Almost every photo was stamped with the store logo.\n\nPopular items were marked sold out without a restock date, there was no route for clinics or hospitals even though the store supplied them, large items could not be paid in installments, and warranty claims had no process beyond a 14-day store guarantee icon. Several homepage blocks were empty placeholders.",
+    "solution": "The storefront follows a calm product-first theme pattern. The main catalog is a price list grouped by need, where each row shows the permit number, warranty length and live stock next to the price, and a permit checker lets buyers verify a registration number before purchase. Product pages add package options, a 0% installment calculator, delivery with home installation, and collapsible sections for specifications, permit documents, warranty and shipping.\n\nClinics and hospitals get a separate quotation flow modelled on a split checkout: the item list with quantities and tax on one side, facility data, procurement route (direct purchase, government e-catalogue or tender) and payment terms on the other. Behind the counter, technicians work from a ticket queue covering workshop repairs, site visits, calibration and 14-day replacements, with serial number, warranty status and priority on every row. The planned production stack is Next.js with Supabase and a payment gateway for card installments.",
+    "features": [
+      "Price list by need with permit number, warranty and stock on every row",
+      "Health ministry permit number checker",
+      "Product page with specifications, documents and warranty terms",
+      "0% card installment calculator for high-value items",
+      "Quotation request for facilities with three procurement routes",
+      "Automatic tax and total on the quotation list",
+      "Service and warranty ticket queue with serial numbers and priorities"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Toko Alat Kesehatan",
+    "type": "E-COMMERCE ALAT KESEHATAN",
+    "category": "E-commerce",
+    "summary": "Redesign untuk toko dan distributor alat kesehatan yang menjual alat perawatan di rumah ke keluarga sekaligus memasok klinik dan rumah sakit. Setiap produk menampilkan nomor izin edar Kemenkes, garansi, dan stok; faskes meminta penawaran resmi, dan teknisi bekerja dari antrean servis dan garansi.",
+    "challenge": "Situs lama dibuka dengan slider banner promo dan logo merek, sehingga layar pertama tidak menjelaskan apa yang dijual dan untuk siapa. Halaman produk hanya berisi judul, harga, dan stok tanpa spesifikasi atau dokumen, dan nomor izin edar Kemenkes hanya tercetak kecil di dalam gambar sebagian produk. Hampir semua foto diberi cap logo toko.\n\nProduk populer berlabel habis tanpa perkiraan restock, tidak ada jalur untuk klinik atau rumah sakit padahal toko memasok mereka, barang besar tidak bisa dicicil, dan klaim garansi tidak punya alur selain ikon garansi toko 14 hari. Beberapa blok di beranda masih berupa placeholder kosong.",
+    "solution": "Etalase mengikuti pola tema toko yang tenang dan mengutamakan produk. Katalog utama berupa daftar harga per kebutuhan, dengan nomor izin edar, lama garansi, dan stok di setiap baris di samping harga, ditambah alat cek izin edar agar pembeli bisa memverifikasi nomor registrasi sebelum membeli. Halaman produk menambahkan pilihan paket, simulasi cicilan 0%, pengiriman dengan instalasi di rumah, serta bagian lipat untuk spesifikasi, dokumen izin edar, garansi, dan pengiriman.\n\nKlinik dan rumah sakit mendapat alur penawaran terpisah berpola checkout terbelah: daftar alat dengan jumlah dan PPN di satu sisi, data faskes, cara pengadaan (pembelian langsung, e-katalog LKPP, atau tender), dan termin pembayaran di sisi lain. Di belakang meja, teknisi bekerja dari antrean tiket yang mencakup perbaikan di bengkel, kunjungan lokasi, kalibrasi, dan tukar unit 14 hari, dengan nomor seri, status garansi, dan prioritas di setiap baris. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan payment gateway untuk cicilan kartu kredit.",
+    "features": [
+      "Daftar harga per kebutuhan dengan izin edar, garansi, dan stok di setiap baris",
+      "Cek nomor izin edar Kemenkes",
+      "Halaman produk dengan spesifikasi, dokumen, dan ketentuan garansi",
+      "Simulasi cicilan 0% kartu kredit untuk barang bernilai besar",
+      "Permintaan penawaran faskes dengan tiga cara pengadaan",
+      "PPN dan total otomatis di daftar penawaran",
+      "Antrean tiket servis dan garansi dengan nomor seri dan prioritas"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medira — Alat kesehatan dengan izin edar yang bisa dicek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/medical-equipment-store-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA / KATALOG ================= -->
+<section data-screen="home">
+  <p class="announce">Garansi resmi 1 tahun untuk alat elektrik · Instalasi gratis kursi roda elektrik &amp; bed pasien area Semarang</p>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">medira</a>
+      <nav class="menu">
+        <a href="#home">Perawatan di rumah<i data-lucide="chevron-down"></i></a>
+        <a href="#home">Mobilitas<i data-lucide="chevron-down"></i></a>
+        <a href="#home">Diagnostik<i data-lucide="chevron-down"></i></a>
+        <a href="#faskes">Untuk faskes</a>
+        <a href="#servis">Servis &amp; garansi</a>
+      </nav>
+      <div class="hicons"><a href="#home" aria-label="Cari"><i data-lucide="search"></i></a><a href="#home" aria-label="Akun"><i data-lucide="user"></i></a><a href="#produk" aria-label="Keranjang"><i data-lucide="shopping-bag"></i><span class="count" id="cartCount">1</span></a></div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <div class="iwt">
+      <a class="iwt__media photo" href="#produk" data-img="assets/medical-equipment-store-website/kursi-roda-elektrik-go112.webp"></a>
+      <div class="iwt__text">
+        <p class="t-caption">GEA Kursi Roda Elektrik GO-112 · Rp6.750.000</p>
+        <h1 class="t-h0">Alat kesehatan untuk dirawat di rumah, dengan izin edar yang bisa dicek.</h1>
+        <p class="muted" style="font-size:17px">Tensimeter, nebulizer, kursi roda, sampai alat sedot lendir. Setiap produk mencantumkan nomor izin edar Kemenkes, spesifikasi lengkap, stok gudang, dan siapa yang menangani servisnya.</p>
+        <div class="iwt__actions"><a class="btn btn-primary" href="#produk">Lihat kursi roda elektrik</a><a class="btn btn-secondary" href="#cek">Cek izin edar</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap section">
+    <div class="section-head">
+      <div><h2 class="t-h2">Daftar harga per kebutuhan</h2><p class="t-meta" style="margin-top:6px">Harga sudah termasuk PPN. Stok diperbarui dari gudang setiap jam.</p></div>
+      <a class="link" href="#home" style="font-size:15px">Lihat semua produk</a>
+    </div>
+    <div class="ctabs" data-select data-tabs="kat">
+      <button class="is-active" data-value="napas">Pernapasan</button>
+      <button data-value="tensi">Tekanan darah &amp; diagnostik</button>
+      <button data-value="mobil">Mobilitas &amp; lansia</button>
+      <button data-value="terapi">Terapi di rumah</button>
+    </div>
+    <div class="scroll-x">
+      <table class="plist" id="plist">
+        <thead><tr><th>Produk</th><th>Izin edar Kemenkes</th><th>Garansi</th><th>Stok</th><th style="text-align:right">Harga</th><th></th></tr></thead>
+        <tbody data-panel="kat:napas">
+          <tr><td><p class="p-name">Nebulizer NE-C28 + NaCl 500 ml</p><p class="p-brand">OMRON · kompresor, untuk anak &amp; dewasa</p></td><td class="c-akl"><span class="akl">AKL 20403710482</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock">Ada, 18 unit</span></td><td class="p-price">Rp615.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Mesh Nebulizer Portable IH 51</p><p class="p-brand">BEURER · baterai, senyap</p></td><td class="c-akl"><span class="akl">AKL 20403220917</span></td><td class="c-war">3 tahun resmi</td><td><span class="stock">Ada, 9 unit</span></td><td class="p-price">Rp770.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Compressor Nebulizer NEB 200</p><p class="p-brand">MICROLIFE</p></td><td class="c-akl"><span class="akl">AKL 20403810356</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock stock--low">Sisa 2 unit</span></td><td class="p-price">Rp530.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Suction Pump Low Pressure DYX-1A</p><p class="p-brand">GEA · sedot lendir dahak, perawatan pasien tirah baring</p></td><td class="c-akl"><span class="akl">AKL 20902910228</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock stock--out">Inden 7 hari</span></td><td class="p-price">Rp1.850.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Regulator Oksigen RO-01</p><p class="p-brand">GEA · untuk tabung 1–6 m³, flow 1–15 L/menit</p></td><td class="c-akl"><span class="akl">AKL 10603220533</span></td><td class="c-war">6 bulan resmi</td><td><span class="stock">Ada, 31 unit</span></td><td class="p-price">Rp175.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+        </tbody>
+        <tbody data-panel="kat:tensi" hidden>
+          <tr><td><p class="p-name">Tensimeter Digital EZ Lite HEM-7180</p><p class="p-brand">OMRON · lengan atas, manset 22–32 cm</p></td><td class="c-akl"><span class="akl">AKL 20501421765</span></td><td class="c-war">5 tahun resmi</td><td><span class="stock">Ada, 24 unit</span></td><td class="p-price"><s>Rp415.000</s>Rp350.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Tensimeter Digital HEM-7156T Bluetooth</p><p class="p-brand">OMRON · manset IntelliWrap 360°</p></td><td class="c-akl"><span class="akl">AKL 20501320904</span></td><td class="c-war">5 tahun resmi</td><td><span class="stock stock--out">Habis, masuk 24 Okt</span></td><td class="p-price">Rp660.000</td><td class="p-add"><button class="addbtn" aria-label="Ingatkan"><i data-lucide="bell" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Tensimeter Digital UA-767S</p><p class="p-brand">A&amp;D · bebas merkuri, cocok untuk klinik</p></td><td class="c-akl"><span class="akl">AKL 20501321006</span></td><td class="c-war">2 tahun resmi</td><td><span class="stock">Ada, 40 unit</span></td><td class="p-price">Rp695.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Tensimeter BM 53</p><p class="p-brand">BEURER · deteksi aritmia, 2 pengguna</p></td><td class="c-akl"><span class="akl">AKL 20501220648</span></td><td class="c-war">5 tahun resmi</td><td><span class="stock">Ada, 6 unit</span></td><td class="p-price">Rp865.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Stetoskop Majestic Dewasa</p><p class="p-brand">ABN · chestpiece aluminium</p></td><td class="c-akl"><span class="akl">AKL 20502800276</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock">Ada, 52 unit</span></td><td class="p-price">Rp200.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+        </tbody>
+        <tbody data-panel="kat:mobil" hidden>
+          <tr><td><p class="p-name">Kursi Roda Elektrik GO-112</p><p class="p-brand">GEA · heavy duty, beban sampai 136 kg</p></td><td class="c-akl"><span class="akl">AKL 21603320119</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock">Ada, 3 unit</span></td><td class="p-price">Rp6.750.000</td><td class="p-add"><a class="addbtn" href="#produk" aria-label="Lihat"><i data-lucide="arrow-right" class="i-sm"></i></a></td></tr>
+          <tr><td><p class="p-name">Kursi Roda Standar FS 871</p><p class="p-brand">GEA · rangka baja, lipat</p></td><td class="c-akl"><span class="akl">AKL 11603910872</span></td><td class="c-war">1 tahun rangka</td><td><span class="stock">Ada, 27 unit</span></td><td class="p-price">Rp955.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Kursi Transfer TC-802 + Commode</p><p class="p-brand">SERENITY · semi hidrolik</p></td><td class="c-akl"><span class="akl">AKL 11402420076</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock stock--low">Sisa 1 unit</span></td><td class="p-price">Rp4.277.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Commode Chair FS 696</p><p class="p-brand">GEA · kursi BAB beroda, beban 100 kg</p></td><td class="c-akl"><span class="akl">AKL 10903113466</span></td><td class="c-war">6 bulan rangka</td><td><span class="stock">Ada, 14 unit</span></td><td class="p-price">Rp620.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Patient Mover FLY-220H</p><p class="p-brand">EASY MOVE · alas geser pindah pasien</p></td><td class="c-akl"><span class="akl">AKL 11601020931</span></td><td class="c-war">6 bulan</td><td><span class="stock">Ada, 5 unit</span></td><td class="p-price">Rp2.600.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+        </tbody>
+        <tbody data-panel="kat:terapi" hidden>
+          <tr><td><p class="p-name">Infrared Heat Lamp IL 60, 300 W</p><p class="p-brand">BEURER · terapi panas otot &amp; sendi</p></td><td class="c-akl"><span class="akl">AKL 21403320781</span></td><td class="c-war">3 tahun resmi</td><td><span class="stock">Ada, 7 unit</span></td><td class="p-price">Rp1.900.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Lampu Infrared IR20, 150 W</p><p class="p-brand">SERENITY</p></td><td class="c-akl"><span class="akl">AKL 21403320777</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock">Ada, 21 unit</span></td><td class="p-price"><s>Rp700.000</s>Rp610.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Stimulator Elektro SDZ-II, 6 kanal</p><p class="p-brand">HWATO · untuk fisioterapis &amp; klinik</p></td><td class="c-akl"><span class="akl">AKL 21401910264</span></td><td class="c-war">1 tahun resmi</td><td><span class="stock stock--low">Sisa 2 unit</span></td><td class="p-price">Rp1.150.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+          <tr><td><p class="p-name">Elektroda TENS SDZ, isi 2</p><p class="p-brand">HWATO · pengganti pad</p></td><td class="c-akl"><span class="akl">AKL 21401910265</span></td><td class="c-war">—</td><td><span class="stock">Ada, 80 pak</span></td><td class="p-price">Rp35.000</td><td class="p-add"><button class="addbtn" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:64px">
+    <div class="section-head"><h2 class="t-h2">Untuk merawat orang tua di rumah</h2><a class="link" href="#home" style="font-size:15px">Lihat koleksi</a></div>
+    <div class="grid4">
+      <a class="card" href="#produk"><div class="photo" data-img="assets/medical-equipment-store-website/kursi-roda-elektrik-go112.webp"><span class="card__badge">Cicilan 0%</span></div><p class="card__vendor">GEA Medical</p><p class="card__title">Kursi Roda Elektrik GO-112, beban sampai 136 kg</p><p class="card__price">Rp6.750.000</p><p class="card__meta">Rp562.500/bulan × 12</p></a>
+      <a class="card" href="#home"><div class="photo" data-img="assets/medical-equipment-store-website/patient-transfer-sheet.webp" style="--ar:1/1"></div><p class="card__vendor">Easy Move</p><p class="card__title">Patient Mover FLY-220H, alas geser pindah pasien</p><p class="card__price">Rp2.600.000</p><p class="card__meta">3 warna · tersedia</p></a>
+      <a class="card" href="#home"><div class="photo" data-img="assets/medical-equipment-store-website/suction-pump-dyx1a.webp"><span class="card__badge">Inden 7 hari</span></div><p class="card__vendor">GEA Medical</p><p class="card__title">Suction Pump Low Pressure DYX-1A</p><p class="card__price">Rp1.850.000</p><p class="card__meta">Termasuk pelatihan pemakaian</p></a>
+      <a class="card" href="#home"><div class="photo" data-img="assets/medical-equipment-store-website/stimulator-sdz-ii.webp"></div><p class="card__vendor">Hwato</p><p class="card__title">Stimulator Elektro SDZ-II, 6 kanal</p><p class="card__price">Rp1.150.000</p><p class="card__meta">Sisa 2 unit</p></a>
+    </div>
+  </div>
+
+  <div class="wrap" id="cek" style="padding-bottom:72px">
+    <div class="checker">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h2 class="t-h2">Cek izin edar sebelum membeli</h2>
+        <p class="muted">Alat kesehatan yang dijual resmi wajib terdaftar di Kemenkes: AKL untuk produk impor, AKD untuk produk dalam negeri. Masukkan nomornya, atau scan dari kemasan.</p>
+        <p class="t-small">Data dicocokkan ke basis data izin edar alat kesehatan Kemenkes.</p>
+      </div>
+      <div>
+        <form class="field-row" id="aklForm"><input class="input" id="aklIn" value="AKL 21603320119" aria-label="Nomor izin edar"><button class="btn btn-primary" style="min-height:48px">Cek</button></form>
+        <dl class="result" id="aklOut">
+          <dt>Status</dt><dd><span class="verified"><i data-lucide="badge-check" class="i-sm"></i>Terdaftar, berlaku</span></dd>
+          <dt>Produk</dt><dd>Kursi roda elektrik GEA GO-112</dd>
+          <dt>Kelas risiko</dt><dd>Kelas A (risiko rendah)</dd>
+          <dt>Berlaku sampai</dt><dd>14 Maret 2029</dd>
+          <dt>Dijual di sini</dt><dd><a class="link" href="#produk">Rp6.750.000 · stok 3 unit</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:40px">
+    <div class="iwt iwt--rev">
+      <div class="iwt__media photo" data-img="assets/medical-equipment-store-website/stetoskop-majestic.webp"></div>
+      <div class="iwt__text">
+        <p class="t-caption">Klinik, rumah sakit, puskesmas, laboratorium</p>
+        <h2 class="t-h1">Pengadaan untuk faskes: penawaran resmi dengan dokumen lengkap.</h2>
+        <p class="muted">Susun daftar alat, pilih cara pengadaan (pembelian langsung, e-katalog, atau tender), dan terima surat penawaran beserta salinan izin edar setiap produk dalam satu hari kerja.</p>
+        <div class="iwt__actions"><a class="btn btn-primary" href="#faskes">Minta penawaran</a><a class="btn btn-secondary" href="#servis">Kontrak servis &amp; kalibrasi</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div><h4>Belanja</h4><ul><li><a href="#home">Pernapasan</a></li><li><a href="#home">Tekanan darah</a></li><li><a href="#home">Mobilitas &amp; lansia</a></li><li><a href="#home">Habis pakai</a></li></ul></div>
+        <div><h4>Faskes</h4><ul><li><a href="#faskes">Minta penawaran</a></li><li><a href="#faskes">Produk e-katalog</a></li><li><a href="#servis">Kalibrasi</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul><li><a href="#servis">Klaim garansi</a></li><li><a href="#home">Pengiriman &amp; instalasi</a></li><li><a href="#">Chat WhatsApp</a></li></ul></div>
+        <div style="display:flex;flex-direction:column;gap:12px"><h4 style="margin:0">Toko &amp; gudang</h4><p class="muted">Semarang Selatan, Kota Semarang. Senin–Sabtu 09.00–17.00, Minggu 09.00–16.00.</p><p class="muted">Distributor alat kesehatan bersertifikat CDAKB.</p></div>
+      </div>
+      <div class="footer__bottom"><p class="t-small">© 2026 Medira</p><p class="t-small">Transfer bank · Kartu kredit · QRIS · Paylater</p></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= HALAMAN PRODUK ================= -->
+<section data-screen="produk">
+  <p class="announce">Garansi resmi 1 tahun untuk alat elektrik · Instalasi gratis kursi roda elektrik &amp; bed pasien area Semarang</p>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">medira</a>
+      <nav class="menu">
+        <a href="#home">Perawatan di rumah<i data-lucide="chevron-down"></i></a>
+        <a class="is-active" href="#home">Mobilitas<i data-lucide="chevron-down"></i></a>
+        <a href="#home">Diagnostik<i data-lucide="chevron-down"></i></a>
+        <a href="#faskes">Untuk faskes</a>
+        <a href="#servis">Servis &amp; garansi</a>
+      </nav>
+      <div class="hicons"><a href="#home" aria-label="Cari"><i data-lucide="search"></i></a><a href="#home" aria-label="Akun"><i data-lucide="user"></i></a><a href="#produk" aria-label="Keranjang"><i data-lucide="shopping-bag"></i><span class="count">1</span></a></div>
+    </header>
+    <p class="crumb"><a href="#home">Beranda</a> / <a href="#home">Mobilitas</a> / <a href="#home">Kursi roda elektrik</a></p>
+
+    <div class="pdp">
+      <div class="pdp__media">
+        <div class="photo" data-img="assets/medical-equipment-store-website/kursi-roda-elektrik-go112.webp"></div>
+        <div class="media-note"><span><i data-lucide="ruler" class="i-sm"></i>Lebar dudukan 46 cm</span><span><i data-lucide="weight" class="i-sm"></i>27 kg tanpa baterai</span><span><i data-lucide="fold-horizontal" class="i-sm"></i>Lipat satu langkah</span></div>
+      </div>
+
+      <div class="pdp__info">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <p class="t-caption">GEA Medical</p>
+          <h1 class="t-h1">Kursi Roda Elektrik GO-112, heavy duty sampai 136 kg</h1>
+          <div class="pdp__price"><b id="pPrice">Rp6.750.000</b><span class="note">Sudah termasuk PPN</span></div>
+          <p class="note"><span class="akl">AKL 21603320119</span> · terdaftar di Kemenkes, berlaku s/d Mar 2029</p>
+        </div>
+
+        <div>
+          <span class="flabel">Paket</span>
+          <div class="pills" data-select id="pkg">
+            <button class="pill is-active" data-value="6750000">Unit saja</button>
+            <button class="pill" data-value="8200000">Unit + baterai cadangan <small>+Rp1.450.000</small></button>
+          </div>
+        </div>
+
+        <div>
+          <span class="flabel">Jumlah</span>
+          <div class="qty" data-stepper data-min="1" data-max="3" id="pQty"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>1</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div>
+        </div>
+
+        <div class="instal">
+          <div class="instal__head"><p style="font-weight:600">Cicilan 0% kartu kredit</p><p class="t-small">BCA · Mandiri · BNI · BRI</p></div>
+          <div class="tenor" data-select id="tenor"><button data-value="3">3 bulan</button><button data-value="6">6 bulan</button><button class="is-active" data-value="12">12 bulan</button></div>
+          <div class="instal__out"><span class="t-meta">Bayar per bulan</span><b class="num" id="pMonthly">Rp562.500</b></div>
+          <p class="t-small">Tanpa bunga dan biaya admin. Paylater juga tersedia di halaman pembayaran.</p>
+        </div>
+
+        <div class="buy">
+          <button class="btn btn-secondary btn-block">Tambah ke keranjang</button>
+          <button class="btn btn-primary btn-block">Beli sekarang</button>
+        </div>
+
+        <div class="avail">
+          <i data-lucide="check"></i>
+          <div><p>Stok 3 unit di gudang Semarang, siap kirim besok</p><p>Teknisi mengantar, merakit, dan mengajari cara pakai di rumah. Gratis untuk Kota Semarang.</p></div>
+        </div>
+
+        <div class="acc">
+          <details open>
+            <summary><i data-lucide="list"></i>Spesifikasi<i data-lucide="chevron-down" class="chev i-sm"></i></summary>
+            <div class="acc__body">
+              <table class="spec">
+                <tr><td>Kapasitas beban</td><td>136 kg</td></tr>
+                <tr><td>Motor</td><td>2 × 250 W brushless</td></tr>
+                <tr><td>Baterai</td><td>Lithium 24 V 12 Ah, bisa dilepas</td></tr>
+                <tr><td>Jarak tempuh</td><td>± 20 km per pengisian</td></tr>
+                <tr><td>Kecepatan maksimum</td><td>6 km/jam, 5 tingkat</td></tr>
+                <tr><td>Roda</td><td>Belakang 12", depan 8", ban padat</td></tr>
+                <tr><td>Dimensi terbuka</td><td>104 × 64 × 92 cm</td></tr>
+                <tr><td>Kendali</td><td>Joystick kiri/kanan, rem elektromagnetik</td></tr>
+              </table>
+            </div>
+          </details>
+          <details>
+            <summary><i data-lucide="file-check"></i>Izin edar &amp; dokumen<i data-lucide="chevron-down" class="chev i-sm"></i></summary>
+            <div class="acc__body">AKL 21603320119, kelas risiko A. Salinan izin edar, sertifikat distributor, dan buku manual berbahasa Indonesia ikut dikirim bersama unit.</div>
+          </details>
+          <details>
+            <summary><i data-lucide="shield-check"></i>Garansi &amp; servis<i data-lucide="chevron-down" class="chev i-sm"></i></summary>
+            <div class="acc__body">Rangka, motor, dan controller 1 tahun resmi; baterai 6 bulan. Tukar unit dalam 14 hari jika cacat pabrik. Klaim lewat WhatsApp dengan nomor seri; teknisi datang atau unit dijemput.</div>
+          </details>
+          <details>
+            <summary><i data-lucide="truck"></i>Pengiriman &amp; instalasi<i data-lucide="chevron-down" class="chev i-sm"></i></summary>
+            <div class="acc__body">Kota Semarang: diantar teknisi, 1–2 hari. Luar kota: ekspedisi kargo dengan packing kayu, 3–7 hari, panduan rakit lewat video call.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PENAWARAN FASKES (Stripe Checkout) ================= -->
+<section data-screen="faskes">
+  <div class="co">
+    <div class="co__pane">
+      <div class="co__inner">
+        <a class="co__back" href="#home"><i data-lucide="arrow-left" class="i-sm"></i><span class="logo">medira</span><span>untuk faskes</span></a>
+        <p class="co__label">Permintaan penawaran · 6 produk</p>
+        <p class="co__total" id="qTotal">Rp21.245.400</p>
+        <p style="font-size:14px;color:var(--co-ink-2)">Estimasi harga katalog termasuk PPN. Harga instansi final ada di surat penawaran.</p>
+        <div class="co-items" id="qItems">
+          <div class="co-item" data-price="695000"><b>A&amp;D Tensimeter Digital UA-767S</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>6</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp695.000</small></div>
+          <div class="co-item" data-price="2900000"><b>GEA Suction Pump SXT-1A</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>2</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp2.900.000</small></div>
+          <div class="co-item" data-price="955000"><b>GEA Kursi Roda Standar FS 871</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>4</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp955.000</small></div>
+          <div class="co-item" data-price="200000"><b>ABN Stetoskop Majestic Dewasa</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>6</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp200.000</small></div>
+          <div class="co-item" data-price="2600000"><b>Easy Move Patient Mover FLY-220H</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>1</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp2.600.000</small></div>
+          <div class="co-item" data-price="775000"><b>GEA Ultrasonic Nebulizer 402 C</b><span class="amt"></span><small><span class="co-qty" data-stepper data-min="0" data-max="200"><button type="button"><i data-lucide="minus"></i></button><output>2</output><button type="button" data-inc><i data-lucide="plus"></i></button></span>× Rp775.000</small></div>
+        </div>
+        <div class="co-sum" style="margin-top:8px"><span>Subtotal</span><span id="qSub">Rp19.140.000</span></div>
+        <div class="co-sum"><span>PPN 11%</span><span id="qTax">Rp2.105.400</span></div>
+        <div class="co-sum co-sum--total"><span>Estimasi total</span><span id="qTotal2">Rp21.245.400</span></div>
+        <ul class="docs">
+          <li><i data-lucide="check"></i>Surat penawaran resmi bertanda tangan, berlaku 14 hari</li>
+          <li><i data-lucide="check"></i>Salinan izin edar (AKL/AKD) untuk setiap produk</li>
+          <li><i data-lucide="check"></i>Sertifikat CDAKB dan izin distributor alat kesehatan</li>
+          <li><i data-lucide="check"></i>Brosur teknis dan jadwal kalibrasi pertama</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="co__form">
+      <div class="co__inner">
+        <form data-demo-form="#qDone" id="qForm">
+          <h2>Data fasilitas kesehatan</h2>
+          <div class="group">
+            <label class="fld"><input value="Klinik Pratama Sehat Bersama" aria-label="Nama faskes"></label>
+            <div class="row2">
+              <label class="fld"><select aria-label="Jenis faskes"><option>Klinik pratama</option><option>Klinik utama</option><option>Rumah sakit</option><option>Puskesmas</option><option>Laboratorium</option></select></label>
+              <label class="fld"><input value="Kota Pekalongan" aria-label="Kota"></label>
+            </div>
+            <label class="fld"><input value="NPWP 01.482.615.7-512.000" aria-label="NPWP"></label>
+          </div>
+
+          <span class="lbl">Cara pengadaan</span>
+          <div class="methods" data-select id="method">
+            <button type="button" class="method is-active" data-value="langsung"><span class="radio"></span><b>Pembelian langsung</b><small>Kami kirim surat penawaran, faskes menerbitkan PO. Faktur dan pengiriman setelah PO diterima.</small></button>
+            <button type="button" class="method" data-value="ekatalog"><span class="radio"></span><b>E-katalog LKPP</b><small>Semua produk di daftar ini tayang di e-katalog. Kami kirim tautan etalase untuk dipesan PPK lewat akun instansi.</small></button>
+            <button type="button" class="method" data-value="tender"><span class="radio"></span><b>Tender / pengadaan langsung instansi</b><small>Kami siapkan surat dukungan distributor, spesifikasi teknis, dan penawaran sesuai dokumen pemilihan.</small></button>
+          </div>
+
+          <span class="lbl">Termin &amp; pengiriman</span>
+          <div class="group">
+            <div class="row2">
+              <label class="fld"><select aria-label="Termin"><option>Tempo 30 hari</option><option>Tunai saat barang tiba</option><option>Tempo 60 hari</option></select></label>
+              <label class="fld"><select aria-label="Kebutuhan"><option>Butuh sebelum 15 Nov</option><option>Secepatnya</option><option>Fleksibel</option></select></label>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" checked>Sertakan instalasi, pelatihan pemakaian, dan kalibrasi pertama tensimeter</label>
+
+          <span class="lbl">Penanggung jawab</span>
+          <div class="group">
+            <div class="row2">
+              <label class="fld"><input value="dr. Nadia Prameswari" aria-label="Nama"></label>
+              <label class="fld"><input value="Kepala klinik" aria-label="Jabatan"></label>
+            </div>
+            <label class="fld"><input value="0812-4400-7316" aria-label="WhatsApp"></label>
+          </div>
+
+          <button class="submit">Kirim permintaan penawaran</button>
+          <p class="fine">Surat penawaran dikirim ke WhatsApp dan email penanggung jawab paling lambat Senin, 19 Oktober pukul 12.00. Belum ada komitmen pembelian.</p>
+        </form>
+
+        <div id="qDone" hidden>
+          <span class="done-badge"><i data-lucide="check"></i></span>
+          <h2 style="font-size:24px">Permintaan PNW-2610-0418 diterima</h2>
+          <p style="color:var(--co-ink-2);margin:8px 0 24px">Tim penjualan faskes menyiapkan surat penawaran dan dokumen izin edar. Anda akan dihubungi dari nomor kantor sebelum Senin, 19 Oktober pukul 12.00.</p>
+          <div class="co-sum"><span>Cara pengadaan</span><b id="qMethodOut">Pembelian langsung</b></div>
+          <div class="co-sum"><span>Estimasi total</span><b id="qTotal3">Rp21.245.400</b></div>
+          <div class="co-sum"><span>Berlaku</span><b>14 hari setelah terbit</b></div>
+          <a class="submit" href="#home" style="display:flex;align-items:center;justify-content:center">Kembali ke katalog</a>
+        </div>
+        <p class="powered"><span>Dokumen dikirim sebagai PDF</span><span>·</span><span>Data instansi tidak dibagikan</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANTREAN SERVIS & GARANSI (staf) ================= -->
+<section data-screen="servis">
+  <div class="ops">
+    <nav class="ops-rail"><span class="mark">m</span><a href="#servis" aria-label="Menu"><i data-lucide="menu"></i></a><a href="#home" aria-label="Katalog"><i data-lucide="house"></i></a><a href="#faskes" aria-label="Penawaran"><i data-lucide="file-text"></i></a><a class="is-active" href="#servis" aria-label="Servis"><i data-lucide="wrench"></i></a><a href="#servis" aria-label="Gudang"><i data-lucide="package"></i></a></nav>
+    <div style="min-width:0">
+      <div class="ops-bar">
+        <a class="back" href="#home"><i data-lucide="arrow-left"></i>Kembali ke toko</a>
+        <div class="tools"><i data-lucide="search" class="hide-sm"></i><i data-lucide="bell"></i><i data-lucide="circle-help" class="hide-sm"></i><span class="me">RS</span></div>
+      </div>
+      <main class="ops-main">
+        <h1 class="ops-title"><b>Tiket servis &amp; garansi:</b> 26</h1>
+        <p class="ops-sub">Minggu, 18 Oktober 2026 · 3 teknisi bertugas · 2 kunjungan hari ini</p>
+        <div class="ops-tools">
+          <button class="obtn">Cari tiket atau nomor seri<i data-lucide="search"></i></button>
+          <button class="obtn">Urutkan: prioritas<i data-lucide="chevron-down"></i></button>
+          <span class="spacer"></span>
+          <span class="hide-sm" style="color:#5d6b76">Filter</span>
+          <button class="obtn">Teknisi<i data-lucide="chevron-down"></i></button>
+          <button class="obtn">Garansi<i data-lucide="chevron-down"></i></button>
+          <button class="obtn obtn--fill"><i data-lucide="plus"></i>Tiket baru</button>
+        </div>
+        <div class="ops-tabs" data-select id="opsTabs">
+          <button class="is-active" data-value="all">Semua <span>26</span></button>
+          <button data-value="bengkel">Di bengkel <span>11</span></button>
+          <button data-value="kunjungan">Kunjungan lokasi <span>7</span></button>
+          <button data-value="kalibrasi">Kalibrasi <span>4</span></button>
+          <button data-value="tukar">Tukar unit 14 hari <span>4</span></button>
+        </div>
+        <div class="qtable-wrap">
+          <table class="qtable" id="qtable">
+            <thead><tr><th>Pelanggan<i data-lucide="arrow-up-down"></i></th><th>Alat &amp; nomor seri<i data-lucide="arrow-up-down"></i></th><th>Keluhan</th><th>Masuk<i data-lucide="arrow-up-down"></i></th><th>Prioritas<i data-lucide="arrow-up-down"></i></th><th>Status<i data-lucide="arrow-up-down"></i></th><th>Garansi</th><th>Teknisi</th><th></th></tr></thead>
+            <tbody>
+              <tr class="is-urgent" data-type="kunjungan"><td>RSIA Permata Bunda<span class="sub">Kunjungan, Kudus</span></td><td>GEA Suction Pump SXT-1A<a class="id" href="#servis">SN SXT1A-2311-0447</a></td><td class="issue">Tekanan hisap tidak mencapai −0,08 MPa, dipakai di ruang bersalin</td><td>18.10.2026<span class="sub">08.12</span></td><td><span class="prio prio--hi">Tinggi<i data-lucide="chevrons-up"></i></span></td><td><span class="chip">teknisi berangkat</span></td><td><span class="war war--on">Kontrak servis</span><span class="sub">s/d 12.2026</span></td><td><span class="tech"><i>AF</i>Arif</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr class="is-urgent" data-type="bengkel"><td>Ratna Wulandari<span class="sub">Pelanggan rumah</span></td><td>GEA Kursi Roda Elektrik GO-112<a class="id" href="#produk">SN GO112-2405-0193</a></td><td class="issue">Joystick tidak merespons setelah baterai diisi semalam</td><td>17.10.2026<span class="sub">15.40</span></td><td><span class="prio prio--hi">Tinggi<i data-lucide="chevrons-up"></i></span></td><td><span class="chip chip--wait">menunggu suku cadang</span></td><td><span class="war war--on">Aktif</span><span class="sub">s/d 05.2027</span></td><td><span class="tech"><i>AF</i>Arif</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="kalibrasi"><td>Klinik Pratama Sehat Bersama<span class="sub">Kontrak kalibrasi</span></td><td>A&amp;D Tensimeter UA-767S × 6<a class="id" href="#faskes">PNW-2604-0211</a></td><td class="issue">Kalibrasi tahunan sebelum visitasi akreditasi klinik</td><td>16.10.2026<span class="sub">dijadwalkan 22.10</span></td><td><span class="prio prio--md">Sedang<i data-lucide="chevron-up"></i></span></td><td><span class="chip">dijadwalkan</span></td><td><span class="war war--on">Kontrak servis</span><span class="sub">s/d 04.2027</span></td><td><span class="tech"><i>DW</i>Dewi</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="bengkel"><td>Hendra Saputro<span class="sub">Pelanggan rumah</span></td><td>OMRON Nebulizer NE-C28<a class="id" href="#servis">SN 2025-0817-33201</a></td><td class="issue">Kompresor berbunyi keras, uap keluar lemah</td><td>16.10.2026<span class="sub">11.05</span></td><td><span class="prio prio--lo">Rendah<i data-lucide="chevron-down"></i></span></td><td><span class="chip">diagnosa</span></td><td><span class="war war--on">Aktif</span><span class="sub">s/d 08.2027</span></td><td><span class="tech"><i>YG</i>Yoga</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="tukar"><td>Lestari Handayani<span class="sub">Pelanggan rumah</span></td><td>BEURER Tensimeter BM 53<a class="id" href="#servis">SN BM53-26-08841</a></td><td class="issue">Muncul error E2 di setiap pengukuran, unit baru 6 hari</td><td>15.10.2026<span class="sub">13.22</span></td><td><span class="prio prio--md">Sedang<i data-lucide="chevron-up"></i></span></td><td><span class="chip chip--ok">unit pengganti dikirim</span></td><td><span class="war war--on">Tukar 14 hari</span><span class="sub">s/d 23.10.2026</span></td><td><span class="tech"><i>YG</i>Yoga</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="bengkel"><td>Joko Prasetyo<span class="sub">Pelanggan rumah</span></td><td>SERENITY Kursi Transfer TC-802<a class="id" href="#servis">SN TC802-2402-0058</a></td><td class="issue">Hidrolik turun perlahan saat pasien duduk</td><td>14.10.2026<span class="sub">10.30</span></td><td><span class="prio prio--md">Sedang<i data-lucide="chevron-up"></i></span></td><td><span class="chip chip--ok">siap diambil</span></td><td><span class="war war--off">Habis</span><span class="sub">biaya Rp185.000</span></td><td><span class="tech"><i>DW</i>Dewi</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="kunjungan"><td>Klinik Utama Mitra Husada<span class="sub">Kunjungan, Kota Semarang</span></td><td>GEA Ultrasonic Nebulizer 402 C × 2<a class="id" href="#servis">SN 402C-2609-0112/0113</a></td><td class="issue">Unit baru, minta pelatihan perawat jaga malam</td><td>13.10.2026<span class="sub">dijadwalkan 20.10</span></td><td><span class="prio prio--lo">Rendah<i data-lucide="chevron-down"></i></span></td><td><span class="chip">dijadwalkan</span></td><td><span class="war war--on">Aktif</span><span class="sub">s/d 09.2027</span></td><td><span class="tech"><i>YG</i>Yoga</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+              <tr data-type="bengkel"><td>Sri Mulyani<span class="sub">Pelanggan rumah</span></td><td>GEA Suction Pump DYX-1A<a class="id" href="#servis">SN DYX1A-2501-0921</a></td><td class="issue">Botol penampung retak, minta ganti tabung</td><td>12.10.2026<span class="sub">09.48</span></td><td><span class="prio prio--lo">Rendah<i data-lucide="chevron-down"></i></span></td><td><span class="chip chip--bad">menunggu konfirmasi biaya</span></td><td><span class="war war--off">Tidak termasuk</span><span class="sub">aksesori habis pakai</span></td><td><span class="tech"><i>AF</i>Arif</span></td><td><button class="kebab" aria-label="Menu"><i data-lucide="more-vertical" class="i-sm"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  // Foto: muat file ke .photo[data-img]
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.5 } }); }
+
+  // Beranda: tambah ke keranjang
+  var count = 1;
+  document.getElementById("plist").addEventListener("click", function (e) {
+    var b = e.target.closest("button.addbtn"); if (!b) return;
+    var on = b.classList.toggle("is-added"); count += on ? 1 : -1;
+    document.getElementById("cartCount").textContent = count;
+  });
+
+  // Cek izin edar
+  var db = {
+    "21603320119": ["Kursi roda elektrik GEA GO-112", "Kelas A (risiko rendah)", "14 Maret 2029", "Rp6.750.000 · stok 3 unit"],
+    "20501421765": ["Tensimeter digital OMRON HEM-7180", "Kelas B (risiko sedang)", "2 Agustus 2030", "Rp350.000 · stok 24 unit"],
+    "20403710482": ["Nebulizer kompresor OMRON NE-C28", "Kelas B (risiko sedang)", "9 Januari 2028", "Rp615.000 · stok 18 unit"]
+  };
+  document.getElementById("aklForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = document.getElementById("aklIn").value.replace(/\D/g, ""), r = db[n], out = document.getElementById("aklOut");
+    out.innerHTML = r
+      ? '<dt>Status</dt><dd><span class="verified"><i data-lucide="badge-check" class="i-sm"></i>Terdaftar, berlaku</span></dd><dt>Produk</dt><dd>' + r[0] + '</dd><dt>Kelas risiko</dt><dd>' + r[1] + '</dd><dt>Berlaku sampai</dt><dd>' + r[2] + '</dd><dt>Dijual di sini</dt><dd><a class="link" href="#produk">' + r[3] + "</a></dd>"
+      : '<dt>Status</dt><dd style="color:var(--bad)">Nomor tidak ditemukan</dd><dt>Saran</dt><dd style="font-weight:400">Periksa kembali 11 digit di kemasan, atau tanyakan ke kami lewat WhatsApp sebelum membeli.</dd>';
+    icons();
+  });
+
+  // Produk: paket, jumlah, tenor
+  var p = { price: 6750000, qty: 1, tenor: 12 };
+  function updP() {
+    var t = p.price * p.qty;
+    document.getElementById("pPrice").textContent = rupiah(t);
+    document.getElementById("pMonthly").textContent = rupiah(t / p.tenor);
+  }
+  document.getElementById("pkg").addEventListener("lapak:select", function (e) { p.price = Number(e.detail.value); updP(); });
+  document.getElementById("tenor").addEventListener("lapak:select", function (e) { p.tenor = Number(e.detail.value); updP(); });
+  document.getElementById("pQty").addEventListener("lapak:change", function (e) { p.qty = e.detail.value; updP(); });
+
+  // Penawaran faskes
+  function updQ() {
+    var sub = 0, n = 0;
+    document.querySelectorAll("#qItems .co-item").forEach(function (row) {
+      var q = Number(row.querySelector("output").textContent), a = q * Number(row.getAttribute("data-price"));
+      row.querySelector(".amt").textContent = rupiah(a); sub += a; if (q > 0) n++;
+      row.style.opacity = q ? 1 : .45;
+    });
+    var tax = Math.round(sub * 0.11), tot = sub + tax;
+    document.getElementById("qSub").textContent = rupiah(sub);
+    document.getElementById("qTax").textContent = rupiah(tax);
+    ["qTotal", "qTotal2", "qTotal3"].forEach(function (id) { document.getElementById(id).textContent = rupiah(tot); });
+    document.querySelector(".co__label").textContent = "Permintaan penawaran · " + n + " produk";
+  }
+  document.getElementById("qItems").addEventListener("lapak:change", updQ);
+  updQ();
+  var mNames = { langsung: "Pembelian langsung", ekatalog: "E-katalog LKPP", tender: "Tender / pengadaan instansi" };
+  document.getElementById("method").addEventListener("lapak:select", function (e) { document.getElementById("qMethodOut").textContent = mNames[e.detail.value]; });
+
+  // Servis: filter tab
+  document.getElementById("opsTabs").addEventListener("lapak:select", function (e) {
+    var v = e.detail.value;
+    document.querySelectorAll("#qtable tbody tr").forEach(function (tr) { tr.hidden = !(v === "all" || tr.getAttribute("data-type") === v); });
+  });
+})();
+</script>
+</body>
+</html>

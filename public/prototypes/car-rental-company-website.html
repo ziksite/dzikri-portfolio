@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laju Rental — Sewa mobil lepas kunci & dengan sopir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/car-rental-company-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="guides">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">laju<b>.</b></a>
+        <nav class="nav"><a href="#armada">Armada</a><a href="#tarif">Tarif</a><a href="#syarat">Syarat & deposit</a><a href="#korporat">Korporat</a></nav>
+        <div class="header__right"><a class="btn-link" href="#serah-terima">Masuk petugas</a><a class="btn btn-brand btn-pill btn-sm" href="#armada">Pesan mobil<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      </header>
+
+      <div class="hero">
+        <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+          <p class="t-kicker">Rental mobil di Makassar, Manado, Kendari, dan Ambon</p>
+          <h1 class="t-hero">Sewa mobil lepas kunci atau dengan sopir, total jelas sebelum bayar.</h1>
+          <p class="t-lead" style="max-width:540px">Pilih kota, jam ambil, dan jam kembali. Tarif 12 jam, 24 jam, dan bulanan tampil per mobil, bersama dokumen yang perlu dibawa dan besar deposit.</p>
+          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+            <a class="btn btn-brand btn-pill btn-lg" href="#armada">Lihat mobil tersedia<i data-lucide="chevron-right" class="i-sm"></i></a>
+            <a class="btn-link" href="#korporat">Sewa bulanan untuk kantor<i data-lucide="chevron-right" class="i-sm"></i></a>
+          </div>
+          <ul class="ticks" style="margin-top:6px">
+            <li><i data-lucide="check"></i>Overtime 1 jam pertama tidak dihitung</li>
+            <li><i data-lucide="check"></i>DP 50% saat pesan, sisanya saat serah terima</li>
+            <li><i data-lucide="check"></i>Antar ke bandara, hotel, atau alamat dalam kota</li>
+          </ul>
+        </div>
+
+        <form class="window" id="heroSearch" onsubmit="location.hash='armada';return false">
+          <div class="seg" data-select id="heroMode">
+            <button type="button" class="is-active" data-value="self">Lepas kunci</button>
+            <button type="button" data-value="driver">Dengan sopir</button>
+            <button type="button" data-value="month">Bulanan</button>
+          </div>
+          <div>
+            <span class="label">Lokasi ambil</span>
+            <div class="stack">
+              <div class="stack__row"><select class="field" aria-label="Kota"><option>Makassar</option><option>Manado</option><option>Kendari</option><option>Ambon</option></select></div>
+              <div class="stack__row"><select class="field" aria-label="Titik ambil"><option>Bandara Sultan Hasanuddin</option><option>Pool Panakkukang</option><option>Antar ke hotel / alamat</option></select></div>
+            </div>
+          </div>
+          <div data-when>
+            <span class="label">Jadwal</span>
+            <div class="stack">
+              <div class="stack__row"><label class="stack__cell"><small>Ambil</small><input value="Sen, 19 Okt"></label><label class="stack__cell"><small>Jam</small><select><option>08.00</option><option>09.00</option><option>10.00</option></select></label></div>
+              <div class="stack__row" id="rowReturn"><label class="stack__cell"><small>Kembali</small><input value="Rab, 21 Okt"></label><label class="stack__cell"><small>Jam</small><select><option>08.00</option><option>12.00</option><option>18.00</option></select></label></div>
+              <div class="stack__row" id="rowMonths" hidden><label class="stack__cell"><small>Lama kontrak</small><select><option>3 bulan</option><option>6 bulan</option><option>12 bulan</option></select></label><label class="stack__cell"><small>Jumlah unit</small><select><option>2 unit</option><option>1 unit</option><option>3–5 unit</option></select></label></div>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox"> Kembalikan di lokasi lain</label>
+          <hr class="divider">
+          <div class="line"><span id="heroEstLabel">Toyota Avanza, 2 × 24 jam</span><span id="heroEst">Rp600.000</span></div>
+          <button class="btn btn-ink btn-lg btn-block" type="submit" id="heroBtn">Cari mobil tersedia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarif -->
+  <section class="section" id="tarif-sec">
+    <div class="wrap">
+      <div class="section__head">
+        <div style="max-width:560px;display:flex;flex-direction:column;gap:10px">
+          <p class="t-kicker">Tarif per jenis mobil</p>
+          <h2 class="t-h1">Empat paket, satu tabel.</h2>
+          <p>Paket 12 jam dihitung sejak mobil dipakai. Per day berlaku pukul 06.00–24.00 di tanggal yang sama. Semua paket untuk dalam kota; luar kota dihitung terpisah.</p>
+        </div>
+        <div class="seg seg--inline" data-select id="rateMode">
+          <button type="button" class="is-active" data-value="self">Lepas kunci</button>
+          <button type="button" data-value="driver">+ Sopir</button>
+          <button type="button" data-value="bbm">+ Sopir + BBM</button>
+          <button type="button" data-value="allin">All in</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="rates num">
+          <thead><tr><th>Mobil</th><th>Kategori</th><th class="r">12 jam</th><th class="r">Per day</th><th class="r">24 jam</th><th></th></tr></thead>
+          <tbody id="rateBody"></tbody>
+        </table>
+      </div>
+      <p class="t-small" style="margin-top:14px" id="rateNote">Lepas kunci hanya untuk Small MPV, hatchback, pick up, dan mobil box. BBM diberikan secukupnya dan dikembalikan seperti semula.</p>
+    </div>
+  </section>
+
+  <!-- Syarat & deposit -->
+  <section class="section" style="background:var(--soft)">
+    <div class="wrap split">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="t-kicker">Syarat & deposit</p>
+        <h2 class="t-h1">Siapkan sebelum hari ambil.</h2>
+        <p>Foto dokumen diunggah saat memesan supaya bisa dicek lebih dulu. Dokumen asli dan deposit diserahkan saat serah terima, lalu dikembalikan begitu mobil kembali dalam kondisi semula.</p>
+        <div class="seg seg--inline" data-select data-tabs="req" style="margin-top:8px;justify-self:start;align-self:flex-start">
+          <button type="button" class="is-active" data-value="self">Lepas kunci</button>
+          <button type="button" data-value="driver">Dengan sopir</button>
+        </div>
+      </div>
+      <div>
+        <div class="docs" data-panel="req:self">
+          <div class="doc"><span class="doc__ic"><i data-lucide="id-card"></i></span><div><b>KTP asli penyewa</b><p>Masih berlaku. Pemilik KTP hadir saat serah terima dan difoto bersama mobil.</p></div><span class="badge">Wajib</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="car"></i></span><div><b>SIM A aktif</b><p>Atas nama yang sama dengan KTP.</p></div><span class="badge">Wajib</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="files"></i></span><div><b>Satu dokumen pendukung</b><p>Kartu keluarga, NPWP, atau ID karyawan.</p></div><span class="badge">Pilih satu</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="wallet"></i></span><div><b>Deposit Rp1.000.000</b><p>Tunai atau transfer saat serah terima. Kembali penuh setelah cek kondisi, BBM, dan kilometer.</p></div><span class="badge badge--brand">Dikembalikan</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="fuel"></i></span><div><b>BBM kembali seperti semula</b><p>Selisih BBM ditagih sesuai harga pom. Kelebihan tidak diganti.</p></div><span class="badge">Aturan</span></div>
+        </div>
+        <div class="docs" data-panel="req:driver" hidden>
+          <div class="doc"><span class="doc__ic"><i data-lucide="id-card"></i></span><div><b>KTP pemesan</b><p>Cukup foto, untuk nama di invoice.</p></div><span class="badge">Wajib</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="wallet"></i></span><div><b>Tanpa deposit</b><p>DP 50% saat pesan, pelunasan ke sopir saat jemput dengan invoice.</p></div><span class="badge badge--ok">Tanpa jaminan</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="utensils"></i></span><div><b>Makan sopir & parkir</b><p>Ditanggung penyewa pada paket + Sopir dan + Sopir + BBM. Sudah termasuk pada All in.</p></div><span class="badge">Per paket</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="bed"></i></span><div><b>Sopir menginap</b><p>Penginapan dari penyewa, atau uang ganti Rp150.000 per malam.</p></div><span class="badge">Luar kota</span></div>
+          <div class="doc"><span class="doc__ic"><i data-lucide="route"></i></span><div><b>Tol & penyeberangan</b><p>Ditanggung penumpang untuk perjalanan luar kota.</p></div><span class="badge">Luar kota</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Korporat -->
+  <section class="section">
+    <div class="wrap split">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="t-kicker">Sewa bulanan korporat</p>
+        <h2 class="t-h1">Mobil operasional tanpa beli unit.</h2>
+        <p>Kontrak mulai 3 bulan. Servis berkala, pajak, dan mobil pengganti saat servis ditanggung. Tagihan bulanan satu invoice untuk semua unit.</p>
+        <ul class="ticks"><li><i data-lucide="check"></i>Pilihan sopir tetap, 12 jam per hari kerja</li><li><i data-lucide="check"></i>Laporan kilometer dan BBM per unit tiap bulan</li><li><i data-lucide="check"></i>Pembayaran termin 30 hari untuk perusahaan</li></ul>
+        <a class="btn btn-ink btn-pill" style="align-self:flex-start;margin-top:6px" href="#">Minta penawaran via WhatsApp</a>
+      </div>
+      <div class="table-wrap">
+        <table class="rates num" style="min-width:560px">
+          <thead><tr><th>Mobil</th><th class="r">Lepas kunci / bulan</th><th class="r">Dengan sopir / bulan</th></tr></thead>
+          <tbody>
+            <tr><td><div class="car-cell"><span class="thumb photo-sm" data-img="assets/car-rental-company-website/toyota-avanza.webp"></span><div><b>Toyota Avanza</b><span>7 kursi · matic</span></div></div></td><td class="r ink">Rp6.750.000</td><td class="r ink">Rp11.250.000</td></tr>
+            <tr><td><div class="car-cell"><span class="thumb photo-sm" data-img="assets/car-rental-company-website/daihatsu-xenia.webp"></span><div><b>Daihatsu Xenia</b><span>7 kursi · manual</span></div></div></td><td class="r ink">Rp6.250.000</td><td class="r ink">Rp10.750.000</td></tr>
+            <tr><td><div class="car-cell"><span class="thumb photo-sm" data-img="assets/car-rental-company-website/toyota-innova.webp"></span><div><b>Toyota Innova</b><span>8 kursi · diesel</span></div></div></td><td class="r ink">Rp9.500.000</td><td class="r ink">Rp14.000.000</td></tr>
+            <tr><td><div class="car-cell"><span class="thumb photo-sm" data-img="assets/car-rental-company-website/daihatsu-granmax-box.webp"></span><div><b>Daihatsu Gran Max Box</b><span>Niaga · 1 ton</span></div></div></td><td class="r ink">Rp5.250.000</td><td class="r ink">Rp9.750.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div style="display:flex;flex-direction:column;gap:10px"><span class="logo">laju<b>.</b></span><p class="t-meta" style="max-width:300px">Rental mobil, minibus, dan mobil niaga. Pemesanan dibuka setiap hari pukul 06.00–24.00, termasuk Minggu dan libur nasional.</p></div>
+      <div><h4>Kota</h4><ul><li><a href="#armada">Makassar (pusat)</a></li><li><a href="#armada">Manado</a></li><li><a href="#armada">Kendari</a></li><li><a href="#armada">Ambon</a></li></ul></div>
+      <div><h4>Sewa</h4><ul><li><a href="#armada">Armada</a></li><li><a href="#tarif">Tarif & durasi</a></li><li><a href="#syarat">Syarat & deposit</a></li><li><a href="#korporat">Korporat</a></li></ul></div>
+      <div><h4>Bantuan</h4><ul><li><a href="#">WhatsApp CS</a></li><li><a href="#">Cek pesanan</a></li><li><a href="#">Kebijakan privasi</a></li></ul></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= HASIL ARMADA ================= -->
+<section data-screen="armada">
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">laju<b>.</b></a>
+      <nav class="nav"><a href="#armada">Armada</a><a href="#tarif">Tarif</a><a href="#syarat">Syarat & deposit</a><a href="#korporat">Korporat</a></nav>
+      <div class="header__right"><a class="btn btn-line btn-sm" href="#">Cek pesanan</a></div>
+    </header>
+    <div class="searchbar">
+      <div class="searchbar__cell"><small>Lokasi ambil</small><b>Makassar · Bandara Sultan Hasanuddin</b></div>
+      <div class="searchbar__cell"><small>Ambil</small><b>Sen, 19 Okt · 08.00</b></div>
+      <div class="searchbar__cell"><small>Kembali</small><b>Rab, 21 Okt · 08.00</b></div>
+      <div class="searchbar__end">
+        <div class="seg seg--inline" data-select id="listMode"><button type="button" class="is-active" data-value="self">Lepas kunci</button><button type="button" data-value="driver">Dengan sopir</button></div>
+        <a class="btn btn-line btn-sm" href="#home">Ubah</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap">
+      <div style="min-width:0;flex:1 1 auto;overflow:hidden"><div class="filters" data-select id="catFilter">
+        <button type="button" class="filter is-active" data-value="all">Semua</button>
+        <button type="button" class="filter" data-value="Small MPV">Small MPV</button>
+        <button type="button" class="filter" data-value="Hatchback">Hatchback</button>
+        <button type="button" class="filter" data-value="SUV">SUV & double cabin</button>
+        <button type="button" class="filter" data-value="Mewah">Mewah</button>
+        <button type="button" class="filter" data-value="Minibus">Minibus</button>
+        <button type="button" class="filter" data-value="Niaga">Niaga</button>
+      </div></div>
+      <p class="t-meta" id="resCount">17 mobil</p>
+    </div>
+    <div class="results">
+      <div class="list" id="carList"></div>
+      <aside class="aside">
+        <p class="t-h3" id="asideTitle">Untuk lepas kunci</p>
+        <div class="kv"><i data-lucide="id-card"></i><div><b>KTP, SIM A, + 1 pendukung</b><p class="t-meta">Unggah foto saat pesan, asli dibawa saat ambil</p></div></div>
+        <div class="kv" id="asideDeposit"><i data-lucide="wallet"></i><div><b>Deposit Rp1.000.000</b><p class="t-meta">Kembali penuh saat mobil dikembalikan</p></div></div>
+        <div class="kv"><i data-lucide="clock-3"></i><div><b>Overtime</b><p class="t-meta">1 jam pertama gratis, berikutnya 10% tarif per jam</p></div></div>
+        <div class="kv"><i data-lucide="plane-landing"></i><div><b>Antar bandara Rp100.000</b><p class="t-meta">Pool Panakkukang tanpa biaya</p></div></div>
+        <hr class="divider">
+        <p class="t-small">Durasi: 2 × 24 jam. Lewat dari 09.00 di hari kembali dihitung overtime.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHECKOUT ================= -->
+<section data-screen="pesan">
+  <div class="checkout">
+    <div class="checkout__summary">
+      <div class="checkout__inner">
+        <a class="back" href="#armada"><i data-lucide="arrow-left" class="i-sm"></i><span class="logo">laju<b>.</b></span></a>
+        <div>
+          <p class="t-meta">Toyota Avanza · Lepas kunci · 2 × 24 jam</p>
+          <p class="t-price num" id="coTotal">Rp700.000</p>
+        </div>
+        <div class="photo" data-img="assets/car-rental-company-website/toyota-avanza.webp" style="max-width:360px"></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="kv"><i data-lucide="arrow-up-right"></i><div><b>Ambil · Sen, 19 Okt 2026, 08.00</b><p class="t-meta" id="coPlace">Bandara Sultan Hasanuddin, kedatangan domestik</p></div></div>
+          <div class="kv"><i data-lucide="arrow-down-left"></i><div><b>Kembali · Rab, 21 Okt 2026, 08.00</b><p class="t-meta">Lokasi yang sama, overtime gratis s/d 09.00</p></div></div>
+        </div>
+        <hr class="divider">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="line"><span>Sewa 2 × 24 jam × Rp300.000</span><span>Rp600.000</span></div>
+          <div class="line"><span id="coPlaceLabel">Antar ke bandara</span><span id="coPlaceFee">Rp100.000</span></div>
+          <hr class="divider">
+          <div class="line line--total"><span>Total sewa</span><span id="coTotal2">Rp700.000</span></div>
+          <div class="line"><span id="coNowLabel">Dibayar sekarang (DP 50%)</span><span id="coNow">Rp350.000</span></div>
+          <div class="line"><span>Sisa saat serah terima</span><span id="coRest">Rp350.000</span></div>
+        </div>
+        <div class="note"><i data-lucide="shield-check"></i><div><b>Deposit Rp1.000.000 saat serah terima</b><p>Terpisah dari tarif sewa. Dikembalikan setelah cek kondisi, BBM, dan kilometer.</p></div></div>
+        <div class="foot-links"><a href="#syarat">Syarat sewa</a><a href="#">Kebijakan privasi</a><a href="#">Bantuan</a></div>
+      </div>
+    </div>
+
+    <div class="checkout__form">
+      <div class="checkout__inner">
+        <form id="coForm" data-demo-form="#coDone" style="display:flex;flex-direction:column;gap:24px">
+          <div class="form-group">
+            <h3>Data penyewa</h3>
+            <label class="label" for="coEmail" style="margin:0">Email</label>
+            <input class="field" id="coEmail" value="raka.pratama@mail.id">
+            <label class="label" style="margin:8px 0 0">Nama sesuai KTP & WhatsApp</label>
+            <div class="stack"><div class="stack__row"><input class="field" value="Raka Pratama" aria-label="Nama"></div><div class="stack__row"><input class="field" value="0812 4410 2287" aria-label="WhatsApp"></div></div>
+          </div>
+          <div class="form-group">
+            <h3>Lokasi serah terima</h3>
+            <select class="field" id="coPlaceSel">
+              <option value="100000" data-l="Antar ke bandara" data-p="Bandara Sultan Hasanuddin, kedatangan domestik">Bandara Sultan Hasanuddin · Rp100.000</option>
+              <option value="75000" data-l="Antar ke hotel / alamat" data-p="Hotel atau alamat dalam kota Makassar">Hotel / alamat dalam kota · Rp75.000</option>
+              <option value="0" data-l="Ambil di pool" data-p="Pool Panakkukang, Makassar">Ambil di pool Panakkukang · gratis</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <h3>Foto dokumen</h3>
+            <div class="stack">
+              <div class="upl is-done"><i data-lucide="circle-check" class="upl__ic"></i><span class="upl__name">KTP<small>ktp-raka.jpg · 1,2 MB</small></span><button type="button" class="btn-link" style="font-size:14px">Ganti</button></div>
+              <div class="upl" id="uplSim"><i data-lucide="circle-dashed" class="upl__ic"></i><span class="upl__name">SIM A<small>JPG atau PDF, maks. 5 MB</small></span><button type="button" class="btn btn-line btn-sm" data-upload>Unggah</button></div>
+              <div class="upl"><i data-lucide="circle-dashed" class="upl__ic"></i><span class="upl__name"><select style="border:0;background:transparent;font-weight:500;color:var(--ink);padding:0;outline:0"><option>NPWP</option><option>Kartu keluarga</option><option>ID karyawan</option></select><small>Satu dokumen pendukung</small></span><button type="button" class="btn btn-line btn-sm" data-upload>Unggah</button></div>
+            </div>
+            <p class="t-small">Dokumen asli dibawa saat ambil mobil.</p>
+          </div>
+          <div class="form-group">
+            <h3>Pembayaran</h3>
+            <div class="seg" data-select id="coPlan"><button type="button" class="is-active" data-value="dp">DP 50%</button><button type="button" data-value="full">Bayar lunas</button></div>
+            <div class="pay-methods" data-select="is-selected" style="margin-top:8px">
+              <button type="button" class="pay is-selected">QRIS<small>E-wallet</small></button>
+              <button type="button" class="pay">BCA<small>Virtual acc.</small></button>
+              <button type="button" class="pay">Mandiri<small>Virtual acc.</small></button>
+              <button type="button" class="pay">BNI<small>Virtual acc.</small></button>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" checked> Saya setuju BBM dikembalikan seperti semula dan overtime 10% per jam setelah 1 jam pertama.</label>
+          <button class="btn btn-ink btn-lg btn-block" type="submit" id="coPay">Bayar DP Rp350.000</button>
+        </form>
+
+        <div id="coDone" hidden style="display:flex;flex-direction:column;gap:20px">
+          <span class="done-ic"><i data-lucide="check"></i></span>
+          <div><h2 class="t-h2">Pesanan LJR-24183 terkonfirmasi</h2><p style="margin-top:6px">Bukti bayar dan ringkasan dikirim ke WhatsApp 0812 4410 2287.</p></div>
+          <div class="stack" style="padding:4px 0">
+            <div class="upl"><i data-lucide="file-check" class="upl__ic"></i><span class="upl__name">Dokumen sedang dicek<small>Hasil cek paling lambat Minggu, 18 Okt pukul 20.00</small></span></div>
+            <div class="upl"><i data-lucide="user-round" class="upl__ic"></i><span class="upl__name">Petugas serah terima<small>Nama dan nomor dikirim H-1 sebelum jam ambil</small></span></div>
+            <div class="upl"><i data-lucide="wallet" class="upl__ic"></i><span class="upl__name">Bawa saat ambil<small>KTP, SIM A, NPWP asli dan deposit Rp1.000.000</small></span></div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-ink" href="#">Simpan ke kalender</a><a class="btn btn-line" href="#">Chat CS</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN SERAH TERIMA (POOL) ================= -->
+<section data-screen="serah-terima">
+  <div class="pool">
+    <div class="pool-bar">
+      <a class="logo" href="#home" style="font-size:20px">laju<b>.</b></a>
+      <button class="btn btn-line btn-sm">Pool Makassar<i data-lucide="chevron-down" class="i-sm"></i></button>
+      <nav class="pool-tabs"><a class="is-active" href="#serah-terima">Serah terima</a><a href="#serah-terima">Unit</a><a href="#serah-terima">Pesanan</a></nav>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <span class="t-meta" style="white-space:nowrap">Minggu, 18 Okt 2026 · 07.42</span>
+        <button class="btn btn-line btn-sm"><i data-lucide="wrench" class="i-sm"></i>Blokir unit</button>
+      </div>
+    </div>
+
+    <div class="pool-body">
+      <div style="min-width:0">
+        <div class="today">
+          <div class="card">
+            <div class="card__head"><h3>Keluar hari ini · 4</h3><span class="badge badge--brand">Lepas kunci 3 · sopir 1</span></div>
+            <div data-select id="tripList">
+              <button type="button" class="trip is-active" data-value="ho1"><span class="trip__time">08.00</span><div style="min-width:0"><p class="trip__who">Nadia Putri → Bandara</p><div class="trip__chips"><span class="chip mono">DD 1487 KR</span><span class="chip">Avanza</span><span class="chip">LJR-24170</span></div></div><span class="badge badge--ok">Dokumen OK</span></button>
+              <button type="button" class="trip" data-value="ho2"><span class="trip__time">09.30</span><div style="min-width:0"><p class="trip__who">Fajar Rahman → Pool</p><div class="trip__chips"><span class="chip mono">DD 1352 LK</span><span class="chip">Xenia</span><span class="chip">LJR-24172</span></div></div><span class="badge badge--warn">SIM belum</span></button>
+              <button type="button" class="trip" data-value="ho3"><span class="trip__time">11.00</span><div style="min-width:0"><p class="trip__who">PT Sinar Bahari · sopir Arif</p><div class="trip__chips"><span class="chip mono">DD 1906 QE</span><span class="chip">Hiace Commuter</span></div></div><span class="badge">Sopir + BBM</span></button>
+              <button type="button" class="trip" data-value="ho4"><span class="trip__time">15.00</span><div style="min-width:0"><p class="trip__who">Yudha Saputra → Hotel Losari</p><div class="trip__chips"><span class="chip mono">DD 1774 KR</span><span class="chip">Innova</span><span class="chip">LJR-24178</span></div></div><span class="badge badge--bad">DP belum</span></button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Kembali hari ini · 3</h3><span class="badge">Cek BBM & km</span></div>
+            <div class="trip"><span class="trip__time">07.00</span><div style="min-width:0"><p class="trip__who">Rini Lestari</p><div class="trip__chips"><span class="chip mono">DD 1215 KR</span><span class="chip">Avanza</span><span class="chip">overtime 0</span></div></div><span class="badge badge--ok">Deposit kembali</span></div>
+            <div class="trip"><span class="trip__time">10.00</span><div style="min-width:0"><p class="trip__who">Andi Mappaseng</p><div class="trip__chips"><span class="chip mono">DD 1650 LK</span><span class="chip">Jazz</span></div></div><span class="badge">Terjadwal</span></div>
+            <div class="trip"><span class="trip__time">13.00</span><div style="min-width:0"><p class="trip__who">CV Tiga Saudara</p><div class="trip__chips"><span class="chip mono">DD 8823 QA</span><span class="chip">Gran Max Box</span></div></div><span class="badge">Terjadwal</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head" style="flex-wrap:wrap"><h3>Ketersediaan armada · 18–24 Okt</h3>
+            <div class="legend"><span><i></i>Lepas kunci</span><span><i class="l-driver"></i>Dengan sopir</span><span><i class="l-service"></i>Servis</span><span><i class="l-hold"></i>Menunggu DP</span></div>
+          </div>
+          <div class="gantt-wrap"><div class="gantt" id="gantt"></div></div>
+        </div>
+      </div>
+
+      <aside class="card handover" id="hoPanel">
+        <div class="card__head"><div><h3>Serah terima · LJR-24170</h3><p class="t-small">Nadia Putri · 0813 5520 4718</p></div><span class="badge badge--brand">08.00</span></div>
+        <form id="hoForm" data-demo-form="#hoDone">
+          <div class="ho-sec">
+            <div class="kv" style="font-size:15px"><i data-lucide="car-front"></i><div><b class="mono">DD 1487 KR</b><p class="t-meta">Toyota Avanza 1.5 G matic · 2 × 24 jam · kembali Sel, 20 Okt 08.00</p></div></div>
+          </div>
+          <div class="ho-sec">
+            <h4>Dokumen asli <span class="t-small" id="hoCount">2/3</span></h4>
+            <label class="check"><input type="checkbox" class="ho-chk" checked> KTP sesuai foto pesanan</label>
+            <label class="check"><input type="checkbox" class="ho-chk" checked> SIM A aktif s/d 2029</label>
+            <label class="check"><input type="checkbox" class="ho-chk"> NPWP</label>
+          </div>
+          <div class="ho-sec">
+            <h4>Deposit Rp1.000.000</h4>
+            <div class="seg" data-select><button type="button" class="is-active">Tunai</button><button type="button">Transfer</button></div>
+            <label class="check"><input type="checkbox" class="ho-chk"> Deposit sudah diterima</label>
+          </div>
+          <div class="ho-sec">
+            <h4>BBM & kilometer</h4>
+            <div class="fuel" data-select="is-selected"><button type="button">E</button><button type="button">¼</button><button type="button" class="is-selected">½</button><button type="button">¾</button><button type="button">F</button></div>
+            <input class="field num" value="48.215 km" aria-label="Odometer">
+          </div>
+          <div class="ho-sec">
+            <h4>Foto kondisi <span class="t-small">bersama penyewa</span></h4>
+            <div class="shots"><span class="shot is-done"><i data-lucide="check" class="i-sm"></i>Depan</span><span class="shot is-done"><i data-lucide="check" class="i-sm"></i>Belakang</span><span class="shot is-done"><i data-lucide="check" class="i-sm"></i>Kiri</span><button type="button" class="shot" id="shotRight"><i data-lucide="camera" class="i-sm"></i>Kanan</button></div>
+            <input class="field" value="Baret halus bumper kiri belakang" aria-label="Catatan">
+          </div>
+          <div class="ho-sec"><button class="btn btn-ink btn-block" type="submit" id="hoBtn" disabled>Serahkan kunci</button><p class="t-small" style="text-align:center">Penyewa tanda tangan checklist di tablet ini</p></div>
+        </form>
+        <div id="hoDone" hidden class="ho-sec" style="align-items:flex-start;padding:24px 18px">
+          <span class="done-ic"><i data-lucide="key-round"></i></span>
+          <h3 class="t-h3">Unit keluar 07.48</h3>
+          <p class="t-meta">Checklist dan 5 foto tersimpan di LJR-24170. Pengingat kembali dikirim ke penyewa Sel, 20 Okt pukul 06.00.</p>
+          <a class="btn btn-line btn-sm" href="#serah-terima">Serah terima berikutnya · 09.30</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/car-rental-company-website/";
+  // Tarif dari situs asli (ribu rupiah). self = lepas kunci, driver = + sopir, bbm = + sopir + BBM, allin = semua termasuk
+  var cars = [
+    { id: "avanza", name: "Toyota Avanza", cat: "Small MPV", seat: 7, tr: "Matic", img: "toyota-avanza", units: 5, free: 3, self: { h12: 250, h24: 300 }, driver: { h12: 350, day: 400, h24: 425 }, bbm: { h12: 445, day: 525, h24: 575 }, allin: { h12: 525, day: 600, h24: 700 } },
+    { id: "xenia", name: "Daihatsu Xenia", cat: "Small MPV", seat: 7, tr: "Manual", img: "daihatsu-xenia", units: 4, free: 1, self: { h12: 225, h24: 275 }, driver: { h12: 325, day: 400, h24: 425 }, bbm: { h12: 450, day: 550, h24: 600 }, allin: { h12: 550, day: 675, h24: 725 } },
+    { id: "innova", name: "Toyota Innova", cat: "Small MPV", seat: 8, tr: "Diesel", img: "toyota-innova", units: 4, free: 2, self: { h12: 350, h24: 400 }, driver: { h12: 450, h24: 550 }, bbm: { h12: 550, h24: 750 } },
+    { id: "jazz", name: "Honda Jazz", cat: "Hatchback", seat: 5, tr: "Matic", img: "honda-jazz", units: 2, free: 1, self: { h12: 350 } },
+    { id: "fortuner", name: "Toyota Fortuner", cat: "SUV", seat: 7, tr: "Diesel", img: "toyota-fortuner", units: 2, free: 1, bbm: { h12: 1500 } },
+    { id: "pajero", name: "Mitsubishi Pajero Sport", cat: "SUV", seat: 7, tr: "Diesel", img: "mitsubishi-pajero-sport", units: 2, free: 2, bbm: { h12: 1100 } },
+    { id: "triton", name: "Mitsubishi Triton", cat: "SUV", seat: 5, tr: "Double cabin", img: "mitsubishi-triton", units: 1, free: 1, bbm: { h12: 1500 } },
+    { id: "rubicon", name: "Jeep Rubicon", cat: "SUV", seat: 4, tr: "Matic", img: "jeep-rubicon", units: 1, free: 0, bbm: { h12: 4000 } },
+    { id: "vellfire", name: "Toyota Vellfire", cat: "Mewah", seat: 7, tr: "Matic", img: "toyota-vellfire", units: 2, free: 1, bbm: { h12: 1500 } },
+    { id: "camry", name: "Toyota Camry", cat: "Mewah", seat: 5, tr: "Sedan matic", img: "toyota-camry", units: 1, free: 1, bbm: { h12: 1500 } },
+    { id: "serena", name: "Nissan Serena", cat: "Mewah", seat: 7, tr: "Matic", img: "nissan-serena", units: 1, free: 1, bbm: { h12: 1200 } },
+    { id: "pregio", name: "Kia Pregio", cat: "Minibus", seat: 12, tr: "Diesel", img: "kia-pregio", units: 2, free: 2, bbm: { h12: 650 } },
+    { id: "hiace", name: "Toyota Hiace Commuter", cat: "Minibus", seat: 16, tr: "Diesel", img: "toyota-hiace-commuter", units: 3, free: 1, bbm: { h12: 900 } },
+    { id: "premio", name: "Toyota Hiace Premio", cat: "Minibus", seat: 14, tr: "Diesel", img: "toyota-hiace-premio", units: 1, free: 1, bbm: { h12: 1000 } },
+    { id: "elf", name: "Isuzu Elf Long", cat: "Minibus", seat: 19, tr: "Diesel", img: "isuzu-elf-long", units: 2, free: 1, bbm: { h12: 1000 } },
+    { id: "pickup", name: "Daihatsu Gran Max Pick Up", cat: "Niaga", seat: 2, tr: "Bak terbuka", img: "daihatsu-granmax-pickup", units: 2, free: 2, self: { h12: 200 } },
+    { id: "box", name: "Daihatsu Gran Max Box", cat: "Niaga", seat: 2, tr: "Box 1 ton", img: "daihatsu-granmax-box", units: 2, free: 1, self: { h12: 200 } }
+  ];
+  function rp(k) { return window.rupiah(k * 1000); }
+  function loadPhotos(root) {
+    (root || document).querySelectorAll("[data-img]").forEach(function (box) {
+      if (box.querySelector("img")) return;
+      var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+    });
+  }
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+
+  // ---- Tabel tarif beranda
+  var notes = {
+    self: "Lepas kunci hanya untuk Small MPV, hatchback, pick up, dan mobil box. BBM diberikan secukupnya dan dikembalikan seperti semula.",
+    driver: "Harga mobil + sopir. BBM, parkir, dan makan sopir ditanggung penyewa.",
+    bbm: "Harga mobil + sopir + BBM dalam kota. Parkir dan makan sopir ditanggung penyewa. SUV, mewah, dan minibus hanya tersedia di paket ini atau All in.",
+    allin: "Mobil, sopir, BBM, parkir, dan makan sopir. Tiket wisata dan parkir bandara lebih dari sekali tidak termasuk."
+  };
+  function renderRates(mode) {
+    var html = "";
+    cars.forEach(function (c) {
+      var p = c[mode];
+      function cell(k) { return p && p[k] ? '<td class="r ink">' + rp(p[k]) + "</td>" : '<td class="r na">—</td>'; }
+      html += '<tr><td><div class="car-cell"><span class="thumb" data-img="' + A + c.img + '.webp"></span><div><b>' + c.name + "</b><span>" + c.seat + " kursi · " + c.tr + "</span></div></div></td><td>" + c.cat + "</td>" +
+        (p ? cell("h12") + cell("day") + cell("h24") + '<td class="r"><a class="btn btn-line btn-sm" href="#armada">Pesan</a></td>'
+           : '<td class="r na" colspan="3">' + (mode === "self" ? "Hanya dengan sopir + BBM" : "Tanya CS") + '</td><td></td>') + "</tr>";
+    });
+    document.getElementById("rateBody").innerHTML = html;
+    document.getElementById("rateNote").textContent = notes[mode];
+    loadPhotos(document.getElementById("rateBody"));
+  }
+  renderRates("self");
+  document.getElementById("rateMode").addEventListener("lapak:select", function (e) { renderRates(e.detail.value); });
+
+  // ---- Widget hero
+  document.getElementById("heroMode").addEventListener("lapak:select", function (e) {
+    var m = e.detail.value;
+    document.getElementById("rowReturn").hidden = m === "month";
+    document.getElementById("rowMonths").hidden = m !== "month";
+    document.getElementById("heroEstLabel").textContent = m === "self" ? "Toyota Avanza, 2 × 24 jam" : m === "driver" ? "Avanza + sopir, 2 × 12 jam" : "Avanza lepas kunci, 2 unit × 3 bulan";
+    document.getElementById("heroEst").textContent = m === "self" ? "Rp600.000" : m === "driver" ? "Rp700.000" : "Rp40.500.000";
+    document.getElementById("heroBtn").textContent = m === "month" ? "Minta penawaran korporat" : "Cari mobil tersedia";
+  });
+
+  // ---- Daftar hasil
+  var state = { mode: "self", cat: "all" };
+  function priceFor(c) {
+    if (state.mode === "self") {
+      if (!c.self) return null;
+      return c.self.h24 ? { rate: c.self.h24, unit: "24 jam", n: 2 } : { rate: c.self.h12, unit: "12 jam", n: 4 };
+    }
+    if (c.driver) return { rate: c.driver.h12, unit: "12 jam + sopir", n: 2 };
+    if (c.bbm) return { rate: c.bbm.h12, unit: "12 jam + sopir + BBM", n: 2 };
+    return { rate: c.self.h12 + 100, unit: "12 jam + sopir", n: 2 };
+  }
+  function renderList() {
+    var html = "", count = 0;
+    cars.forEach(function (c) {
+      if (state.cat !== "all" && c.cat !== state.cat) return;
+      count++;
+      var p = priceFor(c), off = !p || c.free === 0;
+      var stock = c.free === 0 ? '<span class="badge badge--bad">Penuh di tanggal ini</span>' : c.free === 1 ? '<span class="badge badge--warn">Sisa 1 unit</span>' : '<span class="badge badge--ok">' + c.free + " dari " + c.units + " unit tersedia</span>";
+      var right;
+      if (!p) right = '<div><p class="t-meta">Hanya dengan sopir + BBM</p><p class="t-small">mulai ' + rp(c.bbm.h12) + " / 12 jam</p></div><button type=\"button\" class=\"btn btn-line btn-sm\" data-switch>Lihat dengan sopir</button>";
+      else if (c.free === 0) right = '<div><b>' + rp(p.rate) + '</b><p class="t-small">/ ' + p.unit + '</p></div><button type="button" class="btn btn-line btn-sm">Kabari jika tersedia</button>';
+      else right = '<div><b>' + rp(p.rate) + '</b><p class="t-small">/ ' + p.unit + " · total " + rp(p.rate * p.n) + '</p></div><a class="btn btn-brand btn-sm" href="#pesan">Pilih</a>';
+      html += '<div class="car' + (off ? " is-off" : "") + '"><div class="photo" data-img="' + A + c.img + '.webp"></div><div class="car__body"><p class="t-h3">' + c.name + '</p><div class="car__chips"><span class="chip">' + c.cat + '</span><span class="chip"><i data-lucide="users"></i>' + c.seat + ' kursi</span><span class="chip"><i data-lucide="settings-2"></i>' + c.tr + "</span></div><div>" + stock + '</div></div><div class="car__price num">' + right + "</div></div>";
+    });
+    var list = document.getElementById("carList");
+    list.innerHTML = html;
+    document.getElementById("resCount").textContent = count + " mobil";
+    loadPhotos(list); icons();
+  }
+  renderList();
+  var listMode = document.getElementById("listMode");
+  function setMode(m) {
+    state.mode = m; renderList();
+    document.getElementById("asideTitle").textContent = m === "self" ? "Untuk lepas kunci" : "Untuk sewa dengan sopir";
+    document.getElementById("asideDeposit").hidden = m !== "self";
+  }
+  listMode.addEventListener("lapak:select", function (e) { setMode(e.detail.value); });
+  document.getElementById("catFilter").addEventListener("lapak:select", function (e) { state.cat = e.detail.value; renderList(); });
+  document.getElementById("carList").addEventListener("click", function (e) {
+    if (!e.target.closest("[data-switch]")) return;
+    listMode.querySelectorAll("button").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-value") === "driver"); });
+    setMode("driver");
+  });
+
+  // ---- Checkout
+  var co = { fee: 100000, plan: "dp" };
+  function updCo() {
+    var total = 600000 + co.fee, now = co.plan === "dp" ? total / 2 : total;
+    ["coTotal", "coTotal2"].forEach(function (id) { document.getElementById(id).textContent = rupiah(total); });
+    document.getElementById("coPlaceFee").textContent = co.fee ? rupiah(co.fee) : "Gratis";
+    document.getElementById("coNow").textContent = rupiah(now);
+    document.getElementById("coRest").textContent = rupiah(total - now);
+    document.getElementById("coNowLabel").textContent = co.plan === "dp" ? "Dibayar sekarang (DP 50%)" : "Dibayar sekarang (lunas)";
+    document.getElementById("coPay").textContent = (co.plan === "dp" ? "Bayar DP " : "Bayar lunas ") + rupiah(now);
+  }
+  document.getElementById("coPlaceSel").addEventListener("change", function () {
+    var o = this.options[this.selectedIndex];
+    co.fee = Number(this.value);
+    document.getElementById("coPlaceLabel").textContent = o.getAttribute("data-l");
+    document.getElementById("coPlace").textContent = o.getAttribute("data-p");
+    updCo();
+  });
+  document.getElementById("coPlan").addEventListener("lapak:select", function (e) { co.plan = e.detail.value; updCo(); });
+  document.querySelectorAll("[data-upload]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var row = b.closest(".upl"); row.classList.add("is-done");
+      row.querySelector(".upl__ic").outerHTML = '<i data-lucide="circle-check" class="upl__ic"></i>';
+      row.querySelector("small").textContent = "foto-dokumen.jpg · 0,9 MB";
+      b.outerHTML = '<button type="button" class="btn-link" style="font-size:14px">Ganti</button>';
+      icons();
+    });
+  });
+
+  // ---- Gantt ketersediaan (kolom = setengah hari, 18 Okt 00.00 = 0)
+  var days = [["Min", 18], ["Sen", 19], ["Sel", 20], ["Rab", 21], ["Kam", 22], ["Jum", 23], ["Sab", 24]];
+  var groups = [
+    { name: "Toyota Avanza", meta: "5 unit", util: 74, units: [
+      ["DD 1487 KR", "1.5 G matic", [[1, 5, "", "LJR-24170 · Nadia P."], [6, 9, "hold", "LJR-24185 · DP"]]],
+      ["DD 1215 KR", "1.5 G matic", [[0, 1, "", "Rini L."], [2, 6, "", "LJR-24183 · Raka P."], [8, 14, "", "LJR-24166 · 3 hari"]]],
+      ["DD 1931 LK", "1.3 E manual", [[0, 6, "driver", "PT Arunika · sopir Hendra"], [9, 12, "", "LJR-24190"]]],
+      ["DD 1702 KR", "1.5 G matic", [[3, 5, "service", "Servis 40.000 km"], [10, 14, "", "LJR-24181"]]]
+    ] },
+    { name: "Toyota Innova", meta: "4 unit", util: 61, units: [
+      ["DD 1774 KR", "2.4 G diesel", [[1, 5, "hold", "LJR-24178 · DP"], [7, 10, "driver", "Rombongan Kendari"]]],
+      ["DD 1820 LK", "2.4 V diesel", [[0, 8, "driver", "Kontrak bulanan · PT Sinar Bahari"], [8, 14, "driver", "Kontrak bulanan"]]]
+    ] },
+    { name: "Minibus", meta: "8 unit", util: 48, warn: true, units: [
+      ["DD 1906 QE", "Hiace Commuter", [[1, 2, "driver", "PT Sinar Bahari"], [4, 6, "driver", "Wisata Malino"]]],
+      ["DD 7011 QA", "Isuzu Elf Long", [[5, 7, "service", "Ganti kampas rem"], [11, 14, "driver", "Ziarah Bulukumba"]]]
+    ] }
+  ];
+  var g = '<div class="g-corner">Unit</div>';
+  days.forEach(function (d, i) { g += '<div class="g-head' + (i === 0 ? " is-today" : "") + '">' + d[0] + "<b>" + d[1] + " Okt</b></div>"; });
+  groups.forEach(function (gr) {
+    g += '<div class="g-group"><b>' + gr.name + '</b><span class="t-small">' + gr.meta + '</span><span class="util">Utilisasi minggu ini<span class="util__bar' + (gr.warn ? " util__bar--warn" : "") + '"><i style="width:' + gr.util + '%"></i></span>' + gr.util + "%</span></div>";
+    gr.units.forEach(function (u) {
+      g += '<div class="g-unit"><b>' + u[0] + "</b><span>" + u[1] + '</span></div><div class="g-track"><span class="now-line" style="--x:' + (0.64 / 14 * 100).toFixed(2) + '%"></span>';
+      u[2].forEach(function (b) { g += '<span class="bar' + (b[2] ? " bar--" + b[2] : "") + '" style="grid-column:' + (b[0] + 1) + " / " + (b[1] + 1) + '" title="' + b[3] + '">' + b[3] + "</span>"; });
+      g += "</div>";
+    });
+  });
+  document.getElementById("gantt").innerHTML = g;
+
+  // ---- Checklist serah terima
+  var hoBtn = document.getElementById("hoBtn"), shotRight = document.getElementById("shotRight");
+  function updHo() {
+    var chks = document.querySelectorAll(".ho-chk"), docs = 0, all = true;
+    chks.forEach(function (c, i) { if (i < 3 && c.checked) docs++; if (!c.checked) all = false; });
+    document.getElementById("hoCount").textContent = docs + "/3";
+    hoBtn.disabled = !(all && shotRight.classList.contains("is-done"));
+  }
+  document.getElementById("hoForm").addEventListener("change", updHo);
+  shotRight.addEventListener("click", function () { shotRight.classList.add("is-done"); shotRight.innerHTML = '<i data-lucide="check" class="i-sm"></i>Kanan'; icons(); updHo(); });
+  updHo();
+
+  loadPhotos();
+})();
+</script>
+</body>
+</html>

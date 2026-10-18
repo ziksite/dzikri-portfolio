@@ -1,0 +1,58 @@
+{
+  "slug": "islamic-school-website",
+  "kind": "Website",
+  "industry": "Education & Training",
+  "client": "Confidential",
+  "tags": ["Laravel", "MySQL", "Online Admissions", "Parent Portal"],
+  "metrics": [
+    { "value": "4", "label": "SCHOOL LEVELS", "labelId": "JENJANG SEKOLAH" },
+    { "value": "5", "label": "ADMISSION STEPS ONLINE", "labelId": "LANGKAH PPDB ONLINE" },
+    { "value": "3", "label": "RE-ENROLMENT PAYMENT OPTIONS", "labelId": "SKEMA BAYAR DAFTAR ULANG" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with levels, admission offer and open day", "captionId": "Beranda dengan jenjang, potongan PPDB, dan open day" },
+    { "hash": "daftar", "caption": "Admission form: uploading documents with a fee summary", "captionId": "Formulir PPDB: unggah dokumen dengan ringkasan biaya" },
+    { "hash": "status", "caption": "Parent portal with acceptance, schedule and re-enrolment payment", "captionId": "Portal orang tua: pengumuman, jadwal, dan pembayaran daftar ulang" },
+    { "hash": "admin", "caption": "Admissions board with seat quotas per level", "captionId": "Papan PPDB dengan kuota kursi per jenjang" }
+  ],
+  "content_en": {
+    "title": "Islamic School Website & Online Admissions",
+    "type": "SCHOOL WEBSITE & ADMISSIONS",
+    "category": "Admissions System",
+    "summary": "A redesign for an integrated Islamic school running playgroup, kindergarten, primary, junior and senior high on one campus. Parents compare levels and fees, register and upload documents from their phone, follow observation dates and results in a parent portal, and pay re-enrolment online; the admissions team works from a board with seat quotas.",
+    "challenge": "The old site opened with a pop-up poster and a long block of text. Registration went through a generic online form linked from a link-in-bio page, so parents could not see which documents were missing, when the test was, or when results would come out. No fees were published at all, so every cost question moved to WhatsApp.\n\nPrograms for the four levels were spread over separate profile pages dominated by vision and mission statements, the gallery was mostly text-heavy banners and group photos of children, and the FAQ answers were cut off.",
+    "solution": "The homepage answers what parents ask first: each level with ages, hours, Qur'an memorisation targets and programs, what happens every school day, campus facilities, a fee table that switches between the first-wave price and the normal price, the five admission steps, an agenda and an FAQ. Admission runs as numbered steps with a registration number, document uploads from a phone with a progress bar, and a summary that applies the first-wave and sibling discounts.\n\nThe parent portal handles more than one child: an acceptance notice with the decision letter, the registration journey, a date strip with observation, interview and deadline markers, and a checkout for re-enrolment with full payment, three instalments or a pay-once-until-graduation option through virtual account or QRIS. Staff work from a board that moves applicants from missing documents to paid, with seat quotas per level and gender. The planned production stack is Laravel with MySQL, a VA/QRIS payment gateway and WhatsApp notifications.",
+    "features": [
+      "Level cards with ages, hours, memorisation targets and programs",
+      "Fee table with first-wave and normal pricing",
+      "Step-by-step online admission with registration number",
+      "Document upload from phone with progress and verification",
+      "Parent portal for several children with schedule and results",
+      "Re-enrolment checkout: full, 3 instalments or pay once until graduation",
+      "Admissions board with seat quotas per level"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Sekolah Islam & PPDB Online",
+    "type": "WEBSITE SEKOLAH & PPDB",
+    "category": "Admissions System",
+    "summary": "Redesign untuk sekolah Islam terpadu dengan unit KB, TK, SD, SMP, dan SMA dalam satu kampus. Orang tua membandingkan jenjang dan biaya, mendaftar dan mengunggah dokumen dari HP, memantau jadwal observasi dan pengumuman di portal orang tua, lalu membayar daftar ulang secara online; tim PPDB bekerja dari papan dengan kuota kursi.",
+    "challenge": "Situs lama dibuka dengan popup poster dan blok teks panjang. Pendaftaran lewat formulir online umum yang ditautkan dari halaman link-in-bio, sehingga orang tua tidak bisa melihat dokumen yang kurang, jadwal tes, atau kapan pengumuman keluar. Tidak ada satu pun informasi biaya, sehingga semua pertanyaan biaya pindah ke WhatsApp.\n\nProgram empat jenjang tersebar di halaman profil terpisah yang didominasi visi dan misi, galeri berisi banner penuh teks dan foto kelompok anak, dan jawaban FAQ terpotong.",
+    "solution": "Beranda menjawab pertanyaan pertama orang tua: setiap jenjang dengan usia, jam belajar, target hafalan, dan program; kegiatan harian; fasilitas kampus; tabel biaya yang bisa beralih antara harga gelombang 1 dan harga normal; lima langkah PPDB; agenda; dan FAQ. Pendaftaran berjalan per langkah dengan nomor pendaftaran, unggah dokumen dari HP dengan progress, dan ringkasan yang menghitung potongan gelombang 1 dan potongan saudara.\n\nPortal orang tua mendukung lebih dari satu anak: pengumuman diterima dengan surat keputusan, perjalanan pendaftaran, deret tanggal dengan penanda observasi, wawancara, dan tenggat, serta checkout daftar ulang dengan pilihan lunas, cicil 3×, atau sekali bayar hingga lulus lewat VA atau QRIS. Staf bekerja dari papan yang memindahkan pendaftar dari dokumen kurang sampai lunas, dengan kuota kursi per jenjang dan per putra/putri. Stack produksi yang direncanakan adalah Laravel dengan MySQL, payment gateway VA/QRIS, dan notifikasi WhatsApp.",
+    "features": [
+      "Kartu jenjang dengan usia, jam belajar, target hafalan, dan program",
+      "Tabel biaya harga gelombang 1 dan harga normal",
+      "PPDB online bertahap dengan nomor pendaftaran",
+      "Unggah dokumen dari HP dengan progress dan verifikasi",
+      "Portal orang tua untuk beberapa anak, berisi jadwal dan hasil",
+      "Checkout daftar ulang: lunas, cicil 3×, atau sekali hingga lulus",
+      "Papan PPDB dengan kuota kursi per jenjang"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

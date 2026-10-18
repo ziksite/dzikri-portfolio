@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tunas Arta — Koperasi simpan pinjam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/rural-bank-website.css">
+<style>
+  .home-save { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; }
+  .home-trust { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; }
+  .portal-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  .ao-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  @media (max-width: 720px) { .dep-est { grid-template-columns: 1fr !important; margin: 8px 16px 16px !important; } .dep-est > div:nth-child(2) { text-align: left !important; } .decision { margin-left: -16px !important; margin-right: -16px !important; } }
+  @media (max-width: 1024px) { .home-save, .home-trust, .portal-grid, .ao-two { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="notice"><div class="wrap"><i data-lucide="shield-alert" class="i-sm"></i><span><b>Waspada penipuan.</b> Kami tidak menawarkan pinjaman tanpa agunan (KTA) dan tidak memungut biaya apa pun sebelum pencairan.</span><a href="#kantor-resmi">Cek saluran resmi</a></div></div>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">tunasarta</a>
+      <nav class="nav"><a href="#simpanan">Simpanan</a><a href="#pinjaman">Pinjaman</a><a href="#simulasi">Simulasi</a><a href="#kantor-resmi">Kantor</a></nav>
+      <div class="header__right"><a class="btn btn-secondary btn-sm hide-sm" href="#portal">Masuk anggota</a><a class="btn btn-primary btn-sm" href="#simulasi">Ajukan pinjaman</a></div>
+    </header>
+  </div>
+
+  <div class="guides">
+    <div class="wrap">
+      <div class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Koperasi simpan pinjam di Bandung Raya</p>
+          <h1 class="t-hero">Menabung, simpanan berjangka, dan modal usaha untuk anggota.</h1>
+          <p class="t-lead" style="max-width:560px">Tabungan tanpa biaya administrasi bulanan, simpanan berjangka 1 sampai 24 bulan, dan pinjaman Rp1 juta sampai Rp500 juta dengan jaminan sertifikat, BPKB, atau simpanan berjangka.</p>
+          <div class="hero__ctas"><a class="btn btn-primary" href="#simulasi">Hitung angsuran</a><a class="link" href="#simpanan">Lihat bunga simpanan<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:8px" class="t-meta">
+            <span style="display:inline-flex;gap:8px;align-items:center"><i data-lucide="landmark" class="i-sm"></i>Badan hukum koperasi, diawasi Kementerian Koperasi</span>
+            <span style="display:inline-flex;gap:8px;align-items:center"><i data-lucide="map-pin" class="i-sm"></i>3 kantor layanan</span>
+          </div>
+        </div>
+        <form class="float-card" onsubmit="location.hash='simulasi';return false">
+          <div style="display:flex;justify-content:space-between;align-items:center"><p class="t-h3">Perkiraan angsuran</p><span class="pill">Bunga flat</span></div>
+          <div class="field"><label for="qAmt">Jumlah pinjaman</label><div class="input-affix"><span>Rp</span><input id="qAmt" inputmode="numeric" value="25.000.000"></div></div>
+          <div class="field"><span class="field__label">Jangka waktu (bulan)</span><div class="seg" id="qTen" data-select><button type="button" data-value="12">12</button><button type="button" data-value="18">18</button><button type="button" class="is-active" data-value="24">24</button><button type="button" data-value="36">36</button><button type="button" data-value="48">48</button><button type="button" data-value="60">60</button></div></div>
+          <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:end;gap:12px">
+            <div><p class="t-small">Angsuran per bulan</p><p class="t-amount" id="qOut" style="font-size:32px">Rp1.354.500</p></div>
+            <p class="t-small" style="text-align:right" id="qRate">1,25% / bulan</p>
+          </div>
+          <button class="btn btn-dark btn-block">Simulasi lengkap &amp; ajukan</button>
+          <p class="t-small">Perkiraan, belum termasuk biaya provisi dan asuransi. Persetujuan mengikuti hasil analisa dan survei jaminan.</p>
+        </form>
+      </div>
+
+      <div class="strip" style="margin-bottom:72px">
+        <div class="strip__item"><span class="ico"><i data-lucide="wallet" class="i-sm"></i></span><b>3,5% p.a.</b><span class="muted">Tabungan</span></div>
+        <div class="strip__item"><span class="ico"><i data-lucide="lock" class="i-sm"></i></span><b>mulai 3,25% p.a.</b><span class="muted">Simpanan berjangka</span></div>
+        <div class="strip__item"><span class="ico"><i data-lucide="banknote" class="i-sm"></i></span><b>mulai 0,80% / bln</b><span class="muted">Pinjaman</span></div>
+        <div class="strip__item"><span class="ico"><i data-lucide="users" class="i-sm"></i></span><b>Rp100.000 / bln</b><span class="muted">Tabungan arisan</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Simpanan -->
+    <section id="simpanan" style="padding-bottom:72px">
+      <div class="sec-head"><div><p class="eyebrow" style="margin-bottom:6px">Simpanan</p><h2 class="t-h2">Bunga simpanan berjangka</h2></div><p class="t-small">Berlaku sejak 15 Juli 2024 · dapat berubah sesuai keputusan pengurus</p></div>
+      <div class="home-save">
+        <div class="card" style="padding:0;gap:0">
+          <div style="padding:20px 24px 8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><p class="t-meta">Pilih nominal dan jangka waktu untuk melihat perkiraan bunga.</p><span class="pill">% per tahun</span></div>
+          <div style="overflow-x:auto;padding:0 8px">
+            <table class="table rates" id="rateTbl">
+              <thead><tr><th>Nominal</th><th class="c">1 bln</th><th class="c">3 bln</th><th class="c">6 bln</th><th class="c">12 bln</th><th class="c">24 bln</th></tr></thead>
+              <tbody>
+                <tr data-min="1000000"><td>Rp1–50 juta</td><td class="cell">3,25</td><td class="cell">3,75</td><td class="cell">4,00</td><td class="cell">4,25</td><td class="cell">4,75</td></tr>
+                <tr data-min="51000000"><td>Rp51–100 juta</td><td class="cell">3,75</td><td class="cell">4,25</td><td class="cell">4,50</td><td class="cell is-active">4,75</td><td class="cell">5,25</td></tr>
+                <tr data-min="101000000"><td>Rp101–500 juta</td><td class="cell">4,00</td><td class="cell">4,50</td><td class="cell">4,75</td><td class="cell">5,00</td><td class="cell">5,50</td></tr>
+                <tr data-min="501000000"><td>Di atas Rp500 juta</td><td class="cell">4,75</td><td class="cell">5,25</td><td class="cell">5,50</td><td class="cell">5,75</td><td class="cell">6,75</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dep-est" style="margin:8px 24px 24px;padding:18px;border-radius:var(--r-md);background:var(--shell);display:grid;grid-template-columns:1fr auto;gap:12px 20px;align-items:center">
+            <div class="field"><label for="depAmt">Nominal simpanan</label><div class="input-affix" style="height:44px"><span>Rp</span><input id="depAmt" inputmode="numeric" value="75.000.000" style="font-size:16px"></div></div>
+            <div style="text-align:right"><p class="t-small">Perkiraan bunga diterima / bulan</p><p class="t-h2 num" id="depOut">Rp267.188</p></div>
+            <p class="t-small" style="grid-column:1/-1" id="depNote">4,75% p.a. · bunga Rp296.875 lebih dari Rp240.000, dipotong pajak 10%. Setoran minimal Rp1.000.000.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="card">
+            <div class="card__head"><div><p class="card__title">Tabungan</p><p class="stat">3,5% <span style="font-size:16px;color:var(--ink-2);font-weight:500">p.a.</span></p></div><span class="ico ico--sq"><i data-lucide="wallet" class="i-sm"></i></span></div>
+            <p class="t-meta">Setor dan tarik kapan saja di teller. Tanpa biaya administrasi bulanan, setoran awal Rp50.000.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill">KTP / SIM / paspor</span><span class="pill">Form pendaftaran</span></div>
+          </div>
+          <div class="card">
+            <div class="card__head"><div><p class="card__title">Tabungan arisan</p><p class="stat">Rp100.000 <span style="font-size:16px;color:var(--ink-2);font-weight:500">/ bulan</span></p></div><span class="ico ico--sq"><i data-lucide="users" class="i-sm"></i></span></div>
+            <p class="t-meta">Setoran rutin selama 36 bulan dalam kelompok 100 rekening. Undian hadiah Rp100.000 setiap 6 bulan dan 4 doorprize THR @Rp150.000 menjelang Lebaran.</p>
+            <p class="t-small">Setoran tidak dapat ditarik sebelum 36 bulan. Maksimal 5 rekening per anggota dalam satu kelompok.</p>
+          </div>
+        </div>
+      </div>
+      <p class="t-small" style="margin-top:14px">Bunga sampai Rp240.000 per bulan bebas pajak; di atasnya dipotong pajak 10% sesuai ketentuan.</p>
+    </section>
+
+    <!-- Pinjaman -->
+    <section id="pinjaman" style="padding-bottom:72px">
+      <div class="sec-head"><div><p class="eyebrow" style="margin-bottom:6px">Pinjaman</p><h2 class="t-h2">Modal kerja &amp; multiguna</h2></div><a class="link" href="#simulasi">Hitung angsuran<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      <div class="table-wrap" style="margin-bottom:16px">
+        <table class="table">
+          <thead><tr><th>Plafon</th><th>Bunga flat</th><th>Jangka waktu</th><th>Contoh angsuran</th><th>Catatan</th></tr></thead>
+          <tbody>
+            <tr><td><b>Rp1–50 juta</b></td><td>1,25% / bulan</td><td>12–36 bulan</td><td>Rp10 juta · 24 bln → Rp542.000</td><td class="muted">Anggota baru dan lama</td></tr>
+            <tr><td><b>Rp51–100 juta</b></td><td>1,00% / bulan</td><td>12–60 bulan</td><td>Rp75 juta · 36 bln → Rp2.833.500</td><td class="muted">Wajib surat keterangan usaha</td></tr>
+            <tr><td><b>Rp101–300 juta</b></td><td>0,90% / bulan</td><td>12–60 bulan</td><td>Rp150 juta · 48 bln → Rp4.475.000</td><td class="muted">Wajib surat keterangan usaha</td></tr>
+            <tr><td><b>Rp301–500 juta</b></td><td>0,80% / bulan</td><td>12–60 bulan</td><td>Rp400 juta · 60 bln → Rp9.867.000</td><td class="muted">0,75% untuk anggota lama lancar &amp; top up</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card__head"><p class="t-h3">Sertifikat tanah / bangunan</p><span class="ico ico--sq ico--navy"><i data-lucide="house" class="i-sm"></i></span></div><p class="t-meta">SHM atau SHGB, dilengkapi SPPT PBB tahun terakhir. Untuk plafon besar dan tenor sampai 60 bulan.</p></div>
+        <div class="card"><div class="card__head"><p class="t-h3">BPKB motor / mobil</p><span class="ico ico--sq ico--navy"><i data-lucide="car" class="i-sm"></i></span></div><p class="t-meta">Fotokopi STNK, faktur, gesek rangka &amp; mesin, serta kuitansi jual beli bila bukan atas nama sendiri.</p></div>
+        <div class="card"><div class="card__head"><p class="t-h3">Simpanan berjangka</p><span class="ico ico--sq ico--navy"><i data-lucide="lock" class="i-sm"></i></span></div><p class="t-meta">Bilyet simpanan berjangka di koperasi sebagai jaminan. Dokumen paling sedikit, proses paling singkat.</p></div>
+      </div>
+    </section>
+
+    <!-- Keamanan & cara -->
+    <section style="padding-bottom:72px" class="home-trust">
+      <div class="redblock">
+        <div style="display:flex;justify-content:space-between;align-items:start;gap:12px"><p class="t-h2" style="color:#fff">Yang tidak pernah kami lakukan</p><i data-lucide="shield-check"></i></div>
+        <div class="redblock__inner" style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+          <p style="display:flex;gap:10px"><i data-lucide="x" class="i-sm" style="margin-top:3px"></i>Menawarkan pinjaman tanpa agunan (KTA)</p>
+          <p style="display:flex;gap:10px"><i data-lucide="x" class="i-sm" style="margin-top:3px"></i>Meminta biaya administrasi sebelum pencairan</p>
+          <p style="display:flex;gap:10px"><i data-lucide="x" class="i-sm" style="margin-top:3px"></i>Meminta transfer ke rekening pribadi karyawan</p>
+          <p style="display:flex;gap:10px"><i data-lucide="x" class="i-sm" style="margin-top:3px"></i>Meminta dokumen lewat nomor di luar daftar resmi</p>
+        </div>
+        <p class="t-small">Semua transaksi resmi ditujukan ke rekening atas nama koperasi. Nomor WhatsApp lama Kantor Soreang sudah tidak aktif.</p>
+      </div>
+      <div class="rows">
+        <div class="rowi"><p class="t-h3">Cara mengajukan pinjaman</p></div>
+        <div class="rowi"><span class="ico ico--navy">1</span><div class="rowi__main"><p class="rowi__title">Simulasi &amp; isi pengajuan online</p><p class="t-meta">Pilih jaminan, unggah foto dokumen dari HP.</p></div></div>
+        <div class="rowi"><span class="ico ico--navy">2</span><div class="rowi__main"><p class="rowi__title">Verifikasi dokumen</p><p class="t-meta">Account officer menghubungi dalam 1 hari kerja.</p></div></div>
+        <div class="rowi"><span class="ico ico--navy">3</span><div class="rowi__main"><p class="rowi__title">Survei usaha &amp; jaminan</p><p class="t-meta">Dijadwalkan bersama Anda, tanpa biaya.</p></div></div>
+        <div class="rowi"><span class="ico ico--navy">4</span><div class="rowi__main"><p class="rowi__title">Keputusan komite &amp; akad</p><p class="t-meta">Biaya provisi dipotong saat pencairan, bukan di depan.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Kantor -->
+    <section id="kantor-resmi" style="padding-bottom:80px">
+      <div class="sec-head"><h2 class="t-h2">Kantor &amp; saluran resmi</h2><p class="t-small">Senin–Jumat 08.00–16.00 · Sabtu 08.00–12.00</p></div>
+      <div class="grid-3" style="margin-bottom:16px">
+        <div class="card"><div class="card__head"><div><p class="t-h3">Kantor pusat</p><p class="t-meta">Antapani, Kota Bandung</p></div><span class="pill pill--dark">Pusat</span></div><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+        <div class="card"><div class="card__head"><div><p class="t-h3">Kantor Cimahi</p><p class="t-meta">Cimahi Tengah, Kota Cimahi</p></div><span class="pill">Cabang</span></div><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+        <div class="card"><div class="card__head"><div><p class="t-h3">Kantor Soreang</p><p class="t-meta">Soreang, Kabupaten Bandung</p></div><span class="pill">Cabang</span></div><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+      </div>
+      <div class="strip" style="border-radius:var(--r-lg)">
+        <a class="strip__item" href="#"><span class="ico ico--green"><i data-lucide="message-circle" class="i-sm"></i></span><b>0811-2040-7713</b><span class="muted">WhatsApp pusat</span></a>
+        <div class="strip__item"><span class="ico ico--navy"><i data-lucide="phone" class="i-sm"></i></span><b>022-6120-4471</b><span class="muted">Telepon</span></div>
+        <div class="strip__item"><span class="ico ico--navy"><i data-lucide="mail" class="i-sm"></i></span><b>layanan@tunasarta.id</b><span class="muted">Email</span></div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">tunasarta</span><p class="t-meta" style="max-width:360px">Koperasi simpan pinjam berbadan hukum, diawasi Kementerian Koperasi. Simpanan di koperasi tidak termasuk program penjaminan LPS untuk bank.</p></div>
+        <div><h4>Simpanan</h4><ul><li><a href="#simpanan">Tabungan</a></li><li><a href="#simpanan">Simpanan berjangka</a></li><li><a href="#simpanan">Tabungan arisan</a></li></ul></div>
+        <div><h4>Pinjaman</h4><ul><li><a href="#pinjaman">Syarat &amp; bunga</a></li><li><a href="#simulasi">Simulasi</a></li><li><a href="#simulasi">Pengajuan online</a></li></ul></div>
+        <div><h4>Koperasi</h4><ul><li><a href="#">Laporan RAT</a></li><li><a href="#">Karier</a></li><li><a href="#">Kebijakan privasi</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Koperasi Simpan Pinjam Tunas Arta</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= SIMULASI & PENGAJUAN ================= -->
+<section data-screen="simulasi">
+  <div class="flowbar">
+    <a class="icon-btn" href="#home"><i data-lucide="arrow-left" class="i-sm"></i></a>
+    <a class="logo" href="#home" style="font-size:19px">tunasarta</a>
+    <div class="steps" style="margin-left:24px"><b>Simulasi</b><i data-lucide="chevron-right" class="i-sm"></i><b>Data &amp; jaminan</b><i data-lucide="chevron-right" class="i-sm"></i><b>Dokumen</b><i data-lucide="chevron-right" class="i-sm"></i><span>Verifikasi</span></div>
+  </div>
+  <div class="split">
+    <div class="split__left">
+      <div class="split__inner">
+        <div><p class="t-meta">Simulasi pinjaman modal &amp; multiguna</p><p class="t-amount" id="sOut" style="margin-top:6px">Rp1.354.500</p><p class="t-meta">per bulan selama <span id="sTenTxt">24</span> bulan</p></div>
+        <div class="field"><label for="sAmt">Jumlah pinjaman</label><div class="input-affix"><span>Rp</span><input id="sAmt" inputmode="numeric" value="25.000.000"></div><input type="range" class="range" id="sRange" min="1" max="500" value="25" aria-label="Jumlah pinjaman (juta)"><div style="display:flex;justify-content:space-between" class="t-small"><span>Rp1 juta</span><span>Rp500 juta</span></div></div>
+        <div class="field"><span class="field__label">Jangka waktu (bulan)</span><div class="seg" id="sTen" data-select><button type="button" data-value="12">12</button><button type="button" data-value="18">18</button><button type="button" class="is-active" data-value="24">24</button><button type="button" data-value="36">36</button><button type="button" data-value="48">48</button><button type="button" data-value="60">60</button></div></div>
+        <div class="card" style="gap:10px">
+          <dl class="kvs">
+            <dt>Bunga flat</dt><dd id="sRate">1,25% / bulan</dd>
+            <dt>Pokok per bulan</dt><dd id="sPok">Rp1.041.667</dd>
+            <dt>Bunga per bulan</dt><dd id="sBng">Rp312.500</dd>
+            <dt>Total bunga</dt><dd id="sTotB">Rp7.500.000</dd>
+            <dt style="color:var(--ink);font-weight:600">Total pembayaran</dt><dd id="sTot" style="font-weight:600">Rp32.508.000</dd>
+          </dl>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><p class="t-h3">Jadwal angsuran</p><button type="button" class="link" id="sAll">Tampilkan semua</button></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th>Ke</th><th>Jatuh tempo</th><th class="r">Angsuran</th><th class="r">Sisa pokok</th></tr></thead><tbody id="sSched"></tbody></table></div>
+        </div>
+        <p class="t-small">Perkiraan, tidak mengikat. Angsuran dibulatkan ke atas per Rp500, belum termasuk provisi, administrasi, dan asuransi yang dipotong saat pencairan. Bunga dapat berubah sesuai kebijakan koperasi.</p>
+      </div>
+    </div>
+    <div class="split__right">
+      <div class="split__inner">
+        <form data-demo-form="#apDone" style="display:flex;flex-direction:column;gap:24px">
+          <div><h1 class="t-h2">Ajukan pinjaman</h1><p class="t-meta" style="margin-top:4px">Sekitar 5 menit. Account officer akan menghubungi Anda dalam 1 hari kerja.</p></div>
+          <div class="field"><span class="field__label">Data pemohon</span>
+            <div class="joined">
+              <input placeholder="Nama sesuai KTP" value="Dedi Kurniawan">
+              <input placeholder="NIK" value="3277 0412 8604 0007" class="mono">
+              <div class="row2"><input placeholder="No. WhatsApp" value="0812-2218-4093"><select><option>Wiraswasta</option><option>Karyawan</option><option>Pensiunan</option></select></div>
+            </div>
+          </div>
+          <div class="field"><label for="apInc">Penghasilan bersih per bulan</label><div class="input-affix" style="height:44px"><span>Rp</span><input id="apInc" value="11.200.000" style="font-size:15px"></div></div>
+          <div class="field"><label>Keperluan</label><select class="select"><option>Modal kerja usaha</option><option>Renovasi rumah</option><option>Pendidikan</option><option>Kebutuhan lainnya</option></select></div>
+          <div class="field"><span class="field__label">Jaminan</span>
+            <div class="seg" id="apCol" data-select><button type="button" class="is-active" data-value="bpkb">BPKB kendaraan</button><button type="button" data-value="shm">Sertifikat tanah</button><button type="button" data-value="dep">Simpanan berjangka</button></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><p class="field__label" style="font-size:13.5px;font-weight:500;color:var(--ink-2)">Dokumen</p><span class="pill" id="docCount">2 dari 6</span></div>
+            <div class="joined" id="docList"></div>
+            <p class="t-small" style="margin-top:8px">Foto dari HP cukup. Dokumen asli dicek saat survei. Admin kredit dapat meminta dokumen penunjang sesuai jenis usaha.</p>
+          </div>
+          <label class="check" style="color:var(--ink-2);font-size:13.5px"><input type="checkbox" checked style="margin-top:3px;accent-color:var(--ink)">Saya menyetujui data diproses untuk analisa pinjaman. Pengajuan bukan jaminan persetujuan.</label>
+          <button class="btn btn-dark btn-block" style="height:48px">Kirim pengajuan</button>
+          <p class="t-small" style="display:flex;gap:8px;align-items:center;justify-content:center"><i data-lucide="shield-check" class="i-sm"></i>Tidak ada biaya yang diminta sebelum pencairan.</p>
+        </form>
+        <div id="apDone" hidden style="display:flex;flex-direction:column;gap:20px">
+          <span class="ico ico--green" style="width:52px;height:52px"><i data-lucide="check"></i></span>
+          <div><h1 class="t-h2">Pengajuan terkirim</h1><p class="t-meta" style="margin-top:4px">Nomor pengajuan <b class="mono" style="color:var(--ink)">TA-2610-0151</b>. Ringkasan dikirim ke WhatsApp 0812-2218-4093.</p></div>
+          <div class="rows">
+            <div class="rowi"><span class="ico ico--green"><i data-lucide="check" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Pengajuan diterima</p><p class="t-meta">Minggu, 18 Oktober 2026</p></div></div>
+            <div class="rowi"><span class="ico ico--navy"><i data-lucide="file-search" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Verifikasi dokumen</p><p class="t-meta">Paling lambat Senin, 19 Oktober</p></div></div>
+            <div class="rowi"><span class="ico ico--navy"><i data-lucide="map-pin" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Survei usaha &amp; jaminan</p><p class="t-meta">Jadwal disepakati lewat telepon</p></div></div>
+            <div class="rowi"><span class="ico ico--navy"><i data-lucide="gavel" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Keputusan komite</p><p class="t-meta">Hasil dikabarkan setelah survei</p></div></div>
+          </div>
+          <a class="btn btn-secondary" href="#portal">Pantau di portal anggota</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAL ANGGOTA ================= -->
+<section data-screen="portal">
+  <div class="app">
+    <div class="wrap" style="max-width:1360px">
+      <div class="topbar">
+        <a class="logo" href="#home">tunasarta</a>
+        <nav class="appnav" style="margin-left:12px"><a class="is-active" href="#portal"><i data-lucide="layout-grid" class="i-sm"></i>Ringkasan</a><a href="#portal"><i data-lucide="wallet" class="i-sm"></i>Simpanan</a><a href="#portal"><i data-lucide="banknote" class="i-sm"></i>Pinjaman</a><a href="#portal"><i data-lucide="file-text" class="i-sm"></i>Dokumen</a></nav>
+        <div class="header__right"><button class="icon-btn"><i data-lucide="bell" class="i-sm"></i><span class="dot"></span></button><span class="avatar">RK</span></div>
+      </div>
+      <div class="sheet">
+        <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px">
+          <div><h1 class="t-h1">Selamat siang, Ratna</h1><p class="t-meta" style="margin-top:4px">Anggota <span class="mono">0210-4471</span> · Kantor Cimahi · data per Minggu, 18 Oktober 2026 13.05</p></div>
+          <div style="display:flex;gap:8px"><button class="btn btn-secondary btn-pill btn-sm"><i data-lucide="download" class="i-sm"></i>Mutasi</button><a class="btn btn-primary btn-pill btn-sm" href="#portal">Bayar angsuran</a></div>
+        </div>
+        <div class="strip" style="margin-bottom:24px">
+          <div class="strip__item"><span class="ico"><i data-lucide="wallet" class="i-sm"></i></span><b>Rp8.214.350</b><span class="muted">Tabungan</span></div>
+          <div class="strip__item"><span class="ico"><i data-lucide="lock" class="i-sm"></i></span><b>Rp75.000.000</b><span class="muted">Berjangka</span></div>
+          <div class="strip__item"><span class="ico"><i data-lucide="users" class="i-sm"></i></span><b>Rp1.400.000</b><span class="muted">Arisan 14/36</span></div>
+          <div class="strip__item"><span class="ico ico--navy"><i data-lucide="banknote" class="i-sm"></i></span><b>Rp16.664.000</b><span class="muted">Sisa pinjaman</span></div>
+        </div>
+
+        <div class="portal-grid">
+          <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+            <div class="card">
+              <div class="card__head"><div><p class="card__title">Pinjaman multiguna · BPKB mobil</p><p class="stat">Rp25.000.000</p></div><span class="pill pill--ok"><i data-lucide="check"></i>Lancar</span></div>
+              <div class="segbar" style="--n:24"><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="next"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap" class="t-meta"><span><b style="color:var(--ink)">8 dari 24</b> angsuran dibayar</span><span>Cair 15 Feb 2026 · lunas 15 Feb 2028</span></div>
+              <div class="grid-3" style="gap:0;border-top:1px solid var(--line);padding-top:14px">
+                <div><p class="t-small">Angsuran</p><p class="t-h3 num">Rp1.354.500</p></div>
+                <div><p class="t-small">Bunga flat</p><p class="t-h3">1,25% / bulan</p></div>
+                <div><p class="t-small">Sisa pokok</p><p class="t-h3 num">Rp16.664.000</p></div>
+              </div>
+            </div>
+            <div class="card" style="padding:0;gap:0">
+              <div style="padding:8px 20px 0"><nav class="tabs" data-select data-tabs="pt"><button class="is-active" data-value="jadwal">Jadwal angsuran</button><button data-value="mutasi">Mutasi tabungan</button></nav></div>
+              <div data-panel="pt:jadwal" style="overflow-x:auto">
+                <table class="table">
+                  <thead><tr><th>Ke</th><th>Jatuh tempo</th><th class="r">Pokok</th><th class="r">Bunga</th><th class="r">Angsuran</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>6</td><td>15 Agu 2026</td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r">1.354.500</td><td><span class="pill pill--ok">Dibayar 14 Agu</span></td></tr>
+                    <tr><td>7</td><td>15 Sep 2026</td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r">1.354.500</td><td><span class="pill pill--ok">Dibayar 15 Sep</span></td></tr>
+                    <tr><td>8</td><td>15 Okt 2026</td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r">1.354.500</td><td><span class="pill pill--ok">Dibayar 12 Okt</span></td></tr>
+                    <tr style="background:#fffafa"><td><b>9</b></td><td><b>15 Nov 2026</b></td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r"><b>1.354.500</b></td><td><span class="pill pill--red">28 hari lagi</span></td></tr>
+                    <tr><td>10</td><td>15 Des 2026</td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r">1.354.500</td><td><span class="pill">Akan datang</span></td></tr>
+                    <tr><td>11</td><td>15 Jan 2027</td><td class="r">1.042.000</td><td class="r">312.500</td><td class="r">1.354.500</td><td><span class="pill">Akan datang</span></td></tr>
+                  </tbody>
+                </table>
+                <div style="padding:14px 20px;border-top:1px solid var(--line)"><a class="link" href="#portal">Lihat 24 angsuran<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+              </div>
+              <div data-panel="pt:mutasi" hidden>
+                <div class="rowi"><span class="ico ico--green"><i data-lucide="arrow-down-left" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Setoran tunai · teller Cimahi</p><p class="t-meta">Sab, 17 Okt 2026</p></div><div class="rowi__end"><b style="color:var(--green)">+Rp2.000.000</b><p class="t-small">Rp8.214.350</p></div></div>
+                <div class="rowi"><span class="ico ico--navy"><i data-lucide="arrow-up-right" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Debet angsuran ke-8</p><p class="t-meta">Sen, 12 Okt 2026</p></div><div class="rowi__end"><b>−Rp1.354.500</b><p class="t-small">Rp6.214.350</p></div></div>
+                <div class="rowi"><span class="ico ico--green"><i data-lucide="percent" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Bunga tabungan September</p><p class="t-meta">Rab, 30 Sep 2026</p></div><div class="rowi__end"><b style="color:var(--green)">+Rp21.640</b><p class="t-small">Rp7.568.850</p></div></div>
+                <div class="rowi"><span class="ico ico--green"><i data-lucide="percent" class="i-sm"></i></span><div class="rowi__main"><p class="rowi__title">Bunga simpanan berjangka</p><p class="t-meta">Kam, 3 Sep 2026 · setelah pajak 10%</p></div><div class="rowi__end"><b style="color:var(--green)">+Rp267.188</b><p class="t-small">Rp7.547.210</p></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+            <div class="redblock">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><div><p class="t-small">Angsuran ke-9</p><p class="t-amount" style="color:#fff">Rp1.354.500</p><p class="t-small" style="margin-top:2px">Jatuh tempo Minggu, 15 November 2026</p></div><i data-lucide="calendar-clock"></i></div>
+              <div class="redblock__inner"><p class="t-small">Virtual account atas nama Kospin Tunas Arta</p><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:4px"><b class="mono" style="font-size:17px" id="va">8808 0210 4471 0009</b><button class="btn btn-sm btn-light" type="button" id="vaCopy" style="border-radius:var(--r-sm)">Salin</button></div></div>
+              <p class="t-small">Atau bayar di teller kantor mana pun, atau aktifkan debet otomatis dari tabungan (saldo cukup).</p>
+            </div>
+            <div class="card">
+              <div class="card__head"><div><p class="card__title">Simpanan berjangka 12 bulan</p><p class="stat">Rp75.000.000</p></div><span class="pill">4,75% p.a.</span></div>
+              <dl class="kvs"><dt>Bunga per bulan</dt><dd>Rp296.875</dd><dt>Pajak 10%</dt><dd>−Rp29.687</dd><dt>Diterima ke tabungan</dt><dd>Rp267.188</dd><dt>Jatuh tempo</dt><dd>3 Mar 2027</dd><dt>Perpanjangan</dt><dd>Otomatis, pokok saja</dd></dl>
+            </div>
+            <div class="card">
+              <div class="card__head"><div><p class="card__title">Tabungan arisan · kelompok 07</p><p class="t-h3" style="margin-top:2px">14 dari 36 setoran</p></div><span class="ico ico--sq"><i data-lucide="gift" class="i-sm"></i></span></div>
+              <div class="bar"><i style="width:39%"></i></div>
+              <p class="t-meta">Setoran berikutnya Rp100.000 sebelum 10 Nov. Undian hadiah 6 bulanan: Januari 2027.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEJA ACCOUNT OFFICER ================= -->
+<section data-screen="ao">
+  <div class="app">
+    <div class="wrap" style="max-width:1440px">
+      <div class="topbar">
+        <a class="logo" href="#home">tunasarta</a><span class="pill pill--dark">Account officer</span>
+        <nav class="appnav" style="margin-left:8px"><a class="is-active" href="#ao"><i data-lucide="inbox" class="i-sm"></i>Pengajuan</a><a href="#ao"><i data-lucide="map" class="i-sm"></i>Survei</a><a href="#ao"><i data-lucide="users" class="i-sm"></i>Nasabah</a></nav>
+        <div class="header__right"><label class="search" style="width:280px"><i data-lucide="search" class="i-sm"></i><input placeholder="Cari nama / nomor"></label><span class="avatar avatar--soft">HW</span></div>
+      </div>
+      <div class="desk">
+        <aside class="queue" data-select>
+          <div class="is-off" style="display:flex;justify-content:space-between;align-items:center;padding:4px 4px 6px;min-width:200px"><p class="t-h3">Perlu ditinjau</p><span class="pill">6</span></div>
+          <button class="qitem is-active"><div class="qitem__top"><span class="qitem__name">Dedi Kurniawan</span><span class="num" style="font-weight:600;font-size:14px">Rp75 jt</span></div><p class="qitem__meta">36 bln · SHM · warung sembako</p><div class="qitem__foot"><span class="pill pill--warn">Dokumen 5/7</span><span class="t-small">3 hari</span></div></button>
+          <button class="qitem"><div class="qitem__top"><span class="qitem__name">Siti Rahmawati</span><span class="num" style="font-weight:600;font-size:14px">Rp25 jt</span></div><p class="qitem__meta">24 bln · BPKB mobil · katering</p><div class="qitem__foot"><span class="pill">Survei Sen 19 Okt</span></div></button>
+          <button class="qitem"><div class="qitem__top"><span class="qitem__name">Agus Setiawan</span><span class="num" style="font-weight:600;font-size:14px">Rp150 jt</span></div><p class="qitem__meta">48 bln · SHGB ruko · bengkel</p><div class="qitem__foot"><span class="pill pill--ok">Siap komite</span></div></button>
+          <button class="qitem"><div class="qitem__top"><span class="qitem__name">Yusuf Hakim</span><span class="num" style="font-weight:600;font-size:14px">Rp350 jt</span></div><p class="qitem__meta">60 bln · SHM · top up, anggota lama</p><div class="qitem__foot"><span class="pill">0,75% / bln</span></div></button>
+          <button class="qitem"><div class="qitem__top"><span class="qitem__name">Nurhayati</span><span class="num" style="font-weight:600;font-size:14px">Rp10 jt</span></div><p class="qitem__meta">12 bln · BPKB motor · karyawan</p><div class="qitem__foot"><span class="pill pill--red">Baru</span></div></button>
+          <button class="qitem"><div class="qitem__top"><span class="qitem__name">Wulan Sari</span><span class="num" style="font-weight:600;font-size:14px">Rp5 jt</span></div><p class="qitem__meta">12 bln · simpanan berjangka</p><div class="qitem__foot"><span class="pill pill--red">Baru</span></div></button>
+        </aside>
+        <main class="case">
+          <div class="case__head">
+            <span class="avatar" style="width:52px;height:52px;font-size:17px">DK</span>
+            <div style="flex:1;min-width:220px"><h1 class="t-h2">Dedi Kurniawan</h1><p class="t-meta"><span class="mono">TA-2610-0143</span> · diajukan online Kam, 15 Okt · wiraswasta, warung sembako sejak 2017</p></div>
+            <div style="display:flex;gap:8px"><button class="btn btn-secondary btn-pill btn-sm"><i data-lucide="phone" class="i-sm"></i>Hubungi</button><button class="btn btn-secondary btn-pill btn-sm"><i data-lucide="printer" class="i-sm"></i>Memo kredit</button></div>
+          </div>
+          <div class="strip" style="margin:22px 0 28px">
+            <div class="strip__item"><b>Rp75.000.000</b><span class="muted">Plafon</span></div>
+            <div class="strip__item"><b>36 bulan</b><span class="muted">Tenor</span></div>
+            <div class="strip__item"><b>1,00% flat</b><span class="muted">Bunga</span></div>
+            <div class="strip__item"><b>Rp2.833.500</b><span class="muted">Angsuran</span></div>
+          </div>
+
+          <div class="sec-head" style="margin-bottom:12px"><h2 class="t-h3">Dokumen</h2><span class="t-meta" id="docSum">5 dari 7 sesuai</span></div>
+          <div class="docs-grid" id="aoDocs" style="margin-bottom:28px"></div>
+
+          <div class="ao-two" style="margin-bottom:28px">
+            <div class="card">
+              <div class="card__head"><p class="t-h3">Kemampuan bayar</p><span class="pill pill--ok">Dalam batas</span></div>
+              <dl class="kvs"><dt>Penghasilan bersih / bulan</dt><dd>Rp11.200.000</dd><dt>Angsuran lain berjalan</dt><dd>Rp0</dd><dt>Angsuran baru</dt><dd>Rp2.833.500</dd></dl>
+              <div class="gauge"><div style="display:flex;justify-content:space-between"><span class="t-meta">Rasio angsuran</span><b class="num">25,3%</b></div><div class="gauge__track"><span class="gauge__fill" style="width:25.3%"></span><span class="gauge__mark" style="left:35%"></span></div><div class="gauge__legend"><span>0%</span><span style="margin-left:22%">batas internal 35%</span><span>50%</span></div></div>
+            </div>
+            <div class="card">
+              <div class="card__head"><p class="t-h3">Jaminan · SHM</p><span class="pill">Survei 17 Okt</span></div>
+              <dl class="kvs"><dt>Tanah / bangunan</dt><dd>120 m² / 96 m²</dd><dt>Lokasi</dt><dd>Cimahi Utara</dd><dt>Nilai pasar (taksiran AO)</dt><dd>Rp320.000.000</dd><dt>Nilai likuidasi 70%</dt><dd>Rp224.000.000</dd></dl>
+              <div class="gauge"><div style="display:flex;justify-content:space-between"><span class="t-meta">Plafon terhadap likuidasi</span><b class="num">33,5%</b></div><div class="bar bar--ink"><i style="width:33.5%"></i></div></div>
+            </div>
+          </div>
+
+          <div class="ao-two">
+            <div class="card">
+              <p class="t-h3">Catatan survei</p>
+              <p style="font-size:14.5px">Warung di rumah sendiri, ramai pagi dan sore. Stok terlihat ±Rp40 juta. Omzet dicek dari buku kas 3 bulan dan nota grosir. Dana untuk tambah freezer dan stok beras menjelang akhir tahun. Istri ikut mengelola, setuju dengan pengajuan.</p>
+              <p class="t-small">Hendra W. · Sab, 17 Okt 2026 10.40</p>
+            </div>
+            <div class="card">
+              <p class="t-h3">Riwayat</p>
+              <div class="timeline">
+                <div class="tl"><span class="ico ico--navy"><i data-lucide="file-plus" class="i-sm"></i></span><div><p style="font-weight:600;font-size:14.5px">Pengajuan online masuk</p><p class="t-small">Kam, 15 Okt 09.12</p></div></div>
+                <div class="tl"><span class="ico ico--navy"><i data-lucide="phone" class="i-sm"></i></span><div><p style="font-weight:600;font-size:14.5px">Dihubungi, jadwal survei disepakati</p><p class="t-small">Kam, 15 Okt 14.30</p></div></div>
+                <div class="tl"><span class="ico ico--green"><i data-lucide="map-pin" class="i-sm"></i></span><div><p style="font-weight:600;font-size:14.5px">Survei usaha &amp; jaminan</p><p class="t-small">Sab, 17 Okt 10.40</p></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="decision" style="margin:28px -32px -120px">
+            <input class="input" style="flex:1;min-width:200px" placeholder="Catatan untuk komite (opsional)" value="Usaha stabil, rasio 25%, jaminan cukup.">
+            <button class="btn btn-secondary" id="aoAsk" type="button">Minta dokumen</button>
+            <button class="btn btn-primary" id="aoGo" type="button">Teruskan ke komite</button>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden><i data-lucide="check" class="i-sm"></i><span id="toastTxt"></span></div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var rp = window.rupiah;
+  function parse(v) { return Number(String(v).replace(/[^\d]/g, "")) || 0; }
+  function fmt(n) { return Math.round(n).toLocaleString("id-ID"); }
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+
+  /* Bunga pinjaman (flat per bulan) sesuai tabel koperasi */
+  function rate(p) { return p <= 50e6 ? 0.0125 : p <= 100e6 ? 0.01 : p <= 300e6 ? 0.009 : 0.008; }
+  function tenors(p) { return p <= 50e6 ? [12, 18, 24, 36] : [12, 24, 36, 48, 60]; }
+  function inst(p, n) { return Math.ceil((p / n + p * rate(p)) / 500) * 500; }
+  function pct(r) { return (r * 100).toFixed(2).replace(".", ",") + "% / bulan"; }
+  function syncTenor(seg, p) {
+    var ok = tenors(p), cur = seg.querySelector(".is-active");
+    seg.querySelectorAll("button").forEach(function (b) { b.disabled = ok.indexOf(+b.dataset.value) < 0; });
+    if (!cur || cur.disabled) { seg.querySelectorAll(".is-active").forEach(function (b) { b.classList.remove("is-active"); }); var pick = seg.querySelector('[data-value="' + (ok.indexOf(24) >= 0 ? 24 : ok[0]) + '"]'); pick.classList.add("is-active"); }
+    return +seg.querySelector(".is-active").dataset.value;
+  }
+
+  /* Kalkulator cepat di beranda */
+  var qAmt = document.getElementById("qAmt"), qTen = document.getElementById("qTen");
+  function quick() { var p = Math.min(Math.max(parse(qAmt.value), 1e6), 500e6), n = syncTenor(qTen, p); document.getElementById("qOut").textContent = rp(inst(p, n)); document.getElementById("qRate").textContent = pct(rate(p)); }
+  qAmt.addEventListener("input", function () { var v = parse(qAmt.value); qAmt.value = v ? fmt(v) : ""; quick(); });
+  qTen.addEventListener("lapak:select", quick);
+  quick();
+
+  /* Estimasi simpanan berjangka */
+  var depAmt = document.getElementById("depAmt"), tbl = document.getElementById("rateTbl"), col = 3;
+  function dep() {
+    var p = parse(depAmt.value), rows = tbl.tBodies[0].rows, row = rows[0];
+    for (var i = 0; i < rows.length; i++) if (p >= +rows[i].dataset.min) row = rows[i];
+    tbl.querySelectorAll(".cell.is-active").forEach(function (c) { c.classList.remove("is-active"); });
+    var cell = row.cells[col + 1]; cell.classList.add("is-active");
+    var r = parseFloat(cell.textContent.replace(",", ".")) / 100, gross = p * r / 12, tax = gross > 240000 ? 0.1 : 0;
+    var net = gross * (1 - tax);
+    document.getElementById("depOut").textContent = p >= 1e6 ? rp(net) : "–";
+    document.getElementById("depNote").textContent = p < 1e6 ? "Setoran minimal Rp1.000.000." : cell.textContent + "% p.a. · bunga " + rp(gross) + (tax ? " lebih dari Rp240.000, dipotong pajak 10%." : ", bebas pajak.") + " Bunga dapat berubah.";
+  }
+  depAmt.addEventListener("input", function () { var v = parse(depAmt.value); depAmt.value = v ? fmt(v) : ""; dep(); });
+  tbl.addEventListener("click", function (e) { var c = e.target.closest(".cell"); if (!c) return; col = c.cellIndex - 1; var min = +c.parentNode.dataset.min; if (parse(depAmt.value) < min || (c.parentNode.nextElementSibling && parse(depAmt.value) >= +c.parentNode.nextElementSibling.dataset.min)) depAmt.value = fmt(Math.max(min, c.parentNode.rowIndex === 1 ? 10e6 : min)); dep(); });
+  dep();
+
+  /* Simulasi lengkap + jadwal */
+  var sAmt = document.getElementById("sAmt"), sRange = document.getElementById("sRange"), sTen = document.getElementById("sTen"), all = false;
+  var bln = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+  function sim() {
+    var p = Math.min(Math.max(parse(sAmt.value), 1e6), 500e6), n = syncTenor(sTen, p), a = inst(p, n), r = rate(p);
+    document.getElementById("sOut").textContent = rp(a); document.getElementById("sTenTxt").textContent = n;
+    document.getElementById("sRate").textContent = pct(r); document.getElementById("sPok").textContent = rp(p / n);
+    document.getElementById("sBng").textContent = rp(p * r); document.getElementById("sTotB").textContent = rp(p * r * n);
+    document.getElementById("sTot").textContent = rp(a * n);
+    var html = "", pok = a - p * r, sisa = p, show = all ? n : 6;
+    for (var k = 1; k <= show; k++) { sisa = Math.max(0, sisa - pok); if (k === n) sisa = 0; var m = (10 + k) % 12, y = 2026 + Math.floor((10 + k) / 12); html += "<tr><td>" + k + "</td><td>15 " + bln[m] + " " + y + "</td><td class='r'>" + fmt(a) + "</td><td class='r'>" + fmt(sisa) + "</td></tr>"; }
+    document.getElementById("sSched").innerHTML = html;
+    document.getElementById("sAll").textContent = all ? "Ringkas" : "Tampilkan semua " + n;
+  }
+  sAmt.addEventListener("input", function () { var v = parse(sAmt.value); sAmt.value = v ? fmt(v) : ""; sRange.value = Math.round(v / 1e6); sim(); });
+  sRange.addEventListener("input", function () { sAmt.value = fmt(sRange.value * 1e6); sim(); });
+  sTen.addEventListener("lapak:select", sim);
+  document.getElementById("sAll").addEventListener("click", function () { all = !all; sim(); });
+  sim();
+
+  /* Checklist dokumen pengajuan per jaminan */
+  var base = [["KTP suami & istri", 1], ["Kartu keluarga", 1], ["Rekening listrik / telepon 3 bulan terakhir", 0], ["Rekening tabungan 3 bulan terakhir", 0]];
+  var extra = { bpkb: [["BPKB, STNK & faktur kendaraan", 0], ["Foto gesek rangka & mesin", 0]], shm: [["SHM / SHGB", 0], ["SPPT PBB tahun terakhir", 0]], dep: [["Bilyet simpanan berjangka", 0]] };
+  var docList = document.getElementById("docList");
+  function docs(key) {
+    docList.innerHTML = base.concat(extra[key]).map(function (d) {
+      return '<div class="doc' + (d[1] ? " is-done" : "") + '"><span class="ico ico--sq ' + (d[1] ? "ico--green" : "ico--navy") + '"><i data-lucide="' + (d[1] ? "file-check" : "file") + '" class="i-sm"></i></span><div class="doc__main"><p class="doc__name">' + d[0] + '</p><p class="t-small">' + (d[1] ? "foto_" + d[0].split(" ")[0].toLowerCase() + ".jpg · 1,2 MB" : "JPG, PNG, atau PDF") + '</p></div><button type="button" class="btn btn-secondary btn-sm doc__up"><i data-lucide="upload" class="i-sm"></i>Unggah</button><span class="pill pill--ok doc__ok">Terunggah</span></div>';
+    }).join(""); count(); icons();
+  }
+  function count() { var t = docList.children.length, d = docList.querySelectorAll(".is-done").length; document.getElementById("docCount").textContent = d + " dari " + t; }
+  docList.addEventListener("click", function (e) { var b = e.target.closest(".doc__up"); if (!b) return; var row = b.closest(".doc"); row.classList.add("is-done"); row.querySelector(".t-small").textContent = "foto_dokumen.jpg · 980 KB"; var ic = row.querySelector(".ico"); ic.className = "ico ico--sq ico--green"; ic.innerHTML = '<i data-lucide="file-check" class="i-sm"></i>'; icons(); count(); });
+  document.getElementById("apCol").addEventListener("lapak:select", function (e) { docs(e.detail.value); });
+  docs("bpkb");
+
+  /* Meja AO: verifikasi dokumen */
+  var aoDocs = [["KTP suami & istri", "ok", "2 file · dicocokkan saat survei"], ["Kartu keluarga", "ok", "1 file"], ["Rekening listrik 3 bulan", "ok", "Jul–Sep 2026"], ["Rekening tabungan 3 bulan", "ok", "Saldo rata-rata Rp14,8 jt"], ["Surat keterangan usaha", "bad", "Foto buram, cap kelurahan tidak terbaca"], ["SHM", "ok", "Atas nama pemohon, dicek asli 17 Okt"], ["SPPT PBB 2026", "none", "Belum diunggah"]];
+  var box = document.getElementById("aoDocs");
+  function aoRender() {
+    box.innerHTML = aoDocs.map(function (d, i) {
+      var pill = d[1] === "ok" ? '<span class="pill pill--ok">Sesuai</span>' : d[1] === "bad" ? '<span class="pill pill--warn">Perlu revisi</span>' : '<span class="pill pill--red">Belum ada</span>';
+      return '<div class="doctile" data-i="' + i + '"><div class="doctile__top"><span class="doctile__name">' + d[0] + "</span>" + pill + '</div><p class="t-small">' + d[2] + '</p><div class="doctile__acts"><button type="button" data-act="ok" class="' + (d[1] === "ok" ? "on-ok" : "") + '"><i data-lucide="check" class="i-sm"></i>Sesuai</button><button type="button" data-act="bad" class="' + (d[1] === "bad" ? "on-bad" : "") + '">Revisi</button></div></div>';
+    }).join("");
+    var ok = aoDocs.filter(function (d) { return d[1] === "ok"; }).length;
+    document.getElementById("docSum").textContent = ok + " dari " + aoDocs.length + " sesuai";
+    var go = document.getElementById("aoGo"); go.style.opacity = ok === aoDocs.length ? 1 : .5;
+    icons();
+  }
+  box.addEventListener("click", function (e) { var b = e.target.closest("[data-act]"); if (!b) return; var d = aoDocs[+b.closest(".doctile").dataset.i]; d[1] = b.dataset.act; if (d[1] === "ok") d[2] = "Diverifikasi Hendra W. · baru saja"; aoRender(); });
+  var tt;
+  function toast(msg) { var t = document.getElementById("toast"); document.getElementById("toastTxt").textContent = msg; t.hidden = false; clearTimeout(tt); tt = setTimeout(function () { t.hidden = true; }, 3200); }
+  document.getElementById("aoAsk").addEventListener("click", function () { var need = aoDocs.filter(function (d) { return d[1] !== "ok"; }).map(function (d) { return d[0]; }); toast(need.length ? "Permintaan dikirim ke WhatsApp pemohon: " + need.join(", ") : "Semua dokumen sudah sesuai"); });
+  document.getElementById("aoGo").addEventListener("click", function () { var n = aoDocs.filter(function (d) { return d[1] !== "ok"; }).length; toast(n ? n + " dokumen belum sesuai. Lengkapi sebelum diteruskan ke komite." : "TA-2610-0143 masuk agenda komite Selasa, 20 Oktober"); });
+  aoRender();
+
+  /* Anchor di beranda (#simpanan, #pinjaman, #kantor-resmi) */
+  function anchor() { var id = location.hash.slice(1), el = id && !document.querySelector('[data-screen="' + id + '"]') && document.getElementById(id); if (el) setTimeout(function () { el.scrollIntoView(); }, 0); }
+  window.addEventListener("hashchange", anchor); anchor();
+
+  document.getElementById("vaCopy").addEventListener("click", function () { this.textContent = "Tersalin"; });
+})();
+</script>
+</body>
+</html>

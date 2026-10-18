@@ -1,0 +1,91 @@
+{
+  "slug": "rural-bank-website",
+  "kind": "Website",
+  "industry": "Financial Services",
+  "client": "Confidential",
+  "tags": [
+    "Laravel",
+    "Loan Simulation",
+    "Member Portal",
+    "Loan Review"
+  ],
+  "metrics": [
+    {
+      "value": "4",
+      "label": "SAVINGS & LOAN PRODUCTS",
+      "labelId": "PRODUK SIMPAN PINJAM"
+    },
+    {
+      "value": "3",
+      "label": "COLLATERAL TYPES",
+      "labelId": "JENIS JAMINAN"
+    },
+    {
+      "value": "60",
+      "label": "MAX TENOR (MONTHS)",
+      "labelId": "TENOR MAKS (BULAN)"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with a quick installment estimate and product rates",
+      "captionId": "Beranda dengan perkiraan angsuran cepat dan bunga produk"
+    },
+    {
+      "hash": "simulasi",
+      "caption": "Loan simulation beside the online application and document checklist",
+      "captionId": "Simulasi pinjaman di samping form pengajuan dan checklist dokumen"
+    },
+    {
+      "hash": "portal",
+      "caption": "Member portal with savings, deposits and the installment schedule",
+      "captionId": "Portal anggota dengan tabungan, simpanan berjangka, dan jadwal angsuran"
+    },
+    {
+      "hash": "ao",
+      "caption": "Account officer desk for reviewing documents, capacity and collateral",
+      "captionId": "Meja account officer untuk meninjau dokumen, kemampuan bayar, dan jaminan"
+    }
+  ],
+  "content_en": {
+    "title": "Savings & Loan Cooperative Website",
+    "type": "COOPERATIVE WEBSITE & MEMBER PORTAL",
+    "category": "Financial Services",
+    "summary": "A redesign for a savings and loan cooperative with three offices. Visitors compare savings and deposit rates, estimate loan installments and apply online with the right documents; members track balances and installments, and account officers review each application in one place.",
+    "challenge": "The old site opened with a slogan slider and a 'Learn more' button. The savings rate appeared as 5% on the homepage but 3.5% on the product page, and loan installments were spread across five long tables of around seventy rows, with a separate calculator that only offered a tenor dropdown.\n\nThe online application asked for a collateral type and nothing else, so applicants did not know which documents to prepare. Important fraud warnings (no unsecured loans, no upfront fees) sat in a long text block, every photo carried a domain watermark, and member feedback repeatedly asked for a way to check balances and installments online.",
+    "solution": "The homepage leads with an installment estimate, followed by a strip of product rates, a clickable time-deposit rate table that shows interest after tax, the loan ceiling tiers condensed into four rows, and the three accepted collateral types. Fraud warnings appear as a top banner and a dedicated block, next to the four application steps and the official offices and channels.\n\nThe loan screen splits simulation and application: amount, tenor and the full installment schedule update as the user types, while the form adjusts the document checklist to the chosen collateral. Members see savings, deposits, the savings-lottery account and their loan progress with the next installment and its virtual account. Account officers work from a review desk with document checks, repayment ratio, collateral value and survey notes before sending a case to the credit committee. The planned production stack is Laravel with MySQL, connected to the cooperative's core system.",
+    "features": [
+      "Quick installment estimate with tenors limited by loan ceiling",
+      "Clickable time-deposit rate table with after-tax interest",
+      "Loan simulation with a full installment schedule",
+      "Online application with a document checklist per collateral type",
+      "Fraud warning banner and official channel list",
+      "Member portal for savings, deposits, savings lottery and loans",
+      "Account officer review desk with ratio and collateral checks"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Koperasi Simpan Pinjam",
+    "type": "WEBSITE KOPERASI & PORTAL ANGGOTA",
+    "category": "Financial Services",
+    "summary": "Redesign untuk koperasi simpan pinjam dengan tiga kantor. Pengunjung membandingkan bunga tabungan dan simpanan berjangka, menghitung angsuran, lalu mengajukan pinjaman online dengan dokumen yang tepat; anggota memantau saldo dan angsuran, dan account officer meninjau setiap pengajuan di satu layar.",
+    "challenge": "Situs lama dibuka dengan slider slogan dan tombol 'Learn more'. Bunga tabungan tertulis 5% di beranda tetapi 3,5% di halaman produk, dan angsuran pinjaman tersebar di lima tabel panjang berisi sekitar tujuh puluh baris, dengan kalkulator terpisah yang hanya menyediakan pilihan tenor.\n\nForm pengajuan online hanya menanyakan jenis jaminan, sehingga pemohon tidak tahu dokumen apa yang perlu disiapkan. Peringatan penipuan yang penting (tidak ada KTA, tidak ada biaya di muka) berada di blok teks panjang, semua foto berwatermark domain, dan masukan anggota berulang kali meminta cara mengecek saldo dan angsuran secara online.",
+    "solution": "Beranda dibuka dengan perkiraan angsuran, diikuti strip bunga produk, tabel bunga simpanan berjangka yang bisa diklik dan menampilkan bunga setelah pajak, tingkatan plafon pinjaman yang diringkas jadi empat baris, dan tiga jenis jaminan. Peringatan penipuan tampil sebagai pita di atas header dan blok tersendiri, di samping empat langkah pengajuan serta kantor dan saluran resmi.\n\nLayar pinjaman membagi simulasi dan pengajuan: nominal, tenor, dan jadwal angsuran lengkap berubah saat diketik, sementara form menyesuaikan checklist dokumen dengan jaminan yang dipilih. Anggota melihat tabungan, simpanan berjangka, tabungan arisan, serta progres pinjaman dengan angsuran berikutnya dan virtual account-nya. Account officer bekerja dari meja tinjauan berisi cek dokumen, rasio angsuran, nilai jaminan, dan catatan survei sebelum meneruskan kasus ke komite kredit. Stack produksi yang direncanakan adalah Laravel dengan MySQL, terhubung ke core system koperasi.",
+    "features": [
+      "Perkiraan angsuran cepat dengan tenor sesuai plafon",
+      "Tabel bunga simpanan berjangka interaktif dengan bunga setelah pajak",
+      "Simulasi pinjaman dengan jadwal angsuran lengkap",
+      "Pengajuan online dengan checklist dokumen per jenis jaminan",
+      "Pita peringatan penipuan dan daftar saluran resmi",
+      "Portal anggota untuk tabungan, berjangka, arisan, dan pinjaman",
+      "Meja tinjauan account officer dengan cek rasio dan jaminan"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

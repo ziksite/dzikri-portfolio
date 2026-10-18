@@ -1,0 +1,58 @@
+{
+  "slug": "car-rental-company-website",
+  "kind": "Website",
+  "industry": "Transportation & Travel",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Online Booking", "Fleet Management"],
+  "metrics": [
+    { "value": "17", "label": "VEHICLE TYPES", "labelId": "JENIS MOBIL" },
+    { "value": "4", "label": "RATE PACKAGES", "labelId": "PAKET TARIF" },
+    { "value": "50%", "label": "DOWN PAYMENT ONLINE", "labelId": "DP ONLINE" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with search by city, schedule and rental type", "captionId": "Beranda dengan pencarian kota, jadwal, dan jenis sewa" },
+    { "hash": "armada", "caption": "Available cars with self-drive rules, stock and two-day totals", "captionId": "Mobil tersedia dengan aturan lepas kunci, stok, dan total dua hari" },
+    { "hash": "pesan", "caption": "Split checkout with documents, deposit and down payment", "captionId": "Checkout terbelah dengan dokumen, deposit, dan DP" },
+    { "hash": "serah-terima", "caption": "Pool tablet with fleet availability and handover checklist", "captionId": "Tablet pool dengan ketersediaan armada dan checklist serah terima" }
+  ],
+  "content_en": {
+    "title": "Car Rental Company Website",
+    "type": "CAR RENTAL WEBSITE & BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign for a car rental company offering self-drive and chauffeured rentals across several cities. Customers search by city and schedule, compare rates per package, pay a 50% down payment with their documents, and pool staff run handovers from a fleet availability board.",
+    "challenge": "The old homepage opened with a promotional banner and a paragraph listing more than forty branch cities, followed by twelve services shown with equal weight, from car rental to heavy equipment and hotel booking. Car cards showed a single price per 12 hours without saying whether it included a driver or fuel.\n\nFull rates were long blocks of text per car, while the self-drive rules, rental durations, overtime and fuel policy were spread over three pages and the document requirements were an image. Booking meant filling a form without a price, waiting for customer service, transferring the deposit to an account sent by chat, and confirming within ten minutes.",
+    "solution": "The homepage opens with a search card for self-drive, chauffeured or monthly rental, pickup point and schedule, followed by one rate table for every car across four packages, the documents and deposit required for each rental type, and monthly rates for companies. Results apply the self-drive rule per category, show remaining units and the total for the chosen dates, and let customers switch cars that require a driver to the chauffeured option.\n\nCheckout follows a split layout: the summary shows the car, schedule, line items, down payment, balance and the separate deposit, while the form collects renter details, delivery point, document uploads and QRIS or virtual account payment. At the pool, staff see today's departures and returns, an availability timeline per licence plate with servicing and unpaid holds, and a handover checklist for documents, deposit, fuel, mileage and photos. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Search by city, pickup point, schedule and rental type",
+      "One rate table for every car across four packages",
+      "Self-drive eligibility applied per car category",
+      "Document and deposit requirements per rental type",
+      "Split checkout with document upload and 50% down payment",
+      "Fleet availability timeline per licence plate",
+      "Handover checklist for documents, deposit, fuel and photos"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Perusahaan Rental Mobil",
+    "type": "WEBSITE & BOOKING RENTAL MOBIL",
+    "category": "Booking System",
+    "summary": "Redesign untuk perusahaan rental mobil lepas kunci dan dengan sopir di beberapa kota. Pelanggan mencari berdasarkan kota dan jadwal, membandingkan tarif per paket, membayar DP 50% bersama dokumen, dan petugas pool mengatur serah terima dari papan ketersediaan armada.",
+    "challenge": "Beranda lama dibuka dengan banner promo dan paragraf berisi lebih dari empat puluh kota cabang, disusul dua belas layanan dengan bobot yang sama, dari rental mobil sampai alat berat dan booking hotel. Kartu mobil hanya menampilkan satu harga per 12 jam tanpa keterangan apakah sudah termasuk sopir atau BBM.\n\nTarif lengkap berupa blok teks panjang per mobil, sementara aturan lepas kunci, durasi sewa, overtime, dan kebijakan BBM tersebar di tiga halaman, dan syarat dokumen berupa gambar. Memesan berarti mengisi form tanpa harga, menunggu CS, transfer DP ke rekening yang dikirim lewat chat, lalu konfirmasi dalam sepuluh menit.",
+    "solution": "Beranda dibuka dengan kartu pencarian untuk sewa lepas kunci, dengan sopir, atau bulanan, titik ambil, dan jadwal, diikuti satu tabel tarif untuk semua mobil di empat paket, dokumen dan deposit yang dibutuhkan per jenis sewa, serta tarif bulanan untuk perusahaan. Hasil pencarian menerapkan aturan lepas kunci per kategori, menampilkan sisa unit dan total untuk tanggal yang dipilih, dan mobil yang wajib bersopir bisa langsung dialihkan ke opsi dengan sopir.\n\nCheckout memakai tata letak terbelah: ringkasan menampilkan mobil, jadwal, rincian biaya, DP, sisa pembayaran, dan deposit yang terpisah, sementara form mengumpulkan data penyewa, titik serah terima, unggahan dokumen, dan pembayaran QRIS atau virtual account. Di pool, petugas melihat mobil yang keluar dan kembali hari ini, linimasa ketersediaan per plat nomor dengan jadwal servis dan pesanan yang belum DP, serta checklist serah terima untuk dokumen, deposit, BBM, kilometer, dan foto. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Pencarian kota, titik ambil, jadwal, dan jenis sewa",
+      "Satu tabel tarif untuk semua mobil di empat paket",
+      "Aturan lepas kunci diterapkan per kategori mobil",
+      "Syarat dokumen dan deposit per jenis sewa",
+      "Checkout terbelah dengan unggah dokumen dan DP 50%",
+      "Linimasa ketersediaan armada per plat nomor",
+      "Checklist serah terima untuk dokumen, deposit, BBM, dan foto"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
