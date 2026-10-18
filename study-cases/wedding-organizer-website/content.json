@@ -1,0 +1,91 @@
+{
+  "slug": "wedding-organizer-website",
+  "kind": "Website",
+  "industry": "Events & Weddings",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Package Builder",
+    "Event Run-of-Show"
+  ],
+  "metrics": [
+    {
+      "value": "6",
+      "label": "PARTNER VENUES",
+      "labelId": "GEDUNG REKANAN"
+    },
+    {
+      "value": "300–1,000",
+      "label": "GUESTS PER PACKAGE",
+      "labelId": "TAMU PER PAKET"
+    },
+    {
+      "value": "H-30 / H-14",
+      "label": "DOWN PAYMENT & SETTLEMENT",
+      "labelId": "DP & PELUNASAN"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with package comparison, venues and payment steps",
+      "captionId": "Beranda dengan perbandingan paket, gedung, dan tahap pembayaran"
+    },
+    {
+      "hash": "paket",
+      "caption": "Package builder with venue-by-date availability and a live estimate",
+      "captionId": "Penyusun paket dengan ketersediaan gedung per tanggal dan estimasi langsung"
+    },
+    {
+      "hash": "planner",
+      "caption": "Couple's planner with checklist, payment schedule and vendors",
+      "captionId": "Planner pasangan dengan checklist, jadwal bayar, dan vendor"
+    },
+    {
+      "hash": "hari-h",
+      "caption": "Day-of run-of-show for the crew, cue by cue",
+      "captionId": "Rundown hari H untuk kru, per cue"
+    }
+  ],
+  "content_en": {
+    "title": "Wedding Organizer & Catering Website",
+    "type": "WEDDING PACKAGES & PLANNING",
+    "category": "Booking System",
+    "summary": "A redesign for a wedding organizer and caterer that sells all-in packages including the venue. Couples compare packages, check which venues are free on which weekends, build a package with a live estimate and payment schedule, then follow a planner until the day; the crew runs the event from a cue-by-cue rundown.",
+    "challenge": "The old site opened with a slogan and a contact button. Prices were spread across more than a hundred venue pages, each listing seven guest counts, so comparing two venues meant opening pages one by one. There was no way to see which dates were still free, and every question went to one of four WhatsApp numbers.\n\nPackage contents sat on a third level as long lists, which hid the difference between the two main packages. Payment terms were folded into an accordion with a personal bank account, the homepage relied on an Instagram feed that exposed past couples' names and phone numbers, and nothing supported couples after they had booked.",
+    "solution": "The homepage puts the three packages side by side in a comparison table, lists partner venues by area with their next free weekends, and explains the booking fee, 50% down payment at H-30 and settlement at H-14 before offering a tasting appointment. The package builder shows six venues against twelve weekends; picking a free slot, the guest count, the buffet menu and add-ons updates the estimate bar and calculates the payment due dates from the wedding date.\n\nAfter booking, couples get a planner with an 18-step checklist, payment status, the next tasting appointment and every vendor with its contact person. On the day, the crew follows a rundown grouped into akad, break and reception, filtered by role, with the current cue highlighted, vendor arrival times and family notes. The planned production stack is Next.js with Supabase, a virtual-account payment gateway and WhatsApp reminders.",
+    "features": [
+      "Side-by-side comparison of three wedding packages",
+      "Partner venues by area with their next free weekends",
+      "Venue-by-weekend availability grid with held and closed dates",
+      "Package builder by guest count, menu and add-ons with a live estimate",
+      "Payment schedule calculated from the wedding date",
+      "Couple's planner with checklist, payments and vendor list",
+      "Day-of run-of-show for the crew with role filters and vendor check-in"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Wedding Organizer & Katering",
+    "type": "PAKET & PERENCANAAN PERNIKAHAN",
+    "category": "Booking System",
+    "summary": "Redesign untuk wedding organizer dan katering yang menjual paket lengkap termasuk gedung. Pasangan membandingkan paket, melihat gedung mana yang kosong di akhir pekan mana, menyusun paket dengan estimasi dan jadwal bayar langsung, lalu mengikuti planner sampai hari H; kru menjalankan acara dari rundown per cue.",
+    "challenge": "Situs lama dibuka dengan slogan dan tombol kontak. Harga tersebar di lebih dari seratus halaman gedung, masing-masing berisi tujuh jumlah tamu, sehingga membandingkan dua gedung berarti membuka halaman satu per satu. Tanggal yang masih kosong tidak bisa dilihat, dan semua pertanyaan masuk ke salah satu dari empat nomor WhatsApp.\n\nIsi paket ada di tingkat ketiga berupa daftar panjang, sehingga perbedaan dua paket utama tidak terlihat. Ketentuan bayar terlipat di akordeon dengan rekening pribadi, beranda bergantung pada feed Instagram yang menampilkan nama dan nomor HP pasangan sebelumnya, dan tidak ada yang membantu pasangan setelah booking.",
+    "solution": "Beranda menampilkan tiga paket berdampingan dalam tabel perbandingan, daftar gedung rekanan per wilayah dengan akhir pekan yang masih kosong, dan menjelaskan biaya booking, DP 50% di H-30, serta pelunasan di H-14 sebelum menawarkan jadwal test food. Penyusun paket menampilkan enam gedung terhadap dua belas akhir pekan; memilih slot kosong, jumlah tamu, menu buffet, dan tambahan langsung memperbarui bar estimasi dan menghitung tanggal jatuh tempo dari tanggal acara.\n\nSetelah booking, pasangan mendapat planner berisi checklist 18 langkah, status pembayaran, jadwal test food berikutnya, dan setiap vendor beserta PIC-nya. Di hari H, kru mengikuti rundown yang dikelompokkan menjadi akad, jeda, dan resepsi, bisa difilter per peran, dengan cue yang sedang berjalan disorot, jam kedatangan vendor, dan catatan keluarga. Stack produksi yang direncanakan adalah Next.js dengan Supabase, payment gateway virtual account, dan pengingat WhatsApp.",
+    "features": [
+      "Perbandingan tiga paket pernikahan berdampingan",
+      "Gedung rekanan per wilayah dengan akhir pekan yang masih kosong",
+      "Grid ketersediaan gedung per akhir pekan, termasuk tanggal ditahan dan tutup",
+      "Penyusun paket per jumlah tamu, menu, dan tambahan dengan estimasi langsung",
+      "Jadwal bayar dihitung dari tanggal acara",
+      "Planner pasangan dengan checklist, pembayaran, dan daftar vendor",
+      "Rundown hari H untuk kru dengan filter peran dan kehadiran vendor"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

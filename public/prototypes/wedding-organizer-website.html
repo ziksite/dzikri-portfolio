@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laras Wedding &amp; Catering — Paket pernikahan dengan gedung di Bandung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/wedding-organizer-website.css">
+<style>
+  .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: end; padding: 56px 0 36px; }
+  .hero__facts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+  .sec { padding: 72px 0 0; }
+  .sec__head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; flex-wrap: wrap; }
+  .venue-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .consult { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 0; overflow: hidden; }
+  .builder { display: grid; gap: 16px; padding: 8px 0 40px; }
+  .builder > * { min-width: 0; }
+  .plan-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 28px; }
+  @media (max-width: 1024px) { .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 32px; } .venue-groups { grid-template-columns: 1fr; } .consult { grid-template-columns: 1fr; } .plan-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .sec { padding-top: 52px; } .consult .photo { display: none; } .consult__body { padding: 24px 20px !important; } .two { grid-template-columns: 1fr !important; } }
+  .consult > * { min-width: 0; }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">laras</a>
+      <nav class="nav"><a href="#home" data-nav="home">Paket</a><a href="#home">Venue</a><a href="#home">Katering</a><a href="#home">Pembayaran</a><a href="#home">Galeri</a></nav>
+      <div class="header__right"><a class="btn btn-secondary btn-sm" href="#planner">Planner pasangan</a><a class="btn btn-primary btn-sm" href="#paket">Cek tanggal</a></div>
+    </header>
+
+    <section class="hero">
+      <h1 class="t-display">Gedung, katering, dan kru hari H dalam satu paket nikah.</h1>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <p class="muted" style="font-size:17px">Pilih gedung dan jumlah tamu, lihat tanggal yang masih kosong, dan hitung totalnya sebelum konsultasi. Harga sudah termasuk sewa dan charge gedung, rias, dokumentasi, dekorasi, MC, dan hiburan.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#paket">Susun paket</a><a class="btn btn-secondary" href="#konsultasi" onclick="document.getElementById('konsultasi').scrollIntoView({behavior:'smooth'});return false">Jadwalkan test food</a></div>
+        <div class="hero__facts"><span class="chip chip--line"><i data-lucide="users"></i>300–1.000 tamu</span><span class="chip chip--line"><i data-lucide="building-2"></i>6 gedung rekanan</span><span class="chip chip--line"><i data-lucide="calendar-check"></i>Tahan tanggal Rp3 juta</span></div>
+      </div>
+    </section>
+
+    <div class="photo-row">
+      <div class="photo" data-img="assets/wedding-organizer-website/pelaminan-bunga-blush.webp"></div>
+      <div class="photo" data-img="assets/wedding-organizer-website/meja-akad.webp"></div>
+      <div class="photo" data-img="assets/wedding-organizer-website/buffet-biru.webp"></div>
+    </div>
+
+    <!-- Paket -->
+    <section class="sec">
+      <div class="sec__head">
+        <div><h2 class="t-h1">Tiga paket, satu tim</h2><p class="t-meta" style="margin-top:6px">Harga untuk 300 tamu di gedung termurah. Total berubah sesuai gedung dan jumlah tamu.</p></div>
+        <a class="btn btn-secondary btn-sm" href="#paket">Bandingkan di gedung pilihan<i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+      <div class="sheet table-scroll">
+        <table class="compare">
+          <thead>
+            <tr><th></th>
+              <th class="col-hl"><span class="chip chip--pink" style="margin-bottom:10px">Paling sering dipilih</span><p class="t-h3">Paket Utama</p><p class="price">Rp84.850.000</p><p class="t-small">300 tamu · gedung termasuk</p></th>
+              <th><p class="t-h3" style="margin-top:36px">Paket Ringkas</p><p class="price">Rp76.575.000</p><p class="t-small">300 tamu · gedung termasuk</p></th>
+              <th><p class="t-h3" style="margin-top:36px">Akad di Rumah</p><p class="price">Rp22.000.000</p><p class="t-small">200 porsi · di rumah keluarga</p></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Jumlah tamu</th><td class="col-hl">300 · 400 · 500 · 600 · 700 · 800 · 1.000</td><td>300 · 400 · 500 · 600 · 700 · 800 · 1.000</td><td>200 atau 300 porsi</td></tr>
+            <tr><th>Katering buffet</th><td class="col-hl">Menu A, B, atau C · nasi, daging, ayam/ikan, salad, sop, buah, puding, cake mini</td><td>Menu A, B, atau C · isi buffet sama</td><td>Menu A, B, atau C</td></tr>
+            <tr><th>Pondokan</th><td class="col-hl">Bakso 200 porsi, sate ayam 200 porsi, es doger</td><td>Bakso 100 porsi, soto betawi 100 porsi, es doger</td><td><i data-lucide="minus" class="no"></i></td></tr>
+            <tr><th>Rias &amp; busana</th><td class="col-hl">Pengantin akad + resepsi, orang tua 2 pasang, penerima tamu 4, among tamu 4 pasang</td><td>Sama dengan Paket Utama</td><td>Pengantin akad</td></tr>
+            <tr><th>Dokumentasi</th><td class="col-hl">1 fotografer, 1 videografer, video sinematik, album kolase 10 sheet</td><td>Sama dengan Paket Utama</td><td>1 fotografer</td></tr>
+            <tr><th>Dekorasi</th><td class="col-hl">Pelaminan sampai 10 m, 2 pergola, colour lighting, lantai kaca di gazebo jalan</td><td>Pelaminan sampai 10 m, karpet jalan, 4 standing flower</td><td>Dekor akad + tenda (opsional, per meter)</td></tr>
+            <tr><th>Coffee break akad</th><td class="col-hl">Soto + lontong 100, kopi &amp; teh 100, snack 150</td><td>Kopi &amp; teh 50, snack 150</td><td><i data-lucide="minus" class="no"></i></td></tr>
+            <tr><th>MC, hiburan, kru</th><td class="col-hl">MC akad &amp; resepsi, organ tunggal + singer, pengiring kirab, kru WO</td><td>Sama dengan Paket Utama</td><td>MC akad, kru WO</td></tr>
+            <tr><th></th><td class="col-hl"><a class="btn btn-primary btn-sm" href="#paket">Susun Paket Utama</a></td><td><a class="btn btn-secondary btn-sm" href="#paket">Susun Paket Ringkas</a></td><td><a class="btn btn-secondary btn-sm" href="#">Tanya via WhatsApp</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="sec">
+      <div class="sec__head">
+        <div><h2 class="t-h1">Gedung rekanan</h2><p class="t-meta" style="margin-top:6px">Sewa dan charge gedung sudah masuk harga paket. Tanggal kosong diperbarui setiap ada booking.</p></div>
+        <a class="btn btn-secondary btn-sm" href="#paket">Lihat kalender semua gedung<i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+      <div class="venue-groups">
+        <div class="panel">
+          <div class="panel__head"><span class="group__title"><span class="dot dot--pink"></span>Bandung timur</span><span class="count">2 gedung</span></div>
+          <div class="rows">
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Aula Masjid Nurul Iman</b><span class="t-small">s.d. 600</span></div><p class="t-small">Antapani · mulai Rp84.850.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Min 8 Nov</span><span class="chip chip--green">Min 15 Nov</span><span class="chip chip--green">Sab 28 Nov</span></div></div>
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Gedung Serbaguna Arcamanik</b><span class="t-small">s.d. 800</span></div><p class="t-small">Arcamanik · mulai Rp91.350.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Sab 14 Nov</span><span class="chip chip--green">Min 22 Nov</span><span class="chip chip--green">Min 29 Nov</span></div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><span class="group__title"><span class="dot dot--blue"></span>Bandung kota</span><span class="count">2 gedung</span></div>
+          <div class="rows">
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Graha Puspa</b><span class="t-small">s.d. 1.000</span></div><p class="t-small">Buahbatu · mulai Rp96.850.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Min 8 Nov</span><span class="chip chip--green">Sab 21 Nov</span><span class="chip chip--green">Sab 28 Nov</span></div></div>
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Auditorium Pakuan</b><span class="t-small">s.d. 1.000</span></div><p class="t-small">Dago · mulai Rp109.050.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Min 15 Nov</span><span class="chip chip--green">Min 22 Nov</span><span class="chip chip--green">Sab 5 Des</span></div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><span class="group__title"><span class="dot dot--green"></span>Cimahi &amp; Kab. Bandung</span><span class="count">2 gedung</span></div>
+          <div class="rows">
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Balai Sawala</b><span class="t-small">s.d. 700</span></div><p class="t-small">Cimahi · mulai Rp89.050.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Sab 7 Nov</span><span class="chip chip--green">Min 15 Nov</span><span class="chip chip--green">Sab 28 Nov</span></div></div>
+            <div style="padding:16px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:12px"><b>Gedung Pancawarna</b><span class="t-small">s.d. 800</span></div><p class="t-small">Soreang · mulai Rp87.850.000</p><div class="pills" style="gap:6px"><span class="chip chip--green">Sab 7 Nov</span><span class="chip chip--green">Min 8 Nov</span><span class="chip chip--green">Min 15 Nov</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pembayaran -->
+    <section class="sec">
+      <div class="sec__head"><div><h2 class="t-h1">Cara bayar</h2><p class="t-meta" style="margin-top:6px">Contoh untuk Paket Utama 500 tamu di Graha Puspa, Sabtu 28 November 2026.</p></div></div>
+      <div class="sheet paysteps">
+        <div class="paystep"><span class="paystep__when">Saat booking</span><span class="paystep__amt">Rp3.000.000</span><p class="t-small">Menahan tanggal dan gedung. Dipotong dari total.</p></div>
+        <div class="paystep"><span class="paystep__when">H-30 · 29 Okt</span><span class="paystep__amt">Rp53.675.000</span><p class="t-small">DP 50% dari harga paket.</p></div>
+        <div class="paystep"><span class="paystep__when">H-14 · 14 Nov</span><span class="paystep__amt">Rp50.675.000</span><p class="t-small">Pelunasan. Lewat batas ini, pesanan dianggap batal dan dana tidak kembali.</p></div>
+        <div class="paystep"><span class="paystep__when">Hari H · 28 Nov</span><span class="paystep__amt">Rp0</span><p class="t-small">Kru datang dari subuh. Tip kebersihan dan keamanan gedung sudah kami tanggung.</p></div>
+      </div>
+    </section>
+
+    <!-- Konsultasi -->
+    <section class="sec" id="konsultasi" style="padding-bottom:24px">
+      <div class="dark consult">
+        <div class="photo" style="--ar:auto;border-radius:0;min-height:100%" data-img="assets/wedding-organizer-website/buffet-merah-emas.webp"></div>
+        <div class="consult__body" style="padding:36px;display:flex;flex-direction:column;gap:20px">
+          <form data-demo-form="#consultDone" style="display:flex;flex-direction:column;gap:20px">
+            <div><h2 class="t-h1">Konsultasi &amp; test food</h2><p class="t-meta" style="margin-top:6px">Gratis, di kantor Antapani. Cicipi menu A, B, dan C, lalu bahas konsep dekor dengan koordinator.</p></div>
+            <div class="daypick" data-select="is-selected">
+              <button type="button" class="is-selected" data-value="Sabtu, 24 Oktober"><span>Sab</span><b>24</b><span>Okt</span></button>
+              <button type="button" data-value="Minggu, 25 Oktober"><span>Min</span><b>25</b><span>Okt</span></button>
+              <button type="button" data-value="Sabtu, 31 Oktober"><span>Sab</span><b>31</b><span>Okt</span></button>
+              <button type="button" data-value="Minggu, 1 November"><span>Min</span><b>1</b><span>Nov</span></button>
+              <button type="button" data-value="Sabtu, 7 November"><span>Sab</span><b>7</b><span>Nov</span></button>
+            </div>
+            <div class="timepick" data-select="is-selected"><button type="button" class="is-selected">10.00</button><button type="button" class="is-off">13.00</button><button type="button">15.00</button></div>
+            <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <label class="field">Nama<input value="Putri Maharani"></label>
+              <label class="field">WhatsApp<input value="0812-0000-4417" inputmode="tel"></label>
+            </div>
+            <label class="field">Perkiraan tanggal acara<select><option>Desember 2026</option><option>Januari 2027</option><option>Belum tahu</option></select></label>
+            <button class="btn btn-primary" style="align-self:flex-start">Daftar test food</button>
+          </form>
+          <div id="consultDone" hidden style="display:flex;flex-direction:column;gap:14px">
+            <span style="width:48px;height:48px;border-radius:50%;background:#fff;color:var(--slate);display:grid;place-items:center"><i data-lucide="check"></i></span>
+            <h2 class="t-h1">Sampai ketemu Sabtu, 24 Oktober</h2>
+            <p class="t-meta">Jam 10.00 di kantor Laras, Antapani. Lokasi dan menu yang akan dicicipi sudah dikirim ke WhatsApp. Ajak maksimal 4 orang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">laras</span><p class="t-meta" style="max-width:320px">Wedding organizer &amp; katering di Bandung dan Cimahi sejak 2013. Kantor &amp; dapur di Antapani, Bandung.</p></div>
+        <div><h4>Paket</h4><ul><li><a href="#paket">Paket Utama</a></li><li><a href="#paket">Paket Ringkas</a></li><li><a href="#">Akad di rumah</a></li><li><a href="#">Sewa tenda</a></li></ul></div>
+        <div><h4>Pasangan</h4><ul><li><a href="#planner">Planner</a></li><li><a href="#home">Pembayaran</a></li><li><a href="#home">Test food</a></li></ul></div>
+        <div><h4>Laras</h4><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li><li><a href="#hari-h">Login kru</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Laras Wedding &amp; Catering</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= SUSUN PAKET ================= -->
+<section data-screen="paket">
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">laras</a>
+      <nav class="nav"><a href="#home">Paket</a><a href="#home">Venue</a><a href="#home">Katering</a><a href="#home">Pembayaran</a></nav>
+      <div class="header__right"><a class="btn btn-secondary btn-sm" href="#planner">Planner pasangan</a></div>
+    </header>
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:20px 0 4px">
+      <div><p class="t-small"><a href="#home">Beranda</a> · Susun paket</p><h1 class="t-h1" style="margin-top:6px">Susun paket pernikahan</h1></div>
+      <nav class="tabs" data-select id="pkgTabs" style="border-bottom:0"><button class="is-active" data-value="utama">Paket Utama <b>7</b></button><button data-value="ringkas">Paket Ringkas <b>7</b></button></nav>
+    </div>
+
+    <div class="builder">
+      <!-- Tanggal & gedung -->
+      <div class="panel">
+        <div class="panel__head">
+          <span class="group__title"><span class="dot dot--pink"></span>Tanggal &amp; gedung</span><span class="count">12 akhir pekan · 6 gedung</span>
+          <div class="legend" style="margin-left:auto"><span><i style="background:var(--ev-green)"></i>Kosong</span><span><i style="background:var(--ev-amber)"></i>Ditahan</span><span><i style="background:#ffebec"></i>Terisi</span><span><i style="background:var(--hatch);border:1px solid #e9e2a6"></i>Gedung tutup</span></div>
+        </div>
+        <div class="avail"><div class="avail__grid" id="availGrid" style="--cols:12"></div></div>
+      </div>
+
+      <!-- Tamu & menu -->
+      <div class="panel">
+        <div class="panel__head"><span class="group__title"><span class="dot dot--blue"></span>Tamu &amp; menu</span><span class="count" id="capNote">Graha Puspa s.d. 1.000 tamu</span></div>
+        <div class="panel__body" style="display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <p class="t-h3">Jumlah tamu (porsi buffet)</p>
+            <div class="seg" data-select="is-selected" id="paxPick" style="align-self:flex-start">
+              <button data-value="300">300</button><button data-value="400">400</button><button class="is-selected" data-value="500">500</button><button data-value="600">600</button><button data-value="700">700</button><button data-value="800">800</button><button data-value="1000">1.000</button>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <p class="t-h3">Menu buffet</p>
+            <div class="options" data-select="is-selected" id="menuPick">
+              <button class="opt is-selected" data-value="A"><b>Menu A</b><span>Nasi goreng sosis, daging teriyaki, ayam rica-rica, asinan bogor, sop kimlo</span><em>Termasuk</em></button>
+              <button class="opt" data-value="B"><b>Menu B</b><span>Tambahan pilihan daging rendang, ikan fillet asam manis, salad buah</span><em>+Rp1.500.000</em></button>
+              <button class="opt" data-value="C"><b>Menu C</b><span>Pilihan premium: daging lada hitam, ayam panggang kecap, dua jenis sop</span><em>+Rp5.000.000</em></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tambahan -->
+      <div class="panel">
+        <div class="panel__head"><span class="group__title"><span class="dot dot--amber"></span>Tambahan</span><span class="count">opsional</span></div>
+        <div class="rows" id="addons">
+          <div class="row"><div><p class="row__title">AC standing floor 5 PK</p><p class="row__meta">Rp800.000 / unit · disarankan untuk gedung tanpa AC sentral</p></div><div class="row__right"><div class="stepper" data-stepper data-min="0" data-max="8" data-price="800000"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="row"><div><p class="row__title">Cooling fan / misty cool</p><p class="row__meta">Rp450.000 / unit</p></div><div class="row__right"><div class="stepper" data-stepper data-min="0" data-max="8" data-price="450000"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="row"><div><p class="row__title">Pondokan tambahan</p><p class="row__meta">Sate ayam atau siomay 100 porsi · Rp2.000.000</p></div><div class="row__right"><div class="stepper" data-stepper data-min="0" data-max="4" data-price="2000000"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+          <div class="row"><div><p class="row__title">Janur tambahan</p><p class="row__meta">Rp300.000 / buah · untuk gang atau rumah keluarga</p></div><div class="row__right"><div class="stepper" data-stepper data-min="0" data-max="4" data-price="300000"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>0</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+        </div>
+      </div>
+
+      <!-- Isi paket -->
+      <div class="panel">
+        <div class="panel__head"><span class="group__title"><span class="dot dot--slate"></span>Sudah termasuk</span><span class="count" id="inclNote">Paket Utama · 500 tamu</span></div>
+        <details class="acc" open style="border-top:0"><summary><i data-lucide="utensils"></i>Katering &amp; pondokan<i data-lucide="chevron-down" class="chev"></i></summary><ul><li id="inclBuffet">Buffet utama 500 porsi, menu A</li><li id="inclPond">Pondokan bakso 200 porsi, sate ayam 200 porsi, es doger 1 galon</li><li>Buah potong, puding &amp; fla, cake tart mini, soft drink, air mineral</li><li id="inclCoffee">Coffee break setelah akad: soto + lontong 100, kopi &amp; teh 100, snack 150</li></ul></details>
+        <details class="acc"><summary><i data-lucide="sparkles"></i>Rias &amp; busana<i data-lucide="chevron-down" class="chev"></i></summary><ul><li>Pengantin akad 1 pasang</li><li>Pengantin resepsi 1 pasang</li><li>Orang tua resepsi 2 pasang</li><li>Penerima tamu 4 orang, among tamu 4 pasang</li></ul></details>
+        <details class="acc"><summary><i data-lucide="camera"></i>Dokumentasi<i data-lucide="chevron-down" class="chev"></i></summary><ul><li>1 fotografer, 1 videografer</li><li>Video sinematik</li><li>Album kolase 10 sheet (20 halaman)</li><li>Flashdisk berisi semua foto &amp; video</li></ul></details>
+        <details class="acc"><summary><i data-lucide="flower-2"></i>Dekorasi<i data-lucide="chevron-down" class="chev"></i></summary><ul id="inclDecor"><li>Pelaminan lebar sampai 10 m, fresh flower mix artificial</li><li>Taman depan pelaminan, sofa pengantin, meja akad</li><li>4 standing flower, 6 lampu hias jalan, 2 pergola masuk</li><li>Dekor meja buffet, dessert, pondokan, ruang VIP + round table</li><li>Colour lighting, lantai kaca di gazebo jalan</li><li>Kotak amplop, buku tamu, janur kuning besar</li></ul></details>
+        <details class="acc"><summary><i data-lucide="mic"></i>MC, hiburan &amp; kru<i data-lucide="chevron-down" class="chev"></i></summary><ul><li>MC akad &amp; resepsi</li><li>Organ tunggal + singer, sound system, soundman</li><li>Saxophone, cucuk lampah, atau aki lengser untuk kirab</li><li>Kru WO mengatur seluruh acara, undangan digital</li><li>20 nasi box untuk pekerja gedung</li><li>Tip kebersihan &amp; keamanan gedung</li></ul></details>
+      </div>
+
+      <!-- Jadwal bayar -->
+      <div class="panel" id="payPanel">
+        <div class="panel__head"><span class="group__title"><span class="dot dot--green"></span>Jadwal bayar</span><span class="count" id="payNote">Sabtu, 28 November 2026</span></div>
+        <div class="paysteps">
+          <div class="paystep"><span class="paystep__when">Hari ini · 18 Okt</span><span class="paystep__amt">Rp3.000.000</span><p class="t-small">Booking, menahan tanggal &amp; gedung</p></div>
+          <div class="paystep"><span class="paystep__when" id="dpWhen">H-30</span><span class="paystep__amt" id="dpAmt">–</span><p class="t-small">DP 50% dari total</p></div>
+          <div class="paystep"><span class="paystep__when" id="lunasWhen">H-14</span><span class="paystep__amt" id="lunasAmt">–</span><p class="t-small">Pelunasan, dikurangi booking</p></div>
+          <div class="paystep"><span class="paystep__when" id="hWhen">Hari H</span><span class="paystep__amt">Rp0</span><p class="t-small">Tidak ada tagihan di hari acara</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="estbar">
+    <form class="wrap estbar__in" data-demo-form="#holdDone" id="holdForm">
+      <div class="estbar__item"><span>Tanggal &amp; gedung</span><b id="estWhere">Sab 28 Nov · Graha Puspa</b></div>
+      <div class="estbar__item hide-sm"><span>Paket</span><b id="estPkg">Utama · 500 tamu · Menu A</b></div>
+      <div class="estbar__item estbar__total"><span>Estimasi total</span><b id="estTotal">Rp0</b></div>
+      <div class="estbar__cta"><a class="btn btn-ghost-light" href="#home">Test food dulu</a><button class="btn btn-primary">Tahan tanggal · Rp3 juta</button></div>
+    </form>
+    <div id="holdDone" hidden class="wrap estbar__in">
+      <span style="width:40px;height:40px;border-radius:50%;background:#fff;color:var(--slate);display:grid;place-items:center"><i data-lucide="check" class="i-sm"></i></span>
+      <div class="estbar__item"><b>Tanggal ditahan 2×24 jam</b><span id="holdText">Transfer booking Rp3.000.000 ke virtual account yang dikirim via WhatsApp.</span></div>
+      <div class="estbar__cta"><a class="btn btn-primary" href="#planner">Buka planner</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLANNER PASANGAN ================= -->
+<section data-screen="planner">
+  <div class="mob-bar"><span class="logo" style="font-size:20px">laras</span><span class="t-small" style="margin-left:auto">Nadia &amp; Raka</span><span class="avatar avatar--sm">NR</span></div>
+  <div class="shell">
+    <aside class="side">
+      <a class="logo" href="#home" style="height:auto;font-size:22px;color:var(--ink);background:none">laras</a>
+      <p class="side__label">Rencana</p>
+      <a class="is-active" href="#planner"><i data-lucide="layout-grid"></i>Ringkasan</a>
+      <a href="#planner"><i data-lucide="list-checks"></i>Checklist</a>
+      <a href="#planner"><i data-lucide="wallet"></i>Pembayaran</a>
+      <a href="#planner"><i data-lucide="store"></i>Vendor</a>
+      <a href="#planner"><i data-lucide="users"></i>Daftar tamu</a>
+      <p class="side__label">Lainnya</p>
+      <a href="#planner"><i data-lucide="message-circle"></i>Pesan<span class="badge">2</span></a>
+      <a href="#planner"><i data-lucide="file-text"></i>Kontrak &amp; kuitansi</a>
+      <div class="side__foot"><span class="avatar">NR</span><div><p style="font-weight:700;font-size:14px">Nadia &amp; Raka</p><p class="t-small">LRS-2026-0812</p></div></div>
+    </aside>
+
+    <main class="main">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
+        <div>
+          <h1 class="t-h1">Nadia &amp; Raka</h1>
+          <p class="t-meta" style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="chip chip--pink">55 hari lagi</span>Sabtu, 12 Desember 2026 · Gedung Serbaguna Arcamanik · Paket Utama 500 tamu</p>
+        </div>
+        <div style="display:flex;gap:8px"><a class="btn btn-secondary btn-sm" href="#paket">Ubah paket</a><a class="btn btn-dark btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Chat Teh Sinta</a></div>
+      </div>
+
+      <div class="plan-grid">
+        <!-- Checklist -->
+        <div class="panel">
+          <div class="panel__head" style="flex-direction:column;align-items:stretch;gap:12px">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="group__title"><span class="dot dot--slate"></span>Checklist persiapan</span><span class="count" id="ckCount">6 dari 18 selesai</span>
+              <div class="pills" data-select style="margin-left:auto;gap:6px" id="ckFilter"><button class="pill is-active" data-value="all" style="height:32px;font-size:13px">Semua</button><button class="pill" data-value="kalian" style="height:32px;font-size:13px">Tugas kalian</button></div></div>
+            <div class="progress"><i id="ckBar" style="width:33%"></i></div>
+          </div>
+          <div id="checklist"></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+          <!-- Pembayaran -->
+          <div class="panel">
+            <div class="panel__head"><span class="group__title"><span class="dot dot--green"></span>Pembayaran</span><span class="count">Total Rp104.950.000</span></div>
+            <div class="rows">
+              <div class="row"><div><p class="row__title">Booking</p><p class="row__meta">Dibayar Minggu, 2 Agustus 2026</p></div><div class="row__right"><span class="num" style="font-weight:700">Rp3.000.000</span><span class="chip chip--green">Lunas</span></div></div>
+              <div class="row"><div><p class="row__title">DP 50%</p><p class="row__meta">Kamis, 12 November 2026 · H-30</p></div><div class="row__right"><span class="num" style="font-weight:700">Rp52.475.000</span><span class="chip chip--amber">25 hari lagi</span></div></div>
+              <div class="row"><div><p class="row__title">Pelunasan</p><p class="row__meta">Sabtu, 28 November 2026 · H-14</p></div><div class="row__right"><span class="num" style="font-weight:700">Rp49.475.000</span><span class="chip">Belum</span></div></div>
+            </div>
+            <div style="padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap"><p class="t-small" style="flex:1;min-width:180px">Rincian: Paket Utama 500 tamu Rp95.350.000, gedung Rp6.500.000, menu B Rp1.500.000, 2 AC Rp1.600.000.</p><a class="btn btn-primary btn-sm" href="#">Bayar DP</a></div>
+          </div>
+
+          <!-- Konsultasi berikutnya -->
+          <div class="dark" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+            <p class="t-small">Jadwal berikutnya</p>
+            <p style="font:400 26px/1.15 var(--font-display)">Test food &amp; finalisasi menu B</p>
+            <p class="t-meta">Sabtu, 24 Oktober · 10.00 · Kantor Laras, Antapani. Bawa daftar alergi keluarga.</p>
+            <form data-demo-form="#askDone" style="display:flex;gap:8px;margin-top:4px">
+              <label class="field" style="flex:1"><input placeholder="Tanya Teh Sinta…" value="Boleh bawa 6 orang?"></label>
+              <button class="btn btn-primary" style="height:46px">Kirim</button>
+            </form>
+            <p id="askDone" hidden class="t-meta" style="color:#fff">Terkirim. Teh Sinta biasanya membalas di bawah 1 jam.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vendor -->
+      <div class="panel" style="margin-top:20px">
+        <div class="panel__head"><span class="group__title"><span class="dot dot--blue"></span>Vendor di hari H</span><span class="count">6 vendor · koordinator Teh Sinta</span></div>
+        <div class="table-scroll">
+          <table class="compare" style="min-width:720px">
+            <thead><tr><th style="padding-top:14px;width:20%">Vendor</th><th style="padding-top:14px">Isi</th><th style="padding-top:14px">PIC</th><th style="padding-top:14px">Status</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:700">Katering · Laras</td><td class="muted">Buffet 500 porsi menu B, pondokan bakso &amp; sate ayam 200 porsi</td><td>Bu Wening</td><td><span class="chip chip--blue">Test food 24 Okt</span></td></tr>
+              <tr><td style="font-weight:700">Dekorasi</td><td class="muted">Pelaminan 10 m, nuansa sage &amp; peach, 2 pergola</td><td>Arif</td><td><span class="chip chip--amber">Desain final 2 Nov</span></td></tr>
+              <tr><td style="font-weight:700">Rias &amp; busana</td><td class="muted">Akad + resepsi, orang tua 2 pasang, among tamu 4 pasang</td><td>Teh Rina</td><td><span class="chip chip--amber">Fitting 21 Nov</span></td></tr>
+              <tr><td style="font-weight:700">Dokumentasi</td><td class="muted">1 fotografer, 1 videografer, album kolase 10 sheet</td><td>Galang</td><td><span class="chip chip--green">Terkonfirmasi</span></td></tr>
+              <tr><td style="font-weight:700">MC</td><td class="muted">Akad &amp; resepsi, bahasa Indonesia + Sunda</td><td>Kang Yudi</td><td><span class="chip chip--green">Terkonfirmasi</span></td></tr>
+              <tr><td style="font-weight:700">Hiburan</td><td class="muted">Organ tunggal + singer, saxophone untuk kirab</td><td>Dodi</td><td><span class="chip chip--pink">Daftar lagu belum ada</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ================= RUNDOWN KRU HARI H ================= -->
+<section data-screen="hari-h">
+  <div class="crewbar">
+    <div class="wrap crewbar__in">
+      <span class="logo">laras <span style="font-weight:600;opacity:.6">kru</span></span>
+      <div class="crewbar__event"><b>Salsa &amp; Dimas · Paket Ringkas 600 tamu</b><span>Minggu, 18 Oktober 2026 · Balai Sawala, Cimahi · koordinator Teh Sinta</span></div>
+      <div class="clock"><span>Sekarang<br>kru 14 orang</span><b class="num">10.40</b></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:16px">
+      <nav class="tabs" style="border-bottom:0"><a class="is-active" href="#hari-h">Rundown <b>17</b></a><a href="#hari-h">Vendor <b>7</b></a><a href="#hari-h">Catatan keluarga <b>4</b></a></nav>
+      <div class="pills" data-select id="picFilter" style="gap:6px">
+        <button class="pill is-active" data-value="all">Semua</button><button class="pill" data-value="MC">MC</button><button class="pill" data-value="Katering">Katering</button><button class="pill" data-value="Dekor">Dekor</button><button class="pill" data-value="MUA">MUA</button><button class="pill" data-value="Dok">Dok</button><button class="pill" data-value="Musik">Musik</button>
+      </div>
+    </div>
+
+    <div class="ros-layout">
+      <div style="display:flex;flex-direction:column;gap:16px;min-width:0" id="ros"></div>
+
+      <aside style="display:flex;flex-direction:column;gap:16px">
+        <div class="panel">
+          <div class="panel__head"><span class="group__title"><span class="dot dot--green"></span>Vendor hadir</span><span class="count">6 dari 7</span></div>
+          <div>
+            <div class="vendor"><div><b>Dekorasi</b><p>Arif · 6 orang</p></div><span class="chip chip--green">04.30</span></div>
+            <div class="vendor"><div><b>Rias &amp; busana</b><p>Teh Rina · 3 orang</p></div><span class="chip chip--green">05.00</span></div>
+            <div class="vendor"><div><b>Katering</b><p>Bu Wening · 9 orang, 2 mobil</p></div><span class="chip chip--green">06.10</span></div>
+            <div class="vendor"><div><b>Dokumentasi</b><p>Galang · 2 orang</p></div><span class="chip chip--green">07.00</span></div>
+            <div class="vendor"><div><b>MC</b><p>Kang Yudi</p></div><span class="chip chip--green">07.20</span></div>
+            <div class="vendor"><div><b>Saxophone kirab</b><p>Fahmi</p></div><span class="chip chip--green">10.15</span></div>
+            <div class="vendor"><div><b>Organ tunggal</b><p>Dodi · tiba sekitar 10.50</p></div><a class="btn btn-secondary btn-xs" href="#"><i data-lucide="phone" class="i-sm"></i>Telepon</a></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><span class="group__title"><span class="dot dot--amber"></span>Buffet &amp; tamu</span></div>
+          <div class="rows">
+            <div class="row"><div><p class="row__title">Buku tamu</p><p class="row__meta">Dari 600 undangan</p></div><b class="num">214</b></div>
+            <div class="row"><div><p class="row__title">Bakso · soto betawi</p><p class="row__meta">Pondokan dibuka 11.15</p></div><b class="num">100 · 100</b></div>
+            <div class="row"><div><p class="row__title">Nasi box pekerja gedung</p><p class="row__meta">Diserahkan ke pengelola</p></div><span class="chip chip--green">20 box</span></div>
+          </div>
+        </div>
+        <div class="panel panel__body" style="display:flex;flex-direction:column;gap:10px">
+          <p class="t-h3">Catatan keluarga</p>
+          <p class="t-meta">Nenek mempelai wanita di kursi roda, siapkan jalur samping pelaminan untuk sesi foto keluarga 12.00.</p>
+          <p class="t-meta">Sambutan Pak RW maksimal 3 menit sebelum makan.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+
+  /* ---------- Susun paket ---------- */
+  var DAYS = [
+    ["2026-11-07", "Sab", 7, "Nov"], ["2026-11-08", "Min", 8, "Nov"], ["2026-11-14", "Sab", 14, "Nov"], ["2026-11-15", "Min", 15, "Nov"],
+    ["2026-11-21", "Sab", 21, "Nov"], ["2026-11-22", "Min", 22, "Nov"], ["2026-11-28", "Sab", 28, "Nov"], ["2026-11-29", "Min", 29, "Nov"],
+    ["2026-12-05", "Sab", 5, "Des"], ["2026-12-06", "Min", 6, "Des"], ["2026-12-12", "Sab", 12, "Des"], ["2026-12-13", "Min", 13, "Des"]
+  ];
+  var VENUES = [
+    { name: "Aula Masjid Nurul Iman", area: "Antapani", cap: 600, fee: 0, s: "BFBFBBFFBFBB" },
+    { name: "Gedung Serbaguna Arcamanik", area: "Arcamanik", cap: 800, fee: 6500000, s: "BBFBHFBFFBBF" },
+    { name: "Balai Sawala", area: "Cimahi", cap: 700, fee: 4200000, s: "FBBFOOFBBFFF" },
+    { name: "Graha Puspa", area: "Buahbatu", cap: 1000, fee: 12000000, s: "BFHBFBFBBFBF" },
+    { name: "Auditorium Pakuan", area: "Dago", cap: 1000, fee: 24200000, s: "BBBFBFBBFFBB" },
+    { name: "Gedung Pancawarna", area: "Soreang", cap: 800, fee: 3000000, s: "FFBFFBFFFBFF" }
+  ];
+  var PRICE = {
+    utama: { 300: 84850000, 400: 89750000, 500: 95350000, 600: 100950000, 700: 105850000, 800: 115350000, 1000: 125200000 },
+    ringkas: { 300: 76575000, 400: 81175000, 500: 86375000, 600: 90375000, 700: 96175000, 800: 102875000, 1000: 112175000 }
+  };
+  var MENU = { A: 0, B: 1500000, C: 5000000 };
+  var st = { pkg: "utama", pax: 500, menu: "A", v: 3, d: 6 };
+  var BULAN = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  var HARI = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  function shift(iso, n) { var t = new Date(iso + "T00:00:00"); t.setDate(t.getDate() - n); return t; }
+  function longDate(t) { return HARI[t.getDay()] + ", " + t.getDate() + " " + BULAN[t.getMonth()] + " " + t.getFullYear(); }
+  function shortDate(t) { return t.getDate() + " " + BULAN[t.getMonth()].slice(0, 3); }
+
+  var g = "<div class='avail__corner' style='text-align:left;padding-left:16px'>Gedung</div>";
+  DAYS.forEach(function (d) { g += "<div class='avail__day'>" + d[1] + "<b>" + d[2] + "</b>" + d[3] + "</div>"; });
+  VENUES.forEach(function (v, vi) {
+    g += "<div class='avail__venue'><b>" + v.name + "</b><span>" + v.area + " · s.d. " + v.cap.toLocaleString("id-ID") + " tamu</span></div>";
+    v.s.split("").forEach(function (c, di) {
+      var cell = "";
+      if (c === "F") cell = "<button type='button' class='slot slot--free' data-v='" + vi + "' data-d='" + di + "'>Kosong<small>" + (v.fee ? "+Rp" + (v.fee / 1e6).toLocaleString("id-ID") + " jt" : "harga dasar") + "</small></button>";
+      if (c === "B") cell = "<span class='slot slot--booked'>Terisi</span>";
+      if (c === "H") cell = "<span class='slot slot--hold'>Ditahan<small>s.d. 20 Okt</small></span>";
+      if (c === "O") cell = "<span class='slot slot--off'>Perawatan gedung</span>";
+      g += "<div class='avail__cell'>" + cell + "</div>";
+    });
+  });
+  $("availGrid").innerHTML = g;
+  $("availGrid").addEventListener("click", function (e) {
+    var b = e.target.closest(".slot--free"); if (!b) return;
+    var v = VENUES[+b.dataset.v];
+    if (st.pax > v.cap) { st.pax = v.cap; document.querySelectorAll("#paxPick > *").forEach(function (x) { x.classList.toggle("is-selected", +x.dataset.value === st.pax); }); }
+    st.v = +b.dataset.v; st.d = +b.dataset.d; calc();
+  });
+  $("pkgTabs").addEventListener("lapak:select", function (e) { st.pkg = e.detail.value; calc(); });
+  $("paxPick").addEventListener("lapak:select", function (e) { st.pax = +e.detail.value; calc(); });
+  $("menuPick").addEventListener("lapak:select", function (e) { st.menu = e.detail.value; calc(); });
+  $("addons").addEventListener("lapak:change", calc);
+
+  function calc() {
+    var v = VENUES[st.v], d = DAYS[st.d];
+    document.querySelectorAll(".slot--free").forEach(function (s) { s.classList.toggle("is-selected", +s.dataset.v === st.v && +s.dataset.d === st.d); });
+    document.querySelectorAll("#paxPick > *").forEach(function (x) { x.disabled = +x.dataset.value > v.cap; x.style.opacity = +x.dataset.value > v.cap ? .35 : 1; });
+    var add = 0;
+    document.querySelectorAll("#addons [data-stepper]").forEach(function (s) { add += (+s.querySelector("output").textContent) * (+s.dataset.price); });
+    var total = PRICE[st.pkg][st.pax] + v.fee + MENU[st.menu] + add;
+    var dp = Math.round(total * 0.5), lunas = total - 3000000 - dp;
+    var pkgName = st.pkg === "utama" ? "Utama" : "Ringkas";
+    $("estWhere").textContent = d[1] + " " + d[2] + " " + d[3] + " · " + v.name;
+    $("estPkg").textContent = pkgName + " · " + st.pax.toLocaleString("id-ID") + " tamu · Menu " + st.menu;
+    $("estTotal").textContent = rupiah(total);
+    $("capNote").textContent = v.name + " s.d. " + v.cap.toLocaleString("id-ID") + " tamu";
+    $("inclNote").textContent = "Paket " + pkgName + " · " + st.pax.toLocaleString("id-ID") + " tamu";
+    $("inclBuffet").textContent = "Buffet utama " + st.pax.toLocaleString("id-ID") + " porsi, menu " + st.menu;
+    $("inclPond").textContent = st.pkg === "utama" ? "Pondokan bakso 200 porsi, sate ayam 200 porsi, es doger 1 galon" : "Pondokan bakso 100 porsi, soto betawi 100 porsi, es doger 1 galon";
+    $("inclCoffee").textContent = st.pkg === "utama" ? "Coffee break setelah akad: soto + lontong 100, kopi & teh 100, snack 150" : "Coffee break setelah akad: kopi & teh 50, snack 150";
+    $("payNote").textContent = longDate(new Date(d[0] + "T00:00:00"));
+    var dpD = shift(d[0], 30), today = new Date("2026-10-18T00:00:00");
+    $("dpWhen").textContent = dpD < today ? "Kurang dari H-30 · bayar s.d. " + shortDate(shift("2026-10-18", -3)) : "H-30 · " + shortDate(dpD);
+    $("lunasWhen").textContent = "H-14 · " + shortDate(shift(d[0], 14));
+    $("hWhen").textContent = "Hari H · " + shortDate(shift(d[0], 0));
+    $("dpAmt").textContent = rupiah(dp);
+    $("lunasAmt").textContent = rupiah(lunas);
+    $("holdText").textContent = d[1] + " " + d[2] + " " + d[3] + " di " + v.name + ". Transfer booking Rp3.000.000 ke virtual account yang dikirim via WhatsApp.";
+  }
+  calc();
+
+  /* ---------- Checklist planner ---------- */
+  var CK = [
+    ["Booking tanggal & gedung", "2 Agu", "Kalian", 1, "Selesai"],
+    ["Konsultasi konsep & warna dekor", "16 Agu", "Laras", 1, "Selesai"],
+    ["Daftar tamu awal 500 orang", "30 Agu", "Kalian", 1, "Selesai"],
+    ["Pilih busana akad & resepsi", "13 Sep", "MUA", 1, "Selesai"],
+    ["Kirim data undangan digital", "4 Okt", "Kalian", 1, "Selesai"],
+    ["Survey gedung bersama koordinator", "11 Okt", "Laras", 1, "Selesai"],
+    ["Test food & kunci menu B", "Sab 24 Okt", "Laras", 0, "6 hari lagi"],
+    ["Pilih lagu kirab & cucuk lampah", "Sab 31 Okt", "Kalian", 0, ""],
+    ["Setujui desain pelaminan final", "Sen 2 Nov", "Dekorasi", 0, ""],
+    ["Bayar DP 50%", "Kam 12 Nov", "Kalian", 0, "H-30"],
+    ["Fitting busana kedua", "Sab 21 Nov", "MUA", 0, ""],
+    ["Kirim nama among tamu & penerima tamu", "Sab 21 Nov", "Kalian", 0, ""],
+    ["Pelunasan", "Sab 28 Nov", "Kalian", 0, "H-14"],
+    ["Technical meeting semua vendor", "Min 29 Nov", "Laras", 0, ""],
+    ["Daftar lagu untuk organ tunggal", "Sab 5 Des", "Kalian", 0, ""],
+    ["Gladi akad & susunan keluarga", "Kam 10 Des", "Laras", 0, ""],
+    ["Serahkan seserahan ke koordinator", "Jum 11 Des", "Kalian", 0, ""],
+    ["Hari H: akad 08.00, resepsi 11.00", "Sab 12 Des", "Laras", 0, ""]
+  ];
+  var CHIP = { Kalian: "chip--pink", Laras: "chip--blue", MUA: "chip--green", Dekorasi: "chip--amber" };
+  var h = "";
+  CK.forEach(function (c, i) {
+    h += "<div class='check" + (c[3] ? " is-done" : "") + "' data-who='" + c[2] + "'><button type='button' class='box' data-i='" + i + "' aria-label='Tandai'><i data-lucide='check'></i></button><div><p class='check__title'>" + c[0] + "</p><p class='check__meta'><span>" + c[1] + "</span>" + (c[4] && !c[3] ? "<span class='chip chip--line' style='height:22px'>" + c[4] + "</span>" : "") + "</p></div><span class='chip " + CHIP[c[2]] + "'>" + c[2] + "</span></div>";
+  });
+  $("checklist").innerHTML = h;
+  function ckUpd() {
+    var n = document.querySelectorAll("#checklist .check.is-done").length;
+    $("ckCount").textContent = n + " dari " + CK.length + " selesai";
+    $("ckBar").style.width = Math.round(n / CK.length * 100) + "%";
+  }
+  $("checklist").addEventListener("click", function (e) {
+    var b = e.target.closest(".box"); if (!b) return;
+    b.closest(".check").classList.toggle("is-done"); ckUpd();
+  });
+  $("ckFilter").addEventListener("lapak:select", function (e) {
+    document.querySelectorAll("#checklist .check").forEach(function (c) { c.hidden = e.detail.value === "kalian" && c.dataset.who !== "Kalian"; });
+  });
+  ckUpd();
+
+  /* ---------- Rundown kru ---------- */
+  var ROS = [
+    { t: "Akad nikah", time: "07.30–09.30", dot: "pink", cues: [
+      ["07.30", "Keluarga pria tiba, briefing among tamu", "Pintu utara. Seserahan langsung ke meja samping pelaminan.", ["WO", "MUA"]],
+      ["08.00", "Pembukaan akad", "MC buka, perkenalan keluarga", ["MC"]],
+      ["08.10", "Pembacaan ayat suci", "Mic wireless 2 untuk qari", ["MC", "Musik"]],
+      ["08.25", "Ijab kabul", "Dok: 2 kamera, satu dari belakang penghulu", ["Dok", "MC"]],
+      ["08.45", "Sungkeman", "Instrumen pelan dari speaker kecil", ["Musik", "Dok"]],
+      ["09.10", "Foto keluarga inti", "Urutan dari daftar keluarga, 15 menit", ["Dok"]]
+    ]},
+    { t: "Jeda & ganti busana", time: "09.30–10.55", dot: "amber", cues: [
+      ["09.30", "Coffee break akad", "Kopi & teh 50, snack 150 di sayap kiri", ["Katering"]],
+      ["09.40", "Ganti busana resepsi", "Ruang rias lantai 2, 70 menit", ["MUA"]],
+      ["10.30", "Buku tamu resepsi dibuka", "Penerima tamu 4 orang, kotak amplop 2 set", ["WO"]]
+    ]},
+    { t: "Resepsi", time: "10.55–13.00", dot: "blue", cues: [
+      ["10.55", "Kirab pengantin", "Saxophone dari pintu utama, cucuk lampah di depan", ["Musik", "WO", "Dok"]],
+      ["11.10", "Pengantin duduk di pelaminan", "Lampu pelaminan penuh, colour lighting off", ["Dekor", "MC"]],
+      ["11.15", "Buffet & pondokan dibuka", "Bakso & soto betawi dibuka bersamaan", ["Katering"]],
+      ["11.20", "Organ tunggal mulai", "Lagu pertama dari pasangan", ["Musik"]],
+      ["12.00", "Foto per keluarga & rombongan", "Jalur kursi roda di samping kanan", ["Dok", "WO"]],
+      ["12.45", "Doa penutup & ucapan terima kasih", "", ["MC"]],
+      ["13.00", "Bongkar & serah terima gedung", "Selesai paling lambat 14.30", ["Dekor", "Katering", "WO"]]
+    ]}
+  ];
+  var PICC = { MC: "chip--blue", Katering: "chip--amber", Dekor: "chip--green", MUA: "chip--pink", Dok: "", Musik: "chip--blue", WO: "chip--line" };
+  var NOW = 8; // indeks cue yang sedang berjalan (buku tamu 10.30)
+  function renderRos() {
+    var k = 0, out = "";
+    ROS.forEach(function (gr, gi) {
+      var allDone = k + gr.cues.length <= NOW, open = !allDone || gr.open;
+      out += "<div class='panel'><div class='panel__head'><span class='group__title'><span class='dot dot--" + gr.dot + "'></span>" + gr.t + "</span><span class='count'>" + gr.time + " · " + gr.cues.length + " cue</span>" + (allDone ? "<span class='chip chip--green'><i data-lucide='check'></i>Selesai semua</span><button class='btn btn-secondary btn-xs' style='margin-left:auto' data-toggle='" + gi + "'>" + (open ? "Tutup" : "Lihat") + "</button>" : "") + "</div><div" + (open ? "" : " hidden") + ">";
+      gr.cues.forEach(function (c) {
+        var cls = k < NOW ? "is-done" : k === NOW ? "is-now" : k === NOW + 1 ? "is-next" : "";
+        var side = k < NOW ? "<span class='chip chip--green'><i data-lucide='check'></i>Selesai</span>"
+          : k === NOW ? "<span class='chip chip--pink'>Berjalan</span><button class='btn btn-dark btn-xs' data-done>Tandai selesai</button>"
+          : k === NOW + 1 ? "<span class='chip'>Berikutnya</span>" : "";
+        out += "<div class='cue " + cls + "' data-pic='" + c[3].join(" ") + "'><div class='cue__time'>" + c[0] + "</div><div><p class='cue__title'>" + c[1] + "</p>" + (c[2] ? "<p class='cue__note'>" + c[2] + "</p>" : "") + "<div class='cue__pic'>" + c[3].map(function (p) { return "<span class='chip " + PICC[p] + "'>" + p + "</span>"; }).join("") + "</div></div><div class='cue__side'>" + side + "</div></div>";
+        k++;
+      });
+      out += "</div></div>";
+    });
+    $("ros").innerHTML = out; icons(); applyPic();
+  }
+  var pic = "all";
+  function applyPic() { document.querySelectorAll("#ros .cue").forEach(function (c) { c.hidden = pic !== "all" && c.dataset.pic.split(" ").indexOf(pic) < 0; }); }
+  $("picFilter").addEventListener("lapak:select", function (e) { pic = e.detail.value; applyPic(); });
+  $("ros").addEventListener("click", function (e) {
+    if (e.target.closest("[data-done]")) { NOW++; renderRos(); }
+    var t = e.target.closest("[data-toggle]"); if (t) { var gr = ROS[+t.dataset.toggle]; gr.open = !gr.open; renderRos(); }
+  });
+  renderRos();
+  icons();
+})();
+</script>
+</body>
+</html>
