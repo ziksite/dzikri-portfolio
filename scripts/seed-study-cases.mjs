@@ -21,6 +21,23 @@ const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
 // Spread the study cases between the existing client projects (homepage keeps sort_order 10–20)
 const ORDER = {
+  "umrah-travel-agency-website": 172,
+  "car-body-paint-workshop-website": 173,
+  "electrical-supplies-store-website": 174,
+  "tutoring-center-website": 175,
+  "modest-fashion-brand-store": 176,
+  "online-printing-service-website": 177,
+  "veterinary-clinic-website": 178,
+  "pilates-studio-website": 179,
+  "catering-service-website": 180,
+  "ac-service-company-website": 181,
+  "cargo-shipping-company-website": 182,
+  "medical-equipment-store-website": 183,
+  "rural-bank-website": 184,
+  "wedding-organizer-website": 185,
+  "housing-cluster-developer-website": 186,
+  "car-rental-company-website": 187,
+  "islamic-school-website": 188,
   "villa-rental-booking-website": 171,
   "multi-branch-barbershop-website": 169,
   "multi-specialty-clinic-website": 168,

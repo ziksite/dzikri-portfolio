@@ -44,3 +44,5 @@ next-env.d.ts
 
 # Design references (third-party screenshots, local only)
 study-cases/_design-reference/
+study-cases/_tools/node_modules/
+study-cases/_tools/out/

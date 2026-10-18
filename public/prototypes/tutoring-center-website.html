@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bimbel Lajur — Program bimbel, jadwal, dan tryout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/tutoring-center-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA + PENCARI PROGRAM ================= -->
+<section data-screen="home">
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar__row">
+        <a class="wordmark" href="#home">lajur<small>bimbel</small></a>
+        <div class="seg"><a class="is-active" href="#home">Kelas tatap muka</a><a href="#home">Tryout online</a></div>
+        <div class="topbar__right">
+          <a class="hide-m" href="#home"><i data-lucide="map-pin" class="i-sm"></i>5 cabang</a>
+          <a href="#portal"><i data-lucide="user" class="i-sm"></i>Portal orang tua</a>
+          <a class="btn btn-primary btn-sm hide-m" href="#program">Daftar</a>
+        </div>
+      </div>
+      <nav class="subnav"><a class="is-active" href="#home">Semua program</a><a href="#home">SD</a><a href="#home">SMP &amp; masuk SMA unggulan</a><a href="#home">SMA &amp; UTBK</a><a href="#home">Ujian mandiri PTN</a><a href="#home">Kedinasan &amp; TNI/POLRI</a><a href="#program">Jadwal simulasi</a></nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding:64px var(--gutter) 40px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <h1 class="t-hero">Program bimbel 2026/2027</h1>
+    <p class="t-lead" style="max-width:640px">Kelas tatap muka di 5 cabang dan tryout online yang nilainya bisa dipantau orang tua. Pilih jenjang dan tujuan, lalu bandingkan programnya.</p>
+    <form class="finder" style="margin-top:22px;width:100%" onsubmit="location.hash='program';return false">
+      <div class="field">Jenjang
+        <div class="seg" data-select data-tabs="lvl" style="height:44px;align-items:center">
+          <button type="button" data-value="sd">SD</button>
+          <button type="button" data-value="smp">SMP</button>
+          <button type="button" class="is-active" data-value="sma">SMA</button>
+          <button type="button" data-value="ked">Alumni &amp; kedinasan</button>
+        </div>
+      </div>
+      <label class="field" style="width:240px">Tujuan<select class="select"><option>UTBK SNBT 2027</option><option>Ujian mandiri (SIMAK UI, UM UGM, SSU ITB)</option><option>Nilai rapor &amp; ujian sekolah</option></select></label>
+      <label class="field" style="width:200px">Cabang<select class="select"><option>Antapani</option><option>Buahbatu</option><option>Cimahi</option><option>Bekasi Center</option><option>Bogor</option><option>Online saja</option></select></label>
+      <button class="btn btn-outline">Lihat jadwal kelas</button>
+    </form>
+  </section>
+
+  <section class="wrap" style="padding-bottom:72px">
+    <!-- SMA -->
+    <div class="plans" data-panel="lvl:sma">
+      <div class="plan">
+        <p class="plan__name">Reguler kelas 12</p>
+        <p class="plan__for">Untuk nilai rapor dan ujian sekolah</p>
+        <p class="plan__price"><b>Rp550.000</b><span>/bulan</span></p>
+        <p class="plan__note">Biaya daftar Rp150.000 sekali</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <p class="plan__inc">Sudah termasuk:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span><b>2× seminggu</b>, 90 menit per sesi</span></li>
+          <li><i data-lucide="check"></i><span>Matematika, Fisika, Kimia, Biologi atau IPS sesuai jurusan</span></li>
+          <li><i data-lucide="check"></i><span>Maksimal 20 siswa per kelas</span></li>
+          <li><i data-lucide="check"></i><span>Tryout cabang tiap akhir bulan</span></li>
+          <li><i data-lucide="check"></i><span>Rekap kehadiran ke WhatsApp orang tua</span></li>
+        </ul>
+      </div>
+      <div class="plan plan--pick">
+        <p class="plan__name">Intensif UTBK SNBT 2027 <span class="badge">Paling banyak dipilih</span></p>
+        <p class="plan__for">Untuk kelas 12 yang menargetkan PTN</p>
+        <p class="plan__price"><b>Rp7.900.000</b><span>/program</span></p>
+        <p class="plan__note"><b>Cicil 3×</b> Rp2.700.000 · gelombang 2 mulai 20 Okt</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal &amp; daftar</a>
+        <p class="plan__inc">Semua di Reguler, ditambah:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span><b>3× seminggu</b> sampai April 2027</span></li>
+          <li><i data-lucide="check"></i><span><b>12 simulasi UTBK</b> terjadwal sampai hari H</span></li>
+          <li><i data-lucide="check"></i><span>Tryout mini per subtes, 7 subtes</span></li>
+          <li><i data-lucide="check"></i><span>Simulasi ujian mandiri: SIMAK UI, UM UGM, SSU ITB, UM UNPAD</span></li>
+          <li><i data-lucide="check"></i><span>Konsultasi pilihan prodi 2× dengan tutor wali</span></li>
+          <li><i data-lucide="check"></i><span>Maksimal 16 siswa per kelas</span></li>
+        </ul>
+      </div>
+      <div class="plan">
+        <p class="plan__name">Lulus PTN Favorit · online</p>
+        <p class="plan__for">Untuk yang belajar mandiri dari rumah</p>
+        <p class="plan__price"><b>Rp1.000.000</b><span>/paket</span></p>
+        <p class="plan__note">Akses sampai 1 Juli 2027</p>
+        <a class="btn btn-outline" href="#program">Beli paket</a>
+        <p class="plan__inc">Isi paket:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span><b>17 tes</b> di aplikasi ujian online</span></li>
+          <li><i data-lucide="check"></i><span>Simulasi UTBK SNBT terjadwal, bisa diulang mandiri</span></li>
+          <li><i data-lucide="check"></i><span>Tryout mini per subtes dengan pembahasan</span></li>
+          <li><i data-lucide="check"></i><span>Peringkat nasional peserta paket</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- SMP -->
+    <div class="plans" data-panel="lvl:smp" hidden>
+      <div class="plan">
+        <p class="plan__name">Reguler kelas 9</p>
+        <p class="plan__for">Untuk nilai rapor dan asesmen sekolah</p>
+        <p class="plan__price"><b>Rp450.000</b><span>/bulan</span></p>
+        <p class="plan__note">Biaya daftar Rp150.000 sekali</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <p class="plan__inc">Sudah termasuk:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span><b>2× seminggu</b>, 90 menit per sesi</span></li>
+          <li><i data-lucide="check"></i><span>Matematika, IPA, Bahasa Inggris</span></li>
+          <li><i data-lucide="check"></i><span>Tryout cabang tiap akhir bulan</span></li>
+        </ul>
+      </div>
+      <div class="plan plan--pick">
+        <p class="plan__name">Kelas 9 Plus <span class="badge">Masuk SMA unggulan</span></p>
+        <p class="plan__for">Untuk seleksi SMA plus dan berasrama</p>
+        <p class="plan__price"><b>Rp650.000</b><span>/bulan</span></p>
+        <p class="plan__note">Biaya daftar Rp150.000 sekali</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <p class="plan__inc">Semua di Reguler, ditambah:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span><b>3× seminggu</b> termasuk tes potensi akademik</span></li>
+          <li><i data-lucide="check"></i><span>Simulasi masuk SMA unggulan sampai Mei 2027</span></li>
+          <li><i data-lucide="check"></i><span>Latihan wawancara dan psikotes</span></li>
+        </ul>
+      </div>
+      <div class="plan">
+        <p class="plan__name">Simulasi masuk SMA Plus · online</p>
+        <p class="plan__for">Per sekolah tujuan, 3 tes</p>
+        <p class="plan__price"><b>Rp500.000</b><span>/paket</span></p>
+        <p class="plan__note">Berlaku sampai 31 Mei 2027</p>
+        <a class="btn btn-outline" href="#program">Beli paket</a>
+        <p class="plan__inc">Isi paket:</p>
+        <ul class="checks">
+          <li><i data-lucide="check"></i><span>3 tes sesuai format sekolah tujuan</span></li>
+          <li><i data-lucide="check"></i><span>Pembahasan dan peringkat peserta</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- SD -->
+    <div class="plans plans--2" data-panel="lvl:sd" hidden>
+      <div class="plan">
+        <p class="plan__name">Reguler kelas 4–6</p>
+        <p class="plan__for">Calistung lanjut, Matematika, IPAS</p>
+        <p class="plan__price"><b>Rp350.000</b><span>/bulan</span></p>
+        <p class="plan__note">Biaya daftar Rp150.000 sekali</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <ul class="checks"><li><i data-lucide="check"></i><span><b>2× seminggu</b>, 75 menit</span></li><li><i data-lucide="check"></i><span>Maksimal 12 siswa per kelas</span></li><li><i data-lucide="check"></i><span>Laporan tutor tiap bulan</span></li></ul>
+      </div>
+      <div class="plan plan--pick">
+        <p class="plan__name">Persiapan SMP unggulan</p>
+        <p class="plan__for">Kelas 6, tes masuk SMP negeri dan swasta</p>
+        <p class="plan__price"><b>Rp450.000</b><span>/bulan</span></p>
+        <p class="plan__note">Biaya daftar Rp150.000 sekali</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <ul class="checks"><li><i data-lucide="check"></i><span><b>3× seminggu</b></span></li><li><i data-lucide="check"></i><span>Tryout tes masuk tiap bulan</span></li></ul>
+      </div>
+    </div>
+    <!-- Alumni & kedinasan -->
+    <div class="plans" data-panel="lvl:ked" hidden>
+      <div class="plan">
+        <p class="plan__name">Gap year UTBK 2027</p>
+        <p class="plan__for">Lulusan 2025–2026</p>
+        <p class="plan__price"><b>Rp9.500.000</b><span>/program</span></p>
+        <p class="plan__note">Cicil 4× Rp2.450.000</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <ul class="checks"><li><i data-lucide="check"></i><span><b>5× seminggu</b>, kelas pagi</span></li><li><i data-lucide="check"></i><span>12 simulasi UTBK + ujian mandiri</span></li></ul>
+      </div>
+      <div class="plan plan--pick">
+        <p class="plan__name">Sekolah kedinasan</p>
+        <p class="plan__for">SKD, TPA, dan tes bidang</p>
+        <p class="plan__price"><b>Rp6.500.000</b><span>/program</span></p>
+        <p class="plan__note">Cicil 3× Rp2.250.000</p>
+        <a class="btn btn-primary" href="#program">Lihat jadwal</a>
+        <ul class="checks"><li><i data-lucide="check"></i><span>Simulasi CAT SKD tiap 2 minggu</span></li><li><i data-lucide="check"></i><span>Latihan wawancara</span></li></ul>
+      </div>
+      <div class="plan">
+        <p class="plan__name">TNI / POLRI</p>
+        <p class="plan__for">Akademik dan psikotes</p>
+        <p class="plan__price"><b>Rp5.500.000</b><span>/program</span></p>
+        <p class="plan__note">Kesamaptaan tidak termasuk</p>
+        <a class="btn btn-outline" href="#program">Lihat jadwal</a>
+        <ul class="checks"><li><i data-lucide="check"></i><span>Tes akademik dan psikotes</span></li><li><i data-lucide="check"></i><span>Tryout berkala</span></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band section">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="t-h2">Paket tryout &amp; simulasi online</h2>
+        <p class="t-lead">Bisa dibeli tanpa ikut kelas. Siswa kelas Intensif dan Plus sudah mendapat paket yang sesuai tanpa biaya tambahan.</p>
+      </div>
+      <div class="table-box">
+        <table class="tbl">
+          <thead><tr><th>Paket</th><th>Jenjang</th><th class="r">Jumlah tes</th><th>Berlaku sampai</th><th>Jadwal berikutnya</th><th class="r">Harga</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="strong">Lulus PTN Favorit 2027</td><td>Kelas 12</td><td class="r num">17</td><td>1 Jul 2027</td><td>Simulasi 4 · 7–8 Nov</td><td class="r num strong">Rp1.000.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+            <tr><td class="strong">Simulasi SIMAK UI 2027</td><td>Kelas 12</td><td class="r num">8</td><td>31 Jul 2027</td><td>Mulai 3 Mei 2027</td><td class="r num strong">Rp300.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+            <tr><td class="strong">Simulasi SSU ITB 2027</td><td>Kelas 12</td><td class="r num">5</td><td>30 Jun 2027</td><td>Mulai 3 Mei 2027</td><td class="r num strong">Rp750.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+            <tr><td class="strong">Simulasi masuk SMA Unggul Del</td><td>Kelas 9</td><td class="r num">3</td><td>31 Mei 2027</td><td>Tes 1 · 15 Nov</td><td class="r num strong">Rp500.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+            <tr><td class="strong">Simulasi masuk SMA Taruna Nusantara</td><td>Kelas 9</td><td class="r num">3</td><td>31 Mei 2027</td><td>Tes 1 · 22 Nov</td><td class="r num strong">Rp500.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+            <tr><td class="strong">Simulasi masuk SMA Plus se-Indonesia</td><td>Kelas 9</td><td class="r num">9</td><td>31 Mei 2027</td><td>Tes 1 · 15 Nov</td><td class="r num strong">Rp1.000.000</td><td class="r"><a class="link" href="#program">Rincian</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="t-h2">Hitung biaya kelas reguler</h2>
+        <p class="t-lead">Pilih program, lama belajar, dan jumlah anak. Diskon saudara berlaku untuk anak kedua dan seterusnya.</p>
+      </div>
+      <div class="calc" style="max-width:920px;margin:0 auto">
+        <div class="calc__l">
+          <div class="field">Program
+            <div class="opts" data-select="is-selected" id="calcProg">
+              <button type="button" class="opt" data-value="350000"><span><b>SD kelas 4–6</b><small>2× seminggu</small></span><span class="num">Rp350.000</span></button>
+              <button type="button" class="opt" data-value="450000"><span><b>SMP kelas 9 Reguler</b><small>2× seminggu</small></span><span class="num">Rp450.000</span></button>
+              <button type="button" class="opt is-selected" data-value="650000"><span><b>SMP kelas 9 Plus</b><small>3× seminggu</small></span><span class="num">Rp650.000</span></button>
+              <button type="button" class="opt" data-value="550000"><span><b>SMA kelas 12 Reguler</b><small>2× seminggu</small></span><span class="num">Rp550.000</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="calc__r">
+          <div class="calc__row"><span>Lama belajar (bulan)</span><div class="stepper" data-stepper data-min="1" data-max="10" id="calcMonths"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>8</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div></div>
+          <div class="calc__row"><span>Jumlah anak</span><div class="stepper" data-stepper data-min="1" data-max="3" id="calcKids"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>1</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div></div>
+          <div class="calc__row"><span>Cara bayar</span><div class="seg" data-select id="calcPay"><button type="button" class="is-active" data-value="m">Per bulan</button><button type="button" data-value="y">Lunas di muka</button></div></div>
+          <hr style="border:0;border-top:1px solid var(--line);margin:4px 0;width:100%">
+          <div class="calc__total">
+            <p>Perkiraan total sampai Mei 2027</p>
+            <b class="num" id="calcTotal">Rp5.350.000</b>
+            <p class="hint" id="calcHint">Lunas di muka hemat Rp520.000</p>
+          </div>
+          <a class="btn btn-primary btn-lg btn-block" href="#program">Lanjut daftar</a>
+          <p class="t-small" style="text-align:center">Sudah termasuk biaya daftar Rp150.000 per anak.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band section">
+    <div class="wrap">
+      <h2 class="t-h2" style="margin-bottom:24px">Cabang</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Antapani</p><p class="t-meta">8 ruang kelas · Senin–Minggu 08.00–21.00</p><a class="link" href="#program" style="font-size:14px;margin-top:6px">Jadwal cabang</a></div>
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Buahbatu</p><p class="t-meta">5 ruang kelas · Senin–Sabtu 13.00–21.00</p><a class="link" href="#program" style="font-size:14px;margin-top:6px">Jadwal cabang</a></div>
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Cimahi</p><p class="t-meta">4 ruang kelas · Senin–Sabtu 13.00–20.30</p><a class="link" href="#program" style="font-size:14px;margin-top:6px">Jadwal cabang</a></div>
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Bekasi Center</p><p class="t-meta">4 ruang kelas · Senin–Sabtu 13.00–21.00</p><a class="link" href="#program" style="font-size:14px;margin-top:6px">Jadwal cabang</a></div>
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Bogor</p><p class="t-meta">6 ruang kelas · Senin–Minggu 08.00–21.00</p><a class="link" href="#program" style="font-size:14px;margin-top:6px">Jadwal cabang</a></div>
+        <div class="plan" style="padding:20px;gap:6px"><p class="t-h4">Online</p><p class="t-meta">Aplikasi ujian di web dan Android</p><a class="link" href="#home" style="font-size:14px;margin-top:6px">Paket tryout</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="wordmark">lajur</span><p style="max-width:320px">Bimbingan belajar SD sampai alumni, persiapan SMA unggulan, PTN, dan sekolah kedinasan. Sejak 2011.</p></div>
+        <div><h4>Program</h4><ul><li><a href="#home">SD &amp; SMP</a></li><li><a href="#home">SMA &amp; UTBK</a></li><li><a href="#home">Kedinasan</a></li><li><a href="#home">Paket tryout</a></li></ul></div>
+        <div><h4>Orang tua</h4><ul><li><a href="#portal">Portal orang tua</a></li><li><a href="#portal">Tagihan</a></li><li><a href="#">Kebijakan refund</a></li></ul></div>
+        <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp admin</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
+      </div>
+      <p style="margin-top:40px;font-size:13px;color:#9a9a9a">© 2026 Bimbel Lajur</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= DETAIL PROGRAM + JADWAL + DAFTAR ================= -->
+<section data-screen="program">
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar__row">
+        <a class="wordmark" href="#home">lajur<small>bimbel</small></a>
+        <div class="seg"><a class="is-active" href="#home">Kelas tatap muka</a><a href="#home">Tryout online</a></div>
+        <div class="topbar__right"><a class="hide-m" href="#home"><i data-lucide="map-pin" class="i-sm"></i>Antapani</a><a href="#portal"><i data-lucide="user" class="i-sm"></i>Portal orang tua</a></div>
+      </div>
+    </div>
+  </header>
+  <div class="wrap">
+    <p class="crumb"><a href="#home">Program</a>/<a href="#home">SMA &amp; UTBK</a>/<span>Intensif UTBK SNBT 2027</span></p>
+    <div style="padding:20px 0 28px;display:flex;flex-direction:column;gap:12px">
+      <h1 class="t-h1">Intensif UTBK SNBT 2027</h1>
+      <div class="facts">
+        <span><i data-lucide="map-pin" class="i-sm"></i>Antapani</span>
+        <span><i data-lucide="calendar" class="i-sm"></i>Gelombang 2: 20 Okt 2026 – 24 Apr 2027</span>
+        <span><i data-lucide="users" class="i-sm"></i>Maks 16 siswa per kelas</span>
+        <span><i data-lucide="file-check" class="i-sm"></i>12 simulasi UTBK</span>
+      </div>
+    </div>
+
+    <div class="split" style="padding-bottom:72px">
+      <div style="display:flex;flex-direction:column;gap:44px;min-width:0">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+            <div><h2 class="t-h3">Jadwal mingguan</h2><p class="t-meta" id="weekLabel">Kelas B · Selasa, Kamis, Sabtu · Ruang 2</p></div>
+            <div class="legend"><span><i style="background:var(--navy)"></i>Kelas</span><span><i style="background:var(--red)"></i>Tryout mini (online)</span></div>
+          </div>
+          <div class="scroll-x">
+            <div class="week" id="week"></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="t-h3" style="margin-bottom:4px">Jadwal simulasi UTBK</h2>
+          <p class="t-meta" style="margin-bottom:16px">Sabtu–Minggu di aplikasi ujian. Simulasi yang terlewat tetap bisa dikerjakan mandiri, tapi tidak masuk peringkat.</p>
+          <div class="list-rows">
+            <div><span><b>Simulasi 1</b> · Sabtu–Minggu, 1–2 Agustus 2026</span><span class="pill pill--mute">Selesai</span></div>
+            <div><span><b>Simulasi 2</b> · Sabtu–Minggu, 5–6 September 2026</span><span class="pill pill--mute">Selesai</span></div>
+            <div><span><b>Simulasi 3</b> · Sabtu–Minggu, 10–11 Oktober 2026</span><span class="pill pill--mute">Selesai</span></div>
+            <div><span><b>Simulasi 4</b> · Sabtu–Minggu, 7–8 November 2026</span><span class="pill pill--navy">Berikutnya</span></div>
+            <div><span><b>Simulasi 5–12</b> · Desember 2026 sampai April 2027</span><span class="pill pill--mute">Terjadwal</span></div>
+            <div><span><b>Simulasi ujian mandiri</b> · SIMAK UI, UM UGM CBT, SSU ITB, UM UNPAD · mulai 3 Mei 2027</span><span class="pill pill--mute">Terjadwal</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="t-h3" style="margin-bottom:16px">Format tryout mini per subtes</h2>
+          <div class="table-box">
+            <table class="tbl" style="min-width:0">
+              <thead><tr><th>Subtes</th><th class="r">Waktu</th><th class="r">Soal</th></tr></thead>
+              <tbody>
+                <tr><td>Penalaran Umum</td><td class="r num">30 mnt</td><td class="r num">30</td></tr>
+                <tr><td>Pengetahuan dan Pemahaman Umum</td><td class="r num">15 mnt</td><td class="r num">20</td></tr>
+                <tr><td>Pemahaman Bacaan dan Menulis</td><td class="r num">25 mnt</td><td class="r num">20</td></tr>
+                <tr><td>Pengetahuan Kuantitatif</td><td class="r num">20 mnt</td><td class="r num">20</td></tr>
+                <tr><td>Literasi dalam Bahasa Indonesia</td><td class="r num">42,5 mnt</td><td class="r num">30</td></tr>
+                <tr><td>Literasi dalam Bahasa Inggris</td><td class="r num">20 mnt</td><td class="r num">20</td></tr>
+                <tr><td>Penalaran Matematika</td><td class="r num">42,5 mnt</td><td class="r num">20</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="t-meta" style="margin-top:12px">Simulasi penuh: 160 soal, 195 menit, sama dengan format UTBK SNBT.</p>
+        </div>
+      </div>
+
+      <aside class="sticky">
+        <form class="calc" style="grid-template-columns:1fr" data-demo-form="#regDone" id="regForm">
+          <div class="calc__l" style="padding:24px;gap:16px">
+            <p class="t-h3">Daftar gelombang 2</p>
+            <div class="field">Pilih kelas
+              <div class="opts" data-select="is-selected" id="regClass">
+                <button type="button" class="opt" data-value="Kelas A · Senin, Rabu, Jumat 15.30"><span><b>Kelas A</b><small>Sen, Rab, Jum · 15.30</small></span><span class="seats seats--low">sisa 3</span></button>
+                <button type="button" class="opt is-selected" data-value="Kelas B · Selasa, Kamis, Sabtu 15.30"><span><b>Kelas B</b><small>Sel, Kam, Sab · 15.30</small></span><span class="seats">sisa 7</span></button>
+                <button type="button" class="opt is-off" data-value="Kelas C"><span><b>Kelas C</b><small>Sen, Rab, Jum · 19.00</small></span><span class="seats seats--full">penuh</span></button>
+              </div>
+            </div>
+            <label class="field">Nama siswa<input class="input" placeholder="Sesuai kartu pelajar" required></label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <label class="field">Sekolah<input class="input" placeholder="SMA ..."></label>
+              <label class="field">Kelas<select class="select"><option>12 IPA</option><option>12 IPS</option><option>12 Bahasa</option></select></label>
+            </div>
+            <label class="field">WhatsApp orang tua<input class="input" placeholder="08xx" inputmode="tel" required></label>
+          </div>
+          <div class="calc__r" style="padding:24px;gap:14px">
+            <div class="field">Cara bayar
+              <div class="opts" data-select="is-selected" id="regPay">
+                <button type="button" class="opt" data-value="full"><span><b>Lunas</b><small>Sekali bayar</small></span><span class="num">Rp7.900.000</span></button>
+                <button type="button" class="opt is-selected" data-value="inst"><span><b>Cicil 3×</b><small>Okt, Des, Feb</small></span><span class="num">Rp2.700.000</span></button>
+              </div>
+            </div>
+            <div class="calc__row"><span class="t-meta">Biaya daftar &amp; modul</span><span class="num">Rp150.000</span></div>
+            <div class="calc__row" style="font-weight:700;font-size:17px"><span>Bayar sekarang</span><span class="num" id="regNow">Rp2.850.000</span></div>
+            <button class="btn btn-primary btn-lg btn-block">Daftar &amp; bayar</button>
+            <p class="t-small">Transfer virtual account atau QRIS. Kursi ditahan 24 jam setelah pendaftaran.</p>
+          </div>
+        </form>
+        <div id="regDone" hidden class="calc" style="grid-template-columns:1fr">
+          <div class="calc__l" style="padding:24px;gap:14px">
+            <span style="width:48px;height:48px;border-radius:50%;background:var(--ok-bg);color:var(--ok);display:grid;place-items:center"><i data-lucide="check"></i></span>
+            <p class="t-h3">Pendaftaran diterima</p>
+            <p class="t-meta">No. pendaftaran <b style="color:var(--ink)">LJR-27-0418</b>. Rincian dan akun portal orang tua dikirim ke WhatsApp.</p>
+          </div>
+          <div class="calc__r" style="padding:24px;gap:10px">
+            <div class="calc__row"><span class="t-meta">Kelas</span><span id="doneClass" style="text-align:right">Kelas B · Selasa, Kamis, Sabtu 15.30</span></div>
+            <div class="calc__row"><span class="t-meta">Virtual account</span><b class="num">8808 0123 4041 8</b></div>
+            <div class="calc__row"><span class="t-meta">Bayar sebelum</span><span>Senin, 19 Okt · 23.59</span></div>
+            <div class="calc__row" style="font-weight:700"><span>Total</span><span class="num" id="doneTotal">Rp2.850.000</span></div>
+            <a class="btn btn-outline btn-block" href="#portal">Buka portal orang tua</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAL ORANG TUA ================= -->
+<section data-screen="portal">
+  <div class="portal">
+    <nav class="side">
+      <a class="wordmark" href="#home" style="height:auto;border-radius:0">lajur</a>
+      <a class="is-active" href="#portal"><i data-lucide="layout-dashboard"></i>Ringkasan</a>
+      <p class="side__group">Akademik <i data-lucide="chevron-up" class="i-sm"></i></p>
+      <a href="#portal"><i data-lucide="calendar-days"></i>Jadwal kelas</a>
+      <a href="#portal"><i data-lucide="user-check"></i>Kehadiran</a>
+      <a href="#portal"><i data-lucide="chart-line"></i>Tryout &amp; nilai</a>
+      <a href="#portal"><i data-lucide="message-square-text"></i>Catatan tutor</a>
+      <p class="side__group">Keuangan <i data-lucide="chevron-up" class="i-sm"></i></p>
+      <a href="#portal"><i data-lucide="receipt"></i>Tagihan<span class="count">1</span></a>
+      <a href="#portal"><i data-lucide="history"></i>Riwayat bayar</a>
+      <p class="side__group">Akun <i data-lucide="chevron-up" class="i-sm"></i></p>
+      <a href="#portal"><i data-lucide="users"></i>Data anak</a>
+      <a href="#portal"><i data-lucide="bell"></i>Notifikasi WhatsApp</a>
+    </nav>
+    <div class="main">
+      <div class="main__top">
+        <h1 style="font-size:24px;font-weight:600">Selamat sore, Ibu Ratna</h1>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap" data-select data-tabs="kid">
+          <button type="button" class="kid is-active" data-value="a"><span class="ini">NP</span><span>Nadia Putri<small>12 IPA · Intensif UTBK</small></span></button>
+          <button type="button" class="kid" data-value="b"><span class="ini">RA</span><span>Raka Aditya<small>9 SMP · Kelas 9 Plus</small></span></button>
+        </div>
+      </div>
+
+      <!-- Anak 1 -->
+      <div class="main__body" data-panel="kid:a">
+        <div class="grid-3">
+          <div class="pcard">
+            <div class="pcard__head"><p class="pcard__title"><i data-lucide="user-check"></i>Kehadiran</p><i data-lucide="ellipsis" class="i-sm" style="color:var(--ink-3)"></i></div>
+            <p class="stat"><b class="num">34</b><span>/36</span></p>
+            <div class="stat-foot"><span>Sesi sejak 4 Agustus</span><span class="delta delta--up">2 izin, 0 alpa</span></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard__head"><p class="pcard__title"><i data-lucide="chart-line"></i>Skor Simulasi 3</p><i data-lucide="ellipsis" class="i-sm" style="color:var(--ink-3)"></i></div>
+            <p class="stat"><b class="num">641</b><span>/1000</span></p>
+            <div class="stat-foot"><span>Rata-rata 7 subtes</span><span class="delta delta--up">+38 dari Simulasi 2</span></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard__head"><p class="pcard__title"><i data-lucide="trophy"></i>Peringkat cabang</p><i data-lucide="ellipsis" class="i-sm" style="color:var(--ink-3)"></i></div>
+            <p class="stat"><b class="num">9</b><span>/112</span></p>
+            <div class="stat-foot"><span>Peserta Simulasi 3 di Antapani</span><span class="delta delta--up">naik 5</span></div>
+          </div>
+        </div>
+
+        <div class="grid-main">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div class="pcard">
+              <div class="pcard__head" style="flex-wrap:wrap">
+                <div><p style="font-size:17px;font-weight:600">Perkembangan skor tryout</p><p class="t-meta">Skor Nadia dibanding rata-rata cabang dan target pilihan 1</p></div>
+                <select class="select" style="width:auto;height:38px;font-size:14px"><option>Semua tryout</option><option>Simulasi saja</option></select>
+              </div>
+              <div class="legend" style="margin-bottom:8px"><span><i style="background:var(--navy)"></i>Nadia</span><span><i style="background:#9a9a9a"></i>Rata-rata cabang</span><span><i style="background:var(--red)"></i>Target: Teknik Informatika UNPAD (680)</span></div>
+              <svg class="chart" viewBox="0 0 640 260" role="img" aria-label="Grafik skor tryout">
+                <g font-size="11" fill="#8c8c8c" font-family="Figtree, sans-serif">
+                  <text x="30" y="24" text-anchor="end">700</text><text x="30" y="74" text-anchor="end">650</text><text x="30" y="124" text-anchor="end">600</text><text x="30" y="174" text-anchor="end">550</text><text x="30" y="224" text-anchor="end">500</text>
+                </g>
+                <g stroke="#ececec"><line x1="40" x2="630" y1="20" y2="20"/><line x1="40" x2="630" y1="70" y2="70"/><line x1="40" x2="630" y1="120" y2="120"/><line x1="40" x2="630" y1="170" y2="170"/><line x1="40" x2="630" y1="220" y2="220"/></g>
+                <line x1="40" x2="630" y1="40" y2="40" stroke="#d3261c" stroke-width="1.5" stroke-dasharray="6 5"/>
+                <!-- y = 220 - (v-500) -->
+                <polyline fill="none" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="4 4" points="70,188 176,175 282,169 388,160 494,154 600,146"/>
+                <polygon fill="#2e5373" fill-opacity=".08" points="70,220 70,172 176,149 282,131 388,117 494,102 600,79 600,220"/>
+                <polyline fill="none" stroke="#2e5373" stroke-width="2.5" points="70,172 176,149 282,131 388,117 494,102 600,79"/>
+                <g fill="#fff" stroke="#2e5373" stroke-width="2"><circle cx="70" cy="172" r="4"/><circle cx="176" cy="149" r="4"/><circle cx="282" cy="131" r="4"/><circle cx="388" cy="117" r="4"/><circle cx="494" cy="102" r="4"/><circle cx="600" cy="79" r="5" fill="#2e5373"/></g>
+                <g font-size="11.5" fill="#5c5c5c" text-anchor="middle" font-family="Figtree, sans-serif"><text x="70" y="246">TO mini 1</text><text x="176" y="246">Simulasi 1</text><text x="282" y="246">TO mini 2</text><text x="388" y="246">Simulasi 2</text><text x="494" y="246">TO mini 3</text><text x="600" y="246">Simulasi 3</text></g>
+                <g font-family="Figtree, sans-serif"><rect x="508" y="44" width="92" height="26" rx="6" fill="#222"/><text x="554" y="61" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">641 · 11 Okt</text></g>
+              </svg>
+            </div>
+
+            <div class="pcard">
+              <div class="pcard__head"><div><p style="font-size:17px;font-weight:600">Simulasi 3 per subtes</p><p class="t-meta">10–11 Oktober 2026 · 160 soal</p></div><a class="btn btn-ghost btn-sm" href="#portal">Pembahasan</a></div>
+              <div class="table-box" style="border-radius:8px">
+                <table class="tbl" style="min-width:520px">
+                  <thead><tr><th>Subtes</th><th class="r">Skor</th><th class="r">Rata-rata cabang</th><th style="width:30%">Posisi</th></tr></thead>
+                  <tbody>
+                    <tr><td>Penalaran Umum</td><td class="r num strong">662</td><td class="r num">581</td><td><div class="bar"><i style="width:84%"></i></div></td></tr>
+                    <tr><td>Pengetahuan &amp; Pemahaman Umum</td><td class="r num strong">618</td><td class="r num">566</td><td><div class="bar"><i style="width:68%"></i></div></td></tr>
+                    <tr><td>Pemahaman Bacaan &amp; Menulis</td><td class="r num strong">655</td><td class="r num">579</td><td><div class="bar"><i style="width:81%"></i></div></td></tr>
+                    <tr><td>Pengetahuan Kuantitatif</td><td class="r num strong">604</td><td class="r num">571</td><td><div class="bar"><i style="width:62%"></i></div></td></tr>
+                    <tr><td>Literasi B. Indonesia</td><td class="r num strong">671</td><td class="r num">588</td><td><div class="bar"><i style="width:88%"></i></div></td></tr>
+                    <tr><td>Literasi B. Inggris</td><td class="r num strong">640</td><td class="r num">562</td><td><div class="bar"><i style="width:79%"></i></div></td></tr>
+                    <tr><td>Penalaran Matematika</td><td class="r num strong">638</td><td class="r num">571</td><td><div class="bar"><i style="width:76%"></i></div></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="pcard">
+              <div class="pcard__head"><div><p style="font-size:17px;font-weight:600">Tagihan</p><p class="t-meta">Intensif UTBK SNBT 2027 · cicil 3×</p></div><a class="link" href="#portal" style="font-size:14px">Riwayat bayar</a></div>
+              <div class="table-box" style="border-radius:8px">
+                <table class="tbl" style="min-width:520px">
+                  <thead><tr><th>No. tagihan</th><th>Keterangan</th><th>Jatuh tempo</th><th class="r">Jumlah</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td class="num">INV-2608-0211</td><td>Cicilan 1 + biaya daftar</td><td>4 Agu 2026</td><td class="r num">Rp2.850.000</td><td><span class="pill pill--ok">Lunas</span></td></tr>
+                    <tr><td class="num">INV-2609-0211</td><td>Cicilan 2</td><td>25 Sep 2026</td><td class="r num">Rp2.700.000</td><td><span class="pill pill--ok">Lunas</span></td></tr>
+                    <tr><td class="num">INV-2610-0211</td><td>Cicilan 3</td><td>25 Okt 2026</td><td class="r num strong">Rp2.700.000</td><td><span class="pill pill--warn">7 hari lagi</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div class="pcard">
+              <div class="pcard__head"><div><p style="font-size:17px;font-weight:600">Jadwal minggu ini</p><p class="t-meta">Kelas B · Antapani</p></div></div>
+              <div class="sched">
+                <div class="sched__item"><p class="t-h4">Penalaran Matematika</p><p class="kv"><i data-lucide="clock"></i>Selasa, 20 Okt · 15.30–17.00</p><p class="kv"><i data-lucide="user"></i>Hendra S. · Ruang 2</p></div>
+                <div class="sched__item"><p class="t-h4">Literasi B. Inggris</p><p class="kv"><i data-lucide="clock"></i>Kamis, 22 Okt · 15.30–17.00</p><p class="kv"><i data-lucide="user"></i>Maria T. · Ruang 2</p></div>
+                <div class="sched__item" style="border-color:#f3c4c0"><p class="t-h4">Tryout mini 4 · Penalaran Umum</p><p class="kv"><i data-lucide="clock"></i>Rabu, 21 Okt · 19.30, online</p><p class="kv"><i data-lucide="monitor"></i>Aplikasi ujian · 30 menit</p></div>
+              </div>
+            </div>
+            <div class="pcard">
+              <div class="pcard__head"><p style="font-size:17px;font-weight:600">Kehadiran Oktober</p><span class="t-meta">7/8</span></div>
+              <div class="att" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+                <span class="d">1 Okt</span><span class="d">3 Okt</span><span class="d">6 Okt</span><span class="d">8 Okt</span>
+                <span class="h">H</span><span class="h">H</span><span class="h">H</span><span class="i">Izin</span>
+                <span class="d">13 Okt</span><span class="d">15 Okt</span><span class="d">17 Okt</span><span class="d">20 Okt</span>
+                <span class="h">H</span><span class="h">H</span><span class="h">H</span><span class="n">–</span>
+              </div>
+              <p class="t-small" style="margin-top:10px">8 Okt: izin acara keluarga, dikirim Ibu Ratna 7 Okt.</p>
+            </div>
+            <div class="pcard">
+              <div class="pcard__head"><p style="font-size:17px;font-weight:600">Catatan tutor</p><span class="t-small">17 Okt</span></div>
+              <p style="font-size:14.5px">“Peluang dan kombinatorik sudah stabil. Pengetahuan Kuantitatif masih terendah, terutama soal grafik fungsi. Saya beri 20 soal tambahan di aplikasi sebelum Simulasi 4.”</p>
+              <p class="t-meta" style="margin-top:8px">Hendra S. · Penalaran Matematika</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anak 2 -->
+      <div class="main__body" data-panel="kid:b" hidden>
+        <div class="grid-3">
+          <div class="pcard"><div class="pcard__head"><p class="pcard__title"><i data-lucide="user-check"></i>Kehadiran</p></div><p class="stat"><b class="num">29</b><span>/30</span></p><div class="stat-foot"><span>Sesi sejak 20 Juli</span><span class="delta delta--up">1 sakit</span></div></div>
+          <div class="pcard"><div class="pcard__head"><p class="pcard__title"><i data-lucide="chart-line"></i>Tryout cabang Sep</p></div><p class="stat"><b class="num">78</b><span>/100</span></p><div class="stat-foot"><span>Matematika, IPA, B. Inggris, TPA</span><span class="delta delta--down">−3 dari Agustus</span></div></div>
+          <div class="pcard"><div class="pcard__head"><p class="pcard__title"><i data-lucide="calendar"></i>Simulasi SMA unggulan</p></div><p class="stat"><b class="num">0</b><span>/3</span></p><div class="stat-foot"><span>Tes 1 Minggu, 15 Nov</span><span class="delta" style="background:var(--navy-soft);color:var(--navy)">Terdaftar</span></div></div>
+        </div>
+        <div class="grid-main">
+          <div class="pcard">
+            <div class="pcard__head"><div><p style="font-size:17px;font-weight:600">Tryout cabang per mapel</p><p class="t-meta">26 September 2026</p></div></div>
+            <div class="table-box" style="border-radius:8px"><table class="tbl" style="min-width:420px"><thead><tr><th>Mapel</th><th class="r">Nilai</th><th class="r">Rata-rata kelas</th></tr></thead><tbody><tr><td>Matematika</td><td class="r num strong">72</td><td class="r num">66</td></tr><tr><td>IPA</td><td class="r num strong">81</td><td class="r num">70</td></tr><tr><td>Bahasa Inggris</td><td class="r num strong">84</td><td class="r num">73</td></tr><tr><td>Tes potensi akademik</td><td class="r num strong">75</td><td class="r num">68</td></tr></tbody></table></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard__head"><p style="font-size:17px;font-weight:600">Tagihan</p></div>
+            <div class="list-rows"><div><span><b>Oktober 2026</b><br><span class="t-meta">Kelas 9 Plus · Rp650.000</span></span><span class="pill pill--ok">Lunas</span></div><div><span><b>November 2026</b><br><span class="t-meta">Jatuh tempo 5 Nov</span></span><span class="pill pill--mute">Belum terbit</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLET TUTOR: ABSENSI KELAS ================= -->
+<section data-screen="tutor">
+  <div class="stage">
+    <div class="tablet">
+      <div class="tablet__screen">
+        <div class="tbar"><span>13.08 · Minggu 18 Okt</span><span>Wi-Fi · 82%</span></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:12px 22px 14px;flex-wrap:wrap">
+          <span class="wordmark" style="font-size:20px">lajur<small>tutor</small></span>
+          <span class="t-meta">Antapani</span>
+          <span style="margin-left:auto;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600"><span class="ini" style="width:34px;height:34px;border-radius:8px;background:var(--navy-soft);color:var(--navy);display:grid;place-items:center;font-size:13px">HS</span>Hendra S.</span>
+        </div>
+        <div class="tut">
+          <div class="tut__classes">
+            <p class="t-h4" style="padding:4px 2px 6px">Kelas hari ini</p>
+            <button class="cls"><b>Intensif UTBK D</b>09.00–10.30 · Pengetahuan Kuantitatif<span class="pill pill--mute" style="align-self:flex-start;margin-top:4px">Selesai · 15/16 hadir</span></button>
+            <button class="cls is-active"><b>Intensif UTBK D</b>13.00–14.30 · Penalaran Matematika<span class="pill pill--navy" style="align-self:flex-start;margin-top:4px">Sedang berjalan · Ruang 2</span></button>
+            <button class="cls"><b>Kelas 9 Plus A</b>15.30–17.00 · Matematika TPA<span class="pill pill--mute" style="align-self:flex-start;margin-top:4px">Ruang 4 · 14 siswa</span></button>
+          </div>
+          <form class="tut__main" data-demo-form="#attDone" id="attForm">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+              <div><p class="t-h3">Absensi · Intensif UTBK D</p><p class="t-meta">Penalaran Matematika · 13.00–14.30 · 16 siswa</p></div>
+              <div class="tally" id="tally"><span class="pill pill--ok">Hadir 13</span><span class="pill pill--warn">Izin 1</span><span class="pill pill--navy">Sakit 0</span><span class="pill pill--bad">Alpa 0</span><span class="pill pill--mute">Belum 2</span></div>
+            </div>
+            <div class="roster" id="roster"></div>
+            <label class="field">Materi hari ini<input class="input" value="Peluang bersyarat dan aturan pencacahan, latihan 15 soal format SNBT"></label>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+              <p class="t-meta" style="max-width:520px">Orang tua siswa yang izin, sakit, atau alpa menerima pesan WhatsApp otomatis setelah absensi dikirim.</p>
+              <button class="btn btn-primary btn-lg">Kirim absensi</button>
+            </div>
+          </form>
+          <div id="attDone" hidden class="tut__main" style="align-items:flex-start;justify-content:center;padding:48px">
+            <span style="width:56px;height:56px;border-radius:50%;background:var(--ok-bg);color:var(--ok);display:grid;place-items:center"><i data-lucide="check"></i></span>
+            <p class="t-h2">Absensi terkirim</p>
+            <p class="t-meta" id="doneMsg">14 hadir. Pesan dikirim ke 2 orang tua. Rekap masuk portal orang tua.</p>
+            <button class="btn btn-outline" type="button" onclick="document.getElementById('attDone').hidden=true;document.getElementById('attForm').hidden=false">Ubah absensi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var rp = function (n) { return window.rupiah(n); };
+
+  /* Kalkulator biaya reguler */
+  var calc = { price: 650000, months: 8, kids: 1, pay: "m" };
+  function calcUpd() {
+    var perKid = calc.price * calc.months, total = 0;
+    for (var k = 0; k < calc.kids; k++) total += perKid * (k === 0 ? 1 : 0.9) + 150000;
+    var full = total - calc.price * calc.months * calc.kids * 0.1;
+    var saving = total - full;
+    document.getElementById("calcTotal").textContent = rp(calc.pay === "y" ? full : total);
+    document.getElementById("calcHint").textContent = calc.pay === "y" ? "Hemat " + rp(saving) + " dibanding bayar per bulan" : "Lunas di muka hemat " + rp(saving);
+  }
+  document.getElementById("calcProg").addEventListener("lapak:select", function (e) { calc.price = Number(e.detail.value); calcUpd(); });
+  document.getElementById("calcMonths").addEventListener("lapak:change", function (e) { calc.months = e.detail.value; calcUpd(); });
+  document.getElementById("calcKids").addEventListener("lapak:change", function (e) { calc.kids = e.detail.value; calcUpd(); });
+  document.getElementById("calcPay").addEventListener("lapak:select", function (e) { calc.pay = e.detail.value; calcUpd(); });
+  calcUpd();
+
+  /* Jadwal mingguan: 3 hari kelas + tryout mini online di hari kosong */
+  function renderWeek(days) {
+    var names = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    var times = ["15.30–17.00", "17.15–18.45", "19.30–20.30"];
+    var subj = [[["Penalaran Matematika", "Hendra S."], ["Pengetahuan Kuantitatif", "Hendra S."]], [["Literasi B. Inggris", "Maria T."], ["Literasi B. Indonesia", "Yohana S."]], [["Penalaran Umum", "Dedi P."], ["Pemahaman Bacaan & Menulis", "Yohana S."]]];
+    var to = days[0] === 0 ? 3 : 2;
+    var cols = days.concat([to]).sort();
+    var h = '<div class="wh"></div>' + cols.map(function (d) { return '<div class="wh">' + names[d] + "</div>"; }).join("");
+    times.forEach(function (t, r) {
+      h += '<div class="wt">' + t + "</div>";
+      cols.forEach(function (d) {
+        var k = days.indexOf(d), cell = "";
+        if (k > -1 && r < 2) cell = '<div class="slot"><b>' + subj[k][r][0] + "</b>" + subj[k][r][1] + "</div>";
+        if (d === to && r === 2) cell = '<div class="slot slot--to"><b>Tryout mini</b>1 subtes, dari rumah</div>';
+        h += "<div>" + cell + "</div>";
+      });
+    });
+    document.getElementById("week").innerHTML = h;
+  }
+
+  /* Pendaftaran */
+  var reg = { cls: "Kelas B · Selasa, Kamis, Sabtu 15.30", pay: "inst" };
+  function regUpd() {
+    var now = (reg.pay === "full" ? 7900000 : 2700000) + 150000;
+    document.getElementById("regNow").textContent = rp(now);
+    document.getElementById("doneTotal").textContent = rp(now);
+    document.getElementById("doneClass").textContent = reg.cls;
+    var p = reg.cls.split(" · ");
+    document.getElementById("weekLabel").textContent = p[0] + " · " + p[1].replace(/ \d.*$/, "") + " · Ruang 2";
+    renderWeek(reg.cls.indexOf("Senin") > -1 ? [0, 2, 4] : [1, 3, 5]);
+  }
+  document.getElementById("regClass").addEventListener("lapak:select", function (e) { reg.cls = e.detail.value; regUpd(); });
+  document.getElementById("regPay").addEventListener("lapak:select", function (e) { reg.pay = e.detail.value; regUpd(); });
+  regUpd();
+
+  /* Absensi tutor */
+  var students = [
+    ["Adelia Rahma", "SMA Negeri · 12 IPA", "h"], ["Bonifasius Tarigan", "SMA Swasta · 12 IPA", "h"], ["Clara Simbolon", "SMA Negeri · 12 IPA", "h"],
+    ["Daniel Situmorang", "SMA Negeri · 12 IPA", "h"], ["Elisabeth Nainggolan", "SMA Swasta · 12 IPA", "i"], ["Fadli Nasution", "SMA Negeri · 12 IPA", "h"],
+    ["Gita Purba", "MAN · 12 IPA", "h"], ["Hizkia Manurung", "SMA Negeri · 12 IPA", "h"], ["Indah Lubis", "SMA Negeri · 12 IPA", "h"],
+    ["Josua Hutapea", "SMA Swasta · 12 IPA", ""], ["Kevin Saragih", "SMA Negeri · 12 IPA", "h"], ["Laura Sinaga", "SMA Negeri · 12 IPA", "h"],
+    ["Michael Ginting", "SMA Swasta · 12 IPA", "h"], ["Nabila Harahap", "MAN · 12 IPA", "h"], ["Okta Siregar", "SMA Negeri · 12 IPA", ""], ["Putri Damanik", "SMA Negeri · 12 IPA", "h"]
+  ];
+  var labels = { h: "Hadir", i: "Izin", s: "Sakit", a: "Alpa" };
+  var html = "";
+  students.forEach(function (s, n) {
+    html += '<div class="stu"><span class="stu__no">' + (n + 1) + '</span><span class="stu__name">' + s[0] + "<small>" + s[1] + (s[2] === "i" ? " · izin via portal, 08.12" : "") + '</small></span><span class="mark" data-i="' + n + '">';
+    ["h", "i", "s", "a"].forEach(function (k) { html += '<button type="button" data-k="' + k + '"' + (s[2] === k ? ' class="is-' + k + '"' : "") + ">" + labels[k] + "</button>"; });
+    html += "</span></div>";
+  });
+  document.getElementById("roster").innerHTML = html;
+  function tally() {
+    var c = { h: 0, i: 0, s: 0, a: 0, x: 0 };
+    students.forEach(function (s) { c[s[2] || "x"]++; });
+    document.getElementById("tally").innerHTML = '<span class="pill pill--ok">Hadir ' + c.h + '</span><span class="pill pill--warn">Izin ' + c.i + '</span><span class="pill pill--navy">Sakit ' + c.s + '</span><span class="pill pill--bad">Alpa ' + c.a + '</span>' + (c.x ? '<span class="pill pill--mute">Belum ' + c.x + "</span>" : "");
+    var notify = c.i + c.s + c.a;
+    document.getElementById("doneMsg").textContent = c.h + " hadir dari 16. Pesan WhatsApp dikirim ke " + notify + " orang tua. Rekap masuk portal orang tua.";
+  }
+  document.getElementById("roster").addEventListener("click", function (e) {
+    var b = e.target.closest(".mark button"); if (!b) return;
+    var box = b.parentElement, k = b.getAttribute("data-k");
+    box.querySelectorAll("button").forEach(function (x) { x.className = ""; });
+    b.className = "is-" + k;
+    students[Number(box.getAttribute("data-i"))][2] = k;
+    tally();
+  });
+  tally();
+})();
+</script>
+</body>
+</html>

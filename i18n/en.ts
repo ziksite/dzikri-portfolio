@@ -116,6 +116,7 @@ export const en = {
       "Defense & Aerospace": "Defense & Aerospace",
       "Education & Training": "Education & Training",
       "Energy": "Energy",
+      "Events & Weddings": "Events & Weddings",
       "Financial Services": "Financial Services",
       "Food & Beverage": "Food & Beverage",
       "Healthcare": "Healthcare",

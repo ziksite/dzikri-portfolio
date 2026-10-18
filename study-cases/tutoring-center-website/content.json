@@ -1,0 +1,91 @@
+{
+  "slug": "tutoring-center-website",
+  "kind": "Website",
+  "industry": "Education & Training",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Parent Portal",
+    "Online Registration"
+  ],
+  "metrics": [
+    {
+      "value": "4",
+      "label": "SCHOOL LEVELS",
+      "labelId": "JENJANG"
+    },
+    {
+      "value": "12",
+      "label": "UTBK SIMULATIONS PER PROGRAM",
+      "labelId": "SIMULASI UTBK PER PROGRAM"
+    },
+    {
+      "value": "5",
+      "label": "BRANCHES + ONLINE",
+      "labelId": "CABANG + ONLINE"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Program finder by school level with plan comparison",
+      "captionId": "Pencari program per jenjang dengan perbandingan paket"
+    },
+    {
+      "hash": "program",
+      "caption": "Program page with weekly schedule, simulations and registration",
+      "captionId": "Halaman program dengan jadwal mingguan, simulasi, dan pendaftaran"
+    },
+    {
+      "hash": "portal",
+      "caption": "Parent portal with attendance, tryout scores and invoices",
+      "captionId": "Portal orang tua dengan kehadiran, nilai tryout, dan tagihan"
+    },
+    {
+      "hash": "tutor",
+      "caption": "Tutor tablet for taking class attendance",
+      "captionId": "Tablet tutor untuk absensi kelas"
+    }
+  ],
+  "content_en": {
+    "title": "Tutoring Center Website",
+    "type": "TUTORING WEBSITE & PARENT PORTAL",
+    "category": "Education Platform",
+    "summary": "A redesign for a tutoring center with five branches and an online exam app. Parents find a program by school level and goal, compare prices, register for a class with a seat, and follow attendance, tryout scores and invoices in a parent portal; tutors take attendance on a tablet.",
+    "challenge": "The old site opened with a slider of seven promotional banners, followed by three identical gift icons that repeated the banner text. Only the online tryout packages had prices; in-person classes, which are the core of the business, were not described at all, so parents had to ask on WhatsApp for schedules and fees.\n\nPaid packages were mixed with free packages for enrolled students under internal codes, every button led into the exam app, and there was no way to register for a class. Parents had nothing to look at between report cards, so attendance and tryout recaps were sent by hand.",
+    "solution": "The homepage opens with a program finder: choosing a school level switches the plan cards, which follow a pricing-page pattern with price, who it is for and what is included. Online tryout packages sit in a table with test counts, validity and next dates, and a calculator estimates monthly fees for several children with a sibling discount. Each program page shows the weekly schedule for the chosen class, the simulation calendar and the subtest format, next to a registration card with remaining seats and full or instalment payment.\n\nAfter registering, parents get a portal per child with attendance, the latest simulation score, branch rank, a score chart against the branch average and the target study program, scores per subtest, invoices and tutor notes. In class, tutors mark attendance on a tablet and parents of absent students are notified automatically. The planned production stack is Next.js with Supabase, a payment gateway and the WhatsApp API.",
+    "features": [
+      "Program finder by school level, goal and branch",
+      "Plan comparison cards with prices and inclusions",
+      "Fee calculator with months, number of children and payment option",
+      "Weekly class schedule with remaining seats and online registration",
+      "Parent portal with attendance, tryout scores and branch rank",
+      "Score chart against branch average and target study program",
+      "Tutor tablet attendance with automatic WhatsApp notices"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Bimbel",
+    "type": "WEBSITE BIMBEL & PORTAL ORANG TUA",
+    "category": "Education Platform",
+    "summary": "Redesign untuk lembaga bimbel dengan lima cabang dan aplikasi ujian online. Orang tua mencari program berdasarkan jenjang dan tujuan, membandingkan harga, mendaftar kelas dengan kursi yang tersedia, lalu memantau kehadiran, nilai tryout, dan tagihan di portal orang tua; tutor mengisi absensi dari tablet.",
+    "challenge": "Situs lama dibuka dengan slider tujuh banner promo, disusul tiga ikon kado yang mengulang teks banner. Hanya paket tryout online yang punya harga; kelas tatap muka yang menjadi inti bisnisnya tidak dijelaskan sama sekali, sehingga orang tua harus bertanya jadwal dan biaya lewat WhatsApp.\n\nPaket berbayar tercampur dengan paket gratis untuk siswa cabang yang dinamai kode internal, semua tombol mengarah ke aplikasi ujian, dan tidak ada cara mendaftar kelas. Orang tua tidak punya apa pun untuk dilihat di antara pembagian rapor, sehingga rekap kehadiran dan tryout dikirim manual.",
+    "solution": "Beranda dibuka dengan pencari program: memilih jenjang mengganti kartu paket yang mengikuti pola halaman harga, berisi harga, untuk siapa, dan apa saja yang termasuk. Paket tryout online ditampilkan dalam tabel berisi jumlah tes, masa berlaku, dan jadwal berikutnya, dan kalkulator memperkirakan biaya bulanan untuk beberapa anak dengan diskon saudara. Setiap halaman program menampilkan jadwal mingguan kelas yang dipilih, kalender simulasi, dan format subtes, di samping kartu pendaftaran dengan sisa kursi dan pilihan bayar lunas atau cicil.\n\nSetelah mendaftar, orang tua mendapat portal per anak berisi kehadiran, skor simulasi terakhir, peringkat cabang, grafik skor dibanding rata-rata cabang dan target prodi, skor per subtes, tagihan, dan catatan tutor. Di kelas, tutor mengisi absensi dari tablet dan orang tua siswa yang tidak hadir menerima pemberitahuan otomatis. Stack produksi yang direncanakan adalah Next.js dengan Supabase, payment gateway, dan WhatsApp API.",
+    "features": [
+      "Pencari program per jenjang, tujuan, dan cabang",
+      "Kartu perbandingan paket dengan harga dan isi",
+      "Kalkulator biaya per bulan, jumlah anak, dan cara bayar",
+      "Jadwal kelas mingguan dengan sisa kursi dan pendaftaran online",
+      "Portal orang tua berisi kehadiran, nilai tryout, dan peringkat cabang",
+      "Grafik skor dibanding rata-rata cabang dan target prodi",
+      "Absensi tutor dari tablet dengan notifikasi WhatsApp otomatis"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

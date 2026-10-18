@@ -1,0 +1,25 @@
+import fs from "node:fs";
+import { chromium } from "playwright-core";
+const [url, out] = process.argv.slice(2);
+const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" });
+const p = await ctx.newPage();
+await p.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+await p.waitForTimeout(4000);
+await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 700) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 200)); } window.scrollTo(0, 0); });
+await p.waitForTimeout(1500);
+const data = await p.evaluate(() => {
+  const abs = u => { try { return new URL(u, location.href).href; } catch { return u; } };
+  const imgs = [...document.querySelectorAll("img")].map(i => ({ src: abs(i.currentSrc || i.src), alt: i.alt, w: i.naturalWidth, h: i.naturalHeight })).filter(i => i.w > 80);
+  const bgs = [...document.querySelectorAll("*")].map(e => getComputedStyle(e).backgroundImage).filter(b => b && b.startsWith("url(")).map(b => abs(b.slice(5, -2)));
+  const links = [...document.querySelectorAll("a[href]")].map(a => ({ t: a.innerText.trim().replace(/\s+/g, " ").slice(0, 60), h: abs(a.getAttribute("href")) }));
+  const colors = {};
+  [...document.querySelectorAll("a,button,h1,h2,h3,header,footer,section,div")].slice(0, 3000).forEach(e => { const s = getComputedStyle(e); [s.backgroundColor, s.color].forEach(c => { if (c && c !== "rgba(0, 0, 0, 0)") colors[c] = (colors[c] || 0) + 1; }); });
+  const fonts = {}; [...document.querySelectorAll("h1,h2,h3,p,a")].forEach(e => { const f = getComputedStyle(e).fontFamily; fonts[f] = (fonts[f] || 0) + 1; });
+  return { title: document.title, text: document.body.innerText, imgs, bgs: [...new Set(bgs)], links, colors: Object.entries(colors).sort((a, b) => b[1] - a[1]).slice(0, 20), fonts };
+});
+fs.writeFileSync(`${out}.json`, JSON.stringify(data, null, 1));
+fs.writeFileSync(`${out}.txt`, data.text);
+await p.screenshot({ path: `${out}-full.png`, fullPage: true });
+console.log(data.title, "| imgs", data.imgs.length, "| bgs", data.bgs.length, "| text chars", data.text.length);
+await b.close();

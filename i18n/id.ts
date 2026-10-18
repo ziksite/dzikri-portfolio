@@ -116,6 +116,7 @@ export const id: Dictionary = {
       "Defense & Aerospace": "Pertahanan & Dirgantara",
       "Education & Training": "Pendidikan & Pelatihan",
       "Energy": "Energi",
+      "Events & Weddings": "Acara & Pernikahan",
       "Financial Services": "Jasa Keuangan",
       "Food & Beverage": "Makanan & Minuman",
       "Healthcare": "Kesehatan",

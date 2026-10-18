@@ -1,0 +1,91 @@
+{
+  "slug": "electrical-supplies-store-website",
+  "kind": "Website",
+  "industry": "Retail & E-commerce",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "B2B Catalog",
+    "Request for Quotation"
+  ],
+  "metrics": [
+    {
+      "value": "4",
+      "label": "BRANCHES WITH LIVE STOCK",
+      "labelId": "CABANG DENGAN STOK"
+    },
+    {
+      "value": "3",
+      "label": "PRICE TIERS PER PRODUCT",
+      "labelId": "TINGKAT HARGA PER PRODUK"
+    },
+    {
+      "value": "2 HRS",
+      "label": "QUOTATION TARGET",
+      "labelId": "TARGET PENAWARAN"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Search-first homepage with category navigation and a paste-your-BOQ box",
+      "captionId": "Beranda dengan pencarian, nav kategori, dan kotak tempel daftar material"
+    },
+    {
+      "hash": "katalog",
+      "caption": "MCB catalog with spec filters, branch stock, tier pricing and product detail",
+      "captionId": "Katalog MCB dengan filter spesifikasi, stok cabang, harga bertingkat, dan detail produk"
+    },
+    {
+      "hash": "rfq",
+      "caption": "Project quotation sheet with quantities, tier prices and target prices",
+      "captionId": "Lembar permintaan penawaran proyek dengan jumlah, harga tier, dan harga target"
+    },
+    {
+      "hash": "sales",
+      "caption": "Sales inbox for incoming quotations with stock, discounts and margin check",
+      "captionId": "Kotak masuk sales untuk RFQ dengan stok, diskon, dan cek margin"
+    }
+  ],
+  "content_en": {
+    "title": "Electrical Supplies Store Website",
+    "type": "B2B & RETAIL CATALOG",
+    "category": "E-commerce",
+    "summary": "A redesign for an electrical supplies store and distributor with four branches. Retail buyers search a catalog of cables, breakers, lamps and panels and check out normally; contractors see tier pricing and stock per branch and send a request for quotation for their project, which sales staff price and send from their own screen.",
+    "challenge": "The old site read like a company profile: a slider of text-heavy banners, partner logos and paragraphs about being the best solution. The product page was a gallery of photos grouped by category, with no names, codes, specifications, prices or stock, so every question had to go through chat.\n\nEvery button led to the same WhatsApp number, mixing retail questions, bulk orders and project quotations in one queue with no reference number or response time. Branches were shown as storefront photos without opening hours or any sign of what each one had in stock.",
+    "solution": "The homepage puts search and a two-row category menu first, followed by a box where contractors can paste their bill of materials, category tiles, and the products contractors order most, each with retail price, the lowest tier price and branch stock. The catalog filters breakers by pole, rating and brand, and a detail panel shows specifications, tier pricing for the chosen quantity, stock in all four branches and a choice between cart and quotation.\n\nThe quotation sheet works like a spreadsheet: quantities update tier prices and subtotals, buyers can add a target price, project details and payment terms sit above the lines, and a fixed bar shows the estimate and savings against retail. Sales staff work from an inbox with status tabs and response timers; each request shows branch stock with transfer suggestions, discounts per line, and a margin check that routes low-margin quotes to the branch head. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Search-first header with a two-row category menu",
+      "Paste-your-BOQ box that turns a material list into a quotation request",
+      "Spec filters for breakers by pole, current rating, curve and brand",
+      "Tier pricing and stock per branch on every product",
+      "Quotation sheet with quantities, target prices and payment terms",
+      "Sales inbox with status tabs, response timers and stock transfer hints",
+      "Per-line discounts with a margin check before sending"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Toko Material Listrik",
+    "type": "KATALOG B2B & RITEL",
+    "category": "E-commerce",
+    "summary": "Redesign untuk toko dan distributor material listrik dengan empat cabang. Pembeli eceran mencari kabel, MCB, lampu, dan panel lalu checkout biasa; kontraktor melihat harga bertingkat dan stok per cabang, lalu mengirim permintaan penawaran proyek yang diberi harga dan dikirim sales dari layar mereka sendiri.",
+    "challenge": "Situs lama terbaca seperti company profile: slider banner penuh teks, deretan logo partner, dan paragraf tentang solusi terbaik. Halaman produk hanya galeri foto per kategori tanpa nama, kode, spesifikasi, harga, atau stok, sehingga setiap pertanyaan harus lewat chat.\n\nSemua tombol mengarah ke satu nomor WhatsApp, sehingga pertanyaan eceran, pesanan grosir, dan penawaran proyek bercampur dalam satu antrean tanpa nomor referensi atau waktu respons. Cabang ditampilkan sebagai foto ruko tanpa jam buka atau gambaran stok di masing-masing cabang.",
+    "solution": "Beranda menaruh pencarian dan menu kategori dua baris di depan, diikuti kotak tempat kontraktor menempel daftar material, ubin kategori, dan produk yang paling sering dipesan kontraktor, masing-masing dengan harga eceran, harga tier terendah, dan stok cabang. Katalog menyaring MCB berdasarkan kutub, arus, dan merek, dan panel detail menampilkan spesifikasi, harga bertingkat untuk jumlah yang dipilih, stok di empat cabang, serta pilihan ke keranjang atau ke penawaran.\n\nLembar permintaan penawaran bekerja seperti spreadsheet: jumlah mengubah harga tier dan subtotal, pembeli bisa mengisi harga target, data proyek dan termin pembayaran ada di atas baris, dan bar tetap di bawah menampilkan estimasi serta penghematan dari harga eceran. Sales bekerja dari kotak masuk dengan tab status dan penghitung waktu respons; setiap permintaan menampilkan stok cabang dengan saran transfer, diskon per baris, dan cek margin yang meneruskan penawaran bermargin rendah ke kepala cabang. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Header dengan pencarian dan menu kategori dua baris",
+      "Kotak tempel BOQ yang mengubah daftar material jadi permintaan penawaran",
+      "Filter spesifikasi MCB per kutub, arus, kurva, dan merek",
+      "Harga bertingkat dan stok per cabang di setiap produk",
+      "Lembar penawaran dengan jumlah, harga target, dan termin pembayaran",
+      "Kotak masuk sales dengan tab status, waktu respons, dan saran transfer stok",
+      "Diskon per baris dengan cek margin sebelum dikirim"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

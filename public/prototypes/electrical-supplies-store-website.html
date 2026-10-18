@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simpul Listrik — Material listrik ritel, grosir &amp; proyek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/electrical-supplies-store-website.css">
+</head>
+<body>
+
+<!-- Header toko dipakai 3 layar pelanggan (diisi skrip dari template) -->
+<template id="shellTpl">
+  <div class="utility">
+    <div class="wrap">
+      <span class="utility__left">Ritel &amp; grosir · Harga proyek untuk kontraktor · Ambil di 4 cabang</span>
+      <div class="utility__right">
+        <a href="#"><i data-lucide="map-pin" class="i-sm"></i>Cabang Depok</a>
+        <a href="#">Lacak pesanan</a>
+        <a href="#">Bantuan</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">simpul<span>listrik</span></a>
+      <form class="search" onsubmit="location.hash='katalog';return false">
+        <input placeholder="Cari kode, merek, atau spesifikasi — mis. NYM 3x2,5 atau GV2ME16" aria-label="Cari produk">
+        <button aria-label="Cari"><i data-lucide="search"></i></button>
+      </form>
+      <div class="header__actions">
+        <a class="hact" href="#"><i data-lucide="building-2"></i><span class="hact__txt"><small>PT Bangun Karya</small><b>Akun proyek</b></span></a>
+        <a class="hact" href="#rfq"><i data-lucide="clipboard-list"></i><span class="hact__txt"><b>Daftar RFQ</b></span><span class="count" data-rfq-count>9</span></a>
+        <a class="hact" href="#katalog"><i data-lucide="shopping-cart"></i><span class="hact__txt"><b>Keranjang</b></span></a>
+      </div>
+    </header>
+  </div>
+  <nav class="catnav" aria-label="Kategori">
+    <div class="wrap">
+      <a class="hot" href="#katalog">Promo<br>Oktober</a>
+      <a data-cat="mcb" href="#katalog">MCB &amp;<br>Proteksi</a>
+      <a href="#katalog">Kabel &amp;<br>Kawat</a>
+      <a href="#katalog">Lampu &amp;<br>LED</a>
+      <a href="#katalog">Panel &amp;<br>Box</a>
+      <a href="#katalog">Kontaktor &amp;<br>Motor Control</a>
+      <a href="#katalog">Otomasi<br>PLC &amp; HMI</a>
+      <a href="#katalog">Alat Ukur<br>&amp; Tester</a>
+      <a href="#katalog">Perkakas<br>Teknisi</a>
+      <a href="#katalog">Stop Kontak<br>&amp; Saklar</a>
+      <a href="#katalog">Safety<br>&amp; APD</a>
+      <a href="#katalog">Jasa Rakit<br>Panel</a>
+    </div>
+  </nav>
+</template>
+
+<template id="footTpl">
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">simpul<span>listrik</span></span><p class="t-meta" style="max-width:320px">Toko dan distributor material listrik untuk rumah, panel, dan industri. Ritel, grosir, dan penawaran proyek.</p></div>
+        <div><h4>Belanja</h4><ul><li><a href="#katalog">Semua kategori</a></li><li><a href="#katalog">Promo Oktober</a></li><li><a href="#">Merek</a></li><li><a href="#">Datasheet produk</a></li></ul></div>
+        <div><h4>Proyek</h4><ul><li><a href="#rfq">Minta penawaran (RFQ)</a></li><li><a href="#">Daftar akun proyek</a></li><li><a href="#">Tempo &amp; termin</a></li><li><a href="#">Jasa rakit panel</a></li></ul></div>
+        <div><h4>Cabang</h4><ul><li><a href="#">Depok</a></li><li><a href="#">Bogor</a></li><li><a href="#">Medan</a></li><li><a href="#">Surabaya</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul><li><a href="#">Pengiriman</a></li><li><a href="#">Retur &amp; garansi</a></li><li><a href="#">Faktur pajak</a></li><li><a href="#">Chat WhatsApp</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Simpul Listrik. Harga sudah termasuk PPN kecuali disebutkan lain.</p>
+    </div>
+  </footer>
+</template>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div data-shell></div>
+  <div class="announce"><div class="wrap"><span><b>Gratis ongkir Jabodetabek</b> untuk belanja di atas Rp2.000.000 · Harga proyek otomatis mulai 10 roll atau 50 pcs</span><a href="#">Lihat ketentuan</a></div></div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero__copy">
+        <h1 class="t-h1">Material listrik untuk rumah, panel, dan proyek.</h1>
+        <p>Lebih dari 5.000 produk. Cek stok per cabang, lihat harga bertingkat untuk pembelian banyak, atau minta penawaran resmi untuk proyek Anda.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="#katalog">Belanja katalog</a><a class="btn btn-secondary" href="#rfq">Minta penawaran proyek</a></div>
+        <div class="hero__brands"><span>Stok resmi:</span><b>Schneider</b><b>Siemens</b><b>Hager</b><b>Eterna</b><b>Philips</b><b>Weidmüller</b><b>Kyoritsu</b></div>
+      </div>
+      <form class="boq" onsubmit="location.hash='rfq';return false">
+        <div><p class="t-h3">Punya daftar material? Tempel di sini.</p><p class="t-meta">Satu baris satu barang. Kami cocokkan dengan katalog dan stok, lalu sales mengirim penawaran resmi.</p></div>
+        <textarea aria-label="Daftar material">NYM 3x2,5 Eterna — 40 roll
+MCB 1P 16A Schneider Domae — 48 pcs
+Kontaktor Siemens 3RT2015 — 6 pcs
+Box panel 600x400x200 — 4 unit
+Downlight LED 12W — 60 pcs</textarea>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary">Cocokkan dengan katalog</button>
+          <a class="link" href="#" style="display:inline-flex;gap:6px;align-items:center"><i data-lucide="paperclip" class="i-sm"></i>Unggah Excel / PDF BOQ</a>
+        </div>
+        <p class="t-small">Penawaran dikirim dalam 2 jam kerja · berlaku 14 hari</p>
+      </form>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Jelajahi kategori</h2><div class="sec__nav"><button class="icon-btn icon-btn--sm" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="i-sm"></i></button><button class="icon-btn icon-btn--sm" aria-label="Berikutnya"><i data-lucide="chevron-right" class="i-sm"></i></button></div></div>
+      <div class="tiles" id="catTiles"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Sering dipesan kontraktor</h2><a href="#katalog">Lihat semua<i data-lucide="arrow-right" class="i-sm"></i></a><div class="sec__nav"><button class="icon-btn icon-btn--sm" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="i-sm"></i></button><button class="icon-btn icon-btn--sm" aria-label="Berikutnya"><i data-lucide="chevron-right" class="i-sm"></i></button></div></div>
+      <div class="cards" id="popCards"></div>
+    </section>
+
+    <section class="sec">
+      <div class="split">
+        <div>
+          <h2 class="t-h2" style="margin-bottom:8px">Untuk kontraktor dan pabrik</h2>
+          <p class="muted" style="margin-bottom:20px;max-width:560px">Daftar akun proyek dengan NPWP perusahaan. Harga bertingkat berlaku otomatis di keranjang dan di RFQ.</p>
+          <div class="panel">
+            <div class="row"><i data-lucide="layers"></i><div><b>Harga bertingkat per produk</b><span class="t-meta">Turun di 10 dan 50 unit, terlihat sebelum checkout</span></div><span></span></div>
+            <div class="row"><i data-lucide="file-text"></i><div><b>Penawaran resmi dalam 2 jam kerja</b><span class="t-meta">PDF berkop dengan masa berlaku 14 hari, bisa langsung jadi PO</span></div><span></span></div>
+            <div class="row"><i data-lucide="calendar-clock"></i><div><b>Tempo 30–45 hari</b><span class="t-meta">Setelah verifikasi NPWP, akta, dan dua PO pertama</span></div><span></span></div>
+            <div class="row"><i data-lucide="truck"></i><div><b>Kirim bertahap sesuai jadwal lapangan</b><span class="t-meta">Satu PO, beberapa pengiriman dari cabang terdekat</span></div><span></span></div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
+            <div class="photo" style="width:96px;flex:none" data-img="assets/electrical-supplies-store-website/kabel-nym-eterna.webp"></div>
+            <div><p class="t-h3">Kabel NYM 3x2,5 mm² Eterna</p><p class="t-meta">Roll 50 m · SNI · contoh harga bertingkat</p></div>
+          </div>
+          <div class="panel">
+            <table class="tier">
+              <thead><tr><th>Jumlah</th><th>Hemat</th><th>Harga per roll</th></tr></thead>
+              <tbody>
+                <tr><td>1–9 roll</td><td class="muted">—</td><td class="num">Rp1.095.000</td></tr>
+                <tr class="is-on"><td>10–49 roll</td><td>5%</td><td class="num">Rp1.040.000</td></tr>
+                <tr><td>50 roll ke atas</td><td>9%</td><td class="num">Rp995.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="t-small" style="margin-top:12px">Di atas 200 roll atau untuk tender, harga lewat RFQ.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Ambil di cabang</h2><span class="t-meta">Stok di setiap halaman produk diperbarui tiap 15 menit</span></div>
+      <div class="panel">
+        <div class="row"><i data-lucide="store"></i><div><b>Depok · Margonda</b><span class="t-meta">Senin–Sabtu 08.00–17.00 · Minggu 09.00–15.00 · gudang utama</span></div><a class="btn btn-secondary btn-sm" href="#katalog">Lihat stok</a></div>
+        <div class="row"><i data-lucide="store"></i><div><b>Bogor · Cibatu</b><span class="t-meta">Senin–Sabtu 08.00–17.00 · Minggu 09.00–15.00 · dekat kawasan industri</span></div><a class="btn btn-secondary btn-sm" href="#katalog">Lihat stok</a></div>
+        <div class="row"><i data-lucide="store"></i><div><b>Medan</b><span class="t-meta">Senin–Sabtu 08.00–17.00</span></div><a class="btn btn-secondary btn-sm" href="#katalog">Lihat stok</a></div>
+        <div class="row"><i data-lucide="store"></i><div><b>Surabaya</b><span class="t-meta">Senin–Sabtu 08.00–17.00 · Minggu 09.00–15.00</span></div><a class="btn btn-secondary btn-sm" href="#katalog">Lihat stok</a></div>
+      </div>
+    </section>
+  </div>
+  <div data-foot></div>
+</section>
+
+<!-- ================= KATALOG + DETAIL ================= -->
+<section data-screen="katalog">
+  <div data-shell data-active="mcb"></div>
+  <div class="wrap">
+    <p class="crumb"><a href="#home">Beranda</a>/<a href="#katalog">Proteksi</a>/<span>MCB &amp; Proteksi</span></p>
+    <div class="cat-top">
+      <div><h1 class="t-h1" style="font-size:34px">MCB &amp; Proteksi</h1><p class="t-meta"><span id="resCount">8</span> dari 128 produk · stok cabang Depok</p></div>
+      <div class="cat-top__right">
+        <select class="select" aria-label="Urutkan"><option>Paling sering dibeli</option><option>Harga terendah</option><option>Stok terbanyak</option></select>
+        <div class="seg" data-select><button class="is-active"><i data-lucide="rows-3" class="i-sm"></i>Daftar</button><button><i data-lucide="layout-grid" class="i-sm"></i>Grid</button></div>
+      </div>
+    </div>
+    <div class="catalog">
+      <aside class="filters" aria-label="Filter spesifikasi">
+        <div class="fgroup"><h4>Kutub</h4><div class="chips" data-select data-multi id="fPole"><button class="chip" data-value="1P">1P</button><button class="chip" data-value="2P">2P</button><button class="chip" data-value="3P">3P</button><button class="chip" data-value="4P">4P</button></div></div>
+        <div class="fgroup"><h4>Arus nominal</h4><div class="chips" data-select data-multi><button class="chip">6 A</button><button class="chip">10 A</button><button class="chip">16 A</button><button class="chip">20 A</button><button class="chip">25 A</button><button class="chip">32 A</button><button class="chip">40 A</button><button class="chip">63 A</button></div></div>
+        <div class="fgroup"><h4>Kurva trip</h4><div class="chips" data-select data-multi><button class="chip">B</button><button class="chip">C</button><button class="chip">D</button></div></div>
+        <div class="fgroup" id="fBrand"><h4>Merek</h4>
+          <label class="check"><input type="checkbox" value="Schneider">Schneider <em>64</em></label>
+          <label class="check"><input type="checkbox" value="Siemens">Siemens <em>38</em></label>
+          <label class="check"><input type="checkbox" value="Hager">Hager <em>17</em></label>
+          <label class="check"><input type="checkbox" value="ABB">ABB <em>9</em></label>
+        </div>
+        <div class="fgroup"><h4>Kapasitas putus</h4>
+          <label class="check"><input type="checkbox">4,5 kA <em>41</em></label>
+          <label class="check"><input type="checkbox">6 kA <em>52</em></label>
+          <label class="check"><input type="checkbox">10 kA <em>23</em></label>
+        </div>
+        <div class="fgroup"><h4>Ketersediaan</h4>
+          <label class="check"><input type="checkbox" checked>Ada di Depok</label>
+          <label class="check"><input type="checkbox">Bisa diambil hari ini</label>
+          <label class="check"><input type="checkbox">Harga proyek tersedia</label>
+        </div>
+      </aside>
+
+      <div style="min-width:0">
+        <div class="applied" id="applied"><span class="pill">Ada di Depok<i data-lucide="x"></i></span><a class="link" href="#katalog" style="font-size:13.5px">Hapus semua</a></div>
+        <div class="results">
+          <div class="results__head"><span></span><span>Produk &amp; spesifikasi</span><span>Stok</span><span style="text-align:right">Harga</span></div>
+          <div id="prodRows"></div>
+        </div>
+        <p class="t-small" style="margin-top:14px">Harga termasuk PPN 11%. Harga bertingkat berlaku per produk di keranjang dan RFQ.</p>
+      </div>
+
+      <aside class="detail" id="detail"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DAFTAR RFQ ================= -->
+<section data-screen="rfq">
+  <div data-shell></div>
+  <div class="wrap">
+    <form id="rfqForm" data-demo-form="#rfqDone">
+      <div class="rfq-top">
+        <div><p class="crumb" style="padding:0 0 8px"><a href="#home">Beranda</a>/<span>Daftar RFQ</span></p><h1 class="t-h1" style="font-size:34px">Permintaan penawaran</h1><p class="t-meta">Disimpan otomatis · terakhir diubah 09.08</p></div>
+        <div class="seg" data-select id="buyMode"><button type="button" data-value="beli">Beli langsung</button><button type="button" class="is-active" data-value="rfq">Minta penawaran proyek</button></div>
+      </div>
+      <div class="fields">
+        <label class="field">Nama proyek<input value="Gedung kantor 4 lantai"></label>
+        <label class="field">Perusahaan<input value="PT Bangun Karya Mandiri"></label>
+        <label class="field">Lokasi kirim<input value="Jababeka, Bogor"></label>
+        <label class="field">Dibutuhkan<input value="2 Nov 2026"></label>
+        <label class="field">Termin<select><option>Tempo 30 hari (PO)</option><option>Bayar sebelum kirim</option><option>Tempo 45 hari</option></select></label>
+      </div>
+      <div class="sheet-wrap">
+        <table class="sheet">
+          <thead><tr><th>#</th><th>Produk</th><th>Jumlah</th><th class="r">Harga tier</th><th class="r">Harga target <span class="muted">(opsional)</span></th><th class="r">Subtotal</th><th></th></tr></thead>
+          <tbody id="rfqRows"></tbody>
+          <tbody><tr class="addrow"><td class="no">+</td><td colspan="6"><div class="search" style="padding-left:12px"><i data-lucide="search" class="i-sm" style="margin-right:8px;color:var(--ink-2)"></i><input placeholder="Tambah baris: ketik kode atau nama, atau tempel dari Excel"></div></td></tr></tbody>
+        </table>
+      </div>
+      <div class="rfq-notes">
+        <label class="field">Catatan untuk sales<textarea>Pengiriman 2 tahap: kabel dan box panel minggu pertama, MCB dan lampu menyusul. Mohon cantumkan merek alternatif bila stok kontaktor kurang.</textarea></label>
+        <div class="field">Lampiran
+          <div class="files">
+            <div class="file"><i data-lucide="file-text" class="i-sm"></i>SLD-panel-LP1-LP4.pdf<span>1,8 MB</span></div>
+            <div class="file"><i data-lucide="file-spreadsheet" class="i-sm"></i>BOQ-elektrikal-rev2.xlsx<span>64 KB</span></div>
+            <div class="drop"><i data-lucide="upload" class="i-sm"></i>Seret file ke sini atau <a class="link" href="#">pilih file</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="totalbar">
+        <div class="wrap">
+          <div class="tb-item"><small>Baris</small><b id="tbLines">9</b></div>
+          <div class="tb-item"><small>Estimasi harga tier</small><b id="tbTotal">Rp0</b></div>
+          <div class="tb-item tb-item--save"><small>Hemat dari harga eceran</small><b id="tbSave">Rp0</b></div>
+          <div class="tb-item"><small>Penawaran final</small><b style="font-size:15px;font-weight:500">dari sales, maks. 2 jam kerja</b></div>
+          <button class="btn btn-primary" id="rfqSubmit">Kirim permintaan penawaran</button>
+        </div>
+      </div>
+    </form>
+    <div class="done" id="rfqDone" hidden>
+      <span class="done__icon"><i data-lucide="check"></i></span>
+      <h1 class="t-h1" style="font-size:34px">RFQ-2610-0148 terkirim</h1>
+      <p class="muted">Rina Astuti dari cabang Bogor memegang proyek ini. Penawaran resmi (PDF, berlaku 14 hari) dikirim ke email dan WhatsApp perusahaan paling lambat hari ini pukul 11.15.</p>
+      <div class="panel">
+        <div class="row"><i data-lucide="clipboard-list"></i><div><b>Gedung kantor 4 lantai</b><span class="t-meta">PT Bangun Karya Mandiri · 9 baris · kirim ke Jababeka, Bogor</span></div><span class="num" id="doneTotal"></span></div>
+        <div class="row"><i data-lucide="calendar-clock"></i><div><b>Tempo 30 hari (PO)</b><span class="t-meta">Dibutuhkan 2 November 2026 · 2 tahap pengiriman</span></div><span></span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#">Chat sales via WhatsApp</a><a class="btn btn-secondary" href="#katalog">Lanjut belanja</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAYAR SALES: PENAWARAN MASUK ================= -->
+<section data-screen="sales">
+  <div class="staff">
+    <div class="staff__frame">
+      <div class="topnav">
+        <span class="logo">simpul<span>listrik</span></span><span class="topnav__tag">Sales</span>
+        <nav><a class="is-active" href="#sales"><i data-lucide="file-text" class="i-sm"></i>Penawaran<span class="count">5</span></a><a href="#sales"><i data-lucide="package" class="i-sm"></i>Pesanan</a><a href="#sales"><i data-lucide="warehouse" class="i-sm"></i>Stok</a><a href="#sales"><i data-lucide="building-2" class="i-sm"></i>Pelanggan</a></nav>
+        <div class="topnav__right"><select class="select" aria-label="Cabang"><option>Cabang Bogor</option><option>Cabang Depok</option></select><span class="avatar">RA</span></div>
+      </div>
+      <div class="ph">
+        <div><h1 class="t-h2">Penawaran masuk</h1><p>Minggu, 18 Oktober · target balas 2 jam kerja sejak RFQ masuk</p></div>
+        <div class="ph__right"><button class="btn btn-secondary btn-sm"><i data-lucide="search" class="i-sm"></i>Cari RFQ</button><button class="btn btn-primary btn-sm"><i data-lucide="plus" class="i-sm"></i>Penawaran manual</button></div>
+      </div>
+      <div class="qtabs" data-select id="qTabs">
+        <button class="is-active" data-value="all">Semua <em>18</em></button>
+        <button data-value="new">Baru <em>5</em></button>
+        <button data-value="work">Diproses <em>4</em></button>
+        <button data-value="appr">Perlu persetujuan <em>2</em></button>
+        <button data-value="sent">Terkirim <em>7</em></button>
+      </div>
+      <div class="inbox">
+        <div class="qlist" id="qList" data-select></div>
+        <div class="qd" id="qDetail"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/electrical-supplies-store-website/";
+  var rp = function (n) { return window.rupiah(n); };
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+  function photos(root) {
+    (root || document).querySelectorAll(".photo[data-img]").forEach(function (box) {
+      if (box.querySelector("img")) return;
+      var img = new Image(); img.alt = box.getAttribute("data-alt") || ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+    });
+  }
+
+  /* ---------- Shell ---------- */
+  document.querySelectorAll("[data-shell]").forEach(function (el) {
+    el.appendChild(document.getElementById("shellTpl").content.cloneNode(true));
+    var act = el.getAttribute("data-active");
+    if (act) el.querySelector('[data-cat="' + act + '"]').classList.add("is-active");
+  });
+  document.querySelectorAll("[data-foot]").forEach(function (el) { el.appendChild(document.getElementById("footTpl").content.cloneNode(true)); });
+
+  /* ---------- Data produk ---------- */
+  // tiers: [min qty, harga]; stok: Depok, Bogor, Medan, Surabaya
+  var P = {
+    domae16: { name: "Schneider Domae MCB 1P 16A Kurva C", sku: "DOMF01116", brand: "Schneider", pole: "1P", img: "mcb-1p-schneider", unit: "pcs", specs: ["1P", "16 A", "Kurva C", "4,5 kA"], tiers: [[1, 48500], [10, 45000], [50, 42300]], st: [412, 180, 96, 150],
+      kv: [["Seri", "Domae"], ["Arus nominal", "16 A"], ["Kurva trip", "C"], ["Kapasitas putus", "4,5 kA"], ["Tegangan", "230/400 V AC"], ["Standar", "IEC 60898-1 · SNI"], ["Pemasangan", "DIN rail 35 mm"]] },
+    domae10: { name: "Schneider Domae MCB 1P 10A Kurva C", sku: "DOMF01110", brand: "Schneider", pole: "1P", img: "mcb-1p-schneider", unit: "pcs", specs: ["1P", "10 A", "Kurva C", "4,5 kA"], tiers: [[1, 48500], [10, 45000], [50, 42300]], st: [268, 64, 40, 88] },
+    domae20: { name: "Schneider Domae MCB 1P 20A Kurva C", sku: "DOMF01120", brand: "Schneider", pole: "1P", img: "mcb-1p-schneider", unit: "pcs", specs: ["1P", "20 A", "Kurva C", "4,5 kA"], tiers: [[1, 49500], [10, 46000], [50, 43200]], st: [190, 72, 30, 61] },
+    hager220: { name: "Hager MCB 2P 20A Kurva C 6kA", sku: "MU220A", brand: "Hager", pole: "2P", img: "mcb-2p-hager", unit: "pcs", specs: ["2P", "20 A", "Kurva C", "6 kA"], tiers: [[1, 265000], [10, 249000], [50, 236000]], st: [54, 22, 8, 17],
+      kv: [["Seri", "MU"], ["Arus nominal", "20 A"], ["Kurva trip", "C"], ["Kapasitas putus", "6 kA"], ["Tegangan", "230/400 V AC"], ["Standar", "IEC 60898-1"], ["Pemasangan", "DIN rail 35 mm"]] },
+    sie325: { name: "Siemens 5SL6 MCB 3P 25A Kurva C 6kA", sku: "5SL6325-7", brand: "Siemens", pole: "3P", img: "mcb-3p-siemens", unit: "pcs", specs: ["3P", "25 A", "Kurva C", "6 kA"], tiers: [[1, 468000], [10, 441000], [50, 418000]], st: [37, 14, 6, 21],
+      kv: [["Seri", "5SL6"], ["Arus nominal", "25 A"], ["Kurva trip", "C"], ["Kapasitas putus", "6 kA"], ["Tegangan", "400 V AC"], ["Standar", "IEC 60898-1"], ["Pemasangan", "DIN rail 35 mm"]] },
+    acti432: { name: "Schneider Acti9 iC60N MCB 4P 32A Kurva C", sku: "A9F74432", brand: "Schneider", pole: "4P", img: "mcb-4p-schneider", unit: "pcs", specs: ["4P", "32 A", "Kurva C", "6 kA"], tiers: [[1, 1245000], [10, 1179000], [50, 1121000]], st: [12, 4, 2, 6],
+      kv: [["Seri", "Acti9 iC60N"], ["Arus nominal", "32 A"], ["Kurva trip", "C"], ["Kapasitas putus", "6 kA (IEC 60898) · 10 kA (IEC 60947)"], ["Tegangan", "400 V AC"], ["Standar", "IEC 60898-1 · IEC 60947-2"], ["Pemasangan", "DIN rail 35 mm"]] },
+    gv2: { name: "Schneider TeSys GV2ME16 Motor Breaker 9–14A", sku: "GV2ME16", brand: "Schneider", pole: "3P", img: "motor-breaker-gv2me16", unit: "pcs", specs: ["3P", "9–14 A", "Termal-magnetik", "15 kA"], tiers: [[1, 1120000], [10, 1062000], [50, 1008000]], st: [18, 9, 3, 5],
+      kv: [["Seri", "TeSys GV2ME"], ["Setelan termal", "9–14 A"], ["Daya motor", "5,5 kW pada 400 V"], ["Kapasitas putus", "15 kA pada 400 V"], ["Standar", "IEC 60947-2/-4-1"], ["Pemasangan", "DIN rail 35 mm"]] },
+    rt2015: { name: "Siemens Sirius Kontaktor 3RT2015-1AP01 3kW", sku: "3RT2015-1AP01", brand: "Siemens", pole: "3P", img: "kontaktor-3rt2015", unit: "pcs", specs: ["3P", "7 A AC-3", "3 kW", "Koil 230 V AC"], tiers: [[1, 612000], [10, 580000], [50, 551000]], st: [26, 3, 0, 8],
+      kv: [["Seri", "Sirius 3RT2"], ["Arus AC-3", "7 A"], ["Daya motor", "3 kW pada 400 V"], ["Koil", "230 V AC 50 Hz"], ["Kontak bantu", "1 NO"], ["Ukuran", "S00"]] },
+    nym: { name: "Kabel NYM 3x2,5 mm² Eterna", sku: "NYM-3X25-E50", img: "kabel-nym-eterna", unit: "roll", sub: "Roll 50 m · SNI", tiers: [[1, 1095000], [10, 1040000], [50, 995000]], st: [86, 58, 20, 44] },
+    nya6: { name: "Kabel NYA 1x6 mm² hijau-kuning", sku: "NYA-6-GY100", img: "kabel-grounding", unit: "roll", sub: "Roll 100 m · grounding", tiers: [[1, 1180000], [10, 1121000]], st: [22, 9, 6, 11] },
+    ctrl: { name: "Kabel kontrol LiYY 7x1,5 mm²", sku: "LIYY-7X15", img: "kabel-kontrol", unit: "m", sub: "Potong per meter", tiers: [[1, 21500], [100, 19800], [500, 18600]], st: [1800, 650, 300, 900] },
+    box: { name: "Box panel indoor 600x400x200 mm", sku: "BP-604020-IP66", img: "box-panel-indoor", unit: "unit", sub: "Plat 1,2 mm · IP66", tiers: [[1, 1380000], [5, 1310000]], st: [14, 6, 3, 5] },
+    dl12: { name: "Downlight LED 12W 6500K bulat", sku: "DL-R12-65", img: "downlight-led", unit: "pcs", sub: "Lubang 150 mm", tiers: [[1, 64000], [50, 58000]], st: [320, 140, 75, 210] },
+    philips6: { name: "Philips MyCare LED 6W putih E27", sku: "PH-MC6-CDL", img: "lampu-led-philips", unit: "pcs", sub: "6500K · 600 lm", tiers: [[1, 27500], [50, 25000]], st: [960, 410, 220, 530] },
+    flood10: { name: "Inlite floodlight LED 10W IP65", sku: "INF027", img: "floodlight-inlite", unit: "pcs", sub: "6500K · tahan air", tiers: [[1, 98000], [10, 91000]], st: [64, 30, 12, 26] },
+    kyo2007: { name: "Kyoritsu 2007R tang ampere digital", sku: "KEW-2007R", img: "tang-ampere-2007r", unit: "pcs", sub: "AC 600 A · True RMS", tiers: [[1, 1650000], [5, 1590000]], st: [9, 4, 2, 3] },
+    plc1214: { name: "Siemens S7-1200 CPU 1214C DC/DC/DC", sku: "6ES7214-1AG40-0XB0", img: "plc-s7-1200", unit: "pcs", sub: "14 DI / 10 DO / 2 AI", tiers: [[1, 7850000], [5, 7520000]], st: [6, 2, 1, 3] },
+    psu: { name: "Weidmüller PRO ECO power supply 24V 5A", sku: "1469490000", img: "psu-weidmuller", unit: "pcs", sub: "120 W · DIN rail", tiers: [[1, 2350000], [5, 2240000]], st: [11, 5, 2, 4] }
+  };
+  function price(p, q) { var v = p.tiers[0][1]; p.tiers.forEach(function (t) { if (q >= t[0]) v = t[1]; }); return v; }
+  function tierLabel(p) { var t = p.tiers[p.tiers.length - 1]; return rp(t[1]) + " mulai " + t[0] + " " + p.unit; }
+  var CITY = ["Depok", "Bogor", "Medan", "Surabaya"];
+
+  /* ---------- Beranda ---------- */
+  var cats = [["MCB &amp; Proteksi", "mcb-3p-siemens", "128 produk"], ["Kabel &amp; Kawat", "kabel-nym-eterna", "342 produk"], ["Lampu &amp; LED", "lampu-led-philips", "410 produk"], ["Panel &amp; Box", "box-panel-indoor", "96 produk"], ["Kontaktor &amp; Motor", "kontaktor-3rt2015", "154 produk"], ["Otomasi PLC &amp; HMI", "plc-s7-1200", "220 produk"], ["Alat Ukur", "tang-ampere-2007r", "88 produk"], ["Perkakas Teknisi", "tang-kombinasi", "305 produk"], ["Kabel Data &amp; Industri", "kabel-profinet", "74 produk"], ["Power Supply", "psu-weidmuller", "61 produk"]];
+  document.getElementById("catTiles").innerHTML = cats.map(function (c) {
+    return '<a class="tile" href="#katalog"><div class="photo photo--tile" style="--pad:14%" data-img="' + A + c[1] + '.webp"></div><span>' + c[0] + '<small>' + c[2] + '</small></span></a>';
+  }).join("");
+  document.getElementById("popCards").innerHTML = ["nym", "domae16", "dl12", "rt2015", "box", "philips6", "flood10", "kyo2007", "plc1214"].map(function (k) {
+    var p = P[k], s = p.st[0];
+    return '<a class="pcard" href="#katalog"><div class="photo" data-img="' + A + p.img + '.webp"></div><span class="pcard__name">' + p.name + '</span><span class="pcard__price">' + rp(p.tiers[0][1]) + ' <small>/ ' + p.unit + '</small></span><span class="pcard__tier">' + tierLabel(p) + '</span><span class="stock' + (s < 10 ? " stock--low" : "") + '"><i data-lucide="check-circle-2"></i>Depok: ' + s.toLocaleString("id-ID") + ' ' + p.unit + '</span></a>';
+  }).join("");
+
+  /* ---------- Katalog ---------- */
+  var LIST = ["domae16", "domae10", "domae20", "hager220", "sie325", "acti432", "gv2", "rt2015"];
+  var current = "domae16";
+  function rows() {
+    var poles = [].map.call(document.querySelectorAll("#fPole .is-active"), function (b) { return b.getAttribute("data-value"); });
+    var brands = [].map.call(document.querySelectorAll("#fBrand input:checked"), function (i) { return i.value; });
+    var shown = LIST.filter(function (k) { var p = P[k]; return (!poles.length || poles.indexOf(p.pole) > -1) && (!brands.length || brands.indexOf(p.brand) > -1); });
+    document.getElementById("resCount").textContent = shown.length;
+    document.getElementById("prodRows").innerHTML = shown.length ? shown.map(function (k) {
+      var p = P[k], s = p.st[0], tot = p.st.reduce(function (a, b) { return a + b; }, 0);
+      return '<div class="prow' + (k === current ? " is-active" : "") + '" data-k="' + k + '"><div class="photo" data-img="' + A + p.img + '.webp"></div>' +
+        '<div style="min-width:0"><p class="prow__name">' + p.name + '</p><p class="prow__sku">' + p.sku + ' · ' + p.brand + '</p><div class="specs">' + p.specs.map(function (x) { return '<span class="spec">' + x + '</span>'; }).join("") + '</div></div>' +
+        '<div class="prow__stock"><span class="stock' + (s === 0 ? " stock--out" : s < 20 ? " stock--low" : "") + '"><i data-lucide="' + (s === 0 ? "clock" : "check-circle-2") + '"></i>' + (s === 0 ? "Inden 3 hari" : "Depok " + s) + '</span><p class="t-small">' + tot + ' di 4 cabang</p></div>' +
+        '<div class="prow__price"><b class="num">' + rp(p.tiers[0][1]) + '</b><small>' + tierLabel(p) + '</small></div></div>';
+    }).join("") : '<p style="padding:28px 18px" class="muted">Tidak ada produk dengan kombinasi filter ini.</p>';
+    photos(document.getElementById("prodRows")); icons();
+  }
+  var qty = 12;
+  function detail() {
+    var p = P[current], kv = p.kv || P.domae16.kv.map(function (r) { return r[0] === "Arus nominal" ? [r[0], p.specs[1]] : r; }),el = document.getElementById("detail"), q = qty;
+    var tiers = p.tiers.map(function (t, i) { var nx = p.tiers[i + 1]; var on = q >= t[0] && (!nx || q < nx[0]); return '<tr' + (on ? ' class="is-on"' : "") + '><td>' + t[0] + (nx ? "–" + (nx[0] - 1) : "+") + ' ' + p.unit + '</td><td class="num">' + rp(t[1]) + '</td></tr>'; }).join("");
+    el.innerHTML = '<div class="photo" data-img="' + A + p.img + '.webp"></div>' +
+      '<div><p class="t-small">' + p.brand + ' · ' + p.sku + '</p><h2 class="detail__name">' + p.name + '</h2></div>' +
+      '<dl class="kv">' + kv.map(function (r) { return "<dt>" + r[0] + "</dt><dd>" + r[1] + "</dd>"; }).join("") + '</dl>' +
+      '<a class="link" href="#" style="font-size:14px;display:inline-flex;gap:6px;align-items:center"><i data-lucide="file-down" class="i-sm"></i>Datasheet PDF</a>' +
+      '<hr class="divider"><div class="panel"><table class="tier"><thead><tr><th>Harga bertingkat</th><th>per ' + p.unit + '</th></tr></thead><tbody>' + tiers + '</tbody></table></div>' +
+      '<div class="branches">' + p.st.map(function (s, i) { return '<span class="' + (i === 0 ? "is-home" : "") + '">' + CITY[i] + (i === 0 ? " (cabang Anda)" : "") + '</span><span class="num ' + (s === 0 ? "muted" : "") + '">' + (s === 0 ? "inden" : s + " " + p.unit) + '</span>'; }).join("") + '</div>' +
+      '<div class="buyline"><div class="stepper" data-stepper data-min="1" data-max="999" id="dQty"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>' + q + '</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div><div><p class="t-small">Total</p><p style="font-weight:700;font-size:18px" class="num">' + rp(price(p, q) * q) + '</p></div></div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="btn btn-primary" type="button">Ke keranjang</button><a class="btn btn-secondary" href="#rfq" id="toRfq">Tambah ke RFQ</a></div>';
+    photos(el); icons();
+  }
+  document.getElementById("prodRows").addEventListener("click", function (e) {
+    var r = e.target.closest(".prow"); if (!r) return; current = r.getAttribute("data-k"); qty = 12; rows(); detail();
+  });
+  document.getElementById("detail").addEventListener("lapak:change", function (e) { qty = e.detail.value; detail(); });
+  document.getElementById("fPole").addEventListener("lapak:select", rows);
+  document.getElementById("fBrand").addEventListener("change", rows);
+  rows(); detail();
+
+  /* ---------- RFQ ---------- */
+  var RFQ = [["nym", 40], ["nya6", 6], ["ctrl", 200], ["domae16", 48], ["sie325", 8], ["acti432", 2], ["rt2015", 6], ["box", 4], ["dl12", 60]];
+  function rfqRender() {
+    var tot = 0, save = 0;
+    document.getElementById("rfqRows").innerHTML = RFQ.map(function (l, i) {
+      var p = P[l[0]], q = l[1], u = price(p, q); tot += u * q; save += (p.tiers[0][1] - u) * q;
+      var tierIdx = 0; p.tiers.forEach(function (t, j) { if (q >= t[0]) tierIdx = j; });
+      return '<tr data-i="' + i + '"><td class="no">' + (i + 1) + '</td>' +
+        '<td><div class="prod"><div class="photo" data-img="' + A + p.img + '.webp"></div><div><b>' + p.name + '</b><small>' + p.sku + ' · ' + (p.sub || p.specs.join(" · ")) + '</small></div></div></td>' +
+        '<td><div style="display:flex;gap:8px;align-items:center"><div class="stepper stepper--sm" data-stepper data-min="1" data-max="9999"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>' + q + '</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div><span class="t-small">' + p.unit + '</span></div></td>' +
+        '<td class="r num">' + rp(u) + (tierIdx ? '<span class="tierlbl">tier ' + p.tiers[tierIdx][0] + '+</span>' : '<span class="tierlbl" style="color:var(--ink-3)">eceran</span>') + '</td>' +
+        '<td class="r"><input class="target" placeholder="Rp" ' + (l[0] === "nym" ? 'value="980.000"' : "") + ' aria-label="Harga target"></td>' +
+        '<td class="r num" style="font-weight:600">' + rp(u * q) + '</td>' +
+        '<td><button type="button" class="rm" aria-label="Hapus baris"><i data-lucide="trash-2" class="i-sm"></i></button></td></tr>';
+    }).join("");
+    document.getElementById("tbLines").textContent = RFQ.length;
+    document.getElementById("tbTotal").textContent = rp(tot);
+    document.getElementById("tbSave").textContent = rp(save);
+    document.getElementById("doneTotal").textContent = rp(tot);
+    document.querySelectorAll("[data-rfq-count]").forEach(function (c) { c.textContent = RFQ.length; });
+    photos(document.getElementById("rfqRows")); icons();
+  }
+  var rfqBody = document.getElementById("rfqRows");
+  rfqBody.addEventListener("lapak:change", function (e) { var tr = e.target.closest("tr"); RFQ[+tr.getAttribute("data-i")][1] = e.detail.value; rfqRender(); });
+  rfqBody.addEventListener("click", function (e) { var b = e.target.closest(".rm"); if (!b) return; RFQ.splice(+b.closest("tr").getAttribute("data-i"), 1); rfqRender(); });
+  document.getElementById("buyMode").addEventListener("lapak:select", function (e) {
+    document.getElementById("rfqSubmit").textContent = e.detail.value === "beli" ? "Lanjut ke pembayaran" : "Kirim permintaan penawaran";
+  });
+  rfqRender();
+
+  /* ---------- Layar sales ---------- */
+  var ST = { new: ["st--new", "Baru"], work: ["st--work", "Diproses"], appr: ["st--appr", "Perlu persetujuan"], sent: ["st--sent", "Terkirim"], po: ["st--po", "Jadi PO"] };
+  var Q = [
+    { id: "RFQ-2610-0148", co: "PT Bangun Karya Mandiri", proj: "Gedung kantor 4 lantai · Jababeka", st: "new", time: "09.12", sla: "sisa 1 j 24 m", term: "Tempo 30 hari", need: "2 Nov 2026", pic: "Ir. Dimas Prakoso", lines: RFQ.map(function (l) { return [l[0], l[1], l[0] === "nym" ? 2 : 0]; }) },
+    { id: "RFQ-2610-0147", co: "CV Sinar Teknik Abadi", proj: "Rewiring pabrik garmen · Cibitung", st: "work", time: "08.40", sla: "sisa 52 m", term: "Bayar sebelum kirim", need: "24 Okt 2026", pic: "Agus Salim", lines: [["nym", 12, 0], ["nya6", 2, 0], ["hager220", 10, 0], ["dl12", 30, 0]] },
+    { id: "RFQ-2610-0146", co: "PT Mitra Panel Nusantara", proj: "Panel MDP 400 A · Delta Silicon", st: "appr", time: "Sab 15.05", sla: "menunggu kepala cabang", term: "Tempo 45 hari", need: "30 Okt 2026", pic: "Lukas Wibowo", lines: [["acti432", 6, 8], ["gv2", 8, 9], ["rt2015", 8, 9], ["box", 2, 5], ["ctrl", 300, 6], ["sie325", 6, 8]] },
+    { id: "RFQ-2610-0144", co: "Hendra Wijaya", proj: "Renovasi ruko 3 lantai · Sentul", st: "sent", time: "Sab 11.20", sla: "", term: "Bayar sebelum kirim", need: "21 Okt 2026", pic: "Hendra Wijaya", lines: [["nym", 6, 0], ["domae16", 12, 0], ["dl12", 24, 0], ["philips6", 40, 0], ["flood10", 6, 0]] },
+    { id: "RFQ-2610-0141", co: "PT Graha Logistik Prima", proj: "Gudang B, penerangan & stop kontak · MM2100", st: "po", time: "Jum 14.30", sla: "", term: "Tempo 30 hari", need: "20 Okt 2026", pic: "Sari Lestari", lines: [["flood10", 48, 0], ["nym", 20, 1], ["domae20", 24, 0], ["box", 3, 0]] }
+  ];
+  var COST = 0.82; // asumsi harga pokok 82% dari harga eceran
+  var MIN_MARGIN = 0.10;
+  var sel = 0;
+  function qtotal(q) { return q.lines.reduce(function (a, l) { var p = P[l[0]]; return a + price(p, l[1]) * l[1] * (1 - l[2] / 100); }, 0); }
+  function list() {
+    document.getElementById("qList").innerHTML = Q.map(function (q, i) {
+      var s = ST[q.st];
+      return '<button type="button" class="qitem' + (i === sel ? " is-active" : "") + '" data-i="' + i + '"><div class="qitem__top"><span>' + q.id + '</span><span>' + q.time + '</span></div><p class="qitem__co">' + q.co + '</p><p class="qitem__proj">' + q.proj + '</p><div class="qitem__bot"><span class="st ' + s[0] + '">' + s[1] + '</span>' + (q.sla ? '<span class="sla"><i data-lucide="timer"></i>' + q.sla + '</span>' : "") + '<b>' + rp(qtotal(q)) + '</b></div></button>';
+    }).join("");
+    icons();
+  }
+  function qdetail() {
+    var q = Q[sel], s = ST[q.st], gross = 0, net = 0, cost = 0;
+    var body = q.lines.map(function (l, i) {
+      var p = P[l[0]], qn = l[1], u = price(p, qn), n = u * (1 - l[2] / 100), ck = p.st[1];
+      gross += u * qn; net += n * qn; cost += p.tiers[0][1] * COST * qn;
+      var short = ck < qn;
+      return '<tr><td><div class="prod" style="display:flex;gap:10px;align-items:center"><div class="photo" style="width:40px;flex:none;--pad:6%;border-radius:6px" data-img="' + A + p.img + '.webp"></div><div><b>' + p.name + '</b><small>' + p.sku + '</small></div></div></td>' +
+        '<td class="r num">' + qn + ' ' + p.unit + '</td>' +
+        '<td class="' + (short ? "warnline" : "") + '"><b class="num" style="font-weight:500">' + ck + ' ' + p.unit + '</b>' + (short ? '<small>kurang ' + (qn - ck) + ' · transfer dari Depok (' + p.st[0] + ')</small>' : '<small>cukup</small>') + '</td>' +
+        '<td class="r num">' + rp(u) + '</td>' +
+        '<td class="r"><input class="disc" data-i="' + i + '" value="' + l[2] + '" inputmode="decimal" aria-label="Diskon persen"> %</td>' +
+        '<td class="r num">' + rp(n) + '</td><td class="r num" style="font-weight:600">' + rp(n * qn) + '</td></tr>';
+    }).join("");
+    var m = (net - cost) / net, low = m < MIN_MARGIN, ppn = Math.round(net * 11 / 111);
+    document.getElementById("qDetail").innerHTML =
+      '<div class="qd__head"><div><p class="t-small">' + q.id + ' · masuk ' + q.time + '</p><h2 class="t-h2" style="font-size:24px">' + q.co + '</h2><p class="muted">' + q.proj + '</p></div><div class="ph__right"><span class="st ' + s[0] + '" id="qStatus">' + s[1] + '</span>' + (q.sla ? '<span class="sla"><i data-lucide="timer"></i>' + q.sla + '</span>' : "") + '</div></div>' +
+      '<div class="qd__meta"><div><small>PIC</small>' + q.pic + '</div><div><small>Termin</small>' + q.term + '</div><div><small>Dibutuhkan</small>' + q.need + '</div><div><small>Lampiran</small><a class="link" href="#">BOQ-rev2.xlsx</a></div></div>' +
+      '<div class="qtable-wrap"><table class="qtable"><thead><tr><th>Produk</th><th class="r">Jumlah</th><th>Stok Bogor</th><th class="r">Harga tier</th><th class="r">Diskon</th><th class="r">Harga net</th><th class="r">Subtotal</th></tr></thead><tbody>' + body + '</tbody></table></div>' +
+      '<div class="qd__foot"><div class="margin"><div style="display:flex;justify-content:space-between;gap:12px"><b>Margin kotor ' + (m * 100).toFixed(1).replace(".", ",") + '%</b><span class="t-small">batas tanpa persetujuan 10%</span></div><div class="meter"><i class="' + (low ? "is-low" : "") + '" style="width:' + Math.max(2, Math.min(100, m / 0.25 * 100)) + '%"></i><s style="left:40%"></s></div>' +
+      '<p class="t-meta">' + (low ? "Di bawah batas: penawaran dikirim setelah disetujui kepala cabang." : "Bisa dikirim langsung tanpa persetujuan.") + ' Harga pokok dihitung dari harga beli rata-rata cabang.</p></div>' +
+      '<div><div class="sumlines"><div><span>Subtotal harga tier</span><span>' + rp(gross) + '</span></div><div><span>Diskon sales</span><span>−' + rp(gross - net) + '</span></div><div><span>Ongkir Bogor</span><span>Gratis</span></div><div><span class="muted">PPN 11% (termasuk)</span><span class="muted">' + rp(ppn) + '</span></div><div class="tot"><span>Total penawaran</span><span>' + rp(net) + '</span></div></div>' +
+      '<div class="qd__actions"><button class="btn btn-secondary btn-sm" type="button">Simpan draft</button><button class="btn btn-primary btn-sm" type="button" id="qSend">' + (low ? "Minta persetujuan" : "Kirim penawaran PDF + WhatsApp") + '</button></div><p class="t-small" id="qMsg" style="text-align:right;margin-top:8px"></p></div></div>';
+    photos(document.getElementById("qDetail")); icons();
+  }
+  document.getElementById("qList").addEventListener("click", function (e) { var b = e.target.closest(".qitem"); if (!b) return; sel = +b.getAttribute("data-i"); list(); qdetail(); });
+  document.getElementById("qDetail").addEventListener("change", function (e) {
+    if (!e.target.classList.contains("disc")) return;
+    var v = parseFloat(String(e.target.value).replace(",", ".")) || 0; Q[sel].lines[+e.target.getAttribute("data-i")][2] = Math.max(0, Math.min(30, v)); list(); qdetail();
+  });
+  document.getElementById("qDetail").addEventListener("click", function (e) {
+    if (!e.target.closest("#qSend")) return;
+    var q = Q[sel], low = e.target.closest("#qSend").textContent.indexOf("persetujuan") > -1;
+    q.st = low ? "appr" : "sent"; q.sla = low ? "menunggu kepala cabang" : "";
+    list(); qdetail();
+    document.getElementById("qMsg").textContent = low ? "Permintaan persetujuan dikirim ke kepala cabang Bogor." : q.id + " terkirim ke email dan WhatsApp " + q.pic + " · berlaku sampai 1 Nov 2026.";
+  });
+  list(); qdetail();
+
+  photos();
+})();
+</script>
+</body>
+</html>

@@ -75,6 +75,7 @@ export const INDUSTRIES = [
   "Defense & Aerospace",
   "Education & Training",
   "Energy",
+  "Events & Weddings",
   "Financial Services",
   "Food & Beverage",
   "Healthcare",

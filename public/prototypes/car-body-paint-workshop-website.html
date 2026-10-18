@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rona Body &amp; Paint — Bengkel body repair dan cat mobil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/car-body-paint-workshop-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="topbar"><div class="wrap"><span class="hide-sm">Buka setiap hari 08.00–17.00 · 4 bengkel di Jakarta, Tangerang, Bekasi</span><a href="#lacak" style="margin-left:auto"><i data-lucide="search" class="i-xs"></i>Lacak mobil</a><a href="#bengkel"><i data-lucide="log-in" class="i-xs"></i>Masuk staf</a></div></div>
+  <div class="on-navy">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">rona<small>body &amp; paint</small></a>
+        <nav class="nav"><a href="#home">Layanan<i data-lucide="chevron-down" class="i-xs"></i></a><a href="#estimasi">Estimasi harga</a><a href="#lacak">Lacak progres</a><a href="#home">Klaim asuransi</a><a href="#home">Cabang</a></nav>
+        <div class="header__right"><a class="hide-sm" href="#" style="display:inline-flex;gap:8px;align-items:center"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a><a class="btn btn-primary btn-sm" href="#estimasi">Hitung estimasi</a></div>
+      </header>
+      <div class="hero">
+        <div class="hero__copy">
+          <h1 class="t-hero">Penyok, baret, cat ulang. Harganya per panel, jelas dari awal.</h1>
+          <p class="t-lead" style="color:#d5e0e5;max-width:600px">Tandai panel yang rusak, lihat kisaran biayanya, lalu pilih jadwal antar atau minta mobil dijemput. Selama di bengkel, foto setiap tahap pengerjaan dikirim ke Anda.</p>
+          <div class="hero__actions"><a class="btn btn-primary" href="#estimasi">Hitung estimasi</a><a class="btn btn-outline" href="#lacak">Lacak mobil saya</a></div>
+          <div class="proof">
+            <div class="proof__item"><span class="proof__badge">G</span><div><b>4,8</b> <span class="stars" data-n="5"></span><br><span class="muted">1.240 ulasan Google, 4 cabang</span></div></div>
+            <div class="proof__item"><span class="proof__badge"><i data-lucide="shield-check" class="i-sm"></i></span><div><b>Bengkel rekanan asuransi</b><br><span class="muted">Klaim diurus dari survei sampai serah terima</span></div></div>
+          </div>
+        </div>
+        <div class="mosaic">
+          <div class="mosaic__col">
+            <div class="shot" style="height:300px" data-img="assets/car-body-paint-workshop-website/booth-spray.webp"><p class="shot__cap"><b>Booth cat bertekanan</b>Cabang Kebon Jeruk</p></div>
+            <div class="shot" style="height:250px" data-img="assets/car-body-paint-workshop-website/mirror-before.webp"><p class="shot__cap"><b>Spion, cat retak</b>Panel kecil · Rp350.000</p></div>
+            <div class="shot" style="height:220px" data-img="assets/car-body-paint-workshop-website/dent-door-before.webp"><p class="shot__cap"><b>Penyok fender</b>Ketok tanpa cat · 40 menit</p></div>
+          </div>
+          <div class="mosaic__col">
+            <div class="shot" style="height:250px" data-img="assets/car-body-paint-workshop-website/front-damage-before.webp"><p class="shot__cap"><b>Bumper &amp; kap, tabrakan depan</b>Klaim asuransi · 6 hari kerja</p></div>
+            <div class="shot" style="height:300px" data-img="assets/car-body-paint-workshop-website/hood-scratch-after.webp"><p class="shot__cap"><b>Kap mesin, baret dalam</b>Selesai dicat ulang · 2 hari</p></div>
+            <div class="shot" style="height:220px" data-img="assets/car-body-paint-workshop-website/spot-touchup.webp"><p class="shot__cap"><b>Spot repair bumper</b>Tanpa cat satu panel penuh</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="section__head"><h2 class="t-h2">Satu bengkel untuk baret halus sampai cat ulang total</h2><p class="muted">Pilih jenis kerusakan untuk melihat cara kerja dan harga mulai.</p></div>
+      <div class="pills" data-select data-tabs="svc">
+        <button class="pill is-active" data-value="body">Body repair &amp; cat</button>
+        <button class="pill" data-value="spot">Spot repair</button>
+        <button class="pill" data-value="pdr">Ketok tanpa cat</button>
+        <button class="pill" data-value="repaint">Cat ulang total</button>
+        <button class="pill" data-value="care">Poles &amp; anti karat</button>
+      </div>
+
+      <div class="split" data-panel="svc:body">
+        <div class="split__media">
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/front-damage-before.webp"></div><figcaption>Masuk: bumper pecah, kap penyok</figcaption></figure>
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/front-damage-after.webp"></div><figcaption>Keluar: dicat ulang 3 panel</figcaption></figure>
+        </div>
+        <div class="split__body">
+          <h3 class="t-h3">Penyok dan cat rusak diperbaiki per panel</h3>
+          <p class="muted">Panel diketok, didempul tipis, lalu warna dicocokkan dengan komputer dan dicat di booth. Harga dihitung dari ukuran panel, bukan ditebak di tempat.</p>
+          <div class="price-rows">
+            <div class="price-row"><span>Panel kecil · spion, side skirt, tutup tangki</span><b>Rp150rb – 550rb</b></div>
+            <div class="price-row"><span>Panel sedang · pintu, bumper, fender, quarter</span><b>Rp975rb – 1,2jt</b></div>
+            <div class="price-row"><span>Panel besar · kap mesin, atap, pintu bagasi</span><b>Rp1,5jt – 2,5jt</b></div>
+          </div>
+          <p class="t-small">Harga bisa berbeda untuk cat metalik, pearl, atau kerusakan berat. Garansi tertulis: tidak belang, tidak mengelupas.</p>
+          <a class="btn btn-dark btn-sm" href="#estimasi" style="align-self:flex-start">Hitung per panel</a>
+        </div>
+      </div>
+      <div class="split" data-panel="svc:spot" hidden>
+        <div class="split__media" style="grid-template-columns:1fr"><figure><div class="photo" style="--ar:16/10" data-img="assets/car-body-paint-workshop-website/spot-touchup.webp"></div><figcaption>Color blending hanya di area yang baret</figcaption></figure></div>
+        <div class="split__body">
+          <h3 class="t-h3">Lecet kecil tanpa cat satu panel penuh</h3>
+          <p class="muted">Area lecet diamplas tipis, warnanya dicampur sesuai cat asli, lalu di-clear coat dan dipoles. Cocok untuk baret parkir dan gesekan pagar.</p>
+          <div class="price-rows"><div class="price-row"><span>Per titik lecet</span><b>Mulai Rp500.000</b></div><div class="price-row"><span>Lama pengerjaan</span><b>±1 hari kerja, tanpa inap</b></div></div>
+          <a class="btn btn-dark btn-sm" href="#estimasi" style="align-self:flex-start">Kirim foto lecet</a>
+        </div>
+      </div>
+      <div class="split" data-panel="svc:pdr" hidden>
+        <div class="split__media">
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/dent-door-before.webp"></div><figcaption>Sebelum</figcaption></figure>
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/dent-door-after.webp"></div><figcaption>Sesudah, cat asli utuh</figcaption></figure>
+        </div>
+        <div class="split__body">
+          <h3 class="t-h3">Penyok ditarik keluar, cat pabrik tetap utuh</h3>
+          <p class="muted">Paintless dent repair dengan teknik glue pull. Bisa ditunggu di cabang. Kalau catnya sudah retak, kami arahkan ke body repair.</p>
+          <div class="price-rows">
+            <div class="price-row"><span>Penyok kecil · ≤ 2 cm, 20–30 menit</span><b>Rp100.000</b></div>
+            <div class="price-row"><span>Penyok sedang · 2–5 cm, 30–45 menit</span><b>Rp200.000</b></div>
+            <div class="price-row"><span>Penyok besar · &gt; 5 cm, 45–60 menit</span><b>Rp300.000</b></div>
+          </div>
+          <a class="btn btn-dark btn-sm" href="#estimasi" style="align-self:flex-start">Booking ketok</a>
+        </div>
+      </div>
+      <div class="split" data-panel="svc:repaint" hidden>
+        <div class="split__media">
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/hood-scratch-before.webp"></div><figcaption>Cat lama kusam dan baret</figcaption></figure>
+          <figure><div class="photo" data-img="assets/car-body-paint-workshop-website/hood-scratch-after.webp"></div><figcaption>Setelah cat ulang</figcaption></figure>
+        </div>
+        <div class="split__body">
+          <h3 class="t-h3">Cat ulang seluruh body, warna sama atau ganti warna</h3>
+          <p class="muted">Cat lama dikupas, primer, cat, lalu clear coat dan poles. Pilih warna dari katalog atau bawa kode warna pabrik.</p>
+          <div class="price-rows"><div class="price-row"><span>Full body repaint</span><b>Mulai Rp12.500.000</b></div><div class="price-row"><span>Lama pengerjaan</span><b>10–14 hari kerja</b></div></div>
+          <a class="btn btn-dark btn-sm" href="#estimasi" style="align-self:flex-start">Konsultasi warna</a>
+        </div>
+      </div>
+      <div class="split" data-panel="svc:care" hidden>
+        <div class="split__media"><figure><div class="photo" data-img="assets/car-body-paint-workshop-website/underbody-coating.webp" style="--ar:4/3"></div><figcaption>Lapisan anti karat di kolong</figcaption></figure><figure><div class="photo" data-img="assets/car-body-paint-workshop-website/booth-spray-dark.webp" style="--ar:4/3"></div><figcaption>Poles &amp; sealing</figcaption></figure></div>
+        <div class="split__body">
+          <h3 class="t-h3">Kilap kembali, kolong terlindungi</h3>
+          <p class="muted">Poles 4 tahap mengangkat swirl dan oksidasi. Anti karat berbahan karet melindungi kolong dari air garam dan batu kerikil.</p>
+          <div class="price-rows"><div class="price-row"><span>Poles body · cuci, compound, polish, sealing</span><b>Rp550.000</b></div><div class="price-row"><span>Anti karat kolong · garansi 3 tahun</span><b>Sesuai tipe mobil</b></div></div>
+          <a class="btn btn-dark btn-sm" href="#estimasi" style="align-self:flex-start">Booking jadwal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px"><div style="max-width:620px"><h2 class="t-h2">Ukuran panel menentukan harga</h2><p class="muted" style="margin-top:10px">Tiga kelompok harga untuk body repair dan cat. Kalau rusaknya di beberapa panel, tinggal dijumlah.</p></div><a class="link" href="#estimasi">Tandai panel mobil Anda<i data-lucide="arrow-right" class="i-sm"></i></a></div>
+      <div class="sizes">
+        <div class="size"><div style="display:flex;gap:12px;align-items:center"><span class="size__mark">S</span><div><p class="t-h4">Panel kecil</p><p class="t-meta">Rp150rb – 550rb</p></div></div><div class="size__car car" data-car="spion-ka,spion-ki"></div><ul><li>Spion</li><li>Side skirt</li><li>Spakbor &amp; tutup tangki bensin</li></ul></div>
+        <div class="size"><div style="display:flex;gap:12px;align-items:center"><span class="size__mark">M</span><div><p class="t-h4">Panel sedang</p><p class="t-meta">Rp975rb – 1,2jt</p></div></div><div class="size__car car" data-car="bumper-dpn,fender-dpn-ka,pintu-dpn-ka,pintu-blk-ka,quarter-ka,bumper-blk"></div><ul><li>Pintu depan &amp; belakang</li><li>Bumper depan &amp; belakang</li><li>Fender dan quarter panel</li></ul></div>
+        <div class="size"><div style="display:flex;gap:12px;align-items:center"><span class="size__mark">L</span><div><p class="t-h4">Panel besar</p><p class="t-meta">Rp1,5jt – 2,5jt</p></div></div><div class="size__car car" data-car="kap,atap,bagasi"></div><ul><li>Kap mesin</li><li>Atap</li><li>Pintu bagasi</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-navy section">
+    <div class="wrap">
+      <div class="section__head"><h2 class="t-h2">Mobil di bengkel, Anda tetap tahu progresnya</h2><p class="muted">Setiap tahap difoto teknisi. Tambahan biaya selalu minta persetujuan Anda dulu lewat halaman lacak.</p></div>
+      <div class="facts" style="margin:40px 0 48px">
+        <div><span class="sticker">4 tahap</span><p>Inspeksi, bodi, cat, finishing, masing-masing dengan foto</p></div>
+        <div><span class="sticker">1 hari</span><p>Spot repair untuk lecet kecil, tanpa inap</p></div>
+        <div><span class="sticker">30 menit</span><p>Ketok tanpa cat untuk penyok kecil</p></div>
+        <div><span class="sticker">3 tahun</span><p>Garansi lapisan anti karat kolong</p></div>
+      </div>
+      <form class="inline-form" onsubmit="location.hash='lacak';return false"><input placeholder="Nomor WO atau plat, mis. B 1846 KJR" aria-label="Nomor WO atau plat"><button class="btn btn-primary">Lacak</button></form>
+      <p class="t-small" style="text-align:center;margin-top:12px;color:#b8c7ce">Link lacak juga dikirim ke WhatsApp saat mobil diterima.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="t-h2" style="text-align:center;margin-bottom:32px">Layanan di semua cabang</h2>
+      <div class="tiles">
+        <a class="tile" href="#estimasi"><i data-lucide="car-front"></i><div><b>Body repair</b><br><span>Mulai Rp150rb/panel</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="paintbrush"></i><div><b>Spot repair</b><br><span>Mulai Rp500rb</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="hammer"></i><div><b>Ketok tanpa cat</b><br><span>Mulai Rp100rb</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="spray-can"></i><div><b>Cat ulang total</b><br><span>Mulai Rp12,5jt</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="sparkles"></i><div><b>Poles body</b><br><span>Rp550rb</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="shield"></i><div><b>Anti karat kolong</b><br><span>Garansi 3 tahun</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="sun"></i><div><b>Kaca film</b><br><span>Konsultasi di cabang</span></div></a>
+        <a class="tile" href="#estimasi"><i data-lucide="file-check-2"></i><div><b>Klaim asuransi</b><br><span>Survei &amp; berkas kami urus</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:88px">
+    <div class="wrap">
+      <div class="quote on-navy">
+        <div style="display:flex;flex-direction:column;gap:20px"><q>Bumper depan saya pecah setelah ditabrak dari samping. Klaim asuransinya diurus bengkel, dan tiap sore ada foto baru di halaman lacak. Tidak perlu telepon menanyakan sudah sampai mana.</q><div class="who"><span class="avatar avatar--amber">RW</span><div><b>Ratna W.</b><br><span class="muted">Honda City · Cabang Kebon Jeruk</span></div></div></div>
+        <div style="display:flex;flex-direction:column;gap:12px"><a class="btn btn-primary btn-block" href="#estimasi">Hitung estimasi</a><a class="btn btn-outline btn-block" href="#lacak">Lacak mobil</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <h2 class="t-h2" style="margin-bottom:24px">Cabang</h2>
+      <div class="branches">
+        <div class="branch"><b>Kebon Jeruk</b><span class="muted">Jakarta Barat · 2 booth oven</span><span>Setiap hari 08.00–17.00</span><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+        <div class="branch"><b>Serpong</b><span class="muted">Tangerang Selatan · 2 booth oven</span><span>Setiap hari 08.00–17.00</span><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+        <div class="branch"><b>Cibubur</b><span class="muted">Jakarta Timur · 1 booth oven</span><span>Setiap hari 08.00–17.00</span><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+        <div class="branch"><b>Bekasi Barat</b><span class="muted">Kota Bekasi · 1 booth oven, ketok tanpa cat</span><span>Setiap hari 08.00–17.00</span><a class="link" href="#">Petunjuk arah<i data-lucide="arrow-up-right" class="i-sm"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer on-navy">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:14px"><span class="logo">rona<small>body &amp; paint</small></span><p class="muted" style="max-width:320px">Bengkel body repair, cat, dan perawatan cat mobil. Empat cabang di Jakarta, Tangerang, dan Bekasi.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#estimasi">Body repair</a></li><li><a href="#estimasi">Spot repair</a></li><li><a href="#estimasi">Ketok tanpa cat</a></li><li><a href="#estimasi">Cat ulang total</a></li></ul></div>
+        <div><h4>Pelanggan</h4><ul><li><a href="#estimasi">Estimasi harga</a></li><li><a href="#lacak">Lacak progres</a></li><li><a href="#">Klaim asuransi</a></li><li><a href="#">Garansi</a></li></ul></div>
+        <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li><li><a href="#bengkel">Masuk staf</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:48px;color:#8fa3ad">© 2026 Rona Body &amp; Paint</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= ESTIMASI ================= -->
+<section data-screen="estimasi">
+  <div class="wrap">
+    <header class="header header--light"><a class="logo" href="#home">rona<small>body &amp; paint</small></a><div class="header__right"><span class="hide-sm t-meta">Butuh bantuan? <a class="link" href="#">Chat WhatsApp</a></span><a class="btn btn-line btn-sm" href="#home">Tutup</a></div></header>
+    <div class="steps"><span class="is-now"><i>1</i>Kerusakan</span><span><i>2</i>Jadwal &amp; penjemputan</span><span><i>3</i>Pembayaran</span></div>
+
+    <form class="est" data-demo-form="#estDone" id="estForm">
+      <div style="min-width:0">
+        <h1 class="t-h1" style="margin-bottom:8px">Estimasi biaya perbaikan</h1>
+        <p class="muted" style="margin-bottom:24px">Kisaran harga keluar langsung. Harga final ditetapkan setelah inspeksi 15 menit di cabang.</p>
+
+        <div class="block">
+          <div class="block__head"><h2 class="t-h3"><span class="block__num">01</span>Tandai panel yang rusak</h2><span class="t-meta" id="pnlCount">3 panel dipilih</span></div>
+          <div class="block__body">
+            <div class="car car--pick" id="carPick"></div>
+            <div class="legend"><span><i></i>Klik untuk memilih</span><span><i class="on"></i>Dipilih</span><span>Atas gambar = sisi kanan mobil, depan di kiri</span></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block__head"><h2 class="t-h3"><span class="block__num">02</span>Mobil &amp; jenis pekerjaan</h2></div>
+          <div class="block__body" style="display:flex;flex-direction:column;gap:20px">
+            <div class="grid-2"><label><span class="field-label">Mobil</span><input class="input" value="Honda City 2016"></label><label><span class="field-label">Warna</span><input class="input" value="Putih Orchid (NH-788P)"></label></div>
+            <div><span class="field-label">Kelas mobil</span>
+              <div class="opts" data-select id="carClass">
+                <button type="button" class="opt is-active" data-value="1"><b>Hatchback / sedan</b><span>Brio, City, Yaris, Ayla</span></button>
+                <button type="button" class="opt" data-value="1.1"><b>MPV / SUV</b><span>Avanza, Xpander, HR-V, Fortuner</span></button>
+                <button type="button" class="opt" data-value="1.35"><b>Premium / Eropa</b><span>BMW, Mercedes, Volvo, Porsche</span></button>
+              </div>
+            </div>
+            <div><span class="field-label">Jenis pekerjaan</span>
+              <div class="seg" data-select id="method"><button type="button" class="is-active" data-value="cat">Body repair &amp; cat</button><button type="button" data-value="spot">Spot repair</button><button type="button" data-value="pdr">Ketok tanpa cat</button></div>
+            </div>
+            <div id="paintWrap"><span class="field-label">Jenis cat</span>
+              <div class="seg" data-select id="paint"><button type="button" class="is-active" data-value="1">Solid</button><button type="button" data-value="1.1">Metalik</button><button type="button" data-value="1.25">Pearl / 3 lapis</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block__head"><h2 class="t-h3"><span class="block__num">03</span>Foto kerusakan</h2><span class="t-meta">Opsional, mempercepat estimasi final</span></div>
+          <div class="block__body">
+            <div class="drop"><div class="drop__thumbs"><div class="photo" data-img="assets/car-body-paint-workshop-website/front-damage-before.webp"></div><div class="photo" data-img="assets/car-body-paint-workshop-website/hood-scratch-before.webp"></div></div><div style="flex:1;min-width:200px"><b style="font-size:14px">2 foto terunggah</b><p class="t-small">Ambil dari jarak 1 meter dan dari samping supaya penyok terlihat.</p></div><button type="button" class="btn btn-line btn-sm"><i data-lucide="camera" class="i-sm"></i>Tambah foto</button></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block__head"><h2 class="t-h3"><span class="block__num">04</span>Jadwal &amp; penjemputan</h2></div>
+          <div class="block__body" style="display:flex;flex-direction:column;gap:20px">
+            <div><span class="field-label">Cabang</span><div class="seg" data-select><button type="button" class="is-active">Kebon Jeruk</button><button type="button">Serpong</button><button type="button">Cibubur</button><button type="button">Bekasi Barat</button></div></div>
+            <div><span class="field-label">Tanggal masuk</span><div class="dates" data-select="is-selected" id="dayPick"></div></div>
+            <div><span class="field-label">Cara mobil datang</span>
+              <div class="opts" data-select id="pickup">
+                <button type="button" class="opt is-active" data-value="0"><b>Antar sendiri</b><span>Datang 08.00–11.00, inspeksi 15 menit</span></button>
+                <button type="button" class="opt" data-value="0"><b>Dijemput</b><span>Gratis dalam 10 km dari cabang</span></button>
+                <button type="button" class="opt" data-value="150000"><b>Dijemput, luar area</b><span>Rp150.000 sekali jalan</span></button>
+              </div>
+            </div>
+            <div><span class="field-label">Pembayaran</span>
+              <div class="seg" data-select id="payer"><button type="button" class="is-active" data-value="ins">Klaim asuransi</button><button type="button" data-value="self">Bayar pribadi</button></div>
+            </div>
+            <div id="insFields" style="display:flex;flex-direction:column;gap:12px">
+              <div class="grid-2"><label><span class="field-label">Perusahaan asuransi</span><select class="input"><option>Pilih dari 14 asuransi rekanan</option></select></label><label><span class="field-label">Nomor polis</span><input class="input" placeholder="Tertera di e-polis"></label></div>
+              <p class="note">Kami ajukan klaim dan jadwalkan survei. Siapkan STNK, SIM, dan foto kejadian. Biaya yang Anda bayar hanya own risk sesuai polis, umumnya Rp300.000 per kejadian.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="quote-card">
+        <div class="quote-card__head"><span class="t-small" style="color:#b8c7ce">Estimasi awal · Honda City 2016</span><span class="t-h3" id="qMethod">Body repair &amp; cat · Solid</span></div>
+        <div class="quote-card__body">
+          <div id="qLines" style="display:flex;flex-direction:column;gap:12px"></div>
+          <hr class="divider">
+          <div class="summary-row t-meta" style="display:flex;justify-content:space-between" id="qPickupRow"><span>Penjemputan</span><span id="qPickup">—</span></div>
+          <div class="total"><span style="font-weight:600">Kisaran total</span><b id="qTotal">—</b></div>
+          <p class="t-small" id="qIns">Klaim asuransi: Anda membayar own risk, sisanya ditagihkan ke asuransi setelah disetujui.</p>
+          <button class="btn btn-primary btn-block">Booking inspeksi</button>
+          <p class="t-small" style="text-align:center"><span id="qWhen">Senin, 19 Oktober</span> · Kebon Jeruk</p>
+        </div>
+      </aside>
+    </form>
+
+    <div id="estDone" hidden style="max-width:620px;margin:56px auto 96px;display:flex;flex-direction:column;gap:22px">
+      <span style="width:52px;height:52px;border-radius:4px;background:var(--navy);color:var(--amber);display:grid;place-items:center"><i data-lucide="check"></i></span>
+      <h1 class="t-h1">Inspeksi terjadwal</h1>
+      <p class="muted">Ringkasan dan link lacak sudah dikirim ke WhatsApp 0812-●●●●-4471. Petugas cabang menghubungi Anda sore ini untuk konfirmasi.</p>
+      <div class="block"><div class="block__body" style="padding:20px 24px">
+        <dl class="kvs"><dt>Nomor estimasi</dt><dd>EST-2610-087</dd><dt>Jadwal</dt><dd id="doneWhen">Senin, 19 Oktober · 08.00–11.00</dd><dt>Cabang</dt><dd>Kebon Jeruk</dd><dt>Kisaran biaya</dt><dd id="doneTotal">—</dd></dl>
+      </div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#lacak">Lihat halaman lacak</a><a class="btn btn-line" href="#home">Kembali ke beranda</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LACAK PROGRES ================= -->
+<section data-screen="lacak">
+  <div class="app">
+    <div class="app-top"><div class="wrap">
+      <a class="icon-btn" href="#home" aria-label="Kembali"><i data-lucide="arrow-left" class="i-sm"></i></a>
+      <div><p class="t-small hide-sm">Rona Body &amp; Paint · Kebon Jeruk</p><h1 class="t-h3">Progres perbaikan</h1></div>
+      <div class="header__right"><span class="btn btn-line btn-sm hide-sm"><i data-lucide="calendar" class="i-sm"></i>Minggu, 18 Okt</span><a class="btn btn-blue btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Chat bengkel</a></div>
+    </div></div>
+    <div class="wrap">
+      <div class="track">
+        <div class="track__main">
+          <div class="card">
+            <div class="job">
+              <div class="photo" data-img="assets/car-body-paint-workshop-website/front-damage-before.webp"></div>
+              <div style="min-width:0">
+                <p class="t-h2" style="font-size:26px">Honda City 2016 · B 1846 KJR</p>
+                <div class="tagrow"><span class="tag tag--navy">WO-2610-118</span><span class="tag">Putih Orchid</span><span class="tag tag--blue"><i data-lucide="spray-can" class="i-xs"></i>Pengecatan</span><span class="tag tag--green"><i data-lucide="shield-check" class="i-xs"></i>Klaim disetujui</span></div>
+                <p class="t-meta" style="margin-top:10px">Masuk Kamis, 15 Okt · Teknisi Arif S. · Service advisor Dewi</p>
+              </div>
+              <div class="ring"><svg viewBox="0 0 112 112"><circle cx="56" cy="56" r="48" fill="none" stroke="#e8effc" stroke-width="9"/><circle cx="56" cy="56" r="48" fill="none" stroke="#1f5fd6" stroke-width="9" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="99.5"/></svg><div><b>67%</b><span>selesai</span></div></div>
+            </div>
+            <div class="kpis">
+              <div><i data-lucide="calendar-check"></i><div><b>Rab, 21 Okt</b><span>Perkiraan selesai</span></div></div>
+              <div><i data-lucide="layers"></i><div><b>3 panel + 1 part</b><span>Lingkup pekerjaan</span></div></div>
+              <div><i data-lucide="image"></i><div><b>14 foto</b><span>Dari teknisi</span></div></div>
+              <div><i data-lucide="wallet"></i><div><b>Rp300.000</b><span>Own risk saat ambil</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Dokumentasi tahap</h3><a class="link" href="#" style="font-size:14px">Lihat semua (14)</a></div>
+            <div class="card__body">
+              <div class="stages">
+                <div class="stage"><div class="photo" data-img="assets/car-body-paint-workshop-website/front-damage-before.webp"><span class="stage__check"><i data-lucide="check" class="i-xs"></i></span></div><p>1. Inspeksi &amp; foto awal</p><span class="t-small">Kam, 15 Okt · 09.20</span></div>
+                <div class="stage"><div class="photo" data-img="assets/car-body-paint-workshop-website/booth-spray-dark.webp"><span class="stage__check"><i data-lucide="check" class="i-xs"></i></span></div><p>2. Bodi, dempul &amp; primer</p><span class="t-small">Jum, 16 Okt · 16.05</span></div>
+                <div class="stage"><div class="photo" data-img="assets/car-body-paint-workshop-website/booth-spray.webp"><span class="stage__check stage__check--now"><i data-lucide="loader" class="i-xs"></i></span></div><p>3. Pengecatan di booth</p><span class="t-small">Min, 18 Okt · 10.40</span></div>
+                <div class="stage"><div class="photo"><div class="stage__wait"><span><i data-lucide="image" class="i-sm" style="margin:0 auto 6px;display:block"></i>Foto diunggah setelah poles &amp; QC</span></div></div><p style="color:var(--ink-3)">4. Finishing &amp; QC</p><span class="t-small">Perkiraan Sel, 20 Okt</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Rincian pekerjaan</h3><span class="t-meta">Ditagihkan ke asuransi</span></div>
+            <div class="card__body table-scroll">
+              <table class="table">
+                <thead><tr><th>Panel / part</th><th>Tindakan</th><th>Teknisi</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Bumper depan</b></td><td>Las plastik, dempul, cat</td><td>Arif S.</td><td><span class="tag tag--blue">Clear coat</span></td></tr>
+                  <tr><td><b>Kap mesin</b></td><td>Ketok, dempul, cat</td><td>Arif S.</td><td><span class="tag tag--blue">Oven 60 °C</span></td></tr>
+                  <tr><td><b>Fender depan kiri</b></td><td>Ketok, cat blending</td><td>Arif S.</td><td><span class="tag tag--blue">Clear coat</span></td></tr>
+                  <tr><td><b>Braket bumper kiri</b></td><td>Ganti part</td><td>Yoga P.</td><td><span class="tag tag--orange" id="bracketTag">Menunggu persetujuan</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Checklist kualitas</h3><span class="t-meta">6 dari 9 selesai</span></div>
+            <div class="card__body">
+              <ul class="checks">
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Warna dicocokkan dengan kartu sampel</li>
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Ketebalan dempul di bawah 2 mm</li>
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Celah panel kap dan fender rata</li>
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Primer kering dan diamplas halus</li>
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Area sekitar ditutup masking</li>
+                <li><span class="ck"><i data-lucide="check" class="i-xs"></i></span>Lampu depan dilepas dan dicek</li>
+                <li><span class="ck ck--todo"></span>Tidak ada meler atau kulit jeruk</li>
+                <li><span class="ck ck--todo"></span>Poles dan sealing</li>
+                <li><span class="ck ck--todo"></span>Foto akhir di bawah lampu inspeksi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="track__side">
+          <div class="approve" id="approveBox">
+            <div style="display:flex;gap:10px;align-items:center"><i data-lucide="circle-alert" style="color:var(--orange)" id="apIcon"></i><b style="font-size:15px" id="apTitle">Perlu persetujuan Anda</b></div>
+            <p style="font-size:14px" id="apText">Braket bumper kiri patah saat bumper dibongkar. Perlu diganti agar bumper tidak bergeser. Tidak ditanggung asuransi karena kerusakan lama.</p>
+            <dl class="kvs" id="apCost"><dt>Part + pasang</dt><dd>Rp450.000</dd><dt>Tambahan waktu</dt><dd>0 hari</dd></dl>
+            <div style="display:flex;gap:8px" id="apActions"><button class="btn btn-dark btn-sm" style="flex:1" id="apYes">Setujui</button><button class="btn btn-line btn-sm" style="flex:1">Tanya dulu</button></div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Aktivitas</h3></div>
+            <div class="card__body">
+              <div class="timeline" id="timeline">
+                <div class="tl"><span class="tl__ic"><i data-lucide="spray-can" class="i-sm"></i></span><div><time>Hari ini · 10.40</time><b>Clear coat bumper &amp; fender</b><span>Arif S.</span></div></div>
+                <div class="tl"><span class="tl__ic tl__ic--orange"><i data-lucide="triangle-alert" class="i-sm"></i></span><div><time>Sab, 17 Okt · 14.15</time><b>Braket bumper patah ditemukan</b><span>Dewi, service advisor</span></div></div>
+                <div class="tl"><span class="tl__ic tl__ic--green"><i data-lucide="shield-check" class="i-sm"></i></span><div><time>Jum, 16 Okt · 11.30</time><b>Klaim disetujui asuransi</b><span>3 panel, own risk Rp300.000</span></div></div>
+                <div class="tl"><span class="tl__ic"><i data-lucide="image" class="i-sm"></i></span><div><time>Kam, 15 Okt · 09.20</time><b>8 foto inspeksi diunggah</b><span>Arif S.</span></div></div>
+                <div class="tl"><span class="tl__ic tl__ic--grey"><i data-lucide="car" class="i-sm"></i></span><div><time>Kam, 15 Okt · 08.35</time><b>Mobil diterima di cabang</b><span>Dijemput dari Meruya</span></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Pengambilan</h3></div>
+            <div class="card__body" style="display:flex;flex-direction:column;gap:14px">
+              <div class="seg" data-select style="width:100%"><button class="is-active" style="flex:1;justify-content:center">Ambil sendiri</button><button style="flex:1;justify-content:center">Antar ke rumah</button></div>
+              <dl class="kvs"><dt>Perkiraan siap</dt><dd>Rab, 21 Okt · 15.00</dd><dt>Bawa</dt><dd>STNK asli</dd><dt>Garansi cat</dt><dd>12 bulan</dd></dl>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN BENGKEL ================= -->
+<section data-screen="bengkel">
+  <div class="shop">
+    <nav class="side">
+      <span class="logo">rona</span>
+      <a class="is-active" href="#bengkel"><i data-lucide="square-kanban"></i>Papan kerja</a>
+      <a href="#bengkel"><i data-lucide="calendar"></i>Jadwal masuk</a>
+      <a href="#bengkel"><i data-lucide="file-text"></i>Estimasi</a>
+      <a href="#bengkel"><i data-lucide="shield-check"></i>Klaim asuransi</a>
+      <a href="#bengkel"><i data-lucide="package"></i>Part &amp; cat</a>
+      <a href="#bengkel"><i data-lucide="users"></i>Teknisi</a>
+      <a href="#bengkel"><i data-lucide="receipt"></i>Invoice</a>
+      <div class="side__foot"><span class="avatar avatar--sm avatar--blue">DW</span><div><b>Dewi</b><br><span class="t-small">Service advisor</span></div></div>
+    </nav>
+    <div style="min-width:0">
+      <div class="shop-top">
+        <div><p class="t-small">Kebon Jeruk · Minggu, 18 Oktober</p><h1 class="t-h3">Papan kerja bengkel</h1></div>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap"><span class="btn btn-line btn-sm"><i data-lucide="search" class="i-sm"></i>Cari plat</span><button class="btn btn-blue btn-sm"><i data-lucide="plus" class="i-sm"></i>Mobil masuk</button></div>
+      </div>
+      <div class="booths">
+        <div class="booth"><i data-lucide="spray-can" class="i-sm" style="color:var(--blue)"></i><div><b>Booth 1 · B 1846 KJR</b><br><span class="t-small">Oven, sisa 25 mnt</span></div><span class="bar"><i style="width:60%"></i></span></div>
+        <div class="booth"><i data-lucide="spray-can" class="i-sm" style="color:var(--blue)"></i><div><b>Booth 2 · B 1904 TAF</b><br><span class="t-small">Cat dasar, panel 6/13</span></div><span class="bar"><i style="width:46%"></i></span></div>
+        <div class="booth"><i data-lucide="hammer" class="i-sm" style="color:var(--ink-2)"></i><div><b>Stall ketok</b><br><span class="t-small">2 dari 3 terpakai</span></div></div>
+        <div class="booth"><i data-lucide="truck" class="i-sm" style="color:var(--ink-2)"></i><div><b>Jemput-antar</b><br><span class="t-small">2 jadwal hari ini</span></div></div>
+      </div>
+      <div class="filters" data-select id="boardFilter">
+        <button class="chip is-active" data-value="all">Semua <span id="cntAll"></span></button>
+        <button class="chip" data-value="ins"><i data-lucide="shield-check" class="i-xs"></i>Asuransi</button>
+        <button class="chip" data-value="self">Pribadi</button>
+        <button class="chip" data-value="late"><i data-lucide="clock-alert" class="i-xs"></i>Lewat target</button>
+      </div>
+      <div class="board" id="board"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var icons = function () { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); };
+
+  /* Foto */
+  document.querySelectorAll(".photo[data-img], .shot[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.insertBefore(img, box.firstChild); }; img.src = box.getAttribute("data-img");
+  });
+
+  /* Bintang */
+  var star = '<svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>';
+  document.querySelectorAll(".stars[data-n]").forEach(function (s) { s.innerHTML = new Array(+s.dataset.n + 1).join(star); });
+
+  /* Mobil tampak atas: depan di kiri, sisi kanan di atas */
+  var P = [
+    ["bumper-dpn", "Bumper depan", "M", 60, 66, 30, 168, 12],
+    ["kap", "Kap mesin", "L", 92, 80, 124, 140, 6],
+    ["fender-dpn-ka", "Fender depan kanan", "M", 92, 40, 124, 38, 6],
+    ["fender-dpn-ki", "Fender depan kiri", "M", 92, 222, 124, 38, 6],
+    ["atap", "Atap", "L", 264, 80, 158, 140, 6],
+    ["bagasi", "Pintu bagasi", "L", 458, 80, 88, 140, 6],
+    ["bumper-blk", "Bumper belakang", "M", 548, 66, 34, 168, 12],
+    ["pintu-dpn-ka", "Pintu depan kanan", "M", 218, 40, 112, 38, 4],
+    ["pintu-blk-ka", "Pintu belakang kanan", "M", 332, 40, 104, 38, 4],
+    ["quarter-ka", "Quarter kanan", "M", 438, 40, 108, 38, 6],
+    ["pintu-dpn-ki", "Pintu depan kiri", "M", 218, 222, 112, 38, 4],
+    ["pintu-blk-ki", "Pintu belakang kiri", "M", 332, 222, 104, 38, 4],
+    ["quarter-ki", "Quarter kiri", "M", 438, 222, 108, 38, 6],
+    ["spion-ka", "Spion kanan", "S", 232, 16, 30, 22, 6],
+    ["spion-ki", "Spion kiri", "S", 232, 262, 30, 22, 6]
+  ];
+  var BY = {}; P.forEach(function (p) { BY[p[0]] = p; });
+  function carSVG(hl, labels) {
+    var s = '<svg viewBox="0 0 640 300" role="img" aria-label="Mobil tampak atas">';
+    s += '<rect class="wheel" x="108" y="30" width="72" height="240" rx="10"/><rect class="wheel" x="462" y="30" width="72" height="240" rx="10"/>';
+    s += '<rect class="body-base" x="58" y="38" width="526" height="224" rx="36"/>';
+    s += '<rect class="glass" x="218" y="80" width="44" height="140" rx="6"/><rect class="glass" x="424" y="80" width="32" height="140" rx="6"/>';
+    P.forEach(function (p) { s += '<rect class="pnl' + (hl.indexOf(p[0]) > -1 ? " is-hl" : "") + '" data-id="' + p[0] + '" x="' + p[3] + '" y="' + p[4] + '" width="' + p[5] + '" height="' + p[6] + '" rx="' + p[7] + '"><title>' + p[1] + '</title></rect>'; });
+    if (labels) s += '<text x="154" y="154" text-anchor="middle">KAP</text><text x="343" y="154" text-anchor="middle">ATAP</text><text x="502" y="154" text-anchor="middle">BAGASI</text><text x="20" y="154" text-anchor="middle" transform="rotate(-90 20 150)">DEPAN</text>';
+    return s + "</svg>";
+  }
+  document.querySelectorAll(".car[data-car]").forEach(function (el) { el.innerHTML = carSVG(el.dataset.car.split(","), false); });
+
+  /* ---------- Estimasi ---------- */
+  var RANGE = { S: [150000, 550000], M: [975000, 1200000], L: [1500000, 2500000] };
+  var st = { picked: ["bumper-dpn", "kap", "fender-dpn-ki"], cls: 1, method: "cat", paint: 1, pickup: 0, payer: "ins", day: "Senin, 19 Oktober" };
+  var pick = document.getElementById("carPick");
+  pick.innerHTML = carSVG(st.picked, true);
+  pick.querySelectorAll(".pnl.is-hl").forEach(function (r) { r.classList.remove("is-hl"); r.classList.add("is-on"); });
+  pick.addEventListener("click", function (e) {
+    var r = e.target.closest(".pnl"); if (!r) return;
+    var id = r.dataset.id, i = st.picked.indexOf(id);
+    if (i > -1) st.picked.splice(i, 1); else st.picked.push(id);
+    r.classList.toggle("is-on"); calc();
+  });
+  var r25 = function (n) { return Math.round(n / 25000) * 25000; };
+  var short = function (n) { return n >= 1000000 ? "Rp" + (Math.round(n / 100000) / 10).toString().replace(".", ",") + "jt" : "Rp" + Math.round(n / 1000) + "rb"; };
+  var mNames = { cat: "Body repair & cat", spot: "Spot repair", pdr: "Ketok tanpa cat" };
+  var pNames = { "1": "Solid", "1.1": "Metalik", "1.25": "Pearl / 3 lapis" };
+  function rangeFor(p) {
+    if (st.method === "pdr") return [100000, 300000];
+    if (st.method === "spot") return [500000, 750000];
+    var b = RANGE[p[2]], m = st.cls * st.paint; return [r25(b[0] * m), r25(b[1] * m)];
+  }
+  function calc() {
+    var lo = 0, hi = 0, html = "";
+    st.picked.forEach(function (id) {
+      var p = BY[id], rg = rangeFor(p); lo += rg[0]; hi += rg[1];
+      html += '<div class="line-item"><span class="sz">' + (st.method === "cat" ? p[2] : "–") + '</span><div><b>' + p[1] + '</b><small>' + mNames[st.method] + '</small></div><span class="num">' + short(rg[0]) + "–" + short(rg[1]).replace("Rp", "") + "</span></div>";
+    });
+    if (!st.picked.length) html = '<p class="empty">Klik panel pada gambar mobil</p>';
+    document.getElementById("qLines").innerHTML = html;
+    lo += st.pickup; hi += st.pickup;
+    var tot = st.picked.length ? rupiah(lo) + " – " + rupiah(hi) : "—";
+    document.getElementById("qTotal").textContent = tot;
+    document.getElementById("doneTotal").textContent = tot;
+    document.getElementById("qPickup").textContent = st.pickup ? rupiah(st.pickup) : "Gratis";
+    document.getElementById("pnlCount").textContent = st.picked.length + " panel dipilih";
+    document.getElementById("qMethod").textContent = mNames[st.method] + (st.method === "cat" ? " · " + pNames[String(st.paint)] : "");
+    document.getElementById("paintWrap").hidden = st.method !== "cat";
+    document.getElementById("insFields").hidden = st.payer !== "ins";
+    document.getElementById("qIns").textContent = st.payer === "ins" ? "Klaim asuransi: Anda membayar own risk, sisanya ditagihkan ke asuransi setelah disetujui." : "Bayar di kasir saat mobil diambil. DP tidak diperlukan.";
+    document.getElementById("qWhen").textContent = st.day;
+    document.getElementById("doneWhen").textContent = st.day + " · 08.00–11.00";
+  }
+  function on(id, key, num) { document.getElementById(id).addEventListener("lapak:select", function (e) { var v = e.detail.value; st[key] = num ? Number(v) : v; calc(); }); }
+  on("carClass", "cls", true); on("method", "method"); on("paint", "paint", true); on("pickup", "pickup", true); on("payer", "payer");
+  var names = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"], full = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"], slots = [0, 3, 2, 4, 1, 0, 2, 5, 4, 3], dh = "";
+  for (var d = 18; d <= 27; d++) {
+    var w = (d - 18) % 7, n = slots[d - 18];
+    dh += '<button type="button" class="date' + (d === 19 ? " is-selected" : "") + (n === 0 ? " is-off" : "") + '" data-value="' + full[w] + ", " + d + ' Oktober"><span>' + names[w] + "</span><b>" + d + "</b><small>" + (n === 0 ? "penuh" : n + " slot") + "</small></button>";
+  }
+  document.getElementById("dayPick").innerHTML = dh;
+  on("dayPick", "day");
+  calc();
+
+  /* ---------- Persetujuan tambahan biaya ---------- */
+  document.getElementById("apYes").addEventListener("click", function () {
+    var box = document.getElementById("approveBox"); box.classList.add("is-done");
+    document.getElementById("apTitle").textContent = "Tambahan disetujui";
+    document.getElementById("apText").textContent = "Braket bumper kiri dipesan dan dipasang Senin pagi. Rp450.000 ditambahkan ke tagihan pribadi saat pengambilan.";
+    document.getElementById("apActions").hidden = true;
+    var ic = document.getElementById("apIcon"); ic.outerHTML = '<i data-lucide="circle-check" style="color:var(--green)"></i>';
+    var t = document.getElementById("bracketTag"); t.className = "tag tag--green"; t.textContent = "Disetujui · part dipesan";
+    var tl = document.getElementById("timeline");
+    tl.insertAdjacentHTML("afterbegin", '<div class="tl"><span class="tl__ic tl__ic--green"><i data-lucide="check" class="i-sm"></i></span><div><time>Baru saja</time><b>Anda menyetujui ganti braket</b><span>Rp450.000</span></div></div>');
+    icons();
+  });
+
+  /* ---------- Papan bengkel ---------- */
+  var COLS = [["inspeksi", "Inspeksi", "#8a9aa2"], ["setuju", "Menunggu persetujuan", "#c56a06"], ["bodi", "Bodi & dempul", "#1f5fd6"], ["cat", "Booth cat", "#1f5fd6"], ["qc", "Poles & QC", "#17824a"], ["siap", "Siap diambil", "#17824a"]];
+  var JOBS = [
+    ["inspeksi", "B 2291 TOK", "Toyota Avanza 2021", ["Pintu blk kiri", "Quarter kiri"], "", "Datang 10.30", "self", 0, 0],
+    ["inspeksi", "B 1120 SJA", "Mitsubishi Xpander 2022", ["Bumper blk"], "", "Survei 13.00", "ins", 0, 3],
+    ["setuju", "B 2710 PLM", "Honda HR-V 2019", ["Kap mesin", "Fender dpn kanan"], "DW", "Survei asuransi", "ins", 0, 9],
+    ["setuju", "B 1557 NKD", "Suzuki Ertiga 2018", ["Spion kanan"], "DW", "Tunggu pelanggan", "self", 0, 4],
+    ["setuju", "F 1932 GH", "Toyota Fortuner 2020", ["Pintu dpn kiri", "Pintu blk kiri", "Quarter kiri"], "DW", "Survei asuransi", "ins", 0, 12],
+    ["bodi", "B 2048 UYV", "Daihatsu Sigra 2022", ["Bumper dpn"], "DD", "Sen, 19 Okt", "self", 0, 6],
+    ["bodi", "B 1399 KZT", "Toyota Yaris 2017", ["Pintu dpn kanan", "Fender dpn kanan"], "RZ", "Sel, 20 Okt", "ins", 0, 10],
+    ["bodi", "B 2775 BRQ", "Wuling Air ev 2024", ["Atap"], "DD", "Sab, 17 Okt", "self", 1, 7],
+    ["cat", "B 1846 KJR", "Honda City 2016", ["Bumper dpn", "Kap mesin", "Fender dpn kiri", "+ braket"], "AS", "Rab, 21 Okt", "ins", 0, 14],
+    ["cat", "B 1904 TAF", "Mazda CX-5 2019", ["Full body repaint", "Soul Red"], "HS", "Sab, 24 Okt", "self", 0, 22],
+    ["qc", "B 2633 SIY", "BYD Seal 2024", ["Kap mesin"], "WY", "Hari ini 15.00", "self", 0, 11],
+    ["qc", "B 1287 NRA", "Toyota Innova 2019", ["Bumper blk", "Quarter kanan"], "RZ", "Jum, 16 Okt", "ins", 1, 13],
+    ["siap", "B 2401 FDC", "Honda Brio 2021", ["Spion kiri"], "AS", "Diambil 15.00", "self", 0, 6],
+    ["siap", "B 1772 KMM", "Nissan Livina 2019", ["Pintu blk kanan"], "WY", "Antar 16.00", "ins", 0, 9]
+  ];
+  var filter = "all";
+  function card(j, i) {
+    var last = j[0] === "siap";
+    return '<article class="jc" data-i="' + i + '"><div class="jc__top"><div><p class="plate">' + j[1] + '</p><p class="jc__car">' + j[2] + '</p></div>' +
+      (j[6] === "ins" ? '<span class="tag tag--green">Asuransi</span>' : '<span class="tag">Pribadi</span>') + '</div>' +
+      '<div class="panels">' + j[3].map(function (x) { return "<span>" + x + "</span>"; }).join("") + '</div>' +
+      '<div class="jc__foot">' + (j[4] ? '<span class="avatar avatar--sm">' + j[4] + "</span>" : '<span class="avatar avatar--sm" style="background:#fff;border:1px dashed var(--line-2)">–</span>') +
+      '<span class="' + (j[7] ? "late" : "") + '"><i data-lucide="' + (j[7] ? "clock-alert" : "clock") + '" class="i-xs" style="vertical-align:-2px"></i> ' + j[5] + "</span>" +
+      '<span title="Foto"><i data-lucide="image" class="i-xs" style="vertical-align:-2px"></i> ' + j[8] + "</span>" +
+      (last ? '<button class="move" data-done="' + i + '" title="Serahkan ke pelanggan"><i data-lucide="check" class="i-xs"></i></button>' : '<button class="move" data-move="' + i + '" title="Pindah ke tahap berikutnya"><i data-lucide="arrow-right" class="i-xs"></i></button>') + "</div></article>";
+  }
+  var flash = -1;
+  function draw() {
+    var html = "";
+    COLS.forEach(function (c) {
+      var list = JOBS.map(function (j, i) { return [j, i]; }).filter(function (x) { var j = x[0]; return j[0] === c[0] && !j.gone && (filter === "all" || (filter === "late" ? j[7] : j[6] === filter)); });
+      html += '<div class="col"><div class="col__head"><span class="dot" style="background:' + c[2] + '"></span>' + c[1] + '<span class="count">' + list.length + "</span></div>" + list.map(function (x) { return card(x[0], x[1]); }).join("") + "</div>";
+    });
+    var b = document.getElementById("board"); b.innerHTML = html;
+    document.getElementById("cntAll").textContent = JOBS.filter(function (j) { return !j.gone; }).length;
+    if (flash > -1) { var el = b.querySelector('[data-i="' + flash + '"]'); if (el) el.classList.add("is-flash"); }
+    icons();
+  }
+  document.getElementById("board").addEventListener("click", function (e) {
+    var m = e.target.closest("[data-move]"), d = e.target.closest("[data-done]");
+    if (m) { var j = JOBS[+m.dataset.move], k = COLS.findIndex(function (c) { return c[0] === j[0]; }); j[0] = COLS[k + 1][0]; j[7] = 0; flash = +m.dataset.move; draw(); }
+    if (d) { JOBS[+d.dataset.done].gone = true; flash = -1; draw(); }
+  });
+  document.getElementById("boardFilter").addEventListener("lapak:select", function (e) { filter = e.detail.value; flash = -1; draw(); });
+  draw();
+})();
+</script>
+</body>
+</html>

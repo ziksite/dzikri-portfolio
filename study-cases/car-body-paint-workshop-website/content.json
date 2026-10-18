@@ -1,0 +1,91 @@
+{
+  "slug": "car-body-paint-workshop-website",
+  "kind": "Website",
+  "industry": "Automotive",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Price Estimator",
+    "Job Tracking"
+  ],
+  "metrics": [
+    {
+      "value": "15",
+      "label": "SELECTABLE PANELS",
+      "labelId": "PANEL BISA DIPILIH"
+    },
+    {
+      "value": "4",
+      "label": "PHOTO-DOCUMENTED STAGES",
+      "labelId": "TAHAP BERFOTO"
+    },
+    {
+      "value": "6",
+      "label": "WORKSHOP BOARD STAGES",
+      "labelId": "TAHAP PAPAN BENGKEL"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with work photos, per-panel pricing and service tabs",
+      "captionId": "Beranda dengan foto hasil kerja, harga per panel, dan tab layanan"
+    },
+    {
+      "hash": "estimasi",
+      "caption": "Damage estimator: mark panels on the car and get a price range",
+      "captionId": "Estimasi kerusakan: tandai panel di gambar mobil dan dapatkan kisaran harga"
+    },
+    {
+      "hash": "lacak",
+      "caption": "Repair progress with stage photos, checklist and approvals",
+      "captionId": "Progres perbaikan dengan foto tahap, checklist, dan persetujuan"
+    },
+    {
+      "hash": "bengkel",
+      "caption": "Workshop board with booth status and a column per repair stage",
+      "captionId": "Papan bengkel dengan status booth dan kolom per tahap perbaikan"
+    }
+  ],
+  "content_en": {
+    "title": "Car Body Repair & Paint Workshop Website",
+    "type": "BODY REPAIR WEBSITE & JOB TRACKING",
+    "category": "Booking System",
+    "summary": "A redesign for a car body repair and paint workshop chain. Customers mark damaged panels to get a price range, book an inspection with drop-off or pickup, choose an insurance claim or private payment, and follow their car through each repair stage with photos.",
+    "challenge": "The old homepage opened with a slogan over a dark photo and offered only two buttons: view services or become a partner. The workshop already had clear prices by panel size, but they sat on an inner page, and the homepage showed a single \"from\" price. Every call to action ended at the same WhatsApp number, with no way to pick a branch, a date, pickup or an insurance claim.\n\nRepair tracking and the written warranty were promoted in a card but had no page behind them. Most photos carried the brand logo on walls, plates and paint cans, several were generated images, and the homepage gave space to celebrity projects and a franchise section instead of the everyday customer with a dented door.",
+    "solution": "The homepage leads with real workshop photos captioned with price and duration, then tabs for body repair, spot repair, paintless dent repair, full repaint and care, each with before-and-after photos and its price table. Panel sizes are shown on a small car diagram, and a lookup field opens the tracking page by plate or work order number.\n\nThe estimator lets customers click damaged panels on a top-view car; the summary prices each panel and adds up a range, adjusted for car class, paint type and repair method. The same flow picks a branch, a date with open slots, drop-off or pickup, and insurance or private payment. While the car is in the workshop, the customer sees stage photos, a quality checklist, a timeline and requests for extra work to approve, and staff move jobs across a board from inspection to ready for pickup. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Per-panel price ranges on the homepage and service tabs",
+      "Clickable top-view car for selecting damaged panels",
+      "Live price range by car class, paint type and repair method",
+      "Booking with branch, date slots, drop-off or pickup",
+      "Insurance claim or private payment path",
+      "Repair progress page with stage photos and approvals",
+      "Workshop board with booth status and stage columns"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Bengkel Body Repair & Cat Mobil",
+    "type": "WEBSITE BODY REPAIR & LACAK PENGERJAAN",
+    "category": "Booking System",
+    "summary": "Redesign untuk jaringan bengkel body repair dan cat mobil. Pelanggan menandai panel yang rusak untuk mendapat kisaran harga, booking inspeksi dengan antar sendiri atau dijemput, memilih klaim asuransi atau bayar pribadi, lalu mengikuti setiap tahap perbaikan lewat foto.",
+    "challenge": "Beranda lama dibuka dengan slogan di atas foto gelap dan hanya dua tombol: lihat layanan atau jadi mitra. Bengkel sebenarnya sudah punya harga jelas per ukuran panel, tetapi letaknya di halaman dalam, dan beranda hanya menampilkan satu harga \"mulai dari\". Semua ajakan bertindak berakhir di nomor WhatsApp yang sama, tanpa pilihan cabang, tanggal, penjemputan, atau klaim asuransi.\n\nFitur lacak pengerjaan dan garansi tertulis dipromosikan dalam kartu, tetapi tidak ada halamannya. Sebagian besar foto memuat logo brand di dinding, pelat nomor, dan kaleng cat, beberapa merupakan gambar hasil generator, dan beranda memberi ruang untuk proyek selebriti dan kemitraan, bukan pelanggan biasa dengan pintu penyok.",
+    "solution": "Beranda dibuka dengan foto kerja nyata yang diberi keterangan harga dan durasi, lalu tab body repair, spot repair, ketok tanpa cat, cat ulang total, dan perawatan, masing-masing dengan foto sebelum-sesudah dan tabel harganya. Ukuran panel ditampilkan pada diagram mobil kecil, dan kolom lacak membuka halaman progres dari nomor plat atau WO.\n\nEstimasi memungkinkan pelanggan mengklik panel yang rusak pada gambar mobil tampak atas; ringkasan menghitung harga tiap panel dan menjumlahkan kisarannya, disesuaikan dengan kelas mobil, jenis cat, dan metode perbaikan. Alur yang sama memilih cabang, tanggal dengan slot tersisa, antar sendiri atau dijemput, serta asuransi atau bayar pribadi. Selama mobil di bengkel, pelanggan melihat foto tiap tahap, checklist kualitas, timeline, dan permintaan pekerjaan tambahan untuk disetujui, sementara staf memindahkan pekerjaan di papan dari inspeksi sampai siap diambil. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Kisaran harga per panel di beranda dan tab layanan",
+      "Gambar mobil tampak atas untuk memilih panel yang rusak",
+      "Kisaran harga langsung per kelas mobil, jenis cat, dan metode",
+      "Booking dengan cabang, slot tanggal, antar sendiri atau dijemput",
+      "Jalur klaim asuransi atau bayar pribadi",
+      "Halaman progres dengan foto tahap dan persetujuan",
+      "Papan bengkel dengan status booth dan kolom per tahap"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
