@@ -64,8 +64,8 @@ export function Navbar({ lang, t }: { lang: Locale; t: Dictionary["nav"] }) {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href={localePath(lang, "/") + "#home"} className="z-10 flex items-center gap-2">
-          <Image src="/images/logo.png" alt="Dzikri Logo" width={120} height={38} className="h-10 w-auto object-contain" />
+        <Link href={localePath(lang, "/") + "#home"} className="z-10 flex items-center gap-1.5">
+          <Image src="/images/logo-mark.png" alt="Dzikri Logo" width={40} height={40} className="h-8 w-auto object-contain" />
           <span className="text-xl font-black tracking-tighter inline-block">ZIKSITE</span>
         </Link>
 

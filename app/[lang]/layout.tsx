@@ -29,11 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: languageAlternates(lang, "/"),
     openGraph: pageOpenGraph(lang, "/", { title: t.title, description: t.description }),
     twitter: { card: "summary_large_image" },
-    icons: {
-      icon: "/images/logo.png",
-      shortcut: "/images/logo.png",
-      apple: "/images/logo.png",
-    },
   };
 }
 
