@@ -1,0 +1,58 @@
+{
+  "slug": "online-printing-service-website",
+  "kind": "Website",
+  "industry": "Creative & Printing",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Price Configurator", "File Preflight"],
+  "metrics": [
+    { "value": "18", "label": "PRINT PRODUCTS", "labelId": "PRODUK CETAK" },
+    { "value": "6", "label": "AUTOMATIC FILE CHECKS", "labelId": "CEK FILE OTOMATIS" },
+    { "value": "65", "label": "CARDS PER GANG SHEET", "labelId": "KARTU PER PLANO GABUNGAN" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Catalogue with starting prices, sizes and paper stocks", "captionId": "Katalog dengan harga awal, ukuran, dan jenis kertas" },
+    { "hash": "produk", "caption": "Business card configurator with live price and quantity tiers", "captionId": "Konfigurator kartu nama dengan harga langsung dan jenjang jumlah" },
+    { "hash": "upload", "caption": "File preflight, fix options and proof approval", "captionId": "Preflight file, opsi perbaikan, dan persetujuan proof" },
+    { "hash": "produksi", "caption": "Gang-sheet planning and machine schedule for the print floor", "captionId": "Rencana plano gabungan dan jadwal mesin untuk ruang produksi" }
+  ],
+  "content_en": {
+    "title": "Online Printing Service Website",
+    "type": "PRINT SHOP WEBSITE & ORDERING",
+    "category": "E-commerce",
+    "summary": "A redesign for an offset and digital print shop. Customers price business cards, brochures and packaging by size, paper, finishing and quantity, upload a PDF that is checked automatically, and approve a proof before anything goes to press; the print floor groups approved jobs onto shared sheets.",
+    "challenge": "The old site listed more than fifteen products but showed no prices at all. Its \"transparent pricing\" section was a form asking for a company name, product, quantity and WhatsApp number, and every step of ordering, from consultation to file submission and proofing, happened in chat.\n\nThe site explained file checks for CMYK, resolution, bleed and safe area in a long SEO article, yet offered no place to upload a file. Paper stocks and finishes were plain text lists, and the homepage mixed client logos, testimonials and thousands of words of articles, so the path to an actual product was hard to find.",
+    "solution": "The homepage works like a print store: best-selling products with starting prices, sizes drawn to scale, and paper stocks with short specifications. The business card configurator updates the price, the price per card, the quantity tiers and the ready-to-ship date as size, paper, sides, finishes, quantity and turnaround change.\n\nAfter configuring, customers upload a PDF and see six preflight results. Text placed too close to the trim line can be fixed by the prepress team or by uploading a revision, and the digital proof shows trim, safe area and bleed before approval. On the print floor, prepress combines approved jobs with the same stock and finish onto one gang sheet, sees how many positions remain, and checks the day's machine schedule. The planned production stack is Next.js with Supabase, a server-side PDF preflight service and WhatsApp notifications.",
+    "features": [
+      "Product catalogue with starting prices",
+      "Sizes drawn to scale and a paper stock guide",
+      "Business card configurator with live price",
+      "Quantity tiers showing price per card and savings",
+      "Automatic PDF preflight for size, bleed, colour, resolution, fonts and safe area",
+      "Digital proof with trim and safe-area guides and an approval checklist",
+      "Gang-sheet planning and machine schedule for production"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Layanan Percetakan Online",
+    "type": "WEBSITE & PEMESANAN PERCETAKAN",
+    "category": "E-commerce",
+    "summary": "Redesign untuk percetakan offset dan digital. Pelanggan menghitung harga kartu nama, brosur, dan kemasan dari ukuran, kertas, finishing, dan jumlah, mengunggah PDF yang diperiksa otomatis, lalu menyetujui proof sebelum naik mesin; ruang produksi menggabungkan pesanan yang sudah disetujui ke satu plano.",
+    "challenge": "Situs lama menampilkan lebih dari lima belas produk tanpa satu pun harga. Bagian \"harga transparan\" hanya berupa form nama perusahaan, produk, jumlah, dan nomor WhatsApp, dan setiap langkah pemesanan, dari konsultasi, kirim file, sampai proofing, berlangsung di chat.\n\nPemeriksaan file untuk CMYK, resolusi, bleed, dan area aman dijelaskan dalam artikel SEO yang panjang, tetapi tidak ada tempat untuk mengunggah file. Jenis kertas dan finishing hanya berupa daftar teks, dan beranda mencampur logo klien, testimoni, dan ribuan kata artikel, sehingga jalan menuju produk sulit ditemukan.",
+    "solution": "Beranda bekerja seperti toko cetak: produk terlaris dengan harga awal, ukuran yang digambar sesuai proporsi, dan jenis kertas dengan spesifikasi singkat. Konfigurator kartu nama memperbarui harga, harga per lembar, jenjang jumlah, dan tanggal siap kirim setiap kali ukuran, kertas, sisi cetak, finishing, jumlah, atau waktu produksi diubah.\n\nSetelah konfigurasi, pelanggan mengunggah PDF dan melihat enam hasil preflight. Teks yang terlalu dekat dengan garis potong bisa diperbaiki oleh tim pracetak atau dengan unggah revisi, dan proof digital menampilkan garis potong, area aman, dan bleed sebelum disetujui. Di ruang produksi, pracetak menggabungkan pesanan dengan kertas dan finishing yang sama ke satu plano, melihat sisa posisi, dan mengecek jadwal mesin hari itu. Stack produksi yang direncanakan adalah Next.js dengan Supabase, layanan preflight PDF di server, dan notifikasi WhatsApp.",
+    "features": [
+      "Katalog produk dengan harga awal",
+      "Ukuran berproporsi dan panduan jenis kertas",
+      "Konfigurator kartu nama dengan harga langsung",
+      "Jenjang jumlah dengan harga per lembar dan persentase hemat",
+      "Preflight PDF otomatis untuk ukuran, bleed, warna, resolusi, font, dan area aman",
+      "Proof digital dengan garis potong, area aman, dan daftar persetujuan",
+      "Rencana plano gabungan dan jadwal mesin untuk produksi"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
