@@ -6,405 +6,266 @@
 <title>Rumah Kabut — Sewa villa Puncak &amp; Cipanas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_ds/lapak.css">
-<style>
-  /* Tema — mode SOLID, biru brand asli dibuat lebih jenuh */
-  :root {
-    --font-display: "Fraunces", Georgia, serif;
-    --brand: #0a62c2; --brand-ink: #ffffff; --brand-text: #0a56aa;
-    --accent: #d9461a; --r-base: 12px;
-  }
-  .display, .h1, .h2 { font-weight: 560; letter-spacing: -0.025em; }
-  .wordmark { font: 600 22px/1 var(--font-display); letter-spacing: -0.01em; }
-
-  .hero { padding: var(--s-10) 0 var(--s-12); }
-  .hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-10); align-items: center; }
-  .hero .taskbar { max-width: 680px; }
-  .hero__photos { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--s-3); height: 520px; }
-  .hero__photos .img { height: 100%; aspect-ratio: auto; }
-  .hero__photos .img:first-child { grid-row: span 2; }
-  @media (max-width: 1024px) { .hero__grid { grid-template-columns: 1fr; } .hero__photos { height: 360px; } }
-
-  .locs { display: flex; gap: var(--s-2); flex-wrap: wrap; }
-  .locs .chip b { font-variant-numeric: tabular-nums; color: var(--text-3); font-weight: 600; margin-left: 2px; }
-  .locs .chip.is-active b { color: rgba(255,255,255,.7); }
-
-  .vcard { display: flex; flex-direction: column; gap: 10px; }
-  .vcard .img { --ar: 4 / 3; }
-  .specs { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; color: var(--text-2); }
-  .specs span { display: inline-flex; align-items: center; gap: 6px; }
-  .vcard__price { display: flex; align-items: baseline; gap: 4px 8px; flex-wrap: wrap; }
-  .split--villa { grid-template-columns: minmax(0, 1fr) 400px; }
-  @media (max-width: 1024px) { .split--villa { grid-template-columns: 1fr; } }
-  .vcard__price .price { font-size: 17px; }
-
-  .groups { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--s-4); }
-  .group { border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s-5); display: flex; flex-direction: column; gap: 6px; background: #fff; }
-  .group b { font: 560 28px/1.1 var(--font-display); }
-  @media (max-width: 900px) { .groups { grid-template-columns: 1fr; } }
-
-  .results { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: var(--s-8); align-items: start; }
-  .filters { display: flex; flex-direction: column; gap: var(--s-6); position: sticky; top: calc(var(--nav-h) + 16px); }
-  .filters .stack-2 .check { font-size: 14px; }
-  .rcard { display: grid; grid-template-columns: 300px minmax(0, 1fr) auto; gap: var(--s-5); padding: var(--s-4); border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; align-items: center; }
-  .rcard .img { --ar: 4 / 3; }
-  .rcard.is-off { opacity: .55; }
-  .rcard__side { text-align: right; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-  @media (max-width: 1024px) { .results { grid-template-columns: 1fr; } .filters { position: static; } .rcard { grid-template-columns: 1fr; } .rcard__side { text-align: left; align-items: flex-start; } }
-
-  .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 220px 220px; gap: var(--s-2); border-radius: var(--r-lg); overflow: hidden; }
-  .gallery .img { height: 100%; aspect-ratio: auto; border-radius: 0; }
-  .gallery .img:first-child { grid-row: span 2; }
-  .gallery__more { position: relative; }
-  .gallery__more span { position: absolute; right: 12px; bottom: 12px; }
-  @media (max-width: 720px) { .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 120px 120px; } .gallery .img:first-child { grid-column: span 2; grid-row: auto; } }
-  .facil { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px var(--s-6); font-size: 15px; }
-  .facil span { display: flex; align-items: center; gap: 10px; }
-  @media (max-width: 720px) { .facil { grid-template-columns: 1fr 1fr; } }
-  .cal__day.is-booked { color: var(--n-400); text-decoration: line-through; pointer-events: none; }
-  .cal__day small { color: var(--text-3); }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/villa-rental-booking-website.css">
+<style>.results { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media (max-width: 900px) { .results { grid-template-columns: 1fr; } }</style>
 </head>
 <body>
 
 <!-- ================= BERANDA ================= -->
 <section data-screen="home">
-  <div class="topbar"><div class="container">Libur akhir tahun: villa 6 kamar ke atas tersisa 9 unit untuk 24 Des – 1 Jan · <a href="#cari">Cek tanggal</a></div></div>
-  <nav class="nav">
-    <div class="container nav__inner">
-      <a class="nav__brand wordmark" href="#home">Rumah Kabut</a>
-      <div class="nav__links"><a href="#cari" data-nav="cari">Cari villa</a><a href="#rombongan-home">Rombongan</a><a href="#cara-home">Cara booking</a><a href="#">Catering</a></div>
-      <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="phone" class="i-sm"></i>0812-4400-7120</a><a class="btn btn--primary btn--sm" href="#cari">Cari villa</a></div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="container hero__grid">
-      <div class="stack-6">
-        <span class="eyebrow">Puncak, Cipanas &amp; Cibodas · sejak 2014</span>
-        <h1 class="display">143 villa. Lihat tanggal kosong tanpa chat dulu.</h1>
-        <p class="lead">Villa 2 sampai 42 kamar, mulai Rp1.000.000 per malam. Pilih tanggal dan jumlah tamu, lalu bayar DP langsung dari halaman villa.</p>
-        <form class="taskbar" onsubmit="location.hash='cari';return false">
-          <label class="taskbar__field"><span class="taskbar__label">Lokasi</span><select class="taskbar__value"><option>Semua lokasi</option><option>Kota Bunga</option><option>Puncak Resort</option><option>Cipanas</option></select></label>
-          <label class="taskbar__field"><span class="taskbar__label">Tanggal</span><input class="taskbar__value" value="Jum 23 – Min 25 Okt"></label>
-          <label class="taskbar__field"><span class="taskbar__label">Tamu</span><input class="taskbar__value" value="18 orang"></label>
-          <button class="btn btn--primary btn--lg"><i data-lucide="search" class="i-sm"></i>Cari</button>
-        </form>
-        <div class="facts"><span><i data-lucide="calendar-check" class="i-sm"></i>Ketersediaan diperbarui tiap jam</span><span><i data-lucide="map-pin" class="i-sm"></i>Tim di lokasi antar saat check-in</span><span><i data-lucide="wallet" class="i-sm"></i>DP 30%, pelunasan saat check-in</span></div>
+  <header class="header">
+    <div class="wrap">
+      <div class="header__row">
+        <a class="wordmark" href="#home">rumahkabut</a>
+        <nav class="cats">
+          <a class="cat is-active" href="#home"><i data-lucide="house"></i>Villa utuh</a>
+          <a class="cat" href="#home"><i data-lucide="users"></i>Rombongan</a>
+          <a class="cat" href="#home"><i data-lucide="utensils"></i>Catering</a>
+        </nav>
+        <div class="header__right"><a class="round" href="#" title="Bantuan"><i data-lucide="message-circle"></i></a><a class="menu-pill" href="#admin"><i data-lucide="menu" class="i-sm"></i><span class="avatar">RK</span></a></div>
       </div>
-      <div class="hero__photos">
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp" data-alt="Kolam renang pribadi villa"></div>
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-ruang-keluarga.webp"></div>
-        <div class="img" data-img="assets/villa-rental-booking-website/teras-putih-kolam.webp"></div>
-      </div>
+      <form class="search" style="margin-bottom:24px" onsubmit="location.hash='cari';return false">
+        <label class="search__seg"><b>Lokasi</b><input value="Semua lokasi Puncak"></label>
+        <label class="search__seg"><b>Check-in</b><input value="Jum, 23 Okt"></label>
+        <label class="search__seg"><b>Check-out</b><input value="Min, 25 Okt"></label>
+        <label class="search__seg"><b>Tamu</b><input value="18 orang"></label>
+        <button class="search__go" aria-label="Cari"><i data-lucide="search"></i></button>
+      </form>
     </div>
   </header>
 
-  <section class="section" style="padding-top:var(--s-4)">
-    <div class="container stack-6">
-      <div class="locs" data-select>
-        <button class="chip is-active">Semua <b>143</b></button><button class="chip">Kota Bunga <b>82</b></button><button class="chip">Puncak Resort <b>23</b></button><button class="chip">Cipanas <b>19</b></button><button class="chip">Coolibah <b>9</b></button><button class="chip">Bukit Danau <b>6</b></button><button class="chip">Bougenville <b>2</b></button><button class="chip">Cibodas <b>2</b></button>
-      </div>
-      <div class="section-head" style="margin-bottom:0"><div class="section-head__text"><h2 class="h2">Masih kosong akhir pekan ini</h2><p class="muted">Jumat 23 – Minggu 25 Oktober · harga per malam</p></div><a class="link" href="#cari">Lihat 38 villa <i data-lucide="arrow-right" class="i-sm"></i></a></div>
-      <div class="grid-4">
-        <a class="vcard" href="#villa"><div class="listing__media"><div class="img" data-img="assets/villa-rental-booking-website/anggrek-depan.webp"></div><span class="badge badge--accent listing__badge">Promo</span></div><div class="row row--between"><h3 class="listing__title">Villa Anggrek</h3><span class="caption">Kota Bunga</span></div><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>4 kamar</span><span><i data-lucide="users" class="i-sm"></i>20 orang</span><span><i data-lucide="waves" class="i-sm"></i>Kolam</span></div><div class="vcard__price"><span class="price">Rp4.700.000</span><span class="strike">Rp5.500.000</span></div></a>
-        <a class="vcard" href="#villa"><div class="listing__media"><div class="img" data-img="assets/villa-rental-booking-website/sakura-depan.webp"></div><span class="badge badge--accent listing__badge">Promo</span></div><div class="row row--between"><h3 class="listing__title">Villa Sakura</h3><span class="caption">Kota Bunga</span></div><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>2 kamar</span><span><i data-lucide="users" class="i-sm"></i>15 orang</span><span><i data-lucide="waves" class="i-sm"></i>Kolam</span></div><div class="vcard__price"><span class="price">Rp2.500.000</span><span class="strike">Rp2.700.000</span></div></a>
-        <a class="vcard" href="#villa"><div class="listing__media"><div class="img" data-img="assets/villa-rental-booking-website/teras-putih-taman.webp"></div></div><div class="row row--between"><h3 class="listing__title">Villa Teras Putih</h3><span class="caption">Cipanas</span></div><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>6 kamar</span><span><i data-lucide="users" class="i-sm"></i>30 orang</span><span><i data-lucide="waves" class="i-sm"></i>Kolam</span></div><div class="vcard__price"><span class="price">Rp6.800.000</span></div></a>
-        <a class="vcard" href="#villa"><div class="listing__media"><div class="img" data-img="assets/villa-rental-booking-website/cemara-depan.webp"></div></div><div class="row row--between"><h3 class="listing__title">Villa Cemara</h3><span class="caption">Puncak Resort</span></div><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>3 kamar</span><span><i data-lucide="users" class="i-sm"></i>12 orang</span><span><i data-lucide="flame" class="i-sm"></i>BBQ</span></div><div class="vcard__price"><span class="price">Rp1.800.000</span></div></a>
-      </div>
+  <div class="wrap">
+    <div class="filters-row" style="justify-content:center">
+      <span class="fchip is-active"><i data-lucide="waves" class="i-sm"></i>Kolam renang pribadi</span>
+      <span class="fchip"><i data-lucide="mountain" class="i-sm"></i>View gunung</span>
+      <span class="fchip"><i data-lucide="mic" class="i-sm"></i>Karaoke</span>
+      <span class="fchip"><i data-lucide="bus" class="i-sm"></i>Akses bus</span>
+      <span class="fchip"><i data-lucide="flame" class="i-sm"></i>BBQ</span>
+      <span class="fchip"><i data-lucide="sliders-horizontal" class="i-sm"></i>Filter</span>
     </div>
-  </section>
 
-  <section class="section section--muted" id="rombongan-home">
-    <div class="container">
-      <div class="section-head"><div class="section-head__text"><h2 class="h2">Untuk rombongan &amp; acara kantor</h2><p class="muted">Kapasitas sudah termasuk extra bed. Akses jalan bus dicantumkan di setiap villa.</p></div></div>
-      <div class="groups">
-        <a class="group" href="#cari"><span class="caption">Keluarga</span><b>Sampai 15 orang</b><span class="muted body-sm">2–3 kamar · 71 villa · mulai Rp1.000.000</span></a>
-        <a class="group" href="#cari"><span class="caption">Arisan, reuni</span><b>15–30 orang</b><span class="muted body-sm">4–6 kamar · 48 villa · mulai Rp3.200.000</span></a>
-        <a class="group" href="#cari"><span class="caption">Gathering kantor</span><b>30–60 orang</b><span class="muted body-sm">8–42 kamar · 24 villa · mulai Rp7.500.000</span></a>
-      </div>
+    <div class="row-head"><h2>Masih kosong akhir pekan ini <i data-lucide="chevron-right"></i></h2><div class="arrows"><span><i data-lucide="chevron-left" class="i-sm"></i></span><span><i data-lucide="chevron-right" class="i-sm"></i></span></div></div>
+    <div class="grid-cards">
+      <a class="card" href="#villa"><div class="photo" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"><span class="badge">Promo Oktober</span><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Kota Bunga</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,93</span></div><p class="card__line">Villa Anggrek · 4 kamar · 20 tamu</p><p class="card__line">23–25 Okt</p><p class="card__price"><s>Rp5.500.000</s> <b>Rp4.700.000</b> /malam</p></a>
+      <a class="card" href="#villa"><div class="photo" data-img="assets/villa-rental-booking-website/teras-putih-kolam.webp"><span class="badge">Pilihan rombongan</span><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Cipanas</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,88</span></div><p class="card__line">Villa Teras Putih · 6 kamar · 30 tamu</p><p class="card__line">23–25 Okt</p><p class="card__price"><b>Rp6.800.000</b> /malam</p></a>
+      <a class="card" href="#villa"><div class="photo" data-img="assets/villa-rental-booking-website/sakura-kolam.webp"><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Kota Bunga</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,81</span></div><p class="card__line">Villa Sakura · 2 kamar · 15 tamu</p><p class="card__line">23–25 Okt</p><p class="card__price"><s>Rp2.700.000</s> <b>Rp2.500.000</b> /malam</p></a>
+      <a class="card" href="#villa"><div class="photo" data-img="assets/villa-rental-booking-website/cemara-depan.webp"><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Puncak Resort</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,76</span></div><p class="card__line">Villa Cemara · 3 kamar · 12 tamu</p><p class="card__line">23–25 Okt</p><p class="card__price"><b>Rp1.800.000</b> /malam</p></a>
     </div>
-  </section>
 
-  <section class="section" id="cara-home">
-    <div class="container split" style="align-items:start">
-      <div class="stack-6">
-        <h2 class="h2">Booking tanpa bolak-balik chat</h2>
-        <ol class="howto" style="grid-template-columns:1fr">
-          <li class="stack-2"><h3 class="h4">Pilih villa &amp; tanggal yang masih kosong</h3><p class="muted body-sm">Kalender di setiap villa menunjukkan tanggal terisi dan harga weekday/weekend.</p></li>
-          <li class="stack-2"><h3 class="h4">Bayar DP lewat virtual account</h3><p class="muted body-sm">30% untuk weekday &amp; weekend, 50% untuk high season. Invoice dan nomor booking langsung terbit.</p></li>
-          <li class="stack-2"><h3 class="h4">Dijemput tim di lokasi saat check-in</h3><p class="muted body-sm">Pelunasan di villa saat serah terima kunci.</p></li>
-        </ol>
-      </div>
-      <div class="stack-6">
-        <div class="alert alert--warn"><i data-lucide="shield-alert"></i><span><strong>Bayar hanya ke virtual account di invoice</strong>Kami tidak pernah meminta transfer ke rekening pribadi lewat chat.</span></div>
-        <div class="faq">
-          <details open><summary>Bisa survey villa dulu?</summary><div>Bisa, dengan janji minimal H-1. Biaya survey Rp100.000 dipotong dari harga sewa jika jadi booking.</div></details>
-          <details><summary>Ada catering?</summary><div>Rp100.000 per orang untuk 3 kali makan dan 1 snack, minimal 15 orang, pesan paling lambat H-1.</div></details>
-          <details><summary>Bagaimana kalau tamu lebih dari kapasitas?</summary><div>Tambah extra bed Rp45.000 per bed, sudah termasuk sprei, bantal, dan selimut.</div></details>
-        </div>
-      </div>
+    <div class="row-head"><h2>Cari sesuai rombongan</h2></div>
+    <div class="tiles">
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="baby"></i></div><b>Keluarga</b><span>sampai 15 orang · 71 villa</span></a>
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="users"></i></div><b>Arisan &amp; reuni</b><span>15–30 orang · 48 villa</span></a>
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="briefcase"></i></div><b>Gathering kantor</b><span>30–60 orang · 24 villa</span></a>
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="utensils"></i></div><b>Catering</b><span>Rp100.000 /orang</span></a>
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="bed-single"></i></div><b>Extra bed</b><span>Rp45.000 /bed</span></a>
+      <a class="tile" href="#cari"><div class="tile__box"><i data-lucide="map-pinned"></i></div><b>Survey villa</b><span>Rp100.000, dipotong dari sewa</span></a>
     </div>
-  </section>
+
+    <div class="row-head"><h2>Lokasi</h2></div>
+    <div class="filters-row" style="padding-top:0">
+      <span class="fchip">Kota Bunga · 82</span><span class="fchip">Puncak Resort · 23</span><span class="fchip">Cipanas · 19</span><span class="fchip">Coolibah · 9</span><span class="fchip">Bukit Danau · 6</span><span class="fchip">Bougenville · 2</span><span class="fchip">Cibodas · 2</span>
+    </div>
+    <div style="height:48px"></div>
+  </div>
 
   <footer class="footer">
-    <div class="container">
+    <div class="wrap">
       <div class="footer__grid">
-        <div class="stack-3"><span class="wordmark" style="color:#fff">Rumah Kabut</span><p>Agen sewa villa Puncak &amp; Cipanas sejak 2014. Kantor di Pacet, Cianjur.</p></div>
-        <div><h4>Lokasi</h4><ul><li><a href="#cari">Kota Bunga</a></li><li><a href="#cari">Puncak Resort</a></li><li><a href="#cari">Cipanas</a></li></ul></div>
-        <div><h4>Layanan</h4><ul><li><a href="#">Catering</a></li><li><a href="#">Survey villa</a></li><li><a href="#">Untuk kantor</a></li></ul></div>
-        <div><h4>Bantuan</h4><ul><li><a href="#cara-home">Cara booking</a></li><li><a href="#">Syarat &amp; ketentuan</a></li><li><a href="#">Kontak</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul><li><a href="#">Cara booking &amp; DP</a></li><li><a href="#">Survey villa</a></li><li><a href="#">Pembatalan</a></li></ul></div>
+        <div><h4>Layanan</h4><ul><li><a href="#">Catering</a></li><li><a href="#">Untuk acara kantor</a></li><li><a href="#">Daftarkan villa Anda</a></li></ul></div>
+        <div><h4>Rumah Kabut</h4><ul><li><a href="#">Tentang kami · sejak 2014</a></li><li><a href="#">Syarat &amp; ketentuan</a></li><li><a href="#">Kontak</a></li></ul></div>
       </div>
-      <div class="footer__bottom"><span>© 2026 Rumah Kabut</span><span>Harga per malam, belum termasuk extra bed &amp; catering</span></div>
+      <hr class="divider" style="margin:28px 0 20px">
+      <p class="t-small">© 2026 Rumah Kabut · Pembayaran hanya ke virtual account yang tercantum di invoice</p>
     </div>
   </footer>
 </section>
 
 <!-- ================= HASIL PENCARIAN ================= -->
 <section data-screen="cari">
-  <nav class="nav">
-    <div class="container-wide nav__inner">
-      <a class="nav__brand wordmark" href="#home">Rumah Kabut</a>
-      <form class="taskbar" style="padding:4px;box-shadow:none;max-width:640px;flex:1" onsubmit="return false">
-        <label class="taskbar__field" style="padding:4px 14px"><span class="taskbar__label">Lokasi</span><input class="taskbar__value" value="Semua lokasi"></label>
-        <label class="taskbar__field" style="padding:4px 14px"><span class="taskbar__label">Tanggal</span><input class="taskbar__value" value="23 – 25 Okt · 2 malam"></label>
-        <label class="taskbar__field" style="padding:4px 14px"><span class="taskbar__label">Tamu</span><input class="taskbar__value" value="18 orang"></label>
-      </form>
-      <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#home">Beranda</a></div>
+  <header class="header">
+    <div class="wrap"><div class="header__row">
+      <a class="wordmark" href="#home">rumahkabut</a>
+      <form class="search search--sm" style="margin:0" onsubmit="return false"><label class="search__seg"><input value="Puncak"></label><label class="search__seg"><input value="23–25 Okt"></label><label class="search__seg"><input value="18 tamu"></label><button class="search__go"><i data-lucide="search" class="i-sm"></i></button></form>
+      <div class="header__right"><a class="menu-pill" href="#admin"><i data-lucide="menu" class="i-sm"></i><span class="avatar">RK</span></a></div>
+    </div></div>
+  </header>
+  <div class="wrap">
+    <div class="filters-row">
+      <span class="fchip"><i data-lucide="sliders-horizontal" class="i-sm"></i>Filter</span>
+      <span class="fchip is-active">Kolam renang pribadi</span><span class="fchip is-active">4–6 kamar</span><span class="fchip">Rp3–6 jt</span><span class="fchip">Karaoke</span><span class="fchip">Akses bus</span>
     </div>
-  </nav>
-  <div class="container-wide" style="padding-top:var(--s-8);padding-bottom:var(--s-16)">
-    <div class="results">
-      <aside class="filters">
-        <div class="stack-2"><span class="label">Kamar tidur</span><div class="chips" data-select><button class="chip">2–3</button><button class="chip is-active">4–6</button><button class="chip">7+</button></div></div>
-        <div class="stack-2"><span class="label">Harga per malam</span><div class="segmented" data-select style="flex-wrap:wrap"><button>&lt; 3 jt</button><button class="is-active">3–6 jt</button><button>&gt; 6 jt</button></div></div>
-        <div class="stack-2"><span class="label">Fasilitas</span>
-          <label class="check"><input type="checkbox" checked>Kolam renang pribadi</label>
-          <label class="check"><input type="checkbox">Karaoke</label>
-          <label class="check"><input type="checkbox">Billiard</label>
-          <label class="check"><input type="checkbox">Pembakaran BBQ</label>
-          <label class="check"><input type="checkbox">Akses bus</label>
-        </div>
-        <div class="stack-2"><span class="label">Lokasi</span>
-          <label class="check"><input type="checkbox" checked>Kota Bunga</label>
-          <label class="check"><input type="checkbox" checked>Cipanas</label>
-          <label class="check"><input type="checkbox">Puncak Resort</label>
-        </div>
-      </aside>
-      <div class="stack">
-        <div class="row row--between"><div><h1 class="h2" style="font-size:32px">14 villa kosong</h1><p class="caption">untuk 18 orang · 23–25 Oktober · 4–6 kamar · kolam renang</p></div><select class="select" style="width:auto"><option>Paling cocok</option><option>Harga terendah</option></select></div>
-        <div class="rcard"><div class="img" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"></div><div class="stack-2"><div class="row"><h3 class="h3">Villa Anggrek</h3><span class="badge badge--accent">Promo</span></div><p class="caption">Kota Bunga · minimalis modern · 2 lantai</p><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>4 kamar</span><span><i data-lucide="bath" class="i-sm"></i>2 kamar mandi</span><span><i data-lucide="users" class="i-sm"></i>maks 20</span><span><i data-lucide="waves" class="i-sm"></i>Kolam pribadi</span><span><i data-lucide="mic" class="i-sm"></i>Karaoke</span><span><i data-lucide="circle-dot" class="i-sm"></i>Billiard</span><span><i data-lucide="bus" class="i-sm"></i>Akses bus</span></div></div><div class="rcard__side"><span class="pill pill--ok">Kosong 23–25 Okt</span><span class="strike body-sm">Rp11.000.000</span><span class="price" style="font-size:20px">Rp10.200.000</span><span class="caption">2 malam · DP Rp3.060.000</span><a class="btn btn--primary btn--sm" href="#villa">Lihat villa</a></div></div>
-        <div class="rcard"><div class="img" data-img="assets/villa-rental-booking-website/teras-putih-kolam.webp"></div><div class="stack-2"><h3 class="h3">Villa Teras Putih</h3><p class="caption">Cipanas · view gunung · 2 lantai</p><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>6 kamar</span><span><i data-lucide="bath" class="i-sm"></i>4 kamar mandi</span><span><i data-lucide="users" class="i-sm"></i>maks 30</span><span><i data-lucide="waves" class="i-sm"></i>Kolam pribadi</span><span><i data-lucide="flame" class="i-sm"></i>BBQ</span></div></div><div class="rcard__side"><span class="pill pill--ok">Kosong 23–25 Okt</span><span class="price" style="font-size:20px">Rp14.200.000</span><span class="caption">2 malam · DP Rp4.260.000</span><a class="btn btn--primary btn--sm" href="#villa">Lihat villa</a></div></div>
-        <div class="rcard is-off"><div class="img" data-img="assets/villa-rental-booking-website/sakura-kolam.webp"></div><div class="stack-2"><h3 class="h3">Villa Sakura</h3><p class="caption">Kota Bunga · gaya Jepang</p><div class="specs"><span><i data-lucide="bed-double" class="i-sm"></i>2 kamar</span><span><i data-lucide="users" class="i-sm"></i>maks 15</span><span><i data-lucide="waves" class="i-sm"></i>Kolam pribadi</span></div></div><div class="rcard__side"><span class="pill pill--warn">Kapasitas kurang 3 orang</span><span class="price" style="font-size:20px">Rp5.000.000</span><span class="caption">Bisa tambah 3 extra bed</span><a class="btn btn--secondary btn--sm" href="#villa">Lihat villa</a></div></div>
-      </div>
+    <p style="font-weight:700;font-size:15px;margin-bottom:20px">14 villa kosong di Puncak untuk 23–25 Okt</p>
+    <div class="grid-cards results">
+      <a class="card" href="#villa"><div class="photo" style="--ar:20/19" data-img="assets/villa-rental-booking-website/anggrek-depan.webp"><span class="badge">Promo Oktober</span><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Kota Bunga</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,93</span></div><p class="card__line">4 kamar · 2 kamar mandi · 20 tamu</p><p class="card__line">Karaoke · billiard · akses bus</p><p class="card__price"><b>Rp10.200.000</b> total 2 malam</p></a>
+      <a class="card" href="#villa"><div class="photo" style="--ar:20/19" data-img="assets/villa-rental-booking-website/teras-putih-taman.webp"><span class="heart"><i data-lucide="heart"></i></span></div><div class="card__title"><span>Villa di Cipanas</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,88</span></div><p class="card__line">6 kamar · 4 kamar mandi · 30 tamu</p><p class="card__line">View gunung · BBQ</p><p class="card__price"><b>Rp14.200.000</b> total 2 malam</p></a>
+      
+      <a class="card" href="#villa" style="opacity:.6"><div class="photo" style="--ar:20/19" data-img="assets/villa-rental-booking-website/sakura-depan.webp"><span class="badge">Kurang 3 tempat</span></div><div class="card__title"><span>Villa di Kota Bunga</span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,81</span></div><p class="card__line">2 kamar · 15 tamu + 3 extra bed</p><p class="card__line">Gaya Jepang · kolam pribadi</p><p class="card__price"><b>Rp5.270.000</b> total 2 malam</p></a>
     </div>
+    <div style="display:flex;justify-content:center;padding:40px 0 72px"><span class="btn btn-dark btn-sm">Tampilkan 10 villa lainnya</span></div>
   </div>
 </section>
 
-<!-- ================= DETAIL VILLA ================= -->
+<!-- ================= HALAMAN VILLA ================= -->
 <section data-screen="villa">
-  <nav class="nav">
-    <div class="container nav__inner">
-      <a class="nav__brand wordmark" href="#home">Rumah Kabut</a>
-      <div class="nav__links"><a href="#cari" data-nav="cari">Cari villa</a><a href="#home">Beranda</a></div>
-      <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#cari"><i data-lucide="arrow-left" class="i-sm"></i>14 hasil lain</a></div>
+  <header class="header">
+    <div class="wrap"><div class="header__row">
+      <a class="wordmark" href="#home">rumahkabut</a>
+      <form class="search search--sm" style="margin:0" onsubmit="location.hash='cari';return false"><label class="search__seg"><input value="Puncak"></label><label class="search__seg"><input value="23–25 Okt"></label><label class="search__seg"><input value="18 tamu"></label><button class="search__go"><i data-lucide="search" class="i-sm"></i></button></form>
+      <div class="header__right"><a class="menu-pill" href="#admin"><i data-lucide="menu" class="i-sm"></i><span class="avatar">RK</span></a></div>
+    </div></div>
+  </header>
+  <div class="wrap" id="villaMain">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0 16px;flex-wrap:wrap"><h1 class="t-h1">Villa Anggrek · kolam renang pribadi, karaoke &amp; billiard</h1><div style="display:flex;gap:16px;font-size:14px;font-weight:600"><span style="display:flex;gap:6px;align-items:center" class="u"><i data-lucide="share" class="i-sm"></i>Bagikan</span><span style="display:flex;gap:6px;align-items:center" class="u"><i data-lucide="heart" class="i-sm"></i>Simpan</span></div></div>
+    <div class="listing-gallery">
+      <div class="photo" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"></div>
+      <div class="photo" data-img="assets/villa-rental-booking-website/anggrek-ruang-keluarga.webp"></div>
+      <div class="photo" data-img="assets/villa-rental-booking-website/anggrek-kamar.webp"></div>
+      <div class="photo" data-img="assets/villa-rental-booking-website/anggrek-billiard.webp"></div>
+      <div class="photo" data-img="assets/villa-rental-booking-website/anggrek-dapur.webp"></div>
+      <span class="show-all"><i data-lucide="grid-3x3" class="i-sm"></i>Tampilkan semua foto</span>
     </div>
-  </nav>
-  <div class="container" style="padding-top:var(--s-6);padding-bottom:var(--s-16)">
-    <div class="stack-6" id="villaMain">
-      <div class="row row--between row--wrap"><div class="stack-1"><span class="caption">Kota Bunga, Cipanas · Cianjur</span><h1 class="h1" style="font-size:44px">Villa Anggrek</h1></div><div class="row"><span class="badge badge--accent">Promo Oktober</span><button class="btn btn--secondary btn--sm"><i data-lucide="share-2" class="i-sm"></i>Bagikan</button></div></div>
-      <div class="gallery">
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"></div>
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-ruang-keluarga.webp"></div>
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-kamar.webp"></div>
-        <div class="img" data-img="assets/villa-rental-booking-website/anggrek-billiard.webp"></div>
-        <div class="gallery__more"><div class="img" style="height:100%" data-img="assets/villa-rental-booking-website/anggrek-kolam-malam.webp"></div><span class="badge">+ 21 foto</span></div>
+    <div class="listing">
+      <div>
+        <div class="block"><h2 class="t-h2">Villa utuh di Kota Bunga, Cipanas</h2><p style="font-size:16px;margin-top:4px">20 tamu · 4 kamar tidur · 2 kamar mandi · 2 lantai</p><p style="font-size:15px;margin-top:6px;font-weight:600;display:flex;gap:6px;align-items:center"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>4,93</span> · <span class="u">58 ulasan</span></p></div>
+        <div class="block" style="display:flex;gap:16px;align-items:center"><span class="round" style="background:var(--brand);color:#fff;width:44px;height:44px;font-weight:800">RK</span><div><p style="font-weight:700">Dikelola Rumah Kabut</p><p class="t-small">Sejak 2014 · tim di lokasi menjemput saat check-in</p></div></div>
+        <div class="block">
+          <div class="hl"><i data-lucide="waves"></i><div><b>Kolam renang pribadi</b><span class="t-meta">Dengan gazebo dan area BBQ di taman.</span></div></div>
+          <div class="hl"><i data-lucide="mic"></i><div><b>Karaoke &amp; billiard</b><span class="t-meta">Cocok untuk keluarga besar dan acara kantor.</span></div></div>
+          <div class="hl"><i data-lucide="bus"></i><div><b>Akses bus besar</b><span class="t-meta">Jalan bisa dilewati bus, parkir di carport.</span></div></div>
+        </div>
+        <div class="block"><p style="font-size:16px">Villa minimalis modern di kawasan Kota Bunga, 15 menit ke Taman Bunga Nusantara. Empat kamar tidur luas, ruang keluarga, dapur lengkap dengan kompor dan gas, serta balkon dan teras untuk bersantai.</p></div>
+        <div class="block"><h2 class="t-h2" style="margin-bottom:20px">Fasilitas</h2>
+          <div class="amen"><span><i data-lucide="waves"></i>Kolam renang pribadi</span><span><i data-lucide="mic"></i>Karaoke</span><span><i data-lucide="circle-dot"></i>Meja billiard</span><span><i data-lucide="flame"></i>Pembakaran BBQ</span><span><i data-lucide="cooking-pot"></i>Dapur, kompor &amp; gas</span><span><i data-lucide="droplet"></i>1 galon air per malam</span><span><i data-lucide="wifi"></i>Wifi</span><span><i data-lucide="air-vent"></i>AC &amp; TV</span></div>
+        </div>
+        <div class="block"><h2 class="t-h2">2 malam di Kota Bunga</h2><p class="t-meta" style="margin:4px 0 20px">23 Okt 2026 – 25 Okt 2026 · tanggal dicoret sudah terisi</p><div class="months" id="months"></div></div>
+        <div class="block" style="border-bottom:0"><h2 class="t-h2" style="margin-bottom:12px">Ketentuan</h2><p class="t-meta">DP 30% untuk weekday &amp; weekend, 50% untuk high season. Pelunasan saat check-in di villa. Check-in 14.00, check-out 12.00. Survey villa bisa dijadwalkan H-1 dengan biaya Rp100.000 yang dipotong dari harga sewa.</p></div>
       </div>
+      <form class="book" data-demo-form="#villaDone" id="bookBox">
+        <p class="book__price"><s>Rp5.500.000</s>Rp4.700.000 <span>/ malam</span></p>
+        <div class="book__box"><div><b>Check-in</b><span>23/10/2026</span></div><div><b>Check-out</b><span>25/10/2026</span></div><div><div><b style="display:block">Tamu</b><span id="gLabel">18 tamu</span></div><div class="stepper" data-stepper data-min="1" data-max="23" id="guests"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>18</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div></div>
+        <label class="check"><input type="checkbox" id="catering">Tambah catering untuk semua tamu</label>
+        <button class="btn btn-primary btn-block">Pesan &amp; bayar DP</button>
+        <p class="t-small" style="text-align:center">DP dibayar ke virtual account di invoice</p>
+        <div class="line"><span>Jumat &amp; Sabtu, 2 malam</span><span>Rp11.000.000</span></div>
+        <div class="line"><span>Promo Oktober</span><span>−Rp800.000</span></div>
+        <div class="line" id="xbLine" hidden><span id="xbLab">Extra bed</span><span id="xbVal"></span></div>
+        <div class="line" id="ctLine" hidden><span>Catering</span><span id="ctVal"></span></div>
+        <hr class="divider">
+        <div class="line" style="font-weight:700"><span style="text-decoration:none">Total</span><span id="vTotal">Rp10.200.000</span></div>
+        <div class="line" style="font-weight:700;color:var(--brand)"><span style="text-decoration:none">DP 30% sekarang</span><span id="vDp">Rp3.060.000</span></div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap" id="villaDone" hidden>
+    <div style="max-width:640px;padding:48px 0 96px;display:flex;flex-direction:column;gap:20px">
+      <h1 class="t-h1">Villa Anggrek terkunci untuk 23–25 Okt</h1>
+      <p class="t-meta">Bayar DP dalam 2 jam. Invoice dan nomor booking sudah dikirim ke WhatsApp.</p>
+      <div class="book" style="position:static;box-shadow:none">
+        <div style="display:flex;gap:14px;align-items:center"><div class="photo" style="width:96px;flex:none" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"></div><div><p style="font-weight:700">Villa Anggrek</p><p class="t-small">Kota Bunga · 23–25 Okt · 18 tamu</p><p class="t-small">Nomor booking RK-2310-118</p></div></div>
+        <hr class="divider">
+        <div class="line"><span style="text-decoration:none">Virtual account BCA</span><b>8077 0812 4400 1180</b></div>
+        <div class="line"><span style="text-decoration:none">Batas bayar</span><b>Hari ini, 21.30</b></div>
+        <div class="line" style="font-weight:700"><span style="text-decoration:none">DP</span><span id="doneDp">Rp3.060.000</span></div>
+      </div>
+      <p class="t-meta">Hari H: tim kami menunggu di gerbang Kota Bunga pukul 13.30, pelunasan dan serah kunci pukul 14.00.</p>
+    </div>
+  </div>
+</section>
 
-      <div class="split--form split--villa">
-        <div class="stack-6">
-          <div class="specs" style="font-size:15px;color:var(--text)"><span><i data-lucide="bed-double"></i>4 kamar tidur</span><span><i data-lucide="bath"></i>2 kamar mandi</span><span><i data-lucide="users"></i>Maks 20 orang</span><span><i data-lucide="layers"></i>2 lantai</span><span><i data-lucide="bus"></i>Akses bus besar</span></div>
-          <p class="lead" style="max-width:none">Villa minimalis modern untuk keluarga besar atau acara kantor. Kolam renang pribadi, ruang karaoke, billiard, dan gazebo di taman. Udara Kota Bunga, 15 menit ke Taman Bunga Nusantara.</p>
-          <hr class="divider">
-          <div class="stack-3"><h2 class="h3">Fasilitas</h2>
-            <div class="facil">
-              <span><i data-lucide="waves" class="i-sm"></i>Kolam renang pribadi</span><span><i data-lucide="mic" class="i-sm"></i>Karaoke</span><span><i data-lucide="circle-dot" class="i-sm"></i>Billiard</span>
-              <span><i data-lucide="flame" class="i-sm"></i>Pembakaran BBQ</span><span><i data-lucide="cooking-pot" class="i-sm"></i>Dapur, kompor &amp; gas</span><span><i data-lucide="droplet" class="i-sm"></i>Galon 1/malam</span>
-              <span><i data-lucide="wifi" class="i-sm"></i>Wifi</span><span><i data-lucide="air-vent" class="i-sm"></i>AC &amp; TV</span><span><i data-lucide="car" class="i-sm"></i>Carport</span>
-            </div>
-          </div>
-          <hr class="divider">
-          <div class="stack-3"><h2 class="h3">Tambahan</h2>
-            <div class="pricelist">
-              <div class="pricelist__row"><div><p class="pricelist__name">Extra bed</p><p class="pricelist__desc">Ukuran 1 orang, termasuk sprei, bantal, selimut</p></div><span class="price">Rp45.000 /bed</span></div>
-              <div class="pricelist__row"><div><p class="pricelist__name">Catering prasmanan atau nasi box</p><p class="pricelist__desc">3 kali makan + 1 snack · minimal 15 orang · pesan H-1</p></div><span class="price">Rp100.000 /orang</span></div>
-            </div>
-          </div>
-          <hr class="divider">
-          <div class="grid-2" style="gap:var(--s-8)">
-            <div class="stack-3"><h2 class="h3">Aturan pembayaran</h2><ul class="stack-2 body-sm muted"><li>DP 30% untuk weekday &amp; weekend, 50% high season</li><li>Pelunasan saat check-in di villa</li><li>Check-in 14.00 · check-out 12.00</li></ul></div>
-            <div class="stack-3"><h2 class="h3">Dekat dengan</h2><ul class="stack-2 body-sm muted"><li>Taman Bunga Nusantara · 15 menit</li><li>Kebun Raya Cibodas · 25 menit</li><li>Little Venice · 10 menit</li></ul></div>
+<!-- ================= KALENDER PROPERTI ================= -->
+<section data-screen="admin">
+  <div class="pm">
+    <nav class="pm__nav">
+      <a class="wordmark" href="#home" style="height:auto;padding:0 10px 16px;font-size:18px">rumahkabut</a>
+      <a href="#admin"><i data-lucide="house" class="i-sm"></i>Beranda</a>
+      <a href="#admin"><i data-lucide="inbox" class="i-sm"></i>Pesan masuk</a>
+      <a class="is-active" href="#admin"><i data-lucide="calendar" class="i-sm"></i>Kalender</a>
+      <a href="#admin"><i data-lucide="receipt" class="i-sm"></i>Booking &amp; DP</a>
+      <span class="pm__label">Operasional</span>
+      <a href="#admin"><i data-lucide="sparkles" class="i-sm"></i>Kebersihan</a>
+      <a href="#admin"><i data-lucide="map-pinned" class="i-sm"></i>Survey</a>
+      <a href="#admin"><i data-lucide="users" class="i-sm"></i>Pemilik villa</a>
+    </nav>
+    <div class="pm__main">
+      <div class="pm__top"><h1 class="t-h2">Kalender</h1><span class="btn btn-dark btn-sm"><i data-lucide="plus" class="i-sm"></i>Booking manual</span></div>
+      <div class="pm__body">
+        <div class="panel">
+          <div style="padding:14px 16px 0;display:flex;justify-content:space-between;align-items:center"><b>Villa · Kota Bunga</b><span class="t-small">82</span></div>
+          <div class="plist">
+            <div class="prop is-active"><div class="photo" data-img="assets/villa-rental-booking-website/anggrek-kolam.webp"></div><div><b>Villa Anggrek</b><small><span>4 kamar</span><span>20 tamu</span></small></div></div>
+            <div class="prop"><div class="photo" data-img="assets/villa-rental-booking-website/sakura-depan.webp"></div><div><b>Villa Sakura</b><small><span>2 kamar</span><span>15 tamu</span></small></div></div>
+            <div class="prop"><div class="photo" data-img="assets/villa-rental-booking-website/teras-putih-kolam.webp"></div><div><b>Villa Teras Putih</b><small><span>6 kamar</span><span>30 tamu</span></small></div></div>
+            <div class="prop"><div class="photo" data-img="assets/villa-rental-booking-website/cemara-depan.webp"></div><div><b>Villa Cemara</b><small><span>3 kamar</span><span>12 tamu</span></small></div></div>
           </div>
         </div>
-
-        <aside class="sticky">
-          <form class="summary" data-demo-form="#villaDone" id="bookBox">
-            <div class="row row--between"><div><span class="price" style="font-size:24px">Rp4.700.000</span> <span class="caption">/ malam weekday</span></div></div>
-            <p class="caption" style="margin-top:-8px">Jumat &amp; Sabtu Rp5.500.000 · tanggal dicoret sudah terisi</p>
-            <div class="cal">
-              <div class="cal__head"><button type="button" class="btn btn--ghost btn--xs btn--icon"><i data-lucide="chevron-left" class="i-sm"></i></button>Oktober 2026<button type="button" class="btn btn--ghost btn--xs btn--icon"><i data-lucide="chevron-right" class="i-sm"></i></button></div>
-              <div class="cal__grid" id="vCal"><span class="cal__dow">Sen</span><span class="cal__dow">Sel</span><span class="cal__dow">Rab</span><span class="cal__dow">Kam</span><span class="cal__dow">Jum</span><span class="cal__dow">Sab</span><span class="cal__dow">Min</span></div>
-            </div>
-            <div class="row row--between"><span class="label">Tamu</span><div class="stepper" data-stepper data-min="1" data-max="23" id="guests"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>18</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div></div>
-            <label class="check body-sm"><input type="checkbox" id="catering">Catering 18 orang × 2 hari</label>
-            <hr class="divider">
-            <div class="summary__line"><span>Jum 23 &amp; Sab 24 · 2 malam</span><span>Rp11.000.000</span></div>
-            <div class="summary__line"><span>Promo Oktober</span><span>−Rp800.000</span></div>
-            <div class="summary__line" id="xbLine" hidden><span>Extra bed</span><span id="xbVal"></span></div>
-            <div class="summary__line" id="ctLine" hidden><span>Catering</span><span>Rp3.600.000</span></div>
-            <div class="summary__line"><span>Total</span><span id="vTotal">Rp10.200.000</span></div>
-            <div class="summary__total"><span>DP 30% sekarang</span><span id="vDp">Rp3.060.000</span></div>
-            <button class="btn btn--primary btn--block btn--lg">Bayar DP</button>
-            <p class="caption">Sisa <span id="vRest">Rp7.140.000</span> dibayar saat check-in. Survey dulu? Rp100.000, dipotong dari sewa.</p>
-          </form>
-        </aside>
-      </div>
-    </div>
-
-    <div id="villaDone" hidden>
-      <div class="split" style="align-items:start;padding-top:var(--s-8)">
-        <div class="stack-6">
-          <span class="success__icon"><i data-lucide="check"></i></span>
-          <h1 class="h1" style="font-size:44px">Villa Anggrek terkunci untuk 23–25 Oktober.</h1>
-          <p class="lead">Bayar DP ke virtual account di bawah dalam 2 jam. Invoice dan nomor booking sudah dikirim ke WhatsApp.</p>
-          <div class="row row--wrap"><span class="ticket">RK-2310-118</span></div>
-          <div class="summary" style="max-width:520px">
-            <div class="summary__line"><span>Virtual account BCA</span><span class="mono">8077 0812 4400 1180</span></div>
-            <div class="summary__line"><span>Batas bayar</span><span>Hari ini, 21.30</span></div>
-            <div class="summary__total"><span>DP</span><span id="doneDp">Rp3.060.000</span></div>
-          </div>
-        </div>
-        <div class="summary">
-          <span class="h4">Hari check-in</span>
-          <ol class="timeline">
-            <li class="is-current"><span class="timeline__dot"></span><div><p class="timeline__title">Bayar DP</p><p class="caption">Booking otomatis terkonfirmasi</p></div><span class="timeline__time">≤ 21.30</span></li>
-            <li><span class="timeline__dot"></span><div><p class="timeline__title">Bertemu tim di lokasi</p><p class="caption">Titik jemput: gerbang Kota Bunga</p></div><span class="timeline__time">23 Okt 13.30</span></li>
-            <li><span class="timeline__dot"></span><div><p class="timeline__title">Pelunasan &amp; serah kunci</p></div><span class="timeline__time">14.00</span></li>
-            <li><span class="timeline__dot"></span><div><p class="timeline__title">Check-out</p></div><span class="timeline__time">25 Okt 12.00</span></li>
-          </ol>
+        <div class="panel mcal">
+          <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div style="display:flex;align-items:center;gap:10px"><b style="font-size:17px">Oktober 2026</b><span class="fchip" style="height:32px">Hari ini</span></div><span class="t-small">Villa Anggrek · Rp4,7 jt weekday · Rp5,5 jt Jum–Sab</span></div>
+          <div class="legend"><span><i style="background:var(--c-ok);border:1px solid var(--c-ok-b)"></i>Lunas / DP masuk</span><span><i style="background:var(--c-wait);border:1px solid var(--c-wait-b)"></i>Menunggu DP</span><span><i style="background:var(--c-direct);border:1px solid var(--c-direct-b)"></i>Survey</span><span><i style="background:var(--c-own);border:1px solid var(--c-own-b)"></i>Perawatan pemilik</span></div>
+          <div class="mcal__head"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div>
+          <div id="mcal"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ================= DASHBOARD AGEN ================= -->
-<div class="app" data-screen="admin">
-  <aside class="sidebar">
-    <div class="sidebar__brand"><span class="wordmark" style="font-size:20px">Rumah Kabut</span></div>
-    <div class="side-group">
-      <a class="side-link is-active" href="#admin"><i data-lucide="calendar-range"></i>Kalender villa</a>
-      <a class="side-link" href="#admin"><i data-lucide="receipt"></i>Booking &amp; DP<span class="count">6</span></a>
-      <a class="side-link" href="#admin"><i data-lucide="map-pinned"></i>Survey<span class="count">3</span></a>
-    </div>
-    <div class="side-group">
-      <span class="side-label">Data</span>
-      <a class="side-link" href="#admin"><i data-lucide="house"></i>Villa &amp; harga</a>
-      <a class="side-link" href="#admin"><i data-lucide="users"></i>Pemilik villa</a>
-      <a class="side-link" href="#admin"><i data-lucide="file-text"></i>Laporan</a>
-    </div>
-    <div class="sidebar__foot"><span class="avatar">RN</span><span><b>Rina N.</b><br><span class="faint">Admin booking</span></span></div>
-  </aside>
-  <div class="main">
-    <div class="appbar">
-      <div class="input-group"><i data-lucide="search" class="i-sm"></i><input class="input" placeholder="Cari villa, nama tamu, nomor booking…"></div>
-      <div class="appbar__right"><button class="icon-btn"><i data-lucide="bell"></i><span class="dot"></span></button><button class="btn btn--primary"><i data-lucide="plus" class="i-sm"></i>Booking manual</button></div>
-    </div>
-    <div class="content">
-      <div class="page-head"><div><h1>Kalender villa</h1><p>Minggu, 18 Oktober 2026 · 143 villa · menampilkan Kota Bunga</p></div><div class="page-head__actions"><div class="segmented" data-select><button class="is-active">Minggu ini</button><button>Bulan ini</button></div></div></div>
-      <div class="kpis">
-        <div class="kpi"><span class="kpi__label">Terisi akhir pekan ini</span><span class="kpi__value">64%</span><span class="kpi__foot">92 dari 143 villa</span></div>
-        <div class="kpi"><span class="kpi__label">Menunggu DP</span><span class="kpi__value">6</span><span class="kpi__foot"><span class="delta delta--down">2 lewat batas</span>dilepas otomatis</span></div>
-        <div class="kpi"><span class="kpi__label">Check-in Jumat</span><span class="kpi__value">31</span><span class="kpi__foot">perlu 9 tim lapangan</span></div>
-        <div class="kpi"><span class="kpi__label">Libur akhir tahun</span><span class="kpi__value">87%</span><span class="kpi__foot">villa 6+ kamar tersisa 9</span></div>
-      </div>
-      <div class="with-aside">
-        <div class="panel">
-          <div class="panel__head"><div><p class="panel__title">Okupansi Kota Bunga</p><p class="panel__sub">Hijau lunas/DP · kuning menunggu DP · abu pemilik pakai</p></div></div>
-          <div class="table-wrap">
-            <div class="rescal" style="--cols:7;min-width:820px">
-              <div class="rescal__corner">Villa</div>
-              <div class="rescal__col">Sen<b>19</b></div><div class="rescal__col">Sel<b>20</b></div><div class="rescal__col">Rab<b>21</b></div><div class="rescal__col">Kam<b>22</b></div><div class="rescal__col is-today">Jum<b>23</b></div><div class="rescal__col">Sab<b>24</b></div><div class="rescal__col">Min<b>25</b></div>
-              <div class="rescal__row"><b>Villa Anggrek</b><span>4 kamar · 20 org</span></div>
-              <div></div><div></div><div></div><div></div><div><div class="evt evt--warn" style="--span:2"><b>RK-2310-118</b>Siti R. · 18 org · DP</div></div><div></div><div></div>
-              <div class="rescal__row"><b>Villa Sakura</b><span>2 kamar · 15 org</span></div>
-              <div><div class="evt evt--ok" style="--span:2"><b>RK-1910-102</b>Keluarga Hadi</div></div><div></div><div></div><div></div><div><div class="evt evt--ok" style="--span:2"><b>RK-2310-097</b>Arisan RT 05</div></div><div></div><div></div>
-              <div class="rescal__row"><b>Villa Teras Putih</b><span>6 kamar · 30 org</span></div>
-              <div></div><div><div class="evt evt--idle" style="--span:2"><b>Pemilik</b>Perawatan kolam</div></div><div></div><div></div><div><div class="evt evt--ok" style="--span:2"><b>RK-2310-090</b>PT Sinar Abadi · 28 org</div></div><div></div><div></div>
-              <div class="rescal__row"><b>Villa Cemara</b><span>3 kamar · 12 org</span></div>
-              <div></div><div></div><div><div class="evt evt--ok"><b>RK-2110-111</b>Dina P.</div></div><div></div><div><div class="evt evt--warn" style="--span:2"><b>RK-2310-120</b>Reuni SMA 3</div></div><div></div><div></div>
-              <div class="rescal__row"><b>Villa Kenanga</b><span>9 kamar · 45 org</span></div>
-              <div></div><div></div><div></div><div></div><div><div class="evt evt--ok" style="--span:2"><b>RK-2310-085</b>Gathering Bank Daerah</div></div><div></div><div></div>
-            </div>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel__head"><div><p class="panel__title">Menunggu DP</p><p class="panel__sub">Dilepas otomatis setelah 2 jam</p></div></div>
-          <ul class="list">
-            <li><div class="list__main"><p class="list__title">RK-2310-118 · Villa Anggrek</p><p class="list__sub">Siti R. · Rp3.060.000 · sisa 1j 42m</p></div><span class="pill pill--warn pill--plain">Menunggu</span></li>
-            <li><div class="list__main"><p class="list__title">RK-2310-120 · Villa Cemara</p><p class="list__sub">Reuni SMA 3 · Rp1.620.000 · sisa 38m</p></div><span class="pill pill--warn pill--plain">Menunggu</span></li>
-            <li><div class="list__main"><p class="list__title">RK-2410-074 · Villa Melati</p><p class="list__sub">Andi S. · lewat batas</p></div><span class="pill pill--bad pill--plain">Dilepas</span></li>
-          </ul>
-          <div class="panel__head" style="border-top:1px solid var(--line-soft)"><p class="panel__title">Survey dijadwalkan</p></div>
-          <ul class="list">
-            <li><span class="avatar">YP</span><div class="list__main"><p class="list__title">Yuni P. · Senin 10.00</p><p class="list__sub">3 villa Puncak Resort · Rp100.000 lunas</p></div></li>
-            <li><span class="avatar">BK</span><div class="list__main"><p class="list__title">Budi K. · Selasa 13.00</p><p class="list__sub">Villa Teras Putih · untuk gathering 40 org</p></div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 <script src="_ds/lapak.js"></script>
 <script>
 (function () {
-  // Kalender Oktober 2026 (1 Okt = Kamis). Terisi: 27, 30–31. Dipilih: 23–25.
-  var booked = [27, 30, 31], today = 18, html = "";
-  for (var i = 0; i < 3; i++) html += '<span class="cal__day is-out">' + (28 + i) + "</span>";
-  for (var d = 1; d <= 31; d++) {
-    var dow = (d + 2) % 7; // 0 = Senin
-    var cls = "cal__day";
-    if (d < today) cls += " is-out";
-    else if (booked.indexOf(d) >= 0) cls += " is-booked";
-    if (d === 23 || d === 25) cls += " is-selected";
-    if (d === 24) cls += " is-range";
-    if (d === today) cls += " is-today";
-    var price = d >= today && booked.indexOf(d) < 0 ? "<small>" + (dow === 4 || dow === 5 ? "5,5" : "4,7") + "</small>" : "";
-    html += '<span class="' + cls + '">' + d + price + "</span>";
+  // Kalender 2 bulan di halaman villa (Senin di kiri). 1 Okt 2026 = Kamis, 1 Nov 2026 = Minggu.
+  function month(name, offset, days, opt) {
+    var h = '<div><p class="month__title">' + name + '</p><div class="mgrid">' + ["Sn", "Sl", "Rb", "Km", "Jm", "Sb", "Mg"].map(function (d) { return '<span class="dow">' + d + "</span>"; }).join("");
+    for (var i = 0; i < offset; i++) h += "<span></span>";
+    for (var d = 1; d <= days; d++) {
+      var c = "mday";
+      if (opt.past && d < opt.past) c += " is-past";
+      else if (opt.booked.indexOf(d) >= 0) c += " is-booked";
+      if (opt.start === d) c += " is-start"; if (opt.end === d) c += " is-end"; if (opt.range && opt.range.indexOf(d) >= 0) c += " is-range";
+      h += '<div class="' + c + '"><span>' + d + "</span></div>";
+    }
+    return h + "</div></div>";
   }
-  document.getElementById("vCal").insertAdjacentHTML("beforeend", html);
+  document.getElementById("months").innerHTML =
+    month("Oktober 2026", 3, 31, { past: 18, booked: [27, 30, 31], start: 23, end: 25, range: [24] }) +
+    month("November 2026", 6, 30, { booked: [6, 7, 13, 14], range: [] });
 
+  // Kalender bulanan properti
+  var weeks = [[28, 29, 30, 1, 2, 3, 4], [5, 6, 7, 8, 9, 10, 11], [12, 13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24, 25], [26, 27, 28, 29, 30, 31, 1]];
+  var bars = {
+    1: '<div class="bar bar--ok" style="grid-column:5/8"><b>Keluarga Hadi</b>Rp15,7 jt · lunas</div>',
+    2: '<div class="bar bar--own" style="grid-column:2/4"><b>Perawatan kolam</b>pemilik</div><div class="bar bar--direct" style="grid-column:7/8"><b>Survey</b>Budi K.</div>',
+    3: '<div class="bar bar--wait" style="grid-column:5/7"><b>Siti R. · 18 org</b>DP Rp3,06 jt · 1j 42m</div>',
+    4: '<div class="bar bar--ok" style="grid-column:2/3"><b>Arisan RT 05</b></div><div class="bar bar--ok" style="grid-column:5/7"><b>PT Sinar Abadi</b>Rp11 jt · DP masuk</div>'
+  };
+  document.getElementById("mcal").innerHTML = weeks.map(function (w, wi) {
+    return '<div class="mcal__week">' + w.map(function (d, di) {
+      var out = (wi === 0 && d > 7) || (wi === 4 && d < 7);
+      var weekend = di === 4 || di === 5;
+      return '<div class="mcal__cell' + (out ? " is-out" : "") + (d === 18 && !out ? " is-today" : "") + '" style="grid-column:' + (di + 1) + '">' + d + (out ? "" : "<small>" + (weekend ? "5,5 jt" : "4,7 jt") + "</small>") + "</div>";
+    }).join("") + (bars[wi] || "") + "</div>";
+  }).join("");
+
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) { var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img"); });
+
+  // Ringkasan harga
   var BASE = 10200000, CAP = 20;
+  function rp(n) { return "Rp" + Math.round(n).toLocaleString("id-ID"); }
   function recalc() {
-    var g = Number(document.querySelector("#guests output").textContent);
-    var xb = Math.max(0, g - CAP), cat = document.getElementById("catering").checked;
-    var total = BASE + xb * 45000 * 2 + (cat ? g * 100000 * 2 : 0);
-    document.getElementById("xbLine").hidden = !xb;
-    document.getElementById("xbVal").textContent = xb + " bed × 2 malam · " + rupiah(xb * 90000);
-    document.getElementById("ctLine").hidden = !cat;
-    document.querySelector("#ctLine span:last-child").textContent = rupiah(g * 200000);
-    document.getElementById("vTotal").textContent = rupiah(total);
-    document.getElementById("vDp").textContent = rupiah(total * 0.3);
-    document.getElementById("doneDp").textContent = rupiah(total * 0.3);
-    document.getElementById("vRest").textContent = rupiah(total * 0.7);
+    var g = Number(document.querySelector("#guests output").textContent), xb = Math.max(0, g - CAP), cat = document.getElementById("catering").checked;
+    var total = BASE + xb * 90000 + (cat ? g * 200000 : 0);
+    document.getElementById("gLabel").textContent = g + " tamu";
+    document.getElementById("xbLine").hidden = !xb; document.getElementById("xbLab").textContent = xb + " extra bed × 2 malam"; document.getElementById("xbVal").textContent = rp(xb * 90000);
+    document.getElementById("ctLine").hidden = !cat; document.getElementById("ctVal").textContent = rp(g * 200000);
+    document.getElementById("vTotal").textContent = rp(total); document.getElementById("vDp").textContent = rp(total * .3); document.getElementById("doneDp").textContent = rp(total * .3);
   }
   document.getElementById("guests").addEventListener("lapak:change", recalc);
   document.getElementById("catering").addEventListener("change", recalc);
-  // Setelah submit, sembunyikan konten detail juga
-  document.getElementById("bookBox").addEventListener("submit", function () { document.getElementById("villaMain").hidden = true; });
+  document.getElementById("bookBox").addEventListener("submit", function () { document.getElementById("villaMain").hidden = true; document.getElementById("villaDone").hidden = false; });
   recalc();
 })();
 </script>

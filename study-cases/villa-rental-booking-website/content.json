@@ -3,17 +3,50 @@
   "kind": "Website",
   "industry": "Hospitality",
   "client": "Confidential",
-  "tags": ["Next.js", "Supabase", "Availability Calendar", "Payment Gateway"],
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Availability Calendar",
+    "Payment Gateway"
+  ],
   "metrics": [
-    { "value": "143", "label": "VILLAS LISTED", "labelId": "VILLA TERDAFTAR" },
-    { "value": "30%", "label": "ONLINE DOWN PAYMENT", "labelId": "DP ONLINE" },
-    { "value": "7", "label": "LOCATIONS", "labelId": "LOKASI" }
+    {
+      "value": "143",
+      "label": "VILLAS LISTED",
+      "labelId": "VILLA TERDAFTAR"
+    },
+    {
+      "value": "30%",
+      "label": "ONLINE DOWN PAYMENT",
+      "labelId": "DP ONLINE"
+    },
+    {
+      "value": "7",
+      "label": "LOCATIONS",
+      "labelId": "LOKASI"
+    }
   ],
   "shots": [
-    { "hash": "home", "caption": "Homepage with location, date and guest search", "captionId": "Beranda dengan pencarian lokasi, tanggal, dan tamu" },
-    { "hash": "cari", "caption": "Search results filtered by availability and group size", "captionId": "Hasil pencarian berdasarkan ketersediaan dan jumlah tamu" },
-    { "hash": "villa", "caption": "Villa page with availability calendar and down-payment breakdown", "captionId": "Halaman villa dengan kalender ketersediaan dan rincian DP" },
-    { "hash": "admin", "caption": "Agent dashboard: occupancy calendar and pending down payments", "captionId": "Dashboard agen: kalender okupansi dan DP yang menunggu" }
+    {
+      "hash": "home",
+      "caption": "Homepage with location, date and guest search",
+      "captionId": "Beranda dengan pencarian lokasi, tanggal, dan tamu"
+    },
+    {
+      "hash": "villa",
+      "caption": "Villa page with gallery, two-month calendar and booking card",
+      "captionId": "Halaman villa dengan galeri, kalender dua bulan, dan kartu pesan"
+    },
+    {
+      "hash": "cari",
+      "caption": "Search results filtered by facilities and bedrooms",
+      "captionId": "Hasil pencarian dengan filter fasilitas dan kamar"
+    },
+    {
+      "hash": "admin",
+      "caption": "Property calendar with booking status per villa",
+      "captionId": "Kalender properti dengan status booking per villa"
+    }
   ],
   "content_en": {
     "title": "Villa Rental Booking Website",
@@ -21,15 +54,15 @@
     "category": "Booking System",
     "summary": "A redesign for a villa rental agency with 143 villas around Puncak and Cipanas. Guests search by location, dates and group size, see which villas are still free, and pay the down payment from the villa page instead of checking availability over WhatsApp.",
     "challenge": "The agency manages villas from two to forty-two bedrooms, but the old site opened with a default store list sorted by popularity, with no date or guest search. Listing cards did not show bedrooms or capacity, and every villa page ended in a single WhatsApp button, so guests had to ask about each villa's availability one chat at a time.\n\nImportant terms were spread across separate pages: down payments of 30 or 50 percent depending on the season, extra-bed and catering prices, survey fees, and a list of six bank accounts to transfer to, which made it harder for guests to trust where to pay.",
-    "solution": "The homepage leads with a search for location, dates and guests, location chips with villa counts, villas still free for the coming weekend, and shortcuts by group size for families, reunions and company gatherings. Search results filter by bedrooms, price and facilities, show availability for the chosen dates, and flag villas that need extra beds.\n\nEach villa page combines the gallery, facilities, add-ons and payment rules with an availability calendar that shows weekday and weekend prices. Changing the guest count or adding catering updates the total and the 30 percent down payment, which is paid to a virtual account on the invoice. An agent dashboard shows occupancy per villa by day, pending down payments that are released automatically, and scheduled villa surveys. The planned production stack is Next.js with Supabase and a payment gateway.",
+    "solution": "The homepage leads with a search for location, check-in, check-out and guests, facility filters such as private pool or bus access, villas still free for the coming weekend, and shortcuts by group size and add-ons. Search results show bedrooms, capacity, highlights and the total for the chosen dates, and flag villas that need extra beds.\n\nEach villa page follows a familiar listing layout: a photo gallery, highlights, facilities, a two-month availability calendar and payment terms, with a booking card that stays in view. Changing the guest count or adding catering updates the total and the 30 percent down payment, which is paid to a virtual account on the invoice. The agent works from a monthly calendar per villa with nightly prices and colour-coded bookings for paid stays, pending down payments, surveys and owner maintenance. The planned production stack is Next.js with Supabase and a payment gateway.",
     "features": [
-      "Location, date and guest search with villa counts per area",
-      "Shortcuts by group size for families, reunions and company gatherings",
-      "Search results filtered by availability, bedrooms, price and facilities",
-      "Availability calendar with weekday and weekend prices",
-      "Live total with extra beds, catering and the down payment",
-      "Down payment by virtual account with automatic release on expiry",
-      "Agent dashboard for occupancy, pending payments and survey schedules"
+      "Location, date and guest search with facility filters",
+      "Villas still free for the coming weekend",
+      "Shortcuts by group size, catering, extra beds and surveys",
+      "Villa page with gallery, highlights and two-month availability calendar",
+      "Booking card with live total, extra beds, catering and 30% down payment",
+      "Down payment by virtual account on the invoice",
+      "Monthly property calendar with nightly prices and booking status"
     ],
     "role": "",
     "impact": "",
@@ -41,15 +74,15 @@
     "category": "Booking System",
     "summary": "Redesign untuk agen sewa villa dengan 143 villa di Puncak dan Cipanas. Tamu mencari berdasarkan lokasi, tanggal, dan jumlah orang, melihat villa yang masih kosong, lalu membayar DP dari halaman villa tanpa menanyakan ketersediaan lewat WhatsApp.",
     "challenge": "Agen ini mengelola villa dari dua sampai empat puluh dua kamar, tetapi situs lama dibuka dengan daftar toko standar yang diurutkan berdasarkan popularitas, tanpa pencarian tanggal maupun jumlah tamu. Kartu villa tidak menampilkan jumlah kamar atau kapasitas, dan setiap halaman villa berakhir di satu tombol WhatsApp, sehingga tamu harus menanyakan ketersediaan villa satu per satu lewat chat.\n\nKetentuan penting tersebar di halaman terpisah: DP 30 atau 50 persen tergantung musim, harga extra bed dan catering, biaya survey, serta daftar enam rekening bank tujuan transfer, yang membuat tamu ragu ke mana harus membayar.",
-    "solution": "Beranda dibuka dengan pencarian lokasi, tanggal, dan tamu, chip lokasi beserta jumlah villa, villa yang masih kosong untuk akhir pekan terdekat, serta pintasan berdasarkan ukuran rombongan untuk keluarga, reuni, dan gathering kantor. Hasil pencarian bisa difilter berdasarkan kamar, harga, dan fasilitas, menampilkan ketersediaan untuk tanggal yang dipilih, dan menandai villa yang membutuhkan extra bed.\n\nSetiap halaman villa menggabungkan galeri, fasilitas, tambahan, dan aturan pembayaran dengan kalender ketersediaan yang menunjukkan harga weekday dan weekend. Mengubah jumlah tamu atau menambah catering langsung memperbarui total dan DP 30 persen, yang dibayar ke virtual account di invoice. Dashboard agen menampilkan okupansi tiap villa per hari, DP yang menunggu dan dilepas otomatis, serta jadwal survey villa. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan payment gateway.",
+    "solution": "Beranda dibuka dengan pencarian lokasi, check-in, check-out, dan jumlah tamu, filter fasilitas seperti kolam renang pribadi atau akses bus, villa yang masih kosong untuk akhir pekan terdekat, serta pintasan berdasarkan ukuran rombongan dan layanan tambahan. Hasil pencarian menampilkan jumlah kamar, kapasitas, keunggulan, dan total untuk tanggal yang dipilih, serta menandai villa yang membutuhkan extra bed.\n\nSetiap halaman villa memakai tata letak listing yang familiar: galeri foto, sorotan, fasilitas, kalender ketersediaan dua bulan, dan ketentuan pembayaran, dengan kartu pesan yang selalu terlihat. Mengubah jumlah tamu atau menambah catering langsung memperbarui total dan DP 30 persen, yang dibayar ke virtual account di invoice. Agen bekerja dari kalender bulanan per villa dengan harga per malam dan booking berwarna untuk yang lunas, menunggu DP, survey, dan perawatan pemilik. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan payment gateway.",
     "features": [
-      "Pencarian lokasi, tanggal, dan tamu dengan jumlah villa per area",
-      "Pintasan berdasarkan ukuran rombongan: keluarga, reuni, gathering kantor",
-      "Hasil pencarian dengan filter ketersediaan, kamar, harga, dan fasilitas",
-      "Kalender ketersediaan dengan harga weekday dan weekend",
-      "Total langsung dengan extra bed, catering, dan DP",
-      "DP lewat virtual account dengan pelepasan otomatis saat kedaluwarsa",
-      "Dashboard agen untuk okupansi, DP tertunda, dan jadwal survey"
+      "Pencarian lokasi, tanggal, dan tamu dengan filter fasilitas",
+      "Villa yang masih kosong untuk akhir pekan terdekat",
+      "Pintasan ukuran rombongan, catering, extra bed, dan survey",
+      "Halaman villa dengan galeri, sorotan, dan kalender dua bulan",
+      "Kartu pesan dengan total langsung, extra bed, catering, dan DP 30%",
+      "DP lewat virtual account di invoice",
+      "Kalender properti bulanan dengan harga per malam dan status booking"
     ],
     "role": "",
     "impact": "",

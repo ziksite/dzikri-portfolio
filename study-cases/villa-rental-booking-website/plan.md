@@ -13,19 +13,17 @@ Sumber: website agen sewa villa Puncak & Cipanas (WordPress + WooCommerce, diamb
 | DP 30/50%, extra bed, catering, survey tersebar di halaman berbeda | Total biaya tidak jelas sebelum chat |
 | Enam rekening bank dicantumkan untuk transfer | Rawan penipuan atas nama agen, tamu ragu membayar |
 
-## Arah redesign
-- Lapak mode **solid**, biru brand asli dijenuhkan (#0A62C2), display Fraunces, wordmark tanpa ikon.
-- Hero task-first: lokasi, tanggal, tamu.
-- Kalender ketersediaan + rincian DP di halaman villa; pembayaran lewat virtual account di invoice.
-- Dashboard agen untuk okupansi dan DP yang kedaluwarsa otomatis.
+## Arah redesign (v2, 18 Okt 2026)
+- v1 memakai kerangka yang sama dengan klinik & barbershop.
+- v2: **design system sendiri** dari referensi Airbnb + Pushost (lihat `design-system.md`). Biru brand asli menggantikan aksen Airbnb.
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Pencarian, chip lokasi + jumlah villa, villa kosong akhir pekan, pintasan rombongan, cara booking, peringatan rekening resmi, FAQ |
-| `#cari` | Filter kamar/harga/fasilitas/lokasi, hasil dengan status ketersediaan dan DP |
-| `#villa` | Galeri, spesifikasi, fasilitas, tambahan, aturan, kalender harga, tamu + catering → total & DP → sukses + timeline check-in |
-| `#admin` | KPI, kalender okupansi per villa, DP menunggu, jadwal survey |
+| `#home` | Header tab kategori, search pill, filter fasilitas, villa kosong akhir pekan, ubin rombongan & tambahan, chip lokasi + jumlah villa |
+| `#cari` | Search kecil, chip filter aktif, hasil 3 villa + 1 villa kurang kapasitas |
+| `#villa` | Galeri 1+4, sorotan, fasilitas, kalender 2 bulan, ketentuan, kartu pesan (tamu, catering, total, DP) → sukses + VA |
+| `#admin` | Kalender properti: daftar villa, kalender Oktober dengan harga per malam dan bar status |
 
 ## Tech stack produksi (rencana)
 Next.js + Supabase (villa, kalender, booking), payment gateway virtual account, WhatsApp API untuk invoice dan pengingat.

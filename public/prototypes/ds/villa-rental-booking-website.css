@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Rumah Kabut — design system
+   Referensi: Airbnb (beranda, kartu listing, halaman listing), Pushost (kalender properti).
+   Lihat study-cases/villa-rental-booking-website/design-system.md
+   ========================================================================== */
+
+:root {
+  --font: "Nunito Sans", system-ui, sans-serif;
+  --ink: #222222;
+  --ink-2: #6a6a6a;
+  --ink-3: #b0b0b0;
+  --line: #dddddd;
+  --line-2: #ebebeb;
+  --soft: #f7f7f7;
+  --brand: #0170b9;       /* biru brand asli agen, menggantikan aksen merah muda Airbnb */
+  --brand-dark: #005a95;
+  --r-sm: 8px;
+  --r: 12px;
+  --r-lg: 16px;
+  --sh-card: 0 6px 16px rgba(0,0,0,.12);
+  --sh-pill: 0 3px 12px rgba(0,0,0,.10);
+  --w: 1280px;
+  --gutter: 40px;
+
+  /* status kalender */
+  --c-ok: #d7f5ea;   --c-ok-b: #33b28a;
+  --c-wait: #fde7f3; --c-wait-b: #d16aa6;
+  --c-own: #ecebfd;  --c-own-b: #7b74e0;
+  --c-direct: #fdf0d9; --c-direct-b: #d9a13b;
+}
+@media (max-width: 720px) { :root { --gutter: 16px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 400 15px/1.45 var(--font); color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+[data-lucide] { width: 18px; height: 18px; stroke-width: 1.75; flex: none; }
+.i-sm { width: 16px; height: 16px; }
+[data-screen] { display: none; }
+[data-screen].is-active { display: block; }
+
+.wrap { max-width: calc(var(--w) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.muted { color: var(--ink-2); }
+.u { text-decoration: underline; font-weight: 600; }
+
+/* Tipografi */
+.t-h1 { font-size: 26px; line-height: 1.25; font-weight: 600; }
+.t-h2 { font-size: 22px; line-height: 1.3; font-weight: 600; }
+.t-h3 { font-size: 18px; line-height: 1.35; font-weight: 600; }
+.t-meta { font-size: 15px; color: var(--ink-2); }
+.t-small { font-size: 13px; color: var(--ink-2); }
+
+/* Tombol */
+.btn { height: 48px; padding: 0 24px; border-radius: var(--r-sm); display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 16px; white-space: nowrap; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-dark); }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-outline { border: 1px solid var(--ink); background: #fff; }
+.btn-sm { height: 36px; padding: 0 14px; font-size: 14px; }
+.btn-block { width: 100%; }
+.round { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; }
+.round:hover { background: var(--soft); }
+
+/* Header */
+.header { border-bottom: 1px solid var(--line-2); }
+.header__row { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.wordmark { font-weight: 800; font-size: 22px; color: var(--brand); letter-spacing: -0.02em; }
+.cats { display: flex; gap: 28px; }
+.cat { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 0; font-size: 13px; font-weight: 600; color: var(--ink-2); border-bottom: 2px solid transparent; }
+.cat svg { width: 24px; height: 24px; }
+.cat.is-active { color: var(--ink); border-color: var(--ink); }
+.header__right { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+.menu-pill { height: 42px; padding: 0 6px 0 12px; border: 1px solid var(--line); border-radius: 999px; display: flex; align-items: center; gap: 10px; }
+.menu-pill .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--ink-2); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+@media (max-width: 1024px) { .cats { display: none; } }
+
+/* Search pill (pola Airbnb) */
+.search { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--sh-pill); background: #fff; max-width: 860px; margin: 0 auto; }
+.search__seg { flex: 1; min-width: 0; padding: 14px 24px; border-radius: 999px; display: flex; flex-direction: column; gap: 2px; }
+.search__seg:hover { background: var(--soft); }
+.search__seg + .search__seg { border-left: 1px solid var(--line-2); }
+.search__seg b { font-size: 12px; font-weight: 800; }
+.search__seg input { border: 0; outline: 0; background: transparent; font-size: 14px; color: var(--ink-2); width: 100%; padding: 0; }
+.search__go { width: 48px; height: 48px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; margin: 8px; flex: none; }
+.search--sm { max-width: 520px; box-shadow: var(--sh-pill); }
+.search--sm .search__seg { padding: 8px 18px; }
+.search--sm .search__seg input { font-size: 14px; color: var(--ink); font-weight: 600; }
+.search--sm .search__go { width: 34px; height: 34px; margin: 6px; }
+@media (max-width: 720px) { .search { flex-direction: column; align-items: stretch; border-radius: var(--r); } .search__seg + .search__seg { border-left: 0; border-top: 1px solid var(--line-2); } .search__go { width: auto; border-radius: var(--r-sm); height: 44px; } }
+
+/* Baris & kartu listing */
+.row-head { display: flex; align-items: center; justify-content: space-between; margin: 40px 0 16px; }
+.row-head h2 { font-size: 22px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.arrows { display: flex; gap: 8px; }
+.arrows span { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; }
+.grid-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+@media (max-width: 1024px) { .grid-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .grid-cards { grid-template-columns: 1fr; } }
+.card { display: flex; flex-direction: column; gap: 8px; }
+.photo { position: relative; aspect-ratio: var(--ar, 1 / 1); border-radius: var(--r); overflow: hidden; background: var(--soft); }
+.photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.badge { position: absolute; top: 12px; left: 12px; background: #fff; border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,.1); }
+.heart { position: absolute; top: 12px; right: 12px; color: #fff; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+.heart svg { width: 24px; height: 24px; fill: rgba(0,0,0,.35); }
+.card__title { font-weight: 700; font-size: 15px; display: flex; justify-content: space-between; gap: 8px; }
+.card__line { font-size: 15px; color: var(--ink-2); }
+.card__price b { font-weight: 700; }
+.card__price s { color: var(--ink-2); }
+.star { display: inline-flex; align-items: center; gap: 4px; font-weight: 400; }
+.star svg { width: 12px; height: 12px; fill: var(--ink); stroke: none; }
+
+/* Ubin layanan (pola "Temukan layanan") */
+.tiles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.tile { display: flex; flex-direction: column; gap: 10px; }
+.tile__box { aspect-ratio: 1 / 1; border-radius: var(--r); background: var(--soft); display: grid; place-items: center; color: var(--ink); }
+.tile__box svg { width: 40px; height: 40px; stroke-width: 1.4; }
+.tile b { font-size: 15px; font-weight: 600; }
+.tile span { font-size: 13px; color: var(--ink-2); }
+@media (max-width: 1024px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Halaman listing */
+.listing-gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 200px 200px; gap: 8px; border-radius: var(--r); overflow: hidden; position: relative; }
+.listing-gallery .photo { aspect-ratio: auto; border-radius: 0; height: 100%; }
+.listing-gallery .photo:first-child { grid-row: span 2; }
+.show-all { position: absolute; right: 20px; bottom: 20px; background: #fff; border: 1px solid var(--ink); border-radius: var(--r-sm); height: 34px; padding: 0 14px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 720px) { .listing-gallery { grid-template-columns: 1fr; grid-template-rows: 260px; } .listing-gallery .photo:not(:first-child) { display: none; } .listing-gallery .photo:first-child { grid-row: auto; } }
+.listing { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 80px; padding: 32px 0 64px; align-items: start; }
+@media (max-width: 1024px) { .listing { grid-template-columns: 1fr; gap: 32px; } }
+.block { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.block:first-child { padding-top: 0; }
+.hl { display: grid; grid-template-columns: 28px 1fr; gap: 16px; align-items: start; }
+.hl + .hl { margin-top: 20px; }
+.hl svg { width: 24px; height: 24px; }
+.hl b { display: block; font-size: 16px; font-weight: 600; }
+.amen { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; font-size: 16px; }
+.amen span { display: flex; align-items: center; gap: 14px; }
+.amen svg { width: 22px; height: 22px; }
+@media (max-width: 720px) { .amen { grid-template-columns: 1fr; } }
+
+/* Kalender 2 bulan */
+.months { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px) { .months { grid-template-columns: 1fr; } }
+.month__title { text-align: center; font-weight: 700; margin-bottom: 12px; }
+.mgrid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; text-align: center; font-size: 14px; }
+.mgrid .dow { font-size: 12px; color: var(--ink-2); font-weight: 600; padding: 6px 0; }
+.mday { height: 44px; display: flex; align-items: center; justify-content: center; font-weight: 600; position: relative; }
+.mday span { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; }
+.mday:hover span { box-shadow: inset 0 0 0 1px var(--ink); }
+.mday.is-past, .mday.is-out { color: var(--ink-3); pointer-events: none; }
+.mday.is-booked { color: var(--ink-3); text-decoration: line-through; pointer-events: none; }
+.mday.is-range { background: var(--soft); }
+.mday.is-start, .mday.is-end { background: linear-gradient(90deg, transparent 50%, var(--soft) 50%); }
+.mday.is-end { background: linear-gradient(90deg, var(--soft) 50%, transparent 50%); }
+.mday.is-start span, .mday.is-end span { background: var(--ink); color: #fff; }
+
+/* Kartu pesan sticky (pola Airbnb) */
+.book { border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--sh-card); padding: 24px; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 24px; background: #fff; }
+.book__price { font-size: 22px; font-weight: 700; }
+.book__price span { font-size: 16px; font-weight: 400; }
+.book__price s { font-size: 16px; font-weight: 400; color: var(--ink-2); margin-right: 6px; }
+.book__box { border: 1px solid #b0b0b0; border-radius: var(--r-sm); display: grid; grid-template-columns: 1fr 1fr; }
+.book__box > div { padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.book__box > div:nth-child(2) { border-left: 1px solid #b0b0b0; }
+.book__box > div:nth-child(3) { grid-column: 1 / -1; border-top: 1px solid #b0b0b0; flex-direction: row; justify-content: space-between; align-items: center; }
+.book__box b { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
+.book__box span { font-size: 14px; }
+.stepper { display: inline-flex; align-items: center; gap: 12px; }
+.stepper button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid #b0b0b0; display: grid; place-items: center; color: var(--ink-2); }
+.stepper output { min-width: 22px; text-align: center; font-weight: 600; }
+.line { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; }
+.line span:first-child { text-decoration: underline; }
+.divider { height: 1px; background: var(--line); border: 0; margin: 0; }
+.check { display: flex; gap: 10px; align-items: center; font-size: 15px; }
+.check input { width: 18px; height: 18px; accent-color: var(--ink); margin: 0; }
+
+/* Hasil pencarian */
+.filters-row { display: flex; gap: 10px; flex-wrap: wrap; padding: 20px 0; }
+.fchip { height: 40px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; background: #fff; }
+.fchip.is-active { border: 2px solid var(--ink); padding: 0 15px; background: var(--soft); }
+
+/* Kalender properti (pola Pushost) */
+.pm { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: 100vh; background: var(--soft); }
+.pm__nav { background: #fff; border-right: 1px solid var(--line-2); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; }
+.pm__nav a { height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px; border-radius: var(--r-sm); font-size: 14px; color: var(--ink-2); }
+.pm__nav a.is-active { background: var(--soft); color: var(--ink); font-weight: 700; }
+.pm__label { font-size: 12px; color: var(--ink-3); padding: 14px 10px 6px; }
+.pm__main { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.pm__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.pm__body { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+.panel { background: #fff; border: 1px solid var(--line-2); border-radius: var(--r); }
+.plist { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.prop { display: grid; grid-template-columns: 52px 1fr; gap: 10px; padding: 8px; border-radius: var(--r-sm); border: 1px solid var(--line-2); }
+.prop.is-active { border-color: var(--c-ok-b); background: #f3fbf8; }
+.prop .photo { border-radius: 6px; }
+.prop b { font-size: 14px; display: block; }
+.prop small { font-size: 12px; color: var(--ink-2); display: flex; gap: 10px; margin-top: 4px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); padding: 0 16px 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+.mcal__head, .mcal__week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.mcal__head span { padding: 10px; font-size: 13px; color: var(--ink-2); text-align: center; border-top: 1px solid var(--line-2); }
+.mcal__week { grid-template-rows: 88px; border-top: 1px solid var(--line-2); }
+.mcal__cell { grid-row: 1; padding: 8px 10px; border-left: 1px solid var(--line-2); display: flex; flex-direction: column; align-items: flex-end; font-size: 13px; font-weight: 700; }
+.mcal__cell:first-child { border-left: 0; }
+.mcal__cell small { font-weight: 400; color: var(--ink-3); font-size: 11px; margin-top: 2px; }
+.mcal__cell.is-out { color: var(--ink-3); background: repeating-linear-gradient(135deg, transparent 0 6px, #f3f3f3 6px 12px); }
+.mcal__cell.is-today { color: var(--brand); }
+.bar { grid-row: 1; align-self: end; margin: 0 4px 10px; height: 36px; border-radius: 8px; border: 1px solid; display: flex; align-items: center; gap: 8px; padding: 0 10px; font-size: 12.5px; z-index: 1; overflow: hidden; white-space: nowrap; }
+.bar b { font-size: 13px; }
+.bar--ok { background: var(--c-ok); border-color: var(--c-ok-b); }
+.bar--wait { background: var(--c-wait); border-color: var(--c-wait-b); }
+.bar--own { background: var(--c-own); border-color: var(--c-own-b); }
+.bar--direct { background: var(--c-direct); border-color: var(--c-direct-b); }
+@media (max-width: 1100px) { .pm { grid-template-columns: 1fr; } .pm__nav { display: none; } .pm__body { grid-template-columns: 1fr; } .mcal { overflow-x: auto; } .mcal__head, .mcal__week { min-width: 720px; } }
+
+/* Footer */
+.footer { background: var(--soft); border-top: 1px solid var(--line-2); padding: 48px 0 28px; font-size: 14px; }
+.footer__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.footer h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.footer li + li { margin-top: 10px; }
+.footer a { color: var(--ink); }
+@media (max-width: 720px) { .footer__grid { grid-template-columns: 1fr; } }
