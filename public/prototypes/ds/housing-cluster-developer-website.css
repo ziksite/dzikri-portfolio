@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Arunika Residence — design system
+   Referensi: Toast (landing: hero foto gelap bersudut bawah membulat, input
+   pill + tombol oranye di dalamnya, tombol pill bergaris, pita oranye berisi
+   kartu putih besar), Lend Cash loan dashboard (Dribbble 24595979: kanvas abu
+   terang, kartu putih bergaris, tile angka dengan delta, tile sorotan bergaris
+   hijau, grafik batang bertumpuk abu dengan satu batang hijau, kartu proses
+   dengan garis warna kecil + pill status, grid kotak "Daily Activity", daftar
+   catatan berikon bulat warna lembut, pill nama berwarna peach).
+   Lihat study-cases/housing-cluster-developer-website/design-system.md
+   ========================================================================== */
+
+/* ---------- Token ---------- */
+:root {
+  --font: "Figtree", system-ui, sans-serif;
+
+  --ink: #1d1d1f;          /* teks utama, tombol gelap */
+  --ink-2: #6b7280;        /* meta */
+  --ink-3: #a1a6b0;        /* label sumbu, nonaktif */
+  --line: #e6e8ec;         /* garis kartu */
+  --line-2: #d3d7de;
+  --bg: #ffffff;
+  --canvas: #f6f7f9;       /* kanvas abu Lend Cash */
+  --tile: #e3e6eb;         /* kotak abu (grid aktivitas / kavling terjual) */
+  --tile-2: #c9ced7;
+
+  --brand: #e2701b;        /* oranye brand asli (#E09B5A) dijenuhkan, untuk aksi */
+  --brand-ink: #b9560e;
+  --brand-tint: #fde8d5;   /* pill peach */
+  --ok: #2f9a4b;           /* hijau Lend Cash: tersedia, naik, selesai */
+  --ok-tint: #e3f3e6;
+  --ok-2: #9fd3aa;
+  --bad: #d64545;
+  --bad-tint: #fde6e6;
+  --info: #3b82c4;
+  --info-tint: #dceaf7;
+  --warn-tint: #fbf1b8;
+
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+  --sh-card: 0 1px 2px rgba(16, 24, 40, .04);
+  --sh-pop: 0 8px 28px rgba(16, 24, 40, .10);
+
+  --w: 1240px;
+  --gutter: 32px;
+}
+@media (max-width: 720px) { :root { --gutter: 16px; } }
+
+/* ---------- Dasar ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--font); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+[data-lucide] { width: 18px; height: 18px; stroke-width: 1.75; flex: none; }
+.i-sm { width: 16px; height: 16px; }
+
+/* Router layar (lapak.js) */
+[data-screen] { display: none; }
+[data-screen].is-active { display: block; }
+
+.wrap { max-width: calc(var(--w) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.muted { color: var(--ink-2); }
+.num { font-variant-numeric: tabular-nums; }
+.up { color: var(--ok); }
+.down { color: var(--bad); }
+
+/* ---------- Tipografi ---------- */
+.t-hero { font: 600 60px/1.05 var(--font); letter-spacing: -0.03em; }
+.t-h1 { font: 700 34px/1.15 var(--font); letter-spacing: -0.02em; }
+.t-h2 { font: 700 26px/1.2 var(--font); letter-spacing: -0.015em; }
+.t-h3 { font: 600 19px/1.3 var(--font); letter-spacing: -0.01em; }
+.t-lead { font-size: 19px; line-height: 1.5; }
+.t-meta { font-size: 14.5px; color: var(--ink-2); }
+.t-small { font-size: 13px; color: var(--ink-2); }
+.t-big { font: 700 30px/1.1 var(--font); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+@media (max-width: 720px) { .t-hero { font-size: 38px; } .t-h1 { font-size: 26px; } .t-h2 { font-size: 22px; } .t-big { font-size: 24px; } .t-lead { font-size: 17px; } }
+
+/* ---------- Tombol (Toast: pill, isi oranye / garis oranye) ---------- */
+.btn { height: 46px; padding: 0 22px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: 15.5px; white-space: nowrap; border: 1.5px solid transparent; transition: background .15s, border-color .15s; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-ink); }
+.btn-outline { border-color: var(--brand); color: var(--brand-ink); background: #fff; }
+.btn-outline:hover { background: var(--brand-tint); }
+.btn-ghost { border-color: var(--line-2); background: #fff; color: var(--ink); }
+.btn-ghost:hover { background: var(--canvas); }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-sm { height: 38px; padding: 0 16px; font-size: 14.5px; }
+.btn-block { width: 100%; }
+.link { color: var(--brand-ink); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- Header (Toast) ---------- */
+.header { height: 76px; display: flex; align-items: center; gap: 28px; }
+.logo { font: 800 26px/1 var(--font); letter-spacing: -0.04em; color: var(--brand); }
+.nav { display: flex; gap: 24px; font-size: 15.5px; }
+.nav a { display: inline-flex; align-items: center; gap: 4px; color: var(--ink); }
+.nav a.is-active { color: var(--brand-ink); font-weight: 600; }
+.header__right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.header__loc { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; margin-right: 8px; }
+.header__loc svg { color: var(--brand); }
+@media (max-width: 1024px) { .nav, .header__loc { display: none; } }
+@media (max-width: 720px) { .header { gap: 12px; } .header .btn-outline { display: none; } }
+
+/* ---------- Hero (Toast: foto gelap, sudut bawah membulat) ---------- */
+.hero { position: relative; border-radius: 0 0 var(--r-xl) var(--r-xl); overflow: hidden; min-height: 600px; display: flex; align-items: center; color: #fff; background: #1b1b1b; }
+.hero > .photo { position: absolute; inset: 0; border-radius: 0; aspect-ratio: auto; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,.82) 0%, rgba(10,10,10,.6) 42%, rgba(10,10,10,.05) 75%); }
+.hero__body { position: relative; z-index: 1; width: 100%; }
+.hero__copy { max-width: 600px; display: flex; flex-direction: column; gap: 22px; }
+.hero__note { font-size: 13px; opacity: .85; padding-left: 20px; }
+.hero__link { display: inline-flex; gap: 8px; align-items: center; font-weight: 600; padding-left: 20px; }
+@media (max-width: 720px) {
+  .hero { min-height: 560px; border-radius: 0 0 var(--r-lg) var(--r-lg); align-items: flex-end; padding-bottom: 40px; }
+  .hero::after { background: linear-gradient(0deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.55) 60%, rgba(10,10,10,.15) 100%); }
+}
+
+/* Input pill dengan tombol di dalam */
+.pill-form { display: flex; align-items: center; background: #fff; border-radius: var(--r-pill); padding: 5px 5px 5px 22px; max-width: 470px; border: 2px solid #fff; }
+.pill-form input { flex: 1; min-width: 0; border: 0; outline: 0; font-size: 16px; color: var(--ink); background: transparent; }
+.pill-form .btn { height: 46px; }
+
+/* ---------- Strip fakta di bawah hero (posisi deret logo Toast) ---------- */
+.facts { display: grid; grid-template-columns: repeat(5, 1fr); padding: 28px 0; }
+.facts > div { display: flex; flex-direction: column; gap: 2px; padding: 0 24px; border-left: 1px solid var(--line); }
+.facts > div:first-child { border-left: 0; padding-left: 0; }
+.facts b { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+@media (max-width: 900px) { .facts { grid-template-columns: 1fr 1fr; gap: 18px 0; } .facts > div { padding: 0 16px; } .facts > div:nth-child(odd) { border-left: 0; padding-left: 0; } }
+
+/* ---------- Seksi ---------- */
+.section { padding: 72px 0; }
+.section--canvas { background: var(--canvas); }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+.sec-head p { max-width: 560px; margin-top: 8px; }
+
+/* ---------- Foto ---------- */
+.photo { position: relative; aspect-ratio: var(--ar, 4 / 3); border-radius: var(--r-md); overflow: hidden; background: var(--tile); }
+.photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, center); }
+
+/* ---------- Tab pill ---------- */
+.seg { display: flex; gap: 8px; flex-wrap: wrap; }
+.seg > button { height: 40px; padding: 0 18px; border-radius: var(--r-pill); border: 1.5px solid var(--line-2); font-weight: 600; font-size: 14.5px; background: #fff; white-space: nowrap; }
+.seg > button.is-active { border-color: var(--ink); background: var(--ink); color: #fff; }
+.seg--sm > button { height: 34px; padding: 0 14px; font-size: 13.5px; }
+
+/* ---------- Kartu (Lend Cash) ---------- */
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--sh-card); }
+.card__pad { padding: 24px; }
+.card__head { display: flex; align-items: center; gap: 12px; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; }
+.count { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: var(--r-xs); background: #eef0f3; font-size: 13.5px; color: var(--ink-2); font-weight: 500; }
+.mini-link { display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 12px; border-radius: var(--r-xs); background: var(--ok-tint); color: var(--ok); font-weight: 600; font-size: 14px; }
+
+/* Pill nama (peach) */
+.who-pill { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border-radius: var(--r-xs); background: var(--brand-tint); color: #7a3a07; font-weight: 600; font-size: 15px; }
+
+/* Tile angka */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stat { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 16px 18px; background: #fff; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.stat__top { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; color: var(--ink-2); white-space: nowrap; }
+.stat__top span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.stat__top b { font-size: 13px; font-weight: 600; }
+.stat__val { font: 700 22px/1.15 var(--font); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.stat__val svg { color: var(--ok); }
+.stat--focus { border: 1.5px solid var(--ok); box-shadow: var(--sh-pop); }
+.stat--focus .stat__val { font-size: 30px; }
+@media (max-width: 900px) { .stats { grid-template-columns: 1fr 1fr; } }
+
+/* Grafik batang bertumpuk */
+.bars { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 8px; }
+.bars__y { display: flex; flex-direction: column; justify-content: space-between; font-size: 12.5px; color: var(--ink-3); text-align: right; height: 220px; padding-bottom: 0; }
+.bars__plot { position: relative; height: 220px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; background: repeating-linear-gradient(180deg, var(--line) 0 1px, transparent 1px 55px); border-bottom: 1px solid var(--line); }
+.bar { position: relative; display: flex; flex-direction: column-reverse; border-radius: 6px 6px 0 0; height: var(--h); min-height: 4px; }
+.bar i:last-of-type { border-radius: 6px 6px 0 0; }
+.bar i { display: block; height: var(--p); }
+.bar i:nth-child(1) { background: #f0f2f5; }
+.bar i:nth-child(2) { background: #dfe3e9; }
+.bar i:nth-child(3) { background: #c5cbd5; }
+.bar.is-hot i:nth-child(1) { background: #cfe9d4; }
+.bar.is-hot i:nth-child(2) { background: #8fcb9b; }
+.bar.is-hot i:nth-child(3) { background: var(--ok); }
+.bar__tip { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(100% + 6px); font-size: 13px; font-weight: 700; color: var(--ok); white-space: nowrap; }
+.bars__x { grid-column: 2; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; font-size: 12.5px; color: var(--ink-3); text-align: center; padding-top: 8px; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+
+/* Kartu proses (garis warna kecil + pill status) */
+.proc-row { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 12px; }
+.proc { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 16px 18px; background: #fff; display: flex; flex-direction: column; gap: 6px; text-align: left; min-width: 0; }
+.proc.is-active { border: 1.5px solid var(--ok); }
+.proc__top { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 26px; }
+.dashes { display: flex; gap: 4px; }
+.dashes i { width: 18px; height: 3px; border-radius: 2px; background: var(--c, var(--tile-2)); }
+.proc__name { font-weight: 700; font-size: 17px; }
+.proc__meta { font-size: 13.5px; color: var(--ink-2); }
+.proc__val { font: 700 21px/1.2 var(--font); font-variant-numeric: tabular-nums; margin-top: 4px; }
+@media (max-width: 900px) { .proc-row { grid-template-columns: 1fr 1fr; } }
+
+/* Pill status */
+.pill { display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: var(--r-xs); font-size: 12.5px; font-weight: 600; background: #eef0f3; color: var(--ink-2); white-space: nowrap; }
+.pill--ok { background: var(--ok-tint); color: var(--ok); }
+.pill--brand { background: var(--brand-tint); color: var(--brand-ink); }
+.pill--bad { background: var(--bad-tint); color: var(--bad); }
+.pill--dark { background: var(--ink); color: #fff; }
+
+/* Daftar catatan berikon bulat */
+.notes > li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: start; padding: 14px 0; }
+.notes > li + li { border-top: 1px solid var(--line); }
+.notes p { font-size: 14.5px; }
+.ic { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--c, #eef0f3); color: var(--ci, var(--ink)); }
+.ic--blue { --c: var(--info-tint); --ci: #2d6aa3; }
+.ic--peach { --c: var(--brand-tint); --ci: var(--brand-ink); }
+.ic--yellow { --c: var(--warn-tint); --ci: #8a6d00; }
+.ic--green { --c: var(--ok-tint); --ci: var(--ok); }
+.ic--red { --c: var(--bad-tint); --ci: var(--bad); }
+
+/* Avatar inisial */
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.team > div { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13.5px; background: var(--c, var(--warn-tint)); }
+
+/* ---------- Grid kotak (Daily Activity) — dipakai untuk kalender kunjungan ---------- */
+.dgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.dgrid__h { font-size: 12.5px; color: var(--ink-3); text-align: center; }
+.dcell { height: 42px; border-radius: var(--r-xs); background: #fff; border: 1px solid var(--line-2); font-weight: 600; font-size: 14px; display: grid; place-items: center; }
+.dcell.is-off { background: var(--tile); border-color: var(--tile); color: var(--ink-3); pointer-events: none; }
+.dcell.is-selected { background: var(--ok); border-color: var(--ok); color: #fff; }
+.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.slot { height: 40px; border-radius: var(--r-xs); border: 1px solid var(--line-2); font-weight: 600; font-size: 14px; }
+.slot.is-selected { border: 1.5px solid var(--ok); background: var(--ok-tint); color: var(--ok); }
+.slot.is-off { background: var(--canvas); color: var(--ink-3); border-color: var(--line); pointer-events: none; text-decoration: line-through; }
+
+/* ---------- Siteplan ---------- */
+.plan { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px; overflow-x: auto; }
+.plan__inner { min-width: 760px; display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 14px; }
+.plan__rows { display: flex; flex-direction: column; gap: 6px; }
+.lots { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5px; }
+.lot { height: 58px; border-radius: var(--r-xs); border: 1.5px solid var(--line-2); background: #fff; font-size: 12px; font-weight: 700; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; position: relative; }
+.lot small { font-weight: 500; font-size: 11px; color: var(--ink-2); }
+.lot.is-booked { background: var(--brand-tint); border-color: #f4c59c; color: #7a3a07; }
+.lot.is-sold { background: var(--tile); border-color: var(--tile); color: var(--ink-3); }
+.lot.is-sold small { color: var(--ink-3); }
+.lot.is-wide { grid-column: span 1; }
+.lot:hover:not(.is-sold) { border-color: var(--ink); }
+.lot.is-selected { background: var(--ok); border-color: var(--ok); color: #fff; }
+.lot.is-selected small { color: #e8f6eb; }
+.lot.is-dim { opacity: .28; }
+.road { height: 34px; border-radius: var(--r-xs); background: repeating-linear-gradient(90deg, #d9dde3 0 18px, transparent 18px 30px) center / 100% 2px no-repeat, #eef0f3; display: flex; align-items: center; padding: 0 10px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+.road span { background: #eef0f3; padding: 0 6px; }
+.plan__side { display: flex; flex-direction: column; gap: 6px; }
+.fac { border-radius: var(--r-xs); background: var(--ok-tint); color: #23663a; font-size: 12.5px; font-weight: 600; padding: 10px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.fac svg { width: 16px; height: 16px; }
+.fac--pool { background: var(--info-tint); color: #2d5f8f; }
+.fac--gate { background: var(--ink); color: #fff; }
+.compass { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+.plan-key { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-2); }
+.plan-key span { display: inline-flex; align-items: center; gap: 6px; }
+.plan-key i { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--line-2); background: #fff; }
+.plan-key .k-booked { background: var(--brand-tint); border-color: #f4c59c; }
+.plan-key .k-sold { background: var(--tile); border-color: var(--tile); }
+.plan-key .k-sel { background: var(--ok); border-color: var(--ok); }
+
+/* Detail unit */
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden; }
+.spec-grid > div { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.spec-grid > div:nth-child(odd) { border-right: 1px solid var(--line); }
+.spec-grid > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+.spec-grid span { font-size: 13px; color: var(--ink-2); }
+.spec-grid b { font-weight: 600; font-size: 15px; }
+.kv { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; }
+.kv span:first-child { color: var(--ink-2); }
+.kv b { font-weight: 600; text-align: right; }
+.divider { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* Spesifikasi bangunan (daftar 2 kolom) */
+.speclist { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.speclist > div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.speclist dt { color: var(--ink-2); }
+@media (max-width: 720px) { .speclist { grid-template-columns: 1fr; } }
+
+/* Tipe rumah */
+.type-view { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.type-dims { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.type-dims > div { padding: 14px 0; display: flex; flex-direction: column; gap: 2px; }
+.type-dims > div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.type-dims span { font-size: 13px; color: var(--ink-2); }
+.type-dims b { font-size: 19px; font-weight: 700; }
+@media (max-width: 900px) { .type-view { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 520px) { .type-dims { grid-template-columns: 1fr 1fr; } .type-dims > div:nth-child(3) { padding-left: 0; border-left: 0; } .type-dims > div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+/* Jarak lokasi */
+.dist > li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+.dist > li b { font-weight: 600; white-space: nowrap; }
+
+/* ---------- Pita oranye + kartu putih besar (Toast footer) ---------- */
+.band { background: var(--brand); padding: 56px 0 0; }
+.band__card { background: #fff; border-radius: var(--r-xl) var(--r-xl) 0 0; padding: 56px 64px 32px; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; font-size: 15px; }
+.foot-grid h4 { font-size: 15px; font-weight: 600; margin-bottom: 14px; }
+.foot-grid li + li { margin-top: 10px; }
+.foot-grid a { color: var(--ink-2); }
+.foot-cta { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding: 40px 0 32px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+@media (max-width: 720px) { .band { padding-top: 32px; } .band__card { padding: 32px 20px 24px; border-radius: var(--r-lg) var(--r-lg) 0 0; } .foot-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Aplikasi (Lend Cash) ---------- */
+.app { background: var(--canvas); min-height: 100vh; }
+.app-top { height: 68px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--line); background: #fff; }
+.menu-btn { width: 38px; height: 38px; border-radius: var(--r-xs); background: #eef0f3; display: grid; place-items: center; }
+.app-title { font: 700 24px/1 var(--font); letter-spacing: -0.015em; }
+.app-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; padding: 24px 0 56px; align-items: start; }
+.app-col { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+@media (max-width: 1100px) { .app-grid { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .app-top { height: auto; flex-wrap: wrap; padding: 12px 0; } .card__pad { padding: 18px; } }
+
+.field { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; }
+.field input, .field select { height: 46px; border: 1px solid var(--line-2); border-radius: var(--r-sm); padding: 0 14px; font-weight: 400; font-size: 15px; background: #fff; outline: 0; }
+.field input:focus, .field select:focus { border-color: var(--ink); }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); }
+.check input { margin-top: 3px; accent-color: var(--ok); }
+
+/* Range DP */
+.range { width: 100%; accent-color: var(--brand); }
+
+/* Kartu bank (pilih) */
+.bank.is-active { border: 1.5px solid var(--ok); box-shadow: var(--sh-pop); }
+
+/* Progres bar */
+.pbar { height: 8px; border-radius: 4px; background: #eef0f3; overflow: hidden; }
+.pbar i { display: block; height: 100%; width: var(--v); background: var(--ok); border-radius: 4px; }
+
+/* Tabel */
+.table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.table th { text-align: left; font-weight: 500; font-size: 13px; color: var(--ink-2); padding: 0 12px 10px 0; border-bottom: 1px solid var(--line); }
+.table td { padding: 13px 12px 13px 0; border-bottom: 1px solid var(--line); }
+.table tr:last-child td { border-bottom: 0; }
+.table .r { text-align: right; padding-right: 0; }
+.table-wrap { overflow-x: auto; }
+
+.success-ic { width: 52px; height: 52px; border-radius: 50%; background: var(--ok-tint); color: var(--ok); display: grid; place-items: center; }
+
+/* ---------- Penyesuaian layar kecil ---------- */
+.proc__top { flex-wrap: wrap; }
+@media (max-width: 720px) {
+  .stat--focus .stat__val { font-size: 22px; }
+  .stat { padding: 14px; }
+  .bars__plot, .bars__x { gap: 4px; }
+  .bars { grid-template-columns: 48px minmax(0, 1fr); }
+}

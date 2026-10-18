@@ -1,0 +1,91 @@
+{
+  "slug": "housing-cluster-developer-website",
+  "kind": "Website",
+  "industry": "Property",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Interactive Siteplan",
+    "KPR Simulation"
+  ],
+  "metrics": [
+    {
+      "value": "48",
+      "label": "LOTS ON THE SITEPLAN",
+      "labelId": "KAVLING DI SITEPLAN"
+    },
+    {
+      "value": "4",
+      "label": "PARTNER BANKS COMPARED",
+      "labelId": "BANK DIBANDINGKAN"
+    },
+    {
+      "value": "5",
+      "label": "HOUSE TYPES",
+      "labelId": "TIPE RUMAH"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with house types, specifications and a WhatsApp price-list form",
+      "captionId": "Beranda dengan tipe rumah, spesifikasi, dan form daftar harga via WhatsApp"
+    },
+    {
+      "hash": "siteplan",
+      "caption": "Interactive siteplan with lot status and unit details",
+      "captionId": "Siteplan interaktif dengan status kavling dan detail unit"
+    },
+    {
+      "hash": "kpr",
+      "caption": "Mortgage simulation by bank, then site visit and booking fee",
+      "captionId": "Simulasi KPR per bank, lalu jadwal kunjungan dan booking fee"
+    },
+    {
+      "hash": "progres",
+      "caption": "Buyer account with construction progress and down-payment schedule",
+      "captionId": "Akun pembeli dengan progres pembangunan dan jadwal uang muka"
+    }
+  ],
+  "content_en": {
+    "title": "Housing Cluster Developer Website",
+    "type": "PROPERTY WEBSITE & BUYER PORTAL",
+    "category": "Property Sales",
+    "summary": "A redesign for a small housing cluster developer. Buyers compare house types, pick an available lot on an interactive siteplan, simulate a mortgage with partner banks, book a site visit or pay a booking fee, and follow their home's construction after purchase.",
+    "challenge": "The old site was a single landing page whose every button opened the same WhatsApp chat. Five house types sat in an accordion with broken images and no land size, building size, rooms or prices, so buyers could not compare options or check whether anything was still available.\n\nThere was no siteplan, no mortgage information and no way to schedule a visit. The page mixed buyers' handover photos, an empty video embed and a slider of nearby franchise logos, and buyers who had already paid had nowhere to see construction progress or upcoming down-payment instalments.",
+    "solution": "The homepage keeps one clear action, a WhatsApp field for the price list, and turns the house types into tabs with land and building size, rooms, price and the number of units still available. The siteplan shows all 48 lots by block and road with available, booked and sold status; selecting a lot opens its type, orientation, corner premium, specifications and starting instalment.\n\nThe mortgage page calculates down payment, tenor and monthly instalments for four partner banks, including fixed and floating periods and an Islamic option, plus the cash needed before signing. Visits are booked from a calendar, with an option to pay a booking fee that holds the unit. After purchase, buyers see physical progress by month and stage, site notes with photos, and their down-payment schedule. The planned production stack is Next.js with Supabase, a virtual-account payment gateway and the WhatsApp API.",
+    "features": [
+      "House type tabs with sizes, rooms, price and units left",
+      "Interactive siteplan with available, booked and sold lots",
+      "Lot detail with orientation, corner premium and specifications",
+      "Mortgage simulation comparing four banks, fixed and floating",
+      "Upfront cost estimate including BPHTB and bank fees",
+      "Site visit scheduling with optional booking fee",
+      "Buyer account with construction progress and payment schedule"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Developer Cluster Perumahan",
+    "type": "WEBSITE PROPERTI & PORTAL PEMBELI",
+    "category": "Penjualan Properti",
+    "summary": "Redesign untuk developer cluster perumahan kecil. Pembeli membandingkan tipe rumah, memilih kavling yang masih tersedia di siteplan interaktif, menghitung KPR dengan bank rekanan, menjadwalkan kunjungan atau membayar booking fee, lalu memantau pembangunan rumahnya setelah membeli.",
+    "challenge": "Situs lama berupa satu landing page yang semua tombolnya membuka chat WhatsApp yang sama. Lima tipe rumah ditaruh di akordeon dengan gambar yang gagal dimuat dan tanpa luas tanah, luas bangunan, jumlah kamar, atau harga, sehingga pembeli tidak bisa membandingkan pilihan atau mengecek apakah masih ada unit.\n\nTidak ada siteplan, informasi KPR, atau cara menjadwalkan kunjungan. Halaman mencampur foto serah terima kunci pembeli, embed video kosong, dan slider logo waralaba di sekitar lokasi, dan pembeli yang sudah membayar tidak punya tempat untuk melihat progres pembangunan atau cicilan uang muka berikutnya.",
+    "solution": "Beranda tetap punya satu aksi utama, kolom WhatsApp untuk daftar harga, dan tipe rumah dijadikan tab berisi luas tanah dan bangunan, kamar, harga, serta jumlah unit yang masih tersedia. Siteplan menampilkan 48 kavling per blok dan jalan dengan status tersedia, dibooking, dan terjual; memilih kavling membuka tipe, arah hadap, tambahan harga hook, spesifikasi, dan cicilan mulai.\n\nHalaman KPR menghitung uang muka, tenor, dan cicilan bulanan untuk empat bank rekanan, termasuk masa bunga fix dan floating serta pilihan syariah, ditambah dana yang perlu disiapkan sebelum akad. Kunjungan dijadwalkan dari kalender, dengan opsi membayar booking fee untuk menahan unit. Setelah membeli, pembeli melihat progres fisik per bulan dan per tahap, catatan lapangan dengan foto, serta jadwal cicilan uang muka. Stack produksi yang direncanakan adalah Next.js dengan Supabase, payment gateway virtual account, dan WhatsApp API.",
+    "features": [
+      "Tab tipe rumah dengan luas, kamar, harga, dan sisa unit",
+      "Siteplan interaktif dengan kavling tersedia, dibooking, dan terjual",
+      "Detail kavling dengan arah hadap, harga hook, dan spesifikasi",
+      "Simulasi KPR membandingkan empat bank, fix dan floating",
+      "Estimasi dana awal termasuk BPHTB dan biaya bank",
+      "Jadwal kunjungan lokasi dengan opsi booking fee",
+      "Akun pembeli dengan progres pembangunan dan jadwal pembayaran"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
