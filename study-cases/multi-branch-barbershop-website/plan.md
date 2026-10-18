@@ -11,19 +11,21 @@ Sumber: website barbershop premium 5 cabang di Surabaya & Pasuruan (Zyro, diambi
 | 5 cabang tanpa jam buka, Maps, atau info antrean | Pelanggan datang ke cabang yang sedang penuh |
 | Promo member hanya di top bar; embed Instagram gagal; bahasa campur | Program retensi tidak terjelaskan, kesan kurang terawat |
 
-## Arah redesign
-- Lapak, mode **mono**: hitam-putih, warna dari foto interior; display Instrument Serif; brand sebagai wordmark tanpa ikon.
-- Hero foto penuh + bar booking (cabang, layanan, jam).
-- Antrean per cabang sebagai fitur utama untuk bisnis multi-cabang.
-- Member: catatan gaya dari kapster agar hasil konsisten lintas cabang.
+## Arah redesign (v2, 18 Okt 2026)
+Versi pertama ditolak karena kerangkanya sama dengan klinik & villa (hero kiri + search bar, grid kartu, form kiri + ringkasan kanan, admin sidebar + 4 KPI). Versi 2 memakai Lapak hanya untuk komponen kecil; layout dirancang dari konsep bisnisnya:
+- **Konsep: papan harga barbershop / majalah cetak.** Kertas krem + hitam, serif Instrument Serif besar, tanpa kartu & bayangan.
+- Beranda = papan harga (kiri) + foto interior setinggi layar dengan widget antrean live (kanan); cabang sebagai papan keberangkatan; member sebagai tiket sobek; strip foto; footer wordmark besar.
+- Booking = satu kolom langkah bernomor, ringkasan di bar bawah.
+- Member = kartu pass + catatan potongan seperti buku catatan.
+- Admin diganti **layar TV antrean di cabang** (gelap, huruf besar, saran cabang kosong).
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Hero foto + booking bar, harga & durasi 6 layanan, 5 cabang dengan antrean, karier, blok member, footer |
-| `#booking` | Cabang → layanan (multi) → kapster/siapa saja → hari → jam; ringkasan total & durasi → sukses TDH-0927 + catatan gaya terakhir |
-| `#member` | Kartu member, booking berikutnya dengan diskon ulang tahun, riwayat & catatan gaya, pengingat 5 minggu |
-| `#admin` | Dashboard pemilik: KPI, tabel 5 cabang, papan antrean cabang, pendapatan kapster |
+| `#home` | Papan harga 6 layanan, antrean 5 cabang, papan cabang, tiket member, strip foto |
+| `#booking` | Cabang → layanan → kapster → jam → data; bar total di bawah → tiket TDH-0927 + catatan gaya terakhir |
+| `#member` | Pass member, catatan potongan |
+| `#tv` | Layar antrean cabang: 6 kursi, berikutnya, saran cabang kosong |
 
 ## Tech stack produksi (rencana)
 Next.js + Supabase (cabang, kursi, booking, member), WhatsApp API untuk konfirmasi dan pengingat.
