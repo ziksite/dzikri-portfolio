@@ -21,6 +21,7 @@ const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
 // Spread the study cases between the existing client projects (homepage keeps sort_order 10–20)
 const ORDER = {
+  "villa-rental-booking-website": 171,
   "multi-branch-barbershop-website": 169,
   "multi-specialty-clinic-website": 168,
   "coffee-shop-digital-menu-preorder": 31,
