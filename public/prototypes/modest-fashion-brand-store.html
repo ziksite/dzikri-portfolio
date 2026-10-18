@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Larik — Batik modern untuk kerja dan acara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/modest-fashion-brand-store.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div data-header="home"></div>
+
+  <section class="hero">
+    <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-lintang.webp"></div>
+    <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-kawi.webp"></div>
+    <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-pertiwi.webp"></div>
+    <div class="hero__text">
+      <p style="font-size:13px;opacity:.85">Koleksi baru · batik cap Garut motif kopi</p>
+      <h1 class="t-display">Seduh</h1>
+      <p>Enam potong atasan, outer, dan dress bermotif biji dan bunga kopi. Batch 2 dibuka untuk pre-order sampai Minggu, 25 Oktober.</p>
+      <div class="hero__cta"><a class="btn btn-light" href="#katalog">Lihat koleksi</a><a class="btn btn-ghost-w" href="#produk">Ikut pre-order batch 2</a></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section style="padding:64px 0 0">
+      <h2 class="sec-title">Belanja per kategori</h2>
+      <div class="cats">
+        <a class="cat" href="#katalog"><div class="photo" data-img="assets/modest-fashion-brand-store/kategori-atasan.webp"></div><span class="cat__label">Atasan</span></a>
+        <a class="cat" href="#katalog"><div class="photo" data-img="assets/modest-fashion-brand-store/pesisir-arum.webp"></div><span class="cat__label">Outer</span></a>
+        <a class="cat" href="#katalog"><div class="photo" data-img="assets/modest-fashion-brand-store/kategori-dress.webp"></div><span class="cat__label">Dress</span></a>
+        <a class="cat" href="#katalog"><div class="photo" data-img="assets/modest-fashion-brand-store/kategori-bawahan.webp"></div><span class="cat__label">Bawahan</span></a>
+      </div>
+    </section>
+
+    <section style="padding:72px 0 0">
+      <div class="banner">
+        <div class="photo" data-img="assets/modest-fashion-brand-store/pesisir-padma.webp"></div>
+        <div class="photo" data-img="assets/modest-fashion-brand-store/pesisir-kunir.webp"></div>
+        <div class="banner__title"><span style="font-size:13px">Ready stock</span><h2 class="t-display t-display--md">Pesisir</h2></div>
+      </div>
+      <p class="lede">Motif buketan dan lung-lungan khas pesisir utara di atas batik cap encim Pekalongan, dipotong jadi atasan kerja yang ringan. Ukuran S sampai 2L, sebagian model all size.</p>
+      <div class="ctabs" data-select id="homeTabs"><button class="is-active" data-value="Atasan">Atasan</button><button data-value="Outer">Outer</button><button data-value="Bawahan">Bawahan</button></div>
+      <div class="grid" id="homeGrid"></div>
+      <div style="display:flex;justify-content:center;margin-top:32px"><a class="btn btn-primary" href="#katalog" style="min-width:300px">Lihat koleksi Pesisir</a></div>
+    </section>
+
+    <section style="padding:80px 0 0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px;flex-wrap:wrap">
+        <div><h2 class="t-h2">Jadwal drop &amp; pre-order</h2><p class="t-meta">Ukuran yang habis dibuka lagi lewat batch pre-order. Kuota per batch terlihat di sini.</p></div>
+        <a class="link" href="#katalog" style="font-size:13px">Semua koleksi</a>
+      </div>
+      <div class="drops">
+        <div class="drop">
+          <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-kawi.webp"></div>
+          <div><p class="drop__name">Seduh · batch 2</p><p class="t-meta">Pre-order 11–25 Oktober · bayar penuh saat pesan</p></div>
+          <div><p style="font-size:13px"><b class="num" style="font-weight:500">186</b> dari 300 pcs terpesan</p><div class="meter"><span style="width:62%"></span></div></div>
+          <div><p style="font-size:13px">Kirim 14–21 November</p><p class="t-small">Ditutup Minggu, 25 Okt 23.59</p></div>
+          <a class="btn btn-brand btn-sm" href="#produk">Ikut pre-order</a>
+        </div>
+        <div class="drop">
+          <div class="photo" data-img="assets/modest-fashion-brand-store/pesisir-kenanga.webp"></div>
+          <div><p class="drop__name">Pesisir</p><p class="t-meta">Rilis 4 Oktober · ready stock</p></div>
+          <div><p style="font-size:13px">13 model · 4 ukuran habis</p><div class="meter"><span style="width:78%;background:var(--ink)"></span></div></div>
+          <div><p style="font-size:13px">Kirim 1–2 hari kerja</p><p class="t-small">Ukuran habis ikut PO sampai 1 Nov</p></div>
+          <span class="pill pill--ok">Ready stock</span>
+        </div>
+        <div class="drop">
+          <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-sabrang.webp"></div>
+          <div><p class="drop__name">Seduh · batch 1</p><p class="t-meta">Pre-order 1–12 September</p></div>
+          <div><p style="font-size:13px">240 dari 240 pcs terpesan</p><div class="meter"><span style="width:100%;background:var(--ink-3)"></span></div></div>
+          <div><p style="font-size:13px">Terkirim 3 Oktober</p><p class="t-small">Kuota penuh dalam 4 hari</p></div>
+          <span class="pill">Selesai</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section style="margin-top:80px" class="dark-band">
+    <div class="photo" data-img="assets/modest-fashion-brand-store/seduh-tirta.webp"></div>
+    <div class="dark-band__body">
+      <p style="font-size:13px;color:rgba(255,255,255,.7)">Program reseller &amp; dropship</p>
+      <h2 class="t-h1" style="max-width:460px">Jual koleksi Larik di kotamu, harga grosir langsung dari workshop.</h2>
+      <p style="color:rgba(255,255,255,.78);max-width:480px">Order campur model dan ukuran dalam satu lembar order. Diskon dihitung dari total pcs, dan pesanan bisa dikirim langsung ke pembelimu atas nama tokomu.</p>
+      <div class="tiers"><div><b>10%</b><span>Dropship, tanpa minimum</span></div><div><b>20%</b><span>6–11 pcs per order</span></div><div><b>25%</b><span>12 pcs ke atas</span></div></div>
+      <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap"><a class="btn btn-light" href="#reseller">Masuk portal reseller</a><a class="btn btn-ghost-w" href="#">Daftar via WhatsApp</a></div>
+    </div>
+  </section>
+
+  <div class="wrap" style="margin-top:56px">
+    <div class="perks">
+      <div class="perk"><i data-lucide="ruler"></i><div><b>Panduan ukuran per model</b><span class="muted">Ukuran badan model dan tabel cm di tiap produk</span></div></div>
+      <div class="perk"><i data-lucide="repeat"></i><div><b>Tukar ukuran 7 hari</b><span class="muted">Gratis satu kali tukar, label masih terpasang</span></div></div>
+      <div class="perk"><i data-lucide="package-search"></i><div><b>Lacak pesanan &amp; PO</b><span class="muted">Status produksi batch sampai nomor resi</span></div></div>
+      <div class="perk"><i data-lucide="store"></i><div><b>Toko di 3 kota</b><span class="muted">Semarang, Yogyakarta, Makassar</span></div></div>
+    </div>
+  </div>
+  <div data-footer></div>
+</section>
+
+<!-- ================= KATALOG ================= -->
+<section data-screen="katalog">
+  <div data-header="katalog"></div>
+  <div class="wrap">
+    <p class="crumb"><a href="#home">Beranda</a> / <a href="#katalog">Koleksi</a> / Koleksi baru</p>
+    <div class="cat-head">
+      <div><h1 class="t-h1">Koleksi baru</h1><p class="t-meta">Seduh dan Pesisir · atasan, outer, dress, bawahan</p></div>
+      <div style="display:flex;gap:8px"><button class="btn btn-outline btn-sm filter-btn" id="filterToggle"><i data-lucide="sliders-horizontal" class="i-sm"></i>Filter</button></div>
+    </div>
+    <div class="catalog">
+      <aside class="filters" id="filters">
+        <div class="fgroup">
+          <h4>Ketersediaan</h4>
+          <label class="check"><input type="checkbox" data-f="avail" value="ready" checked>Ready stock<small id="cReady"></small></label>
+          <label class="check"><input type="checkbox" data-f="avail" value="po" checked>Bisa pre-order<small id="cPo"></small></label>
+        </div>
+        <div class="fgroup">
+          <h4>Ukuran tersedia <a class="t-small link" href="#produk">Panduan</a></h4>
+          <div class="sizes" data-select data-multi id="fSize"><button class="size" data-value="S">S</button><button class="size" data-value="M">M</button><button class="size" data-value="L">L</button><button class="size" data-value="XL">XL</button><button class="size" data-value="2L">2L</button><button class="size" data-value="ALL">All size</button></div>
+        </div>
+        <div class="fgroup">
+          <h4>Koleksi</h4>
+          <label class="check"><input type="checkbox" data-f="col" value="Seduh" checked>Seduh<small>6</small></label>
+          <label class="check"><input type="checkbox" data-f="col" value="Pesisir" checked>Pesisir<small>13</small></label>
+        </div>
+        <div class="fgroup">
+          <h4>Kategori</h4>
+          <label class="check"><input type="checkbox" data-f="type" value="Atasan" checked>Atasan</label>
+          <label class="check"><input type="checkbox" data-f="type" value="Outer" checked>Outer</label>
+          <label class="check"><input type="checkbox" data-f="type" value="Dress" checked>Dress</label>
+          <label class="check"><input type="checkbox" data-f="type" value="Bawahan" checked>Bawahan</label>
+        </div>
+        <div class="fgroup">
+          <h4>Teknik</h4>
+          <label class="check"><input type="checkbox" checked>Batik cap encim Pekalongan</label>
+          <label class="check"><input type="checkbox" checked>Batik cap Garut</label>
+          <label class="check"><input type="checkbox" checked>Dobi</label>
+        </div>
+        <div class="fgroup">
+          <h4>Warna dasar</h4>
+          <div class="swatches" data-select data-multi><button class="sw" style="background:#a6262f" aria-label="Merah"></button><button class="sw" style="background:#2f4aa8" aria-label="Biru"></button><button class="sw" style="background:#3b4a2c" aria-label="Hijau"></button><button class="sw" style="background:#9c5a1e" aria-label="Cokelat kopi"></button><button class="sw" style="background:#a99a1f" aria-label="Kunyit"></button><button class="sw" style="background:#1c1c1c" aria-label="Hitam"></button><button class="sw" style="background:#d6417e" aria-label="Fuchsia"></button></div>
+        </div>
+        <div class="fgroup">
+          <h4>Harga</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input class="field" value="Rp390.000"><input class="field" value="Rp790.000"></div>
+        </div>
+      </aside>
+      <div style="min-width:0">
+        <div class="toolbar">
+          <span class="t-meta"><b id="count" style="color:var(--ink);font-weight:500">19</b> produk</span>
+          <span id="chips" style="display:flex;gap:6px;flex-wrap:wrap"></span>
+          <label class="sort">Urutkan<select id="sort"><option value="new">Terbaru</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select></label>
+        </div>
+        <div class="grid grid--3" id="catGrid"></div>
+        <div class="pager"><a class="is-active" href="#katalog">1</a><a href="#katalog">2</a><a href="#katalog"><i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      </div>
+    </div>
+  </div>
+  <div data-footer></div>
+</section>
+
+<!-- ================= PRODUK ================= -->
+<section data-screen="produk">
+  <div data-header="produk"></div>
+  <div class="wrap">
+    <p class="crumb" style="padding-bottom:12px"><a href="#home">Beranda</a> / <a href="#katalog">Pesisir</a> / Saga Encim</p>
+    <div class="pdp">
+      <div class="media">
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-2.webp"></div>
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-1.webp"></div>
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-3.webp"></div>
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-4.webp"></div>
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-5.webp"></div>
+      </div>
+      <div class="info">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <p class="t-small">Pesisir · Atasan · LRK-A118</p>
+          <h1 class="t-h1">Saga Encim</h1>
+          <p class="info__price">Rp470.000</p>
+          <p class="t-small">Dapat 47 poin · atau 3× Rp156.667 dengan cicilan 0%</p>
+        </div>
+        <div>
+          <div class="opt-head"><span>Warna: <b id="colorName">Merah biru</b></span></div>
+          <div class="colors" data-select="is-selected" id="colorPick">
+            <button class="color is-selected" data-value="Merah biru"><span class="sw" style="background:linear-gradient(90deg,#b8323a 50%,#3550b5 50%)"></span>Merah biru</button>
+            <button class="color" data-value="Hijau zaitun"><span class="sw" style="background:linear-gradient(90deg,#4a5a2e 50%,#c27a2c 50%)"></span>Hijau</button>
+          </div>
+        </div>
+        <div>
+          <div class="opt-head"><span>Ukuran: <b id="sizeName">XL</b></span><button class="link" style="font-size:13px;display:inline-flex;gap:6px;align-items:center" id="openGuide"><i data-lucide="ruler" class="i-sm"></i>Panduan ukuran</button></div>
+          <div class="vsizes" data-select="is-selected" id="sizePick">
+            <button class="vsize" data-value="S">S<small>Ready</small></button>
+            <button class="vsize is-po" data-value="M">M<small>Pre-order</small></button>
+            <button class="vsize is-po" data-value="L">L<small>Pre-order</small></button>
+            <button class="vsize is-low is-selected" data-value="XL">XL<small>Sisa 2</small></button>
+            <button class="vsize" data-value="2L">2L<small>Ready</small></button>
+          </div>
+          <p class="t-small" style="margin-top:10px">Tinggi model 168 cm, memakai ukuran S.</p>
+        </div>
+        <div class="notice notice--plain" id="stockNote"><i data-lucide="truck" class="i-sm"></i><div><b style="font-weight:500">Ready stock, sisa 2</b><br>Pesan sebelum 15.00, dikirim hari ini dari gudang Semarang.</div></div>
+        <div class="notice" id="poNote" hidden><i data-lucide="calendar-clock" class="i-sm"></i><div><b style="font-weight:500">Ukuran <span id="poSize">M</span> habis, ikut pre-order batch 2</b><br>Dijahit setelah PO ditutup Minggu, 25 Oktober. Dikirim 14–21 November. Bayar penuh sekarang, dana kembali 100% jika batch batal.</div></div>
+        <div class="buy">
+          <div class="stepper" data-stepper data-min="1" data-max="2" id="qty"><button type="button"><i data-lucide="minus" class="i-sm"></i></button><output>1</output><button type="button" data-inc><i data-lucide="plus" class="i-sm"></i></button></div>
+          <button class="btn btn-primary" id="addBtn">Tambah ke keranjang · Rp470.000</button>
+        </div>
+        <div class="acc">
+          <details open><summary>Detail produk<i data-lucide="plus" class="i-sm"></i></summary><div class="acc__body"><ul><li>Kain batik cap encim dari Pekalongan dengan lapisan dalam tricot</li><li>Kerah berdiri dan ritsleting penuh di depan</li><li>Lengan balon panjang dengan karet di pergelangan</li><li>Panjang baju 62 cm untuk ukuran L</li></ul></div></details>
+          <details><summary>Perawatan<i data-lucide="plus" class="i-sm"></i></summary><div class="acc__body"><ul><li>Pakai sabun lerak atau sabun lembut untuk kain batik</li><li>Pisahkan dari pakaian lain, bilas segera tanpa direndam</li><li>Cuci tangan dan jemur di tempat teduh, setrika suhu sedang dari sisi dalam</li></ul></div></details>
+          <details><summary>Pengiriman &amp; tukar ukuran<i data-lucide="plus" class="i-sm"></i></summary><div class="acc__body">Gratis ongkir untuk belanja minimal Rp500.000. Tukar ukuran gratis satu kali dalam 7 hari setelah barang diterima, selama label masih terpasang. Pesanan pre-order tidak dapat dibatalkan setelah batch ditutup.</div></details>
+        </div>
+      </div>
+    </div>
+    <section style="padding-top:72px">
+      <h2 class="sec-title">Lengkapi tampilannya</h2>
+      <div class="grid" id="lookGrid"></div>
+    </section>
+  </div>
+  <div data-footer></div>
+
+  <!-- Panduan ukuran -->
+  <div class="scrim" id="guideScrim" hidden></div>
+  <aside class="drawer" id="guide" hidden>
+    <div class="drawer__head"><p class="t-h3">Panduan ukuran · Saga Encim</p><button data-close><i data-lucide="x"></i></button></div>
+    <div class="drawer__body">
+      <div class="seg" data-select id="unit"><button class="is-active" data-value="cm">cm</button><button data-value="in">inci</button></div>
+      <table class="stable" id="sizeTable">
+        <thead><tr><th>Ukuran baju</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>2L</th></tr></thead>
+        <tbody>
+          <tr data-row="dada"><td>Lingkar dada</td><td>96</td><td>100</td><td>106</td><td>112</td><td>118</td></tr>
+          <tr><td>Panjang baju</td><td>60</td><td>61</td><td>62</td><td>63</td><td>64</td></tr>
+          <tr><td>Panjang lengan</td><td>52</td><td>53</td><td>54</td><td>55</td><td>55</td></tr>
+          <tr><td>Lingkar lengan</td><td>32</td><td>34</td><td>36</td><td>38</td><td>40</td></tr>
+        </tbody>
+      </table>
+      <p class="t-small">Ukuran di atas adalah ukuran baju, bukan ukuran badan. Toleransi jahitan ±1–2 cm.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line)">
+        <p class="t-h3">Cari ukuranmu</p>
+        <div class="calc">
+          <label>Lingkar dada badan (cm)<input class="field" id="bust" type="number" value="92"></label>
+          <label>Suka potongan<select class="field" id="fit"><option value="6">Pas badan</option><option value="10" selected>Longgar</option></select></label>
+          <button class="btn btn-primary btn-sm" style="height:44px" id="calcBtn">Hitung</button>
+        </div>
+        <p id="calcOut" style="font-size:13.5px">Rekomendasi: <b style="font-weight:600">ukuran M</b> (lingkar dada baju 100 cm).</p>
+      </div>
+      <div>
+        <p class="t-h3" style="margin-bottom:8px">Cara mengukur</p>
+        <ul class="t-meta" style="display:flex;flex-direction:column;gap:6px">
+          <li><b style="color:var(--ink);font-weight:500">Lingkar dada:</b> lingkarkan meteran di bagian dada paling lebar, sejajar lantai.</li>
+          <li><b style="color:var(--ink);font-weight:500">Panjang lengan:</b> dari ujung bahu sampai pergelangan tangan.</li>
+          <li>Ragu di antara dua ukuran? Pilih yang lebih besar, lalu tukar gratis jika tidak pas.</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Keranjang -->
+  <div class="scrim" id="cartScrim" hidden></div>
+  <aside class="drawer" id="cart" hidden>
+    <div class="drawer__head"><p class="t-h3">Keranjang (<span id="cartCount">2</span>)</p><button data-close><i data-lucide="x"></i></button></div>
+    <div class="drawer__body">
+      <div class="notice notice--plain"><i data-lucide="truck" class="i-sm"></i><div id="shipNote">Belanjaanmu sudah gratis ongkir.</div></div>
+      <div class="line-item" id="newLine">
+        <div class="photo" data-img="assets/modest-fashion-brand-store/saga-1.webp"></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><p style="font-weight:500">Saga Encim</p><p class="t-small" id="lineVar">Merah biru · XL · 1 pcs</p><span id="linePo" hidden><span class="pill pill--brand">Pre-order · kirim 14–21 Nov</span></span></div>
+        <p class="num" id="linePrice">Rp470.000</p>
+      </div>
+      <div class="line-item">
+        <div class="photo" data-img="assets/modest-fashion-brand-store/pesisir-ratri.webp"></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><p style="font-weight:500">Ratri Encim</p><p class="t-small">Merah · All size · 1 pcs</p><span><span class="pill pill--ok">Ready stock</span></span></div>
+        <p class="num">Rp425.000</p>
+      </div>
+      <p class="t-small" id="splitNote" hidden>Pesanan dengan item pre-order dikirim dua kali: item ready stock dikirim lebih dulu tanpa ongkir tambahan.</p>
+    </div>
+    <div class="drawer__foot">
+      <div class="sum-row"><span>Subtotal</span><b class="num" id="cartSub" style="font-weight:600">Rp895.000</b></div>
+      <p class="t-small">Dapat <span id="cartPts">89</span> poin. Voucher dan ongkir dihitung saat checkout.</p>
+      <a class="btn btn-primary btn-block" href="#">Checkout</a>
+      <button class="btn btn-outline btn-block" data-close>Lanjut belanja</button>
+    </div>
+  </aside>
+</section>
+
+<!-- ================= PORTAL RESELLER ================= -->
+<section data-screen="reseller">
+  <div data-header="reseller"></div>
+  <div class="wrap">
+    <div class="rs-head">
+      <span class="rs-avatar">RA</span>
+      <div><h1 class="t-h1" style="font-size:26px">Rumah Batik Ayu</h1><p class="t-meta">Reseller sejak Maret 2024 · Balikpapan · 38 order</p></div>
+      <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-outline btn-sm" href="#"><i data-lucide="file-down" class="i-sm"></i>Katalog harga PDF</a><a class="btn btn-outline btn-sm" href="#"><i data-lucide="image-down" class="i-sm"></i>Foto produk</a></div>
+    </div>
+    <nav class="utabs" data-select data-tabs="rs" id="rsTabs"><button class="is-active" data-value="order">Lembar order</button><button data-value="track">Pesanan &amp; resi <span class="pill pill--brand" style="height:20px;margin-left:4px">2</span></button><button data-value="track">Saldo &amp; komisi</button></nav>
+
+    <div data-panel="rs:order">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+        <div><h2 class="t-h2">Order grosir · Pesisir &amp; Seduh</h2><p class="t-meta">Isi jumlah per ukuran. Model dan ukuran boleh dicampur, diskon dihitung dari total pcs.</p></div>
+        <div class="seg" data-select><button class="is-active">Semua</button><button>Ready stock</button><button>Pre-order</button></div>
+      </div>
+      <div class="tierbar" id="tierbar">
+        <div data-t="0"><b>Dropship · 10%</b>1–5 pcs, tanpa minimum</div>
+        <div data-t="1"><b>Grosir · 20%</b>6–11 pcs per order</div>
+        <div data-t="2"><b>Grosir besar · 25%</b>12 pcs ke atas</div>
+      </div>
+      <p id="tierHint" style="font-size:13px;margin:12px 0 16px"></p>
+      <div class="sheet-wrap">
+        <table class="sheet" id="sheet">
+          <thead><tr><th>Produk</th><th class="r">Harga retail</th><th class="c">S</th><th class="c">M</th><th class="c">L</th><th class="c">XL</th><th class="c">2L</th><th class="c">All size</th><th class="c">Pcs</th><th class="r">Subtotal retail</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div data-panel="rs:track" hidden>
+      <h2 class="t-h2" style="margin-bottom:16px">Pesanan berjalan</h2>
+      <div class="track">
+        <div class="tcard">
+          <div style="display:flex;justify-content:space-between;gap:12px"><div><p class="t-h3">LRK-R-2291</p><p class="t-meta">Dibayar 12 Okt · 9 pcs · Rp3.672.000</p></div><span class="pill pill--ok">Dikirim</span></div>
+          <div class="steps"><div class="step is-done"><b>Dibayar</b>12 Okt</div><div class="step is-done"><b>Dikemas</b>13 Okt</div><div class="step is-now"><b>Dikirim</b>15 Okt</div><div class="step"><b>Diterima</b>est. 20 Okt</div></div>
+          <div class="notice notice--plain"><i data-lucide="truck" class="i-sm"></i><div>JNE REG · resi JN0418 2207 4821<br><span class="t-small">Kiriman tiba di hub Balikpapan, Sabtu 17 Okt 21.40</span></div></div>
+        </div>
+        <div class="tcard">
+          <div style="display:flex;justify-content:space-between;gap:12px"><div><p class="t-h3">LRK-R-2310 · dropship</p><p class="t-meta">Pre-order Seduh batch 2 · 3 pcs · ke Samarinda</p></div><span class="pill pill--brand">Pre-order</span></div>
+          <div class="steps"><div class="step is-done"><b>Dibayar</b>14 Okt</div><div class="step is-now"><b>Produksi</b>26 Okt–12 Nov</div><div class="step"><b>Dikirim</b>14–21 Nov</div><div class="step"><b>Diterima</b>—</div></div>
+          <div class="notice notice--plain"><i data-lucide="tag" class="i-sm"></i><div>Dikirim atas nama <b style="font-weight:500">Rumah Batik Ayu</b>, tanpa invoice dan label harga.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="orderbar" id="orderForm" data-demo-form="#orderDone">
+    <div class="wrap">
+      <dl><dt>Total pcs</dt><dd class="num" id="oPcs">0</dd></dl>
+      <dl><dt>Subtotal retail</dt><dd class="num" id="oRetail">Rp0</dd></dl>
+      <dl><dt>Diskon <span id="oTier">10%</span></dt><dd class="num" id="oDisc">−Rp0</dd></dl>
+      <dl><dt>Total bayar</dt><dd class="num" id="oTotal" style="font-size:20px">Rp0</dd></dl>
+      <label class="check"><input type="checkbox" id="dropship">Kirim sebagai dropship</label>
+      <button class="btn btn-light">Kirim order<i data-lucide="arrow-right" class="i-sm"></i></button>
+    </div>
+  </form>
+  <div class="orderbar" id="orderDone" hidden><div class="wrap"><i data-lucide="check"></i><p>Order <b>LRK-R-2318</b> diterima. Tagihan virtual account dan rincian dikirim ke WhatsApp tokomu. Item pre-order masuk Seduh batch 2.</p><a class="btn btn-light" href="#reseller" style="margin-left:auto" onclick="location.reload()">Order lagi</a></div></div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script>
+(function () {
+  var A = "assets/modest-fashion-brand-store/";
+  // ---------- Header & footer bersama ----------
+  var nav = [["Seduh", "katalog"], ["Pesisir", "katalog"], ["Atasan", "katalog"], ["Outer", "katalog"], ["Dress", "katalog"], ["Bawahan", "katalog"], ["Pre-order", "produk"], ["Reseller", "reseller"]];
+  document.querySelectorAll("[data-header]").forEach(function (el) {
+    var cur = el.getAttribute("data-header");
+    var links = nav.map(function (n, i) { var on = (cur === "katalog" && i === 0) || (cur === "produk" && i === 1) || (cur === "reseller" && n[1] === "reseller"); return '<a href="#' + n[1] + '"' + (on ? ' class="is-active"' : "") + ">" + n[0] + "</a>"; }).join("") + '<a class="nav--sale" href="#katalog">Sale</a>';
+    el.outerHTML = '<div class="utility"><div class="wrap"><div class="utility__side"><a href="#reseller">Lacak pesanan</a></div><p class="utility__msg">Pre-order Seduh batch 2 ditutup Minggu, 25 Oktober · Gratis ongkir min. Rp500.000</p><div class="utility__side"><a href="#">Bantuan</a></div></div></div>' +
+      '<header class="header"><div class="wrap"><div class="header__top"><div class="header__left"><a class="header__search" href="#katalog"><i data-lucide="search"></i><span>Cari motif, model</span></a></div><a class="logo" href="#home">LARIK</a><div class="header__right"><a href="#reseller" class="hide-m" aria-label="Akun"><i data-lucide="user"></i></a><a href="#katalog" aria-label="Favorit"><i data-lucide="heart"></i></a><a class="cart-ico" href="#produk" aria-label="Keranjang"><i data-lucide="shopping-bag"></i><b>1</b></a></div></div><nav class="nav">' + links + "</nav></div></header>";
+  });
+  document.querySelectorAll("[data-footer]").forEach(function (el) {
+    el.outerHTML = '<footer class="footer"><div class="wrap"><div class="footer__grid"><div><span class="logo" style="font-size:20px">LARIK</span><p class="t-meta" style="margin-top:14px;max-width:340px">Batik modern untuk kerja dan acara. Dijahit di workshop sendiri bersama perajin batik cap Pekalongan dan Garut.</p><form class="news" onsubmit="this.innerHTML=\'<p class=t-meta>Terima kasih, info drop berikutnya dikirim ke emailmu.</p>\';return false"><input class="field" placeholder="Email untuk info drop"><button class="btn btn-primary btn-sm" style="height:44px">Daftar</button></form></div>' +
+      '<div><h4>Belanja</h4><ul><li><a href="#katalog">Koleksi baru</a></li><li><a href="#katalog">Pre-order</a></li><li><a href="#katalog">Sale</a></li><li><a href="#produk">Panduan ukuran</a></li></ul></div>' +
+      '<div><h4>Bantuan</h4><ul><li><a href="#reseller">Lacak pesanan</a></li><li><a href="#">Tukar ukuran</a></li><li><a href="#">Poin &amp; voucher</a></li><li><a href="#">WhatsApp CS</a></li></ul></div>' +
+      '<div><h4>Larik</h4><ul><li><a href="#">Cerita kami</a></li><li><a href="#">Toko: Semarang, Yogyakarta, Makassar</a></li><li><a href="#reseller">Reseller &amp; dropship</a></li><li><a href="#">Instagram · TikTok</a></li></ul></div></div><p class="t-small" style="margin-top:40px">© 2026 Larik</p></div></footer>';
+  });
+
+  // ---------- Data produk (nama & harga dari katalog asli) ----------
+  var SZ = ["S", "M", "L", "XL", "2L"];
+  function sz(s) { var o = {}; SZ.forEach(function (k, i) { o[k] = s[i]; }); return o; } // o=ready, l=sisa sedikit, p=pre-order, x=habis
+  var P = [
+    { n: "Saga Encim", p: 470000, img: "saga-1", col: "Pesisir", type: "Atasan", s: sz("oppl o".replace(" ", "")), b: "Pre-order M, L" },
+    { n: "Kenanga Encim", p: 460000, img: "pesisir-kenanga", col: "Pesisir", type: "Atasan", all: "o", b: "Baru" },
+    { n: "Laksmi Encim", p: 540000, img: "pesisir-laksmi", col: "Pesisir", type: "Atasan", s: sz("ooolo"), b: "Baru" },
+    { n: "Arum Encim", p: 525000, img: "pesisir-arum", col: "Pesisir", type: "Outer", s: sz("ooooo") },
+    { n: "Sekar Encim", p: 480000, img: "pesisir-sekar", col: "Pesisir", type: "Atasan", s: sz("pooo l".replace(" ", "")) },
+    { n: "Melati Encim", p: 535000, img: "pesisir-melati", col: "Pesisir", type: "Atasan", s: sz("ooooo") },
+    { n: "Ratri Encim", p: 425000, img: "pesisir-ratri", col: "Pesisir", type: "Bawahan", all: "o" },
+    { n: "Wulan Encim", p: 500000, img: "pesisir-wulan", col: "Pesisir", type: "Atasan", s: sz("ooool") },
+    { n: "Asri Dobi", p: 525000, img: "pesisir-asri", col: "Pesisir", type: "Atasan", s: sz("ooooo") },
+    { n: "Padma Encim", p: 545000, img: "pesisir-padma", col: "Pesisir", type: "Atasan", s: sz("loooo") },
+    { n: "Kunir Encim", p: 620000, img: "pesisir-kunir", col: "Pesisir", type: "Atasan", s: sz("ooooo") },
+    { n: "Gendis Encim", p: 785000, img: "pesisir-gendis", col: "Pesisir", type: "Atasan", s: sz("oooop") },
+    { n: "Kebaya Nawang Encim", p: 625000, img: "pesisir-nawang", col: "Pesisir", type: "Outer", s: sz("ooooo") },
+    { n: "Kawi Garut", p: 645000, img: "seduh-kawi", col: "Seduh", type: "Atasan", all: "p", b: "Pre-order" },
+    { n: "Sabrang Garut", p: 665000, img: "seduh-sabrang", col: "Seduh", type: "Atasan", s: sz("ppppp"), b: "Pre-order" },
+    { n: "Lintang Garut", p: 695000, img: "seduh-lintang", col: "Seduh", type: "Outer", s: sz("ppppp"), b: "Pre-order" },
+    { n: "Pertiwi Garut", p: 710000, img: "seduh-pertiwi", col: "Seduh", type: "Dress", s: sz("ppppp"), b: "Pre-order" },
+    { n: "Tirta Garut", p: 395000, img: "seduh-tirta", col: "Seduh", type: "Atasan", all: "p", b: "Pre-order" },
+    { n: "Seruni Garut", p: 430000, img: "seduh-seruni", col: "Seduh", type: "Outer", all: "p", b: "Pre-order" }
+  ];
+  var rp = function (n) { return "Rp" + Math.round(n).toLocaleString("id-ID"); };
+  function hasReady(p) { return p.all ? p.all !== "p" : SZ.some(function (k) { return p.s[k] === "o" || p.s[k] === "l"; }); }
+  function hasPo(p) { return p.all ? p.all === "p" : SZ.some(function (k) { return p.s[k] === "p"; }); }
+  function card(p) {
+    var sizes = p.all ? (p.all === "p" ? '<span class="po">All size · PO</span>' : "All size") :
+      SZ.map(function (k) { var v = p.s[k]; return v === "p" ? '<span class="po">' + k + "·PO</span>" : v === "x" ? "<s>" + k + "</s>" : "<span>" + k + "</span>"; }).join("");
+    var badge = p.b ? '<div class="badges"><span class="badge' + (p.b.indexOf("Pre") === 0 ? " badge--brand" : "") + '">' + p.b + "</span></div>" : "";
+    return '<a class="card" href="#produk"><div class="card__media"><div class="photo" data-img="' + A + p.img + '.webp"></div>' + badge +
+      '<span class="card__fav"><i data-lucide="heart" class="i-sm"></i></span><span class="card__add"><i data-lucide="shopping-bag" class="i-sm"></i></span></div>' +
+      '<p class="card__name">' + p.n + '</p><p class="card__price">' + rp(p.p) + '</p><p class="card__sizes">' + sizes + "</p></a>";
+  }
+  function loadPhotos(root) {
+    (root || document).querySelectorAll(".photo[data-img]").forEach(function (box) {
+      if (box.dataset.done) return; box.dataset.done = 1;
+      var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+    });
+  }
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.5 } }); }
+
+  // Beranda: tab koleksi Pesisir
+  var homeGrid = document.getElementById("homeGrid");
+  function renderHome(t) { homeGrid.innerHTML = P.filter(function (p) { return p.col === "Pesisir" && p.type === t; }).slice(0, 4).map(card).join(""); loadPhotos(homeGrid); icons(); }
+  renderHome("Atasan");
+  document.getElementById("homeTabs").addEventListener("lapak:select", function (e) { renderHome(e.detail.value); });
+
+  // Katalog: filter berfungsi
+  var catGrid = document.getElementById("catGrid");
+  function renderCat() {
+    var get = function (f) { return [].slice.call(document.querySelectorAll('[data-f="' + f + '"]:checked')).map(function (i) { return i.value; }); };
+    var av = get("avail"), cols = get("col"), types = get("type");
+    var sizes = [].slice.call(document.querySelectorAll("#fSize .is-active")).map(function (b) { return b.dataset.value; });
+    var list = P.filter(function (p) {
+      if (cols.indexOf(p.col) < 0 || types.indexOf(p.type) < 0) return false;
+      if (!((av.indexOf("ready") >= 0 && hasReady(p)) || (av.indexOf("po") >= 0 && hasPo(p)))) return false;
+      if (sizes.length) {
+        return sizes.some(function (k) { if (k === "ALL") return !!p.all; if (p.all) return false; var v = p.s[k]; return v === "o" || v === "l" || (v === "p" && av.indexOf("po") >= 0); });
+      }
+      return true;
+    });
+    var s = document.getElementById("sort").value;
+    if (s === "low") list.sort(function (a, b) { return a.p - b.p; }); if (s === "high") list.sort(function (a, b) { return b.p - a.p; });
+    catGrid.innerHTML = list.length ? list.map(card).join("") : '<p class="empty-note">Tidak ada produk yang cocok. Coba aktifkan "Bisa pre-order".</p>';
+    document.getElementById("count").textContent = list.length;
+    document.getElementById("cReady").textContent = P.filter(hasReady).length;
+    document.getElementById("cPo").textContent = P.filter(hasPo).length;
+    document.getElementById("chips").innerHTML = sizes.map(function (k) { return '<button class="fchip" data-chip="' + k + '">Ukuran ' + (k === "ALL" ? "all size" : k) + '<i data-lucide="x"></i></button>'; }).join("");
+    loadPhotos(catGrid); icons();
+  }
+  document.querySelectorAll("[data-f]").forEach(function (i) { i.addEventListener("change", renderCat); });
+  document.getElementById("fSize").addEventListener("lapak:select", renderCat);
+  document.getElementById("sort").addEventListener("change", renderCat);
+  document.getElementById("chips").addEventListener("click", function (e) { var c = e.target.closest("[data-chip]"); if (!c) return; document.querySelector('#fSize [data-value="' + c.dataset.chip + '"]').classList.remove("is-active"); renderCat(); });
+  document.getElementById("filterToggle").addEventListener("click", function () { document.getElementById("filters").classList.toggle("is-open"); });
+  document.querySelector('#fSize [data-value="M"]').classList.add("is-active");
+  renderCat();
+
+  // Produk: lengkapi tampilan
+  var look = document.getElementById("lookGrid");
+  look.innerHTML = [6, 3, 12, 1].map(function (i) { return card(P[i]); }).join(""); loadPhotos(look);
+
+  // Produk: varian, pre-order, stepper
+  var state = { size: "XL", color: "Merah biru", qty: 1 };
+  var stock = { S: "o", M: "p", L: "p", XL: "l", "2L": "o" };
+  function updProduct() {
+    var v = state.color === "Hijau zaitun" ? "p" : stock[state.size];
+    document.getElementById("sizeName").textContent = state.size;
+    document.getElementById("colorName").textContent = state.color;
+    var po = v === "p";
+    document.getElementById("poNote").hidden = !po; document.getElementById("stockNote").hidden = po;
+    document.getElementById("poSize").textContent = state.color === "Hijau zaitun" ? "warna hijau" : state.size;
+    document.querySelector("#stockNote div").innerHTML = v === "l" ? '<b style="font-weight:500">Ready stock, sisa 2</b><br>Pesan sebelum 15.00, dikirim hari ini dari gudang Semarang.' : '<b style="font-weight:500">Ready stock</b><br>Pesan sebelum 15.00, dikirim hari ini dari gudang Semarang.';
+    var q = document.getElementById("qty"); q.setAttribute("data-max", v === "l" ? 2 : 10);
+    if (v === "l" && state.qty > 2) { state.qty = 2; q.querySelector("output").textContent = 2; }
+    document.getElementById("addBtn").textContent = (po ? "Pre-order · " : "Tambah ke keranjang · ") + rp(470000 * state.qty);
+    document.getElementById("addBtn").className = "btn " + (po ? "btn-brand" : "btn-primary");
+  }
+  document.getElementById("sizePick").addEventListener("lapak:select", function (e) { state.size = e.detail.value; updProduct(); });
+  document.getElementById("colorPick").addEventListener("lapak:select", function (e) { state.color = e.detail.value; updProduct(); });
+  document.getElementById("qty").addEventListener("lapak:change", function (e) { state.qty = e.detail.value; updProduct(); });
+
+  // Drawer
+  function openD(id) { document.getElementById(id).hidden = false; document.getElementById(id + "Scrim").hidden = false; }
+  function closeD(id) { document.getElementById(id).hidden = true; document.getElementById(id + "Scrim").hidden = true; }
+  ["guide", "cart"].forEach(function (id) {
+    document.getElementById(id + "Scrim").addEventListener("click", function () { closeD(id); });
+    document.querySelectorAll("#" + id + " [data-close]").forEach(function (b) { b.addEventListener("click", function () { closeD(id); }); });
+  });
+  document.getElementById("openGuide").addEventListener("click", function () { openD("guide"); });
+  document.getElementById("addBtn").addEventListener("click", function () {
+    var po = state.color === "Hijau zaitun" || stock[state.size] === "p", sub = 470000 * state.qty;
+    document.getElementById("lineVar").textContent = state.color + " · " + state.size + " · " + state.qty + " pcs";
+    document.getElementById("linePrice").textContent = rp(sub);
+    document.getElementById("linePo").hidden = !po; document.getElementById("splitNote").hidden = !po;
+    document.getElementById("cartCount").textContent = state.qty + 1;
+    document.getElementById("cartSub").textContent = rp(sub + 425000);
+    document.getElementById("cartPts").textContent = Math.floor((sub + 425000) / 10000);
+    openD("cart");
+  });
+  // Panduan ukuran: cm / inci + rekomendasi
+  var cmVals = [].slice.call(document.querySelectorAll("#sizeTable td:not(:first-child)")).map(function (td) { return Number(td.textContent); });
+  document.getElementById("unit").addEventListener("lapak:select", function (e) {
+    document.querySelectorAll("#sizeTable td:not(:first-child)").forEach(function (td, i) { td.textContent = e.detail.value === "in" ? (cmVals[i] / 2.54).toFixed(1).replace(".", ",") : cmVals[i]; });
+  });
+  var chest = [96, 100, 106, 112, 118];
+  function calc() {
+    var b = Number(document.getElementById("bust").value), ease = Number(document.getElementById("fit").value);
+    var i = chest.findIndex(function (c) { return c - b >= ease; });
+    var out = document.getElementById("calcOut");
+    out.innerHTML = i < 0 ? "Lingkar dada di atas ukuran 2L. Tanyakan model all size atau custom ke CS." : 'Rekomendasi: <b style="font-weight:600">ukuran ' + SZ[i] + "</b> (lingkar dada baju " + chest[i] + " cm)." + (stock[SZ[i]] === "p" ? " Ukuran ini sedang pre-order." : "");
+    document.querySelectorAll("#sizeTable tbody tr")[0].className = "is-hl";
+  }
+  document.getElementById("calcBtn").addEventListener("click", calc);
+
+  // Reseller: lembar order
+  var R = [
+    { i: 0, q: { S: 2, XL: 2 }, st: { S: "stok 9", M: "PO", L: "PO", XL: "stok 2", "2L": "stok 6" } },
+    { i: 4, q: { M: 3, L: 2 }, st: { S: "PO", M: "stok 7", L: "stok 5", XL: "stok 4", "2L": "stok 1" } },
+    { i: 2, q: {}, st: { S: "stok 8", M: "stok 10", L: "stok 6", XL: "stok 2", "2L": "stok 3" } },
+    { i: 1, q: { ALL: 2 }, st: { ALL: "stok 14" } },
+    { i: 13, q: {}, st: { ALL: "PO" } },
+    { i: 14, q: {}, st: { S: "PO", M: "PO", L: "PO", XL: "PO", "2L": "PO" } }
+  ];
+  var tb = document.querySelector("#sheet tbody");
+  tb.innerHTML = R.map(function (r, ri) {
+    var p = P[r.i];
+    var cells = SZ.concat(["ALL"]).map(function (k) {
+      var has = p.all ? k === "ALL" : k !== "ALL";
+      if (!has) return '<td class="c" style="color:var(--ink-3)">—</td>';
+      var v = r.q[k] || "", st = r.st[k];
+      return '<td class="c"><div class="qty"><input type="number" min="0" data-r="' + ri + '" value="' + v + '"' + (v ? ' class="has-val"' : "") + "><small" + (st === "PO" ? ' class="po"' : "") + ">" + st + "</small></div></td>";
+    }).join("");
+    return '<tr><td><div class="prod"><div class="photo" data-img="' + A + p.img + '.webp"></div><div><p style="font-weight:500">' + p.n + '</p><p class="t-small">' + p.col + " · " + p.type + '</p></div></div></td><td class="r num">' + rp(p.p) + "</td>" + cells + '<td class="c num" data-pcs="' + ri + '">0</td><td class="r num" data-sub="' + ri + '">Rp0</td></tr>';
+  }).join("");
+  loadPhotos(tb);
+  function recalc() {
+    var pcs = 0, retail = 0;
+    R.forEach(function (r, ri) {
+      var n = 0; tb.querySelectorAll('input[data-r="' + ri + '"]').forEach(function (inp) { var v = Math.max(0, parseInt(inp.value, 10) || 0); n += v; inp.classList.toggle("has-val", v > 0); });
+      tb.querySelector('[data-pcs="' + ri + '"]').textContent = n; tb.querySelector('[data-sub="' + ri + '"]').textContent = rp(n * P[r.i].p);
+      pcs += n; retail += n * P[r.i].p;
+    });
+    var t = pcs >= 12 ? 2 : pcs >= 6 ? 1 : 0, pct = [10, 20, 25][t];
+    document.querySelectorAll("#tierbar > div").forEach(function (d) { d.classList.toggle("is-on", Number(d.dataset.t) === t); });
+    document.getElementById("tierHint").innerHTML = pcs === 0 ? "Belum ada item." : t === 2 ? "Kamu dapat harga terbaik, diskon 25%." : "Tambah <b>" + ((t === 0 ? 6 : 12) - pcs) + " pcs</b> lagi untuk diskon " + (t === 0 ? 20 : 25) + "%.";
+    document.getElementById("oPcs").textContent = pcs;
+    document.getElementById("oRetail").textContent = rp(retail);
+    document.getElementById("oTier").textContent = pct + "%";
+    document.getElementById("oDisc").textContent = "−" + rp(retail * pct / 100);
+    document.getElementById("oTotal").textContent = rp(retail * (100 - pct) / 100);
+  }
+  tb.addEventListener("input", recalc); recalc();
+  document.getElementById("rsTabs").addEventListener("lapak:select", function (e) { document.getElementById("orderForm").hidden = e.detail.value !== "order"; });
+
+  loadPhotos(); icons(); updProduct();
+})();
+</script>
+<script src="_ds/lapak.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "slug": "modest-fashion-brand-store",
+  "kind": "Website",
+  "industry": "Retail & E-commerce",
+  "client": "Confidential",
+  "tags": [
+    "Shopify",
+    "Pre-order Batches",
+    "Size Guide",
+    "Reseller Portal"
+  ],
+  "metrics": [
+    {
+      "value": "19",
+      "label": "PRODUCTS ACROSS 2 COLLECTIONS",
+      "labelId": "PRODUK DI 2 KOLEKSI"
+    },
+    {
+      "value": "5",
+      "label": "SIZES WITH LIVE STOCK STATUS",
+      "labelId": "UKURAN DENGAN STATUS STOK"
+    },
+    {
+      "value": "3",
+      "label": "RESELLER DISCOUNT TIERS",
+      "labelId": "TIER DISKON RESELLER"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Collection-led homepage with the current drop and pre-order deadline",
+      "captionId": "Beranda berbasis koleksi dengan drop terbaru dan batas pre-order"
+    },
+    {
+      "hash": "katalog",
+      "caption": "Catalog with filters for availability, size and collection",
+      "captionId": "Katalog dengan filter ketersediaan, ukuran, dan koleksi"
+    },
+    {
+      "hash": "produk",
+      "caption": "Product page with size status, pre-order and size guide",
+      "captionId": "Halaman produk dengan status ukuran, pre-order, dan panduan ukuran"
+    },
+    {
+      "hash": "reseller",
+      "caption": "Reseller order sheet by product and size with tiered pricing",
+      "captionId": "Lembar order reseller per produk dan ukuran dengan harga bertingkat"
+    }
+  ],
+  "content_en": {
+    "title": "Modest Fashion Brand Online Store",
+    "type": "FASHION E-COMMERCE STORE",
+    "category": "E-commerce",
+    "summary": "A redesign for a modern batik womenswear brand that releases collections in drops and produces in batches. Shoppers see which sizes are left before opening a product, join a pre-order batch when a size runs out, and pick a size from a measurement guide; resellers order mixed models and sizes on a single sheet.",
+    "challenge": "The old store opened with a slider of text-heavy campaign banners, and the menu listed more than fifteen collection names with no sense of which was new. Product cards showed only a name, an internal code and a price, so shoppers had to open each item to discover that their size was gone.\n\nSold-out sizes simply could not be selected, even though the brand produces in batches and could take pre-orders. Sizing was a single line about the model's height, the loyalty points and size exchange lived on separate text pages, and resellers had no channel other than WhatsApp.",
+    "solution": "The homepage is led by the current collection, with its pre-order deadline in the top bar, category tiles, a collection banner with tabs, and a drop schedule that shows how much of each batch's quota is taken. The catalog filters by availability, size, collection and category, and every card lists its sizes with pre-order marked. On the product page each size shows Ready, a low-stock count or Pre-order; choosing a sold-out size switches the button to pre-order with the batch close and shipping dates, and a size guide drawer turns a body measurement into a recommended size.\n\nResellers get their own portal: an order sheet laid out as products by sizes, with stock or pre-order shown in each cell, discount tiers recalculated as quantities change, and a dropship option that ships under the reseller's store name. A second tab tracks regular and pre-order shipments step by step. The planned production stack is Shopify with a custom Dawn-based theme, variant-level pre-order quotas and B2B price lists.",
+    "features": [
+      "Collection-led homepage with drop schedule and pre-order quota",
+      "Catalog filters for availability, size, collection and category",
+      "Size availability shown on every product card",
+      "Pre-order for sold-out sizes with batch close and shipping dates",
+      "Size guide drawer with cm/inch table and size recommendation",
+      "Reseller order sheet by product and size with tiered discounts",
+      "Order tracking for regular, pre-order and dropship shipments"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Toko Online Brand Fashion Modest",
+    "type": "TOKO ONLINE FASHION",
+    "category": "E-commerce",
+    "summary": "Redesign untuk brand batik modern wanita yang merilis koleksi per drop dan memproduksi per batch. Pembeli melihat ukuran yang tersisa sebelum membuka produk, ikut batch pre-order saat ukurannya habis, dan memilih ukuran dari panduan ukuran; reseller memesan campuran model dan ukuran dalam satu lembar order.",
+    "challenge": "Toko lama dibuka dengan slider banner kampanye yang penuh teks, dan menunya memuat lebih dari lima belas nama koleksi tanpa penanda mana yang baru. Kartu produk hanya berisi nama, kode internal, dan harga, sehingga pembeli harus membuka tiap produk untuk tahu ukurannya sudah habis.\n\nUkuran yang habis hanya tidak bisa dipilih, padahal brand ini memproduksi per batch dan bisa menerima pre-order. Panduan ukuran hanya satu kalimat tentang tinggi model, poin loyalitas dan tukar ukuran ada di halaman teks terpisah, dan reseller tidak punya jalur selain WhatsApp.",
+    "solution": "Beranda dipimpin koleksi terbaru, dengan batas pre-order di top bar, ubin kategori, banner koleksi bertab, dan jadwal drop yang menunjukkan berapa kuota tiap batch yang sudah terisi. Katalog bisa disaring berdasarkan ketersediaan, ukuran, koleksi, dan kategori, dan setiap kartu menampilkan ukurannya dengan tanda pre-order. Di halaman produk, setiap ukuran berstatus Ready, sisa sedikit, atau Pre-order; memilih ukuran yang habis mengubah tombol menjadi pre-order lengkap dengan tanggal tutup batch dan tanggal kirim, dan drawer panduan ukuran mengubah ukuran badan menjadi rekomendasi ukuran.\n\nReseller punya portal sendiri: lembar order berbentuk produk × ukuran, dengan stok atau status pre-order di setiap sel, tier diskon yang dihitung ulang saat jumlah berubah, dan opsi dropship yang dikirim atas nama toko reseller. Tab kedua melacak pengiriman reguler dan pre-order per tahap. Stack produksi yang direncanakan adalah Shopify dengan tema kustom berbasis Dawn, kuota pre-order per varian, dan daftar harga B2B.",
+    "features": [
+      "Beranda berbasis koleksi dengan jadwal drop dan kuota pre-order",
+      "Filter katalog berdasarkan ketersediaan, ukuran, koleksi, dan kategori",
+      "Ketersediaan ukuran tampil di setiap kartu produk",
+      "Pre-order untuk ukuran habis dengan tanggal tutup batch dan kirim",
+      "Drawer panduan ukuran dengan tabel cm/inci dan rekomendasi ukuran",
+      "Lembar order reseller per produk dan ukuran dengan diskon bertingkat",
+      "Lacak pesanan untuk pengiriman reguler, pre-order, dan dropship"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
