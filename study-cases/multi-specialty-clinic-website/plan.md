@@ -11,22 +11,20 @@ Sumber: website klinik utama di Jakarta Pusat (WordPress, diambil 18 Okt 2026). 
 | Enam layanan diulang 3× (hero, grid, footer); 50+ tindakan hanya di dropdown | Halaman panjang tanpa jalur yang jelas |
 | Statistik tidak konsisten (96/98% vs 95/95/98%), 4 font berbeda, teks promo di dalam gambar | Kesan kurang kredibel dan tidak terawat |
 
-## Arah redesign
-- Design system Lapak, mode **solid**: indigo brand asli (#3C4998) dibuat lebih jenuh (#2F3FB0), aksen oranye dari situs asli, display Instrument Sans.
-- Hero task-first: cari layanan + tanggal. Diikuti dokter praktik hari ini.
-- Reservasi mandiri tiga langkah menggantikan alur chat lima langkah.
-- Privasi sebagai nilai jual untuk layanan sensitif: keluhan hanya dibaca dokter, pemanggilan dengan nomor.
+## Arah redesign (v2, 18 Okt 2026)
+- v1 memakai kerangka yang sama dengan barbershop & villa.
+- v2: **design system sendiri** dari referensi Alodokter + Glacio (lihat `design-system.md`). Indigo brand asli dipakai rata.
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Topbar jam buka, hero + pencarian, dokter praktik hari ini, 6 layanan, galeri fasilitas, cara reservasi, testimoni, blok privasi, lokasi |
-| `#reservasi` | Pilih layanan → dokter → hari (hari libur dokter nonaktif) → jam (slot penuh dicoret) → data pasien → sukses RSV-1019-014 |
-| `#dokter` | Kartu dokter dengan hari praktik, filter spesialisasi, tabel jadwal mingguan |
-| `#admin` | Dashboard resepsionis: KPI, kalender dokter per jam, chat konsultasi → reservasi, pasien 1 jam ke depan |
+| `#home` | Pita indigo: nav, judul, 6 ikon spesialisasi, foto tim dokter; jadwal dokter hari ini (tab); layanan & fasilitas bergaya daftar artikel; jam buka, lokasi, catatan privasi |
+| `#dokter` | Filter samping + kartu 7 dokter dengan slot |
+| `#reservasi` | Kotak dokter, jadwal (hari + jam), data pasien, ringkasan sticky → RSV-1019-014 |
+| `#admin` | Dashboard janji: chip filter, kartu "Hadir hari ini" & "Perlu ditindaklanjuti" |
 
 ## Tech stack produksi (rencana)
 Next.js + Supabase (jadwal, slot, reservasi), WhatsApp API untuk konfirmasi dan pengingat H-1.
 
 ## Aset
-`public/prototypes/assets/multi-specialty-clinic-website/` — 13 foto dari situs asli (webp). Tidak dipakai: foto dengan papan nama klinik, banner promo bertulisan, foto before/after berbingkai merek, foto pasien testimoni.
+`public/prototypes/assets/multi-specialty-clinic-website/` — foto asli situs (webp), bordiran/logo klinik disamarkan.
