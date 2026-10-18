@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safarah — Paket umroh &amp; haji khusus berizin resmi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/umrah-travel-agency-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="header">
+      <a class="wordmark" href="#home">safarah</a>
+      <nav class="nav"><a href="#home">Paket umroh</a><a href="#home">Haji khusus</a><a href="#home">Tabungan umroh</a><a href="#home">Cabang</a></nav>
+      <div class="header__right"><a class="btn btn-line btn-sm" href="#jamaah">Masuk jamaah</a><a class="btn btn-soft btn-sm" href="#paket">Daftar</a></div>
+    </header>
+  </div>
+
+  <section class="band">
+    <div class="band__photo photo" style="border-radius:0;aspect-ratio:auto" data-img="assets/umrah-travel-agency-website/makkah-hotel-clocktower.webp"></div>
+    <div class="wrap band__inner">
+      <h1 class="t-hero">Umroh bersama pembimbing yang sama dari manasik sampai pulang</h1>
+      <p class="band__lead">Jadwal keberangkatan 2026–2027 dari Jakarta, harga per kamar sudah jelas, DP mulai Rp5 juta dan sisanya dicicil sampai H-45.</p>
+      <div class="products" data-select>
+        <button class="product is-active"><i data-lucide="moon" class="i-sm"></i>Umroh</button>
+        <button class="product"><i data-lucide="plane" class="i-sm"></i>Umroh plus</button>
+        <button class="product"><i data-lucide="landmark" class="i-sm"></i>Haji khusus</button>
+        <button class="product"><i data-lucide="piggy-bank" class="i-sm"></i>Tabungan</button>
+      </div>
+      <form class="search" onsubmit="document.getElementById('jadwal').scrollIntoView({behavior:'smooth'});return false">
+        <div class="search__seg"><i data-lucide="calendar"></i><label><small>Bulan berangkat</small><select><option>Semua bulan</option><option>Desember 2026</option><option>Februari 2027 · Ramadhan</option><option>Maret 2027 · Syawal</option><option>Juli 2027 · Libur sekolah</option></select></label><i data-lucide="chevron-down" class="i-sm"></i></div>
+        <div class="search__seg"><i data-lucide="plane-takeoff"></i><label><small>Berangkat dari</small><select><option>Jakarta (CGK)</option><option>Surabaya (SUB)</option></select></label><i data-lucide="chevron-down" class="i-sm"></i></div>
+        <div class="search__seg"><i data-lucide="wallet"></i><label><small>Budget per orang</small><select><option>Semua harga</option><option>Di bawah Rp35 juta</option><option>Rp35–50 juta</option><option>Di atas Rp50 juta</option></select></label><i data-lucide="chevron-down" class="i-sm"></i></div>
+        <button class="btn btn-primary">Cari paket</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="license">
+    <div class="wrap license__row">
+      <span><i data-lucide="shield-check" class="i-sm"></i>Izin PPIU No. 8120 3164 7720 0011</span>
+      <span><i data-lucide="shield-check" class="i-sm"></i>Izin PIHK No. 8120 3164 7720 0012</span>
+      <span><i data-lucide="badge-check" class="i-sm"></i>Akreditasi A</span>
+      <span><i data-lucide="building-2" class="i-sm"></i>Berdiri sejak 2004</span>
+      <a class="link" href="#">Cek izin di situs Kemenag <i data-lucide="arrow-up-right" class="i-xs" style="display:inline"></i></a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="sec" id="jadwal">
+      <div class="sec__head">
+        <div><h2 class="t-h2">Jadwal keberangkatan</h2><p class="t-sub">Semua harga per orang untuk kamar quad (4 orang). Kursi diperbarui setiap ada pendaftaran.</p></div>
+        <a class="link" href="#paket">Lihat semua paket</a>
+      </div>
+      <div class="chips" data-select id="monthChips" style="margin-bottom:16px">
+        <button class="chip is-active" data-value="all">Semua <small>7</small></button>
+        <button class="chip" data-value="des">Des 2026 <small>2</small></button>
+        <button class="chip" data-value="feb">Feb 2027 · Ramadhan <small>2</small></button>
+        <button class="chip" data-value="mar">Mar 2027 · Syawal <small>1</small></button>
+        <button class="chip" data-value="jul">Jul 2027 · Libur sekolah <small>2</small></button>
+      </div>
+      <div class="deps" id="deps">
+        <div class="dep" data-m="des">
+          <div class="dep__date"><small>Des 2026</small><b>24</b><span>Kamis</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/madinah-hotel-sanabel.webp" alt=""></div>
+          <div><p class="dep__name">Umroh plus Turki</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>12 hari</span><span><i data-lucide="plane" class="i-xs"></i>Turkish Airlines</span><span><i data-lucide="hotel" class="i-xs"></i>Madinah: Sanabel <span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg></span></span><span><i data-lucide="map" class="i-xs"></i>Istanbul, Bursa</span></div></div>
+          <div class="seat seat--low dep__seat"><b>9</b> dari 45 kursi tersisa<div class="seat__bar"><i style="width:80%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp51.900.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="des">
+          <div class="dep__date"><small>Des 2026</small><b>26</b><span>Sabtu</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/madinah-hotel-nabawi-plaza.webp" alt=""></div>
+          <div><p class="dep__name">Umroh eksklusif akhir tahun</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="plane" class="i-xs"></i>Saudia, langsung ke Madinah</span><span><i data-lucide="hotel" class="i-xs"></i>Hotel bintang 5 di pelataran masjid</span></div></div>
+          <div class="seat dep__seat"><b>12</b> dari 30 kursi tersisa<div class="seat__bar"><i style="width:60%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp54.900.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="feb">
+          <div class="dep__date"><small>Feb 2027</small><b>11</b><span>Kamis</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/makkah-hotel-ajyad.webp" alt=""></div>
+          <div><p class="dep__name">Umroh awal Ramadhan · rombongan 2</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="plane" class="i-xs"></i>Saudia</span><span><i data-lucide="moon" class="i-xs"></i>Tarawih di Masjidil Haram</span></div></div>
+          <div class="seat dep__seat"><b>6</b> dari 63 kursi tersisa<div class="seat__bar"><i style="width:90%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp31.900.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="feb">
+          <div class="dep__date"><small>Feb 2027</small><b>16</b><span>Selasa</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/madinah-hotel-taiba.webp" alt=""></div>
+          <div><p class="dep__name">Umroh tengah Ramadhan</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="plane" class="i-xs"></i>Saudia, tanpa transit</span><span><i data-lucide="hotel" class="i-xs"></i>Makkah ★4 · Madinah ★3</span></div></div>
+          <div class="seat dep__seat"><b>17</b> dari 40 kursi tersisa<div class="seat__bar"><i style="width:58%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp38.400.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="mar">
+          <div class="dep__date"><small>Mar 2027</small><b>16</b><span>Selasa</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/makkah-hotel-maqam.webp" alt=""></div>
+          <div><p class="dep__name">Umroh Syawal plus Thaif &amp; Badr</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="hotel" class="i-xs"></i>Maysan Al Maqam ★4 · Mirage Salam ★3</span><span><i data-lucide="map" class="i-xs"></i>Ziarah Badr</span></div></div>
+          <div class="seat dep__seat"><b>31</b> dari 45 kursi tersisa<div class="seat__bar"><i style="width:31%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp30.500.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="jul">
+          <div class="dep__date"><small>Jul 2027</small><b>1</b><span>Kamis</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/makkah-hotel-grand-plaza.webp" alt=""></div>
+          <div><p class="dep__name">Umroh libur sekolah · reguler</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="plane" class="i-xs"></i>Saudia, tanpa transit</span><span><i data-lucide="train-front" class="i-xs"></i>Kereta cepat Makkah–Madinah</span></div></div>
+          <div class="seat dep__seat"><b>71</b> dari 90 kursi tersisa<div class="seat__bar"><i style="width:21%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp34.500.000</b><a class="btn btn-primary btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+        <div class="dep" data-m="jul">
+          <div class="dep__date"><small>Jul 2027</small><b>1</b><span>Kamis</span></div>
+          <div class="dep__photo"><img src="assets/umrah-travel-agency-website/madinah-hotel-salam.webp" alt=""></div>
+          <div><p class="dep__name">Umroh libur sekolah · lite</p><div class="dep__meta"><span><i data-lucide="clock" class="i-xs"></i>9 hari</span><span><i data-lucide="plane" class="i-xs"></i>Saudia, tanpa transit</span><span><i data-lucide="hotel" class="i-xs"></i>Makkah ★3 · Madinah ★3</span></div></div>
+          <div class="seat dep__seat"><b>64</b> dari 90 kursi tersisa<div class="seat__bar"><i style="width:29%"></i></div></div>
+          <div class="dep__price"><small>Mulai</small><b class="num">Rp30.900.000</b><a class="btn btn-line btn-sm" href="#paket" style="margin-top:8px">Lihat paket</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><div><h2 class="t-h2">Hotel yang kami pakai</h2><p class="t-sub">Nama hotel tertulis di setiap paket, bukan "bintang 4 setaraf" saja.</p></div></div>
+      <div class="hotels">
+        <div class="hotel"><div class="photo" data-img="assets/umrah-travel-agency-website/makkah-hotel-clocktower.webp"><span class="photo__tag"><i data-lucide="footprints" class="i-xs"></i>50 m ke Masjidil Haram</span></div><div><p class="hotel__name">Movenpick Hajar Tower</p><p class="t-meta">Makkah · paket eksklusif</p></div></div>
+        <div class="hotel"><div class="photo" data-img="assets/umrah-travel-agency-website/madinah-hotel-nabawi-plaza.webp"><span class="photo__tag"><i data-lucide="footprints" class="i-xs"></i>Pelataran Nabawi</span></div><div><p class="hotel__name">Anwar Al Madinah Movenpick</p><p class="t-meta">Madinah · paket eksklusif</p></div></div>
+        <div class="hotel"><div class="photo" data-img="assets/umrah-travel-agency-website/madinah-hotel-sanabel.webp"><span class="photo__tag"><i data-lucide="footprints" class="i-xs"></i>±200 m ke Nabawi</span></div><div><p class="hotel__name">Sanabel Al Madina</p><p class="t-meta">Madinah · plus Turki</p></div></div>
+        <div class="hotel"><div class="photo" data-img="assets/umrah-travel-agency-website/madinah-hotel-taiba.webp"><span class="photo__tag"><i data-lucide="footprints" class="i-xs"></i>±250 m ke Nabawi</span></div><div><p class="hotel__name">Astoneast Taiba</p><p class="t-meta">Madinah · Ramadhan</p></div></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="saving">
+        <div class="saving__l">
+          <h2 class="t-h2">Belum cukup untuk DP? Mulai dari tabungan umroh</h2>
+          <p class="muted">Rekening tabungan atas nama jamaah sendiri di bank syariah mitra. Setoran bebas mulai Rp500.000, dan saat saldo mencapai Rp5 juta bisa langsung dipakai sebagai DP paket mana pun.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="#">Buka tabungan</a><a class="btn btn-line" href="#">Tanya lewat WhatsApp</a></div>
+        </div>
+        <div class="saving__r">
+          <p class="t-h3" style="margin-bottom:16px">Cara mendaftar</p>
+          <ol class="steps">
+            <li><span>Isi data diri dan nominal setoran awal di akun jamaah.</span></li>
+            <li><span>Transfer ke rekening virtual atas nama Anda, lalu unggah bukti transfer.</span></li>
+            <li><span>Tim keuangan memverifikasi setoran dalam 1 hari kerja.</span></li>
+            <li><span>Saldo dan riwayat setoran bisa dilihat kapan saja di portal jamaah.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="t-h2" style="text-align:center">Pertanyaan yang sering ditanyakan</h2>
+      <p class="t-sub" style="text-align:center;margin-bottom:20px">Belum terjawab? Tanya CS cabang terdekat lewat WhatsApp.</p>
+      <div class="faq">
+        <details open><summary>Berapa DP dan kapan harus lunas?<i data-lucide="chevron-down" class="i-sm"></i></summary><p>DP Rp5.000.000 per orang untuk mengunci kursi. Sisa biaya bisa dicicil setiap bulan dan harus lunas paling lambat 45 hari sebelum keberangkatan, karena visa dan tiket diproses setelah pelunasan.</p></details>
+        <details><summary>Dokumen apa saja yang perlu disiapkan?<i data-lucide="chevron-down" class="i-sm"></i></summary><p>Paspor yang masih berlaku minimal 7 bulan dari tanggal berangkat, KTP, kartu keluarga, pas foto latar putih, buku nikah atau akta lahir bila sekamar dengan keluarga, dan kartu vaksin meningitis.</p></details>
+        <details><summary>Apakah orang tua lansia bisa ikut?<i data-lucide="chevron-down" class="i-sm"></i></summary><p>Bisa. Beri tanda "butuh pendampingan" saat mendaftar, supaya kami siapkan kursi roda, kamar di lantai bawah, dan satu kamar dengan keluarga.</p></details>
+        <details><summary>Bagaimana jika batal berangkat?<i data-lucide="chevron-down" class="i-sm"></i></summary><p>Pembatalan sebelum visa terbit dikenakan biaya administrasi, sisanya dikembalikan. Rincian potongan ada di syarat setiap paket.</p></details>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Kantor &amp; cabang</h2><span class="t-meta">Pendaftaran, pembayaran, dan manasik bisa di semua kantor</span></div>
+      <div class="branches">
+        <div class="branch"><b>Bandung</b><span class="muted">Kantor pusat · Buahbatu</span><a class="link" href="#">WhatsApp</a></div>
+        <div class="branch"><b>Bekasi</b><span class="muted">Bekasi Selatan</span><a class="link" href="#">WhatsApp</a></div>
+        <div class="branch"><b>Yogyakarta</b><span class="muted">Umbulharjo</span><a class="link" href="#">WhatsApp</a></div>
+        <div class="branch"><b>Malang</b><span class="muted">Lowokwaru</span><a class="link" href="#">WhatsApp</a></div>
+        <div class="branch"><b>Makassar</b><span class="muted">Panakkukang</span><a class="link" href="#">WhatsApp</a></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="wordmark">safarah</span><p class="t-meta" style="max-width:320px">PT Safarah Wisata Utama. Penyelenggara umroh dan haji khusus sejak 2004, dengan muthawif dan tim lapangan berizin tinggal resmi di Arab Saudi.</p></div>
+        <div><h4>Paket</h4><ul><li><a href="#home">Umroh reguler</a></li><li><a href="#home">Umroh plus</a></li><li><a href="#home">Haji khusus</a></li><li><a href="#home">Tabungan umroh</a></li></ul></div>
+        <div><h4>Jamaah</h4><ul><li><a href="#jamaah">Portal jamaah</a></li><li><a href="#">Jadwal manasik</a></li><li><a href="#">Cek dokumen</a></li></ul></div>
+        <div><h4>Izin</h4><ul><li><span class="muted">PPIU 8120 3164 7720 0011</span></li><li><span class="muted">PIHK 8120 3164 7720 0012</span></li><li><span class="muted">Terakreditasi A</span></li></ul></div>
+      </div>
+      <div class="footer__legal"><span>© 2026 PT Safarah Wisata Utama</span><span>Pembayaran hanya ke rekening atas nama perusahaan</span></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= DETAIL PAKET ================= -->
+<section data-screen="paket">
+  <div class="wrap">
+    <header class="header header--line">
+      <a class="wordmark" href="#home">safarah</a>
+      <nav class="nav"><a href="#home">Paket umroh</a><a href="#home">Haji khusus</a><a href="#home">Tabungan umroh</a><a href="#home">Cabang</a></nav>
+      <div class="header__right"><a class="btn btn-line btn-sm" href="#jamaah">Masuk jamaah</a></div>
+    </header>
+    <nav class="crumbs"><a href="#home">Beranda</a><span>/</span><a href="#home">Umroh</a><span>/</span><span>Libur sekolah 1 Juli 2027</span></nav>
+    <h1 class="t-h1">Umroh libur sekolah · reguler</h1>
+    <div class="facts">
+      <span><i data-lucide="calendar" class="i-sm"></i>Kam, 1 Jul – Jum, 9 Jul 2027</span>
+      <span><i data-lucide="clock" class="i-sm"></i>9 hari</span>
+      <span><i data-lucide="plane" class="i-sm"></i>Saudia, Jakarta–Jeddah tanpa transit</span>
+      <span><i data-lucide="plane-takeoff" class="i-sm"></i>Soekarno-Hatta Terminal 2F</span>
+      <span><i data-lucide="ticket-check" class="i-sm"></i>Tiket sudah confirmed</span>
+    </div>
+    <div class="pics">
+      <div class="photo" data-img="assets/umrah-travel-agency-website/makkah-hotel-clocktower.webp"></div>
+      <div class="photo" data-img="assets/umrah-travel-agency-website/makkah-hotel-grand-plaza.webp"></div>
+      <div class="photo" data-img="assets/umrah-travel-agency-website/madinah-hotel-salam.webp"></div>
+    </div>
+
+    <div class="detail">
+      <div style="min-width:0">
+        <nav class="tabs" data-select><a class="is-active" href="#paket">Ringkasan</a><a href="#paket">Hotel</a><a href="#paket">Itinerary</a><a href="#paket">Termasuk</a><a href="#paket">Simulasi cicilan</a></nav>
+
+        <div class="block">
+          <p style="max-width:680px">Program 9 hari di musim libur sekolah, cocok untuk keluarga dengan anak. Empat malam di Makkah dengan city tour dan ziarah ke Thaif, perjalanan ke Madinah dengan kereta cepat, lalu tiga malam di Madinah. Dibimbing ustadz pembimbing dan muthawif berbahasa Indonesia selama di Saudi.</p>
+        </div>
+
+        <div class="block">
+          <h2 class="t-h2">Hotel</h2>
+          <div class="stays">
+            <div class="stay"><div class="photo" data-img="assets/umrah-travel-agency-website/makkah-hotel-grand-plaza.webp"></div><div><p class="t-small">Makkah · 4 malam</p><p class="t-h3">Maysan Al Mashaer</p><span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg></span><p class="t-meta" style="margin-top:4px">Shuttle bus 24 jam ke Masjidil Haram</p></div></div>
+            <div class="stay"><div class="photo" data-img="assets/umrah-travel-agency-website/madinah-hotel-salam.webp"></div><div><p class="t-small">Madinah · 3 malam</p><p class="t-h3">Mirage Salam</p><span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg></span><p class="t-meta" style="margin-top:4px">±400 m jalan kaki ke Masjid Nabawi</p></div></div>
+          </div>
+          <p class="t-small" style="margin-top:10px">Bila hotel penuh, diganti hotel setaraf dengan jarak yang sama atau lebih dekat. Perubahan diinfokan paling lambat H-30.</p>
+        </div>
+
+        <div class="block">
+          <h2 class="t-h2">Itinerary</h2>
+          <div class="days">
+            <div class="day day--key"><span class="day__n">1</span><div><p class="day__t">Jakarta – Jeddah – Makkah<small>Kam, 1 Jul</small></p><p>Berangkat dari Terminal 2F, miqat di pesawat. Tiba di Makkah, check-in, lalu umroh pertama bersama pembimbing.</p></div></div>
+            <div class="day"><span class="day__n">2</span><div><p class="day__t">Makkah<small>Jum, 2 Jul</small></p><p>Ibadah mandiri di Masjidil Haram, kajian sore di hotel.</p></div></div>
+            <div class="day"><span class="day__n">3</span><div><p class="day__t">Makkah<small>Sab, 3 Jul</small></p><p>City tour Makkah: Jabal Tsur, Arafah, Muzdalifah, Mina, Jabal Rahmah.</p></div></div>
+            <div class="day"><span class="day__n">4</span><div><p class="day__t">Makkah – Thaif<small>Min, 4 Jul</small></p><p>Ziarah Thaif (tanpa kereta gantung), kebun buah, kembali ke Makkah sore hari.</p></div></div>
+            <div class="day day--key"><span class="day__n">5</span><div><p class="day__t">Makkah – Madinah<small>Sen, 5 Jul</small></p><p>Tawaf wada, kereta cepat Haramain ke Madinah, check-in hotel.</p></div></div>
+            <div class="day"><span class="day__n">6</span><div><p class="day__t">Madinah<small>Sel, 6 Jul</small></p><p>City tour Madinah: Masjid Quba, Jabal Uhud, kebun kurma.</p></div></div>
+            <div class="day"><span class="day__n">7</span><div><p class="day__t">Madinah<small>Rab, 7 Jul</small></p><p>Ibadah di Masjid Nabawi, jadwal Raudhah sesuai izin aplikasi.</p></div></div>
+            <div class="day"><span class="day__n">8</span><div><p class="day__t">Madinah – Jeddah – Jakarta<small>Kam, 8 Jul</small></p><p>Check-out, menuju bandara, penerbangan pulang.</p></div></div>
+            <div class="day day--key"><span class="day__n">9</span><div><p class="day__t">Tiba di Jakarta<small>Jum, 9 Jul</small></p><p>Tiba di Soekarno-Hatta, pembagian air zamzam 5 liter.</p></div></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <h2 class="t-h2">Termasuk &amp; tidak termasuk</h2>
+          <div class="incl">
+            <ul class="yes">
+              <li><i data-lucide="check" class="i-sm"></i>Tiket Saudia pulang-pergi, tanpa transit</li>
+              <li><i data-lucide="check" class="i-sm"></i>Visa umroh dan asuransi perjalanan</li>
+              <li><i data-lucide="check" class="i-sm"></i>Hotel sesuai program, makan 3 kali sehari</li>
+              <li><i data-lucide="check" class="i-sm"></i>Kereta cepat Makkah–Madinah, bus AC selama di Saudi</li>
+              <li><i data-lucide="check" class="i-sm"></i>Handling bandara dan airport tax</li>
+              <li><i data-lucide="check" class="i-sm"></i>Perlengkapan umroh dan manasik 2 kali</li>
+            </ul>
+            <ul class="no">
+              <li><i data-lucide="x" class="i-sm"></i>Pembuatan paspor</li>
+              <li><i data-lucide="x" class="i-sm"></i>Vaksin meningitis</li>
+              <li><i data-lucide="x" class="i-sm"></i>Kelebihan bagasi</li>
+              <li><i data-lucide="x" class="i-sm"></i>Pengeluaran pribadi dan laundry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside class="price-card">
+        <div class="price-card__from"><small>Mulai dari, per orang</small><b class="num">Rp34.500.000</b></div>
+        <div class="rooms num">
+          <div><span>Quad (4 orang)</span><b>Rp34.500.000</b></div>
+          <div><span>Triple (3 orang)</span><b>Rp35.800.000</b></div>
+          <div><span>Double (2 orang)</span><b>Rp37.900.000</b></div>
+          <div><span>Anak, tanpa kasur</span><b>Rp27.400.000</b></div>
+          <div><span>Bayi di bawah 2 tahun</span><b>Rp17.900.000</b></div>
+        </div>
+        <div class="seat"><b>71</b> dari 90 kursi tersisa<div class="seat__bar"><i style="width:21%"></i></div></div>
+        <a class="btn btn-primary btn-block" href="#sim" onclick="document.getElementById('sim').scrollIntoView({behavior:'smooth'});return false">Hitung cicilan &amp; daftar</a>
+        <a class="btn btn-line btn-block" href="#"><i data-lucide="message-circle" class="i-sm"></i>Tanya CS</a>
+        <hr class="divider">
+        <div class="kv"><i data-lucide="shield-check" class="i-sm"></i><div><b>PPIU 8120 3164 7720 0011</b><p class="t-meta">Bayar hanya ke rekening atas nama PT Safarah Wisata Utama</p></div></div>
+        <div class="kv"><i data-lucide="user-round" class="i-sm"></i><div><b>Pembimbing: Ustadz Hanif Alawi</b><p class="t-meta">Memimpin manasik dan ikut berangkat</p></div></div>
+      </aside>
+    </div>
+
+    <!-- Simulasi cicilan -->
+    <section class="sim" id="sim">
+      <form class="sim__in" id="simForm" data-demo-form="#simDone">
+        <div><h2 class="t-h2">Simulasi cicilan</h2><p class="t-sub">DP mengunci kursi. Sisa dicicil tiap tanggal 17, lunas paling lambat 17 Mei 2027 (H-45).</p></div>
+        <div class="field"><span>Tipe kamar</span>
+          <div class="seg" data-select id="roomSeg">
+            <button type="button" class="is-active" data-value="34500000">Quad<small>Rp34,5 jt</small></button>
+            <button type="button" data-value="35800000">Triple<small>Rp35,8 jt</small></button>
+            <button type="button" data-value="37900000">Double<small>Rp37,9 jt</small></button>
+          </div>
+        </div>
+        <div class="field"><span>Jamaah</span>
+          <div>
+            <div class="qty"><div><p style="font-weight:500">Dewasa</p><p class="t-small">12 tahun ke atas</p></div><div class="stepper" data-stepper data-min="1" data-max="8" id="stAdult"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>2</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div></div>
+            <div class="qty"><div><p style="font-weight:500">Anak</p><p class="t-small">2–11 tahun, tanpa kasur</p></div><div class="stepper" data-stepper data-min="0" data-max="6" id="stChild"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output>1</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div></div>
+          </div>
+        </div>
+        <div class="field"><span>DP per orang</span>
+          <div class="seg" data-select id="dpSeg">
+            <button type="button" class="is-active" data-value="5000000">Rp5 jt</button>
+            <button type="button" data-value="10000000">Rp10 jt</button>
+            <button type="button" data-value="15000000">Rp15 jt</button>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block">Daftar &amp; bayar DP <span id="dpBtn" class="num">Rp15.000.000</span></button>
+        <p class="t-small">Pembayaran lewat virtual account atas nama PT Safarah Wisata Utama. Bukti bayar langsung tercatat di portal jamaah.</p>
+      </form>
+      <div class="sim__out">
+        <div id="simResult">
+          <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-end">
+            <div><p class="t-meta">Cicilan per bulan, 7 kali</p><p class="big-num num" id="simMonthly">Rp12.428.571</p></div>
+            <div style="min-width:220px">
+              <div class="sum-row"><span class="muted">Total biaya</span><b class="num" id="simTotal">Rp96.400.000</b></div>
+              <div class="sum-row"><span class="muted">DP hari ini</span><b class="num" id="simDp">Rp15.000.000</b></div>
+              <div class="sum-row"><span class="muted">Sisa dicicil</span><b class="num" id="simRest">Rp81.400.000</b></div>
+            </div>
+          </div>
+          <div class="table-scroll" style="margin-top:22px">
+            <table class="table num"><thead><tr><th>Ke</th><th>Jatuh tempo</th><th>Keterangan</th><th>Jumlah</th></tr></thead><tbody id="simRows"></tbody></table>
+          </div>
+        </div>
+        <div id="simDone" hidden>
+          <div class="done" style="margin:8px 0">
+            <span class="done__icon"><i data-lucide="check"></i></span>
+            <h2 class="t-h2">Kursi ditahan 24 jam</h2>
+            <p class="muted">Kode pendaftaran <b style="color:var(--ink)">SFR-2707-0193</b>. Selesaikan DP ke virtual account di bawah, lalu lengkapi data dan dokumen jamaah di portal.</p>
+            <div class="va" style="border-radius:var(--r-md)"><span>Virtual account bank syariah<br><b class="num">9881 0270 7019 3001</b></span><span class="num" id="doneDp" style="font-weight:700">Rp15.000.000</span></div>
+            <a class="btn btn-primary" href="#jamaah" style="align-self:flex-start">Buka portal jamaah</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div style="height:72px"></div>
+</section>
+
+<!-- ================= PORTAL JAMAAH ================= -->
+<section data-screen="jamaah">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="wordmark" href="#home" style="font-size:22px">safarah</a>
+      <div class="topbar__search"><i data-lucide="search" class="i-sm"></i>Cari pembayaran, dokumen, jadwal</div>
+      <div class="topbar__right"><span>Notifikasi<span class="count">2</span></span><span style="display:flex;align-items:center;gap:10px"><span class="avatar">NA</span>Nur Aisyah</span></div>
+    </div>
+
+    <div class="who">
+      <div>
+        <h1 class="t-h1">Nur Aisyah Hamidah</h1>
+        <nav class="crumbs"><span>Pendaftaran SFR-2702-0418</span><span>›</span><span>Umroh awal Ramadhan</span><span>›</span><b style="color:var(--ink)">Ringkasan</b></nav>
+      </div>
+      <div class="who__actions"><button class="btn btn-grey btn-sm">Ubah data</button><button class="btn btn-grey btn-sm">Unduh invoice</button><button class="icon-btn" style="background:var(--tile);border:0" aria-label="Cetak"><i data-lucide="printer" class="i-sm"></i></button></div>
+    </div>
+
+    <nav class="tabs" data-select><button class="is-active">Ringkasan</button><button>Pembayaran</button><button>Dokumen</button><button>Manasik</button><button>Rombongan</button></nav>
+
+    <div class="tiles">
+      <div class="tile tile--me"><span class="avatar avatar--lg">NA</span><div><p class="t-h3">Nur Aisyah Hamidah</p><p class="t-meta">+ 1 jamaah · Hendra Wijaya</p><p class="t-meta">Kamar quad · Makkah lt. 8</p></div></div>
+      <div class="tile"><small>Total biaya, 2 jamaah</small><span class="val num">Rp63.800.000</span></div>
+      <div class="tile"><small>Sudah dibayar</small><span class="val num">Rp42.000.000</span></div>
+      <div class="tile"><small>Sisa</small><span class="val num">Rp21.800.000</span></div>
+      <div class="tile tile--wide"><small>Progres pembayaran</small><span class="val num">66% <i>· lunas paling lambat Senin, 28 Des 2026 (71 hari lagi)</i></span><div class="progress"><i style="width:66%"></i></div></div>
+      <div class="tile"><small>Dokumen</small><span class="val num">9 <i>/ 12 lengkap</i></span></div>
+    </div>
+
+    <div class="portal-cols">
+      <div class="box">
+        <div class="box__head"><div><p class="t-h3">Cicilan</p><p class="t-small">Rp8.000.000 tiap tanggal 14</p></div><span class="pill pill--brand">Berikutnya 14 Nov</span></div>
+        <div class="row row--next"><span class="row__ic row__ic--warn"><i data-lucide="calendar-clock" class="i-sm"></i></span><div><p class="row__t">Cicilan ke-5</p><p class="row__d">Jatuh tempo Sabtu, 14 Nov 2026 · 27 hari lagi</p></div><div class="row__r"><b class="num">Rp8.000.000</b><a class="link" href="#jamaah" id="payNow" style="font-size:13.5px">Bayar sekarang</a></div></div>
+        <div class="row"><span class="row__ic"><i data-lucide="calendar" class="i-sm"></i></span><div><p class="row__t">Cicilan ke-6</p><p class="row__d">Senin, 14 Des 2026</p></div><div class="row__r"><b class="num">Rp8.000.000</b></div></div>
+        <div class="row"><span class="row__ic"><i data-lucide="flag" class="i-sm"></i></span><div><p class="row__t">Pelunasan</p><p class="row__d">Senin, 28 Des 2026 · H-45</p></div><div class="row__r"><b class="num">Rp5.800.000</b></div></div>
+        <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="check" class="i-sm"></i></span><div><p class="row__t">Cicilan ke-4</p><p class="row__d">Dibayar 13 Okt 2026 · VA</p></div><div class="row__r"><span class="num">Rp8.000.000</span><span class="pill pill--ok">Terverifikasi</span></div></div>
+        <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="check" class="i-sm"></i></span><div><p class="row__t">Cicilan ke-1 s/d 3</p><p class="row__d">14 Jul, 14 Agu, 12 Sep 2026</p></div><div class="row__r"><span class="num">Rp24.000.000</span><span class="pill pill--ok">Terverifikasi</span></div></div>
+        <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="check" class="i-sm"></i></span><div><p class="row__t">DP 2 jamaah</p><p class="row__d">Dibayar 14 Jun 2026 · kantor Bandung</p></div><div class="row__r"><span class="num">Rp10.000.000</span><span class="pill pill--ok">Terverifikasi</span></div></div>
+        <div class="va"><span class="muted">Virtual account Anda</span><b class="num">9881 0270 2041 8001</b></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <div class="box">
+          <div class="box__head"><div><p class="t-h3">Dokumen</p><p class="t-small">Diperiksa tim visa dalam 1 hari kerja</p></div><div class="chips" data-select><button class="chip is-active">Nur Aisyah <small>4/6</small></button><button class="chip">Hendra <small>5/6</small></button></div></div>
+          <div id="docs">
+            <div class="row"><span class="row__ic row__ic--bad"><i data-lucide="image" class="i-sm"></i></span><div><p class="row__t">Pas foto 4×6</p><p class="row__d" style="color:var(--bad)">Ditolak: latar belakang harus putih polos, wajah 80% bingkai</p></div><div class="row__r"><button class="btn btn-primary btn-sm" data-upload><i data-lucide="upload" class="i-sm"></i>Unggah ulang</button></div></div>
+            <div class="row"><span class="row__ic row__ic--warn"><i data-lucide="syringe" class="i-sm"></i></span><div><p class="row__t">Kartu vaksin meningitis</p><p class="row__d">Suntik paling lambat 28 Jan 2027 di KKP atau klinik rujukan</p></div><div class="row__r"><button class="btn btn-line btn-sm" data-upload><i data-lucide="upload" class="i-sm"></i>Unggah</button></div></div>
+            <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="book-open" class="i-sm"></i></span><div><p class="row__t">Paspor</p><p class="row__d">Berlaku s/d 3 Mar 2031 · nama 3 suku kata</p></div><div class="row__r"><span class="pill pill--ok">Terverifikasi</span></div></div>
+            <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="id-card" class="i-sm"></i></span><div><p class="row__t">KTP &amp; kartu keluarga</p><p class="row__d">Sesuai data paspor</p></div><div class="row__r"><span class="pill pill--ok">Terverifikasi</span></div></div>
+            <div class="row"><span class="row__ic row__ic--ok"><i data-lucide="heart-handshake" class="i-sm"></i></span><div><p class="row__t">Buku nikah</p><p class="row__d">Untuk sekamar dengan suami</p></div><div class="row__r"><span class="pill pill--ok">Terverifikasi</span></div></div>
+          </div>
+        </div>
+        <div class="trip">
+          <div class="photo" data-img="assets/umrah-travel-agency-website/makkah-hotel-ajyad.webp"></div>
+          <div class="trip__body">
+            <p class="t-small">Kamis, 11 Feb 2027 · 9 hari</p>
+            <a class="t-h3" href="#paket">Umroh awal Ramadhan · rombongan 2</a>
+            <p class="t-meta">Manasik 1: Sabtu, 9 Jan 2027, 08.00 di kantor Bandung atau lewat Zoom</p>
+            <p class="t-meta">Pembimbing: Ustadz Hanif Alawi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height:72px"></div>
+</section>
+
+<!-- ================= ROOMING LIST (operasional) ================= -->
+<section data-screen="rooming">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="wordmark" href="#home" style="font-size:22px">safarah</a>
+      <span class="t-meta">Operasional</span>
+      <nav class="tabs" style="border:0;margin-left:12px"><button>Keberangkatan</button><button>Manifest</button><button class="is-active">Rooming list</button><button>Dokumen</button></nav>
+      <div class="topbar__right"><span class="avatar">RS</span></div>
+    </div>
+    <div class="ops-bar">
+      <div><p class="t-h3">Umroh awal Ramadhan · rombongan 2</p><p class="t-small">Berangkat Kamis, 11 Feb 2027 · 63 jamaah · data dikirim ke hotel H-14 (28 Jan)</p></div>
+      <div class="chips" data-select style="margin-left:auto"><button class="chip is-active">Makkah · 4 malam</button><button class="chip">Madinah · 3 malam</button></div>
+      <button class="btn btn-line btn-sm"><i data-lucide="printer" class="i-sm"></i>Cetak</button>
+      <button class="btn btn-primary btn-sm"><i data-lucide="send" class="i-sm"></i>Kirim ke hotel</button>
+    </div>
+    <div class="ops">
+      <aside class="pool">
+        <div><p class="t-h3">Belum dapat kamar <span class="muted" id="poolCount">6</span></p><p class="t-small">Pilih jamaah, lalu klik kasur kosong.</p></div>
+        <div class="pool__list" id="pool"></div>
+        <p class="room__note" style="margin-top:4px"><i data-lucide="triangle-alert" class="i-xs" style="margin-top:2px"></i>Sisa 5 kasur untuk 6 jamaah. Tambah 1 kamar atau ubah 807 jadi quad.</p>
+        <div class="legend" style="margin-top:8px"><span><span class="pax__g g-l">L</span>Laki-laki</span><span><span class="pax__g g-p">P</span>Perempuan</span></div>
+      </aside>
+      <div class="board" id="board">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+          <div><p class="t-h3">Maysan Al Maqam · 17 kamar, lantai 8–10</p><p class="t-small"><b id="placed" style="color:var(--ink)">57</b> dari 63 jamaah sudah dapat kasur</p></div>
+          <div class="legend"><span><i data-lucide="users" class="i-xs"></i>Keluarga / mahram</span><span><i data-lucide="accessibility" class="i-xs"></i>Butuh pendampingan</span></div>
+        </div>
+        <div id="floors"></div>
+        <div class="floor"><div class="floor__h"><p class="t-h3">Lantai 10</p><span class="t-small">5 kamar · 19 jamaah · penuh</span><a class="link" href="#rooming" style="margin-left:auto;font-size:14px">Tampilkan</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+
+  // Beranda: filter jadwal per bulan
+  document.getElementById("monthChips").addEventListener("lapak:select", function (e) {
+    var m = e.detail.value;
+    document.querySelectorAll("#deps .dep").forEach(function (r) { r.hidden = m !== "all" && r.getAttribute("data-m") !== m; });
+  });
+
+  // Detail: simulasi cicilan
+  var CHILD = 27400000, room = 34500000, dp = 5000000;
+  var due = ["17 Nov 2026", "17 Des 2026", "17 Jan 2027", "17 Feb 2027", "17 Mar 2027", "17 Apr 2027", "17 Mei 2027"];
+  function val(id) { return Number(document.querySelector("#" + id + " output").textContent); }
+  function sim() {
+    var a = val("stAdult"), c = val("stChild"), pax = a + c;
+    var total = a * room + c * CHILD, dpT = dp * pax, rest = total - dpT, n = due.length;
+    var m = Math.floor(rest / n / 1000) * 1000, last = rest - m * (n - 1);
+    document.getElementById("simTotal").textContent = rupiah(total);
+    document.getElementById("simDp").textContent = rupiah(dpT);
+    document.getElementById("simRest").textContent = rupiah(rest);
+    document.getElementById("simMonthly").textContent = rupiah(m);
+    document.getElementById("dpBtn").textContent = rupiah(dpT);
+    document.getElementById("doneDp").textContent = rupiah(dpT);
+    var h = '<tr><td>DP</td><td>Hari ini, 18 Okt 2026</td><td>' + pax + ' jamaah × ' + rupiah(dp) + '</td><td><b>' + rupiah(dpT) + '</b></td></tr>';
+    due.forEach(function (d, i) { h += "<tr><td>" + (i + 1) + "</td><td>" + d + "</td><td>" + (i === n - 1 ? '<span class="pill pill--brand">Pelunasan H-45</span>' : "Cicilan bulanan") + "</td><td>" + rupiah(i === n - 1 ? last : m) + "</td></tr>"; });
+    document.getElementById("simRows").innerHTML = h;
+  }
+  document.getElementById("roomSeg").addEventListener("lapak:select", function (e) { room = Number(e.detail.value); sim(); });
+  document.getElementById("dpSeg").addEventListener("lapak:select", function (e) { dp = Number(e.detail.value); sim(); });
+  document.getElementById("stAdult").addEventListener("lapak:change", sim);
+  document.getElementById("stChild").addEventListener("lapak:change", sim);
+  document.getElementById("simForm").addEventListener("submit", function () { document.getElementById("simResult").hidden = true; });
+  sim();
+
+  // Portal: unggah dokumen
+  document.getElementById("docs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-upload]"); if (!b) return;
+    var row = b.closest(".row");
+    row.querySelector(".row__ic").className = "row__ic";
+    row.querySelector(".row__d").style.color = "";
+    row.querySelector(".row__d").textContent = "Diunggah hari ini, 18 Okt 2026 · sedang diperiksa";
+    b.parentNode.innerHTML = '<span class="pill pill--warn">Menunggu verifikasi</span>';
+  });
+  document.getElementById("payNow").addEventListener("click", function (e) {
+    e.preventDefault(); this.outerHTML = '<span class="pill pill--warn">VA aktif s/d 14 Nov</span>';
+  });
+
+  // Rooming list
+  var pool = [
+    ["L", "Slamet Riyadi", "62 th · suami Bu Sri"], ["P", "Sri Lestari", "58 th · istri Pak Slamet"],
+    ["P", "Dewi Anggraini", "34 th"], ["P", "Rina Marlina", "29 th"],
+    ["L", "Agus Prasetyo", "41 th"], ["L", "Fikri Maulana", "19 th"]
+  ];
+  var floors = [
+    { name: "Lantai 8", rooms: [
+      { no: "801", type: "Quad", beds: [["L", "Hendra Wijaya"], ["P", "Nur Aisyah H."], ["P", "Laila Wijaya"], ["L", "Rafi Wijaya"]], fam: true },
+      { no: "802", type: "Quad", beds: [["P", "Siti Rohmah"], ["P", "Umi Kulsum"], ["P", "Yuliani"], ["P", "Endang S."]] },
+      { no: "803", type: "Quad", beds: [["L", "Bambang S."], ["L", "Joko Susilo"], ["L", "Imam Santoso"], ["L", "Darmawan"]] },
+      { no: "804", type: "Double", beds: [["L", "H. Abdul Rozak"], ["P", "Hj. Maryam"]], fam: true, help: true },
+      { no: "805", type: "Quad", beds: [["P", "Ratna Sari"], ["P", "Wulan D."], null, null], warn: "2 kasur kosong, bisa untuk Dewi & Rina" },
+      { no: "806", type: "Quad", beds: [["L", "Teguh Santoso"], ["L", "Yusuf Hadi"], ["L", "Arif Budiman"], null] },
+      { no: "807", type: "Triple", beds: [["P", "Ani Suryani"], ["P", "Fatimah Z."], ["P", "Nining"]] },
+      { no: "808", type: "Quad", beds: [["L", "Wahyu Nugroho"], ["P", "Sinta Nugroho"], ["P", "Kirana N."], ["L", "Bagas N."]], fam: true }
+    ]},
+    { name: "Lantai 9", rooms: [
+      { no: "901", type: "Double", beds: [null, null], warn: "Disiapkan untuk pasangan lansia (pendampingan)", help: true },
+      { no: "902", type: "Quad", beds: [["L", "Sugiono"], ["L", "Rahmat H."], ["L", "Eko Wibowo"], ["L", "Dani Saputra"]] },
+      { no: "903", type: "Quad", beds: [["P", "Kartini"], ["P", "Suharti"], ["P", "Mulyani"], ["P", "Tuti A."]] },
+      { no: "904", type: "Quad", beds: [["L", "Hasan Basri"], ["L", "Zainal A."], ["L", "Ridwan"], ["L", "Iwan S."]] }
+    ]}
+  ];
+  var picked = null, placed = 57;
+  function paxHtml(p, i) { return '<button type="button" class="pax" data-i="' + i + '"><span class="pax__g ' + (p[0] === "L" ? "g-l" : "g-p") + '">' + p[0] + '</span><span class="pax__n">' + p[1] + "<small>" + p[2] + "</small></span></button>"; }
+  function renderPool() {
+    var h = ""; pool.forEach(function (p, i) { if (p) h += paxHtml(p, i); });
+    document.getElementById("pool").innerHTML = h || '<p class="t-meta">Semua jamaah sudah dapat kamar.</p>';
+    document.getElementById("poolCount").textContent = pool.filter(Boolean).length;
+    document.getElementById("placed").textContent = placed;
+  }
+  function bed(b) {
+    if (!b) return '<button type="button" class="bed bed--empty"><i data-lucide="plus" class="i-xs"></i>Kasur kosong</button>';
+    return '<div class="bed"><span class="pax__g ' + (b[0] === "L" ? "g-l" : "g-p") + '">' + b[0] + "</span>" + b[1] + "</div>";
+  }
+  var h = "";
+  floors.forEach(function (f) {
+    h += '<div class="floor"><div class="floor__h"><p class="t-h3">' + f.name + '</p><span class="t-small">' + f.rooms.length + " kamar</span></div><div class=\"room-grid\">";
+    f.rooms.forEach(function (r) {
+      h += '<div class="room' + (r.warn ? " room--warn" : "") + '"><div class="room__h"><b>' + r.no + '</b><span class="muted">' + r.type + (r.fam ? ' <i data-lucide="users" class="i-xs" style="display:inline;vertical-align:-2px"></i>' : "") + (r.help ? ' <i data-lucide="accessibility" class="i-xs" style="display:inline;vertical-align:-2px"></i>' : "") + "</span></div>";
+      r.beds.forEach(function (b) { h += bed(b); });
+      if (r.warn) h += '<p class="room__note"><i data-lucide="info" class="i-xs" style="margin-top:2px"></i>' + r.warn + "</p>";
+      h += "</div>";
+    });
+    h += "</div></div>";
+  });
+  document.getElementById("floors").innerHTML = h;
+  renderPool();
+  var board = document.getElementById("board");
+  document.getElementById("pool").addEventListener("click", function (e) {
+    var b = e.target.closest(".pax"); if (!b) return;
+    document.querySelectorAll("#pool .pax").forEach(function (x) { x.classList.toggle("is-picked", x === b && !b.classList.contains("is-picked")); });
+    picked = b.classList.contains("is-picked") ? Number(b.dataset.i) : null;
+    board.classList.toggle("is-placing", picked !== null);
+  });
+  board.addEventListener("click", function (e) {
+    var b = e.target.closest(".bed--empty"); if (!b || picked === null) return;
+    var div = document.createElement("div"); div.innerHTML = bed(pool[picked]);
+    b.replaceWith(div.firstChild);
+    pool[picked] = null; picked = null; placed++;
+    board.classList.remove("is-placing"); renderPool();
+  });
+  icons();
+})();
+</script>
+</body>
+</html>

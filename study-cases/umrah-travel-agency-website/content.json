@@ -1,0 +1,63 @@
+{
+  "slug": "umrah-travel-agency-website",
+  "kind": "Website",
+  "industry": "Transportation & Travel",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Installment Payments",
+    "Pilgrim Portal"
+  ],
+  "metrics": [
+    { "value": "7", "label": "DEPARTURES LISTED", "labelId": "JADWAL KEBERANGKATAN" },
+    { "value": "H-45", "label": "INSTALLMENT DEADLINE", "labelId": "BATAS PELUNASAN" },
+    { "value": "6", "label": "DOCUMENTS PER PILGRIM", "labelId": "DOKUMEN PER JAMAAH" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with departure search, licence strip and schedule", "captionId": "Beranda dengan pencarian keberangkatan, strip izin, dan jadwal" },
+    { "hash": "paket", "caption": "Package page with hotels, itinerary and room prices", "captionId": "Halaman paket dengan hotel, itinerary, dan harga per kamar" },
+    { "hash": "jamaah", "caption": "Pilgrim portal with installment progress and document checklist", "captionId": "Portal jamaah dengan progres cicilan dan checklist dokumen" },
+    { "hash": "rooming", "caption": "Rooming list for assigning pilgrims to hotel rooms", "captionId": "Rooming list untuk membagi jamaah ke kamar hotel" }
+  ],
+  "content_en": {
+    "title": "Umrah & Hajj Travel Agency Website",
+    "type": "UMRAH PACKAGES & PILGRIM PORTAL",
+    "category": "Booking System",
+    "summary": "A redesign for a licensed umrah and special hajj operator with several branch offices. Prospective pilgrims compare departures by season, hotel and remaining seats, simulate a down payment and monthly installments, then follow payments and documents in a pilgrim portal; the operations team assigns hotel rooms per departure.",
+    "challenge": "The old site opened with a slider of promotional posters, so dates, prices and the operating licence lived inside images. Package cards showed empty fields for hotel class and airline, and the real details—price per room type, hotel names, inclusions—sat in free-text descriptions full of emoji and duplicated lines.\n\nThere was no way to work out a down payment or monthly installment without contacting customer service, even though paying in stages is how most pilgrims buy. The gallery and testimonials were branded posters over pilgrims' faces, and the pilgrim app behind the login was invisible from the website.",
+    "solution": "The homepage opens with a search for departure month, city and budget, followed by a licence strip and a departure list that can be filtered by season. Each row shows the date, hotels, airline, seats left and starting price. Package pages turn the poster content into structured data: prices per room type, Makkah and Madinah hotels, a nine-day itinerary and what is or is not included, with an installment simulator that builds the payment schedule up to the H-45 settlement date.\n\nAfter registering, pilgrims see total, paid and remaining amounts, upcoming installments with a virtual account, and a document checklist per family member where rejected items can be re-uploaded. Before departure, staff use a rooming list to place pilgrims into rooms by gender, family and assistance needs. The planned production stack is Next.js with Supabase and a virtual-account payment gateway.",
+    "features": [
+      "Departure search by month, city and budget",
+      "Departure list filtered by season with hotels and seats left",
+      "Structured package page with room-type prices and itinerary",
+      "Down payment and installment simulator up to H-45",
+      "Pilgrim portal with payment progress and virtual account",
+      "Document checklist per pilgrim with re-upload for rejected items",
+      "Rooming list by gender, family and assistance needs"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Travel Umroh & Haji",
+    "type": "PAKET UMROH & PORTAL JAMAAH",
+    "category": "Booking System",
+    "summary": "Redesign untuk penyelenggara umroh dan haji khusus berizin dengan beberapa kantor cabang. Calon jamaah membandingkan keberangkatan per musim, hotel, dan kursi tersisa, menghitung DP dan cicilan bulanan, lalu memantau pembayaran dan dokumen di portal jamaah; tim operasional membagi kamar hotel per keberangkatan.",
+    "challenge": "Situs lama dibuka dengan slider poster promo, sehingga tanggal, harga, dan izin penyelenggara hanya ada di dalam gambar. Kartu paket menampilkan kolom kelas hotel dan maskapai yang kosong, sementara detail sebenarnya—harga per tipe kamar, nama hotel, fasilitas—ada di deskripsi bebas penuh emoji dan baris yang berulang.\n\nTidak ada cara menghitung DP atau cicilan bulanan tanpa menghubungi CS, padahal sebagian besar jamaah membayar bertahap. Galeri dan testimoni berupa poster berlogo di atas wajah jamaah, dan aplikasi jamaah di balik tombol login tidak terlihat dari website.",
+    "solution": "Beranda dibuka dengan pencarian bulan berangkat, kota, dan budget, diikuti strip izin dan daftar keberangkatan yang bisa difilter per musim. Setiap baris menampilkan tanggal, hotel, maskapai, kursi tersisa, dan harga mulai. Halaman paket mengubah isi poster menjadi data terstruktur: harga per tipe kamar, hotel Makkah dan Madinah, itinerary sembilan hari, serta yang termasuk dan tidak, dengan simulasi cicilan yang menyusun jadwal bayar sampai pelunasan H-45.\n\nSetelah mendaftar, jamaah melihat total, yang sudah dibayar, dan sisa, cicilan berikutnya dengan virtual account, serta checklist dokumen per anggota keluarga yang bisa diunggah ulang bila ditolak. Menjelang keberangkatan, staf memakai rooming list untuk menempatkan jamaah ke kamar berdasarkan gender, keluarga, dan kebutuhan pendampingan. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan payment gateway virtual account.",
+    "features": [
+      "Pencarian keberangkatan per bulan, kota, dan budget",
+      "Daftar keberangkatan per musim dengan hotel dan kursi tersisa",
+      "Halaman paket terstruktur dengan harga per tipe kamar dan itinerary",
+      "Simulasi DP dan cicilan sampai H-45",
+      "Portal jamaah dengan progres pembayaran dan virtual account",
+      "Checklist dokumen per jamaah dengan unggah ulang bila ditolak",
+      "Rooming list berdasarkan gender, keluarga, dan pendampingan"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
