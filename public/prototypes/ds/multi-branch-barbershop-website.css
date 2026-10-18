@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Teduh Barbershop — design system
+   Referensi: Fresha (landing & kartu venue), Cal.com (daftar layanan).
+   Lihat study-cases/multi-branch-barbershop-website/design-system.md
+   ========================================================================== */
+
+/* ---------- Token ---------- */
+:root {
+  --font: "Inter", system-ui, sans-serif;
+  --font-head: "Inter Tight", "Inter", system-ui, sans-serif;
+
+  --ink: #0d1619;        /* teks utama & tombol utama */
+  --ink-2: #737373;      /* meta */
+  --ink-3: #a3a3a3;
+  --line: #e5e5e5;
+  --line-2: #d4d4d4;
+  --bg: #ffffff;
+  --soft: #f5f5f5;       /* chip, tab, field */
+  --brand: #2f6b45;      /* hijau brand asli: link & status sepi */
+  --star: #f5b500;
+  --busy: #c2410c;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-pill: 999px;
+  --sh-pop: 0 4px 24px rgba(13, 22, 25, .10);
+  --sh-bar: 0 2px 12px rgba(13, 22, 25, .08);
+
+  --w: 1280px;
+  --gutter: 32px;
+}
+@media (max-width: 720px) { :root { --gutter: 16px; } }
+
+/* ---------- Dasar ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 400 15px/1.5 var(--font); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+[data-lucide] { width: 18px; height: 18px; stroke-width: 1.75; flex: none; }
+.i-sm { width: 16px; height: 16px; }
+
+/* Router layar (dipakai lapak.js) */
+[data-screen] { display: none; }
+[data-screen].is-active { display: block; }
+
+.wrap { max-width: calc(var(--w) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.muted { color: var(--ink-2); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Tipografi ---------- */
+.t-hero { font: 700 56px/1.05 var(--font-head); letter-spacing: -0.03em; }
+.t-h1 { font: 700 40px/1.1 var(--font-head); letter-spacing: -0.025em; }
+.t-h2 { font: 600 24px/1.25 var(--font-head); letter-spacing: -0.015em; }
+.t-h3 { font: 600 17px/1.35 var(--font-head); letter-spacing: -0.01em; }
+.t-body { font-size: 15px; }
+.t-meta { font-size: 14px; color: var(--ink-2); }
+.t-small { font-size: 13px; color: var(--ink-2); }
+@media (max-width: 720px) { .t-hero { font-size: 36px; } .t-h1 { font-size: 30px; } .t-h2 { font-size: 20px; } }
+
+/* ---------- Tombol ---------- */
+.btn { height: 44px; padding: 0 20px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: 15px; white-space: nowrap; transition: background .15s; }
+.btn-primary { background: var(--ink); color: #fff; }
+.btn-primary:hover { background: #2a3336; }
+.btn-secondary { background: #fff; color: var(--ink); border: 1px solid var(--line-2); }
+.btn-secondary:hover { background: var(--soft); }
+.btn-sm { height: 36px; padding: 0 14px; font-size: 14px; }
+.btn-block { width: 100%; }
+
+/* ---------- Header ---------- */
+.header { height: 72px; display: flex; align-items: center; gap: 16px; }
+.logo { font: 700 24px/1 var(--font-head); letter-spacing: -0.04em; }
+.header__right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.header__link { font-weight: 600; font-size: 15px; padding: 0 12px; }
+.header--line { border-bottom: 1px solid var(--line); }
+
+/* ---------- Search pill ---------- */
+.search { display: flex; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: var(--r-pill); box-shadow: var(--sh-pop); padding: 6px 6px 6px 8px; max-width: 820px; width: 100%; }
+.search__seg { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: 14px; }
+.search__seg + .search__seg { border-left: 1px solid var(--line); }
+.search__seg select, .search__seg input { border: 0; outline: 0; background: transparent; width: 100%; font-size: 14px; color: var(--ink); appearance: none; }
+.search .btn { height: 44px; }
+@media (max-width: 720px) {
+  .search { flex-direction: column; align-items: stretch; border-radius: var(--r-md); padding: 6px; }
+  .search__seg + .search__seg { border-left: 0; border-top: 1px solid var(--line); }
+  .search .btn { margin-top: 6px; }
+}
+
+/* ---------- Kartu venue (cabang) ---------- */
+.row-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scrollbar-width: none; }
+.row-scroll::-webkit-scrollbar { display: none; }
+@media (max-width: 1024px) { .row-scroll { grid-auto-columns: 46%; } }
+@media (max-width: 720px) { .row-scroll { grid-auto-columns: 82%; } }
+.venue { display: flex; flex-direction: column; gap: 10px; }
+.venue__media { position: relative; }
+.photo { position: relative; aspect-ratio: var(--ar, 4 / 3); border-radius: var(--r-sm); overflow: hidden; background: var(--soft); }
+.photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.badge { position: absolute; top: 10px; left: 10px; background: #fff; border-radius: var(--r-pill); padding: 4px 10px; font-size: 12px; font-weight: 600; }
+.badge--live { color: var(--brand); }
+.fav { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border-radius: 50%; background: rgba(13,22,25,.35); color: #fff; display: grid; place-items: center; }
+.venue__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.venue__name { font: 600 16px/1.3 var(--font-head); }
+.rating { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; font-size: 14px; white-space: nowrap; }
+.rating svg { width: 15px; height: 15px; fill: var(--star); stroke: none; }
+.stars { display: inline-flex; gap: 2px; }
+.stars svg { width: 14px; height: 14px; fill: var(--star); stroke: none; }
+
+/* ---------- Status ---------- */
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.status--busy::before { background: var(--busy); }
+.status--closed::before { background: var(--ink-3); }
+
+/* ---------- Panel daftar (gaya Cal.com) ---------- */
+.panel { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: #fff; }
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 18px 20px; }
+.svc + .svc { border-top: 1px solid var(--line); }
+.svc__name { font: 600 16px/1.3 var(--font-head); }
+.svc__desc { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+.svc__meta { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.tag { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 12.5px; font-weight: 500; }
+.tag svg { width: 13px; height: 13px; }
+.svc__right { display: flex; align-items: center; gap: 16px; }
+.svc__price { font-weight: 600; white-space: nowrap; }
+.add { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; }
+.svc.is-picked .add { background: var(--ink); border-color: var(--ink); color: #fff; }
+@media (max-width: 720px) { .svc__right { flex-direction: column; align-items: flex-end; gap: 8px; } }
+
+/* ---------- Chip & tab ---------- */
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { height: 38px; padding: 0 16px; border-radius: var(--r-pill); background: var(--soft); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; white-space: nowrap; }
+.chip.is-active { background: var(--ink); color: #fff; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs a { padding: 14px 16px; font-weight: 600; font-size: 15px; color: var(--ink-2); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tabs a.is-active { color: var(--ink); border-color: var(--ink); }
+
+/* ---------- Orang (kapster) ---------- */
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 20px; }
+.person { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; font: 600 20px var(--font-head); color: var(--ink); }
+.avatar--sm { width: 36px; height: 36px; font-size: 13px; }
+.avatar--md { width: 48px; height: 48px; font-size: 15px; }
+.person__name { font-weight: 600; font-size: 15px; }
+.person__role { font-size: 13px; color: var(--ink-2); }
+
+/* ---------- Ulasan ---------- */
+.review { display: flex; flex-direction: column; gap: 8px; }
+.review__who { display: flex; align-items: center; gap: 12px; }
+
+/* ---------- Kartu sticky ---------- */
+.side-card { border: 1px solid var(--line); border-radius: var(--r-md); padding: 24px; display: flex; flex-direction: column; gap: 16px; background: #fff; position: sticky; top: 24px; }
+.kv { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; }
+.kv svg { margin-top: 2px; color: var(--ink-2); }
+.hours { display: grid; grid-template-columns: auto 1fr; gap: 6px 24px; font-size: 14px; }
+.hours .today { font-weight: 600; }
+
+/* ---------- Galeri ---------- */
+.gallery { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 440px; }
+.gallery .photo { aspect-ratio: auto; height: 100%; }
+.gallery .photo:first-child { grid-row: span 2; }
+@media (max-width: 720px) { .gallery { height: 300px; grid-template-columns: 1fr; } .gallery .photo:not(:first-child) { display: none; } .gallery .photo:first-child { grid-row: auto; } }
+
+/* ---------- Alur booking ---------- */
+.flow-top { height: 72px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
+.crumbs { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ink-3); flex-wrap: wrap; }
+.crumbs b { color: var(--ink); font-weight: 600; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; }
+.flow { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; padding: 32px 0 64px; align-items: start; }
+@media (max-width: 1024px) { .flow { grid-template-columns: 1fr; } }
+.dates { display: grid; grid-auto-flow: column; grid-auto-columns: 64px; gap: 12px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+.date { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.date b { width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; font: 600 18px var(--font-head); }
+.date span { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+.date.is-selected b { background: var(--ink); color: #fff; border-color: var(--ink); }
+.times { display: flex; flex-direction: column; gap: 10px; }
+.time { height: 56px; border: 1px solid var(--line-2); border-radius: var(--r-sm); padding: 0 18px; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 15px; }
+.time small { font-weight: 500; color: var(--ink-2); font-size: 13px; }
+.time.is-selected { border: 2px solid var(--ink); padding: 0 17px; }
+.time.is-off { color: var(--ink-3); background: var(--soft); border-color: var(--soft); pointer-events: none; }
+.pro-pick { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px 0 4px; border: 1px solid var(--line-2); border-radius: var(--r-pill); font-weight: 600; }
+.summary-line { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; }
+.divider { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* ---------- Kalender partner ---------- */
+.partner { display: grid; grid-template-columns: 64px minmax(0, 1fr); min-height: 100vh; background: #fff; }
+.rail { border-right: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 0; }
+.rail a { width: 44px; height: 44px; border-radius: var(--r-sm); display: grid; place-items: center; color: var(--ink-2); }
+.rail a.is-active { background: var(--soft); color: var(--ink); }
+.cal-bar { height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 24px; border-bottom: 1px solid var(--line); }
+.cal-grid { display: grid; grid-template-columns: 64px repeat(var(--cols), minmax(150px, 1fr)); overflow-x: auto; }
+.cal-head { position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--line); padding: 12px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; }
+.cal-col { position: relative; border-left: 1px solid var(--line); background: repeating-linear-gradient(180deg, transparent 0 79px, var(--line) 79px 80px); height: calc(var(--rows) * 80px); }
+.cal-times { height: calc(var(--rows) * 80px); }
+.cal-times span { display: block; height: 80px; font-size: 12px; color: var(--ink-2); text-align: right; padding: 0 10px; transform: translateY(-8px); }
+.appt { position: absolute; left: 4px; right: 4px; top: calc(var(--t) * 80px + 2px); height: calc(var(--h) * 80px - 4px); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; line-height: 1.35; overflow: hidden; background: #e8eefc; border-left: 3px solid #3b62d6; }
+.appt b { display: block; font-size: 13px; }
+.appt--done { background: #e9f3ec; border-color: var(--brand); }
+.appt--walk { background: #fdf0e3; border-color: #d97a1e; }
+.appt--block { background: var(--soft); border-color: var(--ink-3); color: var(--ink-2); }
+.now { position: absolute; left: 0; right: 0; top: calc(var(--t) * 80px); border-top: 2px solid #e5484d; z-index: 2; }
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--line); padding: 48px 0 32px; }
+.footer__grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 32px; font-size: 14px; }
+.footer__grid h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+.footer__grid li + li { margin-top: 8px; }
+.footer__grid a { color: var(--ink-2); }
+@media (max-width: 720px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) {
+  .partner { grid-template-columns: 1fr; }
+  .rail { display: none; }
+  .cal-bar { height: auto; flex-wrap: wrap; padding: 12px 16px; }
+  .cal-bar > div { margin-left: 0 !important; flex-wrap: wrap; }
+}

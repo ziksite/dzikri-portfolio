@@ -11,21 +11,18 @@ Sumber: website barbershop premium 5 cabang di Surabaya & Pasuruan (Zyro, diambi
 | 5 cabang tanpa jam buka, Maps, atau info antrean | Pelanggan datang ke cabang yang sedang penuh |
 | Promo member hanya di top bar; embed Instagram gagal; bahasa campur | Program retensi tidak terjelaskan, kesan kurang terawat |
 
-## Arah redesign (v2, 18 Okt 2026)
-Versi pertama ditolak karena kerangkanya sama dengan klinik & villa (hero kiri + search bar, grid kartu, form kiri + ringkasan kanan, admin sidebar + 4 KPI). Versi 2 memakai Lapak hanya untuk komponen kecil; layout dirancang dari konsep bisnisnya:
-- **Konsep: papan harga barbershop / majalah cetak.** Kertas krem + hitam, serif Instrument Serif besar, tanpa kartu & bayangan.
-- Beranda = papan harga (kiri) + foto interior setinggi layar dengan widget antrean live (kanan); cabang sebagai papan keberangkatan; member sebagai tiket sobek; strip foto; footer wordmark besar.
-- Booking = satu kolom langkah bernomor, ringkasan di bar bawah.
-- Member = kartu pass + catatan potongan seperti buku catatan.
-- Admin diganti **layar TV antrean di cabang** (gelap, huruf besar, saran cabang kosong).
+## Arah redesign (v3, 18 Okt 2026)
+- v1 terlalu mirip template klinik & villa; v2 (papan harga krem + serif) dinilai AI slop.
+- v3: **design system sendiri** diturunkan dari referensi Fresha + Cal.com (lihat `design-system.md`). Struktur mengikuti produk booking nyata.
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Papan harga 6 layanan, antrean 5 cabang, papan cabang, tiket member, strip foto |
-| `#booking` | Cabang → layanan → kapster → jam → data; bar total di bawah → tiket TDH-0927 + catatan gaya terakhir |
-| `#member` | Pass member, catatan potongan |
-| `#tv` | Layar antrean cabang: 6 kursi, berikutnya, saran cabang kosong |
+| `#home` | Hero + search pill, kartu 5 cabang, panel layanan & harga, member, kapster |
+| `#cabang` | Halaman cabang Gubeng: galeri, tab, layanan (+/✓), kapster, ulasan, tentang, kartu booking sticky |
+| `#booking` | Pilih waktu: kapster, deret tanggal, daftar jam, ringkasan → konfirmasi TDH-0927 |
+| `#member` | Booking mendatang, catatan potongan, keuntungan member |
+| `#admin` | Kalender partner: kolom per kapster, booking/walk-in/istirahat, garis waktu sekarang |
 
 ## Tech stack produksi (rencana)
 Next.js + Supabase (cabang, kursi, booking, member), WhatsApp API untuk konfirmasi dan pengingat.

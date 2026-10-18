@@ -29,40 +29,40 @@
   "shots": [
     {
       "hash": "home",
-      "caption": "Homepage as a price board with live queues per branch",
-      "captionId": "Beranda berupa papan harga dengan antrean langsung per cabang"
+      "caption": "Homepage with branch, service and date search",
+      "captionId": "Beranda dengan pencarian cabang, layanan, dan tanggal"
+    },
+    {
+      "hash": "cabang",
+      "caption": "Branch page with gallery, services and live queue",
+      "captionId": "Halaman cabang dengan galeri, layanan, dan antrean"
     },
     {
       "hash": "booking",
-      "caption": "Single-column booking with a running summary bar",
-      "captionId": "Booking satu kolom dengan bar ringkasan"
+      "caption": "Choosing a date and time with the booking summary",
+      "captionId": "Memilih tanggal dan jam dengan ringkasan booking"
     },
     {
-      "hash": "member",
-      "caption": "Member pass with barber style notes",
-      "captionId": "Kartu member dengan catatan gaya dari kapster"
-    },
-    {
-      "hash": "tv",
-      "caption": "In-store queue screen that points walk-ins to a free branch",
-      "captionId": "Layar antrean di cabang yang mengarahkan walk-in ke cabang kosong"
+      "hash": "admin",
+      "caption": "Partner calendar by barber with walk-ins and bookings",
+      "captionId": "Kalender partner per kapster untuk walk-in dan booking"
     }
   ],
   "content_en": {
     "title": "Multi-Branch Barbershop Website",
     "type": "BARBERSHOP WEBSITE & BOOKING",
     "category": "Booking System",
-    "summary": "A redesign for a premium barbershop with five branches, built around its price list and live queues. Customers compare waits across branches, book a chair by barber and time, and keep their haircut notes in a free membership.",
+    "summary": "A redesign for a premium barbershop with five branches. Customers search by branch, service and date, compare branches by queue and rating, and book a barber and time slot; staff run the day from a calendar per barber.",
     "challenge": "The old site opened with a slogan over an interior photo, followed by a cut-off paragraph and a large empty area. Prices sat on a separate page, and every reservation button led to the same WhatsApp number, so customers could not choose a branch, a barber or a time.\n\nFive branches were listed without opening hours, map links or any sign of how busy they were. The free membership and birthday discount were mentioned only in the top bar, the Instagram embed failed to load, and the copy switched between English and Indonesian.",
-    "solution": "The homepage opens as a price board: all six services with prices and durations set in large type, next to the shop interior and a live queue for every branch. Branches are listed like a departure board with chairs, queue length and estimated wait, so customers can pick the branch that is free. Booking is a single column of numbered steps for branch, services, barber and time, with the total and duration in a bar fixed to the bottom of the screen.\n\nThe member pass shows the next booking and the birthday discount, followed by style notes written by the barber after each cut, so the result stays consistent at any branch. Inside each shop, a TV queue screen shows every chair, who is next, and which nearby branch is free when the line gets long. The planned production stack is Next.js with Supabase.",
+    "solution": "The homepage opens with a search for branch, service and date, followed by branch cards showing rating, chairs and the current queue, then the full price list with durations. Each branch has its own page with a photo gallery, services that can be added to a booking, barbers, reviews, opening hours, and a booking card that stays in view.\n\nBooking moves through service, barber, time and confirmation: dates are picked from a strip and open times from a list, with full slots disabled and the summary kept on the right. Members see upcoming bookings, the birthday discount and the style notes barbers write after each cut. Behind the counter, a partner calendar shows every barber as a column with bookings, walk-ins and breaks. The planned production stack is Next.js with Supabase.",
     "features": [
-      "Price board homepage with services, prices and durations",
-      "Live queue and estimated wait for every branch",
-      "Branch list in a departure-board layout",
-      "Single-column booking for branch, services, barber and time",
+      "Branch, service and date search on the homepage",
+      "Branch cards with rating, chairs and current queue",
+      "Branch page with gallery, services, barbers, reviews and hours",
+      "Booking flow by service, barber, date and time",
       "Free WhatsApp-based membership with a birthday discount",
       "Barber style notes saved after every visit",
-      "In-store TV queue screen that suggests a free nearby branch"
+      "Partner calendar per barber for bookings and walk-ins"
     ],
     "role": "",
     "impact": "",
@@ -72,17 +72,17 @@
     "title": "Website Barbershop Multi-Cabang",
     "type": "WEBSITE & BOOKING BARBERSHOP",
     "category": "Booking System",
-    "summary": "Redesign untuk barbershop premium dengan lima cabang, disusun dari daftar harga dan antrean langsung. Pelanggan membandingkan waktu tunggu antarcabang, booking kursi per kapster dan jam, dan menyimpan catatan potongan lewat member gratis.",
+    "summary": "Redesign untuk barbershop premium dengan lima cabang. Pelanggan mencari berdasarkan cabang, layanan, dan tanggal, membandingkan cabang dari antrean dan rating, lalu booking kapster dan jam; staf mengatur hari dari kalender per kapster.",
     "challenge": "Situs lama dibuka dengan slogan di atas foto interior, disusul paragraf yang terpotong dan area kosong yang besar. Harga ada di halaman terpisah, dan semua tombol reservasi mengarah ke nomor WhatsApp yang sama, sehingga pelanggan tidak bisa memilih cabang, kapster, atau jam.\n\nLima cabang ditampilkan tanpa jam buka, link peta, atau gambaran seberapa ramai. Member gratis dan diskon ulang tahun hanya disebut di top bar, embed Instagram gagal dimuat, dan bahasanya berganti-ganti antara Inggris dan Indonesia.",
-    "solution": "Beranda dibuka sebagai papan harga: enam layanan beserta harga dan durasinya ditulis besar, berdampingan dengan foto interior dan antrean langsung setiap cabang. Cabang ditampilkan seperti papan keberangkatan lengkap dengan jumlah kursi, panjang antrean, dan perkiraan waktu tunggu, sehingga pelanggan bisa memilih cabang yang sedang sepi. Booking berupa satu kolom langkah bernomor untuk cabang, layanan, kapster, dan jam, dengan total dan durasi di bar yang menempel di bawah layar.\n\nKartu member menampilkan booking berikutnya dan diskon ulang tahun, diikuti catatan gaya yang ditulis kapster setelah setiap potongan, sehingga hasilnya konsisten di cabang mana pun. Di setiap cabang, layar TV antrean menampilkan semua kursi, siapa berikutnya, dan cabang terdekat yang kosong saat antrean panjang. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "solution": "Beranda dibuka dengan pencarian cabang, layanan, dan tanggal, diikuti kartu cabang yang menampilkan rating, jumlah kursi, dan antrean saat ini, lalu daftar harga lengkap dengan durasi. Setiap cabang punya halaman sendiri dengan galeri foto, layanan yang bisa ditambahkan ke booking, kapster, ulasan, jam buka, dan kartu booking yang selalu terlihat.\n\nBooking berjalan dari layanan, kapster, waktu, sampai konfirmasi: tanggal dipilih dari deret tanggal dan jam dari daftar, slot penuh tidak bisa dipilih, dan ringkasan tetap di kanan. Member melihat booking mendatang, diskon ulang tahun, dan catatan gaya yang ditulis kapster setelah setiap potongan. Di balik meja kasir, kalender partner menampilkan setiap kapster sebagai kolom berisi booking, walk-in, dan jam istirahat. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
     "features": [
-      "Beranda papan harga dengan layanan, harga, dan durasi",
-      "Antrean langsung dan perkiraan waktu tunggu tiap cabang",
-      "Daftar cabang bergaya papan keberangkatan",
-      "Booking satu kolom untuk cabang, layanan, kapster, dan jam",
+      "Pencarian cabang, layanan, dan tanggal di beranda",
+      "Kartu cabang dengan rating, kursi, dan antrean saat ini",
+      "Halaman cabang dengan galeri, layanan, kapster, ulasan, dan jam buka",
+      "Alur booking per layanan, kapster, tanggal, dan jam",
       "Member gratis berbasis WhatsApp dengan diskon ulang tahun",
       "Catatan gaya dari kapster tersimpan setiap kunjungan",
-      "Layar TV antrean di cabang yang menyarankan cabang terdekat yang kosong"
+      "Kalender partner per kapster untuk booking dan walk-in"
     ],
     "role": "",
     "impact": "",
