@@ -1,0 +1,58 @@
+{
+  "slug": "multi-branch-barbershop-website",
+  "kind": "Website",
+  "industry": "Beauty & Wellness",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Online Booking", "Membership"],
+  "metrics": [
+    { "value": "5", "label": "BRANCHES", "labelId": "CABANG" },
+    { "value": "LIVE", "label": "QUEUE STATUS", "labelId": "STATUS ANTREAN" },
+    { "value": "50%", "label": "BIRTHDAY MEMBER DEAL", "labelId": "DISKON ULANG TAHUN" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Full-bleed homepage with chair booking in the hero", "captionId": "Beranda foto penuh dengan booking kursi di hero" },
+    { "hash": "booking", "caption": "Booking by branch, service, barber and time", "captionId": "Booking per cabang, layanan, kapster, dan jam" },
+    { "hash": "member", "caption": "Member page with style notes from every visit", "captionId": "Halaman member dengan catatan gaya dari setiap kunjungan" },
+    { "hash": "admin", "caption": "Owner dashboard across five branches", "captionId": "Dashboard pemilik untuk lima cabang" }
+  ],
+  "content_en": {
+    "title": "Multi-Branch Barbershop Website",
+    "type": "BARBERSHOP WEBSITE & BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign for a premium barbershop with five branches. Customers book a chair by branch, barber and time, see live queues before they leave home, and keep their haircut notes in a free membership.",
+    "challenge": "The old site opened with a slogan over an interior photo, followed by a cut-off paragraph and a large empty area. Prices sat on a separate page, and every reservation button led to the same WhatsApp number, so customers could not choose a branch, a barber or a time.\n\nFive branches were listed without opening hours, map links or any sign of how busy they were. The free membership and birthday discount were mentioned only in the top bar, the Instagram embed failed to load, and the copy switched between English and Indonesian.",
+    "solution": "The new homepage keeps the interior photography full-bleed and puts a booking bar for branch, service and time directly in the hero. Prices for all six services sit on the homepage with their durations, and each branch card shows the current queue and estimated wait. A booking flow lets customers combine services, pick a barber or the earliest available chair, and choose a slot, with the total and duration updating as they go.\n\nThe member page shows upcoming bookings, the birthday discount, and a history of style notes written by the barber after each cut, so the result stays consistent at any branch. An owner dashboard compares the five branches by active chairs, queue, wait time and revenue, alongside the queue board for one branch and barber earnings. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Booking bar for branch, service and time in the hero",
+      "Six services with prices and durations on the homepage",
+      "Live queue and estimated wait per branch",
+      "Booking with multiple services, barber choice and time slots",
+      "Free WhatsApp-based membership with a birthday discount",
+      "Barber style notes saved after every visit",
+      "Owner dashboard comparing five branches, queues and barber earnings"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Barbershop Multi-Cabang",
+    "type": "WEBSITE & BOOKING BARBERSHOP",
+    "category": "Booking System",
+    "summary": "Redesign untuk barbershop premium dengan lima cabang. Pelanggan booking kursi per cabang, kapster, dan jam, melihat antrean sebelum berangkat, dan menyimpan catatan potongan lewat member gratis.",
+    "challenge": "Situs lama dibuka dengan slogan di atas foto interior, disusul paragraf yang terpotong dan area kosong yang besar. Harga ada di halaman terpisah, dan semua tombol reservasi mengarah ke nomor WhatsApp yang sama, sehingga pelanggan tidak bisa memilih cabang, kapster, atau jam.\n\nLima cabang ditampilkan tanpa jam buka, link peta, atau gambaran seberapa ramai. Member gratis dan diskon ulang tahun hanya disebut di top bar, embed Instagram gagal dimuat, dan bahasanya berganti-ganti antara Inggris dan Indonesia.",
+    "solution": "Beranda baru mempertahankan foto interior secara penuh dan menaruh bar booking untuk cabang, layanan, dan jam langsung di hero. Harga enam layanan beserta durasinya tampil di beranda, dan setiap kartu cabang menunjukkan antrean saat ini serta perkiraan waktu tunggu. Alur booking memungkinkan pelanggan menggabungkan layanan, memilih kapster atau kursi tercepat, dan memilih slot jam, dengan total dan durasi yang ikut berubah.\n\nHalaman member menampilkan booking berikutnya, diskon ulang tahun, dan riwayat catatan gaya yang ditulis kapster setelah setiap potongan, sehingga hasilnya konsisten di cabang mana pun. Dashboard pemilik membandingkan lima cabang berdasarkan kursi aktif, antrean, waktu tunggu, dan pendapatan, lengkap dengan papan antrean satu cabang dan pendapatan kapster. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Bar booking cabang, layanan, dan jam di hero",
+      "Enam layanan beserta harga dan durasi di beranda",
+      "Antrean dan perkiraan waktu tunggu per cabang",
+      "Booking beberapa layanan sekaligus, pilih kapster, dan slot jam",
+      "Member gratis berbasis WhatsApp dengan diskon ulang tahun",
+      "Catatan gaya dari kapster tersimpan setiap kunjungan",
+      "Dashboard pemilik untuk lima cabang, antrean, dan pendapatan kapster"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teduh Barbershop — Booking kursi di 5 cabang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/lapak.css">
+<style>
+  /* Tema — mode MONO: hitam-putih, warna dari foto */
+  :root {
+    --font-display: "Instrument Serif", Georgia, serif;
+    --brand: #111111; --brand-ink: #ffffff; --brand-text: #111111;
+    --brand-soft: #f0f0f0; --block: #111111; --block-ink: #ffffff;
+    --accent: #2d5f3f; --r-base: 2px;
+  }
+  .display, .h1, .h2 { font-weight: 400; letter-spacing: -0.015em; }
+  .display em, .h1 em, .h2 em { font-style: italic; }
+  .h3 { font-family: var(--font-body); font-weight: 650; }
+  .wordmark { font: 400 26px/1 var(--font-display); letter-spacing: 0.01em; }
+  .wordmark small { font: 600 10px/1 var(--font-body); letter-spacing: 0.22em; text-transform: uppercase; margin-left: 8px; vertical-align: middle; opacity: .7; }
+
+  .hero-photo { min-height: 860px; }
+  .hero-photo::after { background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.08) 80%), linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 60%, rgba(0,0,0,.5) 100%); }
+  .hero-photo .display { max-width: 15ch; font-size: clamp(48px, 6.4vw, 92px); }
+  .hero-photo .taskbar { max-width: 860px; }
+  .hero-photo .facts { color: rgba(255,255,255,.85); }
+
+  .svc-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: var(--s-3); }
+  .svc-photos .img:first-child { grid-row: span 2; height: 100%; aspect-ratio: auto; }
+  .pricelist__row .price { font-size: 17px; }
+  .dur { font-size: 13px; color: var(--text-3); margin-left: 8px; font-weight: 500; }
+
+  .branch { display: flex; flex-direction: column; gap: var(--s-3); }
+  .branch .img { --ar: 4 / 3; }
+  .branch__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-3); }
+  .branch__name { font: 400 26px/1.1 var(--font-display); }
+  .branch__meta { font-size: 14px; color: var(--text-2); }
+  .join { border: 1px solid var(--line-strong); padding: var(--s-6); display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-4); min-height: 100%; }
+
+  .perks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-8); }
+  .perks > div { border-top: 1px solid rgba(255,255,255,.3); padding-top: var(--s-4); display: flex; flex-direction: column; gap: 6px; }
+  .perks b { font: 400 30px/1.1 var(--font-display); }
+  @media (max-width: 900px) { .perks { grid-template-columns: 1fr; } }
+
+  .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--s-2); }
+  .week button { border: 1px solid var(--line-strong); padding: 10px 0; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; color: var(--text-2); background: #fff; }
+  .week button b { font-size: 18px; color: var(--text); font-variant-numeric: tabular-nums; }
+  .week button.is-selected { background: var(--brand); border-color: var(--brand); color: rgba(255,255,255,.75); }
+  .week button.is-selected b { color: #fff; }
+
+  @media (max-width: 720px) {
+    #branchPick { grid-template-columns: 1fr 1fr !important; }
+    #svcPick, #barberPick { grid-template-columns: 1fr !important; }
+  }
+  .card-black { background: #111; color: #fff; padding: var(--s-8); display: flex; flex-direction: column; gap: var(--s-6); }
+  .card-black .muted { color: rgba(255,255,255,.65); }
+  .note { border-left: 2px solid var(--text); padding-left: var(--s-4); font-size: 15px; }
+  .visit { display: grid; grid-template-columns: 120px minmax(0,1fr) auto; gap: var(--s-5); padding: var(--s-5) 0; border-bottom: 1px solid var(--line); }
+  .visit:first-child { border-top: 1px solid var(--line); }
+  @media (max-width: 720px) { .visit { grid-template-columns: 1fr; gap: var(--s-2); } }
+</style>
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="topbar"><div class="container">Daftar member gratis · diskon 50% di bulan ulang tahunmu · <a href="#member">Lihat member</a></div></div>
+  <header class="hero-photo">
+    <div class="img img--flat" data-img="assets/multi-branch-barbershop-website/hero-interior.webp" data-alt="Interior Teduh Barbershop"></div>
+    <nav class="nav nav--overlay" style="top:0">
+      <div class="container nav__inner">
+        <a class="nav__brand wordmark" href="#home">Teduh<small>Barbershop</small></a>
+        <div class="nav__links"><a href="#layanan-home">Layanan &amp; harga</a><a href="#cabang-home">Cabang</a><a href="#member">Member</a><a href="#karier-home">Karier</a></div>
+        <div class="nav__actions"><a class="btn btn--light btn--sm" href="#booking">Booking kursi</a></div>
+      </div>
+    </nav>
+    <div class="hero-photo__body">
+      <div class="container stack-6">
+        <span class="eyebrow" style="color:#fff">5 cabang · Surabaya &amp; Sidoarjo · sejak 2022</span>
+        <h1 class="display">Potong rapi, <em>tanpa</em> menunggu giliran.</h1>
+        <p class="lead">Pilih cabang, kapster, dan jam. Kursimu sudah siap saat kamu datang.</p>
+        <form class="taskbar" onsubmit="location.hash='booking';return false" style="color:var(--text)">
+          <label class="taskbar__field"><span class="taskbar__label">Cabang</span><select class="taskbar__value"><option>Gubeng · antre 1</option><option>Darmo · antre 3</option><option>Rungkut · antre 0</option><option>Citraland · antre 2</option><option>Sidoarjo · antre 1</option></select></label>
+          <label class="taskbar__field"><span class="taskbar__label">Layanan</span><select class="taskbar__value"><option>Premium haircut · Rp60.000</option><option>Hair spa · Rp30.000</option><option>Down perm · Rp100.000</option></select></label>
+          <label class="taskbar__field"><span class="taskbar__label">Jam</span><select class="taskbar__value"><option>Hari ini, 19.30</option><option>Hari ini, 20.00</option></select></label>
+          <button class="btn btn--primary btn--lg">Booking <i data-lucide="arrow-right" class="i-sm"></i></button>
+        </form>
+        <div class="facts"><span><i data-lucide="scissors" class="i-sm"></i>Haircut mulai Rp60.000, sudah termasuk cuci &amp; styling</span><span><i data-lucide="clock" class="i-sm"></i>Buka setiap hari 10.00–22.00</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="layanan-home">
+    <div class="container split" style="align-items:start">
+      <div class="stack-6">
+        <div class="section-head__text"><span class="eyebrow">Layanan &amp; harga</span><h2 class="h1">Harga sama di semua cabang.</h2></div>
+        <div class="pricelist">
+          <div class="pricelist__row"><div><p class="pricelist__name">Premium haircut<span class="dur">45 mnt</span></p><p class="pricelist__desc">Konsultasi, cuci, potong, dan styling dengan produk premium</p></div><span class="price">Rp60.000</span></div>
+          <div class="pricelist__row"><div><p class="pricelist__name">Hair spa<span class="dur">30 mnt</span></p><p class="pricelist__desc">Nutrisi kulit kepala dan rambut kering, dengan pijat kepala</p></div><span class="price">Rp30.000</span></div>
+          <div class="pricelist__row"><div><p class="pricelist__name">Black pore mask<span class="dur">20 mnt</span></p><p class="pricelist__desc">Membersihkan komedo dan minyak berlebih di pori</p></div><span class="price">Rp65.000</span></div>
+          <div class="pricelist__row"><div><p class="pricelist__name">Down perm<span class="dur">60 mnt</span></p><p class="pricelist__desc">Rambut samping yang mengembang jadi rata dan rapi</p></div><span class="price">Rp100.000</span></div>
+          <div class="pricelist__row"><div><p class="pricelist__name">Keratin &amp; smoothing<span class="dur">120 mnt</span></p><p class="pricelist__desc">Rambut kusut atau ikal jadi lurus, halus, dan mudah disisir</p></div><span class="price">Rp250.000</span></div>
+          <div class="pricelist__row"><div><p class="pricelist__name">Creative perm<span class="dur">120 mnt</span></p><p class="pricelist__desc">Ikal bervolume untuk tampilan bertekstur</p></div><span class="price">Rp250.000</span></div>
+        </div>
+        <a class="btn btn--primary" href="#booking" style="align-self:flex-start">Booking sekarang</a>
+      </div>
+      <div class="svc-photos">
+        <div class="img" data-img="assets/multi-branch-barbershop-website/layanan-haircut.webp"></div>
+        <div class="img" style="--ar:1/1" data-img="assets/multi-branch-barbershop-website/layanan-hairspa.webp"></div>
+        <div class="img" style="--ar:1/1" data-img="assets/multi-branch-barbershop-website/layanan-gentleman.webp"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="cabang-home">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text"><span class="eyebrow">Diperbarui 19.12</span><h2 class="h1">Cabang &amp; antrean sekarang</h2></div>
+        <a class="link" href="#booking">Booking di cabang mana saja <i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+      <div class="grid-3" style="gap:var(--s-10) var(--s-6)">
+        <div class="branch"><div class="img" data-img="assets/multi-branch-barbershop-website/cabang-1.webp"></div><div class="branch__head"><h3 class="branch__name">Gubeng</h3><span class="pill pill--ok">Antre 1 · ±10 mnt</span></div><p class="branch__meta">Jl. Raya Gubeng, Surabaya · 6 kursi · 10.00–22.00</p><div class="row"><a class="btn btn--primary btn--sm" href="#booking">Booking</a><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="map-pin" class="i-sm"></i>Maps</a></div></div>
+        <div class="branch"><div class="img" data-img="assets/multi-branch-barbershop-website/cabang-2.webp"></div><div class="branch__head"><h3 class="branch__name">Darmo</h3><span class="pill pill--warn">Antre 3 · ±35 mnt</span></div><p class="branch__meta">Jl. Raya Darmo, Surabaya · 4 kursi · 10.00–22.00</p><div class="row"><a class="btn btn--primary btn--sm" href="#booking">Booking</a><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="map-pin" class="i-sm"></i>Maps</a></div></div>
+        <div class="branch"><div class="img" data-img="assets/multi-branch-barbershop-website/cabang-3.webp"></div><div class="branch__head"><h3 class="branch__name">Rungkut</h3><span class="pill pill--ok">Langsung dilayani</span></div><p class="branch__meta">Jl. Raya Rungkut, Surabaya · 6 kursi · 10.00–22.00</p><div class="row"><a class="btn btn--primary btn--sm" href="#booking">Booking</a><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="map-pin" class="i-sm"></i>Maps</a></div></div>
+        <div class="branch"><div class="img" data-img="assets/multi-branch-barbershop-website/cabang-4.webp"></div><div class="branch__head"><h3 class="branch__name">Citraland</h3><span class="pill pill--ok">Antre 2 · ±20 mnt</span></div><p class="branch__meta">Ruko Citraland, Surabaya · 5 kursi · 10.00–22.00</p><div class="row"><a class="btn btn--primary btn--sm" href="#booking">Booking</a><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="map-pin" class="i-sm"></i>Maps</a></div></div>
+        <div class="branch"><div class="img" data-img="assets/multi-branch-barbershop-website/cabang-5.webp"></div><div class="branch__head"><h3 class="branch__name">Sidoarjo</h3><span class="pill pill--ok">Antre 1 · ±10 mnt</span></div><p class="branch__meta">Jl. Pahlawan, Sidoarjo · 5 kursi · 10.00–21.00</p><div class="row"><a class="btn btn--primary btn--sm" href="#booking">Booking</a><a class="btn btn--ghost btn--sm" href="#"><i data-lucide="map-pin" class="i-sm"></i>Maps</a></div></div>
+        <div class="join" id="karier-home"><div class="stack-3"><span class="eyebrow">Karier</span><h3 class="branch__name">Kami mencari kapster untuk cabang Sidoarjo.</h3><p class="branch__meta">Pengalaman minimal 1 tahun, bisa fade dan perm. Training produk dari tim senior.</p></div><a class="link" href="#">Kirim portofolio potongan <i data-lucide="arrow-right" class="i-sm"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--brand">
+    <div class="container" style="padding-top:var(--s-16);padding-bottom:var(--s-16)">
+      <div class="stack-6" style="gap:var(--s-10)">
+        <div class="split" style="align-items:end">
+          <h2 class="h1">Member gratis. Kapster ingat potonganmu.</h2>
+          <div class="row" style="justify-content:flex-end"><a class="btn btn--on-block btn--lg" href="#member">Daftar dengan nomor WhatsApp</a></div>
+        </div>
+        <div class="perks">
+          <div><b>Rp0</b><span class="muted" style="color:rgba(255,255,255,.7)">Daftar cukup dengan nomor WhatsApp, tanpa kartu.</span></div>
+          <div><b>50%</b><span style="color:rgba(255,255,255,.7)">Diskon semua layanan sepanjang bulan ulang tahunmu.</span></div>
+          <div><b>Catatan gaya</b><span style="color:rgba(255,255,255,.7)">Guard, panjang atas, dan produk tersimpan. Pindah cabang pun hasilnya sama.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="stack-3"><span class="wordmark" style="color:#fff">Teduh<small>Barbershop</small></span><p>Premium barbershop di Surabaya &amp; Sidoarjo. Buka setiap hari.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#layanan-home">Haircut</a></li><li><a href="#layanan-home">Perm &amp; smoothing</a></li><li><a href="#layanan-home">Hair spa</a></li></ul></div>
+        <div><h4>Pelanggan</h4><ul><li><a href="#booking">Booking</a></li><li><a href="#member">Member</a></li><li><a href="#cabang-home">Cabang</a></li></ul></div>
+        <div><h4>Kontak</h4><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 Teduh Barbershop</span><span>Harga berlaku di semua cabang</span></div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section data-screen="booking">
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand wordmark" href="#home">Teduh<small>Barbershop</small></a>
+      <div class="nav__links"><a href="#home">Beranda</a><a href="#booking" data-nav="booking">Booking</a><a href="#member" data-nav="member">Member</a></div>
+      <div class="nav__actions"><a class="btn btn--ghost btn--sm" href="#member"><i data-lucide="user" class="i-sm"></i>Masuk member</a></div>
+    </div>
+  </nav>
+  <div class="container" style="padding-top:var(--s-8);padding-bottom:var(--s-16)">
+    <form data-demo-form="#bkDone" id="bkForm">
+      <div class="split--form">
+        <div class="stack-6">
+          <ol class="steps"><li class="is-done">Cabang</li><li class="is-current">Layanan &amp; kapster</li><li>Jam</li></ol>
+          <h1 class="h1" style="font-size:48px">Booking kursi</h1>
+
+          <div class="stack-3">
+            <span class="label">Cabang</span>
+            <div class="choices" style="grid-template-columns:repeat(3,minmax(0,1fr))" id="branchPick">
+              <label class="choice"><input type="radio" name="br" value="Gubeng" checked><span><span class="choice__title">Gubeng</span><br><span class="choice__desc">Antre 1</span></span></label>
+              <label class="choice"><input type="radio" name="br" value="Darmo"><span><span class="choice__title">Darmo</span><br><span class="choice__desc">Antre 3</span></span></label>
+              <label class="choice"><input type="radio" name="br" value="Rungkut"><span><span class="choice__title">Rungkut</span><br><span class="choice__desc">Kosong</span></span></label>
+              <label class="choice"><input type="radio" name="br" value="Citraland"><span><span class="choice__title">Citraland</span><br><span class="choice__desc">Antre 2</span></span></label>
+              <label class="choice"><input type="radio" name="br" value="Sidoarjo"><span><span class="choice__title">Sidoarjo</span><br><span class="choice__desc">Antre 1</span></span></label>
+            </div>
+          </div>
+
+          <div class="stack-3">
+            <span class="label">Layanan <small>(bisa lebih dari satu)</small></span>
+            <div class="choices" style="grid-template-columns:1fr 1fr" id="svcPick">
+              <label class="choice"><input type="checkbox" value="60000" data-name="Premium haircut" data-min="45" checked><span><span class="choice__title">Premium haircut</span><br><span class="choice__desc">45 menit</span></span><span class="choice__aside">Rp60.000</span></label>
+              <label class="choice"><input type="checkbox" value="30000" data-name="Hair spa" data-min="30"><span><span class="choice__title">Hair spa</span><br><span class="choice__desc">30 menit</span></span><span class="choice__aside">Rp30.000</span></label>
+              <label class="choice"><input type="checkbox" value="65000" data-name="Black pore mask" data-min="20"><span><span class="choice__title">Black pore mask</span><br><span class="choice__desc">20 menit</span></span><span class="choice__aside">Rp65.000</span></label>
+              <label class="choice"><input type="checkbox" value="100000" data-name="Down perm" data-min="60"><span><span class="choice__title">Down perm</span><br><span class="choice__desc">60 menit</span></span><span class="choice__aside">Rp100.000</span></label>
+            </div>
+          </div>
+
+          <div class="stack-3">
+            <span class="label">Kapster</span>
+            <div class="choices" style="grid-template-columns:repeat(2,minmax(0,1fr))" id="barberPick">
+              <label class="choice"><input type="radio" name="bb" value="Siapa saja"><span class="avatar avatar--lg" data-tone="dark"><i data-lucide="shuffle" class="i-sm"></i></span><span><span class="choice__title">Siapa saja</span><br><span class="choice__desc">Jam paling cepat</span></span></label>
+              <label class="choice"><input type="radio" name="bb" value="Rizky" checked><span class="avatar avatar--lg">RZ</span><span><span class="choice__title">Rizky</span><br><span class="choice__desc">Fade &amp; taper · 5 tahun</span></span></label>
+              <label class="choice"><input type="radio" name="bb" value="Andika"><span class="avatar avatar--lg">AD</span><span><span class="choice__title">Andika</span><br><span class="choice__desc">Perm &amp; coloring · 4 tahun</span></span></label>
+              <label class="choice"><input type="radio" name="bb" value="Fajar"><span class="avatar avatar--lg">FJ</span><span><span class="choice__title">Fajar</span><br><span class="choice__desc">Classic cut · 7 tahun</span></span></label>
+            </div>
+          </div>
+
+          <div class="stack-3">
+            <span class="label">Hari</span>
+            <div class="week" data-select="is-selected" id="dayPick">
+              <button type="button" class="is-selected" data-value="Hari ini, Min 18">Min<b>18</b></button><button type="button" data-value="Sen 19">Sen<b>19</b></button><button type="button" data-value="Sel 20">Sel<b>20</b></button><button type="button" data-value="Rab 21">Rab<b>21</b></button><button type="button" data-value="Kam 22">Kam<b>22</b></button><button type="button" data-value="Jum 23">Jum<b>23</b></button><button type="button" data-value="Sab 24">Sab<b>24</b></button>
+            </div>
+          </div>
+          <div class="stack-3">
+            <div class="row row--between"><span class="label">Jam</span><span class="caption">Slot 45 menit · dicoret = sudah dibooking</span></div>
+            <div class="slots" data-select="is-selected" id="timePick">
+              <button type="button" class="slot is-full">18.00</button><button type="button" class="slot is-full">18.45</button><button type="button" class="slot is-selected" data-value="19.30">19.30</button><button type="button" class="slot" data-value="20.15">20.15</button><button type="button" class="slot is-full">21.00</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field"><label class="label">Nama</label><input class="input" value="Bima Saputra" required></div>
+            <div class="field"><label class="label">No. WhatsApp</label><input class="input" value="0812-3390-7714" required></div>
+            <div class="field span-2"><label class="label">Catatan <small>(opsional)</small></label><input class="input" placeholder="Contoh: sama seperti potongan terakhir"></div>
+          </div>
+        </div>
+
+        <aside class="sticky">
+          <div class="summary">
+            <span class="h4">Ringkasan</span>
+            <div class="stack-3" id="bkLines"></div>
+            <hr class="divider">
+            <div class="summary__line"><span>Cabang</span><span id="bkBranch">Gubeng</span></div>
+            <div class="summary__line"><span>Kapster</span><span id="bkBarber">Rizky</span></div>
+            <div class="summary__line"><span>Waktu</span><span id="bkWhen">Hari ini, Min 18 · 19.30</span></div>
+            <div class="summary__line"><span>Durasi</span><span id="bkDur">45 menit</span></div>
+            <div class="summary__total"><span>Bayar di kasir</span><span id="bkTotal">Rp60.000</span></div>
+            <button class="btn btn--primary btn--block btn--lg">Konfirmasi booking</button>
+            <p class="caption">Kursi ditahan 10 menit dari jam booking. Ubah atau batalkan lewat link di WhatsApp.</p>
+          </div>
+        </aside>
+      </div>
+    </form>
+    <div id="bkDone" hidden>
+      <div class="split" style="align-items:start;padding-top:var(--s-8)">
+        <div class="stack-6">
+          <span class="success__icon"><i data-lucide="check"></i></span>
+          <h1 class="h1" style="font-size:52px">Kursimu siap pukul <em>19.30</em>.</h1>
+          <p class="lead">Rizky di cabang Gubeng sudah menerima bookingmu. Konfirmasi dan link perubahan dikirim ke WhatsApp 0812-3390-7714.</p>
+          <div class="row"><span class="ticket">TDH-0927</span></div>
+          <div class="row row--wrap"><a class="btn btn--primary" href="#"><i data-lucide="map-pin" class="i-sm"></i>Arah ke cabang</a><a class="btn btn--secondary" href="#member">Lihat member</a></div>
+        </div>
+        <div class="summary">
+          <span class="h4">Catatan dari kunjungan terakhir</span>
+          <p class="note">Mid fade, guard 1 ke 0,5. Atas dipotong 1 cm, sisa 4 cm. Clay matte, tanpa pomade.</p>
+          <p class="caption">Rizky · Gubeng · 14 September 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEMBER ================= -->
+<section data-screen="member">
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand wordmark" href="#home">Teduh<small>Barbershop</small></a>
+      <div class="nav__links"><a href="#home">Beranda</a><a href="#booking" data-nav="booking">Booking</a><a href="#member" data-nav="member">Member</a></div>
+      <div class="nav__actions"><a class="btn btn--primary btn--sm" href="#booking">Booking</a></div>
+    </div>
+  </nav>
+  <div class="container" style="padding-top:var(--s-8);padding-bottom:var(--s-16)">
+    <div class="split" style="align-items:start;gap:var(--s-10)">
+      <div class="stack-6">
+        <div class="card-black">
+          <div class="row row--between row--top"><div class="stack-1"><span class="muted body-sm">Member sejak Februari 2025 · 0812-3390-7714</span><h1 class="h1" style="color:#fff;font-size:48px">Bima Saputra</h1></div><span class="badge" style="background:#fff;color:#111">Oktober: diskon 50%</span></div>
+          <div class="grid-3" style="gap:var(--s-4)">
+            <div class="stack-1"><span class="muted body-sm">Kunjungan</span><b style="font:400 36px/1 var(--font-display)">14</b></div>
+            <div class="stack-1"><span class="muted body-sm">Kapster favorit</span><b style="font:400 36px/1 var(--font-display)">Rizky</b></div>
+            <div class="stack-1"><span class="muted body-sm">Cabang</span><b style="font:400 36px/1 var(--font-display)">Gubeng</b></div>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="row row--between"><span class="h4">Booking berikutnya</span><span class="pill pill--ok">Terkonfirmasi</span></div>
+          <div class="summary__line"><span>Minggu, 18 Okt · 19.30</span><span>Gubeng · Rizky</span></div>
+          <div class="summary__line"><span>Premium haircut</span><span><span class="strike">Rp60.000</span> Rp30.000</span></div>
+          <div class="row"><a class="btn btn--secondary btn--sm" href="#booking">Ubah jadwal</a><a class="btn btn--ghost btn--sm" href="#">Batalkan</a></div>
+        </div>
+      </div>
+      <div class="stack-6">
+        <div class="section-head" style="margin-bottom:0"><div class="section-head__text"><span class="eyebrow">Ditulis kapster setelah setiap potongan</span><h2 class="h2">Riwayat &amp; catatan gaya</h2></div></div>
+        <div>
+          <div class="visit"><div class="stack-1"><b>14 Sep 2026</b><span class="caption">Gubeng · Rizky</span></div><p class="note">Mid fade, guard 1 ke 0,5. Atas dipotong 1 cm, sisa 4 cm. Clay matte, tanpa pomade.</p><a class="link body-sm" href="#booking">Pakai lagi</a></div>
+          <div class="visit"><div class="stack-1"><b>10 Agu 2026</b><span class="caption">Darmo · Fajar</span></div><p class="note">Mid fade guard 1. Atas sisa 4,5 cm, belah samping kiri. Hair spa.</p><a class="link body-sm" href="#booking">Pakai lagi</a></div>
+          <div class="visit"><div class="stack-1"><b>3 Jul 2026</b><span class="caption">Gubeng · Rizky</span></div><p class="note">Down perm samping. Sisi dibiarkan 1,5 cm agar perm menempel.</p><a class="link body-sm" href="#booking">Pakai lagi</a></div>
+        </div>
+        <div class="alert"><i data-lucide="info"></i><span><strong>Rata-rata kembali setiap 5 minggu</strong>Pengingat booking dikirim ke WhatsApp pada minggu ke-4.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DASHBOARD PEMILIK ================= -->
+<div class="app" data-screen="admin">
+  <aside class="sidebar sidebar--dark">
+    <div class="sidebar__brand"><span class="wordmark" style="font-size:22px;color:#fff">Teduh</span><span><small>Pemilik · 5 cabang</small></span></div>
+    <div class="side-group">
+      <a class="side-link is-active" href="#admin"><i data-lucide="layout-dashboard"></i>Hari ini</a>
+      <a class="side-link" href="#admin"><i data-lucide="calendar-days"></i>Booking<span class="count">64</span></a>
+      <a class="side-link" href="#admin"><i data-lucide="users"></i>Member</a>
+    </div>
+    <div class="side-group">
+      <span class="side-label">Operasional</span>
+      <a class="side-link" href="#admin"><i data-lucide="scissors"></i>Kapster &amp; komisi</a>
+      <a class="side-link" href="#admin"><i data-lucide="store"></i>Cabang</a>
+      <a class="side-link" href="#admin"><i data-lucide="file-text"></i>Laporan</a>
+    </div>
+    <div class="sidebar__foot"><span class="avatar" data-tone="dark">AH</span><span><b>Arif H.</b><br><span style="opacity:.6">Pemilik</span></span></div>
+  </aside>
+  <div class="main">
+    <div class="appbar">
+      <div class="input-group"><i data-lucide="search" class="i-sm"></i><input class="input" placeholder="Cari member, nomor booking…"></div>
+      <div class="appbar__right"><div class="segmented" data-select><button class="is-active">Semua cabang</button><button>Gubeng</button><button>Darmo</button></div></div>
+    </div>
+    <div class="content">
+      <div class="page-head"><div><h1>Hari ini di 5 cabang</h1><p>Minggu, 18 Oktober 2026 · 19.12</p></div><div class="page-head__actions"><button class="btn btn--secondary"><i data-lucide="download" class="i-sm"></i>Rekap harian</button></div></div>
+      <div class="kpis">
+        <div class="kpi"><span class="kpi__label">Pelanggan</span><span class="kpi__value">186</span><span class="kpi__foot">64 booking · 122 walk-in</span></div>
+        <div class="kpi"><span class="kpi__label">Pendapatan</span><span class="kpi__value">Rp13,4 jt</span><span class="kpi__foot"><span class="delta delta--up">+9%</span>vs Minggu lalu</span></div>
+        <div class="kpi"><span class="kpi__label">Rata-rata tunggu walk-in</span><span class="kpi__value">17 mnt</span><span class="kpi__foot">booking: 3 mnt</span></div>
+        <div class="kpi"><span class="kpi__label">Member baru</span><span class="kpi__value">23</span><span class="kpi__foot">7 berulang tahun bulan ini</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><div><p class="panel__title">Per cabang</p><p class="panel__sub">Status saat ini</p></div></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Cabang</th><th class="r">Kursi aktif</th><th class="r">Antre</th><th class="r">Tunggu</th><th class="r">Pelanggan</th><th class="r">Pendapatan</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Gubeng</td><td class="num">5/6</td><td class="num">1</td><td class="num">10 mnt</td><td class="num">44</td><td class="num">Rp3,2 jt</td><td><span class="pill pill--ok">Normal</span></td></tr>
+              <tr><td class="strong">Darmo</td><td class="num">4/4</td><td class="num">3</td><td class="num">35 mnt</td><td class="num">39</td><td class="num">Rp2,9 jt</td><td><span class="pill pill--warn">Arahkan ke Gubeng</span></td></tr>
+              <tr><td class="strong">Rungkut</td><td class="num">3/6</td><td class="num">0</td><td class="num">—</td><td class="num">31</td><td class="num">Rp2,1 jt</td><td><span class="pill pill--info">Kursi kosong</span></td></tr>
+              <tr><td class="strong">Citraland</td><td class="num">5/5</td><td class="num">2</td><td class="num">20 mnt</td><td class="num">41</td><td class="num">Rp3,0 jt</td><td><span class="pill pill--ok">Normal</span></td></tr>
+              <tr><td class="strong">Sidoarjo</td><td class="num">3/5</td><td class="num">1</td><td class="num">10 mnt</td><td class="num">31</td><td class="num">Rp2,2 jt</td><td><span class="pill pill--bad">Kurang 1 kapster</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="with-aside">
+        <div class="panel">
+          <div class="panel__head"><div><p class="panel__title">Antrean Gubeng</p><p class="panel__sub">Booking ditandai, walk-in mengisi slot kosong</p></div></div>
+          <div class="panel__body">
+            <div class="board" style="grid-auto-columns:minmax(180px,1fr)">
+              <div class="board__col"><div class="board__head">Menunggu <span class="count">2</span></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">TDH-0927</b><span>19.30</span></div><p class="job__title">Bima S. · Rizky</p><p class="job__meta">Premium haircut</p><span class="pill pill--info pill--plain">Booking · member</span></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">W-41</b><span>tiba 19.05</span></div><p class="job__title">Walk-in · siapa saja</p><p class="job__meta">Haircut + hair spa</p></div>
+              </div>
+              <div class="board__col"><div class="board__head">Dipotong <span class="count">3</span></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">Kursi 1</b><span>sisa 15 mnt</span></div><p class="job__title">Rizky</p><p class="job__meta">Premium haircut</p></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">Kursi 3</b><span>sisa 40 mnt</span></div><p class="job__title">Andika</p><p class="job__meta">Down perm</p></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">Kursi 4</b><span>sisa 5 mnt</span></div><p class="job__title">Fajar</p><p class="job__meta">Premium haircut</p></div>
+              </div>
+              <div class="board__col"><div class="board__head">Selesai <span class="count">44</span></div>
+                <div class="job"><div class="job__top"><b style="color:var(--text)">TDH-0921</b><span class="pill pill--ok pill--plain">Lunas</span></div><p class="job__title">Yoga P. · Rizky</p><p class="job__meta">Catatan gaya tersimpan</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><p class="panel__title">Kapster hari ini</p><a class="link body-sm" href="#admin">Komisi</a></div>
+          <ul class="list">
+            <li><span class="avatar">RZ</span><div class="list__main"><p class="list__title">Rizky · Gubeng</p><p class="list__sub">12 pelanggan · 9 booking</p></div><span class="num strong">Rp840rb</span></li>
+            <li><span class="avatar">FJ</span><div class="list__main"><p class="list__title">Fajar · Gubeng</p><p class="list__sub">11 pelanggan · 4 booking</p></div><span class="num strong">Rp690rb</span></li>
+            <li><span class="avatar">AD</span><div class="list__main"><p class="list__title">Andika · Gubeng</p><p class="list__sub">7 pelanggan · 2 perm</p></div><span class="num strong">Rp910rb</span></li>
+            <li><span class="avatar">YS</span><div class="list__main"><p class="list__title">Yusuf · Darmo</p><p class="list__sub">13 pelanggan · 6 booking</p></div><span class="num strong">Rp820rb</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var state = { branch: "Gubeng", barber: "Rizky", day: "Hari ini, Min 18", time: "19.30" };
+  function render() {
+    var lines = "", total = 0, dur = 0;
+    document.querySelectorAll("#svcPick input:checked").forEach(function (i) {
+      total += Number(i.value); dur += Number(i.getAttribute("data-min"));
+      lines += '<div class="lineitem"><span class="lineitem__qty">1×</span><span>' + i.getAttribute("data-name") + '</span><span class="lineitem__price">' + rupiah(Number(i.value)) + "</span></div>";
+    });
+    document.getElementById("bkLines").innerHTML = lines || '<p class="caption">Pilih minimal satu layanan.</p>';
+    document.getElementById("bkTotal").textContent = rupiah(total);
+    document.getElementById("bkDur").textContent = dur + " menit";
+    document.getElementById("bkBranch").textContent = state.branch;
+    document.getElementById("bkBarber").textContent = state.barber;
+    document.getElementById("bkWhen").textContent = state.day + " · " + state.time;
+  }
+  document.getElementById("svcPick").addEventListener("change", render);
+  document.getElementById("branchPick").addEventListener("change", function (e) { state.branch = e.target.value; render(); });
+  document.getElementById("barberPick").addEventListener("change", function (e) { state.barber = e.target.value; render(); });
+  document.getElementById("dayPick").addEventListener("lapak:select", function (e) { state.day = e.detail.value; render(); });
+  document.getElementById("timePick").addEventListener("lapak:select", function (e) { state.time = e.detail.value; render(); });
+  render();
+})();
+</script>
+</body>
+</html>
