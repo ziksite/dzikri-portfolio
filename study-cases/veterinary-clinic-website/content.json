@@ -1,0 +1,91 @@
+{
+  "slug": "veterinary-clinic-website",
+  "kind": "Website",
+  "industry": "Consumer Services",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Online Booking",
+    "Pet Health Records"
+  ],
+  "metrics": [
+    {
+      "value": "3",
+      "label": "CLINICS",
+      "labelId": "CABANG"
+    },
+    {
+      "value": "24/7",
+      "label": "EMERGENCY INFO",
+      "labelId": "INFO UGD"
+    },
+    {
+      "value": "1",
+      "label": "RECORD PER PET",
+      "labelId": "REKAM PER HEWAN"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with live queue per clinic, services and emergency info",
+      "captionId": "Beranda dengan antrean per cabang, layanan, dan info darurat"
+    },
+    {
+      "hash": "booking",
+      "caption": "Booking by pet, service, vet, date and time",
+      "captionId": "Booking per hewan, layanan, dokter, tanggal, dan jam"
+    },
+    {
+      "hash": "rekam",
+      "caption": "Pet health record with vaccine schedule, weight chart and visits",
+      "captionId": "Rekam kesehatan hewan dengan jadwal vaksin, grafik berat, dan kunjungan"
+    },
+    {
+      "hash": "rawat-inap",
+      "caption": "Ward treatment sheet on the nurses' tablet",
+      "captionId": "Lembar terapi rawat inap di tablet perawat"
+    }
+  ],
+  "content_en": {
+    "title": "Veterinary Clinic Website",
+    "type": "VET CLINIC WEBSITE & BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign for a veterinary group with three clinics. Owners book by pet, service, vet and time, keep each pet's health record with vaccine reminders, and find emergency hours at once; the ward team runs inpatient treatment from a tablet.",
+    "challenge": "The old site opened with a generic slogan and four boxes of claims, then six services behind \"Read More\" links with no prices or durations. Grooming and pet boarding were not mentioned, and there was no information about emergencies anywhere on the site.\n\nQueueing and booking were two separate links with no choice of clinic, vet or pet. Owners had no record of vaccines or past visits, so annual boosters depended on their own memory, and thirteen vets were shown only as a photo carousel with university details.",
+    "solution": "The homepage states the services, area and opening hours, shows the current queue at each clinic, and lists every service with its price and duration by category. A separate emergency block lists the warning signs and the clinic open 24 hours, with a call button.\n\nBooking starts from the pet: the vaccine name and price follow the species, then the owner picks a vet, a date on the month calendar and a morning or afternoon slot, with a summary bar that updates at the bottom. Each pet has a health record with doctor notes, a vaccine timeline with WhatsApp reminders, a weight chart against the vet's target and the visit history. In the ward, a tablet treatment sheet shows each kennel against the hours of the day so nurses can tick off medication, fluids, feeding and vitals and send owners an update. The planned production stack is Next.js with Supabase and the WhatsApp Business API.",
+    "features": [
+      "Current queue per clinic on the homepage",
+      "Services with prices and durations by category",
+      "Emergency block with warning signs and the 24-hour clinic",
+      "Booking by pet, service, vet, date and time",
+      "Pet health record with doctor notes and visit history",
+      "Vaccine timeline with WhatsApp reminders and a weight chart",
+      "Ward treatment sheet on a tablet for inpatient care"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Klinik Hewan",
+    "type": "WEBSITE & BOOKING KLINIK HEWAN",
+    "category": "Booking System",
+    "summary": "Redesign untuk kelompok praktik dokter hewan dengan tiga cabang. Pemilik booking per hewan, layanan, dokter, dan jam, menyimpan rekam kesehatan tiap hewan dengan pengingat vaksin, dan langsung menemukan info darurat; tim rawat inap mengelola terapi pasien dari tablet.",
+    "challenge": "Situs lama dibuka dengan slogan umum dan empat kotak klaim, lalu enam layanan di balik link \"Read More\" tanpa harga atau durasi. Grooming dan penitipan tidak disebut, dan tidak ada informasi darurat di mana pun.\n\nAntrean dan booking berupa dua link terpisah tanpa pilihan cabang, dokter, atau hewan. Pemilik tidak punya catatan vaksin atau kunjungan sebelumnya, sehingga vaksin tahunan bergantung pada ingatan sendiri, dan tiga belas dokter hanya tampil sebagai carousel foto dengan riwayat kuliah.",
+    "solution": "Beranda menyebut layanan, wilayah, dan jam buka, menampilkan antrean saat ini di tiap cabang, dan mendaftar semua layanan dengan harga dan durasi per kategori. Blok darurat terpisah berisi tanda bahaya dan cabang yang buka 24 jam, lengkap dengan tombol telepon.\n\nBooking dimulai dari hewan: nama dan harga vaksin mengikuti jenis hewan, lalu pemilik memilih dokter, tanggal di kalender bulan, dan jam pagi atau siang, dengan bar ringkasan di bawah yang ikut berubah. Setiap hewan punya rekam kesehatan berisi catatan dokter, linimasa vaksin dengan pengingat WhatsApp, grafik berat terhadap target dokter, dan riwayat kunjungan. Di ruang rawat inap, lembar terapi di tablet menampilkan setiap kandang terhadap jam dalam sehari, sehingga perawat bisa mencentang obat, cairan, pakan, dan cek vital lalu mengirim kabar ke pemilik. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan WhatsApp Business API.",
+    "features": [
+      "Antrean saat ini per cabang di beranda",
+      "Layanan dengan harga dan durasi per kategori",
+      "Blok darurat dengan tanda bahaya dan cabang 24 jam",
+      "Booking per hewan, layanan, dokter, tanggal, dan jam",
+      "Rekam kesehatan hewan dengan catatan dokter dan riwayat kunjungan",
+      "Linimasa vaksin dengan pengingat WhatsApp dan grafik berat",
+      "Lembar terapi rawat inap di tablet"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

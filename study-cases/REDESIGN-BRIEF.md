@@ -42,7 +42,7 @@ Tanggal hari ini: **Minggu, 18 Oktober 2026**. Semua tanggal contoh di prototype
 ## 4. Foto
 
 - Pakai foto asli situs. Periksa **setiap** foto yang dipakai (zoom) untuk logo, papan nama, watermark, bordiran, teks brand.
-- **Foto ber-watermark: jangan dipakai dan jangan hapus watermark-nya.**
+- **Foto ber-watermark: jangan dipakai dan jangan hapus watermark-nya.** Cap/stempel logo toko yang ditempel di foto produk (termasuk di area kosong) juga dihitung watermark: jangan crop, lewati fotonya.
 - Papan nama/logo di bangunan atau kaca: jangan pakai fotonya, atau crop bagian itu.
 - Bordiran/logo kecil di seragam, sprei, kemasan: boleh ditutup dengan `patch.mjs`, cek hasilnya.
 - Banner promo yang berisi teks/logo, foto testimoni pelanggan, foto selebriti: jangan dipakai.

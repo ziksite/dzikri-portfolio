@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalis — Klinik hewan di Semarang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/veterinary-clinic-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="alert-line"><div class="wrap"><i data-lucide="siren" class="i-sm"></i><span>UGD 24 jam di Kalis Gajahmungkur. Kondisi darurat? Telepon dulu supaya tim siap saat Anda tiba.</span><a href="#darurat">Info darurat</a></div></div>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">kalis</a>
+      <nav class="nav"><a href="#layanan">Layanan</a><a href="#darurat">Darurat</a><a href="#cabang">Cabang</a><a href="#dokter">Dokter</a></nav>
+      <div class="header__right"><a class="btn btn-ghost btn-sm" href="#rekam">Rekam medis</a><a class="btn btn-primary btn-sm" href="#booking">Booking</a></div>
+    </header>
+
+    <div class="hero">
+      <h1 class="t-hero">Dokter hewan untuk anjing dan kucing di Semarang.</h1>
+      <p class="t-lead" style="max-width:700px">Periksa, vaksin, grooming, bedah, rawat inap, dan pet hotel di tiga klinik. Booking per hewan dan dokter; vaksin, berat badan, dan hasil periksa tersimpan di satu rekam medis.</p>
+      <div class="hero__ctas"><a class="btn btn-primary" href="#booking">Booking periksa</a><a class="btn btn-outline" href="#cabang">Ambil antrean hari ini</a></div>
+    </div>
+
+    <div class="hero-media">
+      <div class="photo" style="--pos:center 40%" data-img="assets/veterinary-clinic-website/periksa-kucing.webp"></div>
+      <div class="float-card">
+        <div style="display:flex;justify-content:space-between;align-items:center"><p class="t-h3">Antrean sekarang</p><span class="t-small">Min, 18 Okt · 14.20</span></div>
+        <div style="display:flex;flex-direction:column">
+          <div class="svc" style="padding:10px 0"><div><p style="font-weight:600">Gajahmungkur</p><p class="t-small">6 antre · tunggu ±40 mnt</p></div><span class="label label--warn">Ramai</span></div>
+          <div class="svc" style="padding:10px 0"><div><p style="font-weight:600">Banyumanik</p><p class="t-small">2 antre · tunggu ±15 mnt</p></div><span class="label label--ok">Sepi</span></div>
+          <div class="svc" style="padding:10px 0;border-bottom:0"><div><p style="font-weight:600">Pedurungan</p><p class="t-small">4 antre · tunggu ±25 mnt</p></div><span class="label">Normal</span></div>
+        </div>
+        <a class="btn btn-dark btn-sm btn-block" href="#booking">Slot booking terdekat: hari ini 15.30</a>
+      </div>
+    </div>
+
+    <!-- Layanan -->
+    <section class="section split" id="layanan">
+      <div style="display:flex;flex-direction:column;gap:14px;position:sticky;top:24px">
+        <h2 class="t-h2">Layanan &amp; harga</h2>
+        <p class="muted">Harga sudah termasuk konsultasi dokter. Obat, lab, dan bahan tambahan dihitung terpisah dan dijelaskan sebelum tindakan.</p>
+        <a class="link" href="#booking">Booking layanan</a>
+      </div>
+      <div>
+        <div class="tabs" data-select id="svcTabs"><button class="is-active" data-value="all">Semua</button><button data-value="periksa">Periksa &amp; vaksin</button><button data-value="bedah">Bedah &amp; gigi</button><button data-value="rawat">Rawat &amp; titip</button></div>
+        <div class="svc-list" id="svcList">
+          <div class="svc" data-cat="periksa"><div><p class="svc__name">Konsultasi &amp; pemeriksaan</p><p class="svc__desc">Pemeriksaan fisik menyeluruh: suhu, jantung, paru, kulit, telinga, gigi, dan berat badan. Untuk kontrol rutin maupun hewan yang sakit.</p><p class="svc__price">Rp100.000 <span>· 30 mnt</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/periksa-kucing.webp"></div></div>
+          <div class="svc" data-cat="periksa"><div><p class="svc__name">Vaksinasi</p><p class="svc__desc">F3/F4 untuk kucing, DHPPi+L untuk anjing, dan rabies. Jadwal vaksin berikutnya otomatis masuk rekam medis dan diingatkan lewat WhatsApp.</p><p class="svc__price">Rp250.000 <span>· mulai, termasuk periksa · 30 mnt</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/vaksin-kucing.webp"></div></div>
+          <div class="svc" data-cat="periksa"><div><p class="svc__name">Tes laboratorium</p><p class="svc__desc">Darah lengkap, kimia darah, urin, dan feses. Hasil sebagian besar keluar di hari yang sama dan langsung masuk rekam medis.</p><p class="svc__price">Rp180.000 <span>· mulai</span></p></div></div>
+          <div class="svc" data-cat="bedah"><div><p class="svc__name">Sterilisasi &amp; bedah</p><p class="svc__desc">Steril jantan dan betina, bedah jaringan lunak, dengan anestesi inhalasi dan pemantauan selama operasi. Puasa 8 jam sebelumnya.</p><p class="svc__price">Rp850.000 <span>· steril kucing betina · 1 malam inap</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/operasi-anjing.webp"></div></div>
+          <div class="svc" data-cat="bedah"><div><p class="svc__name">Scaling gigi</p><p class="svc__desc">Pembersihan karang gigi dengan bius, poles, dan cabut gigi goyang bila perlu.</p><p class="svc__price">Rp750.000 <span>· mulai · 90 mnt</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/scaling-gigi-anjing.webp"></div></div>
+          <div class="svc" data-cat="rawat"><div><p class="svc__name">Rawat inap</p><p class="svc__desc">Kandang terpisah anjing, kucing, dan ruang isolasi. Dokter visit dua kali sehari, kabar kondisi dikirim ke pemilik setiap sore.</p><p class="svc__price">Rp150.000 <span>· per malam, di luar obat</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/rawat-inap-kandang.webp"></div></div>
+          <div class="svc" data-cat="rawat"><div><p class="svc__name">Grooming</p><p class="svc__desc">Mandi, potong kuku, bersih telinga, dan sisir. Grooming jamur dan kutu memakai sampo medis dari dokter.</p><p class="svc__price">Rp85.000 <span>· kucing, mulai · 60 mnt</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/kucing-pug.webp"></div></div>
+          <div class="svc" data-cat="rawat"><div><p class="svc__name">Pet hotel</p><p class="svc__desc">Titip harian dengan syarat vaksin lengkap. Hewan diperiksa saat masuk dan keluar.</p><p class="svc__price">Rp75.000 <span>· per malam, kucing</span></p></div><div class="photo svc__thumb" data-img="assets/veterinary-clinic-website/anjing-kucing.webp"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rekam medis -->
+    <section class="section split" style="align-items:center">
+      <div class="photo" style="--ar:4/3.4" data-img="assets/veterinary-clinic-website/vaksin-kucing.webp"></div>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:620px">
+        <h2 class="t-h2">Satu rekam medis per hewan, bisa dibuka di HP.</h2>
+        <p class="muted">Setiap kunjungan di cabang mana pun menambah catatan: diagnosis, obat, hasil lab, dan berat badan. Jadwal vaksin berikutnya dihitung dari vaksin terakhir, lalu diingatkan lewat WhatsApp tujuh hari sebelumnya.</p>
+        <div class="box" style="margin-top:8px">
+          <div class="svc" style="padding:14px 20px"><div style="display:flex;gap:12px;align-items:center"><span class="avatar avatar--pet">Mo</span><div><p style="font-weight:600">Mochi · F4 tahunan</p><p class="t-small">Terakhir 21 Okt 2025</p></div></div><span class="label label--warn">Jatuh tempo 21 Okt</span></div>
+          <div class="svc" style="padding:14px 20px;border-bottom:0"><div style="display:flex;gap:12px;align-items:center"><span class="avatar avatar--pet">Br</span><div><p style="font-weight:600">Bruno · DHPPi+L</p><p class="t-small">Terakhir 4 Feb 2026</p></div></div><span class="label label--ok">Aman s/d Feb 2027</span></div>
+        </div>
+        <a class="link" href="#rekam">Lihat contoh rekam medis</a>
+      </div>
+    </section>
+
+    <!-- Darurat -->
+    <section class="section" id="darurat">
+      <div class="er">
+        <div>
+          <p class="t-h2" style="color:var(--red)">Darurat? Telepon dulu, lalu datang.</p>
+          <p class="muted" style="margin-top:6px">UGD buka 24 jam di Gajahmungkur. Banyumanik dan Pedurungan menerima kasus darurat selama jam buka.</p>
+          <ul class="er__list">
+            <li><i data-lucide="circle-alert" class="i-sm"></i>Sesak napas, gusi pucat atau kebiruan</li>
+            <li><i data-lucide="circle-alert" class="i-sm"></i>Kucing jantan tidak bisa kencing lebih dari 12 jam</li>
+            <li><i data-lucide="circle-alert" class="i-sm"></i>Tertabrak, jatuh, atau perdarahan yang tidak berhenti</li>
+            <li><i data-lucide="circle-alert" class="i-sm"></i>Termakan racun tikus, obat manusia, coklat, atau anggur</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:240px">
+          <a class="btn btn-red" href="#"><i data-lucide="phone" class="i-sm"></i>Telepon UGD</a>
+          <a class="btn btn-ghost" href="#"><i data-lucide="navigation" class="i-sm"></i>Arah ke Gajahmungkur</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cabang -->
+    <section class="section" id="cabang">
+      <div class="section__head"><h2 class="t-h2">Cabang</h2><span class="t-meta">Antrean walk-in bisa diambil dari sini, tanpa menunggu di klinik.</span></div>
+      <div class="branches">
+        <div class="branch">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><p class="t-h3">Kalis Gajahmungkur</p><span class="label label--red">UGD 24 jam</span></div>
+          <p class="t-meta">Gajahmungkur, Semarang · rawat inap 18 kandang + 2 ruang isolasi</p>
+          <div class="hours"><span>Senin–Sabtu</span><span>09.00–20.00</span><span class="today">Minggu &amp; libur</span><span class="today">09.00–17.00</span><span>UGD</span><span>24 jam</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn btn-primary btn-sm" href="#booking">Booking</a><a class="btn btn-ghost btn-sm" href="#">Ambil antrean · 6</a></div>
+        </div>
+        <div class="branch">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><p class="t-h3">Kalis Banyumanik</p><span class="label">Grooming &amp; hotel</span></div>
+          <p class="t-meta">Banyumanik, Semarang · ruang grooming dan pet hotel 12 kamar</p>
+          <div class="hours"><span>Senin–Sabtu</span><span>09.00–20.00</span><span class="today">Minggu &amp; libur</span><span class="today">09.00–17.00</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn btn-primary btn-sm" href="#booking">Booking</a><a class="btn btn-ghost btn-sm" href="#">Ambil antrean · 2</a></div>
+        </div>
+        <div class="branch">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><p class="t-h3">Kalis Pedurungan</p><span class="label">Lab &amp; USG</span></div>
+          <p class="t-meta">Pedurungan, Semarang · laboratorium dan USG</p>
+          <div class="hours"><span>Senin–Sabtu</span><span>09.00–20.00</span><span class="today">Minggu &amp; libur</span><span class="today">09.00–17.00</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn btn-primary btn-sm" href="#booking">Booking</a><a class="btn btn-ghost btn-sm" href="#">Ambil antrean · 4</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dokter -->
+    <section class="section" id="dokter">
+      <div class="section__head"><h2 class="t-h2">Dokter hewan</h2><span class="t-meta">13 dokter di tiga cabang</span></div>
+      <div class="vets">
+        <div class="vet"><span class="avatar">LW</span><div><p class="vet__name">drh. Laksmi Wardani</p><p class="t-small">Bedah &amp; ortopedi · Gajahmungkur</p></div></div>
+        <div class="vet"><span class="avatar">BK</span><div><p class="vet__name">drh. Bayu Kurniawan</p><p class="t-small">Penyakit dalam · Gajahmungkur</p></div></div>
+        <div class="vet"><span class="avatar">SA</span><div><p class="vet__name">drh. Sekar Ayuningtyas</p><p class="t-small">Kucing &amp; vaksinasi · Gajahmungkur</p></div></div>
+        <div class="vet"><span class="avatar">RA</span><div><p class="vet__name">drh. Rara Anindita</p><p class="t-small">UGD &amp; rawat inap · Gajahmungkur</p></div></div>
+        <div class="vet"><span class="avatar">DP</span><div><p class="vet__name">drh. Dimas Prasetyo</p><p class="t-small">Gigi &amp; mulut · Banyumanik</p></div></div>
+        <div class="vet"><span class="avatar">NK</span><div><p class="vet__name">drh. Nadia Kusuma</p><p class="t-small">Kulit &amp; dermatologi · Banyumanik</p></div></div>
+        <div class="vet"><span class="avatar">YH</span><div><p class="vet__name">drh. Yosef Hartanto</p><p class="t-small">Lab &amp; USG · Pedurungan</p></div></div>
+        <div class="vet"><span class="avatar">HP</span><div><p class="vet__name">drh. Hana Pertiwi</p><p class="t-small">Praktik umum · Pedurungan</p></div></div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">kalis</span><p class="t-meta" style="max-width:340px">Klinik hewan di Semarang sejak 1989. Anjing dan kucing; periksa, vaksin, bedah, rawat inap, grooming, dan pet hotel.</p></div>
+        <div><h4>Layanan</h4><ul><li><a href="#booking">Booking</a></li><li><a href="#darurat">UGD 24 jam</a></li><li><a href="#rekam">Rekam medis</a></li></ul></div>
+        <div><h4>Cabang</h4><ul><li><a href="#cabang">Gajahmungkur</a></li><li><a href="#cabang">Banyumanik</a></li><li><a href="#cabang">Pedurungan</a></li></ul></div>
+        <div><h4>Kalis</h4><ul><li><a href="#">Karier</a></li><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px">© 2026 Kalis Veterinary Clinic</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section data-screen="booking">
+  <div class="wrap">
+    <div class="flow-top">
+      <a class="icon-btn" href="#home" style="border-radius:50%"><i data-lucide="arrow-left" class="i-sm"></i></a>
+      <span class="logo" style="font-size:22px">kalis</span>
+      <div class="steps" style="margin-left:16px"><b>Hewan &amp; layanan</b><i data-lucide="chevron-right" class="i-sm"></i><b>Dokter &amp; waktu</b><i data-lucide="chevron-right" class="i-sm"></i><span>Konfirmasi</span></div>
+    </div>
+    <form data-demo-form="#bkDone" id="bkForm">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding-top:32px">
+        <div><h1 class="t-h1">Booking kunjungan</h1><p class="t-meta" style="margin-top:6px">Masuk sebagai Andini Putri · 2 hewan terdaftar</p></div>
+        <label class="btn btn-ghost btn-sm" style="gap:6px"><i data-lucide="map-pin" class="i-sm"></i><select style="border:0;background:none;outline:0;font-weight:600"><option>Kalis Gajahmungkur</option><option>Kalis Banyumanik</option><option>Kalis Pedurungan</option></select></label>
+      </div>
+      <div class="book">
+        <div style="display:flex;flex-direction:column;gap:36px;min-width:0">
+          <div>
+            <div class="step-h"><p class="t-h3">Untuk hewan</p><span>1</span></div>
+            <div class="pets" data-select="is-selected" id="petPick">
+              <button type="button" class="pet is-selected" data-value="mochi"><span class="avatar avatar--pet">Mo</span><span><b>Mochi</b><small>Kucing · 4,2 kg</small></span></button>
+              <button type="button" class="pet" data-value="bruno"><span class="avatar avatar--pet">Br</span><span><b>Bruno</b><small>Golden retriever · 31 kg</small></span></button>
+              <button type="button" class="pet pet--add" data-value="new"><i data-lucide="plus" class="i-sm"></i>Hewan baru</button>
+            </div>
+          </div>
+          <div>
+            <div class="step-h"><p class="t-h3">Layanan</p><span>2</span></div>
+            <div data-select="is-selected" id="svcPick">
+              <div class="svc is-selectable" data-value="periksa" data-price="100000" data-name="Konsultasi &amp; periksa" data-dur="30 mnt"><div style="display:flex;gap:14px"><span class="radio" style="margin-top:2px"></span><div><p class="svc__name">Konsultasi &amp; periksa</p><p class="svc__desc">Kontrol rutin atau hewan sakit</p></div></div><p class="svc__price" style="margin:0">Rp100.000 <span>· 30 mnt</span></p></div>
+              <div class="svc is-selectable is-selected" data-value="vaksin" data-price="250000" data-name="Vaksinasi F4" data-dur="30 mnt" id="svcVax"><div style="display:flex;gap:14px"><span class="radio" style="margin-top:2px"></span><div><p class="svc__name" id="vaxName">Vaksinasi F4 tahunan</p><p class="svc__desc" id="vaxDesc">Jatuh tempo 21 Okt menurut rekam medis Mochi</p></div></div><p class="svc__price" style="margin:0"><span id="vaxPrice" style="color:var(--ink);font-weight:500">Rp250.000</span> <span>· 30 mnt</span></p></div>
+              <div class="svc is-selectable" data-value="grooming" data-price="85000" data-name="Grooming" data-dur="60 mnt" id="svcGroom"><div style="display:flex;gap:14px"><span class="radio" style="margin-top:2px"></span><div><p class="svc__name">Grooming</p><p class="svc__desc">Mandi, kuku, telinga, sisir</p></div></div><p class="svc__price" style="margin:0"><span id="groomPrice" style="color:var(--ink);font-weight:500">Rp85.000</span> <span>· 60 mnt</span></p></div>
+              <div class="svc is-selectable" data-value="scaling" data-price="750000" data-name="Scaling gigi" data-dur="90 mnt"><div style="display:flex;gap:14px"><span class="radio" style="margin-top:2px"></span><div><p class="svc__name">Scaling gigi</p><p class="svc__desc">Dengan bius, puasa 8 jam sebelumnya</p></div></div><p class="svc__price" style="margin:0">Rp750.000 <span>· 90 mnt</span></p></div>
+            </div>
+          </div>
+          <label class="field">Keluhan atau catatan untuk dokter (opsional)
+            <textarea rows="3" placeholder="Contoh: nafsu makan turun sejak 2 hari, muntah sekali tadi pagi"></textarea>
+          </label>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:36px;min-width:0">
+          <div>
+            <div class="step-h"><p class="t-h3">Dokter</p><span>3</span></div>
+            <div class="vet-pick" data-select="is-selected" id="vetPick">
+              <button type="button" class="vet-chip" data-value="Dokter mana saja"><span class="avatar avatar--sm avatar--pet"><i data-lucide="users" class="i-sm"></i></span>Siapa saja</button>
+              <button type="button" class="vet-chip is-selected" data-value="drh. Sekar Ayuningtyas"><span class="avatar avatar--sm">SA</span>drh. Sekar</button>
+              <button type="button" class="vet-chip" data-value="drh. Bayu Kurniawan"><span class="avatar avatar--sm">BK</span>drh. Bayu</button>
+              <button type="button" class="vet-chip" data-value="drh. Rara Anindita"><span class="avatar avatar--sm">RA</span>drh. Rara</button>
+            </div>
+          </div>
+          <div>
+            <div class="step-h"><p class="t-h3">Tanggal &amp; jam</p><span>4</span></div>
+            <div class="cal">
+              <div class="cal__head"><p style="font-weight:600">Oktober 2026</p><div style="display:flex;gap:6px"><button type="button" class="icon-btn" style="width:34px;height:34px"><i data-lucide="chevron-left" class="i-sm"></i></button><button type="button" class="icon-btn" style="width:34px;height:34px"><i data-lucide="chevron-right" class="i-sm"></i></button></div></div>
+              <div class="cal__grid"><span class="cal__dow">Sen</span><span class="cal__dow">Sel</span><span class="cal__dow">Rab</span><span class="cal__dow">Kam</span><span class="cal__dow">Jum</span><span class="cal__dow">Sab</span><span class="cal__dow">Min</span></div>
+              <div class="cal__grid" data-select="is-selected" id="dayPick"></div>
+              <p class="t-small" style="margin-top:12px" id="dayLabel">Selasa, 20 Oktober · drh. Sekar praktik 09.00–15.00</p>
+              <div id="slotPick" data-select="is-selected">
+                <div class="slot-group"><p>Pagi</p><div class="slots"><button type="button" class="slot is-off">09.00</button><button type="button" class="slot" data-option data-value="09.30">09.30</button><button type="button" class="slot is-off">10.00</button><button type="button" class="slot is-selected" data-option data-value="10.30">10.30</button><button type="button" class="slot" data-option data-value="11.00">11.00</button><button type="button" class="slot is-off">11.30</button></div></div>
+                <div class="slot-group"><p>Siang</p><div class="slots"><button type="button" class="slot" data-option data-value="13.00">13.00</button><button type="button" class="slot is-off">13.30</button><button type="button" class="slot" data-option data-value="14.00">14.00</button><button type="button" class="slot" data-option data-value="14.30">14.30</button></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-bar">
+        <div class="wrap">
+          <div class="cart-bar__sum"><b id="sumWhat">Mochi · Vaksinasi F4 tahunan</b><span class="t-meta" id="sumWhen">drh. Sekar Ayuningtyas · Selasa, 20 Oktober, 10.30 · Gajahmungkur</span></div>
+          <div class="cart-bar__total"><span class="t-small">Estimasi, bayar di klinik</span><b id="sumTotal">Rp250.000</b></div>
+          <button class="btn btn-primary">Konfirmasi booking</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="bkDone" class="done" hidden>
+      <span class="done__icon"><i data-lucide="check"></i></span>
+      <h1 class="t-h1">Booking terkonfirmasi</h1>
+      <p class="muted">Kode booking dan pengingat dikirim ke WhatsApp 0812-xxxx-0417, H-1 dan 2 jam sebelum jadwal. Bawa buku vaksin lama bila ada.</p>
+      <div class="box">
+        <div class="svc" style="padding:16px 20px"><div><p class="svc__name" id="doneWhen">Selasa, 20 Oktober · 10.30</p><p class="svc__desc" id="doneWho">Kalis Gajahmungkur · drh. Sekar Ayuningtyas</p></div><span style="font-weight:600">KLS-2041</span></div>
+        <div class="svc" style="padding:16px 20px;border-bottom:0"><div><p class="svc__name" id="doneWhat">Mochi · Vaksinasi F4 tahunan</p><p class="svc__desc">Termasuk konsultasi</p></div><span style="font-weight:600" id="doneTotal">Rp250.000</span></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#rekam">Buka rekam medis Mochi</a><a class="btn btn-ghost" href="#"><i data-lucide="calendar-plus" class="i-sm"></i>Tambah ke kalender</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REKAM MEDIS ================= -->
+<section data-screen="rekam">
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="#home" style="height:auto">kalis</a>
+      <p class="side__group">Hewan saya</p>
+      <a class="is-active" href="#rekam"><span class="avatar avatar--pet">Mo</span>Mochi</a>
+      <a href="#rekam"><span class="avatar avatar--pet">Br</span>Bruno</a>
+      <p class="side__group">Akun</p>
+      <a href="#booking"><i data-lucide="calendar-plus"></i>Booking</a>
+      <a href="#rekam"><i data-lucide="receipt-text"></i>Tagihan</a>
+      <a href="#rekam"><i data-lucide="bell"></i>Pengingat</a>
+      <a href="#home"><i data-lucide="log-out"></i>Keluar</a>
+    </aside>
+    <div class="main">
+      <div class="main__bar">
+        <div style="display:flex;gap:14px;align-items:center"><span class="avatar avatar--pet" style="width:44px;height:44px">Mo</span><div><h1 class="t-h2">Mochi</h1><p class="t-small">ID pasien KLS-P-08812 · terdaftar sejak Jul 2023</p></div></div>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-ghost btn-sm" href="#"><i data-lucide="file-down" class="i-sm"></i>Unduh PDF</a><a class="btn btn-primary btn-sm" href="#booking"><i data-lucide="plus" class="i-sm"></i>Booking</a></div>
+      </div>
+      <div class="main__body">
+        <div class="grid-2">
+          <div class="box">
+            <div class="box__head"><p class="t-h3">Informasi hewan</p><span class="label label--brand">Booking: Sel, 20 Okt · 10.30</span></div>
+            <div class="box__body">
+              <dl class="kv-grid" style="margin:0">
+                <div><dt>Jenis &amp; ras</dt><dd>Kucing domestik, bulu pendek</dd></div>
+                <div><dt>Kelamin</dt><dd>Betina, steril (Feb 2024)</dd></div>
+                <div><dt>Lahir</dt><dd>Mei 2023 · 3 tahun 5 bulan</dd></div>
+                <div><dt>Berat terakhir</dt><dd>4,2 kg · 12 Sep 2026</dd></div>
+                <div><dt>Microchip</dt><dd class="num">900 0128 4471 093</dd></div>
+                <div><dt>Alergi &amp; catatan</dt><dd style="color:var(--red)">Sensitif protein ayam</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box__head"><p class="t-h3">Catatan dokter</p><a class="link" href="#rekam" style="font-size:14px">Semua</a></div>
+            <div class="box__body" style="padding-bottom:8px">
+              <div class="note"><div class="note__who"><span class="avatar avatar--sm">SA</span>drh. Sekar · 12 Sep 2026</div><p>Berat turun 0,1 kg, sesuai target diet. Lanjut pakan urinary 50 g/hari dibagi 3. Kontrol bersamaan vaksin F4.</p></div>
+              <div class="note"><div class="note__who"><span class="avatar avatar--sm">DP</span>drh. Dimas · 3 Jul 2026</div><p>Scaling, tidak ada cabut gigi. Gusi sedikit radang di P3 atas kiri, sikat gigi 3x seminggu.</p></div>
+              <div class="note"><div class="note__who"><span class="avatar avatar--sm">BK</span>drh. Bayu · 18 Mar 2026</div><p>FLUTD tanpa sumbatan. Urin: kristal struvit (+). Antibiotik 7 hari, ganti pakan urinary.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2b">
+          <div class="box">
+            <div class="box__head"><p class="t-h3">Jadwal vaksin</p><div style="display:flex;gap:10px;align-items:center"><span class="t-small">Ingatkan via WhatsApp</span><button type="button" class="toggle is-on" id="remind" aria-label="Pengingat"></button></div></div>
+            <div class="box__body">
+              <ul class="vax">
+                <li><span class="vax__dot vax__dot--due"><i data-lucide="clock"></i></span><div><b>F4 tahunan</b><span class="t-small">Jatuh tempo 21 Okt 2026 · sudah dibooking 20 Okt</span></div><span class="label label--warn">3 hari lagi</span></li>
+                <li><span class="vax__dot vax__dot--due"><i data-lucide="clock"></i></span><div><b>Rabies</b><span class="t-small">Jatuh tempo 21 Okt 2026 · bisa bersamaan F4</span></div><span class="label label--warn">3 hari lagi</span></li>
+                <li><span class="vax__dot"><i data-lucide="check"></i></span><div><b>F4 + Rabies</b><span class="t-small">21 Okt 2025 · Gajahmungkur · drh. Sekar · batch FV-2207</span></div><span class="t-small">Selesai</span></li>
+                <li><span class="vax__dot"><i data-lucide="check"></i></span><div><b>F4 + Rabies</b><span class="t-small">14 Okt 2024 · Banyumanik · drh. Hana</span></div><span class="t-small">Selesai</span></li>
+                <li><span class="vax__dot"><i data-lucide="check"></i></span><div><b>F3 dasar 1 &amp; 2</b><span class="t-small">20 Jul &amp; 17 Agu 2023 · Gajahmungkur</span></div><span class="t-small">Selesai</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box__head"><div><p class="t-h3">Berat badan</p><p class="t-small">Target dokter 3,8–4,2 kg</p></div><div class="seg" data-select><button type="button" class="is-active">12 bulan</button><button type="button">Semua</button></div></div>
+            <div class="box__body">
+              <svg class="chart" viewBox="0 0 520 250" role="img" aria-label="Grafik berat badan Mochi, turun dari 4,6 ke 4,2 kg">
+                <rect x="44" y="134" width="460" height="72" fill="#e7f3ec"/>
+                <g stroke="#e3e5e9"><line x1="44" y1="26" x2="504" y2="26"/><line x1="44" y1="62" x2="504" y2="62"/><line x1="44" y1="98" x2="504" y2="98"/><line x1="44" y1="134" x2="504" y2="134"/><line x1="44" y1="170" x2="504" y2="170"/><line x1="44" y1="206" x2="504" y2="206"/></g>
+                <g text-anchor="end"><text x="36" y="30">4,8</text><text x="36" y="66">4,6</text><text x="36" y="102">4,4</text><text x="36" y="138">4,2</text><text x="36" y="174">4,0</text><text x="36" y="210">3,8</text></g>
+                <text x="500" y="200" text-anchor="end" style="fill:#1f7a4d">rentang target</text>
+                <polyline fill="none" stroke="#1d3394" stroke-width="2.5" stroke-linejoin="round" points="64,62 138,80 212,98 286,116 360,116 434,134"/>
+                <g fill="#fff" stroke="#1d3394" stroke-width="2"><circle cx="64" cy="62" r="4.5"/><circle cx="138" cy="80" r="4.5"/><circle cx="212" cy="98" r="4.5"/><circle cx="286" cy="116" r="4.5"/><circle cx="360" cy="116" r="4.5"/><circle cx="434" cy="134" r="5.5" fill="#1d3394"/></g>
+                <text x="434" y="120" text-anchor="middle" style="fill:#111418;font-weight:600">4,2</text>
+                <g text-anchor="middle"><text x="64" y="236">Okt 25</text><text x="138" y="236">Des</text><text x="212" y="236">Mar 26</text><text x="286" y="236">Mei</text><text x="360" y="236">Jul</text><text x="434" y="236">Sep</text></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box__head"><p class="t-h3">Riwayat kunjungan</p><span class="t-small">9 kunjungan · 3 cabang</span></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Tanggal</th><th>Kunjungan</th><th>Cabang &amp; dokter</th><th>Tindakan &amp; obat</th><th style="text-align:right">Biaya</th></tr></thead>
+              <tbody>
+                <tr><td class="num">12 Sep 2026</td><td><b>Kontrol diet</b></td><td>Gajahmungkur · drh. Sekar</td><td class="muted">Timbang, periksa fisik</td><td class="num" style="text-align:right">Rp100.000</td></tr>
+                <tr><td class="num">3 Jul 2026</td><td><b>Scaling gigi</b></td><td>Banyumanik · drh. Dimas</td><td class="muted">Scaling + poles, bius inhalasi, cek darah pra-bius</td><td class="num" style="text-align:right">Rp1.020.000</td></tr>
+                <tr><td class="num">18 Mar 2026</td><td><b>Sakit · susah kencing</b></td><td>Gajahmungkur · drh. Bayu</td><td class="muted">Urinalisis, antibiotik 7 hari, pakan urinary 2 kg</td><td class="num" style="text-align:right">Rp645.000</td></tr>
+                <tr><td class="num">21 Okt 2025</td><td><b>Vaksin tahunan</b></td><td>Gajahmungkur · drh. Sekar</td><td class="muted">F4 + rabies, obat cacing</td><td class="num" style="text-align:right">Rp385.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLET RAWAT INAP ================= -->
+<section data-screen="rawat-inap">
+  <div class="stage">
+    <div class="tablet">
+      <div class="tablet__screen">
+        <div class="ward-bar">
+          <span class="logo" style="font-size:20px">kalis</span>
+          <div class="seg" data-select><button type="button" class="is-active">Rawat inap · 6</button><button type="button">Isolasi · 1</button><button type="button">Pet hotel · 9</button></div>
+          <div style="margin-left:auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <span class="t-meta">Gajahmungkur · Minggu, 18 Okt · <b style="color:var(--ink)">14.20</b></span>
+            <span class="label label--red" id="dueCount">Tugas belum dicentang</span>
+            <span style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:500"><span class="avatar avatar--sm">RA</span>drh. Rara · shift siang</span>
+          </div>
+        </div>
+        <div class="ward">
+          <div style="min-width:0;display:flex;flex-direction:column">
+            <div class="sheet-wrap">
+              <table class="sheet">
+                <thead><tr><th>Kandang &amp; pasien</th><th>08.00</th><th>10.00</th><th>12.00</th><th class="is-now">14.00</th><th>16.00</th><th>18.00</th><th>20.00</th><th>22.00</th></tr></thead>
+                <tbody data-select="is-selected" id="wardRows"></tbody>
+              </table>
+            </div>
+            <div style="padding:14px 20px;margin-top:auto" class="legend">
+              <span><i data-lucide="pill" class="i-sm"></i>Obat</span><span><i data-lucide="droplet" class="i-sm"></i>Cairan infus</span><span><i data-lucide="utensils" class="i-sm"></i>Pakan</span><span><i data-lucide="thermometer" class="i-sm"></i>Cek vital</span>
+              <span style="margin-left:auto"><i style="background:var(--ok);border-color:var(--ok)"></i>Selesai</span><span><i style="border:2px solid var(--red);background:var(--red-soft)"></i>Sekarang</span><span><i style="background:var(--red);border-color:var(--red)"></i>Terlambat</span>
+            </div>
+          </div>
+          <aside class="ward__panel" id="wardPanel"></aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+
+  // Foto
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  });
+
+  // Beranda: filter tab layanan
+  document.getElementById("svcTabs").addEventListener("lapak:select", function (e) {
+    var v = e.detail.value;
+    document.querySelectorAll("#svcList .svc").forEach(function (r) { r.hidden = v !== "all" && r.getAttribute("data-cat") !== v; });
+  });
+
+  // ---------- Booking ----------
+  var dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var html = "";
+  for (var i = 0; i < 3; i++) html += "<span></span>"; // 1 Okt 2026 = Kamis
+  for (var d = 1; d <= 31; d++) {
+    var dow = (d + 3) % 7; // 0 = Minggu
+    var cls = "day";
+    if (d < 18) cls += " is-past";
+    if (d === 18) cls += " is-today";
+    if (d === 25) cls += " is-off";
+    if (d === 20) cls += " is-selected";
+    html += '<button type="button" class="' + cls + '" data-value="' + dayNames[dow] + ", " + d + ' Oktober">' + d + "</button>";
+  }
+  document.getElementById("dayPick").innerHTML = html;
+
+  var pets = {
+    mochi: { name: "Mochi", vax: "Vaksinasi F4 tahunan", vaxDesc: "Jatuh tempo 21 Okt menurut rekam medis Mochi", vaxPrice: 250000, groom: 85000 },
+    bruno: { name: "Bruno", vax: "Vaksinasi DHPPi+L", vaxDesc: "Jatuh tempo Feb 2027, bisa dimajukan", vaxPrice: 275000, groom: 180000 },
+    "new": { name: "Hewan baru", vax: "Vaksinasi", vaxDesc: "Jenis vaksin ditentukan dokter saat periksa", vaxPrice: 250000, groom: 85000 }
+  };
+  var st = { pet: "mochi", svc: document.getElementById("svcVax"), vet: "drh. Sekar Ayuningtyas", day: "Selasa, 20 Oktober", time: "10.30" };
+  function svcName() { return st.svc.id === "svcVax" ? pets[st.pet].vax : st.svc.getAttribute("data-name").replace("&amp;", "&"); }
+  function svcPrice() { return Number(st.svc.getAttribute("data-price")); }
+  function render() {
+    var p = pets[st.pet];
+    document.getElementById("vaxName").textContent = p.vax;
+    document.getElementById("vaxDesc").textContent = p.vaxDesc;
+    document.getElementById("vaxPrice").textContent = rupiah(p.vaxPrice);
+    document.getElementById("svcVax").setAttribute("data-price", p.vaxPrice);
+    document.getElementById("groomPrice").textContent = rupiah(p.groom);
+    document.getElementById("svcGroom").setAttribute("data-price", p.groom);
+    var what = p.name + " · " + svcName();
+    var when = st.day + ", " + st.time;
+    document.getElementById("sumWhat").textContent = what;
+    document.getElementById("sumWhen").textContent = st.vet + " · " + when + " · Gajahmungkur";
+    document.getElementById("sumTotal").textContent = rupiah(svcPrice());
+    document.getElementById("doneWhat").textContent = what;
+    document.getElementById("doneWhen").textContent = st.day + " · " + st.time;
+    document.getElementById("doneWho").textContent = "Kalis Gajahmungkur · " + st.vet;
+    document.getElementById("doneTotal").textContent = rupiah(svcPrice());
+    document.getElementById("dayLabel").textContent = st.day + (st.vet.indexOf("drh.") === 0 ? " · " + st.vet.split(" ").slice(0, 2).join(" ") + " praktik 09.00–15.00" : " · semua dokter jaga");
+  }
+  document.getElementById("petPick").addEventListener("lapak:select", function (e) { st.pet = e.detail.value; render(); });
+  document.getElementById("svcPick").addEventListener("lapak:select", function (e) { st.svc = e.detail.item; render(); });
+  document.getElementById("vetPick").addEventListener("lapak:select", function (e) { st.vet = e.detail.value; render(); });
+  document.getElementById("dayPick").addEventListener("lapak:select", function (e) { st.day = e.detail.value; render(); });
+  document.getElementById("slotPick").addEventListener("lapak:select", function (e) { st.time = e.detail.value; render(); });
+  render();
+
+  // Rekam medis: toggle pengingat
+  document.getElementById("remind").addEventListener("click", function () { this.classList.toggle("is-on"); });
+
+  // ---------- Rawat inap ----------
+  // status: d = selesai, n = sekarang, l = terlambat, f = terjadwal, "" = kosong
+  var I = { o: "pill", c: "droplet", p: "utensils", v: "thermometer" };
+  var ward = [
+    { k: "K-01", name: "Oyen", sp: "Kucing domestik · 5,1 kg", dx: "FLUTD, kateter urin hari ke-2", vet: "drh. Bayu", owner: "Bp. Teguh", day: "Hari ke-2", t: 38.6, hr: 168, rr: 32, fluid: "RL 12 ml/jam", note: "Urin 45 ml sejak 08.00, warna mulai jernih. Kateter rencana dilepas besok pagi bila urin lancar.",
+      cells: [["vd","od","cd"],["cd"],["pd","vd"],["on","cn"],["cf","pf"],["vf"],["of","cf"],["cf"]] },
+    { k: "K-02", name: "Coco", sp: "Pomeranian · 3,4 kg", dx: "Pasca sterilisasi", vet: "drh. Laksmi", owner: "Ibu Wulan", day: "Hari ke-1", t: 38.4, hr: 110, rr: 24, fluid: "—", note: "Bangun dari bius normal, sudah mau minum. Luka kering. Pulang besok jam 10 setelah visit pagi.",
+      cells: [["vd","od"],[],["pd"],["vn","on"],[],["pf"],["of"],[]] },
+    { k: "K-04", name: "Rocky", sp: "Golden retriever · 28 kg", dx: "Gastroenteritis, dehidrasi sedang", vet: "drh. Rara", owner: "Bp. Hendra", day: "Hari ke-3", t: 39.1, hr: 104, rr: 28, fluid: "NaCl 90 ml/jam", note: "Muntah terakhir kemarin 21.00. Coba pakan lunak 3 sendok jam 14.00, pantau 2 jam.",
+      cells: [["vd","od","cd"],["cd"],["cd","od"],["pn","cn"],["cf","vf"],["cf"],["cf","of"],["cf"]] },
+    { k: "K-05", name: "Luna", sp: "British shorthair · 3,9 kg", dx: "Pasca scaling & cabut 2 gigi", vet: "drh. Dimas", owner: "Ibu Sari", day: "Hari ke-1", t: 38.3, hr: 150, rr: 26, fluid: "—", note: "Makan pakan basah sedikit jam 12. Pereda nyeri lanjut 3 hari di rumah. Pulang sore ini 17.00.",
+      cells: [["vd"],["od"],["pl"],["vn"],["of"],[],[],[]] },
+    { k: "K-07", name: "Bella", sp: "Shih tzu · 6,2 kg", dx: "Ehrlichiosis, trombosit rendah", vet: "drh. Bayu", owner: "Ibu Maya", day: "Hari ke-4", t: 38.9, hr: 120, rr: 30, fluid: "RL 15 ml/jam", note: "Trombosit naik 62 → 88 ribu. Doksisiklin hari ke-4 dari 28. Cek darah ulang Selasa.",
+      cells: [["vd","od","cd"],["cd"],["cd","pd"],["cd"],["cf","of"],["cf"],["cf","vf"],["cf"]] },
+    { k: "I-1", name: "Milo", sp: "Kucing persia · 2,8 kg", dx: "Suspek panleukopenia · isolasi", vet: "drh. Rara", owner: "Bp. Arif", day: "Hari ke-2", t: 39.6, hr: 190, rr: 36, fluid: "RL 10 ml/jam", note: "Ruang isolasi, APD lengkap. Masih diare. Suhu naik dari 39,2 pagi. Kabari pemilik setelah visit sore.",
+      cells: [["vd","od","cd"],["cd","vd"],["cd","ol"],["cd","vn"],["cf","of"],["cf","vf"],["cf"],["cf","vf"]] }
+  ];
+  var cls = { d: " is-done", n: " is-due", l: " is-late", f: "" };
+  var rows = "";
+  ward.forEach(function (w, idx) {
+    rows += '<tr data-value="' + idx + '"' + (idx === 3 ? ' class="is-selected"' : "") + '><td><div class="pt"><span class="kennel">' + w.k + '</span><div><b>' + w.name + '</b><small>' + w.dx + '</small></div></div></td>';
+    w.cells.forEach(function (c, h) {
+      rows += '<td' + (h === 3 ? ' style="background:rgba(196,47,39,.04)"' : "") + '><div style="display:inline-flex;gap:4px">';
+      c.forEach(function (t, j) { rows += '<button type="button" class="task' + cls[t[1]] + '" data-r="' + idx + '" data-h="' + h + '" data-j="' + j + '" title="' + t + '"><i data-lucide="' + I[t[0]] + '"></i></button>'; });
+      rows += "</div></td>";
+    });
+    rows += "</tr>";
+  });
+  document.getElementById("wardRows").innerHTML = rows;
+
+  function countDue() {
+    var n = document.querySelectorAll("#wardRows .task.is-due, #wardRows .task.is-late").length;
+    var el = document.getElementById("dueCount");
+    el.textContent = n ? n + " tugas belum dicentang" : "Semua tugas sampai 14.00 selesai";
+    el.className = "label " + (n ? "label--red" : "label--ok");
+  }
+  function panel(idx) {
+    var w = ward[idx];
+    var due = 0; w.cells.forEach(function (c) { c.forEach(function (t) { if (t[1] === "n" || t[1] === "l") due++; }); });
+    document.getElementById("wardPanel").innerHTML =
+      '<div style="display:flex;gap:12px;align-items:center"><span class="kennel" style="width:44px;height:44px;font-size:14px">' + w.k + '</span><div><p class="t-h3">' + w.name + '</p><p class="t-small">' + w.sp + '</p></div></div>' +
+      '<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="label">' + w.day + '</span><span class="label label--brand">' + w.vet + '</span>' + (w.t >= 39.5 ? '<span class="label label--red">Demam</span>' : "") + '</div>' +
+      '<p style="font-weight:500">' + w.dx + '</p>' +
+      '<div class="vitals"><div class="vital"><small>Suhu</small><b' + (w.t >= 39.5 ? ' style="color:var(--red)"' : "") + '>' + String(w.t).replace(".", ",") + ' °C</b></div><div class="vital"><small>Detak jantung</small><b>' + w.hr + '/mnt</b></div><div class="vital"><small>Napas</small><b>' + w.rr + '/mnt</b></div><div class="vital"><small>Cairan</small><b style="font-size:15px">' + w.fluid + '</b></div></div>' +
+      '<div><p class="kv-label" style="margin-bottom:4px">Catatan visit pagi</p><p style="font-size:14px">' + w.note + '</p></div>' +
+      '<label class="field">Catatan shift siang<textarea rows="2" placeholder="Tulis kondisi, nafsu makan, urin/feses"></textarea></label>' +
+      '<div style="display:flex;flex-direction:column;gap:8px;margin-top:auto">' +
+      '<button type="button" class="btn btn-primary btn-sm btn-block" data-doall="' + idx + '"' + (due ? "" : " disabled style=\"opacity:.5\"") + '><i data-lucide="check-check" class="i-sm"></i>Centang ' + (due ? due + " tugas sampai 14.00" : "— semua tugas selesai") + '</button>' +
+      '<a class="btn btn-ghost btn-sm btn-block" href="#"><i data-lucide="message-circle" class="i-sm"></i>Kirim kabar ke ' + w.owner + '</a></div>';
+    icons();
+  }
+  function setDone(r, h, j) { var t = ward[r].cells[h][j]; ward[r].cells[h][j] = t[0] + "d"; }
+  document.getElementById("wardRows").addEventListener("click", function (e) {
+    var b = e.target.closest(".task");
+    if (b && (b.classList.contains("is-due") || b.classList.contains("is-late"))) {
+      setDone(+b.dataset.r, +b.dataset.h, +b.dataset.j);
+      b.className = "task is-done"; countDue();
+      if (document.querySelector("#wardRows tr.is-selected").getAttribute("data-value") === b.dataset.r) panel(+b.dataset.r);
+    }
+  });
+  document.getElementById("wardRows").addEventListener("lapak:select", function (e) { panel(+e.detail.value); });
+  document.getElementById("wardPanel").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-doall]"); if (!b) return;
+    var r = +b.getAttribute("data-doall");
+    document.querySelectorAll('#wardRows .task[data-r="' + r + '"]').forEach(function (t) {
+      if (t.classList.contains("is-due") || t.classList.contains("is-late")) { setDone(r, +t.dataset.h, +t.dataset.j); t.className = "task is-done"; }
+    });
+    countDue(); panel(r);
+  });
+  panel(3); countDue(); icons();
+})();
+</script>
+</body>
+</html>

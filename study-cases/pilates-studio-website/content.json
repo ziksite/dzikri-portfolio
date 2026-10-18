@@ -1,0 +1,91 @@
+{
+  "slug": "pilates-studio-website",
+  "kind": "Website",
+  "industry": "Sports & Fitness",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Class Booking",
+    "Credit Packages"
+  ],
+  "metrics": [
+    {
+      "value": "12",
+      "label": "BOOKABLE REFORMERS",
+      "labelId": "REFORMER BISA DIPILIH"
+    },
+    {
+      "value": "12 H",
+      "label": "FREE CANCELLATION WINDOW",
+      "labelId": "BATAS BATAL GRATIS"
+    },
+    {
+      "value": "4",
+      "label": "SCREENS",
+      "labelId": "LAYAR"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Homepage with today's classes and remaining spots",
+      "captionId": "Beranda dengan kelas hari ini dan sisa tempat"
+    },
+    {
+      "hash": "jadwal",
+      "caption": "Weekly schedule with a reformer picker and credit summary",
+      "captionId": "Jadwal mingguan dengan pilihan reformer dan ringkasan kredit"
+    },
+    {
+      "hash": "paket",
+      "caption": "Credit packages with expiry dates and checkout",
+      "captionId": "Paket kredit dengan masa berlaku dan pembayaran"
+    },
+    {
+      "hash": "checkin",
+      "caption": "Front-desk tablet for class check-in by reformer",
+      "captionId": "Tablet meja depan untuk check-in kelas per reformer"
+    }
+  ],
+  "content_en": {
+    "title": "Pilates Studio Website",
+    "type": "STUDIO WEBSITE & CLASS BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign for a boutique reformer and mat pilates studio. Members see today's classes and open spots, book a specific reformer with credits, join a waitlist when a class is full, and buy packages with clear expiry dates; the front desk checks people in from a tablet.",
+    "challenge": "The old site published its weekly schedule and price list only as poster images, which were hard to read on a phone and impossible to book from. The class and login buttons led back to the same page, so anyone who wanted a spot had to message the studio and wait for a reply.\n\nTrainer profiles were also posters with text inside the image, and nothing explained how packages worked: how many sessions they held, when they expired, or how late a booking could be cancelled. The registration form asked visitors to tick from sixteen class names before giving them a way to start.",
+    "solution": "The homepage opens on a card listing today's classes with instructor, level and spots left, placed over a mosaic of the studio's own photos, followed by class types, packages, instructors and the booking rules. The schedule page combines a seven-day strip and class filters with a floor map of the reformers facing the instructor, so members pick a numbered reformer, see their credit balance change and read the exact free-cancellation deadline before they confirm. Full classes switch to a waitlist.\n\nThe package page shows the current balance, four group packages or private sessions, an expiry date calculated from today, and payment by QRIS, virtual account or card from a sticky bar. At the front desk, a tablet screen lists today's classes and shows the same reformer map with who has arrived, plus a searchable roster with one-tap check-in, low-credit and first-class flags, and the next class's waitlist. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Today's classes with remaining spots on the homepage",
+      "Weekly schedule with class-type filters",
+      "Reformer and mat floor map for choosing a spot",
+      "Credit balance and cancellation deadline before booking",
+      "Automatic waitlist for full classes",
+      "Credit packages and private sessions with expiry dates",
+      "Front-desk tablet check-in by reformer"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Studio Pilates",
+    "type": "WEBSITE STUDIO & BOOKING KELAS",
+    "category": "Booking System",
+    "summary": "Redesign untuk studio reformer dan mat pilates butik. Member melihat kelas hari ini dan sisa tempat, booking reformer tertentu dengan kredit, masuk waitlist saat kelas penuh, dan membeli paket dengan masa berlaku yang jelas; meja depan melakukan check-in dari tablet.",
+    "challenge": "Situs lama menampilkan jadwal mingguan dan daftar harga hanya sebagai gambar poster, yang sulit dibaca di HP dan tidak bisa dipakai untuk booking. Tombol kelas dan login kembali ke halaman yang sama, sehingga siapa pun yang ingin dapat tempat harus chat studio dan menunggu balasan.\n\nProfil pelatih juga berupa poster dengan teks di dalam gambar, dan tidak ada penjelasan cara kerja paket: berapa sesi isinya, kapan hangus, atau sampai kapan booking boleh dibatalkan. Form registrasi meminta pengunjung mencentang enam belas nama kelas sebelum memberi jalan untuk mulai.",
+    "solution": "Beranda dibuka dengan kartu berisi kelas hari ini lengkap dengan instruktur, level, dan sisa tempat, di atas mosaik foto studio sendiri, lalu jenis kelas, paket, instruktur, dan aturan booking. Halaman jadwal menggabungkan deret tujuh hari dan filter kelas dengan denah reformer yang menghadap instruktur, sehingga member memilih nomor reformer, melihat saldo kredit berubah, dan membaca batas batal gratis yang tepat sebelum konfirmasi. Kelas yang penuh berubah menjadi waitlist.\n\nHalaman paket menampilkan saldo saat ini, empat paket kelas grup atau sesi private, tanggal kedaluwarsa yang dihitung dari hari ini, dan pembayaran lewat QRIS, virtual account, atau kartu dari bar yang selalu terlihat. Di meja depan, layar tablet menampilkan kelas hari ini dan denah reformer yang sama berisi siapa yang sudah datang, roster yang bisa dicari dengan check-in sekali ketuk, penanda kredit hampir habis dan kelas pertama, serta waitlist kelas berikutnya. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Kelas hari ini dengan sisa tempat di beranda",
+      "Jadwal mingguan dengan filter jenis kelas",
+      "Denah reformer dan matras untuk memilih tempat",
+      "Saldo kredit dan batas batal sebelum booking",
+      "Waitlist otomatis untuk kelas penuh",
+      "Paket kredit dan sesi private dengan masa berlaku",
+      "Check-in per reformer dari tablet meja depan"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
