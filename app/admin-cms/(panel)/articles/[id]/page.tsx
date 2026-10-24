@@ -27,6 +27,7 @@ export default async function EditArticle({ params }: { params: Promise<{ id: st
           cover_image: a.cover_image,
           cover_credit: a.cover_credit,
           cover_credit_url: a.cover_credit_url,
+          category: a.category ?? "",
           tags: a.tags ?? [],
           published_at: a.published_at,
           draft: a.draft,

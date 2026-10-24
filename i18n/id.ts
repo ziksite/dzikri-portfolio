@@ -314,6 +314,8 @@ export const id: Dictionary = {
     intro: "Pemikiran tentang teknologi, sistem, dan otomasi yang memberi dampak bisnis nyata.",
     empty: "Belum ada artikel yang dipublikasikan.",
     readArticle: "Baca artikel",
+    allCategories: "Semua",
+    categoryLabel: "Filter artikel berdasarkan kategori",
     allArticles: "Semua artikel",
     draft: "Draft",
     ctaHeading: "Butuh bantuan menerapkan ini di bisnis Anda?",

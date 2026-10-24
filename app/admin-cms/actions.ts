@@ -4,7 +4,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { supabase } from "@/lib/supabase";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
 import { refreshSite } from "@/lib/site-cache";
-import { INDUSTRIES, PROJECT_KINDS, type GalleryItem, type ProjectMetric, type ProjectText } from "@/lib/cms-types";
+import { ARTICLE_CATEGORIES, INDUSTRIES, PROJECT_KINDS, type GalleryItem, type ProjectMetric, type ProjectText } from "@/lib/cms-types";
 
 export type ActionResult = { ok: true; id: string } | { ok: false; error: string };
 
@@ -116,6 +116,7 @@ export interface ArticleInput {
   cover_image: string;
   cover_credit: string;
   cover_credit_url: string;
+  category: string;
   tags: string[];
   published_at: string;
   draft: boolean;
@@ -132,6 +133,7 @@ export async function saveArticle(input: ArticleInput): Promise<ActionResult> {
     cover_image: str(input.cover_image),
     cover_credit: str(input.cover_credit),
     cover_credit_url: str(input.cover_credit_url),
+    category: (ARTICLE_CATEGORIES as readonly string[]).includes(str(input.category)) ? str(input.category) : "",
     tags: list(input.tags),
     published_at: /^\d{4}-\d{2}-\d{2}$/.test(str(input.published_at)) ? str(input.published_at) : new Date().toISOString().slice(0, 10),
     draft: !!input.draft,

@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { publishNextQueued } from "@/lib/article-queue";
 import {
   DAY_MS,
   WIB_OFFSET_MS,
@@ -16,12 +17,15 @@ import { escapeHtml, sendTelegram } from "@/lib/telegram";
 
 export const runtime = "nodejs";
 
-// Daily job (vercel.json, ~07:00 WIB): yesterday's summary to Telegram, plus a 7-day recap on Mondays
+// Morning job (vercel.json, ~08:00 WIB): publishes the next queued article, then sends yesterday's
+// summary to Telegram, plus a 7-day recap on Mondays. The afternoon slot is app/api/cron/publish.
 export async function GET(request: NextRequest) {
   const secret = process.env.CRON_SECRET;
   if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const { remaining } = await publishNextQueued();
 
   const now = new Date();
   const today = wibDayStart(now);
@@ -43,6 +47,9 @@ export async function GET(request: NextRequest) {
     `Halaman dilihat: ${yViews.length}`,
     `Lead: <b>${leadSummary(yLeads)}</b>`,
     `Terpopuler: ${topPage ? `${escapeHtml(topPage[0])} (${topPage[1]})` : "–"}`,
+    remaining > 0
+      ? `📥 Antrean terbit: ${remaining} artikel`
+      : "📭 Antrean terbit kosong: belum ada artikel yang siap terbit. Kirim topik atau /ide.",
   ];
 
   if (isMonday) {

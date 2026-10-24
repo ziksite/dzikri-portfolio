@@ -6,7 +6,8 @@ import { ExternalLink, Loader2, Save, Trash2 } from "lucide-react";
 import { deleteArticle, saveArticle, type ArticleInput } from "@/app/admin-cms/actions";
 import { slugify } from "@/lib/slugify";
 import { cn } from "@/lib/utils";
-import { ImageUpload, TagsInput, TextArea, TextInput, Toggle } from "./fields";
+import { ImageUpload, Select, TagsInput, TextArea, TextInput, Toggle } from "./fields";
+import { ARTICLE_CATEGORIES } from "@/lib/cms-types";
 import { RichTextEditor } from "./RichTextEditor";
 
 export function ArticleForm({ initial, id }: { initial?: ArticleInput; id?: string }) {
@@ -20,6 +21,7 @@ export function ArticleForm({ initial, id }: { initial?: ArticleInput; id?: stri
       cover_image: "",
       cover_credit: "",
       cover_credit_url: "",
+      category: "",
       tags: [],
       published_at: new Date().toISOString().slice(0, 10),
       draft: true,
@@ -78,6 +80,7 @@ export function ArticleForm({ initial, id }: { initial?: ArticleInput; id?: stri
           }}
         />
         <TextArea label="Ringkasan" hint={`Untuk daftar artikel & meta description. ${a.excerpt.length}/300`} value={a.excerpt} onChange={set("excerpt")} rows={4} />
+        <Select label="Kategori" value={a.category} options={["", ...ARTICLE_CATEGORIES]} onChange={set("category")} />
         <TagsInput label="Tag" value={a.tags} onChange={set("tags")} />
         <ImageUpload label="Cover image" folder="articles" value={a.cover_image} onChange={set("cover_image")} />
         <TextInput label="Kredit foto cover" hint='Tampil sebagai "Foto: <nama> / Unsplash"' value={a.cover_credit} onChange={set("cover_credit")} />

@@ -315,6 +315,8 @@ export const en = {
     intro: "Thinking on technology, systems, and automation that create real business impact.",
     empty: "No articles published yet.",
     readArticle: "Read article",
+    allCategories: "All",
+    categoryLabel: "Filter articles by category",
     allArticles: "All articles",
     draft: "Draft",
     ctaHeading: "Need help applying this to your business?",

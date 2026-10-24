@@ -56,11 +56,16 @@ export interface ArticleRow {
   cover_credit: string;
   cover_credit_url: string;
   cover_alt: string;
+  category: string;
+  queued_at: string | null;
   tags: string[];
   published_at: string;
   draft: boolean;
   updated_at: string;
 }
+
+// Blog categories, one per service line; labels are shown as-is in both site languages
+export const ARTICLE_CATEGORIES = ["Website", "Aplikasi Bisnis", "AI Automation", "Strategi Digital"] as const;
 
 export const PROJECT_KINDS = ["AI Automation", "Web App", "Internal System", "Website"] as const;
 

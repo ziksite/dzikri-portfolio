@@ -1,4 +1,5 @@
 import { after, NextResponse, type NextRequest } from "next/server";
+import { getQueue, nextSlots, queueMessage } from "@/lib/article-queue";
 import { suggestTopics, writeArticle } from "@/lib/article-writer";
 import { localePath, SITE_URL } from "@/lib/i18n";
 import { toVisionJpeg, uploadImageAsWebp } from "@/lib/media";
@@ -23,6 +24,7 @@ const HELP = [
   "",
   "/ide — 5 usulan topik artikel, tinggal tekan ✍️ untuk menulis",
   "/stats — pengunjung, lead, dan artikel terpopuler",
+  "/antrean — artikel yang menunggu terbit otomatis (±08.00 & 16.00 WIB)",
 ].join("\n");
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -75,6 +77,15 @@ export async function POST(request: NextRequest) {
     });
     return ok;
   }
+  if (brief.startsWith("/antrean")) {
+    after(async () => {
+      const { text, queue } = await queueMessage();
+      await sendTelegram(text, {
+        buttons: queue.length ? queue.map((a, i) => [{ text: `↩️ Keluarkan #${i + 1}`, callback_data: `unq:${a.id}` }]) : undefined,
+      });
+    });
+    return ok;
+  }
   if (brief.startsWith("/ide")) {
     after(sendIdeas);
     return ok;
@@ -119,6 +130,7 @@ async function createDraft(brief: string, fileId: string | undefined) {
         cover_image: coverImage,
         tags: article.tags.slice(0, 3),
         cover_alt: coverImage ? article.cover_alt : "",
+        category: article.category,
         draft: true,
       })
       .select("id")
@@ -126,30 +138,35 @@ async function createDraft(brief: string, fileId: string | undefined) {
     if (error) throw new Error(`Gagal menyimpan: ${error.message}`);
 
     // Preview in chat, then a control message whose buttons publish or delete the draft
-    await sendTelegram(`🔎 Kata kunci: <b>${escapeHtml(article.focus_keyword)}</b>
-URL: /id/blog/${slug}`);
+    await sendTelegram(
+      `🔎 Kata kunci: <b>${escapeHtml(article.focus_keyword)}</b>\n📁 Kategori: ${escapeHtml(article.category)}\nURL: /id/blog/${slug}`
+    );
     await sendTelegram(`📝 <b>${escapeHtml(article.title)}</b>
 
 <i>${escapeHtml(article.excerpt)}</i>`);
     for (const chunk of articleToTelegramChunks(sanitizeArticleHtml(article.content_html))) await sendTelegram(chunk);
-    await sendTelegram(`Publish artikel ini?
-<i>Biaya AI: ±$${costUsd.toFixed(3)}</i>`, {
-      buttons: [
-        [
-          { text: "✅ Publish", callback_data: `pub:${data.id}` },
-          { text: "🗑 Hapus", callback_data: `del:${data.id}` },
-        ],
-        [{ text: "✏️ Edit di CMS dulu", url: `${SITE_URL}/admin-cms/articles/${data.id}` }],
-      ],
-    });
+    await sendTelegram(`Terbitkan artikel ini?\n<i>Biaya AI: ±$${costUsd.toFixed(3)}</i>`, { buttons: draftButtons(data.id) });
   } catch (err) {
     console.error("Article draft failed", err);
     await sendTelegram(`❌ Gagal membuat draft: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
   }
 }
 
-// Publish / delete buttons under a draft preview. Deleting only ever touches drafts, so a stale
-// button can't remove a live article.
+function draftButtons(id: string) {
+  return [
+    [
+      { text: "✅ Publish sekarang", callback_data: `pub:${id}` },
+      { text: "📥 Antrean", callback_data: `que:${id}` },
+    ],
+    [
+      { text: "🗑 Hapus", callback_data: `del:${id}` },
+      { text: "✏️ Edit di CMS", url: `${SITE_URL}/admin-cms/articles/${id}` },
+    ],
+  ];
+}
+
+// Publish / queue / delete buttons under a draft preview, and the remove buttons under /antrean.
+// Every action only touches drafts, so a stale button can't change a live article.
 async function handleButton(query: TelegramCallback) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (String(query.from.id) !== chatId || !query.message) return;
@@ -163,15 +180,50 @@ async function handleButton(query: TelegramCallback) {
     return;
   }
 
-  const edit = (text: string) =>
-    telegramApi("editMessageText", { chat_id: chatId, message_id: query.message!.message_id, text, parse_mode: "HTML" });
+  const edit = (text: string, buttons?: ReturnType<typeof draftButtons>) =>
+    telegramApi("editMessageText", {
+      chat_id: chatId,
+      message_id: query.message!.message_id,
+      text,
+      parse_mode: "HTML",
+      ...(buttons ? { reply_markup: { inline_keyboard: buttons } } : {}),
+    });
   let notice = "Sudah diproses.";
 
-  if (UUID.test(id) && action === "pub") {
+  if (UUID.test(id) && action === "que") {
+    const { data } = await supabase()
+      .from("articles")
+      .update({ queued_at: new Date().toISOString() })
+      .eq("id", id)
+      .eq("draft", true)
+      .select("title")
+      .maybeSingle();
+    if (data) {
+      const queue = await getQueue();
+      const position = queue.findIndex((a) => a.id === id) + 1;
+      notice = `Masuk antrean #${position}`;
+      await edit(
+        `📥 <b>Masuk antrean #${position}</b>\n${escapeHtml(data.title)}\nPerkiraan terbit: ${nextSlots(position).at(-1)} WIB\n\nLihat semua: /antrean`,
+        [[{ text: "↩️ Keluarkan dari antrean", callback_data: `unq:${id}` }]]
+      );
+    }
+  } else if (UUID.test(id) && action === "unq") {
+    const { data } = await supabase()
+      .from("articles")
+      .update({ queued_at: null })
+      .eq("id", id)
+      .eq("draft", true)
+      .select("title")
+      .maybeSingle();
+    if (data) {
+      notice = "Dikeluarkan dari antrean.";
+      await edit(`↩️ <b>Dikeluarkan dari antrean</b> (tetap draft)\n${escapeHtml(data.title)}`, draftButtons(id));
+    }
+  } else if (UUID.test(id) && action === "pub") {
     const today = new Date(Date.now() + 7 * 60 * 60 * 1000).toISOString().slice(0, 10); // WIB date
     const { data } = await supabase()
       .from("articles")
-      .update({ draft: false, published_at: today })
+      .update({ draft: false, queued_at: null, published_at: today })
       .eq("id", id)
       .eq("draft", true)
       .select("slug,title")

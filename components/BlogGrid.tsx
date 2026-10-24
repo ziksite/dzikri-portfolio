@@ -7,6 +7,8 @@ import { ArrowUpRight } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { localePath } from "@/lib/i18n";
 import { Pagination } from "@/components/Pagination";
+import { ARTICLE_CATEGORIES } from "@/lib/cms-types";
+import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 6;
 
@@ -15,6 +17,7 @@ export type BlogCard = {
   title: string;
   excerpt: string;
   coverImage: string | null;
+  category: string;
   tags: string[];
   date: string; // already formatted for the page language
 };
@@ -30,17 +33,44 @@ export function BlogGrid({
   pagination: Dictionary["pagination"];
 }) {
   const [page, setPage] = useState(1);
+  const [category, setCategory] = useState("");
   const topRef = useRef<HTMLDivElement>(null);
-  const pageCount = Math.ceil(articles.length / PAGE_SIZE);
-  const visible = articles.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const filtered = category ? articles.filter((a) => a.category === category) : articles;
+  const pageCount = Math.ceil(filtered.length / PAGE_SIZE);
+  const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  // Only categories that have articles get a chip
+  const categories = ARTICLE_CATEGORIES.filter((c) => articles.some((a) => a.category === c));
+
+  const pickCategory = (c: string) => {
+    setCategory(c);
+    setPage(1);
+  };
 
   const goToPage = (n: number) => {
     setPage(n);
     topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const chip = (active: boolean) =>
+    cn(
+      "px-4 py-2 rounded-full border-[3px] border-black text-[11px] font-black uppercase tracking-widest transition-colors",
+      active ? "bg-black text-white" : "bg-white hover:bg-gray-100"
+    );
+
   return (
     <>
+      {categories.length > 1 && (
+        <div role="group" aria-label={t.categoryLabel} className="flex flex-wrap gap-2 mb-8 md:mb-10">
+          <button type="button" aria-pressed={!category} onClick={() => pickCategory("")} className={chip(!category)}>
+            {t.allCategories} ({articles.length})
+          </button>
+          {categories.map((c) => (
+            <button key={c} type="button" aria-pressed={category === c} onClick={() => pickCategory(c)} className={chip(category === c)}>
+              {c} ({articles.filter((a) => a.category === c).length})
+            </button>
+          ))}
+        </div>
+      )}
       <div ref={topRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 scroll-mt-28">
         {visible.map((article) => (
           <Link
@@ -61,7 +91,10 @@ export function BlogGrid({
               </div>
             )}
             <div className="flex flex-col flex-1 p-6 md:p-7">
-              <span className="text-gray-500 font-bold tracking-widest text-[10px] uppercase mb-3">{article.date}</span>
+              <span className="text-gray-500 font-bold tracking-widest text-[10px] uppercase mb-3">
+                {article.category ? `${article.category} · ` : ""}
+                {article.date}
+              </span>
               <h2 lang="id" className="text-xl md:text-2xl font-black uppercase leading-tight mb-3">
                 {article.title}
               </h2>

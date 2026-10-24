@@ -31,6 +31,7 @@ export default async function BlogIndex({ params }: Props) {
     title: a.title,
     excerpt: a.excerpt,
     coverImage: a.coverImage,
+    category: a.category,
     tags: a.tags,
     date: formatDate(a.publishedAt, lang),
   }));

@@ -96,6 +96,7 @@ export interface ArticleSummary {
   publishedAt: string;
   excerpt: string;
   coverImage: string | null;
+  category: string;
   tags: string[];
 }
 
@@ -106,7 +107,7 @@ const showDrafts = process.env.NODE_ENV === "development";
 export async function getArticles(): Promise<ArticleSummary[]> {
   let query = supabase()
     .from("articles")
-    .select("slug, title, published_at, excerpt, cover_image, tags, draft")
+    .select("slug, title, published_at, excerpt, cover_image, category, tags, draft")
     .order("published_at", { ascending: false })
     .order("created_at", { ascending: false });
   if (!showDrafts) query = query.eq("draft", false);
@@ -118,6 +119,7 @@ export async function getArticles(): Promise<ArticleSummary[]> {
     publishedAt: a.published_at,
     excerpt: a.excerpt,
     coverImage: a.cover_image || null,
+    category: a.category ?? "",
     tags: a.tags ?? [],
   }));
 }

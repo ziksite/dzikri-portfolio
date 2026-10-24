@@ -2,6 +2,7 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
+import { ARTICLE_CATEGORIES } from "@/lib/cms-types";
 
 // Haiku for now (the user's choice, to try the cheapest model first); switch to "claude-opus-5-5"
 // ($4 / $20 per MTok) if the drafts need better writing
@@ -15,6 +16,9 @@ const ArticleSchema = z.object({
   title: z.string().describe("Judul bahasa Indonesia, 40–60 karakter, kata kunci utama di awal"),
   slug: z.string().describe("Slug bahasa Indonesia dari kata kunci utama, 3–6 kata, huruf kecil, dipisah tanda hubung, tanpa kata sambung"),
   excerpt: z.string().describe("Meta description 140–155 karakter, mengandung kata kunci utama, menjelaskan manfaat membaca"),
+  category: z
+    .enum(ARTICLE_CATEGORIES)
+    .describe("Kategori blog: Website, Aplikasi Bisnis (kasir, stok, booking, sistem internal), AI Automation, atau Strategi Digital"),
   tags: z.array(z.string()).describe("1–2 tag; pakai tag yang sudah ada bila cocok"),
   content_html: z.string().describe("Isi artikel dalam HTML"),
   cover_alt: z.string().describe("Alt text singkat untuk foto sampul; string kosong jika tidak ada foto"),
