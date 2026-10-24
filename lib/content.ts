@@ -135,8 +135,10 @@ export async function getArticle(slug: string) {
     coverImage: a.cover_image || null,
     coverCredit: a.cover_credit,
     coverCreditUrl: a.cover_credit_url,
+    coverAlt: a.cover_alt || a.title,
     tags: a.tags ?? [],
     publishedAt: a.published_at,
+    updatedAt: a.updated_at,
     draft: a.draft,
   };
 }

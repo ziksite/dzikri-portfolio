@@ -77,11 +77,13 @@ async function createDraft(brief: string, fileId: string | undefined) {
 
     const { data: tagRows } = await supabase().from("articles").select("tags");
     const existingTags = [...new Set((tagRows ?? []).flatMap((r: { tags: string[] }) => r.tags))];
+    const internalLinks = await getInternalLinks();
 
     const [{ article, costUsd }, coverImage] = await Promise.all([
       writeArticle({
         brief,
         existingTags,
+        internalLinks,
         photo: photo && { base64: (await toVisionJpeg(photo)).toString("base64"), mediaType: "image/jpeg" },
       }),
       photo ? uploadImageAsWebp(photo, "articles") : Promise.resolve(""),
@@ -97,6 +99,7 @@ async function createDraft(brief: string, fileId: string | undefined) {
         content_html: sanitizeArticleHtml(article.content_html),
         cover_image: coverImage,
         tags: article.tags.slice(0, 3),
+        cover_alt: coverImage ? article.cover_alt : "",
         draft: true,
       })
       .select("id")
@@ -104,6 +107,8 @@ async function createDraft(brief: string, fileId: string | undefined) {
     if (error) throw new Error(`Gagal menyimpan: ${error.message}`);
 
     // Preview in chat, then a control message whose buttons publish or delete the draft
+    await sendTelegram(`🔎 Kata kunci: <b>${escapeHtml(article.focus_keyword)}</b>
+URL: /id/blog/${slug}`);
     await sendTelegram(`📝 <b>${escapeHtml(article.title)}</b>
 
 <i>${escapeHtml(article.excerpt)}</i>`);
@@ -156,6 +161,25 @@ async function handleButton(query: TelegramCallback) {
     }
   }
   await telegramApi("answerCallbackQuery", { callback_query_id: query.id, text: notice });
+}
+
+// Pages the writer may link to: the hire page, services, and the featured projects (Indonesian titles)
+async function getInternalLinks() {
+  const { data } = await supabase()
+    .from("projects")
+    .select("slug, content_id")
+    .eq("hidden", false)
+    .order("sort_order")
+    .limit(10);
+  return [
+    { title: "Jasa freelance web developer & AI automation (halaman kerja sama)", url: localePath("id", "/hire") },
+    { title: "Layanan: website, aplikasi bisnis, AI automation, konsultasi", url: `${localePath("id", "/")}#services` },
+    { title: "Portofolio proyek", url: localePath("id", "/projects") },
+    ...(data ?? []).map((p: { slug: string; content_id: { title?: string } }) => ({
+      title: `Studi kasus: ${p.content_id?.title ?? p.slug}`,
+      url: localePath("id", `/projects/${p.slug}`),
+    })),
+  ];
 }
 
 // Telegram serves photos as JPEG; files above 20 MB can't be fetched through the Bot API

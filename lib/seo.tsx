@@ -80,15 +80,27 @@ export function homeJsonLd(lang: Locale) {
   };
 }
 
-export function articleJsonLd(article: { slug: string; title: string; excerpt: string; publishedAt: string; coverImage: string | null }) {
+export function articleJsonLd(article: {
+  slug: string;
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  updatedAt?: string;
+  coverImage: string | null;
+  tags?: string[];
+}) {
+  const url = `${SITE_URL}${localePath("id", `/blog/${article.slug}`)}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
     description: article.excerpt,
     datePublished: article.publishedAt,
+    ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
+    ...(article.tags?.length ? { keywords: article.tags.join(", ") } : {}),
     inLanguage: "id",
-    url: `${SITE_URL}${localePath("id", `/blog/${article.slug}`)}`,
+    url,
+    mainEntityOfPage: url,
     image: article.coverImage ? new URL(article.coverImage, SITE_URL).toString() : `${SITE_URL}${OG_IMAGE.url}`,
     author: { "@type": "Person", "@id": PERSON_ID, name: "Dzikri Ramadhan", url: SITE_URL },
   };

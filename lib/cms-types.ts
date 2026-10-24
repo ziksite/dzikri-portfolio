@@ -55,6 +55,7 @@ export interface ArticleRow {
   cover_image: string;
   cover_credit: string;
   cover_credit_url: string;
+  cover_alt: string;
   tags: string[];
   published_at: string;
   draft: boolean;

@@ -11,9 +11,10 @@ const PRICE_INPUT = 0.1;
 const PRICE_OUTPUT = 0.5;
 
 const ArticleSchema = z.object({
-  title: z.string().describe("Judul artikel dalam bahasa Indonesia, maksimal ~90 karakter"),
-  slug: z.string().describe("Slug URL dalam bahasa Inggris, huruf kecil, kata dipisah tanda hubung"),
-  excerpt: z.string().describe("Ringkasan 1–2 kalimat (maks ~220 karakter) untuk kartu blog dan meta description"),
+  focus_keyword: z.string().describe("Frasa kata kunci utama dalam bahasa Indonesia yang benar-benar diketik orang di Google, 2–5 kata"),
+  title: z.string().describe("Judul bahasa Indonesia, 40–60 karakter, kata kunci utama di awal"),
+  slug: z.string().describe("Slug bahasa Indonesia dari kata kunci utama, 3–6 kata, huruf kecil, dipisah tanda hubung, tanpa kata sambung"),
+  excerpt: z.string().describe("Meta description 140–155 karakter, mengandung kata kunci utama, menjelaskan manfaat membaca"),
   tags: z.array(z.string()).describe("1–2 tag; pakai tag yang sudah ada bila cocok"),
   content_html: z.string().describe("Isi artikel dalam HTML"),
   cover_alt: z.string().describe("Alt text singkat untuk foto sampul; string kosong jika tidak ada foto"),
@@ -42,6 +43,7 @@ Elemen yang wajib ada agar enak dibaca:
 - Tepat setelah pembuka: <p><strong>Ringkasnya:</strong></p> diikuti <ul> berisi 3 poin inti.
 - Minimal 2 list (<ul>/<ol>) di badan artikel.
 - Satu <blockquote> berisi satu kalimat kunci yang layak dikutip.
+- 1–2 link internal (<a href="...">) di tengah kalimat yang relevan, memakai URL persis dari daftar halaman internal. Anchor text deskriptif, bukan "klik di sini".
 - Pakai <strong> untuk kata pembuka di awal poin atau paragraf penting, secukupnya.
 - Penutup dengan subjudul yang spesifik (bukan "Kesimpulan" atau "Penutup"), berisi 1 langkah pertama yang bisa dilakukan minggu ini.
 
@@ -50,6 +52,13 @@ Larangan:
 - Jangan mengulang pola yang sama di setiap bagian.
 - JANGAN mengarang angka, statistik, persentase, nama klien, nama perusahaan, atau hasil proyek. Contoh dibuat umum ("sebuah bisnis distribusi") tanpa angka yang terdengar seperti data nyata.
 
+SEO (tulis untuk manusia dulu, baru mesin pencari):
+- Tentukan focus_keyword: frasa yang benar-benar diketik pemilik bisnis Indonesia di Google untuk topik ini (mis. "chatbot whatsapp untuk bisnis", "biaya bikin website company profile").
+- focus_keyword muncul di judul (sebaiknya di awal), di kalimat pertama atau kedua artikel, dan di minimal satu <h2> (boleh variasi alami). Jangan dijejalkan.
+- slug diturunkan dari focus_keyword dalam bahasa Indonesia, pendek, tanpa tahun dan tanpa kata seperti "dan", "yang", "untuk", "di".
+- Link internal hanya ke URL dari daftar yang diberikan; jangan membuat URL sendiri.
+- Jangan menulis ajakan menghubungi penulis atau tombol share; keduanya ditambahkan otomatis di bawah artikel.
+
 Format content_html:
 - Hanya tag: <p>, <h2>, <h3>, <strong>, <em>, <ul>, <ol>, <li>, <blockquote>, <hr>, <a href>. Tidak ada tabel.
 - Jangan sertakan judul (<h1>) maupun foto sampul; keduanya ditampilkan terpisah.`;
@@ -57,10 +66,12 @@ Format content_html:
 export async function writeArticle({
   brief,
   existingTags,
+  internalLinks,
   photo,
 }: {
   brief: string;
   existingTags: string[];
+  internalLinks: { title: string; url: string }[];
   photo?: { base64: string; mediaType: "image/jpeg" | "image/png" | "image/webp" };
 }) {
   if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY belum dipasang di Vercel.");
@@ -75,6 +86,8 @@ export async function writeArticle({
       "Tulis artikel blog dari brief berikut. Brief bisa berupa topik singkat atau catatan kasar — rapikan menjadi artikel utuh.",
       photo ? "Foto terlampir akan menjadi sampul artikel; tulis cover_alt yang mendeskripsikannya." : "Tidak ada foto sampul; isi cover_alt dengan string kosong.",
       `Tag yang sudah ada di blog: ${existingTags.length ? existingTags.join(", ") : "(belum ada)"}`,
+      "Halaman internal yang boleh ditautkan:",
+      ...internalLinks.map((l) => `- ${l.title}: ${l.url}`),
       "",
       "<brief>",
       brief,

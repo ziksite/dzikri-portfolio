@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/SiteShell";
+import { ArticleShare } from "@/components/ArticleShare";
 import { formatDate, getArticle, getArticles } from "@/lib/content";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
 import { getDictionary } from "@/i18n";
-import { isLocale, localePath } from "@/lib/i18n";
+import { isLocale, localePath, SITE_URL } from "@/lib/i18n";
+import { whatsappUrl } from "@/lib/site";
 import { articleJsonLd, JsonLd, pageOpenGraph } from "@/lib/seo";
 
 type Params = { params: Promise<{ lang: string; slug: string }> };
@@ -45,6 +47,7 @@ export default async function ArticlePage({ params }: Params) {
   const t = getDictionary(lang).blog;
 
   const bodyHtml = sanitizeArticleHtml(article.contentHtml);
+  const articleUrl = `${SITE_URL}${localePath("id", `/blog/${article.slug}`)}`;
 
   return (
     <SiteShell lang={lang}>
@@ -82,7 +85,7 @@ export default async function ArticlePage({ params }: Params) {
               <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] border-[3px] border-black bg-[#0f0f0f]">
                 <Image
                   src={article.coverImage}
-                  alt={article.title}
+                  alt={article.coverAlt}
                   fill
                   priority
                   className="object-cover"
@@ -122,6 +125,33 @@ export default async function ArticlePage({ params }: Params) {
               ))}
             </div>
           )}
+
+          <div className="mt-10">
+            <ArticleShare url={articleUrl} title={article.title} labels={t} />
+          </div>
+
+          {/* Closing CTA on every article; WhatsApp clicks count as leads from "article_cta" */}
+          <aside data-lead-location="article_cta" className="mt-12 rounded-[24px] bg-dark text-white p-8 md:p-10 border-[3px] border-black">
+            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-tight mb-3">{t.ctaHeading}</h2>
+            <p className="text-gray-300 font-medium leading-relaxed mb-6">{t.ctaText}</p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={whatsappUrl(t.ctaMessage.replace("{title}", article.title))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-gray-200 transition-colors"
+              >
+                {t.ctaWhatsapp}
+                <ArrowUpRight size={16} strokeWidth={3} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              <Link
+                href={localePath(lang, "/hire")}
+                className="inline-flex items-center px-6 py-4 rounded-xl border-[3px] border-white text-white text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+              >
+                {t.ctaHire}
+              </Link>
+            </div>
+          </aside>
         </article>
       </main>
     </SiteShell>
