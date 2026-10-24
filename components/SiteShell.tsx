@@ -11,7 +11,7 @@ export function SiteShell({ lang, children }: { lang: Locale; children: React.Re
     <>
       <Navbar lang={lang} t={t.nav} />
       {children}
-      <Footer t={t.footer} />
+      <Footer t={t.footer} lang={lang} />
       <FloatingWhatsApp t={t.whatsapp} />
     </>
   );

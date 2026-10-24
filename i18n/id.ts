@@ -62,6 +62,7 @@ export const id: Dictionary = {
     heading: "Layanan",
     intro: "Dari website sampai sistem untuk mengelola bisnis Anda, dibuat sesuai kebutuhan, bukan dari template.",
     cta: "Diskusikan",
+    more: "Kerja sama dengan saya",
     whatsappMessage: "Halo Dzikri, saya tertarik dengan: {service}",
     items: [
       {
@@ -84,6 +85,25 @@ export const id: Dictionary = {
         title: "Konsultasi Website & Digital",
         text: "Website sepi atau tidak menghasilkan? Saya cek dan beri langkah perbaikan yang jelas.",
       },
+    ],
+  },
+
+  hire: {
+    title: "Jasa Freelance Web Developer & AI Automation — Dzikri Ramadhan",
+    description:
+      "Jasa freelance web developer untuk website, aplikasi bisnis, dan otomasi AI. Berbasis di Jakarta, bisa remote, melayani bisnis di seluruh Indonesia.",
+    eyebrow: "Tersedia untuk proyek freelance & remote",
+    heading: "Freelance Web Developer & AI Automation",
+    intro:
+      "Saya Dzikri, web developer di Jakarta. Saya membuat website, aplikasi bisnis, dan otomasi AI untuk perusahaan di Indonesia maupun luar negeri, dari brief pertama sampai launch.",
+    ctaPrimary: "Chat via WhatsApp",
+    ctaSecondary: "Kirim email",
+    whatsappMessage: "Halo Dzikri, saya ingin diskusi proyek freelance.",
+    facts: [
+      { value: "{count}+", label: "Proyek selesai" },
+      { value: "EN / ID", label: "Bahasa kerja" },
+      { value: "GMT+7", label: "Bisa remote" },
+      { value: "End to end", label: "Rancang, bangun & rilis" },
     ],
   },
 
@@ -282,6 +302,7 @@ export const id: Dictionary = {
   footer: {
     tagline: "Web Developer & AI Automation",
     sub: "Membangun sistem, produk & otomasi untuk bisnis yang lebih baik.",
+    hire: "Kerja sama",
   },
 
   whatsapp: { tooltip: "Hubungi saya 👋", label: "Chat via WhatsApp" },

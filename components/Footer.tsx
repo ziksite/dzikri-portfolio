@@ -1,8 +1,10 @@
+import Link from "next/link";
 import type { Dictionary } from "@/i18n";
+import { localePath, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/site";
 import { SocialIcon } from "@/components/SocialIcon";
 
-export function Footer({ t }: { t: Dictionary["footer"] }) {
+export function Footer({ t, lang }: { t: Dictionary["footer"]; lang: Locale }) {
   return (
     <footer className="py-10 border-t border-white/10 bg-dark text-secondary">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-end justify-between gap-6 text-center md:text-left">
@@ -10,6 +12,9 @@ export function Footer({ t }: { t: Dictionary["footer"] }) {
           <p className="text-base font-black tracking-wide">DZIKRI RAMADHAN</p>
           <p className="text-sm font-bold opacity-80 mt-1">{t.tagline}</p>
           <p className="text-sm font-medium opacity-60 mt-0.5">{t.sub}</p>
+          <Link href={localePath(lang, "/hire")} className="inline-block mt-3 text-xs font-black uppercase tracking-widest border-b-2 border-white/30 hover:border-white pb-0.5 transition-colors">
+            {t.hire}
+          </Link>
         </div>
         <div className="flex flex-col items-center md:items-end gap-3">
           <div className="flex items-center gap-5 opacity-70">

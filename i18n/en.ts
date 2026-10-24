@@ -62,6 +62,7 @@ export const en = {
     heading: "Services",
     intro: "From websites to the systems that run your business, built for your needs, not from a template.",
     cta: "Discuss this",
+    more: "Work with me",
     whatsappMessage: "Hi Dzikri, I'm interested in: {service}",
     items: [
       {
@@ -84,6 +85,25 @@ export const en = {
         title: "Website & Digital Consulting",
         text: "Website not bringing in customers? I'll review it and give you clear steps to fix it.",
       },
+    ],
+  },
+
+  hire: {
+    title: "Freelance Web Developer & AI Automation in Indonesia — Dzikri Ramadhan",
+    description:
+      "Hire a freelance web developer for websites, business apps and AI automation. Based in Jakarta (GMT+7), remote-friendly, working in English and Indonesian.",
+    eyebrow: "Available for remote & freelance projects",
+    heading: "Freelance Web Developer & AI Automation",
+    intro:
+      "I'm Dzikri, a web developer based in Jakarta. I build websites, business apps and AI automation for companies in Indonesia and abroad, from the first brief to launch.",
+    ctaPrimary: "Chat on WhatsApp",
+    ctaSecondary: "Email me",
+    whatsappMessage: "Hi Dzikri, I'd like to discuss a freelance project.",
+    facts: [
+      { value: "{count}+", label: "Projects shipped" },
+      { value: "EN / ID", label: "Working languages" },
+      { value: "GMT+7", label: "Remote-friendly" },
+      { value: "End to end", label: "Plan, build & ship" },
     ],
   },
 
@@ -283,6 +303,7 @@ export const en = {
   footer: {
     tagline: "Web Developer & AI Automation",
     sub: "Building systems, products & automation for better business.",
+    hire: "Hire me",
   },
 
   whatsapp: { tooltip: "Let's talk 👋", label: "Chat on WhatsApp" },

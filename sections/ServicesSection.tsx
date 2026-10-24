@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Bot, Compass, Globe, LayoutDashboard } from "lucide-react";
 import type { Dictionary } from "@/i18n";
@@ -12,7 +13,8 @@ const icons: Record<string, React.ComponentType<{ size?: number }>> = {
   consulting: Compass,
 };
 
-export function ServicesSection({ t }: { t: Dictionary["services"] }) {
+// moreHref adds a "work with me" link under the cards (homepage only; the /hire page omits it)
+export function ServicesSection({ t, moreHref }: { t: Dictionary["services"]; moreHref?: string }) {
   return (
     <section id="services" className="py-16 md:py-20 px-4 bg-white border-y-2 border-foreground scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -55,6 +57,17 @@ export function ServicesSection({ t }: { t: Dictionary["services"] }) {
             );
           })}
         </div>
+        {moreHref && (
+          <div className="mt-8 flex justify-center">
+            <Link
+              href={moreHref}
+              className="group inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-foreground border-b-2 border-foreground/30 hover:border-foreground pb-1 transition-colors"
+            >
+              {t.more}
+              <ArrowUpRight size={14} strokeWidth={3} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

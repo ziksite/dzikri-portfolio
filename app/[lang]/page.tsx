@@ -10,7 +10,7 @@ import { TimelineSection } from "@/sections/TimelineSection";
 import { ContactSection } from "@/sections/ContactSection";
 import { getProjects } from "@/lib/content";
 import { getDictionary } from "@/i18n";
-import { isLocale } from "@/lib/i18n";
+import { isLocale, localePath } from "@/lib/i18n";
 import { whatsappUrl } from "@/lib/site";
 import { homeJsonLd, JsonLd } from "@/lib/seo";
 
@@ -30,7 +30,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <HeroSection t={t.hero} name="Dzikri Ramadhan" />
         <InfoBar items={t.quickInfo} />
         <AboutSection about={t.about} techStack={t.techStack} whatsappUrl={whatsappUrl()} />
-        <ServicesSection t={t.services} />
+        <ServicesSection t={t.services} moreHref={localePath(lang, "/hire")} />
         <ProjectsSection projects={projects} lang={lang} t={t.projects} />
         <TimelineSection t={t.journey} />
         <ContactSection t={t.contact} workHref="#projects" />
