@@ -116,9 +116,10 @@ export async function POST(request: NextRequest) {
       sendTelegram(`📝 <b>Jadikan artikel dari topik ini?</b>\n\n${escapeHtml(brief)}`, {
         buttons: [
           [
-            { text: "✍️ Tulis", callback_data: "write:0" },
-            { text: "✖️ Abaikan", callback_data: "ignore:0" },
+            { text: "🎨 Prompt sampul", callback_data: "cover:0" },
+            { text: "✍️ Tulis tanpa sampul", callback_data: "write:0" },
           ],
+          [{ text: "✖️ Abaikan", callback_data: "ignore:0" }],
         ],
       })
     );
@@ -225,7 +226,7 @@ async function handleButton(query: TelegramCallback) {
     telegramApi("editMessageText", { chat_id: chatId, message_id: query.message!.message_id, text, parse_mode: "HTML" });
 
   // Confirmation for a free-text brief: the brief is read back from the question message itself
-  if (action === "write" || action === "ignore") {
+  if (action === "write" || action === "cover" || action === "ignore") {
     const brief = (query.message.text ?? "").split("\n\n").slice(1).join("\n\n").trim();
     await telegramApi("answerCallbackQuery", { callback_query_id: query.id });
     if (action === "ignore" || !brief) {
@@ -233,7 +234,13 @@ async function handleButton(query: TelegramCallback) {
       return;
     }
     await editThis(`✍️ Topik diterima:\n${escapeHtml(brief)}`);
-    after(() => createDraft(brief, undefined));
+    if (action === "write") {
+      after(() => createDraft(brief, undefined));
+    } else {
+      // Same path as a picked /ide idea, as a one-off idea outside any batch: cover prompt, then the photo
+      const { data } = await supabase().from("article_ideas").insert({ topic: brief }).select("id").single();
+      if (data) after(() => ideaAction("pick", data.id));
+    }
     return;
   }
 
@@ -394,10 +401,13 @@ async function ideaAction(action: string, id: number) {
   const { data } = await supabase().from("article_ideas").select(IDEA_COLUMNS).eq("id", id).maybeSingle();
   const idea = data as Idea | null;
   if (!idea) return sendTelegram("Ide tidak ditemukan.");
-  if (idea.status === "used") return sendTelegram(`Ide #${idea.position} sudah pernah dipakai.`);
+  // Topics typed directly are one-off ideas without a batch or list number
+  const label = idea.batch_id ? `ide #${idea.position}` : "topik ini";
+  if (idea.status === "used") return sendTelegram(`Ini sudah pernah dipakai (${label}).`);
 
   if (action === "cancel") {
-    await supabase().from("article_ideas").update({ status: "new" }).eq("id", id);
+    await supabase().from("article_ideas").update({ status: idea.batch_id ? "new" : "used" }).eq("id", id);
+    if (!idea.batch_id) return sendTelegram("Dibatalkan.");
     await sendTelegram(`Dibatalkan. Ide #${idea.position} tetap ada di daftar.`);
     return offerNextIdeas(idea.batch_id);
   }
@@ -406,13 +416,13 @@ async function ideaAction(action: string, id: number) {
   // pick: only one idea waits for a cover at a time
   await supabase().from("article_ideas").update({ status: "new" }).eq("status", "awaiting_cover");
   await supabase().from("article_ideas").update({ status: "awaiting_cover" }).eq("id", id);
-  await sendTelegram(`🎨 Membuat prompt sampul untuk ide #${idea.position}…`);
+  await sendTelegram(`🎨 Membuat prompt sampul untuk ${label}…`);
   try {
     const prompt = await coverPrompt(idea.topic, idea.keyword);
     // <pre> renders as a tap-to-copy block in Telegram
     await sendTelegram(
       [
-        `🎨 <b>Prompt sampul — ide #${idea.position}</b>`,
+        `🎨 <b>Prompt sampul — ${label}</b>`,
         escapeHtml(idea.topic),
         "",
         `<pre>${escapeHtml(prompt)}</pre>`,
@@ -436,13 +446,18 @@ async function ideaAction(action: string, id: number) {
 // Writes the article for an idea (with the cover photo if one was sent), then offers the rest of its batch
 async function writeFromIdea(idea: Idea, fileId: string | undefined, notes: string) {
   await supabase().from("article_ideas").update({ status: "used" }).eq("id", idea.id);
-  const brief = [`${idea.topic} (kata kunci: ${idea.keyword})`, idea.angle, notes && `Catatan tambahan: ${notes}`]
+  const brief = [
+    idea.keyword ? `${idea.topic} (kata kunci: ${idea.keyword})` : idea.topic,
+    idea.angle,
+    notes && `Catatan tambahan: ${notes}`,
+  ]
     .filter(Boolean)
     .join("\n");
   const ok = await createDraft(brief, fileId);
   // A failed draft puts the idea back so it can be picked again
   if (!ok) await supabase().from("article_ideas").update({ status: "new" }).eq("id", idea.id);
-  await offerNextIdeas(idea.batch_id);
+  // Topics typed directly have no batch, so there is no list to continue
+  if (idea.batch_id) await offerNextIdeas(idea.batch_id);
 }
 
 async function offerNextIdeas(batchId: string | null) {
