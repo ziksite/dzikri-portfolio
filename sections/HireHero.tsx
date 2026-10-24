@@ -12,7 +12,7 @@ export function HireHero({
   projectCount: number;
 }) {
   return (
-    <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-4 md:px-6">
+    <section id="hire" className="pt-32 md:pt-40 pb-16 md:pb-20 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-end mb-12">
           <div>
