@@ -1,11 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
-import { leadMethod, trackLead } from "@/lib/analytics";
+import { usePathname } from "next/navigation";
+import { leadMethod, trackLead, trackPageView } from "@/lib/analytics";
 
-// One delegated listener tracks every WhatsApp/email link on the site. The location comes from the
-// nearest data-lead-location, else the enclosing section id, else "footer"/"page".
-export function LeadTracker() {
+// Records a page view on every route change, and tracks every WhatsApp/email link with one delegated
+// listener. A lead's location comes from the nearest data-lead-location, else the enclosing section id,
+// else "footer"/"page".
+export function SiteTracker() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const link = (e.target as Element | null)?.closest?.("a[href]");

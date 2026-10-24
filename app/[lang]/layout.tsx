@@ -7,7 +7,7 @@ import { getDictionary } from "@/i18n";
 import { isLocale, languageAlternates, locales, SITE_URL } from "@/lib/i18n";
 import { pageOpenGraph } from "@/lib/seo";
 import { GTM_ID } from "@/lib/analytics";
-import { LeadTracker } from "@/components/LeadTracker";
+import { SiteTracker } from "@/components/SiteTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,7 +45,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={`${inter.variable} antialiased`}>
         {children}
-        <LeadTracker />
+        <SiteTracker />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
