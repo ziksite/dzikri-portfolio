@@ -1,6 +1,6 @@
 import { after, NextResponse, type NextRequest } from "next/server";
 import { getQueue, nextSlots, queueMessage } from "@/lib/article-queue";
-import { suggestTopics, writeArticle } from "@/lib/article-writer";
+import { coverPrompt, suggestTopics, writeArticle } from "@/lib/article-writer";
 import { googleSuggest } from "@/lib/keyword-check";
 import { localePath, SITE_URL } from "@/lib/i18n";
 import { toVisionJpeg, uploadImageAsWebp } from "@/lib/media";
@@ -23,7 +23,7 @@ const HELP = [
   "",
   "Hasilnya dikirim sebagai pratinjau dengan tombol <b>Publish</b> / <b>Hapus</b>; sampai kamu tekan Publish, artikel tetap draft.",
   "",
-  "/ide — 5 usulan topik artikel, tinggal tekan ✍️ untuk menulis",
+  "/ide — 5 usulan topik → pilih ✍️ → dapat prompt gambar sampul → kirim gambarnya → artikel ditulis, lalu lanjut ide berikutnya",
   "/stats — pengunjung, lead, dan artikel terpopuler",
   "/antrean — artikel yang menunggu terbit otomatis (±08.00 & 16.00 WIB)",
 ].join("\n");
@@ -91,6 +91,14 @@ export async function POST(request: NextRequest) {
     after(sendIdeas);
     return ok;
   }
+  // A photo while an idea waits for its cover becomes that article's cover (a caption adds notes)
+  if (fileId) {
+    const pending = await getAwaitingIdea();
+    if (pending) {
+      after(() => writeFromIdea(pending, fileId, brief));
+      return ok;
+    }
+  }
   if (!brief) {
     // Extra photos of an album arrive as separate captionless messages; only the captioned one counts
     if (!message.media_group_id) after(() => sendTelegram("Tambahkan topik atau catatan sebagai caption foto, ya."));
@@ -101,7 +109,8 @@ export async function POST(request: NextRequest) {
   return ok;
 }
 
-async function createDraft(brief: string, fileId: string | undefined) {
+// Writes, saves and previews a draft; returns whether it worked
+async function createDraft(brief: string, fileId: string | undefined): Promise<boolean> {
   await sendTelegram("⏳ Sedang menulis artikel… (±1–2 menit)");
   try {
     const photo = fileId ? await downloadTelegramFile(fileId) : undefined;
@@ -147,9 +156,11 @@ async function createDraft(brief: string, fileId: string | undefined) {
 <i>${escapeHtml(article.excerpt)}</i>`);
     for (const chunk of articleToTelegramChunks(sanitizeArticleHtml(article.content_html))) await sendTelegram(chunk);
     await sendTelegram(`Terbitkan artikel ini?\n<i>Biaya AI: ±$${costUsd.toFixed(3)}</i>`, { buttons: draftButtons(data.id) });
+    return true;
   } catch (err) {
     console.error("Article draft failed", err);
     await sendTelegram(`❌ Gagal membuat draft: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
+    return false;
   }
 }
 
@@ -173,7 +184,15 @@ async function handleButton(query: TelegramCallback) {
   if (String(query.from.id) !== chatId || !query.message) return;
   const [action, id] = (query.data ?? "").split(":");
 
-  // "Tulis" under an idea list: the idea's text is read back from the message itself
+  // /ide flow: pick an idea -> cover prompt; write without a cover; cancel; ask for a new batch
+  if (["pick", "nocover", "cancel", "newideas"].includes(action)) {
+    await telegramApi("answerCallbackQuery", { callback_query_id: query.id });
+    if (action === "newideas") after(sendIdeas);
+    else if (/^\d+$/.test(id)) after(() => ideaAction(action, Number(id)));
+    return;
+  }
+
+  // Idea lists sent before ideas were stored per batch: the idea's text is read back from the message
   if (action === "idea") {
     const line = (query.message.text ?? "").split("\n").find((l) => l.startsWith(`${id}. `));
     await telegramApi("answerCallbackQuery", { callback_query_id: query.id, text: line ? "Menulis…" : "Ide tidak ditemukan." });
@@ -260,12 +279,16 @@ async function sendIdeas() {
     // Keep the five with the clearest search demand (Google Autocomplete), unverified ones last
     const checked = await Promise.all(candidates.map(async (idea) => ({ ...idea, demand: await googleSuggest(idea.keyword) })));
     const ideas = checked.sort((a, b) => (b.demand?.variations ?? -1) - (a.demand?.variations ?? -1)).slice(0, 5);
-    await supabase()
+    const batchId = crypto.randomUUID();
+    const { data: rows, error } = await supabase()
       .from("article_ideas")
-      .insert(ideas.map((idea) => ({ topic: idea.topic, keyword: idea.keyword })));
+      .insert(
+        ideas.map((idea, i) => ({ batch_id: batchId, position: i + 1, topic: idea.topic, keyword: idea.keyword, angle: idea.angle }))
+      )
+      .select("id,position")
+      .order("position");
+    if (error || !rows) throw new Error(`Gagal menyimpan ide: ${error?.message}`);
 
-    // Each numbered line is self-contained so the ✍️ button can turn it straight into a brief;
-    // the demand note sits on its own line underneath
     const lines = ideas.flatMap((idea, i) => [
       escapeHtml(`${i + 1}. ${idea.topic} (kata kunci: ${idea.keyword}) — ${idea.angle}`),
       idea.demand?.searched
@@ -275,12 +298,101 @@ async function sendIdeas() {
           : "    ❔ Tidak bisa dicek",
       "",
     ]);
-    await sendTelegram(["💡 <b>Ide artikel (kata kunci long-tail)</b>", "", ...lines].join("\n"), {
-      buttons: [ideas.map((_, i) => ({ text: `✍️ ${i + 1}`, callback_data: `idea:${i + 1}` }))],
+    await sendTelegram(["💡 <b>Ide artikel (kata kunci long-tail)</b>", "", ...lines, "Pilih ide untuk mendapat prompt gambar sampulnya:"].join("\n"), {
+      buttons: [rows.map((r: { id: number; position: number }) => ({ text: `✍️ ${r.position}`, callback_data: `pick:${r.id}` }))],
     });
   } catch (err) {
     await sendTelegram(`❌ Gagal membuat ide: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
   }
+}
+
+type Idea = { id: number; batch_id: string | null; position: number; topic: string; keyword: string; angle: string; status: string };
+const IDEA_COLUMNS = "id,batch_id,position,topic,keyword,angle,status";
+
+async function getAwaitingIdea() {
+  const { data } = await supabase()
+    .from("article_ideas")
+    .select(IDEA_COLUMNS)
+    .eq("status", "awaiting_cover")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  return data as Idea | null;
+}
+
+async function ideaAction(action: string, id: number) {
+  const { data } = await supabase().from("article_ideas").select(IDEA_COLUMNS).eq("id", id).maybeSingle();
+  const idea = data as Idea | null;
+  if (!idea) return sendTelegram("Ide tidak ditemukan.");
+  if (idea.status === "used") return sendTelegram(`Ide #${idea.position} sudah pernah dipakai.`);
+
+  if (action === "cancel") {
+    await supabase().from("article_ideas").update({ status: "new" }).eq("id", id);
+    await sendTelegram(`Dibatalkan. Ide #${idea.position} tetap ada di daftar.`);
+    return offerNextIdeas(idea.batch_id);
+  }
+  if (action === "nocover") return writeFromIdea(idea, undefined, "");
+
+  // pick: only one idea waits for a cover at a time
+  await supabase().from("article_ideas").update({ status: "new" }).eq("status", "awaiting_cover");
+  await supabase().from("article_ideas").update({ status: "awaiting_cover" }).eq("id", id);
+  await sendTelegram(`🎨 Membuat prompt sampul untuk ide #${idea.position}…`);
+  try {
+    const prompt = await coverPrompt(idea.topic, idea.keyword);
+    // <pre> renders as a tap-to-copy block in Telegram
+    await sendTelegram(
+      [
+        `🎨 <b>Prompt sampul — ide #${idea.position}</b>`,
+        escapeHtml(idea.topic),
+        "",
+        `<pre>${escapeHtml(prompt)}</pre>`,
+        "",
+        "Buat gambarnya (ChatGPT, Midjourney, Gemini…), lalu <b>kirim gambarnya ke sini</b>. Artikel langsung ditulis dengan gambar itu sebagai sampul.",
+      ].join("\n"),
+      {
+        buttons: [
+          [
+            { text: "✍️ Tulis tanpa sampul", callback_data: `nocover:${id}` },
+            { text: "✖️ Batal", callback_data: `cancel:${id}` },
+          ],
+        ],
+      }
+    );
+  } catch (err) {
+    await sendTelegram(`❌ Gagal membuat prompt: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
+  }
+}
+
+// Writes the article for an idea (with the cover photo if one was sent), then offers the rest of its batch
+async function writeFromIdea(idea: Idea, fileId: string | undefined, notes: string) {
+  await supabase().from("article_ideas").update({ status: "used" }).eq("id", idea.id);
+  const brief = [`${idea.topic} (kata kunci: ${idea.keyword})`, idea.angle, notes && `Catatan tambahan: ${notes}`]
+    .filter(Boolean)
+    .join("\n");
+  const ok = await createDraft(brief, fileId);
+  // A failed draft puts the idea back so it can be picked again
+  if (!ok) await supabase().from("article_ideas").update({ status: "new" }).eq("id", idea.id);
+  await offerNextIdeas(idea.batch_id);
+}
+
+async function offerNextIdeas(batchId: string | null) {
+  const { data } = batchId
+    ? await supabase().from("article_ideas").select(IDEA_COLUMNS).eq("batch_id", batchId).eq("status", "new").order("position")
+    : { data: [] };
+  const left = (data ?? []) as Idea[];
+  if (!left.length) {
+    await sendTelegram("Ide di daftar ini sudah habis.", { buttons: [[{ text: "💡 Buat ide baru", callback_data: "newideas:0" }]] });
+    return;
+  }
+  await sendTelegram(
+    ["➡️ <b>Lanjut ide lain dari daftar tadi?</b>", "", ...left.map((i) => escapeHtml(`${i.position}. ${i.topic}`))].join("\n"),
+    {
+      buttons: [
+        ...left.map((i) => [{ text: `✍️ ${i.position}`, callback_data: `pick:${i.id}` }]),
+        [{ text: "💡 Ide baru saja", callback_data: "newideas:0" }],
+      ],
+    }
+  );
 }
 
 // Pages the writer may link to: the hire page, services, and the featured projects (Indonesian titles)

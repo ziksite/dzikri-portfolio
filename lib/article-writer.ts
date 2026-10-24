@@ -170,3 +170,27 @@ Layanan Dzikri: pembuatan website (company profile, landing page, toko online, c
   if (!response.parsed_output) throw new Error("Output AI tidak bisa dibaca.");
   return response.parsed_output.ideas.slice(0, 8);
 }
+
+const CoverPromptSchema = z.object({
+  prompt: z.string().describe("Prompt gambar dalam bahasa Inggris, 60–110 kata, satu paragraf"),
+});
+
+// An English image-generation prompt for an idea's cover, to paste into ChatGPT, Midjourney, etc.
+export async function coverPrompt(topic: string, keyword: string) {
+  if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY belum dipasang di Vercel.");
+  const client = new Anthropic();
+  const response = await client.messages.parse({
+    model: MODEL,
+    max_tokens: 2000,
+    thinking: { type: "adaptive" },
+    output_config: { effort: "low", format: zodOutputFormat(CoverPromptSchema) },
+    system: `You write prompts for AI image generators (ChatGPT, Midjourney, Gemini) that produce blog cover photos.
+Style: realistic editorial photography, like a business magazine. Natural light, shallow depth of field, authentic and unposed.
+Setting: Indonesia — Indonesian people, workplaces and details that fit the business in the topic (a motorcycle workshop, a dental clinic, a small warehouse, a travel agency office…).
+Always specify: the scene and subject, the action, the setting details, lighting, camera/lens feel, a horizontal 16:9 composition with space that still reads when cropped.
+Never include: any text, letters, logos, watermarks, brand or product names (including vehicle, phone and software makes — say "a scooter", "a laptop"), UI screenshots, or obviously AI-looking faces. Avoid clichés like glowing robots or floating holograms.`,
+    messages: [{ role: "user", content: `Article topic (Indonesian): ${topic}\nKeyword: ${keyword}\n\nWrite the cover image prompt.` }],
+  });
+  if (!response.parsed_output) throw new Error("Output AI tidak bisa dibaca.");
+  return response.parsed_output.prompt;
+}
