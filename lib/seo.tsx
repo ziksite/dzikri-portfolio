@@ -37,7 +37,7 @@ export function homeJsonLd(lang: Locale) {
         "@type": "Person",
         "@id": PERSON_ID,
         name: "Dzikri Ramadhan",
-        jobTitle: "Freelance Web Developer & AI Automation Specialist",
+        jobTitle: "Web Developer & AI Automation Specialist",
         description: t.description,
         url: SITE_URL,
         image: `${SITE_URL}/images/profile.jpeg`,

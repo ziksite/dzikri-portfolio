@@ -2,7 +2,7 @@
 // Text wrapped in **double asterisks** renders bold where the component supports it.
 export const en = {
   meta: {
-    title: "Dzikri Ramadhan — Freelance Web Developer & AI Automation",
+    title: "Dzikri Ramadhan — Web Developer & AI Automation",
     description:
       "Custom websites, web apps and AI-powered business automation, engineered around your business problem, not a template. Remote & freelance from Indonesia (GMT+7).",
     siteName: "Dzikri Ramadhan",

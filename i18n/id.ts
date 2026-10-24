@@ -3,7 +3,7 @@ import type { Dictionary } from "./en";
 // Site copy (Bahasa Indonesia)
 export const id: Dictionary = {
   meta: {
-    title: "Dzikri Ramadhan — Jasa Website & Otomasi Bisnis AI (Freelance)",
+    title: "Dzikri Ramadhan — Jasa Website & Otomasi Bisnis AI",
     description:
       "Website, aplikasi web, dan otomasi bisnis berbasis AI yang dirancang dari masalah bisnis Anda, bukan dari template. Freelance & remote dari Indonesia.",
     siteName: "Dzikri Ramadhan",
