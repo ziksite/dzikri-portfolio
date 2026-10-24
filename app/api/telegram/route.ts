@@ -105,13 +105,41 @@ export async function POST(request: NextRequest) {
     return ok;
   }
 
-  after(() => createDraft(brief, fileId));
+  // A photo with a caption is a deliberate brief; plain text is confirmed first, and short chat
+  // replies ("oke", "siap") are never treated as a topic
+  if (fileId) {
+    after(() => createDraft(brief, fileId));
+  } else if (brief.split(/\s+/).length < 4) {
+    after(() => sendTelegram("Pesan pendek tidak diproses. Kirim topik yang lebih lengkap (minimal 4 kata), foto + caption, atau /ide."));
+  } else {
+    after(() =>
+      sendTelegram(`📝 <b>Jadikan artikel dari topik ini?</b>\n\n${escapeHtml(brief)}`, {
+        buttons: [
+          [
+            { text: "✍️ Tulis", callback_data: "write:0" },
+            { text: "✖️ Abaikan", callback_data: "ignore:0" },
+          ],
+        ],
+      })
+    );
+  }
   return ok;
 }
 
 // Writes, saves and previews a draft; returns whether it worked
 async function createDraft(brief: string, fileId: string | undefined): Promise<boolean> {
-  await sendTelegram("⏳ Sedang menulis artikel… (±1–2 menit)");
+  // One progress message, edited as the job moves on; its button cancels the job
+  const { data: job } = await supabase().from("bot_jobs").insert({}).select("id").single();
+  const progress = await sendTelegram("⏳ Sedang menulis artikel… (±1–2 menit)", {
+    buttons: job ? [[{ text: "✖️ Batalkan", callback_data: `stop:${job.id}` }]] : undefined,
+  });
+  const setProgress = (text: string) =>
+    progress && telegramApi("editMessageText", { chat_id: process.env.TELEGRAM_CHAT_ID, message_id: progress.message_id, text, parse_mode: "HTML" });
+  const isCancelled = async () => {
+    if (!job) return false;
+    const { data } = await supabase().from("bot_jobs").select("status").eq("id", job.id).single();
+    return data?.status === "cancelled";
+  };
   try {
     const photo = fileId ? await downloadTelegramFile(fileId) : undefined;
 
@@ -128,6 +156,12 @@ async function createDraft(brief: string, fileId: string | undefined): Promise<b
       }),
       photo ? uploadImageAsWebp(photo, "articles") : Promise.resolve(""),
     ]);
+
+    // The AI call can't be interrupted midway, so a cancel just discards its result here
+    if (await isCancelled()) {
+      await setProgress("✖️ <b>Dibatalkan</b>: artikel tidak disimpan.");
+      return false;
+    }
 
     const slug = await uniqueSlug(slugify(article.slug) || slugify(article.title));
     const { data, error } = await supabase()
@@ -146,6 +180,8 @@ async function createDraft(brief: string, fileId: string | undefined): Promise<b
       .select("id")
       .single();
     if (error) throw new Error(`Gagal menyimpan: ${error.message}`);
+    if (job) await supabase().from("bot_jobs").update({ status: "done" }).eq("id", job.id);
+    await setProgress("✅ Artikel selesai ditulis.");
 
     // Preview in chat, then a control message whose buttons publish or delete the draft
     await sendTelegram(
@@ -159,7 +195,8 @@ async function createDraft(brief: string, fileId: string | undefined): Promise<b
     return true;
   } catch (err) {
     console.error("Article draft failed", err);
-    await sendTelegram(`❌ Gagal membuat draft: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
+    if (job) await supabase().from("bot_jobs").update({ status: "done" }).eq("id", job.id);
+    await setProgress(`❌ Gagal membuat draft: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
     return false;
   }
 }
@@ -183,6 +220,39 @@ async function handleButton(query: TelegramCallback) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (String(query.from.id) !== chatId || !query.message) return;
   const [action, id] = (query.data ?? "").split(":");
+
+  const editThis = (text: string) =>
+    telegramApi("editMessageText", { chat_id: chatId, message_id: query.message!.message_id, text, parse_mode: "HTML" });
+
+  // Confirmation for a free-text brief: the brief is read back from the question message itself
+  if (action === "write" || action === "ignore") {
+    const brief = (query.message.text ?? "").split("\n\n").slice(1).join("\n\n").trim();
+    await telegramApi("answerCallbackQuery", { callback_query_id: query.id });
+    if (action === "ignore" || !brief) {
+      await editThis("✖️ Diabaikan.");
+      return;
+    }
+    await editThis(`✍️ Topik diterima:\n${escapeHtml(brief)}`);
+    after(() => createDraft(brief, undefined));
+    return;
+  }
+
+  // ✖️ Batalkan on a running article job
+  if (action === "stop" && UUID.test(id)) {
+    const { data } = await supabase()
+      .from("bot_jobs")
+      .update({ status: "cancelled" })
+      .eq("id", id)
+      .eq("status", "running")
+      .select("id")
+      .maybeSingle();
+    await telegramApi("answerCallbackQuery", {
+      callback_query_id: query.id,
+      text: data ? "Dibatalkan" : "Sudah selesai, tidak bisa dibatalkan.",
+    });
+    if (data) await editThis("✖️ Membatalkan… artikel yang sedang ditulis tidak akan disimpan.");
+    return;
+  }
 
   // /ide flow: pick an idea -> cover prompt; write without a cover; cancel; ask for a new batch
   if (["pick", "nocover", "cancel", "newideas"].includes(action)) {
