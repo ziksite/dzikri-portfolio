@@ -1,11 +1,12 @@
 import { after, NextResponse, type NextRequest } from "next/server";
 import { writeArticle } from "@/lib/article-writer";
-import { SITE_URL } from "@/lib/i18n";
+import { localePath, SITE_URL } from "@/lib/i18n";
 import { toVisionJpeg, uploadImageAsWebp } from "@/lib/media";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
+import { refreshSite } from "@/lib/site-cache";
 import { slugify } from "@/lib/slugify";
 import { supabase } from "@/lib/supabase";
-import { escapeHtml, sendTelegram } from "@/lib/telegram";
+import { articleToTelegramChunks, escapeHtml, sendTelegram, telegramApi } from "@/lib/telegram";
 
 export const runtime = "nodejs";
 // Writing an article takes a while; the work runs in after() once Telegram has its 200
@@ -17,9 +18,12 @@ const HELP = [
   "Kirim <b>foto + caption</b> berisi topik atau catatan kasar → saya tulis artikelnya, foto jadi sampul.",
   "Atau kirim <b>teks saja</b> (tanpa sampul).",
   "",
-  "Hasilnya disimpan sebagai <b>draft</b>. Review & publish di CMS.",
+  "Hasilnya dikirim sebagai pratinjau dengan tombol <b>Publish</b> / <b>Hapus</b>; sampai kamu tekan Publish, artikel tetap draft.",
 ].join("\n");
 
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
+type TelegramCallback = { id: string; from: { id: number }; data?: string; message?: { chat: { id: number }; message_id: number } };
 type TelegramPhoto = { file_id: string; file_size?: number };
 type TelegramMessage = {
   chat: { id: number };
@@ -38,9 +42,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const update = (await request.json()) as { message?: TelegramMessage };
-  const message = update.message;
+  const update = (await request.json()) as { message?: TelegramMessage; callback_query?: TelegramCallback };
   const ok = NextResponse.json({ ok: true });
+  if (update.callback_query) {
+    await handleButton(update.callback_query);
+    return ok;
+  }
+  const message = update.message;
   if (!message || String(message.chat.id) !== process.env.TELEGRAM_CHAT_ID) return ok;
 
   const brief = (message.text ?? message.caption ?? "").trim();
@@ -95,21 +103,59 @@ async function createDraft(brief: string, fileId: string | undefined) {
       .single();
     if (error) throw new Error(`Gagal menyimpan: ${error.message}`);
 
-    await sendTelegram(
-      [
-        "✅ <b>Draft siap</b>",
-        escapeHtml(article.title),
-        "",
-        `<i>${escapeHtml(article.excerpt)}</i>`,
-        "",
-        `Review & publish: ${SITE_URL}/admin-cms/articles/${data.id}`,
-        `Biaya AI: ±$${costUsd.toFixed(3)}`,
-      ].join("\n")
-    );
+    // Preview in chat, then a control message whose buttons publish or delete the draft
+    await sendTelegram(`📝 <b>${escapeHtml(article.title)}</b>
+
+<i>${escapeHtml(article.excerpt)}</i>`);
+    for (const chunk of articleToTelegramChunks(sanitizeArticleHtml(article.content_html))) await sendTelegram(chunk);
+    await sendTelegram(`Publish artikel ini?
+<i>Biaya AI: ±$${costUsd.toFixed(3)}</i>`, {
+      buttons: [
+        [
+          { text: "✅ Publish", callback_data: `pub:${data.id}` },
+          { text: "🗑 Hapus", callback_data: `del:${data.id}` },
+        ],
+        [{ text: "✏️ Edit di CMS dulu", url: `${SITE_URL}/admin-cms/articles/${data.id}` }],
+      ],
+    });
   } catch (err) {
     console.error("Article draft failed", err);
     await sendTelegram(`❌ Gagal membuat draft: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
   }
+}
+
+// Publish / delete buttons under a draft preview. Deleting only ever touches drafts, so a stale
+// button can't remove a live article.
+async function handleButton(query: TelegramCallback) {
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (String(query.from.id) !== chatId || !query.message) return;
+  const [action, id] = (query.data ?? "").split(":");
+  const edit = (text: string) =>
+    telegramApi("editMessageText", { chat_id: chatId, message_id: query.message!.message_id, text, parse_mode: "HTML" });
+  let notice = "Sudah diproses.";
+
+  if (UUID.test(id) && action === "pub") {
+    const today = new Date(Date.now() + 7 * 60 * 60 * 1000).toISOString().slice(0, 10); // WIB date
+    const { data } = await supabase()
+      .from("articles")
+      .update({ draft: false, published_at: today })
+      .eq("id", id)
+      .eq("draft", true)
+      .select("slug,title")
+      .maybeSingle();
+    if (data) {
+      refreshSite();
+      notice = "Artikel tayang!";
+      await edit(`✅ <b>Tayang</b>: ${SITE_URL}${localePath("id", `/blog/${data.slug}`)}`);
+    }
+  } else if (UUID.test(id) && action === "del") {
+    const { data } = await supabase().from("articles").delete().eq("id", id).eq("draft", true).select("id").maybeSingle();
+    if (data) {
+      notice = "Draft dihapus.";
+      await edit("🗑 Draft dihapus.");
+    }
+  }
+  await telegramApi("answerCallbackQuery", { callback_query_id: query.id, text: notice });
 }
 
 // Telegram serves photos as JPEG; files above 20 MB can't be fetched through the Bot API

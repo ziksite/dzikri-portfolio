@@ -1,20 +1,14 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin-auth";
 import { supabase } from "@/lib/supabase";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
+import { refreshSite } from "@/lib/site-cache";
 import { INDUSTRIES, PROJECT_KINDS, type GalleryItem, type ProjectMetric, type ProjectText } from "@/lib/cms-types";
 
 export type ActionResult = { ok: true; id: string } | { ok: false; error: string };
 
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-
-// Re-render every site page (both languages) and the sitemap after content changes
-function refreshSite() {
-  revalidatePath("/[lang]", "layout");
-  revalidatePath("/sitemap.xml");
-}
 
 const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
 const list = (v: unknown) => (Array.isArray(v) ? v.map(str).filter(Boolean) : []);
