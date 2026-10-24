@@ -2,9 +2,9 @@
 // Text wrapped in **double asterisks** renders bold where the component supports it.
 export const en = {
   meta: {
-    title: "Dzikri Ramadhan - Technology & Innovation",
+    title: "Dzikri Ramadhan — Freelance Web Developer & AI Automation",
     description:
-      "I bridge business and technology to build digital systems, products, and automation that solve real business problems.",
+      "Custom websites, web apps and AI-powered business automation, engineered around your business problem, not a template. Remote & freelance from Indonesia (GMT+7).",
     siteName: "Dzikri Ramadhan",
     ogLocale: "en_US",
   },
@@ -22,7 +22,7 @@ export const en = {
 
   hero: {
     eyebrow: "Hi, I'm",
-    role: "Technology & Innovation",
+    role: "Web Developer & AI Automation",
     handsOn: "I plan it, build it, and ship it.",
     supporting:
       "I build digital systems, products, and automation that turn business challenges into scalable solutions.",
@@ -278,7 +278,7 @@ export const en = {
   },
 
   footer: {
-    tagline: "Technology & Innovation",
+    tagline: "Web Developer & AI Automation",
     sub: "Building systems, products & automation for better business.",
   },
 

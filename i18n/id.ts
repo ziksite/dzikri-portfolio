@@ -3,9 +3,9 @@ import type { Dictionary } from "./en";
 // Site copy (Bahasa Indonesia)
 export const id: Dictionary = {
   meta: {
-    title: "Dzikri Ramadhan - Technology & Innovation",
+    title: "Dzikri Ramadhan — Jasa Website & Otomasi Bisnis AI (Freelance)",
     description:
-      "Saya menjembatani bisnis dan teknologi untuk membangun sistem digital, produk, dan otomasi yang menyelesaikan masalah bisnis nyata.",
+      "Website, aplikasi web, dan otomasi bisnis berbasis AI yang dirancang dari masalah bisnis Anda, bukan dari template. Freelance & remote dari Indonesia.",
     siteName: "Dzikri Ramadhan",
     ogLocale: "id_ID",
   },
@@ -23,7 +23,7 @@ export const id: Dictionary = {
 
   hero: {
     eyebrow: "Halo, saya",
-    role: "Technology & Innovation",
+    role: "Web Developer & AI Automation",
     handsOn: "Saya merancang, membangun, dan merilisnya.",
     supporting:
       "Saya membangun sistem digital, produk, dan otomasi yang mengubah tantangan bisnis menjadi solusi yang scalable.",
@@ -277,7 +277,7 @@ export const id: Dictionary = {
   },
 
   footer: {
-    tagline: "Technology & Innovation",
+    tagline: "Web Developer & AI Automation",
     sub: "Membangun sistem, produk & otomasi untuk bisnis yang lebih baik.",
   },
 

@@ -17,8 +17,8 @@ const text = `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"
   <text x="66" y="240" class="t" font-size="92" font-weight="900" letter-spacing="-3">DZIKRI</text>
   <text x="66" y="332" class="t" font-size="92" font-weight="900" letter-spacing="-3">RAMADHAN</text>
   <rect x="70" y="372" width="80" height="6" fill="#fff"/>
-  <text x="70" y="430" class="t" font-size="30" font-weight="800" letter-spacing="2">TECHNOLOGY &amp; INNOVATION</text>
-  <text x="70" y="478" class="t" font-size="22" font-weight="500" fill-opacity="0.65">Systems · Products · Automation · AI</text>
+  <text x="70" y="430" class="t" font-size="25" font-weight="800" letter-spacing="1.5">WEB DEVELOPER &amp; AI AUTOMATION</text>
+  <text x="70" y="478" class="t" font-size="22" font-weight="500" fill-opacity="0.65">Websites · Web Apps · Business Automation</text>
   <text x="70" y="568" class="t" font-size="20" font-weight="600" fill-opacity="0.45">dzikriramadhan.com</text>
 </svg>`;
 
