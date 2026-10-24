@@ -19,13 +19,14 @@ const INDUSTRIES = constList("INDUSTRIES");
 const dry = process.argv.includes("--dry");
 const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
-// Spread the study cases between the existing client projects (homepage keeps sort_order 10–20)
+// Spread the study cases between the existing client projects. sort_order 1–6 is the homepage
+// "Selected Works" set (one pair per service); the fashion store is one of them.
 const ORDER = {
   "umrah-travel-agency-website": 172,
   "car-body-paint-workshop-website": 173,
   "electrical-supplies-store-website": 174,
   "tutoring-center-website": 175,
-  "modest-fashion-brand-store": 176,
+  "modest-fashion-brand-store": 6,
   "online-printing-service-website": 177,
   "veterinary-clinic-website": 178,
   "pilates-studio-website": 179,
