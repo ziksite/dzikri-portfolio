@@ -112,3 +112,43 @@ export async function writeArticle({
   const costUsd = (input_tokens * PRICE_INPUT + output_tokens * PRICE_OUTPUT) / 1_000_000;
   return { article: response.parsed_output, costUsd };
 }
+
+const IdeasSchema = z.object({
+  ideas: z
+    .array(
+      z.object({
+        topic: z.string().describe("Topik artikel singkat dalam bahasa Indonesia, bisa langsung dipakai sebagai brief"),
+        keyword: z.string().describe("Kata kunci yang diketik orang di Google, 2–5 kata"),
+        angle: z.string().describe("Satu kalimat: sudut pandang atau manfaat bagi pembaca"),
+      })
+    )
+    .describe("Tepat 5 ide"),
+});
+
+// Five article ideas tied to the services, avoiding topics the blog already covers
+export async function suggestTopics(existingTitles: string[]) {
+  if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY belum dipasang di Vercel.");
+  const client = new Anthropic();
+  const response = await client.messages.parse({
+    model: MODEL,
+    max_tokens: 4000,
+    thinking: { type: "adaptive" },
+    output_config: { effort: "medium", format: zodOutputFormat(IdeasSchema) },
+    system: `${SYSTEM.split("\n\n")[0]}
+
+Layanan Dzikri: pembuatan website (company profile, landing page, toko online, custom), aplikasi & sistem bisnis (kasir, stok, booking, CRM, laporan), AI automation (chatbot WhatsApp, screening CV & leads, laporan otomatis), dan konsultasi website & digital.`,
+    messages: [
+      {
+        role: "user",
+        content: [
+          "Usulkan 5 ide artikel blog yang akan dicari calon klien Dzikri di Google sebelum memutuskan memakai jasa seperti layanannya.",
+          "Campur jenisnya: biaya/perbandingan, cara memilih, tanda butuh, kesalahan umum, dan panduan langkah. Sebar ke beberapa layanan.",
+          "Jangan mengulang topik dari artikel yang sudah ada:",
+          ...existingTitles.map((t) => `- ${t}`),
+        ].join("\n"),
+      },
+    ],
+  });
+  if (!response.parsed_output) throw new Error("Output AI tidak bisa dibaca.");
+  return response.parsed_output.ideas.slice(0, 5);
+}

@@ -1,9 +1,10 @@
 import { after, NextResponse, type NextRequest } from "next/server";
-import { writeArticle } from "@/lib/article-writer";
+import { suggestTopics, writeArticle } from "@/lib/article-writer";
 import { localePath, SITE_URL } from "@/lib/i18n";
 import { toVisionJpeg, uploadImageAsWebp } from "@/lib/media";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
 import { refreshSite } from "@/lib/site-cache";
+import { statsMessage } from "@/lib/site-stats";
 import { slugify } from "@/lib/slugify";
 import { supabase } from "@/lib/supabase";
 import { articleToTelegramChunks, escapeHtml, sendTelegram, telegramApi } from "@/lib/telegram";
@@ -19,11 +20,19 @@ const HELP = [
   "Atau kirim <b>teks saja</b> (tanpa sampul).",
   "",
   "Hasilnya dikirim sebagai pratinjau dengan tombol <b>Publish</b> / <b>Hapus</b>; sampai kamu tekan Publish, artikel tetap draft.",
+  "",
+  "/ide — 5 usulan topik artikel, tinggal tekan ✍️ untuk menulis",
+  "/stats — pengunjung, lead, dan artikel terpopuler",
 ].join("\n");
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
-type TelegramCallback = { id: string; from: { id: number }; data?: string; message?: { chat: { id: number }; message_id: number } };
+type TelegramCallback = {
+  id: string;
+  from: { id: number };
+  data?: string;
+  message?: { chat: { id: number }; message_id: number; text?: string };
+};
 type TelegramPhoto = { file_id: string; file_size?: number };
 type TelegramMessage = {
   chat: { id: number };
@@ -58,6 +67,16 @@ export async function POST(request: NextRequest) {
 
   if (brief.startsWith("/start") || brief.startsWith("/help")) {
     after(() => sendTelegram(HELP));
+    return ok;
+  }
+  if (brief.startsWith("/stats")) {
+    after(async () => {
+      await sendTelegram(await statsMessage());
+    });
+    return ok;
+  }
+  if (brief.startsWith("/ide")) {
+    after(sendIdeas);
     return ok;
   }
   if (!brief) {
@@ -135,6 +154,15 @@ async function handleButton(query: TelegramCallback) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (String(query.from.id) !== chatId || !query.message) return;
   const [action, id] = (query.data ?? "").split(":");
+
+  // "Tulis" under an idea list: the idea's text is read back from the message itself
+  if (action === "idea") {
+    const line = (query.message.text ?? "").split("\n").find((l) => l.startsWith(`${id}. `));
+    await telegramApi("answerCallbackQuery", { callback_query_id: query.id, text: line ? "Menulis…" : "Ide tidak ditemukan." });
+    if (line) after(() => createDraft(line.slice(id.length + 2), undefined));
+    return;
+  }
+
   const edit = (text: string) =>
     telegramApi("editMessageText", { chat_id: chatId, message_id: query.message!.message_id, text, parse_mode: "HTML" });
   let notice = "Sudah diproses.";
@@ -161,6 +189,21 @@ async function handleButton(query: TelegramCallback) {
     }
   }
   await telegramApi("answerCallbackQuery", { callback_query_id: query.id, text: notice });
+}
+
+async function sendIdeas() {
+  await sendTelegram("💡 Mencari ide topik…");
+  try {
+    const { data } = await supabase().from("articles").select("title");
+    const ideas = await suggestTopics((data ?? []).map((a: { title: string }) => a.title));
+    // Each line is self-contained so the ✍️ button can turn it straight into a brief
+    const lines = ideas.map((idea, i) => `${i + 1}. ${idea.topic} (kata kunci: ${idea.keyword}) — ${idea.angle}`);
+    await sendTelegram(["💡 <b>Ide artikel</b>", "", ...lines.map(escapeHtml)].join("\n"), {
+      buttons: [ideas.map((_, i) => ({ text: `✍️ ${i + 1}`, callback_data: `idea:${i + 1}` }))],
+    });
+  } catch (err) {
+    await sendTelegram(`❌ Gagal membuat ide: ${escapeHtml(err instanceof Error ? err.message : String(err))}`);
+  }
 }
 
 // Pages the writer may link to: the hire page, services, and the featured projects (Indonesian titles)
