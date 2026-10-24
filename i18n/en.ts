@@ -151,9 +151,9 @@ export const en = {
   },
 
   projectsPage: {
-    title: "Projects - Dzikri Ramadhan",
+    title: "Website & Automation Projects — Dzikri Ramadhan",
     heading: "All Projects",
-    description: "Digital products, internal systems, websites, and automation built for real businesses.",
+    description: "Portfolio of websites, web apps, internal systems, and AI automation built for real businesses.",
   },
 
   caseStudy: {
@@ -285,8 +285,8 @@ export const en = {
   whatsapp: { tooltip: "Let's talk 👋", label: "Chat on WhatsApp" },
 
   blog: {
-    title: "Blog - Dzikri Ramadhan",
-    description: "Notes on technology, digital transformation, automation, and building systems that work for the business.",
+    title: "Blog: Web, AI & Business Automation — Dzikri Ramadhan",
+    description: "Notes on building websites, AI automation, and digital systems that actually work for the business.",
     heading: "Notes & Articles",
     intro: "Thinking on technology, systems, and automation that create real business impact.",
     empty: "No articles published yet.",

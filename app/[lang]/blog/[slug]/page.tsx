@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const article = await getArticle(slug);
   if (!article) return {};
   return {
-    title: `${article.title} - Dzikri Ramadhan`,
+    title: `${article.title} — Dzikri Ramadhan`,
     description: article.excerpt,
     alternates: { canonical: localePath("id", `/blog/${slug}`) },
     openGraph: pageOpenGraph("id", `/blog/${slug}`, {

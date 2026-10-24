@@ -27,6 +27,13 @@ export function pageOpenGraph(
 
 const PERSON_ID = `${SITE_URL}/#person`;
 
+// What the person can be hired for, as schema.org offers on the Person
+const SERVICES = [
+  { name: "Website Development", description: "Custom business websites and landing pages, built for speed and conversion." },
+  { name: "Web Application Development", description: "Web apps and internal systems that replace manual, fragmented processes." },
+  { name: "AI & Business Process Automation", description: "AI-powered workflows and integrations that automate sales, operations, and reporting." },
+];
+
 // Structured data for the homepage: who the site is about, and the site itself
 export function homeJsonLd(lang: Locale) {
   const t = getDictionary(lang).meta;
@@ -53,6 +60,11 @@ export function homeJsonLd(lang: Locale) {
           "Product Development",
           "Digital Transformation",
         ],
+        areaServed: "Worldwide",
+        makesOffer: SERVICES.map((s) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", ...s, provider: { "@id": PERSON_ID } },
+        })),
         sameAs: socialLinks.filter((s) => s.id !== "email").map((s) => s.url),
       },
       {

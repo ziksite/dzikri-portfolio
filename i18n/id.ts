@@ -151,9 +151,9 @@ export const id: Dictionary = {
   },
 
   projectsPage: {
-    title: "Proyek - Dzikri Ramadhan",
+    title: "Portofolio Website & Otomasi Bisnis — Dzikri Ramadhan",
     heading: "Semua Proyek",
-    description: "Produk digital, sistem internal, website, dan otomasi yang dibangun untuk bisnis nyata.",
+    description: "Portofolio website, aplikasi web, sistem internal, dan otomasi AI yang dibangun untuk bisnis nyata.",
   },
 
   caseStudy: {
@@ -284,8 +284,8 @@ export const id: Dictionary = {
   whatsapp: { tooltip: "Hubungi saya 👋", label: "Chat via WhatsApp" },
 
   blog: {
-    title: "Blog - Dzikri Ramadhan",
-    description: "Catatan tentang teknologi, transformasi digital, otomasi, dan membangun sistem yang benar-benar bekerja untuk bisnis.",
+    title: "Blog Website, AI & Otomasi Bisnis — Dzikri Ramadhan",
+    description: "Catatan tentang membangun website, otomasi AI, dan sistem digital yang benar-benar bekerja untuk bisnis.",
     heading: "Catatan & Artikel",
     intro: "Pemikiran tentang teknologi, sistem, dan otomasi yang memberi dampak bisnis nyata.",
     empty: "Belum ada artikel yang dipublikasikan.",

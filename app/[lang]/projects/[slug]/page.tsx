@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!data) return {};
   const { project } = data;
   return {
-    title: `${project.title} - Dzikri Ramadhan`,
+    title: `${project.title} — Dzikri Ramadhan`,
     description: project.summary,
     alternates: languageAlternates(lang, `/projects/${project.slug}`),
     openGraph: pageOpenGraph(lang, `/projects/${project.slug}`, {
