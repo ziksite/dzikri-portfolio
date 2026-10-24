@@ -60,29 +60,29 @@ export const id: Dictionary = {
 
   services: {
     heading: "Layanan",
-    intro: "Empat cara saya membantu bisnis bertumbuh, semuanya dirancang dari cara bisnis Anda berjalan, bukan dari template.",
+    intro: "Dari website sampai sistem untuk mengelola bisnis Anda, dibuat sesuai kebutuhan, bukan dari template.",
     cta: "Diskusikan",
     whatsappMessage: "Halo Dzikri, saya tertarik dengan: {service}",
     items: [
       {
         id: "website",
-        title: "Website Bisnis & Landing Page",
-        text: "Company profile dan landing page yang cepat, siap SEO, dan dirancang mengubah pengunjung jadi calon klien.",
+        title: "Jasa Pembuatan Website",
+        text: "Website company profile, landing page, toko online, sampai website custom sesuai kebutuhan bisnis Anda.",
       },
       {
         id: "webapp",
-        title: "Aplikasi Web & Sistem Internal",
-        text: "Dashboard, booking, CRM, dan sistem operasional custom yang menggantikan spreadsheet dan kerja manual.",
+        title: "Aplikasi & Sistem Bisnis",
+        text: "Aplikasi untuk mengelola bisnis: kasir, stok, booking, data pelanggan, dan laporan. Tidak perlu Excel lagi.",
       },
       {
         id: "automation",
-        title: "Otomasi AI & WhatsApp",
-        text: "AI agent dan alur kerja otomatis yang membalas leads, follow-up, dan membuat laporan, agar tim fokus closing.",
+        title: "Chatbot WhatsApp & AI",
+        text: "Balas chat pelanggan otomatis 24 jam, follow-up, dan rekap pesanan langsung dari WhatsApp.",
       },
       {
         id: "consulting",
-        title: "Audit & Konsultasi Digital",
-        text: "Tinjauan jelas atas website, tools, dan proses Anda, dengan roadmap prioritas apa yang perlu dibenahi dulu.",
+        title: "Konsultasi Website & Digital",
+        text: "Website sepi atau tidak menghasilkan? Saya cek dan beri langkah perbaikan yang jelas.",
       },
     ],
   },

@@ -29,9 +29,10 @@ const PERSON_ID = `${SITE_URL}/#person`;
 
 // What the person can be hired for, as schema.org offers on the Person
 const SERVICES = [
-  { name: "Website Development", description: "Custom business websites and landing pages, built for speed and conversion." },
-  { name: "Web Application Development", description: "Web apps and internal systems that replace manual, fragmented processes." },
-  { name: "AI & Business Process Automation", description: "AI-powered workflows and integrations that automate sales, operations, and reporting." },
+  { name: "Website Design & Development", description: "Company profiles, landing pages, online stores and custom websites." },
+  { name: "Business Apps & Internal Systems", description: "POS, inventory, booking, customer data and reporting systems." },
+  { name: "WhatsApp Chatbot & AI Automation", description: "24/7 WhatsApp replies, automated follow-ups and order logging." },
+  { name: "Website & Digital Consulting", description: "Website and digital audits with clear, prioritized fixes." },
 ];
 
 // Structured data for the homepage: who the site is about, and the site itself

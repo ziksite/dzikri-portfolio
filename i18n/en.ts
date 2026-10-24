@@ -60,29 +60,29 @@ export const en = {
 
   services: {
     heading: "Services",
-    intro: "Four ways I help businesses grow, each one built around how your business actually runs, not a template.",
+    intro: "From websites to the systems that run your business, built for your needs, not from a template.",
     cta: "Discuss this",
     whatsappMessage: "Hi Dzikri, I'm interested in: {service}",
     items: [
       {
         id: "website",
-        title: "Business Websites & Landing Pages",
-        text: "Fast, SEO-ready company profiles and landing pages designed to turn visitors into inquiries.",
+        title: "Website Design & Development",
+        text: "Company profiles, landing pages, online stores, all the way to fully custom websites for your business.",
       },
       {
         id: "webapp",
-        title: "Web Apps & Internal Systems",
-        text: "Custom dashboards, booking, CRM and operational systems that replace spreadsheets and manual work.",
+        title: "Business Apps & Internal Systems",
+        text: "Apps to run your business: POS, inventory, booking, customer data and reports. No more spreadsheets.",
       },
       {
         id: "automation",
-        title: "AI & WhatsApp Automation",
-        text: "AI agents and workflows that answer leads, follow up and report, so your team can focus on closing.",
+        title: "WhatsApp Chatbot & AI",
+        text: "Reply to customers 24/7, follow up automatically, and log orders straight from WhatsApp.",
       },
       {
         id: "consulting",
-        title: "Digital Audit & Consulting",
-        text: "A clear review of your website, tools and processes, with a prioritized roadmap of what to fix first.",
+        title: "Website & Digital Consulting",
+        text: "Website not bringing in customers? I'll review it and give you clear steps to fix it.",
       },
     ],
   },
