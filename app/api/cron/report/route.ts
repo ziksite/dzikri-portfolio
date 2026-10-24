@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { publishNextQueued } from "@/lib/article-queue";
+import { healthLines } from "@/lib/site-health";
 import {
   DAY_MS,
   WIB_OFFSET_MS,
@@ -25,7 +26,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { remaining } = await publishNextQueued();
+  const [{ remaining }, health] = await Promise.all([publishNextQueued(), healthLines()]);
 
   const now = new Date();
   const today = wibDayStart(now);
@@ -50,6 +51,7 @@ export async function GET(request: NextRequest) {
     remaining > 0
       ? `📥 Antrean terbit: ${remaining} artikel`
       : "📭 Antrean terbit kosong: belum ada artikel yang siap terbit. Kirim topik atau /ide.",
+    ...health,
   ];
 
   if (isMonday) {
