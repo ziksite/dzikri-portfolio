@@ -122,15 +122,18 @@ const IdeasSchema = z.object({
     .array(
       z.object({
         topic: z.string().describe("Topik artikel singkat dalam bahasa Indonesia, bisa langsung dipakai sebagai brief"),
-        keyword: z.string().describe("Kata kunci yang diketik orang di Google, 2–5 kata"),
+        keyword: z
+          .string()
+          .describe("Kata kunci inti 2–4 kata persis seperti diketik di kolom pencarian Google, huruf kecil, tanpa tanda baca (mis. \"aplikasi kasir bengkel\")"),
         angle: z.string().describe("Satu kalimat: sudut pandang atau manfaat bagi pembaca"),
       })
     )
-    .describe("Tepat 5 ide"),
+    .describe("Tepat 8 kandidat ide"),
 });
 
-// Five article ideas tied to the services, avoiding topics the blog already covers
-export async function suggestTopics(existingTitles: string[]) {
+// Eight candidate ideas on long-tail, niche keywords (the caller checks search demand and keeps the
+// best five), tied to the services and avoiding topics the blog already covers or ideas already given
+export async function suggestTopics(existingTitles: string[], pastIdeas: string[]) {
   if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY belum dipasang di Vercel.");
   const client = new Anthropic();
   const response = await client.messages.parse({
@@ -145,14 +148,25 @@ Layanan Dzikri: pembuatan website (company profile, landing page, toko online, c
       {
         role: "user",
         content: [
-          "Usulkan 5 ide artikel blog yang akan dicari calon klien Dzikri di Google sebelum memutuskan memakai jasa seperti layanannya.",
-          "Campur jenisnya: biaya/perbandingan, cara memilih, tanda butuh, kesalahan umum, dan panduan langkah. Sebar ke beberapa layanan.",
+          "Usulkan 8 kandidat ide artikel blog yang akan dicari calon klien Dzikri di Google sebelum memutuskan memakai jasa seperti layanannya.",
+          "",
+          "Strategi kata kunci: blue ocean / long-tail. Hindari kata kunci umum yang dikuasai agensi besar dan marketplace (mis. \"jasa pembuatan website\", \"aplikasi kasir\").",
+          "Pilih frasa spesifik yang benar-benar diketik pemilik usaha, biasanya gabungan layanan + jenis usaha atau situasi, misalnya:",
+          "- layanan + industri: \"aplikasi kasir bengkel motor\", \"website klinik gigi\", \"sistem booking barbershop\"",
+          "- masalah spesifik: \"cara rekap pesanan whatsapp otomatis\", \"stok gudang sering selisih\"",
+          "- perbandingan konkret: \"aplikasi kasir gratis vs berbayar\"",
+          "Industri yang relevan dengan portofolio Dzikri: klinik, barbershop, bengkel, travel umroh, catering, laundry, sekolah, properti, distributor, toko bahan bangunan, rental mobil, percetakan.",
+          "Kata kunci harus pendek (2–4 kata) karena itulah yang diketik orang; spesifiknya cukup dari kombinasi layanan + industri. Topik artikelnya boleh lebih spesifik dari kata kuncinya.",
+          "Gunakan bahasa sehari-hari yang diketik orang, bukan istilah teknis. Sebar ke beberapa layanan dan jenis artikel (biaya, cara memilih, tanda butuh, kesalahan umum, panduan).",
           "Jangan mengulang topik dari artikel yang sudah ada:",
           ...existingTitles.map((t) => `- ${t}`),
+          "",
+          "Jangan mengulang ide yang pernah diusulkan sebelumnya (termasuk kata kunci yang sama atau sangat mirip):",
+          ...(pastIdeas.length ? pastIdeas.map((t) => `- ${t}`) : ["(belum ada)"]),
         ].join("\n"),
       },
     ],
   });
   if (!response.parsed_output) throw new Error("Output AI tidak bisa dibaca.");
-  return response.parsed_output.ideas.slice(0, 5);
+  return response.parsed_output.ideas.slice(0, 8);
 }

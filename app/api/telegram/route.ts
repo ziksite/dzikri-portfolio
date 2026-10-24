@@ -1,6 +1,7 @@
 import { after, NextResponse, type NextRequest } from "next/server";
 import { getQueue, nextSlots, queueMessage } from "@/lib/article-queue";
 import { suggestTopics, writeArticle } from "@/lib/article-writer";
+import { googleSuggest } from "@/lib/keyword-check";
 import { localePath, SITE_URL } from "@/lib/i18n";
 import { toVisionJpeg, uploadImageAsWebp } from "@/lib/media";
 import { sanitizeArticleHtml } from "@/lib/sanitize";
@@ -246,11 +247,35 @@ async function handleButton(query: TelegramCallback) {
 async function sendIdeas() {
   await sendTelegram("💡 Mencari ide topik…");
   try {
-    const { data } = await supabase().from("articles").select("title");
-    const ideas = await suggestTopics((data ?? []).map((a: { title: string }) => a.title));
-    // Each line is self-contained so the ✍️ button can turn it straight into a brief
-    const lines = ideas.map((idea, i) => `${i + 1}. ${idea.topic} (kata kunci: ${idea.keyword}) — ${idea.angle}`);
-    await sendTelegram(["💡 <b>Ide artikel</b>", "", ...lines.map(escapeHtml)].join("\n"), {
+    const [{ data: articles }, { data: past }] = await Promise.all([
+      supabase().from("articles").select("title"),
+      // The most recent suggestions are enough to keep new ideas fresh without an ever-growing prompt
+      supabase().from("article_ideas").select("topic,keyword").order("created_at", { ascending: false }).limit(60),
+    ]);
+    const candidates = await suggestTopics(
+      (articles ?? []).map((a: { title: string }) => a.title),
+      (past ?? []).map((p: { topic: string; keyword: string }) => `${p.topic} (kata kunci: ${p.keyword})`)
+    );
+
+    // Keep the five with the clearest search demand (Google Autocomplete), unverified ones last
+    const checked = await Promise.all(candidates.map(async (idea) => ({ ...idea, demand: await googleSuggest(idea.keyword) })));
+    const ideas = checked.sort((a, b) => (b.demand?.variations ?? -1) - (a.demand?.variations ?? -1)).slice(0, 5);
+    await supabase()
+      .from("article_ideas")
+      .insert(ideas.map((idea) => ({ topic: idea.topic, keyword: idea.keyword })));
+
+    // Each numbered line is self-contained so the ✍️ button can turn it straight into a brief;
+    // the demand note sits on its own line underneath
+    const lines = ideas.flatMap((idea, i) => [
+      escapeHtml(`${i + 1}. ${idea.topic} (kata kunci: ${idea.keyword}) — ${idea.angle}`),
+      idea.demand?.searched
+        ? `    ✅ Dicari di Google (${idea.demand.variations} variasi pencarian)`
+        : idea.demand
+          ? "    ⚪ Belum terdeteksi di saran Google — mungkin sangat jarang dicari"
+          : "    ❔ Tidak bisa dicek",
+      "",
+    ]);
+    await sendTelegram(["💡 <b>Ide artikel (kata kunci long-tail)</b>", "", ...lines].join("\n"), {
       buttons: [ideas.map((_, i) => ({ text: `✍️ ${i + 1}`, callback_data: `idea:${i + 1}` }))],
     });
   } catch (err) {
