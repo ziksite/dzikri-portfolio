@@ -50,9 +50,9 @@ export const en = {
     heading: "About Me",
     greeting: "Hi, I'm Dzikri.",
     paragraphs: [
-      "I work in technology and innovation, building digital systems, products, and automation that solve real business problems.",
-      "My work sits at the intersection of **technology, product, business, and operations** — turning ideas and operational challenges into practical, scalable solutions.",
-      "From digital platforms and internal systems to CRM, analytics, AI, and automation, I focus on making technology work as a **business enabler**, not just another tool.",
+      "I'm a web developer who builds **websites, business apps and AI automation**: systems that save a team hours every week, not just look good.",
+      "As Head of New Technology at a digital agency, I build systems people use every day: an ERP, an HR system, a learning platform, and AI that screens candidates and answers sales chats on WhatsApp.",
+      "I handle the whole thing myself, from understanding the business problem to design, development and launch. So you work with **one person who owns the result**.",
     ],
     status: "Available",
     profileCta: "Let's talk",

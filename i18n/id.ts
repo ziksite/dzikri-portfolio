@@ -50,9 +50,9 @@ export const id: Dictionary = {
     heading: "Tentang Saya",
     greeting: "Halo, saya Dzikri.",
     paragraphs: [
-      "Saya bergerak di bidang teknologi dan inovasi, membangun sistem digital, produk, dan otomasi untuk menyelesaikan masalah bisnis nyata.",
-      "Pekerjaan saya berada di persimpangan **teknologi, produk, bisnis, dan operasional** — mengubah ide dan tantangan operasional menjadi solusi yang praktis dan scalable.",
-      "Dari platform digital dan sistem internal hingga CRM, analitik, AI, dan otomasi, saya memastikan teknologi bekerja sebagai **penggerak bisnis**, bukan sekadar alat tambahan.",
+      "Saya web developer yang membuat **website, aplikasi bisnis, dan otomasi AI**: sistem yang menghemat waktu tim setiap minggu, bukan sekadar terlihat bagus.",
+      "Sebagai Head of New Technology di sebuah agensi digital, saya membangun sistem yang dipakai setiap hari: ERP, sistem HR, platform pembelajaran, sampai AI yang menyaring kandidat dan membalas chat penjualan di WhatsApp.",
+      "Saya mengerjakan semuanya sendiri, dari memahami masalah bisnis, desain, development, sampai launch. Jadi Anda bekerja dengan **satu orang yang bertanggung jawab atas hasilnya**.",
     ],
     status: "Tersedia",
     profileCta: "Ayo ngobrol",
