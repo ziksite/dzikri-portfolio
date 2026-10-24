@@ -19,6 +19,7 @@ export function Navbar({ lang, t }: { lang: Locale; t: Dictionary["nav"] }) {
   const navLinks = [
     { name: t.home, href: localePath(lang, "/") + "#home", page: null },
     { name: t.about, href: localePath(lang, "/") + "#about", page: null },
+    { name: t.services, href: localePath(lang, "/") + "#services", page: null },
     { name: t.projects, href: localePath(lang, "/projects"), page: "/projects" },
     { name: t.blog, href: localePath(lang, "/blog"), page: "/blog" },
     { name: t.contact, href: localePath(lang, "/") + "#contact", page: null },

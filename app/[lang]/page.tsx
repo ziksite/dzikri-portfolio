@@ -4,6 +4,7 @@ import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { HeroSection } from "@/sections/HeroSection";
 import { InfoBar } from "@/sections/InfoBar";
 import { AboutSection } from "@/sections/AboutSection";
+import { ServicesSection } from "@/sections/ServicesSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { TimelineSection } from "@/sections/TimelineSection";
 import { ContactSection } from "@/sections/ContactSection";
@@ -28,7 +29,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <main className="flex flex-col min-h-screen">
         <HeroSection t={t.hero} name="Dzikri Ramadhan" />
         <InfoBar items={t.quickInfo} />
-        <AboutSection about={t.about} whatIDo={t.whatIDo} techStack={t.techStack} whatsappUrl={whatsappUrl()} />
+        <AboutSection about={t.about} techStack={t.techStack} whatsappUrl={whatsappUrl()} />
+        <ServicesSection t={t.services} />
         <ProjectsSection projects={projects} lang={lang} t={t.projects} />
         <TimelineSection t={t.journey} />
         <ContactSection t={t.contact} workHref="#projects" />

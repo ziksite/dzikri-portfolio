@@ -12,6 +12,7 @@ export const en = {
   nav: {
     home: "Home",
     about: "About",
+    services: "Services",
     projects: "Projects",
     blog: "Blog",
     contact: "Contact",
@@ -39,8 +40,8 @@ export const en = {
 
   // `live` shows a green availability dot
   quickInfo: [
-    { label: "Focus", value: "Technology & Innovation", live: false },
-    { label: "Building", value: "Systems · Products · Automation", live: false },
+    { label: "Focus", value: "Web Development & AI Automation", live: false },
+    { label: "Building", value: "Websites · Web Apps · Automation", live: false },
     { label: "Open to", value: "Remote & freelance projects", live: true },
     { label: "Based in", value: "Jakarta, Indonesia · GMT+7", live: false },
   ],
@@ -57,29 +58,35 @@ export const en = {
     profileCta: "Let's talk",
   },
 
-  whatIDo: {
-    heading: "What I Do",
-    badge: "Expertise",
+  services: {
+    heading: "Services",
+    intro: "Four ways I help businesses grow, each one built around how your business actually runs, not a template.",
+    cta: "Discuss this",
+    whatsappMessage: "Hi Dzikri, I'm interested in: {service}",
     items: [
       {
-        title: "Technology Strategy",
-        text: "Designing technology direction, architecture, and roadmaps aligned with business goals.",
+        id: "website",
+        title: "Business Websites & Landing Pages",
+        text: "Fast, SEO-ready company profiles and landing pages designed to turn visitors into inquiries.",
+        points: ["Company profile & landing page", "SEO & analytics set up from day one", "Built to load fast on mobile"],
       },
       {
-        title: "Digital Transformation",
-        text: "Turning manual and fragmented processes into integrated digital systems.",
+        id: "webapp",
+        title: "Web Apps & Internal Systems",
+        text: "Custom dashboards, booking, CRM and operational systems that replace spreadsheets and manual work.",
+        points: ["Dashboards, booking & CRM", "Admin panel your team can run", "Integrations with the tools you already use"],
       },
       {
-        title: "Product & Systems",
-        text: "Building digital products, internal platforms, websites, and business infrastructure.",
+        id: "automation",
+        title: "AI & WhatsApp Automation",
+        text: "AI agents and workflows that answer leads, follow up and report, so your team can focus on closing.",
+        points: ["AI sales agent & WhatsApp chatbot", "Automated follow-ups & reminders", "Reports generated automatically"],
       },
       {
-        title: "Automation & AI",
-        text: "Designing AI-powered workflows and automation to improve efficiency and scale operations.",
-      },
-      {
-        title: "Tech Leadership",
-        text: "Leading teams, projects, and technology initiatives from strategy to execution.",
+        id: "consulting",
+        title: "Digital Audit & Consulting",
+        text: "A clear review of your website, tools and processes, with a prioritized roadmap of what to fix first.",
+        points: ["Website & conversion audit", "Tool and workflow review", "Prioritized action roadmap"],
       },
     ],
   },

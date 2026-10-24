@@ -13,6 +13,7 @@ export const id: Dictionary = {
   nav: {
     home: "Beranda",
     about: "Tentang",
+    services: "Layanan",
     projects: "Proyek",
     blog: "Blog",
     contact: "Kontak",
@@ -39,8 +40,8 @@ export const id: Dictionary = {
   },
 
   quickInfo: [
-    { label: "Fokus", value: "Teknologi & Inovasi", live: false },
-    { label: "Membangun", value: "Sistem · Produk · Otomasi", live: false },
+    { label: "Fokus", value: "Web Development & Otomasi AI", live: false },
+    { label: "Membangun", value: "Website · Aplikasi Web · Otomasi", live: false },
     { label: "Terbuka untuk", value: "Proyek remote & freelance", live: true },
     { label: "Berbasis di", value: "Jakarta, Indonesia · GMT+7", live: false },
   ],
@@ -57,29 +58,35 @@ export const id: Dictionary = {
     profileCta: "Ayo ngobrol",
   },
 
-  whatIDo: {
-    heading: "Yang Saya Kerjakan",
-    badge: "Keahlian",
+  services: {
+    heading: "Layanan",
+    intro: "Empat cara saya membantu bisnis bertumbuh, semuanya dirancang dari cara bisnis Anda berjalan, bukan dari template.",
+    cta: "Diskusikan",
+    whatsappMessage: "Halo Dzikri, saya tertarik dengan: {service}",
     items: [
       {
-        title: "Strategi Teknologi",
-        text: "Merancang arah teknologi, arsitektur, dan roadmap yang selaras dengan tujuan bisnis.",
+        id: "website",
+        title: "Website Bisnis & Landing Page",
+        text: "Company profile dan landing page yang cepat, siap SEO, dan dirancang mengubah pengunjung jadi calon klien.",
+        points: ["Company profile & landing page", "SEO & analytics terpasang sejak awal", "Cepat diakses dari HP"],
       },
       {
-        title: "Transformasi Digital",
-        text: "Mengubah proses manual dan terpecah-pecah menjadi sistem digital yang terintegrasi.",
+        id: "webapp",
+        title: "Aplikasi Web & Sistem Internal",
+        text: "Dashboard, booking, CRM, dan sistem operasional custom yang menggantikan spreadsheet dan kerja manual.",
+        points: ["Dashboard, booking & CRM", "Panel admin yang bisa dikelola tim Anda", "Terintegrasi dengan tools yang sudah dipakai"],
       },
       {
-        title: "Produk & Sistem",
-        text: "Membangun produk digital, platform internal, website, dan infrastruktur bisnis.",
+        id: "automation",
+        title: "Otomasi AI & WhatsApp",
+        text: "AI agent dan alur kerja otomatis yang membalas leads, follow-up, dan membuat laporan, agar tim fokus closing.",
+        points: ["AI sales agent & chatbot WhatsApp", "Follow-up & pengingat otomatis", "Laporan dibuat otomatis"],
       },
       {
-        title: "Otomasi & AI",
-        text: "Merancang workflow berbasis AI dan otomasi untuk meningkatkan efisiensi dan menskalakan operasional.",
-      },
-      {
-        title: "Kepemimpinan Teknologi",
-        text: "Memimpin tim, proyek, dan inisiatif teknologi dari strategi hingga eksekusi.",
+        id: "consulting",
+        title: "Audit & Konsultasi Digital",
+        text: "Tinjauan jelas atas website, tools, dan proses Anda, dengan roadmap prioritas apa yang perlu dibenahi dulu.",
+        points: ["Audit website & konversi", "Review tools dan alur kerja", "Roadmap aksi berdasarkan prioritas"],
       },
     ],
   },

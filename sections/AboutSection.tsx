@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import {
-  Terminal, Sparkles, Database, Server, GitBranch, Plug, Users, BarChart3,
+  Terminal, Database, Server, GitBranch, Plug, Users, BarChart3,
   PenTool, Boxes, Bot, Workflow,
 } from "lucide-react";
 import {
@@ -109,12 +109,10 @@ const card =
 
 export function AboutSection({
   about,
-  whatIDo,
   techStack,
   whatsappUrl,
 }: {
   about: Dictionary["about"];
-  whatIDo: Dictionary["whatIDo"];
   techStack: Dictionary["techStack"];
   whatsappUrl: string;
 }) {
@@ -154,39 +152,15 @@ export function AboutSection({
           {/* Profile */}
           <ProfileCard t={about} whatsappUrl={whatsappUrl} />
 
-          {/* What I Do */}
-          <motion.div {...reveal(0.2)} className={`lg:col-span-5 ${card} relative overflow-hidden flex flex-col`}>
-            <div className="absolute top-6 right-6 px-3 py-1.5 bg-primary text-secondary rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
-              {whatIDo.badge}
-            </div>
-            <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center mb-8 bg-gray-50 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-              <Sparkles size={22} />
-            </div>
-            <h3 className="text-2xl font-black uppercase tracking-tight mb-8">{whatIDo.heading}</h3>
-            <ol className="space-y-6">
-              {whatIDo.items.map((item, i) => (
-                <li key={item.title} className="flex gap-4">
-                  <span className="text-xs font-black text-gray-400 tabular-nums pt-0.5">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex flex-col border-l-2 border-foreground/10 hover:border-foreground pl-4 transition-colors">
-                    <span className="text-sm font-black uppercase tracking-wide text-foreground mb-1">{item.title}</span>
-                    <span className="text-xs text-gray-500 font-medium leading-relaxed">{item.text}</span>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
-
           {/* Tech Stack */}
-          <motion.div {...reveal(0.3)} className={`lg:col-span-7 ${card} flex flex-col`}>
+          <motion.div {...reveal(0.2)} className={`md:col-span-2 lg:col-span-12 ${card} flex flex-col`}>
             <div className="flex items-center gap-3 mb-3">
               <Terminal className="text-foreground" />
               <h3 className="text-2xl font-black uppercase tracking-tight">{techStack.heading}</h3>
             </div>
             <p className="text-sm text-gray-500 font-medium leading-relaxed mb-8">{techStack.intro}</p>
 
-            <div className="space-y-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
               {techStack.groups.map((group) => (
                 <div key={group.name}>
                   <div className="text-[10px] font-black tracking-widest text-gray-400 uppercase mb-3">
