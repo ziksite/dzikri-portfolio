@@ -50,6 +50,7 @@ export function FloatingWhatsApp({ t }: { t: Dictionary["whatsapp"] }) {
           {/* Button */}
           <a
             href={whatsappUrl()}
+            data-lead-location="floating_button"
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setShowTooltip(true)}

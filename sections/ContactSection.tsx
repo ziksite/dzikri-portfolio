@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { EMAIL, socialLinks, whatsappUrl } from "@/lib/site";
+import { trackLead } from "@/lib/analytics";
 import { SocialIcon } from "@/components/SocialIcon";
 
 const inputClass =
@@ -25,6 +26,7 @@ export function ContactSection({ t, workHref }: { t: Dictionary["contact"]; work
       form.topic && `${t.form.topic}: ${form.topic}`,
       form.message && `\n${form.message}`,
     ].filter(Boolean);
+    trackLead("whatsapp", "contact_form");
     window.open(whatsappUrl(lines.join("\n")), "_blank", "noopener,noreferrer");
   };
 

@@ -242,6 +242,7 @@ export default async function CaseStudyPage({ params }: Params) {
                 )}
                 <a
                   href={waLink}
+                  data-lead-location="project_detail"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(

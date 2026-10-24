@@ -6,6 +6,8 @@ import "../globals.css";
 import { getDictionary } from "@/i18n";
 import { isLocale, languageAlternates, locales, SITE_URL } from "@/lib/i18n";
 import { pageOpenGraph } from "@/lib/seo";
+import { GTM_ID } from "@/lib/analytics";
+import { LeadTracker } from "@/components/LeadTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,17 +45,17 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={`${inter.variable} antialiased`}>
         {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZNHQRGP1LJ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-ZNHQRGP1LJ');
-          `}
+        <LeadTracker />
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
       </body>
     </html>
