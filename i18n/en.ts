@@ -76,8 +76,8 @@ export const en = {
       },
       {
         id: "automation",
-        title: "WhatsApp Chatbot & AI",
-        text: "Reply to customers 24/7, follow up automatically, and log orders straight from WhatsApp.",
+        title: "AI Automation",
+        text: "AI that does the repetitive work for you: screening CVs and leads, answering WhatsApp chats, writing reports and documents, and entering data.",
       },
       {
         id: "consulting",

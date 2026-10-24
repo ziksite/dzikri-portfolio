@@ -76,8 +76,8 @@ export const id: Dictionary = {
       },
       {
         id: "automation",
-        title: "Chatbot WhatsApp & AI",
-        text: "Balas chat pelanggan otomatis 24 jam, follow-up, dan rekap pesanan langsung dari WhatsApp.",
+        title: "AI Automation",
+        text: "AI yang mengerjakan pekerjaan berulang secara otomatis: screening CV & leads, membalas chat WhatsApp, membuat laporan & dokumen, sampai input data.",
       },
       {
         id: "consulting",

@@ -31,7 +31,7 @@ const PERSON_ID = `${SITE_URL}/#person`;
 const SERVICES = [
   { name: "Website Design & Development", description: "Company profiles, landing pages, online stores and custom websites." },
   { name: "Business Apps & Internal Systems", description: "POS, inventory, booking, customer data and reporting systems." },
-  { name: "WhatsApp Chatbot & AI Automation", description: "24/7 WhatsApp replies, automated follow-ups and order logging." },
+  { name: "AI Automation", description: "AI workflows for CV and lead screening, WhatsApp replies, reports, documents and data entry." },
   { name: "Website & Digital Consulting", description: "Website and digital audits with clear, prioritized fixes." },
 ];
 
