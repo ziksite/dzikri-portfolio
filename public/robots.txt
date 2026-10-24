@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin-cms
 Disallow: /api/
 
-Sitemap: https://dzikri.ziksite.my.id/sitemap.xml
+Sitemap: https://dzikriramadhan.com/sitemap.xml

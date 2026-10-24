@@ -19,7 +19,7 @@ const text = `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"
   <rect x="70" y="372" width="80" height="6" fill="#fff"/>
   <text x="70" y="430" class="t" font-size="30" font-weight="800" letter-spacing="2">TECHNOLOGY &amp; INNOVATION</text>
   <text x="70" y="478" class="t" font-size="22" font-weight="500" fill-opacity="0.65">Systems · Products · Automation · AI</text>
-  <text x="70" y="568" class="t" font-size="20" font-weight="600" fill-opacity="0.45">dzikri.ziksite.my.id</text>
+  <text x="70" y="568" class="t" font-size="20" font-weight="600" fill-opacity="0.45">dzikriramadhan.com</text>
 </svg>`;
 
 await sharp({ create: { width: W, height: H, channels: 3, background: "#0f0f0f" } })
