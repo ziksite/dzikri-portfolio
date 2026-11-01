@@ -53,7 +53,9 @@ Tanggal hari ini: **Minggu, 1 November 2026**. Semua tanggal contoh di prototype
 
 ## 5. Design system per situs (inti pekerjaan)
 
-1. Pilih **1–2 referensi produk nyata** dari `study-cases/_design-reference/{landing,flow-form,dashboard}` yang paling cocok dengan model bisnisnya. Lihat referensinya di resolusi cukup besar (crop + zoom) sebelum menulis CSS.
+Urutan wajib: **cari referensi → susun design system → baru bangun desain.** Halaman publik harus terasa seperti brand konsumen, bukan dashboard. Referensi dashboard hanya untuk layar operasional.
+
+1. Pilih **1–2 referensi produk nyata** yang terbaik di kategorinya, dari riset baru (`_tools/refshot.mjs <nama> <url> <folder>`) atau dari `study-cases/_design-reference/{landing,flow-form,dashboard}`. Lihat referensinya di resolusi cukup besar (crop + zoom) sebelum menulis CSS.
 2. Turunkan token (warna, font Google yang paling mirip, skala teks, radius, bayangan) dan pola komponen **dari referensi itu**. Warna aksi boleh diganti warna brand asli situs (dijenuhkan, rata, tanpa gradien).
 3. Struktur halaman mengikuti pola produk referensi, bukan komposisi bebas.
 4. CSS mandiri di `ds/<slug>.css`. **Jangan** memuat `_ds/lapak.css`. Hindari referensi yang sudah dipakai berpasangan di situs lain kalau ada alternatif yang cocok, supaya portfolio tidak seragam.

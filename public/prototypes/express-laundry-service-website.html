@@ -3,275 +3,301 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bilas Laundry — Antar-jemput gratis, jam kembali terlihat sebelum pesan</title>
+<title>Bilas — Kotor kami jemput, bersih kami antar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Red+Hat+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="ds/express-laundry-service-website.css">
 </head>
 <body>
 
 <!-- ================= BERANDA ================= -->
 <section data-screen="home">
+  <div data-nav-slot></div>
+
   <div class="hero">
-    <div class="wrap">
-      <header class="header">
-        <a class="logo" href="#home">bilas</a>
-        <nav class="nav"><a href="#home" data-scroll="harga">Harga</a><a href="#home" data-scroll="satuan">Satuan</a><a href="#home" data-scroll="area">Area</a><a href="#home" data-scroll="tanya">Pertanyaan</a></nav>
-        <div class="header__right"><a class="btn btn-line btn-sm" href="#lacak">Lacak nota</a><a class="btn btn-sun btn-sm" href="#pesan">Pesan jemput</a></div>
-      </header>
-      <div class="hero__head">
-        <h1 class="t-hero">Laundry antar-jemput gratis, dengan jam kembali yang bisa dihitung sebelum memesan.</h1>
-        <p>Pilih kecepatan dari target 3 jam sampai reguler. Harga per kg sama di 20 outlet di Semarang dan Ungaran, buka setiap hari 08.00–22.00.</p>
+    <h1 class="d1"><span>Kotor kami jemput.</span><span class="white">Bersih kami antar.</span></h1>
+    <div class="hero__row">
+      <div class="pick">
+        <label class="pick__seg"><b>Kawasan</b><select id="heroArea" aria-label="Kawasan"></select></label>
+        <label class="pick__seg"><b>Jam jemput</b><select id="heroSlot" aria-label="Jam jemput"></select></label>
+        <a class="pick__go" href="#pesan" aria-label="Lanjut pesan jemput"><i data-lucide="arrow-right"></i></a>
       </div>
+      <p class="hero__note"><span class="lb lb--lg">Cuci setrika mulai Rp7.000/kg. Paket tercepat punya target 3 jam sejak ditimbang.</span></p>
+    </div>
+    <div class="strip">
+      <span>20 outlet</span><span>Buka setiap hari 08.00–22.00</span><span>Antar-jemput gratis</span><span>Minimal tagihan 3 kg</span><span>CS 24 jam</span>
     </div>
   </div>
 
-  <div class="wrap">
-    <div class="board">
-      <div class="board__bar">
-        <div class="seg" id="svcSeg"><button type="button" class="is-active" data-svc="setrika">Cuci setrika</button><button type="button" data-svc="lipat">Cuci lipat</button></div>
-        <div class="field-inline">Berat
-          <div class="stepper" data-stepper data-min="3" data-max="30" id="kgHome"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output data-kg>5</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div>
-          kg
+  <!-- Paket -->
+  <section class="band bg-tomat" id="paket">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="d2">Pilih secepat apa.</h2>
+        <div class="ctrl">
+          <div class="seg" id="svcHome"><button type="button" class="is-active" data-svc="setrika">Cuci setrika</button><button type="button" data-svc="lipat">Cuci lipat</button></div>
+          <div class="stepper" data-stepper data-min="3" data-max="30" id="kgHome"><button type="button" aria-label="Kurangi berat"><i data-lucide="minus"></i></button><span class="stepper__val"><output data-kg>5</output> kg</span><button type="button" data-inc aria-label="Tambah berat"><i data-lucide="plus"></i></button></div>
         </div>
-        <label class="field-inline">Jemput <select id="slotSel" aria-label="Jam jemput"></select></label>
       </div>
-      <div class="bd-head">
-        <span>Paket</span><span>Per kg</span>
-        <div class="bd-axis" title="Sejak ditimbang" id="bdAxis"></div>
-        <span>Target kembali</span><span class="r" id="bdTotalHead">Total 5 kg</span>
-      </div>
-      <span id="harga"></span><div id="bdRows"></div>
-      <div class="board__foot">
-        <p class="t-small">Target dihitung sejak cucian ditimbang di outlet, bukan sejak order. Antar-jemput gratis di semua paket, minimal tagihan 3 kg. Hasil akhir mengikuti berat timbangan.</p>
-        <a class="btn btn-primary" href="#pesan" id="boardCta">Pesan</a>
-      </div>
+      <div class="speeds" id="speeds"></div>
+      <p class="fine"><span class="lb">Target dihitung sejak cucian ditimbang di outlet, bukan sejak order. Antar-jemput gratis di semua paket. Total akhir mengikuti berat timbangan.</span></p>
     </div>
+  </section>
 
-    <section class="section">
-      <div class="sec-head">
-        <h2 class="t-h2">Kapan target 3 jam berlaku</h2>
-        <p class="t-meta">Target layanan, bukan jaminan mutlak. Syaratnya ditulis di sini supaya bisa dipertimbangkan sebelum memesan.</p>
-      </div>
-      <div class="photo band" data-img="assets/express-laundry-service-website/mesin-pengering.webp"></div>
-      <dl class="terms">
-        <div><dt>Jam mulai dihitung</dt><dd>Saat cucian selesai ditimbang di outlet</dd></div>
-        <div><dt>Batas timbang harian</dt><dd>18.30 untuk 3 Jam, 15.30 untuk 6 Jam</dd></div>
-        <div><dt>Bahan</dt><dd>Selimut tebal, jas, dan kain mudah luntur masuk layanan satuan</dd></div>
-        <div><dt>Kalau antrean mesin penuh</dt><dd>Slot paket cepat ditutup, dan CS mengabari jika target bergeser</dd></div>
-      </dl>
-    </section>
-
-    <section class="section">
-      <div class="proc">
+  <!-- Syarat target -->
+  <section class="band bg-lemon" id="syarat">
+    <div class="wrap">
+      <div class="cond">
         <div>
-          <h2 class="t-h2" style="margin-bottom:24px">Dari jemput sampai diantar</h2>
-          <ol class="steps">
-            <li class="step"><b>Pilih paket dan jam jemput</b><span>Tanpa chat bolak-balik. Bisa juga lewat WhatsApp jika lebih nyaman.</span></li>
-            <li class="step"><b>Kurir menjemput</b><span>Ke rumah, kos, apartemen, atau hotel. Tas cucian diberi label nomor nota.</span></li>
-            <li class="step"><b>Ditimbang di outlet</b><span>Berat dan total dikirim ke WhatsApp. Target mulai dihitung dari sini.</span></li>
-            <li class="step"><b>Dicuci, dikeringkan, disetrika</b><span>Tahap dan jamnya terlihat di halaman lacak, per nomor nota.</span></li>
-            <li class="step"><b>Dikemas dan diantar</b><span>Dibungkus plastik bernomor, diantar kembali ke alamat yang sama.</span></li>
-          </ol>
+          <h2 class="d2">3 jam itu target. Ini syaratnya.</h2>
+          <p class="cond__lead">Bukan janji mutlak. Kami tulis di sini supaya kamu bisa menimbang sebelum memesan.</p>
         </div>
-        <div class="proc__media">
-          <div class="photo" data-img="assets/express-laundry-service-website/tas-jemputan.webp"></div>
-          <div class="photo" data-img="assets/express-laundry-service-website/paket-siap-antar.webp"></div>
-        </div>
+        <dl class="terms">
+          <div><dt>Jam mulai dihitung</dt><dd>Saat cucian selesai ditimbang di outlet</dd></div>
+          <div><dt>Batas timbang harian</dt><dd>18.30 untuk 3 Jam, 15.30 untuk 6 Jam</dd></div>
+          <div><dt>Bahan</dt><dd>Selimut tebal, jas, dan kain mudah luntur masuk layanan satuan</dd></div>
+          <div><dt>Kalau antrean mesin penuh</dt><dd>Slot paket cepat ditutup, CS mengabari jika target bergeser</dd></div>
+        </dl>
       </div>
-    </section>
-
-    <section class="section" id="satuan">
-      <div class="sec-head">
-        <h2 class="t-h2">Cuci satuan</h2>
-        <p class="t-meta">Untuk barang yang tidak masuk hitungan kiloan. Harga promo per barang, dijemput bersama cucian lain.</p>
-      </div>
-      <div class="satuan">
-        <div><span class="t-meta">Boneka</span><b>Rp20.000</b><span class="t-small">per pcs</span></div>
-        <div><span class="t-meta">Sepatu</span><b>Rp25.000</b><span class="t-small">per pasang</span></div>
-        <div><span class="t-meta">Bedcover</span><b>Rp20.000</b><span class="t-small">per pcs</span></div>
-        <div><span class="t-meta">Bantal atau guling</span><b>Rp25.000</b><span class="t-small">per pcs</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="area">
-      <div class="sec-head">
-        <h2 class="t-h2">20 outlet, per kawasan</h2>
-        <div class="chips" id="areaChips"></div>
-      </div>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Kawasan</th><th>Outlet</th><th>Jemput terakhir hari ini</th><th style="width:300px">Kapasitas paket 3 Jam hari ini</th><th class="r">Status</th></tr></thead>
-          <tbody id="areaRows"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section" id="tanya">
-      <div class="faq-grid">
-        <div><h2 class="t-h2">Pertanyaan</h2><p class="t-meta" style="margin:8px 0 16px">CS membalas lewat WhatsApp 24 jam.</p><a class="btn btn-line btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Chat WhatsApp</a></div>
-        <div class="faq">
-          <details open><summary>Ada minimal order untuk antar-jemput?</summary><p>Tidak ada minimal berat untuk dijemput, tetapi tagihan dihitung minimal 3 kg. Jadi cucian 2 kg ditagih seperti 3 kg.</p></details>
-          <details><summary>Berapa lama reguler selesai?</summary><p>Reguler butuh 2 sampai 3 hari sejak ditimbang. Paket express punya target 3, 6, 12, dan 24 jam.</p></details>
-          <details><summary>Bagaimana jika ada pakaian hilang atau rusak?</summary><p>Saat menimbang, kasir mengecek bahan yang mudah rusak atau luntur. Jika ragu, kami sarankan layanan satuan. Tanggung jawab atas kerusakan atau kehilangan mengikuti ketentuan yang tertulis di nota.</p></details>
-          <details><summary>Daerah mana yang dijangkau?</summary><p>Seluruh Kota Semarang dan sebagian Ungaran. Pilih kawasan di form pesan untuk melihat jam jemput yang tersedia.</p></details>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__grid">
-        <div class="stack"><span class="logo">bilas</span><p class="t-small">Laundry kiloan dan satuan dengan antar-jemput gratis. Setiap hari 08.00–22.00.</p></div>
-        <div><h4>Layanan</h4><ul><li><a href="#pesan">Cuci setrika</a></li><li><a href="#pesan">Cuci lipat</a></li><li><a href="#home">Cuci satuan</a></li></ul></div>
-        <div><h4>Pelanggan</h4><ul><li><a href="#pesan">Pesan jemput</a></li><li><a href="#lacak">Lacak nota</a></li><li><a href="#">WhatsApp CS</a></li></ul></div>
-        <div><h4>Outlet</h4><ul><li><a href="#kasir">Layar kasir</a></li><li><a href="#">Instagram</a></li></ul></div>
-      </div>
-      <p class="t-small" style="margin-top:32px">© 2026 Bilas Laundry. Harga dapat berubah sewaktu-waktu.</p>
+      <div class="strip-photo photo" data-img="assets/express-laundry-service-website/mesin-pengering.webp"></div>
     </div>
+  </section>
+
+  <!-- Cara kerja -->
+  <section class="block bg-anggur" id="cara">
+    <div class="wrap how">
+      <div class="how__media">
+        <div class="photo a" data-img="assets/express-laundry-service-website/tas-jemputan.webp"></div>
+        <div class="photo b" data-img="assets/express-laundry-service-website/paket-siap-antar.webp"></div>
+      </div>
+      <div>
+        <h2 class="d2">Kamu pesan. Sisanya urusan kami.</h2>
+        <ol class="steps">
+          <li><b>1</b><h3>Pilih paket dan jam jemput</h3><p>Tanpa chat bolak-balik. Lewat WhatsApp juga bisa kalau lebih nyaman.</p></li>
+          <li><b>2</b><h3>Kurir menjemput</h3><p>Ke rumah, kos, apartemen, atau hotel. Tas cucian diberi label nomor nota.</p></li>
+          <li><b>3</b><h3>Ditimbang di outlet</h3><p>Berat dan total dikirim ke WhatsApp. Target mulai dihitung dari sini.</p></li>
+          <li><b>4</b><h3>Dicuci, dikeringkan, disetrika</h3><p>Tahapnya terlihat di halaman lacak, per nomor nota.</p></li>
+          <li><b>5</b><h3>Dikemas dan diantar</h3><p>Dibungkus plastik bernomor, diantar kembali ke alamat yang sama.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Satuan -->
+  <section class="block bg-air" id="satuan">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="d2">Yang tak masuk timbangan.</h2>
+        <p><span class="lb">Harga per barang, dijemput bersama cucian lain.</span></p>
+      </div>
+      <div class="items">
+        <div class="item"><h3>Boneka</h3><b>Rp20.000</b><span>per pcs</span></div>
+        <div class="item"><h3>Sepatu</h3><b>Rp25.000</b><span>per pasang</span></div>
+        <div class="item"><h3>Bedcover</h3><b>Rp20.000</b><span>per pcs</span></div>
+        <div class="item"><h3>Bantal atau guling</h3><b>Rp25.000</b><span>per pcs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area -->
+  <section class="block bg-tomat" id="area">
+    <div class="wrap area">
+      <div>
+        <h2 class="d2">20 outlet di Semarang dan Ungaran.</h2>
+        <div class="area-pills" id="areaPills"></div>
+      </div>
+      <div class="area-card" id="areaCard"></div>
+    </div>
+  </section>
+
+  <!-- Tanya jawab -->
+  <section class="qa" id="tanya">
+    <div class="wrap" style="display:contents">
+      <div class="qa__side">
+        <h2 class="d2">Tanya jawab.</h2>
+        <p>CS membalas lewat WhatsApp 24 jam.</p>
+        <a class="btn" href="#">Chat WhatsApp<span class="btn__dot"><i data-lucide="message-circle"></i></span></a>
+      </div>
+      <div class="faq">
+        <details open><summary>Ada minimal order untuk antar-jemput?<i data-lucide="plus"></i></summary><p>Tidak ada minimal berat untuk dijemput, tetapi tagihan dihitung minimal 3 kg. Jadi cucian 2 kg ditagih seperti 3 kg.</p></details>
+        <details><summary>Berapa lama reguler selesai?<i data-lucide="plus"></i></summary><p>Reguler butuh 2 sampai 3 hari sejak ditimbang. Paket express punya target 3, 6, 12, dan 24 jam.</p></details>
+        <details><summary>Bagaimana jika ada pakaian hilang atau rusak?<i data-lucide="plus"></i></summary><p>Saat menimbang, kasir mengecek bahan yang mudah rusak atau luntur. Jika ragu, kami sarankan layanan satuan. Tanggung jawab atas kerusakan atau kehilangan mengikuti ketentuan yang tertulis di nota.</p></details>
+        <details><summary>Daerah mana yang dijangkau?<i data-lucide="plus"></i></summary><p>Seluruh Kota Semarang dan sebagian Ungaran. Pilih kawasan saat memesan untuk melihat jam jemput yang tersedia.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Penutup -->
+  <section class="block bg-lemon closing">
+    <h2 class="d1">Cucianmu,<br>beres.</h2>
+    <a class="btn" href="#pesan">Pesan jemput<span class="btn__dot"><i data-lucide="arrow-right"></i></span></a>
+  </section>
+
+  <footer class="foot">
+    <div class="foot__top">
+      <div><h4>Layanan</h4><ul><li><a href="#pesan">Cuci setrika</a></li><li><a href="#pesan">Cuci lipat</a></li><li><a href="#home" data-scroll="satuan">Cuci satuan</a></li></ul></div>
+      <div><h4>Pelanggan</h4><ul><li><a href="#pesan">Pesan jemput</a></li><li><a href="#lacak">Lacak nota</a></li><li><a href="#">WhatsApp CS</a></li></ul></div>
+      <div><h4>Outlet</h4><ul><li><a href="#kasir">Layar kasir</a></li><li><a href="#">Instagram</a></li></ul></div>
+      <p>Laundry kiloan dan satuan dengan antar-jemput gratis. Buka setiap hari 08.00–22.00.</p>
+    </div>
+    <span class="foot__word">bilas</span>
+    <p class="foot__legal">© 2026 Bilas Laundry. Harga dapat berubah sewaktu-waktu.</p>
   </footer>
 </section>
 
-<!-- ================= PESAN JEMPUT ================= -->
+<!-- ================= PESAN ================= -->
 <section data-screen="pesan">
-  <div class="app">
-    <div class="topbar"><div class="wrap">
-      <a class="icon-btn" href="#home" aria-label="Kembali"><i data-lucide="arrow-left" class="i-sm"></i></a>
-      <a class="logo" href="#home">bilas</a>
-      <span class="t-meta">Pesan jemput</span>
-      <a class="btn btn-line btn-sm" href="#lacak" style="margin-left:auto">Lacak nota</a>
-    </div></div>
+  <div class="flow-page" id="flowPage" data-step="1">
+    <div data-nav-slot></div>
 
-    <form class="order" data-demo-form="#orderDone" id="orderForm">
-      <div class="wrap cols">
-        <div class="col">
-          <p class="col__t"><span>1</span>Paket</p>
-          <div class="seg" id="svcSeg2" style="align-self:flex-start"><button type="button" class="is-active" data-svc="setrika">Cuci setrika</button><button type="button" data-svc="lipat">Cuci lipat</button></div>
-          <div class="pks" id="pkList"></div>
-          <div class="row-between">
-            <div><p style="font-weight:600">Perkiraan berat</p><p class="t-small">Sekitar 1 kg = 4–5 potong baju. Minimal tagihan 3 kg</p></div>
-            <div class="stepper" data-stepper data-min="3" data-max="30" id="kgOrder"><button type="button" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><output data-kg>5</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></div>
+    <form id="orderForm" data-demo-form="#orderDone">
+      <div class="flow">
+        <div class="flow__q">
+          <div class="bars" id="bars"></div>
+          <span class="lb" id="qStep"></span>
+          <h1 class="d2" id="qTitle"></h1>
+          <p class="hint" id="qHint"></p>
+        </div>
+
+        <div data-pane="1">
+          <div class="choices" id="svcChoices"></div>
+          <div class="weigh" data-stepper data-min="3" data-max="30" id="kgOrder">
+            <div>
+              <div class="weigh__n"><span data-kgtxt>5</span> <small>kg</small></div>
+              <p>Sekitar 1 kg = 4–5 potong baju. Minimal tagihan 3 kg.</p>
+            </div>
+            <output data-kg>5</output>
+            <div class="weigh__ctrl"><button type="button" aria-label="Kurangi berat"><i data-lucide="minus"></i></button><button type="button" data-inc aria-label="Tambah berat"><i data-lucide="plus"></i></button></div>
           </div>
         </div>
 
-        <div class="col">
-          <p class="col__t"><span>2</span>Jam jemput</p>
-          <div class="chips" id="dayChips"><button type="button" class="chip is-active" data-day="0">Hari ini, Min 1 Nov</button><button type="button" class="chip" data-day="1">Besok, Sen 2 Nov</button></div>
+        <div data-pane="2" hidden>
+          <div class="opts">
+            <div class="seg" id="daySeg"><button type="button" class="is-active" data-day="0">Hari ini, Min 1 Nov</button><button type="button" data-day="1">Besok, Sen 2 Nov</button></div>
+            <label class="select">Kawasan <select id="areaSel" aria-label="Kawasan"></select></label>
+          </div>
           <div class="slots" id="slotGrid"></div>
-          <p class="t-small">Slot ditutup bila kurir kawasan penuh. Kurir mengabari 15 menit sebelum tiba.</p>
-          <div class="row-between" style="border-top:1px solid var(--line);padding-top:12px;margin-top:auto">
-            <div><p class="t-small">Target dihitung dari perkiraan timbang</p><p style="font-weight:600" id="weighAt"></p></div>
-            <span class="pill pill--ok"><i data-lucide="truck"></i>Jemput dan antar gratis</span>
-          </div>
         </div>
 
-        <div class="col">
-          <p class="col__t"><span>3</span>Alamat</p>
-          <label class="field">Kawasan<select id="areaSel"><option>Tembalang</option><option>Banyumanik</option><option>Ngaliyan</option><option>Pedurungan</option><option>Candisari</option><option>Gajahmungkur</option><option>Semarang Tengah</option><option>Ungaran</option></select></label>
-          <label class="field">Alamat lengkap<input value="Jl. Mulawarman Selatan, Kos Griya 3 kamar 12"></label>
-          <label class="field">Nama<input value="Dina Anggraeni"></label>
-          <label class="field">Nomor WhatsApp<input value="0812 3456 7788" inputmode="tel"></label>
-          <label class="field field--grow">Catatan untuk kurir<textarea placeholder="Contoh: titip di resepsionis">Ambil di pos satpam kalau saya belum pulang.</textarea></label>
+        <div data-pane="3" hidden>
+          <div class="choices choices--tiers" id="tierChoices"></div>
+        </div>
+
+        <div data-pane="4" hidden>
+          <div class="fields">
+            <label class="field field--full">Alamat lengkap<input value="Jl. Mulawarman Selatan, Kos Griya 3 kamar 12" required></label>
+            <label class="field">Nama<input id="custName" value="Dina Anggraeni" required></label>
+            <label class="field">Nomor WhatsApp<input id="custWa" value="0812 3456 7788" inputmode="tel" required></label>
+            <label class="field field--full">Catatan untuk kurir<textarea rows="2" placeholder="Contoh: titip di resepsionis">Ambil di pos satpam kalau saya belum pulang.</textarea></label>
+          </div>
         </div>
       </div>
 
-      <div class="dock"><div class="wrap">
-        <div class="dock__item"><small>Dijemput</small><b id="dockPick"></b></div>
-        <i data-lucide="arrow-right" class="dock__arrow"></i>
-        <div class="dock__item"><small>Target kembali</small><b id="dockBack"></b></div>
-        <div class="dock__item"><small id="dockPkg"></small><b id="dockTotal"></b></div>
-        <button class="btn btn-primary">Konfirmasi jemput</button>
-      </div></div>
+      <div class="dock">
+        <div class="dock__i dock__i--pick"><small>Dijemput</small><b id="dockPick"></b></div>
+        <div class="dock__i"><small>Target kembali</small><b id="dockBack"></b></div>
+        <div class="dock__i dock__i--total"><small id="dockPkg"></small><b id="dockTotal"></b></div>
+        <div class="dock__act">
+          <button type="button" class="btn btn--back" id="backBtn">Kembali</button>
+          <button type="button" class="btn" id="nextBtn">Lanjut<span class="btn__dot"><i data-lucide="arrow-right"></i></span></button>
+          <button type="submit" class="btn" id="submitBtn" hidden>Konfirmasi jemput<span class="btn__dot"><i data-lucide="check"></i></span></button>
+        </div>
+      </div>
     </form>
 
-    <div class="wrap" id="orderDone" hidden>
-      <div class="done">
-        <span class="done__mark"><i data-lucide="check"></i></span>
-        <h1 class="t-h1">Jemput terjadwal</h1>
-        <p class="muted">Detail dikirim ke WhatsApp 0812 3456 7788. Total akhir mengikuti berat saat ditimbang di outlet.</p>
-        <dl class="kv">
-          <dt>Nomor nota</dt><dd>BLS-20433</dd>
-          <dt>Paket</dt><dd id="doneP"></dd>
-          <dt>Dijemput</dt><dd id="doneJ"></dd>
-          <dt>Target kembali</dt><dd id="doneT"></dd>
-          <dt>Perkiraan total</dt><dd id="doneR"></dd>
-        </dl>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#lacak">Lacak nota</a><a class="btn btn-line" href="#home">Ke beranda</a></div>
+    <div class="done" id="orderDone" hidden>
+      <span class="lb">Nota BLS-20433</span>
+      <div class="done__grid">
+        <div>
+          <h1 class="d1">Jemput terjadwal.</h1>
+          <p class="done__msg"><span class="lb lb--lg" id="doneMsg"></span></p>
+          <div class="done__act">
+            <a class="btn" href="#lacak" id="doneTrack">Lacak nota<span class="btn__dot"><i data-lucide="arrow-right"></i></span></a>
+            <button type="button" class="btn btn--plain" id="doneAgain">Pesan lagi</button>
+          </div>
+        </div>
+        <div class="done__card">
+          <dl class="kv">
+            <div><dt>Paket</dt><dd id="doneP"></dd></div>
+            <div><dt>Dijemput</dt><dd id="doneJ"></dd></div>
+            <div><dt>Target kembali</dt><dd id="doneT"></dd></div>
+            <div class="big"><dt>Perkiraan total</dt><dd id="doneR"></dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= LACAK NOTA ================= -->
+<!-- ================= LACAK ================= -->
 <section data-screen="lacak">
-  <div class="app">
-    <div class="topbar topbar--find"><div class="wrap">
-      <a class="logo" href="#home">bilas</a>
-      <form class="find" id="findForm"><input id="findInput" value="BLS-20418" aria-label="Nomor nota"><button class="btn btn-primary btn-sm">Lacak</button></form>
-      <div class="chips" id="notaChips" style="margin-left:auto"></div>
-    </div></div>
-    <div class="wrap trk" id="trkBody"></div>
+  <div class="track-page" id="trackPage" data-state="ok">
+    <div data-nav-slot></div>
+    <div class="track">
+      <div class="track__top">
+        <form class="find" id="findForm"><input id="findInput" value="BLS-20418" aria-label="Nomor nota"><button>Lacak</button></form>
+        <div class="demo" id="notaChips"></div>
+      </div>
+      <div id="trkBody"></div>
+    </div>
   </div>
 </section>
 
 <!-- ================= TABLET KASIR ================= -->
 <section data-screen="kasir">
-  <div class="stage">
+  <div class="stage-kasir">
     <div class="tablet">
-      <div class="pos">
+      <div class="pos" id="pos">
         <nav class="rail">
-          <span class="logo">bilas</span>
-          <a class="is-active" href="#kasir" aria-label="Nota"><i data-lucide="scale"></i></a>
-          <a href="#kasir" aria-label="Produksi"><i data-lucide="layers"></i></a>
-          <a href="#kasir" aria-label="Kurir"><i data-lucide="truck"></i></a>
-          <a href="#kasir" aria-label="Rekap"><i data-lucide="receipt-text"></i></a>
-          <a href="#home" style="margin-top:auto" aria-label="Keluar"><i data-lucide="log-out"></i></a>
+          <span class="word">bilas</span>
+          <button type="button" class="is-active" data-view="timbang"><i data-lucide="scale"></i>Timbang</button>
+          <button type="button" data-view="produksi"><i data-lucide="layers"></i>Produksi</button>
+          <a href="#home"><i data-lucide="log-out"></i>Keluar</a>
         </nav>
-        <div class="pos__main">
+
+        <div class="pos__main" id="vTimbang">
           <div class="pos__top">
             <h1>Timbang masuk</h1>
-            <span class="pill pill--ok"><i data-lucide="plug"></i>Timbangan terhubung</span>
-            <p class="t-small">Outlet Tembalang · Kasir Rani<br>Minggu, 1 Nov · 12.40</p>
+            <p class="pos__who">Outlet Tembalang, kasir Rani<br>Minggu, 1 Nov, 12.40</p>
           </div>
           <div class="queue" id="queue"></div>
           <div class="seg" id="posSeg" style="align-self:flex-start"><button type="button" class="is-active" data-svc="setrika">Cuci setrika</button><button type="button" data-svc="lipat">Cuci lipat</button></div>
           <div class="tiles" id="tiles"></div>
-          <div class="run">
-            <div class="row-between" style="padding-bottom:10px"><p class="t-h3">Sedang berjalan di outlet</p><span class="t-small">14 nota · 3 paket cepat</span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20418</span><span>Setrika · 6 Jam</span><span class="util" style="--v:62%;--c:var(--blue)"><i></i></span><span class="num r">15.00</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20422</span><span>Kering · 3 Jam</span><span class="util" style="--v:48%;--c:var(--blue)"><i></i></span><span class="num r">14.05</span><span class="r"><span class="pill pill--warn">Mepet</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20425</span><span>Cuci · 12 Jam</span><span class="util" style="--v:18%;--c:var(--blue)"><i></i></span><span class="num r">Sen 08.00</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20423</span><span>Setrika · 3 Jam</span><span class="util" style="--v:74%;--c:var(--blue)"><i></i></span><span class="num r">13.20</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20424</span><span>Kering · 24 Jam</span><span class="util" style="--v:30%;--c:var(--blue)"><i></i></span><span class="num r">Sen 11.15</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20427</span><span>Cuci · 3 Jam</span><span class="util" style="--v:22%;--c:var(--blue)"><i></i></span><span class="num r">15.25</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-            <div class="run__row"><span class="pill pill--id">BLS-20426</span><span>Cuci · 6 Jam</span><span class="util" style="--v:12%;--c:var(--blue)"><i></i></span><span class="num r">18.05</span><span class="r"><span class="pill pill--ok">Sesuai</span></span></div>
-          </div>
         </div>
-        <aside class="pos__side">
-          <div class="row-between">
-            <div><p style="font-weight:600" id="posCust"></p><p class="t-small" id="posMeta"></p></div>
-            <span class="pill pill--id" id="posNota"></span>
+
+        <div class="pos__main" id="vProd" hidden>
+          <div class="pos__top">
+            <h1>Sedang berjalan</h1>
+            <p class="pos__who">14 nota di outlet<br>3 paket cepat</p>
+          </div>
+          <div class="prod" id="prod"></div>
+        </div>
+
+        <aside class="pos__side" id="posSide">
+          <div class="pos__cust">
+            <div><b id="posCust"></b><span id="posMeta"></span></div>
+            <span class="pos__id" id="posNota"></span>
           </div>
           <div class="scale">
-            <div><p class="t-small">Berat</p><output id="posKg">0</output></div>
-            <button type="button" class="btn btn-line btn-sm" id="posRead"><i data-lucide="scale" class="i-sm"></i>Baca timbangan</button>
+            <output id="posKg">0</output>
+            <button type="button" class="btn btn--sm" id="posRead">Baca timbangan</button>
           </div>
           <div class="keys" id="keys"></div>
-          <div class="pos__total">
-            <div class="line"><span id="posLine"></span><span id="posSub" class="num"></span></div>
-            <div class="line t-small" style="color:var(--ink-2)"><span>Target selesai</span><span id="posDue"></span></div>
-            <div class="line line--total"><span>Total</span><span id="posTotal" class="num"></span></div>
+          <div class="pos__sum">
+            <div><span id="posLine"></span><span id="posSub" class="mono"></span></div>
+            <div><span>Target selesai</span><span id="posDue" class="mono"></span></div>
+            <div class="tot"><span>Total</span><b id="posTotal"></b></div>
           </div>
-          <button type="button" class="btn btn-primary btn-block" id="posPrint" style="height:52px"><i data-lucide="printer" class="i-sm"></i>Cetak nota</button>
+          <button type="button" class="pos__print" id="posPrint"><i data-lucide="printer"></i>Cetak nota</button>
         </aside>
+
         <div class="print" id="printView" hidden>
           <div class="receipt" id="receipt"></div>
           <div class="print__side">
-            <h2 class="t-h2">Nota tercetak</h2>
+            <h2 class="d2">Nota tercetak.</h2>
             <p id="printMsg"></p>
-            <button type="button" class="btn btn-sun" id="posNext">Timbang berikutnya</button>
+            <button type="button" class="btn" id="posNext">Timbang berikutnya<span class="btn__dot"><i data-lucide="arrow-right"></i></span></button>
           </div>
         </div>
       </div>
@@ -284,199 +310,254 @@
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };
+  var $$ = function (s) { return document.querySelectorAll(s); };
   var rp = function (n) { return "Rp" + Math.round(n).toLocaleString("id-ID"); };
   var kgTxt = function (n) { return String(Math.round(n * 10) / 10).replace(".", ","); };
-  var icons = function () { if (window.lucide) lucide.createIcons(); };
+  var icons = function () { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 2 } }); };
 
-  // Foto: muat file ke .photo[data-img]
-  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+  /* ---------- Bar navigasi, satu sumber untuk semua layar pelanggan ---------- */
+  var NAV = '<header class="nav"><a class="word" href="#home">bilas</a>' +
+    '<nav class="nav__links"><a href="#home" data-scroll="paket">Harga</a><a href="#home" data-scroll="cara">Cara kerja</a><a href="#home" data-scroll="satuan">Satuan</a><a href="#home" data-scroll="area">Area</a><a href="#home" data-scroll="tanya">Tanya</a><a class="only-sm" href="#lacak">Lacak nota</a></nav>' +
+    '<div class="nav__right"><a class="btn btn--plain btn--lacak" href="#lacak" data-nav="lacak">Lacak nota</a><a class="btn btn--ink btn--plain" href="#pesan">Pesan jemput</a>' +
+    '<button type="button" class="nav__menu" aria-label="Buka menu"><i data-lucide="menu"></i></button></div></header>';
+  $$("[data-nav-slot]").forEach(function (s) { s.outerHTML = NAV; });
+
+  document.addEventListener("click", function (e) {
+    var menu = e.target.closest(".nav__menu");
+    if (menu) { menu.closest(".nav").classList.toggle("is-open"); return; }
+    $$(".nav.is-open").forEach(function (n) { n.classList.remove("is-open"); });
+    var plain = e.target.closest('a[href="#"]');
+    if (plain) { e.preventDefault(); return; }
+    var sc = e.target.closest("[data-scroll]");
+    if (sc) {
+      e.preventDefault();
+      var go = function (how) { $(sc.dataset.scroll).scrollIntoView({ behavior: how, block: "start" }); };
+      var onHome = !location.hash || location.hash === "#home";
+      if (onHome) go("smooth"); else { location.hash = "home"; setTimeout(function () { go("instant"); }, 80); }
+    }
+  });
+
+  /* Foto */
+  $$(".photo[data-img]").forEach(function (box) {
     var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
   });
 
   /* ---------- Data harga asli; tanggal acuan Minggu 1 Nov 2026 ---------- */
   var TIERS = [
-    { id: "3", name: "3 Jam", h: 3, w: "16%", setrika: 25000, lipat: 20000, tag: "Prioritas tertinggi" },
-    { id: "6", name: "6 Jam", h: 6, w: "30%", setrika: 19000, lipat: 12000, tag: "Prioritas tinggi" },
-    { id: "12", name: "12 Jam", h: 12, w: "48%", setrika: 15000, lipat: null, tag: "Express" },
-    { id: "24", name: "24 Jam", h: 24, w: "68%", setrika: 9000, lipat: 7000, tag: "Hemat" },
-    { id: "reg", name: "Reguler", h: null, w: "100%", setrika: 7000, lipat: null, tag: "Paling hemat" }
+    { id: "3", name: "3 Jam", h: 3, setrika: 25000, lipat: 20000, tag: "Prioritas tertinggi", cls: "speed--a" },
+    { id: "6", name: "6 Jam", h: 6, setrika: 19000, lipat: 12000, tag: "Prioritas tinggi", cls: "speed--b" },
+    { id: "12", name: "12 Jam", h: 12, setrika: 15000, lipat: null, tag: "Express", cls: "" },
+    { id: "24", name: "24 Jam", h: 24, setrika: 9000, lipat: 7000, tag: "Hemat", cls: "" },
+    { id: "reg", name: "Reguler", h: null, setrika: 7000, lipat: null, tag: "Paling hemat", cls: "speed--c" }
   ];
+  var SVC = { setrika: "Cuci setrika", lipat: "Cuci lipat" };
   var DAY = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
   var OPEN = 8 * 60, CLOSE = 22 * 60;
   var SLOTS = [];
   [13, 14, 15, 16, 17, 18, 19].forEach(function (h) { SLOTS.push({ day: 0, s: h * 60, off: h === 15, left: { 13: 3, 14: 2, 16: 4, 17: 3, 18: 1, 19: 2 }[h] }); });
   [8, 9, 10, 11, 12, 13, 14, 15, 16].forEach(function (h) { SLOTS.push({ day: 1, s: h * 60, off: h === 11, left: 4 }); });
-  var st = { svc: "setrika", kg: 5, slot: 0, tier: "6" };
+  /* Pembagian outlet per kawasan: ilustrasi */
+  var AREAS = [
+    ["Tembalang", 4, "20.00", "Longgar"], ["Banyumanik", 3, "20.00", "Longgar"], ["Ngaliyan", 3, "19.00", "Hampir penuh"], ["Pedurungan", 3, "20.00", "Longgar"],
+    ["Candisari", 2, "20.00", "Longgar"], ["Gajahmungkur", 2, "20.00", "Penuh"], ["Semarang Tengah", 2, "20.00", "Longgar"], ["Ungaran", 1, "18.00", "Longgar"]
+  ];
+  var st = { svc: "setrika", kg: 5, slot: 0, tier: "6", area: "Tembalang", step: 1 };
 
   var hhmm = function (m) { var h = Math.floor(m / 60), n = m % 60; return (h < 10 ? "0" : "") + h + "." + (n < 10 ? "0" : "") + n; };
   var dayName = function (d) { return d === 0 ? "Hari ini" : d === 1 ? "Senin" : DAY[d % 7]; };
+  var low = function (s) { return s.replace("Hari ini", "hari ini"); };
   var dateTxt = function (d) { return DAY[d % 7] + ", " + (1 + d) + " Nov"; };
   var slotTxt = function (s) { return hhmm(s.s) + "–" + hhmm(s.s + 60); };
   var weighAt = function (s) { return s.day * 1440 + s.s + 90; };
+  var tierOf = function (id) { return TIERS.filter(function (t) { return t.id === id; })[0]; };
 
   function target(tier, s) {
     var w = weighAt(s);
-    if (tier.h === null) { var d = Math.floor(w / 1440); return { txt: DAY[(d + 2) % 7].slice(0, 3) + "–" + DAY[(d + 3) % 7].slice(0, 3) + ", " + (d + 3) + "–" + (d + 4) + " Nov", long: "2–3 hari, " + (d + 3) + "–" + (d + 4) + " Nov", off: false }; }
+    if (tier.h === null) { var d = Math.floor(w / 1440); return { txt: "2–3 hari", long: "2–3 hari, " + (d + 3) + "–" + (d + 4) + " Nov", off: false }; }
     var t = w + tier.h * 60, day = Math.floor(t / 1440), m = t % 1440;
     if (tier.h <= 6 && t > Math.floor(w / 1440) * 1440 + CLOSE) return { txt: "Lewat batas timbang", long: "", off: true };
-    var morning = false;
-    if (m > CLOSE) { day += 1; m = OPEN; morning = true; } else if (m < OPEN) { m = OPEN; morning = true; }
+    if (m > CLOSE) { day += 1; m = OPEN; } else if (m < OPEN) { m = OPEN; }
     var txt = dayName(day) + " " + hhmm(m);
-    return { txt: txt, long: txt, off: false, morning: morning };
+    return { txt: txt, long: txt, off: false };
   }
-  var tierOf = function (id) { return TIERS.filter(function (t) { return t.id === id; })[0]; };
   function available(t) { return t[st.svc] !== null && !target(t, SLOTS[st.slot]).off; }
 
+  /* ---------- Isi pilihan statis ---------- */
+  var slotOpts = SLOTS.map(function (s, i) { return s.off ? "" : '<option value="' + i + '">' + (s.day ? "Besok" : "Hari ini") + " " + slotTxt(s) + "</option>"; }).join("");
+  var areaOpts = AREAS.map(function (a) { return "<option>" + a[0] + "</option>"; }).join("");
+  $("heroSlot").innerHTML = slotOpts;
+  $("heroArea").innerHTML = areaOpts;
+  $("areaSel").innerHTML = areaOpts;
+  $("heroSlot").addEventListener("change", function () { st.slot = Number(this.value); render(); });
+  $("heroArea").addEventListener("change", function () { st.area = this.value; render(); });
+  $("areaSel").addEventListener("change", function () { st.area = this.value; render(); });
+
+  var STEPS = [
+    ["Cuci apa?", "Timbangan di outlet yang menentukan total akhir. Di sini cukup perkiraan."],
+    ["Jemput kapan?", "Slot ditutup bila kurir kawasan penuh. Kurir mengabari 15 menit sebelum tiba."],
+    ["Secepat apa?", "Target dihitung dari perkiraan jam timbang, sekitar 30 menit setelah slot jemput berakhir."],
+    ["Jemput ke mana?", "Rumah, kos, apartemen, atau hotel. Antar-jemput gratis."]
+  ];
+
   function render() {
-    // pastikan paket terpilih tersedia
-    if (!available(tierOf(st.tier))) {
-      var next = TIERS.filter(available)[0]; if (next) st.tier = next.id;
-    }
+    if (!available(tierOf(st.tier))) { var nx = TIERS.filter(available)[0]; if (nx) st.tier = nx.id; }
     var slot = SLOTS[st.slot], cur = tierOf(st.tier), price = cur[st.svc], total = price * st.kg, tgt = target(cur, slot);
-    var svcName = st.svc === "setrika" ? "Cuci setrika" : "Cuci lipat";
 
-    // papan beranda
-    $("bdRows").innerHTML = TIERS.map(function (t) {
+    /* Kartu kecepatan beranda */
+    $("speeds").innerHTML = TIERS.map(function (t, i) {
       var p = t[st.svc], tg = target(t, slot), off = p === null || tg.off;
-      return '<button type="button" class="bd-row' + (off ? " is-off" : "") + (t.id === st.tier ? " is-picked" : "") + '" data-t="' + t.id + '"' + (off ? " disabled" : "") + ">" +
-        '<span class="bd-name"><b>' + t.name + "</b><small>" + t.tag + "</small></span>" +
-        '<span class="bd-kg">' + (p === null ? "–" : rp(p)) + "</span>" +
-        '<span class="track"><span class="bar" style="--w:' + t.w + '"></span></span>' +
-        '<span class="bd-when">' + (p === null ? "Tidak tersedia" : tg.txt) + "</span>" +
-        '<span class="bd-total r">' + (off ? "–" : rp(p * st.kg)) + "</span></button>";
+      var small = i > 1 ? " speed--sm" : "";
+      if (off) return '<div class="speed is-off' + small + '"><span class="speed__tag">' + t.tag + '</span><h3 class="speed__name">' + t.name + '</h3><p class="speed__price">' + (p === null ? "Tidak ada untuk cuci lipat" : "Lewat batas timbang untuk jam jemput ini") + "</p></div>";
+      return '<div class="speed ' + t.cls + small + '"><span class="speed__tag">' + t.tag + '</span><h3 class="speed__name">' + t.name + '</h3>' +
+        '<p class="speed__price">' + rp(p) + " <small>/kg</small></p>" +
+        '<div class="speed__row"><p class="speed__when">' + (t.h === null ? "Selesai " + tg.txt : "Target " + low(tg.txt)) + "<span>" + st.kg + " kg = " + rp(p * st.kg) + "</span></p>" +
+        '<button type="button" class="btn" data-pick="' + t.id + '">Pilih<span class="btn__dot"><i data-lucide="arrow-right"></i></span></button></div></div>';
     }).join("");
-    $("bdAxis").innerHTML = "<span style=\"left:0\">" + hhmm(weighAt(slot) % 1440) + "</span>" + [["16%", "+3j"], ["30%", "+6j"], ["48%", "+12j"], ["68%", "+24j"], ["100%", "2–3 hari"]].map(function (a) { return '<span style="left:' + a[0] + '">' + a[1] + "</span>"; }).join("");
-    $("bdTotalHead").textContent = "Total " + st.kg + " kg";
-    $("boardCta").textContent = "Pesan " + cur.name + " · " + rp(total);
 
-    // kolom pesan
-    $("pkList").innerHTML = TIERS.map(function (t) {
-      var p = t[st.svc], tg = target(t, slot), off = p === null || tg.off;
-      return '<button type="button" class="pk' + (off ? " is-off" : "") + (t.id === st.tier ? " is-picked" : "") + '" data-t="' + t.id + '"' + (off ? " disabled" : "") + "><b>" + t.name + "</b><em>" + (p === null ? "–" : rp(p) + "/kg") + "</em><small>" + (p === null ? "Tidak tersedia untuk cuci lipat" : tg.txt === "Lewat batas timbang" ? tg.txt : "Target " + tg.txt) + "</small></button>";
+    /* Langkah pesan */
+    $("svcChoices").innerHTML = ["setrika", "lipat"].map(function (k) {
+      var from = Math.min.apply(null, TIERS.map(function (t) { return t[k]; }).filter(Boolean));
+      return '<button type="button" class="choice' + (st.svc === k ? " is-picked" : "") + '" data-svc="' + k + '"><h3>' + SVC[k] + "</h3><p>" + (k === "setrika" ? "Rapi siap pakai" : "Bersih, dilipat tanpa setrika") + "<br>mulai " + rp(from) + "/kg</p></button>";
     }).join("");
-    var day = slot.day;
+    $("tierChoices").innerHTML = TIERS.map(function (t) {
+      var p = t[st.svc], tg = target(t, slot), off = p === null || tg.off;
+      return '<button type="button" class="choice choice--tier' + (t.id === st.tier ? " is-picked" : "") + '" data-t="' + t.id + '"' + (off ? " disabled" : "") + "><h3>" + t.name + "</h3>" +
+        (p === null ? "<p>Tidak ada untuk cuci lipat</p>" : off ? "<p>Lewat batas timbang</p>" : "<b>" + rp(p) + "/kg</b><p>" + (t.h === null ? tg.txt : "Target " + low(tg.txt)) + "</p>") + "</button>";
+    }).join("");
     $("slotGrid").innerHTML = SLOTS.map(function (s, i) {
-      if (s.day !== day) return "";
-      return '<button type="button" class="slot' + (s.off ? " is-off" : "") + (i === st.slot ? " is-picked" : "") + '" data-s="' + i + '"' + (s.off ? " disabled" : "") + ">" + slotTxt(s) + "<small>" + (s.off ? "Penuh" : "Sisa " + s.left + " kurir") + "</small></button>";
+      if (s.day !== slot.day) return "";
+      return '<button type="button" class="slot' + (i === st.slot ? " is-picked" : "") + '" data-s="' + i + '"' + (s.off ? " disabled" : "") + "><b>" + slotTxt(s) + "</b><span>" + (s.off ? "Penuh" : "Sisa " + s.left + " kurir") + "</span></button>";
     }).join("");
-    document.querySelectorAll("#dayChips .chip").forEach(function (c) { c.classList.toggle("is-active", Number(c.dataset.day) === day); });
-    $("weighAt").textContent = dayName(day) + " " + hhmm(slot.s + 90);
-    $("dockPick").textContent = dayName(day) + " " + slotTxt(slot);
+    $$("#daySeg button").forEach(function (b) { b.classList.toggle("is-active", Number(b.dataset.day) === slot.day); });
+    $("flowPage").setAttribute("data-step", st.step);
+    $$("[data-pane]").forEach(function (p) { p.hidden = Number(p.dataset.pane) !== st.step; });
+    $("bars").innerHTML = STEPS.map(function (_, i) { return '<button type="button" aria-label="Langkah ' + (i + 1) + '" data-goto="' + (i + 1) + '" class="' + (i < st.step ? "is-on" : "") + '"></button>'; }).join("");
+    $("qStep").textContent = "Langkah " + st.step + " dari 4";
+    $("qTitle").textContent = STEPS[st.step - 1][0];
+    $("qHint").textContent = STEPS[st.step - 1][1];
+    $("backBtn").hidden = st.step === 1;
+    $("nextBtn").hidden = st.step === 4;
+    $("submitBtn").hidden = st.step !== 4;
+    $("dockPick").textContent = dayName(slot.day) + " " + slotTxt(slot);
     $("dockBack").textContent = tgt.long;
-    $("dockPkg").textContent = cur.name + " · " + st.kg + " kg · perkiraan";
+    $("dockPkg").textContent = cur.name + ", " + st.kg + " kg, perkiraan";
     $("dockTotal").textContent = rp(total);
-    $("doneP").textContent = svcName + " " + cur.name + " · " + st.kg + " kg";
-    $("doneJ").textContent = dateTxt(day) + ", " + slotTxt(slot);
+    $("doneP").textContent = SVC[st.svc] + " " + cur.name + ", " + st.kg + " kg";
+    $("doneJ").textContent = dateTxt(slot.day) + ", " + slotTxt(slot);
     $("doneT").textContent = tgt.long;
     $("doneR").textContent = rp(total);
+    $("doneMsg").textContent = "Detail dikirim ke WhatsApp " + $("custWa").value + ". Total akhir mengikuti berat saat ditimbang di outlet.";
 
-    // sinkron kontrol
-    document.querySelectorAll("#svcSeg button, #svcSeg2 button").forEach(function (b) { b.classList.toggle("is-active", b.dataset.svc === st.svc); });
-    document.querySelectorAll("[data-kg]").forEach(function (o) { o.textContent = st.kg; });
-    $("slotSel").value = String(st.slot);
+    /* Sinkron kontrol */
+    $$("#svcHome button").forEach(function (b) { b.classList.toggle("is-active", b.dataset.svc === st.svc); });
+    $$("[data-kg]").forEach(function (o) { o.textContent = st.kg; });
+    $$("[data-kgtxt]").forEach(function (o) { o.textContent = st.kg; });
+    $("heroSlot").value = String(st.slot);
+    $("heroArea").value = st.area; $("areaSel").value = st.area;
+
+    /* Kawasan */
+    $("areaPills").innerHTML = AREAS.map(function (a) { return '<button type="button" class="' + (a[0] === st.area ? "is-active" : "") + '" data-area="' + a[0] + '">' + a[0] + "<small>" + a[1] + "</small></button>"; }).join("");
+    var ar = AREAS.filter(function (a) { return a[0] === st.area; })[0];
+    $("areaCard").innerHTML = '<h3 class="d3">' + ar[0] + '</h3><dl class="kv"><div><dt>Outlet</dt><dd>' + ar[1] + "</dd></div><div><dt>Jemput terakhir hari ini</dt><dd>" + ar[2] + "</dd></div><div><dt>Paket 3 Jam hari ini</dt><dd>" + ar[3] + "</dd></div></dl>" +
+      '<a class="btn" href="#pesan">Pesan dari ' + ar[0] + '<span class="btn__dot"><i data-lucide="arrow-right"></i></span></a>';
+    icons();
   }
-
-  $("slotSel").innerHTML = SLOTS.map(function (s, i) { return s.off ? "" : '<option value="' + i + '">' + (s.day ? "Besok" : "Hari ini") + " " + slotTxt(s) + "</option>"; }).join("");
-  $("slotSel").addEventListener("change", function () { st.slot = Number(this.value); render(); });
 
   document.addEventListener("click", function (e) {
-    var el = e.target.closest("[data-t]");
-    if (el && !el.disabled && el.closest("#bdRows, #pkList")) { st.tier = el.dataset.t; render(); return; }
-    el = e.target.closest("#svcSeg [data-svc], #svcSeg2 [data-svc]");
-    if (el) { st.svc = el.dataset.svc; render(); return; }
-    el = e.target.closest("[data-s]");
-    if (el && !el.disabled) { st.slot = Number(el.dataset.s); render(); return; }
-    el = e.target.closest("[data-day]");
-    if (el) { var d = Number(el.dataset.day); for (var i = 0; i < SLOTS.length; i++) if (SLOTS[i].day === d && !SLOTS[i].off) { st.slot = i; break; } render(); }
+    var el;
+    if ((el = e.target.closest("[data-pick]"))) { st.tier = el.dataset.pick; st.step = 1; render(); location.hash = "pesan"; return; }
+    if ((el = e.target.closest("#tierChoices [data-t]")) && !el.disabled) { st.tier = el.dataset.t; render(); return; }
+    if ((el = e.target.closest("#svcHome [data-svc], #svcChoices [data-svc]"))) { st.svc = el.dataset.svc; render(); return; }
+    if ((el = e.target.closest("[data-s]")) && !el.disabled) { st.slot = Number(el.dataset.s); render(); return; }
+    if ((el = e.target.closest("#daySeg [data-day]"))) { var d = Number(el.dataset.day); for (var i = 0; i < SLOTS.length; i++) if (SLOTS[i].day === d && !SLOTS[i].off) { st.slot = i; break; } render(); return; }
+    if ((el = e.target.closest("[data-area]"))) { st.area = el.dataset.area; render(); return; }
+    if ((el = e.target.closest("[data-goto]"))) { st.step = Number(el.dataset.goto); render(); window.scrollTo(0, 0); return; }
   });
   ["kgHome", "kgOrder"].forEach(function (id) { $(id).addEventListener("lapak:change", function (e) { st.kg = e.detail.value; render(); }); });
+  $("nextBtn").addEventListener("click", function () { st.step = Math.min(4, st.step + 1); render(); window.scrollTo(0, 0); });
+  $("backBtn").addEventListener("click", function () { st.step = Math.max(1, st.step - 1); render(); window.scrollTo(0, 0); });
+  $("custWa").addEventListener("input", render);
 
-  /* ---------- Area (data outlet per kawasan: ilustrasi) ---------- */
-  var AREAS = [
-    ["Tembalang", 4, "20.00", 70, "Longgar"], ["Banyumanik", 3, "20.00", 55, "Longgar"], ["Ngaliyan", 3, "19.00", 85, "Hampir penuh"], ["Pedurungan", 3, "20.00", 40, "Longgar"],
-    ["Candisari", 2, "20.00", 60, "Longgar"], ["Gajahmungkur", 2, "20.00", 100, "Penuh"], ["Semarang Tengah", 2, "20.00", 75, "Longgar"], ["Ungaran", 1, "18.00", 50, "Longgar"]
-  ];
-  function areaRows(f) {
-    $("areaRows").innerHTML = AREAS.filter(function (a) { return f === "Semua" || (f === "Kota Semarang" ? a[0] !== "Ungaran" : a[0] === "Ungaran"); }).map(function (a) {
-      var s = a[4] === "Penuh" ? ["late", "var(--late)"] : a[4] === "Hampir penuh" ? ["warn", "#e88600"] : ["ok", "var(--ok)"];
-      return "<tr><td><b style='font-weight:600'>" + a[0] + "</b></td><td class='num'>" + a[1] + "</td><td class='num'>" + a[2] + "</td><td><span class='util' style='--v:" + a[3] + "%;--c:" + s[1] + "'><i></i><span class='num t-small'>" + a[3] + "%</span></span></td><td class='r'><span class='pill pill--" + s[0] + "'>" + a[4] + "</span></td></tr>";
-    }).join("");
-  }
-  $("areaChips").innerHTML = ["Semua", "Kota Semarang", "Ungaran"].map(function (a, i) { return '<button type="button" class="chip' + (i ? "" : " is-active") + '" data-area="' + a + '">' + a + "</button>"; }).join("");
-  $("areaChips").addEventListener("click", function (e) {
-    var b = e.target.closest("[data-area]"); if (!b) return;
-    this.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-active", c === b); });
-    areaRows(b.dataset.area);
-  });
-  areaRows("Semua");
-
-  /* ---------- Lacak: rencana vs aktual ---------- */
-  var m = function (s) { var p = s.split("."); return +p[0] * 60 + +p[1]; };
+  /* ---------- Lacak ---------- */
+  var STAGES = [["Dijemput", "truck"], ["Ditimbang", "scale"], ["Dicuci", "washing-machine"], ["Dikeringkan", "wind"], ["Disetrika", "shirt"], ["Diantar", "package-check"]];
   var NOTA = {
     "BLS-20418": {
-      state: "ok", title: "Sedang disetrika, masih sesuai target", sub: "Cuci setrika 6 Jam · 4,6 kg · Tembalang", due: "15.00", dueSub: "Target diantar · 2 jam 20 menit lagi", from: "09.00", to: "15.00", now: "12.40", tagTxt: "Sesuai target",
-      plan: [["Cuci", "09.00", "10.15"], ["Kering", "10.15", "11.30"], ["Setrika", "11.30", "13.30"], ["Kemas", "13.30", "14.00"], ["Antar", "14.00", "15.00"]],
-      act: [["Cuci", "09.05", "10.10", "done"], ["Kering", "10.10", "11.35", "done"], ["Setrika", "11.35", "12.40", "now"]],
+      state: "ok", title: "Lagi disetrika.", sub: "Cuci setrika 6 Jam, 4,6 kg, Tembalang. Masih sesuai target.", due: "15.00", dueSub: "Target diantar, sekitar 2 jam 20 menit lagi",
+      times: ["08.32", "09.00", "09.05–10.10", "10.10–11.35", "Sejak 11.35", ""], now: 4,
       log: [["11.35", "Masuk meja setrika, rak S-04"], ["10.10", "Selesai cuci, pindah ke pengering"], ["09.05", "Mulai dicuci, mesin 3"], ["09.00", "Ditimbang 4,6 kg di Outlet Tembalang"], ["08.32", "Dijemput kurir Yoga"]],
-      lines: [["4,6 kg × Rp19.000", "Rp87.400"], ["Antar-jemput", "Gratis"]], total: "Rp87.400", pay: "Bayar saat diantar",
-      kurir: ["YG", "Yoga", "Antar sekitar 14.00–15.00"], who: "Dina A."
+      lines: [["4,6 kg × Rp19.000", "Rp87.400"], ["Antar-jemput", "Gratis"]], total: "Rp87.400", pay: "Bayar saat diantar", kurir: "Yoga", kurirTxt: "Antar sekitar 14.00–15.00", edit: true
     },
     "BLS-20397": {
-      state: "late", title: "Selesai, 25 menit lewat target", sub: "Cuci setrika 3 Jam · 3,0 kg · Banyumanik", due: "12.05", dueSub: "Diterima · target 11.40", from: "08.40", to: "12.10", now: null, tagTxt: "Lewat 25 menit",
-      plan: [["Cuci", "08.40", "09.25"], ["Kering", "09.25", "10.10"], ["Setrika", "10.10", "11.00"], ["Kemas", "11.00", "11.10"], ["Antar", "11.10", "11.40"]],
-      act: [["Cuci", "08.45", "09.30", "done"], ["Kering", "09.30", "10.35", "done"], ["Setrika", "10.35", "11.25", "done"], ["Kemas", "11.25", "11.35", "done"], ["Antar", "11.35", "12.05", "done"]],
+      state: "late", title: "Sampai, lewat 25 menit.", sub: "Cuci setrika 3 Jam, 3,0 kg, Banyumanik. Pengering sempat penuh 30 menit dan CS mengabari pukul 10.52.", due: "12.05", dueSub: "Diterima. Target semula 11.40",
+      times: ["07.58", "08.40", "08.45–09.30", "09.30–10.35", "10.35–11.25", "12.05"], now: 6,
       log: [["12.05", "Diterima pelanggan"], ["10.52", "CS mengabari target bergeser ke 12.05"], ["10.35", "Pengering penuh 30 menit, masuk setrika terlambat"], ["08.40", "Ditimbang 3,0 kg di Outlet Banyumanik"]],
-      lines: [["3,0 kg × Rp25.000", "Rp75.000"], ["Antar-jemput", "Gratis"]], total: "Rp75.000", pay: "Lunas, QRIS",
-      kurir: ["AR", "Arif", "Selesai diantar 12.05"], who: "Bayu S."
+      lines: [["3,0 kg × Rp25.000", "Rp75.000"], ["Antar-jemput", "Gratis"]], total: "Rp75.000", pay: "Lunas, QRIS", kurir: "Arif", kurirTxt: "Selesai diantar 12.05", edit: false
     }
   };
-  function pct(t, from, to) { return ((m(t) - m(from)) / (m(to) - m(from)) * 100).toFixed(2) + "%"; }
-  function segs(list, n, cls) {
-    return list.map(function (s) {
-      var c = s[3] ? "seg-b--" + s[3] : cls, wide = (m(s[2]) - m(s[1])) / (m(n.to) - m(n.from)) > .06;
-      return '<div class="seg-b ' + c + '" style="--l:' + pct(s[1], n.from, n.to) + ";--w:" + ((m(s[2]) - m(s[1])) / (m(n.to) - m(n.from)) * 100).toFixed(2) + '%" title="' + s[0] + " " + s[1] + "–" + s[2] + '"><b>' + s[0] + "</b>" + (wide ? s[1] + "–" + s[2] : s[1]) + "</div>";
-    }).join("");
-  }
   function showNota(id) {
     var n = NOTA[id], body = $("trkBody");
-    document.querySelectorAll("#notaChips .chip").forEach(function (c) { c.classList.toggle("is-active", c.dataset.nota === id); });
-    if (!n) { body.innerHTML = '<div class="card is-missing"><p class="t-h3">Nota ' + id.replace(/[<>&]/g, "") + ' tidak ditemukan</p><p class="t-meta" style="margin-top:6px">Periksa kembali nomor di WhatsApp atau nota cetak. Format: BLS-20418.</p></div>'; return; }
-    var hours = [], h0 = Math.ceil(m(n.from) / 60), h1 = Math.floor(m(n.to) / 60);
-    for (var h = h0; h <= h1; h++) { var t = hhmm(h * 60); if (Math.abs(h * 60 - m(n.from)) > 15 && Math.abs(h * 60 - m(n.to)) > 15) hours.push(t); }
-    var axis = [n.from].concat(hours, n.to).map(function (t) { return '<span style="left:' + pct(t, n.from, n.to) + '">' + t + "</span>"; }).join("");
-    var nowEl = n.now ? '<div class="now-line" style="--l:' + pct(n.now, n.from, n.to) + '"></div>' : "";
+    $$("#notaChips button").forEach(function (c) { c.classList.toggle("is-active", c.dataset.nota === id); });
+    if (!n) {
+      $("trackPage").setAttribute("data-state", "ok");
+      body.innerHTML = '<div class="missing"><h1 class="d3">Nota ' + id.replace(/[<>&]/g, "") + ' tidak ditemukan</h1><p style="margin-top:8px">Periksa kembali nomor di WhatsApp atau nota cetak. Formatnya seperti BLS-20418.</p></div>';
+      return;
+    }
+    $("trackPage").setAttribute("data-state", n.state);
     body.innerHTML =
-      '<div class="card"><div class="trk__head"><div>' +
-      '<div class="trk__tags"><span class="pill pill--id">' + id + '</span><span class="pill pill--' + n.state + '">' + n.tagTxt + "</span></div>" +
-      '<h1 class="t-h1">' + n.title + '</h1><p class="t-meta" style="margin-top:4px">' + n.sub + " · " + n.who + "</p></div>" +
-      '<div class="trk__due"><b>' + n.due + '</b><span class="t-meta">' + n.dueSub + "</span></div></div>" +
-      '<div class="gantt__wrap"><div class="gantt"><span></span><div class="gantt__axis">' + axis + "</div>" +
-      '<span class="gantt__lbl">Rencana</span><div class="lane">' + segs(n.plan, n, "seg-b--plan") + nowEl + "</div>" +
-      '<span class="gantt__lbl">Aktual</span><div class="lane">' + segs(n.act, n, "") + nowEl + "</div></div></div></div>" +
-      '<div class="trk__grid">' +
-      '<div class="card"><h2 class="t-h3" style="margin-bottom:8px">Riwayat</h2><ul class="log">' + n.log.map(function (l) { return "<li><time>" + l[0] + "</time><span>" + l[1] + "</span></li>"; }).join("") + "</ul></div>" +
-      '<div class="card"><h2 class="t-h3" style="margin-bottom:8px">Rincian nota</h2>' + n.lines.map(function (l) { return '<div class="line"><span>' + l[0] + '</span><span class="num">' + l[1] + "</span></div>"; }).join("") +
-      '<div class="line line--total"><span>Total</span><span class="num">' + n.total + '</span></div><p class="t-small" style="margin-top:6px">' + n.pay + "</p></div>" +
-      '<div class="card stack"><h2 class="t-h3">Kurir</h2><div class="person"><span class="avatar">' + n.kurir[0] + '</span><div><p style="font-weight:600">' + n.kurir[1] + '</p><p class="t-small">' + n.kurir[2] + '</p></div></div>' +
-      '<a class="btn btn-line btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Chat CS</a>' + (n.now ? '<a class="btn btn-line btn-sm" href="#">Ubah jam antar</a>' : "") + "</div></div>";
+      '<div class="track__head"><div><span class="lb">' + id + '</span><h1 class="d2">' + n.title + '</h1><p style="margin-top:10px;max-width:760px"><span class="lb">' + n.sub + "</span></p></div>" +
+      '<div class="track__due"><b>' + n.due + '</b><span class="lb">' + n.dueSub + "</span></div></div>" +
+      '<ol class="stages">' + STAGES.map(function (s, i) {
+        var c = i < n.now ? "is-done" : i === n.now ? "is-now" : "is-next";
+        return '<li class="stage ' + c + '"><span class="stage__ic"><i data-lucide="' + (i < n.now ? "check" : s[1]) + '"></i></span><h3>' + s[0] + "</h3><time>" + (n.times[i] || (i === 5 && n.edit ? "Target " + n.due : "Berikutnya")) + "</time></li>";
+      }).join("") + "</ol>" +
+      '<div class="more">' +
+      '<div class="panel"><h2>Riwayat</h2><ul class="log">' + n.log.map(function (l) { return "<li><time>" + l[0] + "</time><span>" + l[1] + "</span></li>"; }).join("") + "</ul></div>" +
+      '<div class="panel"><h2>Rincian nota</h2><dl class="kv">' + n.lines.map(function (l) { return "<div><dt>" + l[0] + "</dt><dd>" + l[1] + "</dd></div>"; }).join("") + "<div><dt>Total</dt><dd>" + n.total + "</dd></div><div><dt>Pembayaran</dt><dd>" + n.pay + "</dd></div></dl></div>" +
+      '<div class="panel"><h2>Kurir ' + n.kurir + "</h2><p>" + n.kurirTxt + '</p><a class="btn" href="#">Chat CS<span class="btn__dot"><i data-lucide="message-circle"></i></span></a></div></div>';
     icons();
-    if (typeof focusNow === "function") focusNow();
   }
-  $("notaChips").innerHTML = Object.keys(NOTA).map(function (k) { return '<button type="button" class="chip" data-nota="' + k + '">' + k + "</button>"; }).join("");
+  function notaChips() {
+    $("notaChips").innerHTML = Object.keys(NOTA).map(function (k) { return '<button type="button" data-nota="' + k + '">' + k + "</button>"; }).join("");
+  }
+  notaChips();
   $("notaChips").addEventListener("click", function (e) { var b = e.target.closest("[data-nota]"); if (b) { $("findInput").value = b.dataset.nota; showNota(b.dataset.nota); } });
   $("findForm").addEventListener("submit", function (e) { e.preventDefault(); showNota($("findInput").value.trim().toUpperCase()); });
+
+  /* Order baru masuk ke lacak sebagai nota menunggu kurir */
+  $("orderForm").addEventListener("submit", function () {
+    var slot = SLOTS[st.slot], cur = tierOf(st.tier), tgt = target(cur, slot), total = rp(cur[st.svc] * st.kg);
+    NOTA["BLS-20433"] = {
+      state: "new", title: "Menunggu kurir.", sub: SVC[st.svc] + " " + cur.name + ", perkiraan " + st.kg + " kg, " + st.area + ". Target mulai dihitung saat ditimbang.", due: slotTxt(slot).split("–")[0], dueSub: "Jemput " + dayName(slot.day).toLowerCase() + " " + slotTxt(slot),
+      times: [slotTxt(slot), "", "", "", "", ""], now: 0,
+      log: [["12.45", "Order diterima, kurir dijadwalkan"]],
+      lines: [["Perkiraan " + st.kg + " kg × " + rp(cur[st.svc]), total], ["Antar-jemput", "Gratis"]], total: total, pay: "Bayar saat diantar", kurir: "dijadwalkan", kurirTxt: "Kurir mengabari 15 menit sebelum tiba", edit: true
+    };
+    notaChips();
+    $("findInput").value = "BLS-20433"; showNota("BLS-20433");
+    $("flowPage").classList.add("is-done");
+    window.scrollTo(0, 0);
+  });
+  $("doneAgain").addEventListener("click", function () {
+    $("orderForm").hidden = false; $("orderDone").hidden = true;
+    $("flowPage").classList.remove("is-done");
+    st.step = 1; render(); window.scrollTo(0, 0);
+  });
   showNota("BLS-20418");
-  // Di layar sempit, geser gantt ke posisi tahap yang sedang berjalan
-  function focusNow() { var w = document.querySelector(".gantt__wrap"), l = document.querySelector(".now-line"); if (w && l) w.scrollLeft = Math.max(0, l.offsetLeft - 60); }
-  window.addEventListener("hashchange", function () { setTimeout(focusNow, 0); });
 
   /* ---------- Tablet kasir ---------- */
   var QUEUE = [
-    { id: "BLS-20429", who: "Fajar M.", area: "Kos Mulawarman", svc: "setrika", tier: "3", scale: 3.4, src: "Kurir Yoga · 12.31" },
-    { id: "BLS-20430", who: "Laras P.", area: "Datang ke outlet", svc: "lipat", tier: "6", scale: 6.2, src: "Walk-in · 12.36" },
-    { id: "BLS-20431", who: "Hotel Candra", area: "Banyumanik", svc: "setrika", tier: "24", scale: 18.5, src: "Kurir Arif · 12.38" },
-    { id: "BLS-20432", who: "Nanda R.", area: "Kos Tirto", svc: "setrika", tier: "12", scale: 2.3, src: "Kurir Yoga · 12.39" }
+    { id: "BLS-20429", who: "Fajar M.", area: "Kos Mulawarman", svc: "setrika", tier: "3", scale: 3.4, src: "Kurir Yoga, 12.31" },
+    { id: "BLS-20430", who: "Laras P.", area: "Datang ke outlet", svc: "lipat", tier: "6", scale: 6.2, src: "Walk-in, 12.36" },
+    { id: "BLS-20431", who: "Hotel Candra", area: "Banyumanik", svc: "setrika", tier: "24", scale: 18.5, src: "Kurir Arif, 12.38" },
+    { id: "BLS-20432", who: "Nanda R.", area: "Kos Tirto", svc: "setrika", tier: "12", scale: 2.3, src: "Kurir Yoga, 12.39" }
   ];
+  var JOBS = [
+    ["BLS-20423", "Setrika", "3 Jam", "13.20", "Sesuai"], ["BLS-20422", "Kering", "3 Jam", "14.05", "Mepet"], ["BLS-20418", "Setrika", "6 Jam", "15.00", "Sesuai"], ["BLS-20427", "Cuci", "3 Jam", "15.25", "Sesuai"],
+    ["BLS-20426", "Cuci", "6 Jam", "18.05", "Sesuai"], ["BLS-20425", "Cuci", "12 Jam", "Sen 08.00", "Sesuai"], ["BLS-20424", "Kering", "24 Jam", "Sen 11.15", "Sesuai"]
+  ];
+  $("prod").innerHTML = JOBS.map(function (j) {
+    return '<div class="job' + (j[4] === "Mepet" ? " job--warn" : "") + '"><div class="job__top"><span>' + j[0] + "</span><span>" + j[4] + "</span></div><h3>" + j[1] + "</h3><p>Paket " + j[2] + ", target " + j[3] + "</p></div>";
+  }).join("");
   var pos = { q: 0, buf: "", tier: "3", svc: "setrika", done: {} };
   var bill = function () { return Math.max(parseFloat(pos.buf.replace(",", ".")) || 0, pos.buf ? 3 : 0); };
   function posDue(t) {
@@ -492,12 +573,12 @@
     var price = t[pos.svc], kg = bill(), raw = pos.buf ? pos.buf : "0";
     $("queue").innerHTML = QUEUE.map(function (x, i) {
       var d = pos.done[x.id];
-      return '<button type="button" class="q' + (i === pos.q ? " is-picked" : "") + (d ? " is-done" : "") + '" data-q="' + i + '"><b>' + x.who + "</b>" + x.src + '<br><span class="pill ' + (d ? "pill--ok" : "pill--id") + '">' + (d ? "Tercetak" : x.id) + "</span></button>";
+      return '<button type="button" class="q' + (i === pos.q ? " is-picked" : "") + (d ? " is-done" : "") + '" data-q="' + i + '"><b>' + x.who + "</b><span>" + x.src + "</span><em>" + (d ? "Tercetak" : x.id) + "</em></button>";
     }).join("");
     $("tiles").innerHTML = TIERS.filter(function (x) { return x[pos.svc] !== null; }).map(function (x) {
       return '<button type="button" class="tile' + (x.id === pos.tier ? " is-picked" : "") + '" data-tile="' + x.id + '"><b>' + x.name + "</b><span>" + posDue(x) + "</span><em>" + rp(x[pos.svc]) + "/kg</em></button>";
     }).join("");
-    document.querySelectorAll("#posSeg button").forEach(function (b) { b.classList.toggle("is-active", b.dataset.svc === pos.svc); });
+    $$("#posSeg button").forEach(function (b) { b.classList.toggle("is-active", b.dataset.svc === pos.svc); });
     $("posCust").textContent = q.who; $("posMeta").textContent = q.area; $("posNota").textContent = q.id;
     $("posKg").textContent = raw + " kg";
     var under = pos.buf && parseFloat(pos.buf.replace(",", ".")) < 3;
@@ -505,13 +586,13 @@
     $("posSub").textContent = rp(kg * price);
     $("posDue").textContent = posDue(t);
     $("posTotal").textContent = rp(kg * price);
-    $("posPrint").disabled = !kg; $("posPrint").style.opacity = kg ? 1 : .45;
+    $("posPrint").disabled = !kg;
   }
-  $("keys").innerHTML = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ",", "0", "del"].map(function (k) { return '<button type="button" class="key" data-k="' + k + '">' + (k === "del" ? '<i data-lucide="delete"></i>' : k) + "</button>"; }).join("");
+  $("keys").innerHTML = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ",", "0", "del"].map(function (k) { return '<button type="button" class="key" data-k="' + k + '"' + (k === "del" ? ' aria-label="Hapus"' : "") + ">" + (k === "del" ? '<i data-lucide="delete"></i>' : k) + "</button>"; }).join("");
   $("keys").addEventListener("click", function (e) {
     var b = e.target.closest("[data-k]"); if (!b) return; var k = b.dataset.k;
     if (k === "del") pos.buf = pos.buf.slice(0, -1);
-    else if (k === "," ) { if (pos.buf && pos.buf.indexOf(",") < 0) pos.buf += ","; }
+    else if (k === ",") { if (pos.buf && pos.buf.indexOf(",") < 0) pos.buf += ","; }
     else if (pos.buf.replace(",", "").length < 4) pos.buf += k;
     renderPos();
   });
@@ -522,21 +603,29 @@
   $("posPrint").addEventListener("click", function () {
     var q = QUEUE[pos.q], t = tierOf(pos.tier), kg = bill(), price = t[pos.svc];
     pos.done[q.id] = true;
-    $("receipt").innerHTML = '<span class="logo">bilas</span><span class="t-small">Outlet Tembalang · Kasir Rani</span><span class="t-small">Min, 1 Nov 2026 · 12.40</span><hr>' +
-      '<div class="line"><b>' + q.id + "</b><span>" + q.who + "</span></div>" +
-      '<div class="line"><span>' + (pos.svc === "setrika" ? "Cuci setrika" : "Cuci lipat") + " " + t.name + "</span></div>" +
-      '<div class="line"><span>' + kgTxt(kg) + " kg × " + rp(price) + '</span><span class="num">' + rp(kg * price) + "</span></div>" +
-      '<div class="line"><span>Antar-jemput</span><span>Gratis</span></div><hr>' +
-      '<div class="line" style="font-weight:700;font-size:15px"><span>Total</span><span class="num">' + rp(kg * price) + "</span></div>" +
-      '<div class="line"><span>Target selesai</span><span>' + posDue(t) + "</span></div><hr>" +
-      '<span class="t-small">Periksa kembali pakaian mudah rusak atau luntur saat serah terima. Ketentuan ganti rugi berlaku sesuai nota ini.</span>';
+    $("receipt").innerHTML = '<span class="word">bilas</span><span>Outlet Tembalang, kasir Rani</span><span>Min, 1 Nov 2026, 12.40</span><hr>' +
+      '<div class="ln"><b>' + q.id + "</b><span>" + q.who + "</span></div>" +
+      '<div class="ln"><span>' + SVC[pos.svc] + " " + t.name + "</span></div>" +
+      '<div class="ln"><span>' + kgTxt(kg) + " kg × " + rp(price) + "</span><span>" + rp(kg * price) + "</span></div>" +
+      '<div class="ln"><span>Antar-jemput</span><span>Gratis</span></div><hr>' +
+      '<div class="ln ln--t"><span>Total</span><span>' + rp(kg * price) + "</span></div>" +
+      '<div class="ln"><span>Target selesai</span><span>' + posDue(t) + "</span></div><hr>" +
+      "<span>Periksa kembali pakaian mudah rusak atau luntur saat serah terima. Ketentuan ganti rugi berlaku sesuai nota ini.</span>";
     $("printMsg").textContent = "Label tas " + q.id + " siap ditempel. Rincian dan link lacak dikirim ke WhatsApp pelanggan.";
-    $("printView").hidden = false; renderPos(); icons();
+    $("printView").hidden = false; renderPos();
   });
   $("posNext").addEventListener("click", function () {
     $("printView").hidden = true;
     for (var i = 0; i < QUEUE.length; i++) if (!pos.done[QUEUE[i].id]) { loadQ(i); return; }
     renderPos();
+  });
+  $$("[data-view]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var prod = b.dataset.view === "produksi";
+      $$("[data-view]").forEach(function (x) { x.classList.toggle("is-active", x === b); });
+      $("vTimbang").hidden = prod; $("vProd").hidden = !prod; $("posSide").hidden = prod;
+      $("pos").classList.toggle("is-prod", prod);
+    });
   });
 
   render();
@@ -545,6 +634,5 @@
   icons();
 })();
 </script>
-<script>document.querySelectorAll("[data-scroll]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();document.getElementById(a.dataset.scroll).scrollIntoView({behavior:"smooth",block:"center"});});});</script>
 </body>
 </html>

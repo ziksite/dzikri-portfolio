@@ -2,6 +2,8 @@
 
 Sumber: website kantor hukum di dua kota (WordPress, Bahasa Inggris dan Indonesia), ditelusuri 1 Nov 2026: beranda EN/ID, profil kantor, bidang praktik, satu profil advokat. Nama, kota, kontak, foto, dan statistik tidak dibawa.
 
+Versi kedua. Versi pertama berkerangka portal (sidebar di situs publik, warna terong pucat, abu-abu) dan ditolak pemilik karena terasa seperti dashboard tanpa karakter. Seluruh markup, CSS, dan token dibangun ulang. Yang dipertahankan hanya konten dan logika: nama, 8 jenis masalah, pertanyaan, tahapan, dokumen, peringatan waktu, data papan perkara, keterangan etik.
+
 ## Audit situs asli
 | Temuan | Dampak |
 |--------|--------|
@@ -15,17 +17,20 @@ Sumber: website kantor hukum di dua kota (WordPress, Bahasa Inggris dan Indonesi
 | Bahan visual berupa foto stok timbangan dan patung keadilan dengan palet navy-emas | Sama dengan kebanyakan kantor hukum |
 
 ## Arah redesign
-- Situs diubah menjadi pintu masuk berbasis masalah, dalam kerangka portal: indeks "apa yang sedang Anda hadapi" → pertanyaan bertahap → tahapan umum dan dokumen → jadwal.
-- Referensi: Enlight + LendFlow (lihat `design-system.md`). Palet terong tua menggantikan navy-emas.
-- Layar tim berupa papan perkara per tahap dengan agenda dua minggu hari kerja.
+- Halaman brand konsumen, bukan portal: satu header pill, hero judul raksasa, satu input "apa yang bisa kami bantu", lalu section editorial berwarna solid.
+- Referensi: Lawhive, Atticus, Cooley (temuan di `design-system.md`). Tanpa gradien, tanpa foto, tanpa navy-emas.
+- Nada empatik: mengakui keadaan orang yang menerima surat, menjelaskan dengan bahasa biasa.
+- Pola dashboard dibatasi di layar tim, memakai font dan warna yang sama.
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Sidebar perkara, indeks 8 masalah, cara kerja, tabel bidang praktik, advokat, nilai, kantor |
-| `#panduan` | 4 langkah per jenis perkara, jejak jawaban di sidebar, hasil: peringatan waktu bila relevan, tahapan umum, dokumen. Tampilan awal lewat hash langsung adalah contoh selesai (ketenagakerjaan); masuk dari beranda atau "Mulai ulang" memulai dari awal |
-| `#jadwal` | Ceklis dokumen (mengikuti perkara), kalender November 2026, jam, cara bertemu, data diri, persetujuan, bilah permintaan → SR-K-1127 |
-| `#perkara` | Agenda 2 minggu, 5 kolom tahap, filter advokat, drawer detail, pindah tahap |
+| `#home` | Hero oranye + input dengan saran 8 masalah → pernyataan hitam + nilai → cara kerja 4 baris belah dua dengan blok warna dan kartu mengapung → bidang praktik (daftar serif di blok kunyit) → advokat (blok inisial) → kantor (blok hijau) → pita ajakan → footer wordmark besar |
+| `#panduan` | Satu pertanyaan per layar, warna latar berganti (oranye, kunyit, hijau), bisa dijawab dengan tombol angka. Hasil: judul hitam, peringatan waktu bila relevan, tahapan umum, panel dokumen, keterangan bukan nasihat hukum |
+| `#jadwal` | Satu kolom: tempat bertemu, tanggal (10 hari kerja), jam, ceklis dokumen mengikuti perkara, data diri, persetujuan, bilah ringkasan → layar sukses SR-K-1127 |
+| `#perkara` | Bar atas hitam, agenda 10 hari kerja, 5 kolom tahap, filter advokat, drawer detail, pindah tahap |
+
+Masuk ke `#panduan` lewat hash langsung menampilkan pertanyaan pertama. Masuk dari input atau bidang praktik melewati pertanyaan jenis masalah.
 
 ## Data asli vs asumsi
 | Asli dari situs | Asumsi atau rekaan |
@@ -34,7 +39,7 @@ Sumber: website kantor hukum di dua kota (WordPress, Bahasa Inggris dan Indonesi
 | Dua kantor (kota diganti) | Semarang, Makassar, kawasan, telepon, email |
 | Struktur 1 direktur, 1 managing partner, 2 advokat | Jam layanan Senin–Jumat dan slot konsultasi |
 | Alur: dengar masalah → sepakat → Surat Kuasa, dengan pilihan paket biaya | Seluruh daftar dokumen dan tahapan panduan, ditulis dari pengetahuan umum |
-| Nilai: kerahasiaan, etika, alternatif penyelesaian sengketa, tim yang sesuai | 15 perkara, klien berinisial, tanggal, nomor SR- semuanya fiktif |
+| Nilai: kerahasiaan, etika, alternatif penyelesaian sengketa, tim yang sesuai | 15 perkara, klien berinisial, tanggal, nomor SR-, contoh pesan advokat, semuanya fiktif |
 
 ## Aturan etik yang diterapkan
 - Klaim peringkat, statistik situs asli, tingkat kemenangan, dan janji hasil dihapus.
@@ -45,7 +50,7 @@ Sumber: website kantor hukum di dua kota (WordPress, Bahasa Inggris dan Indonesi
 **Perlu ditinjau advokat sebelum dipakai nyata:** tahapan, daftar dokumen, peringatan waktu (termasuk "pada umumnya 90 hari" untuk gugatan TUN). Isinya sengaja tanpa nomor pasal, tetapi belum diperiksa praktisi hukum. Kesesuaian alat seperti ini dengan Kode Etik juga perlu pendapat kantor.
 
 ## Foto
-Tidak ada foto yang dipakai, sehingga folder `assets/` tidak dibuat. Foto stok dan ikon bidang praktik dilewati sesuai arahan; foto tim dan foto advokat adalah wajah nyata.
+Tidak ada foto yang dipakai, sehingga folder `assets/` tidak dibuat. Foto stok dan ikon bidang praktik dilewati sesuai arahan; foto tim dan foto advokat adalah wajah nyata. Advokat tampil sebagai blok inisial.
 
 ## Tech stack produksi (rencana)
 Next.js + Supabase (permintaan, perkara, agenda, berkas dengan akses per peran), WhatsApp API untuk konfirmasi dan pengingat.

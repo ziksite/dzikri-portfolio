@@ -6,187 +6,255 @@
 <title>Saksama &amp; Rekan — Kantor advokat di Semarang dan Makassar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500;600&family=Wix+Madefor+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="ds/litigation-law-office-website.css">
 </head>
 <body>
 
+<header class="head" id="head">
+  <nav class="head__nav" aria-label="Utama">
+    <a href="#panduan" data-nav="panduan" data-start="">Panduan</a>
+    <a href="#home" data-jump="bidang">Bidang praktik</a>
+    <a href="#home" data-jump="advokat">Advokat</a>
+    <a href="#home" data-jump="kantor">Kantor</a>
+  </nav>
+  <a class="wordmark" href="#home">Saksama &amp; Rekan</a>
+  <div class="head__end">
+    <a class="btn btn-paper btn-sm" href="#jadwal">Pilih jadwal</a>
+    <button class="head__menu" id="menu" type="button" aria-label="Menu"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+
 <!-- ================= BERANDA ================= -->
 <section data-screen="home">
-  <div class="shell">
-    <aside class="side">
-      <div class="side__head"><a class="wordmark" href="#home">Saksama &amp; Rekan</a></div>
-      <nav class="side__body" id="tree"></nav>
-      <div class="side__foot"><a class="btn btn-primary btn-block" href="#panduan" data-start="">Mulai panduan</a></div>
-    </aside>
-    <div class="main">
-      <header class="topbar">
-        <a class="wordmark" href="#home">Saksama &amp; Rekan</a>
-        <span class="topbar__title">Kantor advokat di Semarang dan Makassar</span>
-        <div class="topbar__links"><a href="#advokat-list" data-jump="advokat-list">Advokat</a><a href="#kantor-list" data-jump="kantor-list">Kantor</a><a class="btn btn-secondary btn-sm" href="#jadwal">Jadwalkan</a></div>
-      </header>
-      <div class="content">
-        <h1 class="t-hero" style="max-width:860px">Mulai dari masalah Anda, bukan dari pasalnya.</h1>
-        <p class="lead" style="max-width:680px;margin-top:14px">Pilih yang paling mendekati keadaan Anda. Panduan singkat menjelaskan tahapan umumnya, dokumen yang perlu disiapkan, lalu Anda bisa memilih jadwal bertemu advokat.</p>
+  <div class="hero">
+    <h1 class="t-hero">Mulai dari<br>masalah Anda,<br>bukan pasalnya.</h1>
+    <p class="hero__q">Apa yang bisa kami bantu?</p>
+    <form class="ask" id="ask" autocomplete="off">
+      <div class="ask__box">
+        <input id="askInput" type="text" placeholder="Contoh: saya di-PHK, tanah warisan, surat panggilan" aria-label="Ceritakan masalah Anda singkat">
+        <button class="btn btn-ink" type="submit">Mulai</button>
+      </div>
+      <div class="ask__list" id="askList" hidden></div>
+    </form>
+    <ul class="checks">
+      <li><i data-lucide="check"></i>Beberapa pertanyaan, tanpa membuat akun</li>
+      <li><i data-lucide="check"></i>Tahapan umum dan dokumen yang perlu disiapkan</li>
+      <li><i data-lucide="check"></i>Informasi umum, bukan nasihat hukum</li>
+    </ul>
+  </div>
 
-        <div class="card sit" id="sit" style="margin-top:28px"></div>
-        <p class="t-small" style="margin-top:10px">Tidak ada yang cocok? <a class="link" href="#jadwal">Langsung pilih jadwal konsultasi</a>. Isi panduan adalah informasi umum, bukan nasihat hukum.</p>
+  <div class="band band--ink">
+    <div class="wrap say">
+      <h2 class="t-display">Surat datang, tenggat berjalan, dan istilahnya asing. Kami jelaskan dulu, dengan bahasa biasa.</h2>
+      <ul class="say__list">
+        <li><h3 class="t-h3">Kerahasiaan</h3><p>Komunikasi dijaga sejak konsultasi pertama sampai perkara selesai.</p></li>
+        <li><h3 class="t-h3">Etika profesi</h3><p>Peluang dan risiko dijelaskan apa adanya. Advokat tidak menjanjikan hasil perkara.</p></li>
+        <li><h3 class="t-h3">Di luar sidang lebih dulu</h3><p>Alternatif penyelesaian sengketa dipertimbangkan sebelum menempuh gugatan.</p></li>
+      </ul>
+    </div>
+  </div>
 
-        <section class="sect">
-          <div class="sect__head"><h2 class="t-h2">Cara kami bekerja</h2><span class="t-meta">Biaya dibahas terbuka sebelum Surat Kuasa ditandatangani</span></div>
-          <div class="card process">
-            <div class="process__step"><div class="process__n">1<small>/4</small></div><h3 class="t-h3">Mendengarkan</h3><p class="t-meta">Kita bertemu dan Anda menceritakan masalahnya. Isi pertemuan dijaga kerahasiaannya.</p></div>
-            <div class="process__step"><div class="process__n">2<small>/4</small></div><h3 class="t-h3">Menelaah</h3><p class="t-meta">Kami memeriksa fakta dan dokumen, lalu menjelaskan pilihan serta risikonya.</p></div>
-            <div class="process__step"><div class="process__n">3<small>/4</small></div><h3 class="t-h3">Surat Kuasa</h3><p class="t-meta">Bila Anda sepakat, ruang lingkup dan paket biaya dipilih bersama, lalu dituangkan tertulis.</p></div>
-            <div class="process__step"><div class="process__n">4<small>/4</small></div><h3 class="t-h3">Penanganan</h3><p class="t-meta">Kami mengutamakan perundingan bila memungkinkan, dan mendampingi Anda di pengadilan bila perlu.</p></div>
-          </div>
-        </section>
+  <div id="cara">
+    <div class="how__head"><div class="wrap"><h2 class="t-display">Cara kami bekerja</h2></div></div>
 
-        <section class="sect" id="bidang-list">
-          <div class="sect__head"><h2 class="t-h2">Bidang praktik</h2><span class="t-meta">Klik nama bidang untuk membuka panduan</span></div>
-          <div class="card table-wrap"><table class="table">
-            <thead><tr><th>Bidang</th><th>Contoh urusan</th><th>Forum umum</th></tr></thead>
-            <tbody>
-              <tr><td><a href="#panduan" data-start="pidana">Pidana</a></td><td>Pemeriksaan sebagai saksi atau tersangka, penggelapan, penipuan</td><td>Kepolisian, kejaksaan, Pengadilan Negeri</td></tr>
-              <tr><td><a href="#panduan" data-start="kontrak">Perdata &amp; litigasi</a></td><td>Wanprestasi, perbuatan melawan hukum, negosiasi kontrak</td><td>Pengadilan Negeri, arbitrase</td></tr>
-              <tr><td><a href="#panduan" data-start="keluarga">Keluarga</a></td><td>Perceraian, hak asuh anak, harta bersama, perjanjian perkawinan</td><td>Pengadilan Agama, Pengadilan Negeri</td></tr>
-              <tr><td><a href="#panduan" data-start="kerja">Ketenagakerjaan</a></td><td>PHK, kontrak kerja, perjanjian nonkompetisi</td><td>Bipartit, mediasi, Pengadilan Hubungan Industrial</td></tr>
-              <tr><td><a href="#panduan" data-start="tanah">Pertanahan &amp; properti</a></td><td>Sengketa hak, jual beli properti, wanprestasi transaksi</td><td>Pengadilan Negeri, Peradilan TUN</td></tr>
-              <tr><td><a href="#panduan" data-start="pailit">Kepailitan &amp; restrukturisasi</a></td><td>PKPU, kepailitan, hak kreditur, layanan kurator</td><td>Pengadilan Niaga</td></tr>
-              <tr><td><a href="#panduan" data-start="hki">Kekayaan intelektual</a></td><td>Merek, hak cipta, desain industri, paten</td><td>Pendaftaran, Pengadilan Niaga</td></tr>
-              <tr><td><a href="#panduan" data-start="tun">Administrasi negara</a></td><td>Keputusan pejabat, izin, tindakan pemerintahan</td><td>Upaya administratif, Peradilan TUN</td></tr>
-              <tr><td><a href="#jadwal">Bisnis &amp; perpajakan</a></td><td>Pendampingan usaha sehari-hari, perjanjian, sengketa pajak</td><td>Sesuai perkara</td></tr>
-            </tbody>
-          </table></div>
-        </section>
+    <article class="how">
+      <div class="how__text">
+        <span class="how__n n-bara">1</span>
+        <div>
+          <h3 class="t-h2">Anda bercerita, kami mendengarkan.</h3>
+          <p>Kita bertemu dan Anda menceritakan masalahnya. Tidak perlu tahu istilah hukumnya, dan dokumen tidak harus lengkap.</p>
+          <ul class="how__facts"><li>Di kantor atau lewat video</li><li>Isi pertemuan dijaga kerahasiaannya</li></ul>
+        </div>
+      </div>
+      <div class="how__panel c-bara">
+        <div class="mini">
+          <p class="mini__t">Apa posisi Anda saat ini?</p>
+          <div class="mini__row"><b></b>Dipanggil sebagai saksi</div>
+          <div class="mini__row is-on"><b></b>Dipanggil sebagai tersangka</div>
+          <div class="mini__row"><b></b>Saya korban dan ingin melapor</div>
+        </div>
+      </div>
+    </article>
 
-        <section class="sect split">
-          <div id="advokat-list">
-            <div class="sect__head"><h2 class="t-h2">Advokat</h2></div>
-            <div class="card people">
-              <div class="person"><span class="avatar">RK</span><div><p class="t-h3">Ratna Kusumawardani, S.H., M.H.</p><p class="t-small">Direktur · perdata, pidana, niaga</p></div></div>
-              <div class="person"><span class="avatar">BP</span><div><p class="t-h3">Bagas Prasetya, S.H., M.H.</p><p class="t-small">Managing partner · bisnis, kepailitan</p></div></div>
-              <div class="person"><span class="avatar">DN</span><div><p class="t-h3">Dimas Nugraha, S.H.</p><p class="t-small">Advokat · ketenagakerjaan, pertanahan</p></div></div>
-              <div class="person"><span class="avatar">AS</span><div><p class="t-h3">Arif Setiawan, S.H.</p><p class="t-small">Advokat · keluarga, kekayaan intelektual</p></div></div>
+    <article class="how">
+      <div class="how__text">
+        <span class="how__n n-kunyit">2</span>
+        <div>
+          <h3 class="t-h2">Kami menelaah fakta dan dokumen.</h3>
+          <p>Lalu kami menjelaskan pilihan yang tersedia beserta risikonya, supaya keputusan tetap di tangan Anda.</p>
+          <ul class="how__facts"><li>Pilihan dijelaskan apa adanya</li><li>Tanpa janji soal hasil perkara</li></ul>
+        </div>
+      </div>
+      <div class="how__panel c-kunyit">
+        <div class="mini">
+          <p class="mini__t">Yang sudah Anda bawa</p>
+          <div class="mini__row is-on"><i data-lucide="check"></i>Kontrak kerja</div>
+          <div class="mini__row is-on"><i data-lucide="check"></i>Surat PHK</div>
+          <div class="mini__row"><i data-lucide="minus"></i>Risalah perundingan bipartit</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="how">
+      <div class="how__text">
+        <span class="how__n n-daun">3</span>
+        <div>
+          <h3 class="t-h2">Semua disepakati tertulis.</h3>
+          <p>Bila Anda setuju untuk lanjut, ruang lingkup dan paket biaya dipilih bersama, lalu dituangkan dalam Surat Kuasa.</p>
+          <ul class="how__facts"><li>Biaya dibahas sebelum tanda tangan</li><li>Ruang lingkup jelas sejak awal</li></ul>
+        </div>
+      </div>
+      <div class="how__panel c-daun">
+        <div class="mini">
+          <p class="mini__t">Surat Kuasa</p>
+          <div class="mini__row is-on"><i data-lucide="check"></i>Ruang lingkup penanganan</div>
+          <div class="mini__row is-on"><i data-lucide="check"></i>Paket biaya pilihan Anda</div>
+          <div class="mini__row is-on"><i data-lucide="check"></i>Advokat penanggung jawab</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="how">
+      <div class="how__text">
+        <span class="how__n n-ink">4</span>
+        <div>
+          <h3 class="t-h2">Perkara ditangani, Anda tetap tahu posisinya.</h3>
+          <p>Kami mengutamakan perundingan bila memungkinkan, dan mendampingi Anda di pengadilan bila perlu.</p>
+          <ul class="how__facts"><li>Tim kecil yang sesuai perkara</li><li>Satu penanggung jawab yang jelas</li></ul>
+        </div>
+      </div>
+      <div class="how__panel c-ink">
+        <div class="mini">
+          <div class="mini__msg">
+            <span class="av">DN</span>
+            <div>
+              <p><b>Dimas Nugraha</b></p>
+              <p>Mediasi kedua dijadwalkan Jumat, 6 November.</p>
+              <p>Tolong bawa risalah perundingan yang kemarin ya, Pak.</p>
             </div>
           </div>
-          <div>
-            <div class="sect__head"><h2 class="t-h2">Yang kami pegang</h2></div>
-            <div class="card">
-              <div class="value"><p class="t-h3">Kerahasiaan</p><p class="t-small">Komunikasi perkara dijaga sejak konsultasi pertama sampai perkara selesai.</p></div>
-              <div class="value"><p class="t-h3">Etika profesi</p><p class="t-small">Kami menjelaskan peluang dan risiko apa adanya. Advokat tidak menjanjikan hasil perkara.</p></div>
-              <div class="value"><p class="t-h3">Penyelesaian di luar sidang</p><p class="t-small">Alternatif penyelesaian sengketa dipertimbangkan sebelum menempuh gugatan.</p></div>
-              <div class="value"><p class="t-h3">Tim yang pas</p><p class="t-small">Perkara ditangani tim kecil yang sesuai, dengan satu penanggung jawab yang jelas.</p></div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
+    </article>
+  </div>
 
-        <section class="sect" id="kantor-list">
-          <div class="sect__head"><h2 class="t-h2">Kantor</h2><span class="t-meta">Senin–Jumat · dengan janji temu</span></div>
-          <div class="split">
-            <div class="card office"><p class="t-h3">Semarang</p><p class="t-meta">Kawasan Simpang Lima</p><p class="t-meta num">0800-0000-1120 · semarang@saksamarekan.example</p></div>
-            <div class="card office"><p class="t-h3">Makassar</p><p class="t-meta">Kawasan Panakkukang</p><p class="t-meta num">0800-0000-1121 · makassar@saksamarekan.example</p></div>
-          </div>
-        </section>
-
-        <footer class="foot">
-          <p class="t-small">Saksama &amp; Rekan. Situs ini berisi informasi umum mengenai kantor dan hukum Indonesia, bukan nasihat hukum, dan penggunaannya tidak menimbulkan hubungan advokat-klien.</p>
-          <a class="link" style="font-size:14px" href="#perkara">Masuk tim <i data-lucide="arrow-right" class="i-sm"></i></a>
-        </footer>
+  <div class="band band--kunyit" id="bidang">
+    <div class="wrap prac-wrap">
+      <div class="prac-head">
+        <h2 class="t-display">Bidang praktik</h2>
+        <p>Pilih satu untuk membuka panduannya.</p>
+      </div>
+      <div>
+        <a class="prac" href="#panduan" data-start="pidana"><h3 class="t-h2">Pidana</h3><span>Pemeriksaan sebagai saksi atau tersangka, penggelapan, penipuan</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="kontrak"><h3 class="t-h2">Perdata &amp; litigasi</h3><span>Wanprestasi, perbuatan melawan hukum, negosiasi kontrak</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="keluarga"><h3 class="t-h2">Keluarga</h3><span>Perceraian, hak asuh anak, harta bersama, perjanjian perkawinan</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="kerja"><h3 class="t-h2">Ketenagakerjaan</h3><span>PHK, kontrak kerja, perjanjian nonkompetisi</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="tanah"><h3 class="t-h2">Pertanahan &amp; properti</h3><span>Sengketa hak, jual beli properti, wanprestasi transaksi</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="pailit"><h3 class="t-h2">Kepailitan &amp; restrukturisasi</h3><span>PKPU, kepailitan, hak kreditur, layanan kurator</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="hki"><h3 class="t-h2">Kekayaan intelektual</h3><span>Merek, hak cipta, desain industri, paten</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#panduan" data-start="tun"><h3 class="t-h2">Administrasi negara</h3><span>Keputusan pejabat, izin, tindakan pemerintahan</span><i data-lucide="arrow-right"></i></a>
+        <a class="prac" href="#jadwal"><h3 class="t-h2">Bisnis &amp; perpajakan</h3><span>Pendampingan usaha sehari-hari, perjanjian, sengketa pajak</span><i data-lucide="arrow-right"></i></a>
       </div>
     </div>
   </div>
+
+  <div class="band" id="advokat">
+    <div class="wrap">
+      <h2 class="t-display">Orang yang akan<br>duduk bersama Anda</h2>
+      <div class="laws">
+        <div class="law"><div class="law__box c-bara" aria-hidden="true">RK</div><h3>Ratna Kusumawardani, S.H., M.H.</h3><p>Direktur. Perdata, pidana, niaga</p></div>
+        <div class="law"><div class="law__box c-ink" aria-hidden="true">BP</div><h3>Bagas Prasetya, S.H., M.H.</h3><p>Managing partner. Bisnis, kepailitan</p></div>
+        <div class="law"><div class="law__box c-kunyit" aria-hidden="true">DN</div><h3>Dimas Nugraha, S.H.</h3><p>Advokat. Ketenagakerjaan, pertanahan</p></div>
+        <div class="law"><div class="law__box c-daun" aria-hidden="true">AS</div><h3>Arif Setiawan, S.H.</h3><p>Advokat. Keluarga, kekayaan intelektual</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--daun" id="kantor">
+    <div class="wrap">
+      <h2 class="t-h2">Dua kantor, Senin sampai Jumat, dengan janji temu.</h2>
+      <div class="cities">
+        <div class="city"><h3 class="t-display">Semarang</h3><p>Kawasan Simpang Lima<br><span class="num">0800-0000-1120</span> · semarang@saksamarekan.example</p></div>
+        <div class="city"><h3 class="t-display">Makassar</h3><p>Kawasan Panakkukang<br><span class="num">0800-0000-1121</span> · makassar@saksamarekan.example</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--bara">
+    <div class="wrap cta">
+      <h2 class="t-display">Belum tahu harus mulai dari mana? Itu wajar.</h2>
+      <a class="btn btn-ink" href="#panduan" data-start="">Mulai panduan <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p class="foot__mark">Saksama &amp; Rekan</p>
+      <div class="foot__row">
+        <p>Situs ini berisi informasi umum mengenai kantor dan hukum Indonesia, bukan nasihat hukum, dan penggunaannya tidak menimbulkan hubungan advokat-klien.</p>
+        <a class="tlink" href="#perkara">Masuk tim <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </footer>
 </section>
 
 <!-- ================= PANDUAN ================= -->
-<section data-screen="panduan">
-  <div class="shell">
-    <aside class="side">
-      <div class="side__head"><a class="wordmark" href="#home">Saksama &amp; Rekan</a></div>
-      <div class="side__body"><p class="t-h3" style="padding:4px 4px 16px">Jawaban Anda</p><div class="trail" id="trail" style="padding:0 4px"></div></div>
-      <div class="side__foot"><button class="nav-item" id="restart" type="button"><i data-lucide="rotate-ccw" class="i-sm"></i>Mulai ulang</button></div>
-    </aside>
-    <div class="main">
-      <header class="topbar">
-        <a class="wordmark" href="#home">Saksama &amp; Rekan</a>
-        <span class="topbar__title">Panduan awal</span>
-        <div class="topbar__links"><a href="#home">Beranda</a><a class="btn btn-secondary btn-sm" href="#jadwal">Jadwalkan</a></div>
-      </header>
-      <div class="content"><div id="guide"></div></div>
-    </div>
-  </div>
-</section>
+<section data-screen="panduan"><div id="guide"></div></section>
 
 <!-- ================= JADWAL ================= -->
 <section data-screen="jadwal">
-  <div class="shell">
-    <aside class="side">
-      <div class="side__head"><a class="wordmark" href="#home">Saksama &amp; Rekan</a></div>
-      <div class="side__body">
-        <p class="t-h3" style="padding:4px 4px 12px">Sebelum bertemu</p>
-        <p class="t-small" style="padding:0 4px 12px">Dokumen tidak harus lengkap. Yang belum ada bisa dibicarakan saat pertemuan.</p>
-        <p class="t-small" style="padding:0 4px 12px">Sebelum dikonfirmasi, kami memeriksa benturan kepentingan. Karena itu, sebutkan nama pihak lawan bila Anda mengetahuinya.</p>
-        <p class="t-small" style="padding:0 4px">Biaya dan paket pilihan dibahas di pertemuan, sebelum Surat Kuasa dibuat.</p>
+  <form id="bookForm" data-demo-form="#bookOk">
+    <div class="book-top">
+      <div class="book-col">
+        <h1 class="t-h1">Pilih waktu bertemu.</h1>
+        <p class="lead">Biaya dibahas di pertemuan, sebelum Surat Kuasa dibuat.</p>
       </div>
-      <div class="side__foot"><a class="nav-item" href="#panduan"><i data-lucide="arrow-left" class="i-sm"></i>Kembali ke panduan</a></div>
-    </aside>
-    <div class="main">
-      <header class="topbar">
-        <a class="wordmark" href="#home">Saksama &amp; Rekan</a>
-        <span class="topbar__title">Jadwal konsultasi</span>
-        <div class="topbar__links"><a href="#home">Beranda</a><a href="#panduan">Panduan</a></div>
-      </header>
-      <div class="content">
-        <form id="bookForm" data-demo-form="#bookOk">
-          <div class="card">
-            <div class="card__pad" style="display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);flex-wrap:wrap">
-              <div><h1 class="t-h2">Dokumen yang sudah Anda punya</h1><p class="t-meta" id="docCase"></p></div>
-              <div style="min-width:180px"><div class="fraction" style="font-size:40px"><span id="docN">0</span><small>/<span id="docT">0</span></small></div><div class="bar" style="margin-top:8px"><i id="docBar" style="width:0"></i></div></div>
-            </div>
-            <div class="check-grid" id="docList"></div>
+    </div>
+    <div class="book">
+      <div class="book-col">
+        <div class="book__sec">
+          <h2 class="t-h2">Bertemu di mana?</h2>
+          <div class="seg" data-select id="mode">
+            <button type="button" class="is-active" data-value="Kantor Semarang">Semarang</button>
+            <button type="button" data-value="Kantor Makassar">Makassar</button>
+            <button type="button" data-value="Video">Video</button>
           </div>
-
-          <div class="card sched" style="margin-top:16px">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h2 class="t-h2">November 2026</h2><span class="t-meta">Senin–Jumat</span></div>
-              <div class="cal" id="calHead"></div>
-              <div class="cal" id="cal" data-select="is-selected"></div>
-            </div>
-            <div>
-              <h2 class="t-h3" style="margin-bottom:10px">Cara bertemu</h2>
-              <div class="seg" data-select id="mode">
-                <button type="button" class="is-active" data-value="Kantor Semarang">Semarang</button>
-                <button type="button" data-value="Kantor Makassar">Makassar</button>
-                <button type="button" data-value="Video">Video</button>
-              </div>
-              <h2 class="t-h3" style="margin:20px 0 10px">Jam tersedia</h2>
-              <div class="slots" id="slots" data-select="is-selected"></div>
-            </div>
-          </div>
-
-          <div class="card" style="margin-top:16px">
-            <div class="fields">
-              <label class="field">Nama<input required autocomplete="off" placeholder="Nama lengkap"></label>
-              <label class="field">Nomor WhatsApp<input required inputmode="tel" autocomplete="off" placeholder="08xx"></label>
-              <label class="field field--full">Nama pihak lawan, bila ada<input autocomplete="off" placeholder="Untuk pemeriksaan benturan kepentingan"></label>
-              <label class="agree field--full"><input type="checkbox" required><span>Saya memahami bahwa permintaan ini belum menimbulkan hubungan advokat-klien, dan panduan di situs ini bukan nasihat hukum.</span></label>
-            </div>
-          </div>
-
-          <div class="sticky-bar">
-            <div><small>Permintaan jadwal</small><b id="sumWhen"></b></div>
-            <button class="btn" type="submit">Kirim permintaan</button>
-          </div>
-        </form>
-
-        <div class="card card__pad" id="bookOk" hidden style="max-width:720px">
-          <span class="pill pill--warn">Menunggu konfirmasi</span>
-          <h1 class="t-h1" style="margin-top:14px">Permintaan <span class="num">SR-K-1127</span> kami terima.</h1>
-          <p class="lead" style="margin-top:8px"><span id="okWhen"></span>. Setelah pemeriksaan benturan kepentingan, staf kami menghubungi Anda lewat WhatsApp untuk mengonfirmasi jadwal.</p>
-          <div class="notice" style="margin-top:18px"><i data-lucide="info"></i><span>Bila ada surat dengan tenggat dalam waktu dekat, sebutkan saat dihubungi agar jadwal dapat disesuaikan.</span></div>
-          <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap"><a class="btn btn-primary" href="#">Buka WhatsApp</a><a class="btn btn-secondary" href="#home">Ke beranda</a></div>
+        </div>
+        <div class="book__sec">
+          <h2 class="t-h2">Hari apa, November 2026?</h2>
+          <div class="days" id="days" data-select="is-selected"></div>
+          <div class="slots" id="slots" data-select="is-selected"></div>
+        </div>
+        <div class="book__sec">
+          <h2 class="t-h2">Dokumen yang sudah ada</h2>
+          <p><span id="docCase"></span> <span class="doc-count"><span id="docN">0</span> dari <span id="docT">0</span> ditandai.</span></p>
+          <div id="docList"></div>
+        </div>
+        <div class="book__sec">
+          <h2 class="t-h2">Siapa yang kami hubungi?</h2>
+          <label class="field">Nama<input required autocomplete="off" placeholder="Nama lengkap"></label>
+          <label class="field">Nomor WhatsApp<input required inputmode="tel" autocomplete="off" placeholder="08xx"></label>
+          <label class="field">Nama pihak lawan, bila ada<input autocomplete="off" placeholder="Untuk cek benturan kepentingan"></label>
+          <label class="agree"><input type="checkbox" required><span>Saya memahami bahwa permintaan ini belum menimbulkan hubungan advokat-klien, dan panduan di situs ini bukan nasihat hukum.</span></label>
         </div>
       </div>
+    </div>
+    <div class="stickbar">
+      <div class="stickbar__in">
+        <div><small>Permintaan jadwal</small><b id="sumWhen"></b></div>
+        <button class="btn btn-kunyit" type="submit">Kirim permintaan</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="ok" id="bookOk" hidden>
+    <div class="ok__in">
+      <span class="tag">Menunggu konfirmasi</span>
+      <h1 class="t-display">Permintaan <span class="num">SR-K-1127</span> kami terima.</h1>
+      <p class="lead"><span id="okWhen"></span>. Setelah pemeriksaan benturan kepentingan, staf kami menghubungi Anda lewat WhatsApp untuk mengonfirmasi jadwal.</p>
+      <div class="ok__note"><i data-lucide="info"></i><span>Bila ada surat dengan tenggat dalam waktu dekat, sebutkan saat dihubungi agar jadwal dapat disesuaikan.</span></div>
+      <div class="ok__btns"><a class="btn btn-kunyit" href="#">Buka WhatsApp</a><a class="btn btn-line" href="#home">Ke beranda</a></div>
     </div>
   </div>
 </section>
@@ -194,25 +262,23 @@
 <!-- ================= PAPAN PERKARA ================= -->
 <section data-screen="perkara">
   <div class="ops">
-    <aside class="ops__side">
-      <a class="wordmark" href="#home" style="padding:0 10px;background:none">Saksama &amp; Rekan</a>
-      <a class="is-active" href="#perkara"><i data-lucide="columns-3"></i>Papan perkara</a>
-      <a href="#perkara"><i data-lucide="calendar-days"></i>Agenda sidang</a>
-      <a href="#perkara"><i data-lucide="inbox"></i>Permintaan masuk</a>
-      <a href="#perkara"><i data-lucide="folder-closed"></i>Berkas</a>
-      <a href="#perkara"><i data-lucide="users"></i>Klien</a>
-      <a href="#home" style="margin-top:auto"><i data-lucide="arrow-left"></i>Situs publik</a>
-    </aside>
-    <div>
-      <div class="ops__mobile"><a class="wordmark" href="#home">Saksama &amp; Rekan</a><span class="t-small" style="color:#cfcadd">Tim</span></div>
-      <div class="ops__main">
-        <div class="ops__head">
-          <div><h1 class="t-h2">Papan perkara</h1><p class="t-small">Minggu, 1 November 2026 · <span id="boardCount"></span> · nama klien disamarkan · merah di agenda = batas waktu berkas</p></div>
-          <div class="chips" id="lawyerFilter" data-select></div>
-        </div>
-        <div class="card rail" id="rail"></div>
-        <div class="board" id="board"></div>
+    <div class="ops__bar">
+      <a class="wordmark" href="#home">Saksama &amp; Rekan</a>
+      <nav class="ops__tabs" aria-label="Tim">
+        <a class="is-active" href="#perkara"><i data-lucide="columns-3"></i>Papan perkara</a>
+        <a href="#perkara"><i data-lucide="calendar-days"></i>Agenda sidang</a>
+        <a href="#perkara"><i data-lucide="inbox"></i>Permintaan masuk</a>
+        <a href="#perkara"><i data-lucide="folder-closed"></i>Berkas</a>
+      </nav>
+      <a class="ops__back" href="#home"><i data-lucide="arrow-left"></i>Situs publik</a>
+    </div>
+    <div class="ops__main">
+      <div class="ops__head">
+        <div><h1 class="t-h1">Papan perkara</h1><p>Minggu, 1 November 2026 · <span id="boardCount"></span> · nama klien disamarkan · blok oranye di agenda = batas waktu berkas</p></div>
+        <div class="chips" id="lawyerFilter" data-select></div>
       </div>
+      <div class="rail" id="rail"></div>
+      <div class="board" id="board"></div>
     </div>
   </div>
   <aside class="drawer" id="drawer" hidden></aside>
@@ -224,8 +290,9 @@
 (function () {
   function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
   function $(id) { return document.getElementById(id); }
+  function view() { return location.hash.slice(1) || "home"; }
 
-  /* ------- Data panduan: informasi umum, ditinjau advokat sebelum dipakai nyata ------- */
+  /* Data panduan: informasi umum, ditinjau advokat sebelum dipakai nyata */
   var CASES = {
     pidana: { nav: "Pidana", group: "Perorangan", t: "Saya dipanggil polisi atau dilaporkan", m: "Pidana",
       qs: [
@@ -282,118 +349,148 @@
       docs: ["Salinan keputusan yang dipersoalkan", "Bukti tanggal diterima", "Surat keberatan, bila sudah diajukan", "Dokumen permohonan awal", "Surat-menyurat dengan instansi"] }
   };
   var ORDER = ["pidana", "kontrak", "keluarga", "kerja", "tanah", "pailit", "hki", "tun"];
+  var KEYS = {
+    pidana: "polisi panggilan saksi tersangka ditahan ditangkap lapor penipuan penggelapan pidana",
+    kontrak: "kontrak perjanjian wanprestasi somasi tagihan mitra bayar gugat perdata",
+    keluarga: "cerai perceraian gugat hak asuh anak harta gono-gini nikah keluarga",
+    kerja: "phk di-phk pesangon kerja karyawan pecat dipecat buruh hrd bipartit",
+    tanah: "tanah rumah sertifikat waris warisan girik properti batas lahan",
+    pailit: "utang hutang pailit pkpu kredit kreditur piutang macet bangkrut",
+    hki: "merek hak cipta desain paten karya dijiplak ditiru",
+    tun: "izin pejabat pemerintah keputusan dinas ptun tun kepegawaian dicabut"
+  };
 
-  /* ------- Beranda ------- */
-  $("sit").innerHTML = ORDER.map(function (k) {
-    return '<a class="sit__row" href="#panduan" data-start="' + k + '"><div><p class="sit__t">' + CASES[k].t + '</p><p class="sit__m">' + CASES[k].m + '</p></div><i data-lucide="arrow-right"></i></a>';
-  }).join("");
-  var groups = {};
-  ORDER.forEach(function (k) { var g = CASES[k].group; (groups[g] = groups[g] || []).push(k); });
-  $("tree").innerHTML = '<a class="nav-item is-active" href="#home"><i data-lucide="layout-list"></i>Mulai di sini</a>' +
-    ["Perorangan", "Usaha", "Pemerintahan"].map(function (g) {
-      return '<div class="nav-group"><span class="nav-group__label">' + g + '</span>' + groups[g].map(function (k) {
-        return '<a class="nav-item" href="#panduan" data-start="' + k + '">' + CASES[k].nav + '</a>';
-      }).join("") + '</div>';
-    }).join("") +
-    '<div class="nav-group"><span class="nav-group__label">Kantor</span><a class="nav-item" href="#home" data-jump="advokat-list">Advokat</a><a class="nav-item" href="#home" data-jump="kantor-list">Lokasi</a></div>';
+  /* Input masalah di beranda */
+  if (window.innerWidth < 640) $("askInput").placeholder = "Contoh: saya di-PHK";
+  var askIdx = 0, askHits = ORDER.slice();
+  function askMatch(v) {
+    var words = v.toLowerCase().split(/[^a-z0-9-]+/).filter(function (w) { return w.length > 2 && w !== "saya"; });
+    if (!words.length) return ORDER.slice();
+    return ORDER.filter(function (k) {
+      var hay = (KEYS[k] + " " + CASES[k].t + " " + CASES[k].m).toLowerCase();
+      return words.some(function (w) { return hay.indexOf(w) > -1; });
+    });
+  }
+  function askRender() {
+    var list = $("askList"), typed = $("askInput").value.trim();
+    askHits = askMatch(typed);
+    if (askIdx >= askHits.length) askIdx = 0;
+    list.innerHTML = askHits.length ? askHits.map(function (k, i) {
+      return '<button type="button" data-case-go="' + k + '"' + (typed && i === askIdx ? ' class="is-hit"' : "") + '>' + CASES[k].t + '<span>' + CASES[k].m + '</span></button>';
+    }).join("") : '<p class="ask__none">Belum ada yang cocok. Tekan Mulai untuk memilih dari daftar.</p>';
+    list.hidden = false;
+  }
+  function askClose() { $("askList").hidden = true; }
+  function askGo(k) { askClose(); $("askInput").value = ""; start(k || null); location.hash = "panduan"; }
+  $("askInput").addEventListener("focus", askRender);
+  $("askInput").addEventListener("input", function () { askIdx = 0; askRender(); });
+  $("askInput").addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { askClose(); return; }
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    e.preventDefault();
+    if (askHits.length) { askIdx = (askIdx + (e.key === "ArrowDown" ? 1 : askHits.length - 1)) % askHits.length; askRender(); }
+  });
+  $("ask").addEventListener("submit", function (e) {
+    e.preventDefault();
+    askGo($("askInput").value.trim() ? askHits[askIdx] : null);
+  });
 
-  /* ------- Panduan ------- */
-  /* Tampilan awal menunjukkan satu contoh selesai. Tombol masuk dari beranda mengulang dari awal. */
-  var st = { c: "kerja", a: [0, 2] };
+  /* Panduan */
+  var st = { c: null, a: [null, null] };
 
   function needsNotice() {
     var c = CASES[st.c]; if (!c) return false;
     return c.qs.some(function (q, i) { var o = q.o[st.a[i]]; return o && o[1]; });
   }
-  function renderTrail() {
-    var c = CASES[st.c], rows = [["Jenis masalah", c ? c.m : ""]];
-    (c ? c.qs : [{ q: "" }, { q: "" }]).forEach(function (q, i) {
-      rows.push([i === 0 ? "Keadaan" : "Rincian", c && st.a[i] != null ? q.o[st.a[i]][0] : ""]);
-    });
-    rows.push(["Yang perlu disiapkan", ""]);
-    var now = rows.findIndex(function (r, i) { return !r[1] && i < 3; });
-    if (now < 0) now = 3;
-    $("trail").innerHTML = rows.map(function (r, i) {
-      var done = i < now || (i === 3 && now === 3);
-      return '<div class="trail__row ' + (done ? "is-done" : i === now ? "is-now" : "") + '"><span class="trail__dot">' + (done ? '<i data-lucide="check"></i>' : i + 1) + '</span><div><p class="trail__k">' + r[0] + '</p>' + (r[1] ? '<p class="trail__v">' + r[1] + '</p>' : "") + '</div></div>';
-    }).join("");
-  }
-  function header(n, q) {
-    return '<div style="display:flex;align-items:end;gap:16px;margin-bottom:10px"><div class="fraction">' + n + '<small>/4</small></div><p class="t-meta" style="padding-bottom:6px">Hanya beberapa pertanyaan. Jawaban tidak dikirim ke mana pun.</p></div>' +
-      '<div class="bar" style="margin-bottom:28px"><i style="width:' + n * 25 + '%"></i></div><h1 class="t-h1" style="margin-bottom:18px">' + q + '</h1>';
+  function shell(step, q, opts, two) {
+    return '<div class="q q--' + step + '"><div class="q__in">' +
+      '<div class="q__meta"><span>Pertanyaan ' + (step + 1) + ' dari 3</span><span>Jawaban tidak dikirim ke mana pun</span></div>' +
+      '<div class="q__bar"><i style="width:' + (step + 1) * 100 / 3 + '%"></i></div>' +
+      '<h1 class="t-display">' + q + '</h1>' +
+      '<div class="opts' + (two ? " opts--2" : "") + '">' + opts + '</div>' +
+      '<div class="q__foot">' + (step ? '<button type="button" class="q__back" id="back"><i data-lucide="arrow-left"></i>Kembali</button>' : '<a class="tlink" href="#jadwal">Tidak ada yang cocok? Langsung pilih jadwal</a>') +
+      '<span>Informasi umum, bukan nasihat hukum.</span></div>' +
+      '</div></div>';
   }
   function renderGuide() {
     var c = CASES[st.c], box = $("guide"), step = !c ? 0 : st.a[0] == null ? 1 : st.a[1] == null ? 2 : 3;
     if (step === 0) {
-      box.innerHTML = '<div class="guide">' + header(1, "Apa yang sedang Anda hadapi?") + '<div class="card opts">' +
-        ORDER.map(function (k) { return '<button type="button" class="opt" data-case="' + k + '"><span><span class="sit__t">' + CASES[k].t + '</span></span><i data-lucide="arrow-right"></i></button>'; }).join("") +
-        '</div></div>';
+      box.innerHTML = shell(0, "Apa yang sedang Anda hadapi?", ORDER.map(function (k, i) {
+        return '<button type="button" class="opt" data-case="' + k + '"><kbd>' + (i + 1) + '</kbd>' + CASES[k].t + '</button>';
+      }).join(""), true);
     } else if (step < 3) {
-      var q = c.qs[step - 1];
-      box.innerHTML = '<div class="guide">' + header(step + 1, q.q) + '<div class="card opts">' +
-        q.o.map(function (o, i) { return '<button type="button" class="opt" data-ans="' + i + '"><span class="sit__t">' + o[0] + '</span><i data-lucide="arrow-right"></i></button>'; }).join("") +
-        '</div><button type="button" class="link" id="back" style="margin-top:16px"><i data-lucide="arrow-left" class="i-sm"></i>Kembali</button></div>';
+      box.innerHTML = shell(step, c.qs[step - 1].q, c.qs[step - 1].o.map(function (o, i) {
+        return '<button type="button" class="opt" data-ans="' + i + '"><kbd>' + (i + 1) + '</kbd>' + o[0] + '</button>';
+      }).join(""), false);
     } else {
-      box.innerHTML = '<h1 class="t-h1" style="max-width:760px">' + c.m + ': tahapan umum dan yang perlu Anda siapkan</h1>' +
-        '<p class="lead" style="margin:8px 0 20px;max-width:760px">Tiap perkara berbeda. Urutan di bawah adalah gambaran umum, dan advokat akan menilainya setelah melihat dokumen Anda.</p>' +
-        (needsNotice() ? '<div class="notice notice--risk" style="margin-bottom:16px"><i data-lucide="clock"></i><span>' + c.urgent + '</span></div>' : "") +
-        '<div class="result"><div class="card card__pad"><h2 class="t-h2" style="margin-bottom:18px">Tahapan yang biasanya dilalui</h2><div class="stages">' +
-        c.stages.map(function (s, i) { return '<div class="stage"><span class="stage__n">' + (i + 1) + '</span><div><p class="t-h3">' + s[0] + '</p><p class="t-meta">' + s[1] + '</p></div></div>'; }).join("") +
-        '</div></div><div class="card card__pad"><h2 class="t-h2" style="margin-bottom:8px">Dokumen yang disiapkan</h2><ul class="docs">' +
-        c.docs.map(function (d) { return '<li><i data-lucide="file-text" class="i-sm"></i>' + d + '</li>'; }).join("") +
-        '</ul><a class="btn btn-primary btn-block" style="margin-top:16px" href="#jadwal">Tandai dokumen dan pilih jadwal</a></div></div>' +
-        '<p class="t-small" style="margin-top:16px;max-width:760px">Informasi umum, bukan nasihat hukum. Penjelasan ini tidak menggantikan pendapat advokat atas perkara Anda dan belum menimbulkan hubungan advokat-klien.</p>';
+      box.innerHTML = '<div class="res__top"><div class="wrap res__in"><h1 class="t-display">' + c.m + ': yang biasanya terjadi, dan yang perlu Anda siapkan.</h1>' +
+        '<p class="lead">Tiap perkara berbeda. Urutan di bawah adalah gambaran umum, dan advokat akan menilainya setelah melihat dokumen Anda.</p></div></div>' +
+        (needsNotice() ? '<div class="urgent"><div><i data-lucide="clock"></i><p>' + c.urgent + '</p></div></div>' : "") +
+        '<div class="res__body"><div><h2 class="t-h1">Tahapan umum</h2>' +
+        c.stages.map(function (s, i) { return '<div class="stage"><b>' + (i + 1) + '</b><div><h3 class="t-h3">' + s[0] + '</h3><p>' + s[1] + '</p></div></div>'; }).join("") +
+        '</div><div class="res__panel"><h2 class="t-h2">Dokumen yang disiapkan</h2>' +
+        c.docs.map(function (d) { return '<div class="doc"><i data-lucide="file-text"></i>' + d + '</div>'; }).join("") +
+        '<a class="btn btn-ink btn-block" href="#jadwal">Tandai dokumen dan pilih jadwal</a></div></div>' +
+        '<div class="res__foot"><p>Informasi umum, bukan nasihat hukum. Penjelasan ini tidak menggantikan pendapat advokat atas perkara Anda dan belum menimbulkan hubungan advokat-klien.</p>' +
+        '<div><button type="button" class="tlink" id="edit">Ubah jawaban</button><button type="button" class="tlink" id="restart">Mulai ulang</button></div></div>';
     }
-    renderTrail(); renderDocs(); icons();
+    renderDocs(); icons();
   }
   function start(k) { st = { c: k || null, a: [null, null] }; renderGuide(); }
+  function answer(i) { st.a[st.a[0] == null ? 0 : 1] = i; renderGuide(); window.scrollTo(0, 0); }
 
   document.addEventListener("click", function (e) {
+    var go = e.target.closest("[data-case-go]"); if (go) { askGo(go.getAttribute("data-case-go")); return; }
+    if (!e.target.closest("#ask")) askClose();
+    if (e.target.closest("#menu")) $("head").classList.toggle("is-open"); else $("head").classList.remove("is-open");
     var s = e.target.closest("[data-start]"); if (s) start(s.getAttribute("data-start"));
     var c = e.target.closest("[data-case]"); if (c) start(c.getAttribute("data-case"));
-    var a = e.target.closest("[data-ans]");
-    if (a) { st.a[st.a[0] == null ? 0 : 1] = Number(a.getAttribute("data-ans")); renderGuide(); window.scrollTo(0, 0); }
+    var a = e.target.closest("[data-ans]"); if (a) answer(Number(a.getAttribute("data-ans")));
     if (e.target.closest("#back")) { if (st.a[0] != null) st.a[0] = null; else st.c = null; renderGuide(); }
+    if (e.target.closest("#edit")) { st.a[1] = null; renderGuide(); window.scrollTo(0, 0); }
+    if (e.target.closest("#restart")) { start(null); window.scrollTo(0, 0); }
     var j = e.target.closest("[data-jump]");
-    if (j) { e.preventDefault(); var id = j.getAttribute("data-jump"); if (location.hash && location.hash !== "#home") location.hash = "home"; setTimeout(function () { var el = $(id); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 92); }, 30); }
+    if (j) {
+      e.preventDefault();
+      var id = j.getAttribute("data-jump");
+      if (view() !== "home") location.hash = "home";
+      setTimeout(function () { var el = $(id); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 72); }, 40);
+    }
   });
-  $("restart").addEventListener("click", function () { start(null); });
+  document.addEventListener("keydown", function (e) {
+    if (view() !== "panduan" || e.metaKey || e.ctrlKey || e.altKey) return;
+    var n = Number(e.key); if (!n) return;
+    var o = $("guide").querySelectorAll(".opt")[n - 1]; if (o) o.click();
+  });
 
-  /* ------- Jadwal ------- */
+  /* Jadwal */
   var FULL = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
   var SHORT = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+  var DAYS = [2, 3, 4, 5, 6, 9, 10, 11, 12, 13];
+  var TIMES = ["09.00", "10.00", "11.00", "13.00", "14.00", "15.00", "16.00", "17.00"];
   var sel = { d: 4, t: "10.00", m: "Kantor Semarang" };
 
   function renderDocs() {
-    var c = CASES[st.c] || CASES.kerja, had = c.docs.length;
-    $("docCase").textContent = c.m + ". Centang yang sudah ada, tidak harus lengkap.";
-    $("docList").innerHTML = c.docs.map(function (d, i) { return '<label class="check"><input type="checkbox"' + (i < 2 ? " checked" : "") + '><span>' + d + '</span></label>'; }).join("");
-    $("docT").textContent = had; countDocs();
+    var c = CASES[st.c] || CASES.kerja;
+    $("docCase").textContent = c.m + ". Tidak harus lengkap, yang belum ada bisa dibicarakan saat bertemu.";
+    $("docList").innerHTML = c.docs.map(function (d) { return '<label class="check"><input type="checkbox"><span>' + d + '</span></label>'; }).join("");
+    $("docT").textContent = c.docs.length; countDocs();
   }
-  function countDocs() {
-    var n = $("docList").querySelectorAll("input:checked").length, t = $("docList").querySelectorAll("input").length;
-    $("docN").textContent = n; $("docBar").style.width = (t ? n / t * 100 : 0) + "%";
-  }
+  function countDocs() { $("docN").textContent = $("docList").querySelectorAll("input:checked").length; }
   $("docList").addEventListener("change", countDocs);
 
-  $("calHead").innerHTML = SHORT.map(function (d) { return '<div class="cal__h">' + d + '</div>'; }).join("");
-  var calHtml = "";
-  for (var d = 1; d <= 30; d++) {
-    var w = (d - 1) % 7, off = w === 0 || w === 6 || d < 2;
-    calHtml += '<button type="button" class="day' + (off ? " is-off" : "") + (d === sel.d ? " is-selected" : "") + '" data-value="' + d + '"' + (off ? ' aria-disabled="true"' : "") + '>' + d + '</button>';
-  }
-  $("cal").innerHTML = calHtml;
-
-  var TIMES = ["09.00", "10.00", "11.00", "13.00", "14.00", "15.00", "16.00", "17.00"];
+  $("days").innerHTML = DAYS.map(function (d) {
+    return '<button type="button" class="day' + (d === sel.d ? " is-selected" : "") + '" data-value="' + d + '"><small>' + SHORT[(d - 1) % 7] + '</small><b>' + d + '</b></button>';
+  }).join("");
   function renderSlots() {
-    var html = TIMES.map(function (t, i) {
+    var list = TIMES.map(function (t, i) {
       var taken = (sel.d * 3 + i * 5) % 7 === 0;
       if (taken && sel.t === t) sel.t = null;
       return { t: t, taken: taken };
     });
-    if (!sel.t) sel.t = html.filter(function (h) { return !h.taken; })[0].t;
-    $("slots").innerHTML = html.map(function (h) {
-      return '<button type="button" class="slot' + (h.taken ? " is-off" : "") + (h.t === sel.t ? " is-selected" : "") + '" data-value="' + h.t + '"' + (h.taken ? ' aria-disabled="true"' : "") + '>' + h.t + '</button>';
+    if (!sel.t) sel.t = list.filter(function (h) { return !h.taken; })[0].t;
+    $("slots").innerHTML = list.map(function (h) {
+      return '<button type="button" class="slot' + (h.t === sel.t ? " is-selected" : "") + '" data-value="' + h.t + '"' + (h.taken ? " disabled" : "") + '>' + h.t + '</button>';
     }).join("");
     sum();
   }
@@ -401,12 +498,12 @@
     var txt = FULL[(sel.d - 1) % 7] + ", " + sel.d + " November 2026, " + sel.t + " WIB · " + sel.m;
     $("sumWhen").textContent = txt; $("okWhen").textContent = txt;
   }
-  $("cal").addEventListener("lapak:select", function (e) { sel.d = Number(e.detail.value); renderSlots(); });
+  $("days").addEventListener("lapak:select", function (e) { sel.d = Number(e.detail.value); renderSlots(); });
   $("slots").addEventListener("lapak:select", function (e) { sel.t = e.detail.value; sum(); });
   $("mode").addEventListener("lapak:select", function (e) { sel.m = e.detail.value; sum(); });
   renderSlots();
 
-  /* ------- Papan perkara: klien fiktif, inisial saja ------- */
+  /* Papan perkara: klien fiktif, inisial saja */
   var STAGES = ["Penjajakan", "Telaah & kuasa", "Somasi & mediasi", "Persidangan", "Putusan & upaya hukum"];
   var LAW = { RK: "Ratna K.", BP: "Bagas P.", DN: "Dimas N.", AS: "Arif S." };
   var M = [
@@ -427,26 +524,19 @@
     { r: "SR-018", t: "Perselisihan pesangon", c: "Tn. B.G.", k: "Ketenagakerjaan", f: "PHI", s: 4, l: "DN", d: 12, e: "Batas memori kasasi", x: 1, of: "Makassar" }
   ];
   var lawyer = "Semua", open = null;
-  var MON = ["", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
 
   function visible(m) { return lawyer === "Semua" || m.l === lawyer; }
   function hPill(m) {
-    if (m.d == null) return '<span class="pill pill--h">Tanpa tenggat</span>';
-    var cls = m.d <= 3 ? "pill--risk" : m.d <= 7 ? "pill--warn" : "";
-    return '<span class="pill pill--h ' + cls + '">H-' + m.d + '</span>';
+    if (m.d == null) return '<span class="pill">Tanpa tenggat</span>';
+    return '<span class="pill ' + (m.d <= 3 ? "pill--risk" : m.d <= 7 ? "pill--warn" : "") + '">H-' + m.d + '</span>';
   }
   function dateOf(m) { var x = 1 + m.d; return FULL[(x - 1) % 7] + ", " + x + " November"; }
-
   function renderRail() {
-    var h = "";
-    for (var i = 1; i <= 12; i++) {
-      var day = 1 + i, w = (day - 1) % 7;
-      if (w === 0 || w === 6) continue; /* sidang hanya hari kerja */
-      var ev = M.filter(function (m) { return m.d === i && visible(m); });
-      h += '<div class="rail__day"><div class="rail__d"><span>' + SHORT[w] + '</span><b>' + day + '</b></div>' +
-        ev.map(function (m) { return '<button type="button" class="rail__ev' + (m.x ? " rail__ev--dl" : "") + '" data-m="' + m.r + '" title="' + m.e + ' · ' + m.t + '">' + m.e + '</button>'; }).join("") + '</div>';
-    }
-    $("rail").innerHTML = h;
+    $("rail").innerHTML = DAYS.map(function (day) {
+      var ev = M.filter(function (m) { return m.d === day - 1 && visible(m); });
+      return '<div class="rail__day"><div class="rail__d"><span>' + SHORT[(day - 1) % 7] + '</span><b>' + day + '</b></div>' +
+        ev.map(function (m) { return '<button type="button" class="rail__ev' + (m.x ? " rail__ev--dl" : "") + '" data-m="' + m.r + '" title="' + m.t + '">' + m.e + '</button>'; }).join("") + '</div>';
+    }).join("");
   }
   function renderBoard() {
     var list = M.filter(visible);
@@ -454,7 +544,7 @@
     $("board").innerHTML = STAGES.map(function (s, i) {
       var cards = list.filter(function (m) { return m.s === i; }).sort(function (a, b) { return (a.d == null ? 99 : a.d) - (b.d == null ? 99 : b.d); });
       return '<div class="col"><div class="col__h">' + s + '<span>' + cards.length + '</span></div>' + cards.map(function (m) {
-        return '<button type="button" class="mcard' + (open === m.r ? " is-open" : "") + '" data-m="' + m.r + '"><p class="mcard__t">' + m.t + '</p><p class="mcard__m">' + m.r + ' · ' + m.c + '</p><p class="mcard__d">' + m.e + '</p><div class="mcard__f">' + hPill(m) + '<span class="avatar avatar--xs">' + m.l + '</span></div></button>';
+        return '<button type="button" class="mcard' + (open === m.r ? " is-open" : "") + '" data-m="' + m.r + '"><p class="mcard__t">' + m.t + '</p><p class="mcard__m">' + m.r + ' · ' + m.c + '</p><p class="mcard__d">' + m.e + '</p><div class="mcard__f">' + hPill(m) + '<span class="av av--xs">' + m.l + '</span></div></button>';
       }).join("") + '</div>';
     }).join("");
   }
@@ -463,11 +553,11 @@
     if (!m) { el.hidden = true; return; }
     el.hidden = false;
     var last = m.s >= STAGES.length - 1;
-    el.innerHTML = '<div class="drawer__head"><div><p class="t-small">' + m.r + ' · ' + m.k + '</p><h2 class="t-h2">' + m.t + '</h2></div><button type="button" id="drawerX" aria-label="Tutup"><i data-lucide="x"></i></button></div>' +
-      '<div class="drawer__body"><div><p class="t-meta" style="margin-bottom:6px">' + STAGES[m.s] + '</p><div class="track">' + STAGES.map(function (s, i) { return '<i class="' + (i <= m.s ? "on" : "") + '"></i>'; }).join("") + '</div></div>' +
-      '<dl class="kv" style="margin:0"><dt>Klien</dt><dd>' + m.c + '</dd><dt>Forum</dt><dd>' + m.f + '</dd><dt>Kantor</dt><dd>' + m.of + '</dd><dt>Penanggung jawab</dt><dd>' + LAW[m.l] + '</dd><dt>Agenda berikutnya</dt><dd>' + m.e + (m.d != null ? "<br>" + dateOf(m) : "") + '</dd></dl>' +
-      '<div><h3 class="t-h3" style="margin-bottom:4px">Persiapan</h3><ul class="todo"><li class="done"><i data-lucide="check-circle-2" class="i-sm"></i>Pemeriksaan benturan kepentingan</li><li class="done"><i data-lucide="check-circle-2" class="i-sm"></i>Kronologi dari klien</li><li><i data-lucide="circle" class="i-sm"></i>Daftar bukti untuk agenda berikutnya</li><li><i data-lucide="circle" class="i-sm"></i>Kabari klien lewat WhatsApp</li></ul></div></div>' +
-      '<div class="drawer__foot"><button type="button" class="btn btn-primary" style="flex:1" id="moveNext"' + (last ? " disabled" : "") + '>' + (last ? "Tahap terakhir" : "Pindah ke " + STAGES[m.s + 1]) + '</button></div>';
+    el.innerHTML = '<div class="drawer__head"><div><p>' + m.r + ' · ' + m.k + '</p><h2 class="t-h2">' + m.t + '</h2></div><button type="button" id="drawerX" aria-label="Tutup"><i data-lucide="x"></i></button></div>' +
+      '<div class="drawer__body"><div><p class="small" style="margin-bottom:6px">' + STAGES[m.s] + '</p><div class="track">' + STAGES.map(function (s, i) { return '<i class="' + (i <= m.s ? "on" : "") + '"></i>'; }).join("") + '</div></div>' +
+      '<dl class="kv"><dt>Klien</dt><dd>' + m.c + '</dd><dt>Forum</dt><dd>' + m.f + '</dd><dt>Kantor</dt><dd>' + m.of + '</dd><dt>Penanggung jawab</dt><dd>' + LAW[m.l] + '</dd><dt>Agenda berikutnya</dt><dd>' + m.e + (m.d != null ? "<br>" + dateOf(m) : "") + '</dd></dl>' +
+      '<div><h3 class="t-h3">Persiapan</h3><ul class="todo"><li class="done"><i data-lucide="check-circle-2"></i>Pemeriksaan benturan kepentingan</li><li class="done"><i data-lucide="check-circle-2"></i>Kronologi dari klien</li><li><i data-lucide="circle"></i>Daftar bukti untuk agenda berikutnya</li><li><i data-lucide="circle"></i>Kabari klien lewat WhatsApp</li></ul></div></div>' +
+      '<div class="drawer__foot"><button type="button" class="btn btn-ink btn-block" id="moveNext"' + (last ? " disabled" : "") + '>' + (last ? "Tahap terakhir" : "Pindah ke " + STAGES[m.s + 1]) + '</button></div>';
     icons();
   }
   function paint() { renderRail(); renderBoard(); renderDrawer(); icons(); }
@@ -480,8 +570,16 @@
     if (e.target.closest("#drawerX")) { open = null; paint(); return; }
     if (e.target.closest("#moveNext")) { var m = M.filter(function (x) { return x.r === open; })[0]; if (m && m.s < STAGES.length - 1) { m.s++; paint(); } }
   });
-  window.addEventListener("hashchange", function () { if (open) { open = null; paint(); } });
 
+  /* Sinkron dengan router lapak.js */
+  function sync() {
+    document.body.setAttribute("data-view", view());
+    if (open) { open = null; paint(); }
+    if (view() !== "jadwal" && $("bookForm").hidden) { $("bookForm").hidden = false; $("bookOk").hidden = true; $("bookForm").reset(); countDocs(); }
+  }
+  window.addEventListener("hashchange", sync);
+
+  sync();
   renderGuide();
   paint();
 })();

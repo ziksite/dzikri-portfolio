@@ -29,18 +29,18 @@
   "shots": [
     {
       "hash": "home",
-      "caption": "Homepage board comparing price, target time and total per speed",
-      "captionId": "Beranda dengan papan harga, target kembali, dan total per kecepatan"
+      "caption": "Consumer homepage with a pickup widget and priced speed cards",
+      "captionId": "Beranda brand konsumen dengan widget jemput dan kartu kecepatan berharga"
     },
     {
       "hash": "pesan",
-      "caption": "Pickup order in three columns with a live return time",
-      "captionId": "Pesan jemput tiga kolom dengan target kembali yang ikut berubah"
+      "caption": "Step-by-step pickup order with a running total",
+      "captionId": "Pesan jemput langkah demi langkah dengan total berjalan"
     },
     {
       "hash": "lacak",
-      "caption": "Order tracking comparing planned and actual stages",
-      "captionId": "Lacak nota yang membandingkan tahap rencana dan aktual"
+      "caption": "Order tracking with six large, sequential stages",
+      "captionId": "Lacak nota dengan enam tahap besar berurutan"
     },
     {
       "hash": "kasir",
@@ -52,17 +52,17 @@
     "title": "Express Laundry Service Website",
     "type": "LAUNDRY WEBSITE & ORDER TRACKING",
     "category": "Booking System",
-    "summary": "A redesign for a pickup-and-delivery laundry with 20 outlets. Customers compare speed, price and return time on one board, book a pickup slot, and track each receipt by stage; outlet staff weigh orders and print receipts from a cashier tablet.",
+    "summary": "A consumer-brand redesign for a pickup-and-delivery laundry with 20 outlets. Customers pick an area and pickup time from the first screen, compare five speeds on priced cards, order in four light steps and follow each receipt through large stages; outlet staff weigh orders and print receipts from a cashier tablet.",
     "challenge": "The old site listed five speeds as separate price cards, but the price, the weight and the actual return time were never shown together. Every order button opened the same WhatsApp chat, so customers had to ask about the pickup time and the total by hand.\n\nThe 3-hour promise appeared without conditions: nothing explained when the clock starts or what happens late in the evening. The site mentioned a tracking system without offering a way to check an order, per-item prices were visible only on a banner in an outlet photo, and the regular service was described as both 48 hours and 2 to 3 days.",
-    "solution": "The homepage opens with a board instead of a slogan. Choose wash type, weight and pickup slot, and each speed shows its price per kg, target return time and total, with options that cannot be met that day disabled. The conditions behind the 3-hour target are written out as a service target, not an absolute promise.\n\nOrdering fits three columns on one screen, with the return time and estimated total in a bar along the bottom. Tracking compares planned and actual stages on a timeline for each receipt, including late orders and the reason. At the outlet, a cashier tablet takes orders arriving from couriers, reads the scale, applies the 3 kg minimum, shows jobs in production and prints the receipt. The planned production stack is Next.js with Supabase and the WhatsApp API.",
+    "solution": "The homepage opens as a brand, not a form: a full-screen colour block, a giant headline and a pickup widget for area and time. Five speeds follow as large priced cards that recalculate the target and total from wash type, weight and pickup slot, closing options that cannot be met that day. The conditions behind the 3-hour target get their own section as a service target, not an absolute promise.\n\nOrdering asks one question per screen, with pickup, target and total in a dock along the bottom. Tracking shows six large sequential stages per receipt, including late orders and the reason. At the outlet, a cashier tablet using the same brand tokens takes orders arriving from couriers, reads the scale, applies the 3 kg minimum, shows jobs in production and prints the receipt. The planned production stack is Next.js with Supabase and the WhatsApp API.",
     "features": [
-      "Speed board with price, return time and total",
+      "Pickup widget for area and time on the first screen",
+      "Priced speed cards with live target and total",
       "Wash type, weight and pickup slot that recalculate every option",
       "Written conditions for the 3-hour service target",
-      "Three-column pickup order with an estimated total",
-      "Receipt tracking with planned and actual stages",
-      "Cashier tablet for weighing, 3 kg minimum billing and printed receipts",
-      "Outlet list by area with daily express capacity"
+      "Four-step pickup order with a running total",
+      "Receipt tracking with six large sequential stages",
+      "Cashier tablet for weighing, 3 kg minimum billing and printed receipts"
     ],
     "role": "",
     "impact": "",
@@ -72,17 +72,17 @@
     "title": "Website Laundry Express Antar-Jemput",
     "type": "WEBSITE LAUNDRY & LACAK NOTA",
     "category": "Booking System",
-    "summary": "Redesign untuk laundry antar-jemput dengan 20 outlet. Pelanggan membandingkan kecepatan, harga, dan jam kembali dalam satu papan, memesan slot jemput, lalu melacak setiap nota per tahap; staf outlet menimbang dan mencetak nota dari tablet kasir.",
+    "summary": "Redesign bergaya brand konsumen untuk laundry antar-jemput dengan 20 outlet. Pelanggan memilih kawasan dan jam jemput sejak layar pertama, membandingkan lima kecepatan lewat kartu berharga, memesan dalam empat langkah ringan, lalu mengikuti setiap nota lewat tahap besar; staf outlet menimbang dan mencetak nota dari tablet kasir.",
     "challenge": "Situs lama menampilkan lima kecepatan sebagai kartu harga terpisah, tetapi harga, berat, dan jam kembali tidak pernah terlihat bersama. Semua tombol pesan membuka chat WhatsApp yang sama, sehingga pelanggan harus menanyakan jam jemput dan total secara manual.\n\nJanji 3 jam ditulis tanpa syarat: tidak ada penjelasan kapan waktu mulai dihitung atau apa yang terjadi saat malam. Situs menyebut sistem tracking tanpa menyediakan cara mengecek order, harga satuan hanya terlihat pada spanduk di foto outlet, dan layanan reguler ditulis sebagai 48 jam sekaligus 2 sampai 3 hari.",
-    "solution": "Beranda dibuka dengan papan, bukan slogan. Pilih jenis cuci, berat, dan slot jemput, lalu setiap kecepatan menampilkan harga per kg, target kembali, dan total, sementara pilihan yang tidak bisa dipenuhi hari itu dinonaktifkan. Syarat target 3 jam ditulis terbuka sebagai target layanan, bukan janji mutlak.\n\nPemesanan muat dalam tiga kolom satu layar, dengan target kembali dan perkiraan total di bar bawah. Halaman lacak membandingkan tahap rencana dan aktual pada linimasa per nota, termasuk nota yang terlambat beserta alasannya. Di outlet, tablet kasir menerima order dari kurir, membaca timbangan, menerapkan minimal 3 kg, menampilkan pekerjaan yang berjalan, dan mencetak nota. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan WhatsApp API.",
+    "solution": "Beranda dibuka sebagai brand, bukan formulir: blok warna penuh layar, judul raksasa, dan widget jemput untuk kawasan dan jam. Lima kecepatan tampil sebagai kartu besar berharga yang menghitung ulang target dan total dari jenis cuci, berat, dan slot jemput, serta menutup pilihan yang tidak bisa dipenuhi hari itu. Syarat target 3 jam punya section sendiri sebagai target layanan, bukan janji mutlak.\n\nPemesanan mengajukan satu pertanyaan per layar, dengan jemput, target, dan total di dock bawah. Halaman lacak menampilkan enam tahap besar berurutan per nota, termasuk nota yang terlambat beserta alasannya. Di outlet, tablet kasir dengan token brand yang sama menerima order dari kurir, membaca timbangan, menerapkan minimal 3 kg, menampilkan pekerjaan yang berjalan, dan mencetak nota. Stack produksi yang direncanakan adalah Next.js dengan Supabase dan WhatsApp API.",
     "features": [
-      "Papan kecepatan dengan harga, target kembali, dan total",
+      "Widget jemput untuk kawasan dan jam di layar pertama",
+      "Kartu kecepatan berharga dengan target dan total langsung",
       "Jenis cuci, berat, dan slot jemput yang menghitung ulang semua pilihan",
       "Syarat tertulis untuk target layanan 3 jam",
-      "Pesan jemput tiga kolom dengan perkiraan total",
-      "Lacak nota dengan tahap rencana dan aktual",
-      "Tablet kasir untuk timbang, minimal tagihan 3 kg, dan cetak nota",
-      "Daftar outlet per kawasan dengan kapasitas express harian"
+      "Pesan jemput empat langkah dengan total berjalan",
+      "Lacak nota dengan enam tahap besar berurutan",
+      "Tablet kasir untuk timbang, minimal tagihan 3 kg, dan cetak nota"
     ],
     "role": "",
     "impact": "",

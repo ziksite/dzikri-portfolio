@@ -14,16 +14,22 @@ Sumber: website laundry express antar-jemput 20 outlet di Jawa (diambil 1 Nov 20
 | Tiga testimoni tanpa bukti, foto tim dan banner penuh teks promo | Kepercayaan bertumpu pada klaim umum |
 | Ikon emoji di kartu layanan dan keunggulan | Terlihat seperti template |
 
-## Arah redesign
-Inti bisnis adalah jam kembali, jadi hero adalah **papan kecepatan**: lima baris yang sekaligus daftar harga, linimasa, target, dan total. Linimasa yang sama muncul lagi di halaman lacak sebagai rencana vs aktual. Berbeda dari `ac-service-company-website` (hero navy, kalkulator pill, foto + kartu mengambang, lacak bar 5 segmen, HP teknisi) dan `cargo-shipping-company-website` (banner foto + widget tab, pill oranye, stepper + riwayat vertikal, gudang).
+## Arah redesign (versi 2)
+Versi 1 ditolak pemilik karena terasa seperti tabel dan aplikasi admin: biru korporat, baris data, Be Vietnam Pro. Kerangka itu dibuang. Versi 2 diposisikan sebagai brand konsumen dengan rasa kemasan deterjen: warna rata penuh, judul condensed sangat tebal, label mono mesin ketik, kartu radius besar. Hero tidak memakai foto. Kekuatannya dari warna, tipografi, dan widget jemput.
+
+Referensi utama Poplin dan Rinse, pendukung Laundryheap dan Washmen. Rincian pola ada di `design-system.md`.
+
+Kalimat hero "Kotor kami jemput. Bersih kami antar." menjelaskan layanan tanpa menjanjikan jam. Janji waktu ditulis sebagai target, dengan section syarat sendiri. Strip bawah hero meniru posisi strip logo Rinse, tetapi isinya fakta layanan asli, karena logo media dan rating untuk brand fiktif berarti mengarang bukti.
+
+Logika bisnis versi 1 dipertahankan: lima harga, perhitungan target dari jam timbang, penutupan paket cepat saat lewat batas, minimal tagihan 3 kg.
 
 ## Layar
 | Hash | Isi |
 |------|-----|
-| `#home` | Papan kecepatan interaktif, syarat target, proses, cuci satuan, outlet per kawasan, FAQ |
-| `#pesan` | Tiga kolom (paket, jam jemput, alamat) + bar bawah target dan total → sukses BLS-20433 |
-| `#lacak` | Gantt rencana vs aktual per nota: BLS-20418 berjalan, BLS-20397 terlambat 25 menit, nomor lain tidak ditemukan |
-| `#kasir` | Tablet kasir: antrean timbang, tile paket, papan produksi, timbangan + keypad, cetak nota |
+| `#home` | Hero air dengan widget kawasan dan jam; lima kartu kecepatan berharga dengan total dan target yang ikut berubah; syarat target; cara kerja; cuci satuan; kawasan; tanya jawab; penutup |
+| `#pesan` | Empat langkah, satu pertanyaan per layar, warna latar berganti: cuci apa, jemput kapan, secepat apa, ke mana. Dock bawah memuat jemput, target, dan total. Sukses menghasilkan nota BLS-20433 |
+| `#lacak` | Enam tahap besar berurutan, tahap aktif melebar. BLS-20418 berjalan (air), BLS-20397 terlambat 25 menit beserta alasannya (tomat), BLS-20433 menunggu kurir setelah order dibuat (lemon), nomor lain tidak ditemukan |
+| `#kasir` | Tablet kasir dengan token yang sama: antrean timbang, tile paket, timbangan dan keypad, cetak nota, tab Produksi |
 
 ## Data asli vs asumsi
 | Data asli dari situs | Asumsi / fiktif |
@@ -44,8 +50,8 @@ Next.js + Supabase (order, slot kurir, tahap nota, outlet), WhatsApp API untuk n
 ## Catatan foto
 | File | Sumber | Perlakuan |
 |------|--------|-----------|
-| `mesin-pengering.webp` | Foto ruang mesin | Crop pintu pengering saja; panel berlogo merek dan stiker nota terbuang |
-| `paket-siap-antar.webp` | Foto pengemasan | Crop tumpukan paket; papan logo, orang, dan cetakan merek pada kemasan terbuang |
-| `tas-jemputan.webp` | Foto antrean cuci | Crop tas polos; spanduk, nomor telepon, label nama tulisan tangan terbuang |
+| `mesin-pengering.webp` | Foto ruang mesin | Crop pintu pengering saja; panel berlogo merek dan stiker nota terbuang. Tampil sebagai pita di section syarat |
+| `paket-siap-antar.webp` | Foto pengemasan | Crop tumpukan paket; papan logo, orang, dan cetakan merek pada kemasan terbuang. Kartu di cara kerja, tidak melebihi lebar file |
+| `tas-jemputan.webp` | Foto antrean cuci | Crop tas polos; spanduk, nomor telepon, label nama tulisan tangan terbuang. Kartu di cara kerja |
 
-Dilewati: foto hero (orang + nama brand), foto tim outlet dan tim kurir (wajah + logo seragam + spanduk), foto layanan antar (wajah + spanduk), foto outlet (papan nama, telepon), foto tas masuk (tas merek pelanggan), foto testimoni. Tidak ada `patch.mjs` dan tidak ada foto dari sumber lain.
+Dilewati: foto hero (orang + nama brand), foto tim outlet dan tim kurir (wajah + logo seragam + spanduk), foto layanan antar (wajah + spanduk), foto outlet (papan nama, telepon), foto tas masuk (tas merek pelanggan), foto testimoni. Tidak ada `patch.mjs`, tidak ada upscale, dan tidak ada foto dari sumber lain. Ketiga foto beresolusi rendah, jadi tidak dipakai di hero.
