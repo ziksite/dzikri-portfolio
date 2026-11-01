@@ -1,0 +1,58 @@
+{
+  "slug": "aesthetic-skin-clinic-website",
+  "kind": "Website",
+  "industry": "Beauty & Wellness",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Treatment Programs", "Session Planner"],
+  "metrics": [
+    { "value": "13", "label": "CONCERN-LED PROGRAMS", "labelId": "PROGRAM PER KELUHAN" },
+    { "value": "2–10", "label": "SESSIONS PER PROGRAM", "labelId": "SESI PER PROGRAM" },
+    { "value": "3", "label": "MONTH SESSION PLANNER", "labelId": "BULAN DI KALENDER SESI" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage that starts from the skin concern", "captionId": "Beranda yang dimulai dari keluhan kulit" },
+    { "hash": "program", "caption": "Multi-session program with a live price total", "captionId": "Program beberapa sesi dengan total harga" },
+    { "hash": "jadwal", "caption": "Three-month planner that schedules every session at once", "captionId": "Kalender tiga bulan untuk menjadwalkan semua sesi sekaligus" },
+    { "hash": "terapis", "caption": "Therapist tablet with client program card and session notes", "captionId": "Tablet terapis dengan kartu program klien dan catatan sesi" }
+  ],
+  "content_en": {
+    "title": "Aesthetic Skin Clinic Website",
+    "type": "AESTHETIC CLINIC WEBSITE & PROGRAMS",
+    "category": "Booking System",
+    "summary": "A redesign for a single-location aesthetic and wellness clinic. Visitors start from a skin concern, see a multi-session program with its total price, and schedule every session at once; therapists record each session on a client program card.",
+    "challenge": "The old site listed treatments as titles and images, in the clinic's own terms, with no prices, durations or session counts. Visitors think in concerns such as acne or dark spots, so they had to message the clinic just to learn what fits and roughly what it costs.\n\nEvery booking button led to WhatsApp, so staff answered the same questions by hand and no schedule could be chosen. Laser treatments need several visits, yet nothing on the site or in the workflow treated them as a course, which left continuity to memory.",
+    "solution": "The site was turned around from a service catalogue into a concern, program and schedule flow. The first screen is an index of concerns, each opening a program with a session path, a session count selector and a price total that updates. The patient then places all sessions on a three-month calendar, adjusts the spacing or individual dates, and pays a deposit or in full. Every recommendation states that the doctor reviews it at the first session.\n\nThe therapist tablet shows today's queue, the client's session progress and skin history, and a short note form; finishing a session updates the card and queues the next reminder. Planned stack: Next.js and Supabase for programs, sessions and role-based records, a payment gateway for deposits, and the WhatsApp API for reminders.",
+    "features": [
+      "Treatment index organised by skin concern",
+      "Multi-session programs with visible total price",
+      "Session count selector with package savings",
+      "Three-month planner that schedules a full course",
+      "Automatic skipping of clinic closing days",
+      "Therapist tablet with client program cards",
+      "Session notes with skin reaction and product use"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Klinik Kecantikan",
+    "type": "WEBSITE & PROGRAM KLINIK ESTETIKA",
+    "category": "Sistem Booking",
+    "summary": "Redesign untuk klinik estetika dan wellness satu lokasi. Pengunjung mulai dari keluhan kulit, melihat program beberapa sesi dengan harga totalnya, lalu menjadwalkan semua sesi sekaligus; terapis mencatat tiap sesi di kartu program klien.",
+    "challenge": "Situs lama hanya menampilkan judul dan gambar treatment dengan istilah klinik, tanpa harga, durasi, atau jumlah sesi. Pengunjung berpikir dalam keluhan seperti jerawat atau flek, jadi mereka harus chat dulu hanya untuk tahu perawatan yang cocok dan kisaran biayanya.\n\nSemua tombol booking berujung ke WhatsApp, sehingga staf menjawab pertanyaan yang sama secara manual dan tidak ada jadwal yang bisa dipilih. Perawatan laser perlu beberapa kunjungan, tetapi situs dan alur kerjanya tidak memperlakukannya sebagai satu program, sehingga keberlanjutan hanya mengandalkan ingatan.",
+    "solution": "Situs dibalik dari katalog layanan menjadi alur keluhan, program, dan jadwal. Layar pertama adalah indeks keluhan, masing-masing membuka program dengan jalur sesi, pilihan jumlah sesi, dan total harga yang ikut berubah. Pasien lalu menempatkan semua sesi di kalender tiga bulan, mengatur jarak atau tanggal tertentu, dan membayar DP atau lunas. Setiap rekomendasi menyebut bahwa dokter menilai ulang di sesi pertama.\n\nTablet terapis menampilkan antrean hari ini, progres sesi dan riwayat kulit klien, serta form catatan singkat; menyelesaikan sesi memperbarui kartu dan menyiapkan pengingat berikutnya. Stack rencana: Next.js dan Supabase untuk program, sesi, dan catatan berbasis peran, payment gateway untuk DP, serta WhatsApp API untuk pengingat.",
+    "features": [
+      "Indeks perawatan berdasarkan keluhan kulit",
+      "Program beberapa sesi dengan total harga terbuka",
+      "Pilihan jumlah sesi dengan hemat paket",
+      "Kalender tiga bulan untuk menjadwalkan satu program penuh",
+      "Hari libur klinik dilewati otomatis",
+      "Tablet terapis dengan kartu program klien",
+      "Catatan sesi berisi reaksi kulit dan pemakaian produk"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

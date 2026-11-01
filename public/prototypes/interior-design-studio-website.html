@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sekat Interior — Desain interior dan produksi furnitur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/interior-design-studio-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="hdr">
+      <a class="wordmark" href="#home">sekat</a>
+      <nav class="hdr__nav">
+        <a href="#home" data-nav="home">Karya</a>
+        <a href="#estimasi" data-nav="estimasi">Estimasi biaya</a>
+        <a href="#proses" data-jump="proses">Proses</a>
+        <a href="#studio" data-jump="studio">Studio</a>
+      </nav>
+      <div class="hdr__right"><a class="btn btn-line btn-sm" href="#produksi">Papan produksi</a><a class="btn btn-primary btn-sm" href="#estimasi">Minta konsultasi</a></div>
+    </header>
+
+    <div class="viewer">
+      <aside class="viewer__side">
+        <h1 class="t-h1">Mulai dari ruangan yang ingin diubah.</h1>
+        <p class="viewer__lead">Studio desain interior dengan produksi furnitur sendiri di Semarang dan Surabaya. Lihat hasil kerja per ruangan, lalu hitung perkiraan biayanya.</p>
+        <div class="rooms" id="rooms"></div>
+        <div class="viewer__cta"><a class="btn btn-primary" id="roomCta" href="#estimasi">Hitung perkiraan</a></div>
+      </aside>
+      <div class="viewer__main">
+        <div class="photo viewer__photo" id="mainPhoto"></div>
+        <div class="tblock">
+          <div class="tblock__c"><span class="tblock__k">Proyek</span><span class="tblock__v" id="tbName"></span></div>
+          <div class="tblock__c"><span class="tblock__k">Ruang</span><span class="tblock__v" id="tbRoom"></span></div>
+          <div class="tblock__c"><span class="tblock__k">Kota, tahun</span><span class="tblock__v" id="tbCity"></span></div>
+          <div class="tblock__c"><span class="tblock__k">Luas proyek</span><span class="tblock__v num" id="tbArea"></span></div>
+          <div class="tblock__c"><span class="tblock__k">Durasi</span><span class="tblock__v num" id="tbDur"></span></div>
+          <a class="tblock__act" id="tbGo" href="#proyek">Lihat proyek <i data-lucide="arrow-right" class="i-sm"></i></a>
+        </div>
+      </div>
+      <div class="viewer__thumbs" id="thumbs"></div>
+    </div>
+  </div>
+
+  <section class="sec sec--soft">
+    <div class="wrap">
+      <div class="sec__head">
+        <div><h2 class="t-h2">Proyek selesai</h2><p class="muted" style="margin-top:6px">Luas, lingkup, material, dan durasi tercantum di setiap proyek.</p></div>
+        <div class="chips" id="typeFilter" data-select>
+          <button class="chip is-active" data-value="Semua">Semua</button>
+          <button class="chip" data-value="Rumah">Rumah</button>
+          <button class="chip" data-value="Apartemen">Apartemen</button>
+          <button class="chip" data-value="Komersial">Komersial</button>
+          <button class="chip" data-value="Kantor">Kantor</button>
+        </div>
+      </div>
+      <div class="rows" id="projRows"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--navy" id="proses">
+    <div class="wrap">
+      <div class="sec__head" style="margin-bottom:0">
+        <div><h2 class="t-h2">Satu tim dari denah sampai serah terima</h2><p style="margin-top:8px;color:var(--on-navy-2);max-width:620px">Enam tahap kerja, masing-masing dengan hasil yang Anda setujui sebelum tahap berikutnya dimulai.</p></div>
+        <a class="btn btn-ghost-navy" href="#estimasi">Hitung perkiraan biaya</a>
+      </div>
+      <div class="phases"><span class="a">Desain, disetujui per tahap</span><span class="c">Produksi &amp; instalasi</span></div>
+      <ol class="steps" style="margin-top:0;border-top:0">
+        <li class="step"><span class="step__n">01</span><h3>Pahami kebutuhan</h3><p>Visi, gaya hidup, dan kebiasaan penghuni dicatat.</p><p class="step__out">Hasil: ringkasan kebutuhan</p></li>
+        <li class="step"><span class="step__n">02</span><h3>Konsep</h3><p>Ide dirapikan jadi konsep dan mood board.</p><p class="step__out">Hasil: arah desain</p></li>
+        <li class="step"><span class="step__n">03</span><h3>Pengembangan</h3><p>Tata letak, material, dan visual 3D dibentuk.</p><p class="step__out">Hasil: render 3D</p></li>
+        <li class="step"><span class="step__n">04</span><h3>Penetapan</h3><p>Pilihan akhir dikonfirmasi dan didokumentasikan.</p><p class="step__out">Hasil: daftar material</p></li>
+        <li class="step"><span class="step__n">05</span><h3>Gambar kerja</h3><p>Gambar teknis dan jadwal memandu produksi.</p><p class="step__out">Hasil: gambar dan jadwal</p></li>
+        <li class="step"><span class="step__n">06</span><h3>Produksi dan pasang</h3><p>Dibuat di workshop, dipasang teliti, lalu ditata dan difoto.</p><p class="step__out">Hasil: serah terima ruang</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap compare">
+      <div>
+        <div class="cmp">
+          <figure class="photo"><img src="assets/interior-design-studio-website/banding-render.webp" alt="Render foyer"><span class="pill">Render</span></figure>
+          <figure class="photo"><img src="assets/interior-design-studio-website/banding-terpasang.webp" alt="Foyer setelah terpasang"><span class="pill">Terpasang</span></figure>
+        </div>
+      </div>
+      <div>
+        <h2 class="t-h2">Dari render ke ruang jadi</h2>
+        <p class="muted" style="margin-top:8px">Foyer yang sama, saat masih render dan setelah terpasang. Desain dan produksi berada di satu tim, sehingga arah desain tetap terjaga sampai akhir.</p>
+        <ul class="svc-list">
+          <li><b>Desain</b><span>Solusi personal sesuai gaya hidup, selera, dan fungsi.</span></li>
+          <li><b>Produksi</b><span>Pengerjaan oleh tim terampil, termasuk kabinet custom.</span></li>
+          <li><b>Pekerjaan sipil</b><span>Tersedia bila denah perlu diubah, misalnya 2 kamar menjadi 1.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--soft" id="studio" style="padding-top:48px">
+    <div class="wrap">
+      <h2 class="t-h2" style="margin-bottom:20px">Studio</h2>
+      <div class="studios">
+        <div class="studio"><h3 class="t-h3">Semarang</h3><ul><li><i data-lucide="map-pin" class="i-sm"></i>Kawasan Candisari, Semarang</li><li><i data-lucide="clock" class="i-sm"></i>Senin sampai Jumat, 09.00–18.00</li><li><i data-lucide="calendar" class="i-sm"></i>Sabtu dengan janji temu</li></ul></div>
+        <div class="studio"><h3 class="t-h3">Surabaya</h3><ul><li><i data-lucide="map-pin" class="i-sm"></i>Kawasan Darmo, Surabaya</li><li><i data-lucide="clock" class="i-sm"></i>Senin sampai Sabtu</li><li><i data-lucide="calendar" class="i-sm"></i>Hanya dengan janji temu</li></ul></div>
+        <div class="studio studio--cta"><p style="font-size:17px;font-weight:600;line-height:1.3">Punya denah? Bawa saat konsultasi, atau kirim lewat formulir estimasi.</p><a class="btn btn-primary" href="#estimasi">Minta konsultasi</a></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap"><footer class="foot"><span>© 2026 Sekat Interior</span><span>halo@sekatinterior.example · 0811-0000-2641</span></footer></div>
+</section>
+
+<!-- ================= PROYEK ================= -->
+<section data-screen="proyek">
+  <div class="topnavy">
+    <div class="wrap">
+      <header class="hdr hdr--navy">
+        <a class="wordmark" href="#home">sekat</a>
+        <nav class="hdr__nav">
+          <a href="#home" class="is-active">Karya</a>
+          <a href="#estimasi">Estimasi biaya</a>
+        </nav>
+        <div class="hdr__right"><a class="btn btn-primary btn-sm" href="#estimasi">Minta konsultasi</a></div>
+      </header>
+      <div class="topnavy__head">
+        <div><h1 class="t-h1" id="pName"></h1><p class="topnavy__meta" id="pMeta"></p></div>
+        <span class="pill pill--line"><i data-lucide="check" class="i-xs"></i><span id="pStatus"></span></span>
+      </div>
+      <div class="ncards">
+        <div class="ncard"><div class="ncard__k">Lingkup kerja</div><ul class="ncard__list" id="pScope"></ul></div>
+        <div class="ncard"><div class="ncard__k">Material utama</div><ul class="ncard__list" id="pMat"></ul></div>
+        <div class="ncard"><div class="ncard__k">Durasi dan luas</div><p class="ncard__big num" id="pDur"></p><p style="font-size:14px;color:var(--on-navy-2)" id="pArea"></p></div>
+        <div class="ncard ncard--hi"><div class="ncard__k">Ingin yang seperti ini?</div><p style="font-size:15px;line-height:1.35" id="pCtaText"></p><a class="btn btn-primary btn-sm" id="pCta" href="#estimasi" style="margin-top:auto">Hitung perkiraan</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pgrid">
+      <div class="pbox">
+        <div class="photo hs-photo" id="pPhoto"></div>
+      </div>
+      <div class="pbox">
+        <p class="pbox__t">Elemen pada foto</p>
+        <ol class="comp" id="pComp"></ol>
+        <p class="note"><i data-lucide="mouse-pointer-click" class="i-xs"></i>Klik nomor pada foto atau daftar ini.</p>
+      </div>
+      <div class="pbox">
+        <p class="pbox__t">Data proyek</p>
+        <ul class="spec" id="pSpec"></ul>
+      </div>
+    </div>
+    <div class="sec__head" style="margin:32px 0 8px"><h2 class="t-h2" style="font-size:24px">Ruang lain di proyek ini</h2><a class="btn btn-line btn-sm" href="#home"><i data-lucide="arrow-left" class="i-sm"></i>Kembali ke karya</a></div>
+    <div class="pshots" id="pShots"></div>
+  </div>
+</section>
+
+<!-- ================= ESTIMASI ================= -->
+<section data-screen="estimasi">
+  <div class="topnavy">
+    <div class="wrap">
+      <header class="hdr hdr--navy">
+        <a class="wordmark" href="#home">sekat</a>
+        <nav class="hdr__nav">
+          <a href="#home">Karya</a>
+          <a href="#estimasi" class="is-active">Estimasi biaya</a>
+        </nav>
+        <div class="hdr__right"><a class="btn btn-ghost-navy btn-sm" href="#" onclick="return false">WhatsApp studio</a></div>
+      </header>
+      <div class="topnavy__head">
+        <div><h1 class="t-h1">Perkiraan biaya interior</h1><p class="topnavy__meta">Susun ruang yang ingin dikerjakan. Angka di bawah berubah mengikuti pilihan Anda.</p></div>
+        <span class="pill pill--solid">Perkiraan, bukan penawaran</span>
+      </div>
+      <div class="ncards">
+        <div class="ncard"><div class="ncard__k">Tipe properti</div>
+          <div class="chips" id="propType" data-select>
+            <button class="chip chip--navy" data-value="Apartemen">Apartemen</button>
+            <button class="chip chip--navy" data-value="Rumah">Rumah</button>
+            <button class="chip chip--navy" data-value="Kantor">Kantor</button>
+            <button class="chip chip--navy" data-value="Toko">Toko</button>
+          </div>
+          <p style="font-size:13px;color:var(--on-navy-2);margin-top:auto">Memilih tipe mengisi ruang yang umum. Semua baris bisa diubah.</p>
+        </div>
+        <div class="ncard ncard--hi"><div class="ncard__k">Perkiraan total <span class="pill pill--act">±15%</span></div><p class="ncard__range num" id="estRange"></p><p class="t-meta" style="margin-top:auto"><span id="estArea"></span> · sudah termasuk desain, produksi, instalasi</p></div>
+        <div class="ncard"><div class="ncard__k">Pembagian biaya</div><div class="tbar" id="estBar"></div><ul class="ncard__list" id="estSplit"></ul></div>
+        <div class="ncard"><div class="ncard__k">Perkiraan waktu <span class="num" id="estWeeks" style="color:var(--on-navy)"></span></div><ul class="ncard__list" id="estTime"></ul><p style="font-size:13px;color:var(--on-navy-2);margin-top:auto">Di luar pekerjaan sipil.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="est-body">
+      <div class="sec__head" style="margin-bottom:0;align-items:center"><h2 class="t-h3" style="font-size:20px">Ruang yang dikerjakan</h2><span class="t-meta">Luas lantai per ruang, boleh perkiraan</span></div>
+      <div class="rows" id="roomRows"></div>
+      <div class="addroom"><span>Tambah ruang</span><div class="chips" id="addRooms"></div></div>
+    </div>
+
+    <div class="est-grid">
+      <div class="ebox ebox--soft">
+        <h3 class="t-h3">Cara angka ini dihitung</h3>
+        <ul class="basis">
+          <li><i data-lucide="ruler" class="i-sm"></i>Tarif per m² berbeda untuk tiap ruang, karena dapur dan lemari lebih padat kabinet.</li>
+          <li><i data-lucide="layers" class="i-sm"></i><span><b>Standar</b> memakai laminate. <b>Menengah</b> menambah sintered stone dan kaca. <b>Premium</b> memakai batu alam, kayu, dan finishing metal.</span></li>
+          <li><i data-lucide="circle-alert" class="i-sm"></i>Belum termasuk pekerjaan sipil, peralatan elektronik, dan furnitur lepas. Angka final mengikuti survei dan gambar kerja.</li>
+        </ul>
+        <p class="t-meta" style="margin-top:14px" id="estSim"></p>
+      </div>
+
+      <div class="ebox" id="konsultasi">
+        <form id="consultForm" data-demo-form="#consultOk">
+          <h3 class="t-h3">Minta konsultasi</h3>
+          <p class="t-meta" style="margin-top:2px">Rincian ruang di atas ikut terkirim, jadi tim tidak mengulang pertanyaan yang sama.</p>
+          <div class="fgrid">
+            <label class="field">Nama<input required placeholder="Nama Anda" value="Nadia Kusuma"></label>
+            <label class="field">WhatsApp<input required inputmode="tel" value="0812-0000-3187"></label>
+            <label class="field">Kota properti<input required value="Semarang"></label>
+          </div>
+          <span class="lbl">Tempat</span>
+          <div class="seg" data-select id="consultPlace"><button type="button" class="is-active" data-value="Studio Semarang">Studio Semarang</button><button type="button" data-value="Studio Surabaya">Studio Surabaya</button><button type="button" data-value="Video call">Video call</button></div>
+          <span class="lbl">Tanggal</span>
+          <div class="dates" data-select id="consultDate">
+            <button type="button" class="date is-active" data-value="Senin, 2 November"><b>2</b>Sen</button>
+            <button type="button" class="date" data-value="Selasa, 3 November"><b>3</b>Sel</button>
+            <button type="button" class="date" data-value="Rabu, 4 November"><b>4</b>Rab</button>
+            <button type="button" class="date" data-value="Kamis, 5 November"><b>5</b>Kam</button>
+            <button type="button" class="date" data-value="Jumat, 6 November"><b>6</b>Jum</button>
+            <button type="button" class="date" data-value="Sabtu, 7 November"><b>7</b>Sab</button>
+          </div>
+          <div class="est-send"><span class="t-meta">Sabtu dengan janji temu</span><button class="btn btn-primary">Kirim permintaan</button></div>
+        </form>
+        <div class="ok" id="consultOk" hidden>
+          <span class="ok__ic"><i data-lucide="check"></i></span>
+          <h3 class="t-h3">Permintaan diterima, SKT-K-0412</h3>
+          <p class="muted" id="consultOkText"></p>
+          <a class="btn btn-line btn-sm" href="#home">Kembali ke karya</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="est-bar">
+    <div class="wrap est-bar__in">
+      <div><span class="t-meta">Perkiraan total </span><b class="num" id="estBarVal"></b></div>
+      <a class="btn btn-primary btn-sm" href="#konsultasi" onclick="document.getElementById('konsultasi').scrollIntoView({behavior:'smooth',block:'center'});return false">Minta konsultasi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN PRODUKSI ================= -->
+<section data-screen="produksi" class="ops">
+  <div class="ops__bar">
+    <div class="wrap">
+      <a class="wordmark" href="#home">sekat</a>
+      <span class="ops__tt">Papan produksi</span>
+      <div class="hdr__right"><span class="t-meta hide-sm" style="color:var(--on-navy-2)">Minggu, 1 November 2026</span><a class="btn btn-ghost-navy btn-sm" href="#home">Situs</a></div>
+    </div>
+  </div>
+  <div class="wrap ops__grid">
+    <div style="min-width:0">
+      <div class="ops__head">
+        <div><h1 class="t-h2">Proyek berjalan</h1><p class="muted" style="margin-top:4px" id="opsSum"></p></div>
+        <div class="chips" data-select id="opsFilter">
+          <button class="chip is-active" data-value="all">Semua</button>
+          <button class="chip" data-value="hold">Tertahan</button>
+          <button class="chip" data-value="site">Di lokasi</button>
+        </div>
+      </div>
+      <div class="mx-scroll">
+        <table class="mx">
+          <colgroup><col class="c1"><col span="8"><col class="c2"></colgroup>
+          <thead>
+            <tr><th></th><th colspan="2">Desain</th><th colspan="3">Produksi</th><th colspan="3">Instalasi</th><th></th></tr>
+            <tr><th>Proyek</th><th>Konsep</th><th>Gambar kerja</th><th>Potong &amp; rakit</th><th>Finishing</th><th>QC pabrik</th><th>Kirim</th><th>Pasang</th><th>Serah terima</th><th>Target</th></tr>
+          </thead>
+          <tbody id="mxBody"></tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--navy)"></i>Selesai</span>
+        <span><i style="background:var(--white);box-shadow:inset 0 0 0 1.5px var(--act)"></i>Berjalan, item selesai dari total</span>
+        <span><i style="background:var(--act)"></i>Tertahan</span>
+        <span><i style="background:var(--soft);box-shadow:inset 0 0 0 1px var(--line)"></i>Belum mulai</span>
+      </div>
+    </div>
+
+    <aside class="phone" aria-label="Tampilan HP penanggung jawab">
+      <div class="phone__in">
+        <div class="phone__top">
+          <small id="phWho"></small>
+          <h3 id="phName"></h3>
+          <div class="phone__rate"><span id="phStage"></span><span class="num" id="phCount"></span></div>
+          <div class="pbar"><u id="phBar"></u></div>
+        </div>
+        <div class="phone__body">
+          <div class="issue" id="phIssue" hidden><i data-lucide="triangle-alert" class="i-sm"></i><span></span></div>
+          <p class="phone__h">Laporan Sabtu, 31 Oktober</p>
+          <ol class="track" id="phTrack"></ol>
+          <p class="phone__h">Foto laporan</p>
+          <div class="shots">
+            <div class="photo" data-img="assets/interior-design-studio-website/workshop-panel.webp"></div>
+            <button type="button" class="shotAdd" aria-label="Tambah foto"><i data-lucide="camera" class="i-sm"></i></button>
+            <button type="button" class="shotAdd" aria-label="Tambah foto"><i data-lucide="camera" class="i-sm"></i></button>
+          </div>
+          <div class="phone__send" id="phSend"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/interior-design-studio-website/";
+  var $ = function (id) { return document.getElementById(id); };
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }
+  function photo(box, src, alt) { box.querySelectorAll("img").forEach(function (i) { i.remove(); }); var img = new Image(); img.alt = alt || ""; img.src = A + src + ".webp"; box.insertBefore(img, box.firstChild); }
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) { var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img"); });
+
+  /* ---------- Data karya ---------- */
+  var ROOMS = { keluarga: "Ruang keluarga", dapur: "Dapur & pantry", kamar: "Kamar tidur", lemari: "Walk-in closet", kerja: "Ruang kerja", mandi: "Kamar mandi", foyer: "Foyer", komersial: "Kantor & toko" };
+  var P = {
+    taman: { name: "Rumah Taman Tengah", type: "Rumah", city: "Semarang", year: 2025, area: 320, dur: "14 bulan", scope: ["Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Batu alam", "Kayu"], est: "Rumah", note: "Jendela lebar membingkai taman di tengah rumah, jadi warna dan material dibuat setenang taman itu.", hero: "keluarga-1",
+      spots: [[26, 27, "Panel dinding TV", "Laminate kayu"], [22, 61, "Kabinet TV mengambang", "Lampu tersembunyi"], [79, 28, "Rak bar", "Batu alam"], [74, 53, "Meja pantry", "Sintered stone"]] },
+    kayu: { name: "Rumah Tonal Hangat", type: "Rumah", city: "Semarang", year: 2022, area: 280, dur: "12 bulan", scope: ["Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Kain", "Cermin"], est: "Rumah", note: "Rumah modern dengan warna senada, kontras tekstur, dan keseimbangan antara hangat dan terang.", hero: "keluarga-3",
+      spots: [[16, 32, "Rak display", "Laminate, lampu LED"], [45, 57, "Meja makan", "Sintered stone"], [84, 37, "Dinding TV", "Panel batu"]] },
+    tebing: { name: "Rumah Tebing Hijau", type: "Rumah", city: "Semarang", year: 2025, area: 240, dur: "6 bulan", scope: ["Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Rotan", "Mosaik", "Kayu"], est: "Rumah", note: "Garis modern bertemu karakter material alami lewat permainan warna dan tekstur.", hero: "keluarga-4",
+      spots: [[77, 42, "Rak dinding terbuka", "Kayu dan metal"], [38, 76, "Meja kayu solid", "Kayu"], [18, 64, "Daybed tepi jendela", "Kain"]] },
+    nada: { name: "Rumah Nada Tenang", type: "Rumah", city: "Semarang", year: 2025, area: 260, dur: "6 bulan", scope: ["Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Cermin", "Sintered stone", "Kaca abu", "Panel linen"], est: "Rumah", note: "Kajian warna halus, garis bersih, dan kesan modern yang tidak lekang.", hero: "keluarga-5",
+      spots: [[50, 30, "Dinding panel linen", "Panel linen"], [50, 8, "Plafon drop", "Lampu tersembunyi"], [72, 48, "Sofa bioskop rumah", "Pilihan klien"]] },
+    garis: { name: "Apartemen Garis Terbuka", type: "Apartemen", city: "Surabaya", year: 2025, area: 86, dur: "2 bulan", scope: ["Desain interior"], mat: ["Laminate", "Sintered stone", "Kaca fluted", "Finishing perunggu"], est: "Apartemen", note: "Garis bersih dan detail terukur untuk cara tinggal yang lebih terbuka.", hero: "keluarga-2",
+      spots: [[91, 48, "Rak dan kabinet TV", "Laminate"], [32, 57, "Panel sandaran sofa", "Laminate kayu"], [68, 28, "Tirai dan plafon", "Lampu tersembunyi"]] },
+    jepang: { name: "Apartemen Japandi", type: "Apartemen", city: "Surabaya", year: 2024, area: 175, dur: "12 bulan", scope: ["Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Kain", "Cermin"], est: "Apartemen", note: "Kesederhanaan Japandi bertemu ekspresi pribadi penghuninya.", hero: "kamar-4",
+      spots: [[30, 42, "Panel kepala tempat tidur", "Laminate, kain"], [86, 48, "Pintu geser kisi", "Laminate"], [22, 74, "Bangku tepi jendela", "Laminate kayu"]] },
+    empat9: { name: "Apartemen 49", type: "Apartemen", city: "Semarang", year: 2026, area: 49, dur: "7 bulan", scope: ["Pekerjaan sipil", "Desain interior", "Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Kain", "Kaca laminasi", "Cermin perunggu", "Lantai komposit"], est: "Apartemen", note: "Apartemen 49 m² diubah dari 2 menjadi 1 kamar tidur, dengan foyer, pantry, ruang kerja, dan storage yang rapi.", hero: "dapur-4",
+      spots: [[49, 25, "Hood dan rak gantung", "Metal"], [40, 48, "Backsplash", "Sintered stone"], [50, 80, "Kabinet bawah", "Laminate"]] },
+    terang: { name: "Apartemen Kayu Terang", type: "Apartemen", city: "Semarang", year: 2024, area: 58, dur: "1 bulan", scope: ["Desain interior"], mat: ["Laminate", "Panel komposit", "Sintered stone", "Cermin"], est: "Apartemen", note: "Interior penuh cahaya, tempat garis bersih bertemu hangatnya kayu.", hero: "dapur-5",
+      spots: [[75, 18, "Kabinet atas", "Laminate"], [78, 62, "Kabinet bawah", "Panel komposit"], [28, 58, "Meja makan menyambung", "Laminate kayu"]] },
+    warna: { name: "Apartemen Warna", type: "Apartemen", city: "Semarang", year: 2026, area: 68, dur: "3 bulan", scope: ["Desain interior"], mat: ["Laminate", "Cermin", "Sintered stone", "Tegel mosaik"], est: "Apartemen", note: "Warna berani, bentuk yang lembut, dan material yang tahan lama.", hero: "kamar-7",
+      spots: [[88, 38, "Panel TV", "Laminate kayu"], [58, 34, "Panel karya seni", "Laminate"], [41, 42, "Akses walk-in closet", "Cermin"]] },
+    kantor: { name: "Kantor Direksi", type: "Kantor", city: "Semarang", year: 2022, area: 60, dur: "3 bulan", scope: ["Pengerjaan interior"], mat: ["Laminate", "Sintered stone", "Kaca satin", "Finishing hairline hitam"], est: "Kantor", note: "Keseimbangan antara warna terang, kayu hangat, dan aksen tegas.", hero: "kantor-1",
+      spots: [[52, 35, "Panel dinding kisi", "Laminate kayu"], [80, 50, "Lemari arsip tinggi", "Kaca satin"], [32, 32, "Partisi", "Kaca satin"]] },
+    toko: { name: "Toko Perhiasan", type: "Komersial", city: "Surabaya", year: 2022, area: 60, dur: "6 bulan", scope: ["Pengerjaan interior"], mat: ["Laminate", "Marmer", "Kaca bening", "Panel lattice", "Champagne gold"], est: "Toko", note: "Cahaya, marmer, dan emas bertemu dalam ruang pamer yang rapi.", hero: "toko-1",
+      spots: [[32, 68, "Etalase kaca", "Kaca bening"], [83, 40, "Panel lattice", "Panel lattice"], [55, 18, "Plafon bertingkat", "Lampu sorot"]] }
+  };
+  var G = [
+    ["keluarga-1", "keluarga", "taman"], ["dapur-1", "dapur", "taman"], ["kamar-1", "kamar", "taman"], ["kerja-1", "kerja", "taman"],
+    ["keluarga-3", "keluarga", "kayu"], ["dapur-3", "dapur", "kayu"], ["kamar-2", "kamar", "kayu"], ["lemari-1", "lemari", "kayu"], ["mandi-1", "mandi", "kayu"],
+    ["keluarga-4", "keluarga", "tebing"], ["kamar-3", "kamar", "tebing"],
+    ["keluarga-5", "keluarga", "nada"], ["lemari-3", "lemari", "nada"],
+    ["keluarga-2", "keluarga", "garis"], ["dapur-2", "dapur", "garis"], ["kamar-5", "kamar", "garis"], ["lemari-2", "lemari", "garis"],
+    ["kamar-4", "kamar", "jepang"], ["kerja-2", "kerja", "jepang"],
+    ["dapur-4", "dapur", "empat9"], ["foyer-1", "foyer", "empat9"],
+    ["dapur-5", "dapur", "terang"], ["kamar-6", "kamar", "terang"], ["mandi-2", "mandi", "terang"],
+    ["kamar-7", "kamar", "warna"], ["mandi-3", "mandi", "warna"],
+    ["kantor-1", "komersial", "kantor"], ["toko-1", "komersial", "toko"]
+  ];
+
+  /* ---------- Beranda: viewer per ruangan ---------- */
+  var room = "semua", shot = "keluarga-1", cur = "taman";
+  var ROOM_TO_EST = { keluarga: "keluarga", dapur: "dapur", kamar: "kamar", lemari: "lemari", kerja: "kerja", mandi: "mandi", foyer: "foyer", komersial: "kantor" };
+  function list() { return G.filter(function (g) { return room === "semua" || g[1] === room; }); }
+  function renderRooms() {
+    var h = '<button class="room' + (room === "semua" ? " is-active" : "") + '" data-room="semua"><span>Semua ruang</span><span>' + G.length + "</span></button>";
+    Object.keys(ROOMS).forEach(function (k) { var n = G.filter(function (g) { return g[1] === k; }).length; h += '<button class="room' + (room === k ? " is-active" : "") + '" data-room="' + k + '"><span>' + ROOMS[k] + "</span><span>" + n + "</span></button>"; });
+    $("rooms").innerHTML = h;
+    $("roomCta").textContent = room === "semua" ? "Hitung perkiraan" : "Hitung perkiraan " + ROOMS[room].toLowerCase();
+  }
+  function renderThumbs() {
+    $("thumbs").innerHTML = list().map(function (g) { return '<button class="thumb photo' + (g[0] === shot ? " is-active" : "") + '" data-shot="' + g[0] + '" aria-label="' + ROOMS[g[1]] + ", " + P[g[2]].name + '"><img src="' + A + g[0] + '.webp" alt="" loading="lazy"></button>'; }).join("");
+  }
+  function show(id) {
+    shot = id; var g = G.filter(function (x) { return x[0] === id; })[0], p = P[g[2]]; cur = g[2];
+    photo($("mainPhoto"), id, ROOMS[g[1]] + " di " + p.name);
+    $("tbName").textContent = p.name; $("tbRoom").textContent = g[1] === "komersial" ? p.type : ROOMS[g[1]]; $("tbCity").textContent = p.city + ", " + p.year; $("tbArea").textContent = p.area + " m²"; $("tbDur").textContent = p.dur;
+    renderThumbs();
+  }
+  $("rooms").addEventListener("click", function (e) { var b = e.target.closest("[data-room]"); if (!b) return; room = b.getAttribute("data-room"); renderRooms(); show(list()[0][0]); });
+  $("thumbs").addEventListener("click", function (e) { var b = e.target.closest("[data-shot]"); if (b) show(b.getAttribute("data-shot")); });
+  $("tbGo").addEventListener("click", function () { openProject(cur); });
+  $("roomCta").addEventListener("click", function () { if (room !== "semua") setRooms([[ROOM_TO_EST[room], room === "komersial" ? 60 : 16, "menengah"]], null); });
+
+  /* Daftar proyek */
+  var typeF = "Semua";
+  function renderProj() {
+    $("projRows").innerHTML = Object.keys(P).filter(function (k) { return typeF === "Semua" || P[k].type === typeF; }).map(function (k) {
+      var p = P[k];
+      return '<a class="prow prow--proj" href="#proyek" data-proj="' + k + '"><div class="photo prow__thumb"><img src="' + A + p.hero + '.webp" alt="" loading="lazy"></div><div style="min-width:0"><h3>' + p.name + '</h3><p class="t-meta">' + p.city + " · " + p.year + '</p></div><span class="hide-md hide-sm">' + p.type + '</span><span class="num hide-sm">' + p.area + ' m²</span><span class="num hide-md hide-sm">' + p.dur.replace(" bulan", " bln") + '</span><span class="t-meta hide-md hide-sm">' + p.scope.join(", ") + '</span><span class="hide-sm"><span class="pill">' + p.mat.length + ' material</span></span><i data-lucide="arrow-right" class="i-sm prow__arrow"></i></a>';
+    }).join("");
+    icons();
+  }
+  $("typeFilter").addEventListener("lapak:select", function (e) { typeF = e.detail.value; renderProj(); });
+  $("projRows").addEventListener("click", function (e) { var a = e.target.closest("[data-proj]"); if (a) openProject(a.getAttribute("data-proj")); });
+
+  /* Menu ke bagian dalam halaman (router lapak.js hanya mengenal layar) */
+  document.querySelectorAll("[data-jump]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); $(a.getAttribute("data-jump")).scrollIntoView({ behavior: "smooth" }); }); });
+
+  /* ---------- Proyek ---------- */
+  function openProject(k) {
+    cur = k; var p = P[k], li = function (a) { return a.slice(0, 4).map(function (s) { return "<li><span style=\"color:inherit\">" + s + "</span></li>"; }).join(""); };
+    $("pName").textContent = p.name; $("pMeta").textContent = p.type + " · " + p.city + " · " + p.year; $("pStatus").textContent = "Selesai " + p.year;
+    $("pScope").innerHTML = li(p.scope); $("pMat").innerHTML = li(p.mat) + (p.mat.length > 4 ? '<li><span>dan ' + (p.mat.length - 4) + " lainnya</span></li>" : "");
+    $("pDur").textContent = p.dur; $("pArea").textContent = "Luas " + p.area + " m²";
+    $("pCtaText").textContent = "Hitung perkiraan untuk " + p.est.toLowerCase() + " Anda dengan kelas material yang setara.";
+    $("pCta").onclick = function () { preset(p.est); };
+    var box = $("pPhoto"); box.innerHTML = ""; photo(box, p.hero, p.name);
+    box.insertAdjacentHTML("beforeend", p.spots.map(function (s, i) { return '<button class="hs" data-i="' + i + '" style="left:' + s[0] + "%;top:" + s[1] + '%" aria-label="' + s[2] + '">' + (i + 1) + "</button>"; }).join(""));
+    $("pComp").innerHTML = p.spots.map(function (s, i) { return '<li data-i="' + i + '"><i>' + (i + 1) + "</i><span>" + s[2] + "</span><small>" + s[3] + "</small></li>"; }).join("");
+    pick(0);
+    $("pSpec").innerHTML = [["Tipe", p.type], ["Kota", p.city], ["Tahun", p.year], ["Luas", p.area + " m²"], ["Durasi", p.dur], ["Ruang difoto", G.filter(function (g) { return g[2] === k; }).length]].map(function (r) { return "<li><span>" + r[0] + "</span><b>" + r[1] + "</b></li>"; }).join("") + '<li style="display:block;line-height:1.45">' + p.note + "</li>";
+    $("pShots").innerHTML = G.filter(function (g) { return g[2] === k && g[0] !== p.hero; }).map(function (g) { return '<div class="pshot"><div class="photo"><img src="' + A + g[0] + '.webp" alt="' + ROOMS[g[1]] + '" loading="lazy"></div><p>' + ROOMS[g[1]] + "</p></div>"; }).join("");
+    document.querySelector('[data-screen="proyek"] .sec__head h2').hidden = !$("pShots").children.length;
+  }
+  function pick(i) { document.querySelectorAll("#pPhoto .hs, #pComp li").forEach(function (el) { el.classList.toggle("is-active", Number(el.getAttribute("data-i")) === i); }); }
+  document.querySelector('[data-screen="proyek"]').addEventListener("click", function (e) { var t = e.target.closest("[data-i]"); if (t) pick(Number(t.getAttribute("data-i"))); });
+
+  /* ---------- Estimasi ---------- */
+  var RATE = { keluarga: ["Ruang keluarga", 3.2, "keluarga-1"], dapur: ["Dapur & pantry", 6.5, "dapur-2"], kamar: ["Kamar tidur", 3.8, "kamar-5"], lemari: ["Walk-in closet", 7, "lemari-1"], mandi: ["Kamar mandi", 5.5, "mandi-2"], kerja: ["Ruang kerja", 3.6, "kerja-1"], foyer: ["Foyer", 4, "foyer-1"], kantor: ["Kantor", 3, "kantor-1"], toko: ["Toko", 5, "toko-1"] };
+  var CLS = { standar: ["Standar", 1], menengah: ["Menengah", 1.4], premium: ["Premium", 1.9] };
+  var PRESET = {
+    Apartemen: [["keluarga", 18, "menengah"], ["dapur", 6, "menengah"], ["kamar", 12, "menengah"]],
+    Rumah: [["keluarga", 28, "menengah"], ["dapur", 12, "menengah"], ["kamar", 16, "premium"], ["lemari", 6, "menengah"], ["mandi", 6, "menengah"]],
+    Kantor: [["kantor", 60, "menengah"], ["kerja", 12, "menengah"]],
+    Toko: [["toko", 60, "premium"]]
+  };
+  var rows = [], form = { type: "Apartemen" };
+  function juta(n) { return Math.round(n).toLocaleString("id-ID"); }
+  function sub(r) { return r[1] * RATE[r[0]][1] * CLS[r[2]][1]; }
+  function setRooms(list, type) {
+    rows = list.map(function (r) { return r.slice(); });
+    document.querySelectorAll("#propType .chip").forEach(function (c) { c.classList.toggle("is-active", c.getAttribute("data-value") === type); });
+    if (type) form.type = type;
+    renderEst();
+  }
+  function preset(t) { setRooms(PRESET[t], t); }
+  function renderEst() {
+    $("roomRows").innerHTML = rows.map(function (r, i) {
+      var R = RATE[r[0]], s = sub(r);
+      return '<div class="prow prow--room" data-r="' + i + '"><div class="photo prow__thumb"><img src="' + A + R[2] + '.webp" alt=""></div><div style="min-width:0"><p style="font-weight:600">' + R[0] + '</p><p class="t-meta num">Rp' + (R[1] * CLS[r[2]][1]).toLocaleString("id-ID", { maximumFractionDigits: 1 }) + ' juta/m²</p></div><div class="stp"><button type="button" data-d="-1" aria-label="Kurangi luas"><i data-lucide="minus" class="i-xs"></i></button><input type="number" min="2" max="500" value="' + r[1] + '" aria-label="Luas ' + R[0] + ' dalam meter persegi"><button type="button" data-d="1" aria-label="Tambah luas"><i data-lucide="plus" class="i-xs"></i></button></div><div class="seg">' + Object.keys(CLS).map(function (c) { return '<button type="button" data-c="' + c + '" class="' + (c === r[2] ? "is-active" : "") + '">' + CLS[c][0] + "</button>"; }).join("") + '</div><p class="prow__sub num">Rp' + juta(s * .85) + "–" + juta(s * 1.15) + ' jt</p><button type="button" class="x" data-x aria-label="Hapus ' + R[0] + '"><i data-lucide="x" class="i-sm"></i></button></div>';
+    }).join("") || '<p class="muted" style="padding:16px 0">Belum ada ruang. Tambahkan dari daftar di bawah.</p>';
+    $("addRooms").innerHTML = Object.keys(RATE).filter(function (k) { return !rows.some(function (r) { return r[0] === k; }); }).map(function (k) { return '<button type="button" class="chip" data-add="' + k + '"><i data-lucide="plus" class="i-xs"></i>' + RATE[k][0] + "</button>"; }).join("");
+    totals(); icons();
+  }
+  function totals() {
+    var area = rows.reduce(function (a, r) { return a + r[1]; }, 0), base = rows.reduce(function (a, r) { return a + sub(r); }, 0), des = area * .25, tot = base + des, lo = tot * .85, hi = tot * 1.15;
+    var range = area ? "Rp" + juta(lo) + "–" + juta(hi) + " juta" : "Rp0";
+    $("estRange").textContent = range; $("estBarVal").textContent = range; $("estArea").textContent = area + " m²";
+    var prod = base * .78, inst = base * .22, f = function (n) { return "Rp" + juta(n) + " jt"; };
+    $("estBar").innerHTML = area ? '<i style="flex:' + des + '"></i><i style="flex:' + prod + '"></i><i style="flex:' + inst + '"></i>' : "";
+    $("estSplit").innerHTML = "<li><span>Desain</span><span class=\"num\">" + f(des) + "</span></li><li><span>Produksi</span><span class=\"num\">" + f(prod) + "</span></li><li><span>Instalasi</span><span class=\"num\">" + f(inst) + "</span></li>";
+    var d = area ? 4 + Math.ceil(area / 25) : 0, p = area ? 6 + Math.ceil(area / 12) : 0, n = area ? 2 + Math.ceil(area / 25) : 0;
+    $("estTime").innerHTML = "<li><span>Desain</span><span class=\"num\">" + d + " mgg</span></li><li><span>Produksi</span><span class=\"num\">" + p + " mgg</span></li><li><span>Instalasi</span><span class=\"num\">" + n + " mgg</span></li>";
+    $("estWeeks").textContent = (d + p + n) + " mgg";
+    var ref = Object.keys(P).filter(function (k) { return P[k].est === form.type; }).map(function (k) { return P[k]; }).sort(function (a, b) { return Math.abs(a.area - area) - Math.abs(b.area - area); })[0];
+    $("estSim").textContent = ref ? "Proyek terdekat dari segi luas: " + ref.name + ", " + ref.area + " m², " + ref.dur + "." : "";
+    form.range = range; form.area = area; form.n = rows.length;
+  }
+  $("propType").addEventListener("lapak:select", function (e) { preset(e.detail.value); });
+  $("roomRows").addEventListener("click", function (e) {
+    var row = e.target.closest("[data-r]"); if (!row) return; var r = rows[Number(row.getAttribute("data-r"))], b;
+    if ((b = e.target.closest("[data-d]"))) { r[1] = Math.max(2, Math.min(500, r[1] + Number(b.getAttribute("data-d")))); renderEst(); }
+    else if ((b = e.target.closest("[data-c]"))) { r[2] = b.getAttribute("data-c"); renderEst(); }
+    else if (e.target.closest("[data-x]")) { rows.splice(rows.indexOf(r), 1); renderEst(); }
+  });
+  $("roomRows").addEventListener("change", function (e) {
+    if (e.target.tagName !== "INPUT") return; var r = rows[Number(e.target.closest("[data-r]").getAttribute("data-r"))];
+    r[1] = Math.max(2, Math.min(500, Math.round(Number(e.target.value)) || 2)); renderEst();
+  });
+  $("addRooms").addEventListener("click", function (e) { var b = e.target.closest("[data-add]"); if (!b) return; rows.push([b.getAttribute("data-add"), 10, "menengah"]); renderEst(); });
+  $("consultForm").addEventListener("submit", function () {
+    var pl = $("consultPlace").querySelector(".is-active").getAttribute("data-value"), dt = $("consultDate").querySelector(".is-active").getAttribute("data-value");
+    $("consultOkText").textContent = "Tim studio menghubungi WhatsApp Anda hari kerja berikutnya untuk mengonfirmasi " + dt + " di " + pl + ". Rincian " + form.n + " ruang, " + form.area + " m², perkiraan " + form.range + " sudah kami catat.";
+  }, true);
+
+  /* ---------- Papan produksi ---------- */
+  var STG = ["Konsep", "Gambar kerja", "Potong & rakit", "Finishing", "QC pabrik", "Kirim", "Pasang", "Serah terima"];
+  var J = [
+    { id: "SKT-2611", who: "Bu Ratna W.", prj: "Apartemen 62 m²", city: "Semarang", tgt: "18 Des", at: 6, pic: "Mandor: Pak Sugeng", site: true,
+      items: [["Rangka kabinet dapur", 1], ["Pintu kabinet dapur", 1], ["Top table pantry", 1], ["Backdrop TV", 1], ["Wardrobe kamar utama", 1], ["Panel kepala tempat tidur", 0], ["Rak ruang kerja", 0], ["Lampu LED kabinet", 0], ["Pembersihan akhir", 0]] },
+    { id: "SKT-2604", who: "Bu Sinta H.", prj: "Apartemen 88 m²", city: "Surabaya", tgt: "6 Nov", at: 7, pic: "Mandor: Pak Rudi", site: true,
+      items: [["Cek defect bersama klien", 1], ["Perbaikan engsel wardrobe", 1], ["Pembersihan akhir", 1], ["Berita acara ditandatangani", 0]] },
+    { id: "SKT-2615", who: "dr. Maya L.", prj: "Ruang praktik 74 m²", city: "Semarang", tgt: "15 Jan", at: 4, hold: "Top table sintered stone retak saat QC. Ganti lembar baru, estimasi tiba 9 Nov.", pic: "QC: Mas Fajar",
+      items: [["Dimensi kabinet resepsionis", 1], ["Warna laminate sesuai sampel", 1], ["Top table sintered stone", 0], ["Engsel dan rel", 1], ["Pengemasan modul", 0]] },
+    { id: "SKT-2607", who: "Pak Hendra S.", prj: "Rumah 2 lantai", city: "Surabaya", tgt: "20 Jan", at: 3, count: [14, 22], pic: "Kepala workshop: Pak Wawan",
+      items: [["Press laminate kabinet dapur", 1], ["Edging wardrobe", 1], ["Pintu kaca fluted", 0], ["Rak ruang keluarga", 0], ["Panel dinding tangga", 0]] },
+    { id: "SKT-2612", who: "Butik Arum", prj: "Toko 110 m²", city: "Semarang", tgt: "12 Feb", at: 2, count: [8, 30], pic: "Kepala workshop: Pak Wawan",
+      items: [["Potong panel etalase", 1], ["Rakit rangka etalase", 0], ["Rangka kasir", 0], ["Rak display dinding", 0]] },
+    { id: "SKT-2618", who: "Kel. Prasetyo", prj: "Rumah 1 lantai", city: "Semarang", tgt: "10 Mar", at: 1, count: [6, 11], pic: "Drafter: Dinda",
+      items: [["Denah final", 1], ["Tampak kabinet dapur", 1], ["Detail wardrobe", 0], ["Titik listrik dan lampu", 0]] },
+    { id: "SKT-2620", who: "Pak Bima N.", prj: "Kantor 140 m²", city: "Surabaya", tgt: "2 Apr", at: 0, count: [2, 5], pic: "Desainer: Salsa",
+      items: [["Ringkasan kebutuhan", 1], ["Mood board", 1], ["Zonasi ruang", 0], ["Render ruang rapat", 0], ["Presentasi konsep", 0]] }
+  ];
+  var sel = 0, oF = "all";
+  function prog(j) { var d = j.items.filter(function (x) { return x[1]; }).length; if (j.count) return [j.count[0] - j.count0 + d, j.count[1]]; return [d, j.items.length]; }
+  J.forEach(function (j) { if (j.count) j.count0 = j.items.filter(function (x) { return x[1]; }).length; });
+  function isDone(j) { var c = prog(j); return c[0] >= c[1]; }
+  function cell(j, i) {
+    if (i < j.at || (i === j.at && isDone(j))) return '<div class="cell cell--done"><i data-lucide="check" class="i-sm"></i></div>';
+    if (i > j.at) return '<div class="cell cell--todo"></div>';
+    if (j.hold) return '<div class="cell cell--hold">Tertahan</div>';
+    var c = prog(j); return '<div class="cell cell--now"><span>' + c[0] + "/" + c[1] + '</span><i><u style="width:' + Math.round(c[0] / c[1] * 100) + '%"></u></i></div>';
+  }
+  function renderBoard() {
+    $("mxBody").innerHTML = J.map(function (j, n) {
+      if (oF === "hold" && !j.hold) return ""; if (oF === "site" && !j.site) return "";
+      var t = ""; for (var i = 0; i < 8; i++) t += "<td>" + cell(j, i) + "</td>";
+      return '<tr data-j="' + n + '" class="' + (n === sel ? "is-active" : "") + '"><td class="mx__p"><b>' + j.who + "</b><span>" + j.prj + " · " + j.city + "</span></td>" + t + '<td class="num" style="font-size:13px">' + j.tgt + "</td></tr>";
+    }).join("");
+    var nh = J.filter(function (j) { return j.hold; }).length, ns = J.filter(function (j) { return j.site; }).length;
+    $("opsSum").textContent = J.length + " proyek berjalan, " + nh + " tertahan, " + ns + " sedang di lokasi.";
+    icons();
+  }
+  function renderPhone() {
+    var j = J[sel], c = prog(j), ok = isDone(j);
+    $("phWho").textContent = j.pic + " · " + j.id; $("phName").textContent = j.who + " · " + j.prj;
+    $("phStage").textContent = "Tahap " + STG[j.at]; $("phCount").textContent = c[0] + "/" + c[1]; $("phBar").style.width = Math.round(c[0] / c[1] * 100) + "%";
+    var is = $("phIssue"); is.hidden = !j.hold; if (j.hold) is.querySelector("span").textContent = j.hold;
+    $("phTrack").innerHTML = j.items.map(function (x, i) { return '<li class="' + (x[1] ? "is-done" : "") + '"><button type="button" data-k="' + i + '"><span class="box"><i data-lucide="check" class="i-xs"></i></span><span>' + x[0] + "</span></button></li>"; }).join("");
+    $("phSend").innerHTML = '<button type="button" class="btn btn-dark" id="phGo"><i data-lucide="send" class="i-sm"></i>' + (ok ? "Kirim laporan, tahap selesai" : "Kirim laporan ke klien") + "</button>";
+    icons();
+  }
+  $("mxBody").addEventListener("click", function (e) { var tr = e.target.closest("[data-j]"); if (!tr) return; sel = Number(tr.getAttribute("data-j")); renderBoard(); renderPhone(); });
+  $("opsFilter").addEventListener("lapak:select", function (e) { oF = e.detail.value; if (oF === "hold") sel = J.findIndex(function (j) { return j.hold; }); if (oF === "site") sel = J.findIndex(function (j) { return j.site; }); renderBoard(); renderPhone(); });
+  $("phTrack").addEventListener("click", function (e) { var b = e.target.closest("[data-k]"); if (!b) return; var it = J[sel].items[Number(b.getAttribute("data-k"))]; it[1] = it[1] ? 0 : 1; renderBoard(); renderPhone(); });
+  document.querySelector(".shots").addEventListener("click", function (e) { var b = e.target.closest(".shotAdd"); if (b) b.classList.toggle("is-on"); });
+  $("phSend").addEventListener("click", function (e) { if (e.target.closest("#phGo")) { $("phSend").innerHTML = '<div class="sent"><i data-lucide="check" class="i-sm"></i>Terkirim ke ' + J[sel].who + "</div>"; icons(); } });
+
+  /* ---------- Mulai ---------- */
+  renderRooms(); show("keluarga-1"); renderProj(); openProject("taman"); preset("Apartemen"); renderBoard(); renderPhone();
+})();
+</script>
+</body>
+</html>

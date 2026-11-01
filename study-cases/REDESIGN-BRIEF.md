@@ -46,6 +46,7 @@ Tanggal hari ini: **Minggu, 1 November 2026**. Semua tanggal contoh di prototype
 - Papan nama/logo di bangunan atau kaca: jangan pakai fotonya, atau crop bagian itu.
 - Bordiran/logo kecil di seragam, sprei, kemasan: boleh ditutup dengan `patch.mjs`, cek hasilnya.
 - Banner promo yang berisi teks/logo, foto testimoni pelanggan, foto selebriti: jangan dipakai.
+- Wajah orang nyata yang bisa dikenali (dokter, staf, pelatih, pemilik, instruktur) jangan dipasangkan dengan nama, gelar, atau rating fiktif. Pakai avatar inisial atau rancang tanpa potret. Orang tidak dominan di foto suasana masih boleh.
 - Selain crop dan `patch.mjs` untuk logo/bordiran, **jangan mengedit piksel foto** (tidak meratakan latar, tidak menghapus pola/noise). Kalau ragu ada watermark samar, lewati fotonya.
 - Konversi ke webp lebar maks 1600 (`sharp`), nama file deskriptif.
 - Kalau foto bersih kurang, rancang layout yang butuh lebih sedikit foto. Jangan pakai foto stok dari luar.

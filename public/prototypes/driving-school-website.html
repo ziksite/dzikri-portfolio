@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sein — Sekolah mengemudi di Semarang dan Ungaran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/driving-school-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#home">sein</a>
+      <nav class="nav__links">
+        <a href="#home" class="is-active">Kursus</a>
+        <a href="#home" data-jump="biaya">Biaya</a>
+        <a href="#home" data-jump="cabang">Cabang</a>
+        <a href="#home" data-jump="faq">Tanya jawab</a>
+      </nav>
+      <div class="nav__right"><a class="btn btn-line btn-sm" href="#progres">Rute saya</a><a class="btn btn-primary btn-sm" href="#daftar">Daftar</a></div>
+    </header>
+
+    <div class="hero">
+      <div class="card hero__copy">
+        <h1 class="t-hero">Belajar mobil dari nol, rutenya jelas sejak sesi pertama.</h1>
+        <p class="t-lead">Pilih transmisi dan jumlah sesi. Materi yang tercakup dan total biayanya langsung terlihat. Enam cabang di Semarang dan Ungaran.</p>
+      </div>
+      <div class="photo" data-img="assets/driving-school-website/latihan-kabin.webp" data-alt="Siswa memegang kemudi saat latihan di jalan, instruktur duduk di sebelahnya"></div>
+    </div>
+
+    <div class="card" style="margin-top:12px" id="builder">
+      <div class="builder">
+        <div class="builder__group">
+          <span class="builder__label">Transmisi</span>
+          <div class="seg" data-select id="hTrans"><button type="button" class="is-active" data-value="manual">Manual</button><button type="button" data-value="matic">Matic</button></div>
+        </div>
+        <div class="builder__group">
+          <span class="builder__label">Jumlah sesi, 1 jam per sesi</span>
+          <div class="seg" data-select id="hSess">
+            <button type="button" class="is-active" data-value="12">12</button>
+            <button type="button" data-value="10">10</button>
+            <button type="button" data-value="8">8</button>
+            <button type="button" data-value="6">6</button>
+            <button type="button" data-value="1">1</button>
+          </div>
+        </div>
+        <div class="builder__group">
+          <span class="builder__label">Persiapan ujian SIM A</span>
+          <div class="seg" data-select id="hSim"><button type="button" class="is-active" data-value="0">Tidak</button><button type="button" data-value="1">Tambah 1 sesi</button></div>
+        </div>
+        <div class="builder__total">
+          <span class="row"><span class="pill pill--lime">Promo 20%</span><span class="strike num" id="hNormal"></span></span>
+          <span class="t-val" id="hPrice"></span>
+          <span class="t-small" id="hLabel"></span>
+        </div>
+      </div>
+      <div class="strip"><div class="strip__row" id="hStrip"></div></div>
+      <div class="row" style="margin-top:18px;justify-content:space-between">
+        <p class="t-meta" id="hNote" style="flex:1;min-width:240px"></p>
+        <a class="btn btn-green" href="#daftar">Pilih cabang dan jadwal<i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+    </div>
+
+    <div id="biaya">
+      <div class="sect__head"><div><h2 class="t-h1">Biaya kursus</h2><p class="t-meta">Senin sampai Sabtu. Klik baris untuk memakainya di atas.</p></div></div>
+      <div class="split">
+        <div class="card card--flush scroll-x">
+          <table class="fee" id="feeTable">
+            <thead><tr><th>Kelas</th><th>Sesi</th><th>Manual</th><th>Matic</th></tr></thead>
+            <tbody id="feeBody"></tbody>
+          </table>
+        </div>
+        <div class="card">
+          <p class="t-h3" style="margin-bottom:6px">Di luar harga paket</p>
+          <div class="ledger">
+            <div><span>Formulir pendaftaran</span><span>Rp35.000</span></div>
+            <div><span>Latihan hari Minggu</span><span>+Rp200.000 per paket</span></div>
+            <div><span>Tips instruktur Sen–Jum</span><span>min. Rp15.000/sesi</span></div>
+            <div><span>Tips instruktur Sab–Min</span><span>min. Rp25.000/sesi</span></div>
+          </div>
+          <p class="t-small" style="margin-top:10px">DP minimal 50% saat mendaftar, pelunasan paling lambat pertemuan ketiga.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="split--even split" style="margin-top:12px">
+      <div class="card stack">
+        <h3 class="t-h2">Mobil latihan dilengkapi kontrol ganda</h3>
+        <p class="muted">Rem ganda di semua mobil, ditambah kopling ganda pada mobil manual, sehingga instruktur bisa mengambil alih dari kursi sebelah. Jam latihan 08.00–11.00 dan 13.00–16.00, satu sesi berdurasi 1 jam, atau 2 jam bila jadwal berikutnya memungkinkan.</p>
+        <p class="muted">Teori di kelas tersedia hari Sabtu pekan pertama dan ketiga, pukul 09.00 dan 11.00.</p>
+      </div>
+      <div class="photo" style="--ar:auto;aspect-ratio:auto;min-height:230px" data-img="assets/driving-school-website/ruang-teori.webp" data-alt="Ruang teori dengan kursi lipat berjajar"></div>
+    </div>
+
+    <div id="cabang">
+      <div class="sect__head"><div><h2 class="t-h1">Enam cabang</h2><p class="t-meta">Semarang dan Ungaran. Senin–Sabtu 08.00–16.00, Minggu dengan perjanjian.</p></div>
+        <div class="seg" data-select id="bFilter"><button type="button" class="is-active" data-value="all">Semua</button><button type="button" data-value="matic">Ada mobil matic</button></div>
+      </div>
+      <div class="split" style="grid-template-columns:1fr">
+        <div class="card" style="padding-top:8px;padding-bottom:8px" id="bList"></div>
+      </div>
+    </div>
+
+    <div id="faq">
+      <div class="sect__head"><h2 class="t-h1">Tanya jawab</h2></div>
+      <div class="split--even split">
+        <div class="card faq" style="padding-top:8px;padding-bottom:8px">
+          <details open><summary>Apakah sekolah ini mengurus SIM?<i data-lucide="plus" class="i-sm"></i></summary><p>Tidak. Pendaftaran dan ujian SIM A dilakukan sendiri oleh siswa di Satpas sesuai prosedur resmi Polri. Sesi persiapan hanya melatih keterampilan mengemudi dan tidak menjamin kelulusan ujian.</p></details>
+          <details><summary>Berapa sesi yang saya butuhkan?<i data-lucide="plus" class="i-sm"></i></summary><p>Belum pernah memegang kemudi: mulai dari kelas Pemula, 10 atau 12 sesi. Sudah bisa tetapi belum percaya diri: kelas Memperlancar, 6 atau 8 sesi. Tiap orang berbeda, instruktur akan memberi saran setelah sesi pertama.</p></details>
+          <details><summary>Kapan bisa mulai latihan?<i data-lucide="plus" class="i-sm"></i></summary><p>Paling cepat sehari setelah pembayaran DP dikonfirmasi cabang.</p></details>
+          <details><summary>Bagaimana memastikan saya sudah terdaftar?<i data-lucide="plus" class="i-sm"></i></summary><p>Setelah DP diterima, Anda mendapat kode siswa dan rute latihan muncul di halaman Rute saya. Jangan membayar ke pihak yang tidak bisa menunjukkan kode pendaftaran.</p></details>
+        </div>
+        <div class="card faq" style="padding-top:8px;padding-bottom:8px">
+          <details open><summary>Apa syarat mendaftar?<i data-lucide="plus" class="i-sm"></i></summary><p>Pria atau wanita berbadan sehat, dapat membaca dan menulis, membayar formulir Rp35.000, dan bersedia menaati peraturan sekolah.</p></details>
+          <details><summary>Apakah saya bisa memilih jam sendiri?<i data-lucide="plus" class="i-sm"></i></summary><p>Bisa. Pilih jam yang masih kosong pada jadwal instruktur, atau ikuti jam yang disiapkan cabang.</p></details>
+          <details><summary>Mengapa tips disebut terpisah?<i data-lucide="plus" class="i-sm"></i></summary><p>Harga paket belum termasuk tips. Tips diberikan langsung ke instruktur setelah sesi, minimal Rp15.000 pada hari kerja dan Rp25.000 pada Sabtu, Minggu, atau perjanjian.</p></details>
+          <details><summary>Bagaimana cara membayar?<i data-lucide="plus" class="i-sm"></i></summary><p>Di kantor cabang tempat mendaftar, atau transfer ke rekening atas nama perusahaan yang tertera setelah Anda mendapat kode pendaftaran.</p></details>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>Sekolah Mengemudi Sein · Semarang dan Ungaran</span>
+      <span class="row"><a href="#">WhatsApp 0812-0000-4471</a><a href="#papan">Masuk cabang</a></span>
+    </footer>
+  </div>
+</section>
+
+<!-- ================= PENDAFTARAN ================= -->
+<section data-screen="daftar">
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#home">sein</a>
+      <span class="t-meta">Pendaftaran kursus</span>
+      <div class="nav__right"><a class="btn btn-line btn-sm" href="#home"><i data-lucide="arrow-left" class="i-sm"></i>Beranda</a></div>
+    </header>
+
+    <form class="reg" id="regForm">
+      <ol class="rail" id="rail"></ol>
+      <div class="gap" style="min-width:0">
+        <div class="card">
+          <div class="step__head"><span class="step__no">1</span><h2 class="t-h2">Paket</h2></div>
+          <div class="row" style="gap:18px 28px">
+            <div class="seg" data-select id="fTrans"><button type="button" class="is-active" data-value="manual">Manual</button><button type="button" data-value="matic">Matic</button></div>
+            <div class="seg" data-select id="fSess">
+              <button type="button" class="is-active" data-value="12">12 sesi</button>
+              <button type="button" data-value="10">10</button>
+              <button type="button" data-value="8">8</button>
+              <button type="button" data-value="6">6</button>
+              <button type="button" data-value="1">1</button>
+            </div>
+            <div class="seg" data-select id="fSim"><button type="button" class="is-active" data-value="0">Tanpa persiapan SIM A</button><button type="button" data-value="1">Tambah persiapan SIM A</button></div>
+          </div>
+          <p class="t-small" style="margin-top:12px">Sesi persiapan melatih materi ujian praktik. Pendaftaran dan ujian SIM A dilakukan sendiri di Satpas sesuai prosedur resmi, kelulusan tidak dijamin.</p>
+        </div>
+
+        <div class="card">
+          <div class="step__head"><span class="step__no">2</span><h2 class="t-h2">Cabang</h2></div>
+          <div class="opt-grid" id="fBranch"></div>
+        </div>
+
+        <div class="card">
+          <div class="step__head"><span class="step__no">3</span><h2 class="t-h2">Instruktur</h2></div>
+          <div class="opt-grid" id="fInstr"></div>
+        </div>
+
+        <div class="card">
+          <div class="step__head"><span class="step__no">4</span><h2 class="t-h2">Jadwal mingguan</h2><span class="t-small" id="slotHint" style="margin-left:auto"></span></div>
+          <div class="scroll-x"><div class="week" id="week"></div></div>
+          <p class="t-meta" style="margin:16px 0 8px" id="datesLabel"></p>
+          <div class="dates-out" id="datesOut"></div>
+        </div>
+
+        <div class="card">
+          <div class="step__head"><span class="step__no">5</span><h2 class="t-h2">Data siswa</h2></div>
+          <div class="opt-grid" style="gap:12px">
+            <label class="field">Nama lengkap<input class="input" required value="Rani Kusumawati"></label>
+            <label class="field">Nomor WhatsApp<input class="input" required inputmode="tel" value="0812-0000-7316"></label>
+            <label class="field">Alamat rumah<input class="input" required value="Tembalang, Semarang"></label>
+            <label class="field">Pembayaran DP<select class="input" id="fPay"><option>Di kantor cabang</option><option>Transfer ke rekening perusahaan</option></select></label>
+          </div>
+        </div>
+
+        <div class="bar">
+          <div class="bar__txt"><span id="barTxt"></span><small id="barSub"></small></div>
+          <div class="bar__money"><small>DP minimal</small><b id="barDp"></b></div>
+          <div class="bar__money"><small>Total tagihan</small><b id="barTotal"></b></div>
+          <button class="btn btn-green">Kirim pendaftaran</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="card stack" id="regDone" hidden style="max-width:680px;margin:40px auto 60px">
+      <span class="tick" style="width:44px;height:44px"><i data-lucide="check"></i></span>
+      <h2 class="t-h1">Pendaftaran diterima</h2>
+      <p class="muted">Kode pendaftaran <b class="num" style="color:var(--ink)">SEIN-2741</b>. Tim cabang menghubungi Anda lewat WhatsApp untuk mengonfirmasi jadwal. Kursi belum terkunci sampai DP diterima.</p>
+      <div class="ledger" id="doneLedger"></div>
+      <div class="row"><a class="btn btn-primary" href="#progres">Lihat contoh rute siswa</a><a class="btn btn-line" href="#">Buka WhatsApp cabang</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRES SISWA ================= -->
+<section data-screen="progres">
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#home">sein</a>
+      <nav class="nav__links"><a class="is-active" href="#progres">Rute saya</a><a href="#progres">Pembayaran</a></nav>
+      <div class="nav__right"><span class="t-meta hide-s">Rani Kusumawati</span><span class="ava ava--sm">RK</span></div>
+    </header>
+
+    <div class="board">
+      <div class="gap" style="min-width:0">
+        <div class="card">
+          <div class="row" style="justify-content:space-between;margin-bottom:14px">
+            <div><h1 class="t-h2">7 dari 12 sesi selesai</h1><p class="t-meta">Pemula manual · Tembalang · Sri Lestari</p></div>
+            <span class="row t-small"><span class="pill">November 2026</span></span>
+          </div>
+          <div class="days" id="days"></div>
+          <svg class="map" id="map" role="img" aria-label="Peta rute 12 sesi latihan"></svg>
+        </div>
+      </div>
+
+      <div class="gap">
+        <div class="card stack" style="gap:10px">
+          <div class="row" style="justify-content:space-between"><span class="t-h3">Sesi berikutnya</span><span class="pill pill--ink">Selasa, 3 Nov</span></div>
+          <p class="t-val" style="font-size:30px">09.00–10.00</p>
+          <p class="t-meta">Sesi 8: berhenti di tanjakan dan turunan. Mobil M1, jemput di cabang Tembalang.</p>
+          <div class="row"><span class="ava ava--sm">SL</span><span style="font-size:14.5px;font-weight:500">Sri Lestari</span><button type="button" class="btn btn-line btn-sm" style="margin-left:auto" id="resBtn">Minta pindah jadwal</button></div>
+          <p class="t-small" id="resMsg" hidden>Permintaan terkirim ke cabang Tembalang. Jadwal lama tetap berlaku sampai dikonfirmasi lewat WhatsApp.</p>
+        </div>
+
+        <div class="card" id="stopCard"></div>
+
+        <div class="card stack" style="gap:12px">
+          <span class="t-h3">Kehadiran</span>
+          <div class="attend" id="attend"></div>
+        </div>
+
+        <div class="card stack" style="gap:6px">
+          <span class="t-h3">Pembayaran</span>
+          <div class="ledger">
+            <div><span>Paket + formulir</span><span>Rp1.375.000</span></div>
+            <div><span>Dibayar</span><span style="color:var(--green-ink)">Lunas 22 Okt</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN KUNCI CABANG ================= -->
+<section data-screen="papan">
+  <div class="ops">
+    <div class="wrap">
+      <div class="ops__top">
+        <a class="logo" href="#home" style="color:#fff">sein<small>papan kunci Tembalang</small></a>
+        <span class="pill pill--soft-orange">Minggu: sesi perjanjian</span>
+        <span class="ops__clock">Minggu, 1 Nov 2026 · 09.20</span>
+      </div>
+      <div class="ops__grid">
+        <div style="min-width:0">
+          <div class="hooks" id="hooks"></div>
+          <div class="log">
+            <p class="t-h3" style="margin-bottom:6px">Serah terima kunci hari ini</p>
+            <ul id="log"></ul>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone__bar"><span>09.20</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+          <div class="phone__body" id="phone"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var rp = function (n) { return window.rupiah(n); };
+  var $ = function (id) { return document.getElementById(id); };
+  var icons = function () { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); };
+
+  /* Foto */
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var im = new Image(); im.alt = box.getAttribute("data-alt") || ""; im.src = box.getAttribute("data-img"); box.appendChild(im);
+  });
+  /* Lompat ke bagian di beranda */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-jump]"); if (!a) return;
+    e.preventDefault(); $(a.getAttribute("data-jump")).scrollIntoView({ behavior: "smooth" });
+  });
+
+  /* ---------- Data ---------- */
+  var FEES = {
+    manual: { 12: [1675000, 1340000], 10: [1425000, 1140000], 8: [1150000, 920000], 6: [875000, 700000], 1: [150000, 120000] },
+    matic:  { 12: [1900000, 1520000], 10: [1600000, 1280000], 8: [1315000, 1050000], 6: [995000, 795000], 1: [170000, 135000] }
+  };
+  var KELAS = { 12: "Pemula", 10: "Pemula", 8: "Memperlancar", 6: "Memperlancar", 1: "Per sesi" };
+  var FORM_FEE = 35000, SUNDAY = 200000;
+  var STOPS = [
+    "Kenal mobil, hidup dan mati mesin", "Oper gigi perseneling", "Maju dan mundur lurus", "Pengereman maju dan mundur",
+    "Gigi rendah ke gigi tinggi", "Masuk jalan raya", "Menaiki dan menuruni tanjakan", "Berhenti di tanjakan dan turunan",
+    "Di belakang kendaraan lambat", "Menyusul dengan benar", "Parkir paralel dan seri", "Ulang materi terlemah"
+  ];
+  var MATIC = { 1: "Posisi tuas transmisi", 4: "Mode L dan D" };
+  var COVER = {
+    12: [0,1,2,3,4,5,6,7,8,9,10,11], 10: [0,1,2,3,5,6,7,9,10,11], 8: [4,5,6,7,8,9,10,11], 6: [6,7,8,9,10,11], 1: []
+  };
+  var NOTE = {
+    12: "Kelas Pemula: seluruh materi, dari mengenal mobil sampai parkir.",
+    10: "Kelas Pemula: perpindahan gigi digabung ke sesi pengereman, kendaraan lambat digabung ke sesi menyusul.",
+    8: "Kelas Memperlancar: untuk yang sudah bisa menjalankan mobil, mulai dari gigi tinggi dan jalan raya.",
+    6: "Kelas Memperlancar: untuk yang sudah ke jalan raya, fokus tanjakan, lalu lintas, dan parkir.",
+    1: "Per sesi: materi ditentukan bersama instruktur sesuai kebutuhan Anda."
+  };
+  var BRANCHES = [
+    { id: "tembalang", name: "Tembalang", area: "Semarang selatan", m: 3, a: 2 },
+    { id: "banyumanik", name: "Banyumanik", area: "Semarang selatan", m: 2, a: 2 },
+    { id: "pedurungan", name: "Pedurungan", area: "Semarang timur", m: 3, a: 1 },
+    { id: "candisari", name: "Candisari", area: "Semarang tengah", m: 2, a: 1 },
+    { id: "ngaliyan", name: "Ngaliyan", area: "Semarang barat", m: 3, a: 0 },
+    { id: "ungaran", name: "Ungaran", area: "Kabupaten Semarang", m: 2, a: 0 }
+  ];
+  var INSTR = [
+    { id: "sri", name: "Sri Lestari", ini: "SL", yrs: 9, t: ["manual", "matic"], seed: 3 },
+    { id: "bambang", name: "Bambang Wijoyo", ini: "BW", yrs: 14, t: ["manual", "matic"], seed: 5 },
+    { id: "agus", name: "Agus Prasetyo", ini: "AP", yrs: 7, t: ["manual"], seed: 2 },
+    { id: "dwi", name: "Dwi Hartono", ini: "DH", yrs: 5, t: ["matic"], seed: 7 }
+  ];
+  var HOURS = ["08", "09", "10", "13", "14", "15"], DAYN = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+
+  var S = { t: "manual", n: 12, sim: 0, branch: "tembalang", instr: "sri", slots: ["1-09", "3-09", "5-09"], filter: "all" };
+
+  /* ---------- Beranda ---------- */
+  function setSeg(id, v) { $(id).querySelectorAll("[data-value]").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-value") === String(v)); }); }
+  function renderHome() {
+    var f = FEES[S.t][S.n], add = S.sim ? FEES[S.t][1][1] : 0;
+    $("hPrice").textContent = rp(f[1] + add);
+    $("hNormal").textContent = rp(f[0] + (S.sim ? FEES[S.t][1][0] : 0));
+    $("hLabel").textContent = KELAS[S.n] + " · " + (S.n + S.sim) + " sesi " + S.t + ", belum termasuk formulir Rp35.000";
+    var cov = COVER[S.n];
+    $("hStrip").innerHTML = STOPS.map(function (s, i) {
+      var on = cov.indexOf(i) > -1;
+      return '<div class="stop' + (on ? " is-on" : "") + '"><span class="stop__dot">' + (i + 1) + '</span><span class="stop__name">' + (S.t === "matic" && MATIC[i] || s) + "</span></div>";
+    }).join("");
+    $("hNote").textContent = NOTE[S.n] + (S.sim ? " Ditambah 1 sesi latihan materi ujian praktik SIM A; ujiannya sendiri di Satpas." : "");
+    $("feeBody").innerHTML = [12, 10, 8, 6, 1].map(function (n) {
+      var a = FEES.manual[n], b = FEES.matic[n];
+      return '<tr data-n="' + n + '" class="' + (n === S.n ? "is-picked" : "") + '"><td>' + KELAS[n] + "</td><td>" + n + "</td><td><b>" + rp(a[1]) + "</b><s>" + rp(a[0]) + "</s></td><td><b>" + rp(b[1]) + "</b><s>" + rp(b[0]) + "</s></td></tr>";
+    }).join("");
+  }
+  function renderBranchList() {
+    $("bList").innerHTML = BRANCHES.map(function (b) {
+      var off = S.filter === "matic" && !b.a;
+      return '<div class="branch' + (off ? " is-off" : "") + '"><div><p class="branch__name">' + b.name + '</p><p class="t-small">' + b.area + '</p></div><span class="row hide-m"><span class="pill">' + b.m + " manual</span>" + (b.a ? '<span class="pill pill--lime">' + b.a + " matic</span>" : "") + '</span><a class="btn btn-line btn-sm" href="#daftar" data-branch="' + b.id + '">Pilih</a></div>';
+    }).join("");
+  }
+  $("bFilter").addEventListener("lapak:select", function (e) { S.filter = e.detail.value; renderBranchList(); });
+  $("bList").addEventListener("click", function (e) { var a = e.target.closest("[data-branch]"); if (a) { S.branch = a.getAttribute("data-branch"); syncAll(); } });
+  $("feeBody").addEventListener("click", function (e) { var tr = e.target.closest("tr"); if (tr) { S.n = +tr.getAttribute("data-n"); syncAll(); $("builder").scrollIntoView({ behavior: "smooth", block: "center" }); } });
+
+  /* ---------- Pendaftaran ---------- */
+  function maxSlots() { return Math.min(3, S.n + S.sim); }
+  function taken(i, h) { var ins = INSTR.filter(function (x) { return x.id === S.instr; })[0]; return (i * 3 + h * 5 + ins.seed * 7) % 6 === 0; }
+  function sessionDates() {
+    if (!S.slots.length) return [];
+    var want = S.n + S.sim, out = [], d = new Date(2026, 10, 3);
+    var keyed = S.slots.map(function (k) { var p = k.split("-"); return { day: +p[0], h: p[1] }; });
+    for (var g = 0; g < 200 && out.length < want; g++) {
+      var di = (d.getDay() + 6) % 7;
+      keyed.filter(function (k) { return k.day === di; }).sort(function (a, b) { return a.h - b.h; }).forEach(function (k) { if (out.length < want) out.push({ d: new Date(d), h: k.h, di: di }); });
+      d.setDate(d.getDate() + 1);
+    }
+    return out;
+  }
+  function fmt(d) { return d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" }); }
+  function bill() {
+    var ds = sessionDates(), sun = ds.some(function (x) { return x.di === 6; });
+    var pkg = FEES[S.t][S.n][1] + (S.sim ? FEES[S.t][1][1] : 0);
+    var tips = ds.reduce(function (t, x) { return t + (x.di >= 5 ? 25000 : 15000); }, 0);
+    var total = pkg + FORM_FEE + (sun ? SUNDAY : 0);
+    return { ds: ds, sun: sun, pkg: pkg, tips: tips, total: total, dp: Math.ceil(pkg / 2) + FORM_FEE + (sun ? SUNDAY / 2 : 0) };
+  }
+  function renderFlow() {
+    var br = BRANCHES.filter(function (b) { return b.id === S.branch; })[0];
+    if (S.t === "matic" && !br.a) { S.branch = "tembalang"; br = BRANCHES[0]; }
+    var ins = INSTR.filter(function (x) { return x.id === S.instr; })[0];
+    if (ins.t.indexOf(S.t) < 0) { S.instr = "sri"; ins = INSTR[0]; }
+
+    $("fBranch").innerHTML = BRANCHES.map(function (b) {
+      var off = S.t === "matic" && !b.a;
+      return '<button type="button" class="opt' + (b.id === S.branch ? " is-active" : "") + '" data-v="' + b.id + '"' + (off ? " disabled" : "") + '><span><b style="font-weight:600">' + b.name + '</b><br><span class="t-small">' + b.area + '</span></span><span class="opt__end t-small">' + (off ? "Tidak ada matic" : (S.t === "manual" ? b.m : b.a) + " mobil " + S.t) + "</span></button>";
+    }).join("");
+    $("fInstr").innerHTML = INSTR.map(function (x) {
+      var off = x.t.indexOf(S.t) < 0;
+      return '<button type="button" class="opt' + (x.id === S.instr ? " is-active" : "") + '" data-v="' + x.id + '"' + (off ? " disabled" : "") + '><span class="ava">' + x.ini + '</span><span><b style="font-weight:600">' + x.name + '</b><br><span class="t-small">' + x.yrs + " tahun mengajar · " + x.t.join(" & ") + "</span></span></button>";
+    }).join("");
+
+    /* buang slot yang bentrok setelah ganti instruktur */
+    S.slots = S.slots.filter(function (k) { var p = k.split("-"); return !taken(+p[0], HOURS.indexOf(p[1])); }).slice(0, maxSlots());
+
+    var h = '<span></span>' + DAYN.map(function (d) { return '<span class="week__h">' + d + "</span>"; }).join("");
+    HOURS.forEach(function (hr, hi) {
+      if (hr === "13") h += '<div class="hatch">Istirahat 11.00–13.00</div>';
+      h += '<span class="week__t">' + hr + ".00</span>";
+      DAYN.forEach(function (_, di) {
+        var key = di + "-" + hr, off = taken(di, hi), on = S.slots.indexOf(key) > -1;
+        h += '<button type="button" class="slot' + (on ? " is-active" : "") + (di === 6 ? " slot--extra" : "") + '" data-k="' + key + '"' + (off ? " disabled" : "") + ">" + (off ? "Terisi" : on ? "Dipilih" : "Pilih") + "</button>";
+      });
+    });
+    $("week").innerHTML = h;
+    $("slotHint").textContent = "Pilih sampai " + maxSlots() + " jam per minggu";
+
+    var b = bill();
+    $("datesLabel").textContent = b.ds.length ? (b.ds.length + " sesi, mulai " + fmt(b.ds[0].d) + ", selesai " + fmt(b.ds[b.ds.length - 1].d)) : "Pilih minimal satu jam.";
+    $("datesOut").innerHTML = b.ds.map(function (x) { return '<span class="pill">' + fmt(x.d) + " · " + x.h + ".00</span>"; }).join("");
+    $("barTxt").textContent = KELAS[S.n] + " " + S.t + " · " + (S.n + S.sim) + " sesi · " + br.name + " · " + ins.name;
+    $("barSub").textContent = "Estimasi tips " + rp(b.tips) + " dibayar langsung ke instruktur, di luar tagihan" + (b.sun ? ". Termasuk biaya Minggu Rp200.000" : "");
+    $("barDp").textContent = rp(b.dp);
+    $("barTotal").textContent = rp(b.total);
+
+    var flags = [true, !!S.branch, !!S.instr, b.ds.length > 0, false];
+    $("rail").innerHTML = ["Paket", "Cabang", "Instruktur", "Jadwal", "Data siswa"].map(function (l, i) {
+      return '<li class="' + (flags[i] ? "is-done" : "") + '"><span class="tick' + (flags[i] ? "" : " tick--off") + '">' + (flags[i] ? '<i data-lucide="check"></i>' : i + 1) + "</span>" + l + "</li>";
+    }).join("");
+    icons();
+  }
+  $("fBranch").addEventListener("click", function (e) { var b = e.target.closest("[data-v]"); if (b && !b.disabled) { S.branch = b.getAttribute("data-v"); renderFlow(); } });
+  $("fInstr").addEventListener("click", function (e) { var b = e.target.closest("[data-v]"); if (b && !b.disabled) { S.instr = b.getAttribute("data-v"); renderFlow(); } });
+  $("week").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-k]"); if (!b || b.disabled) return;
+    var k = b.getAttribute("data-k"), i = S.slots.indexOf(k);
+    if (i > -1) S.slots.splice(i, 1); else { S.slots.push(k); while (S.slots.length > maxSlots()) S.slots.shift(); }
+    renderFlow();
+  });
+  $("regForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var b = bill();
+    if (!b.ds.length) { $("week").scrollIntoView({ block: "center" }); return; }
+    var br = BRANCHES.filter(function (x) { return x.id === S.branch; })[0], ins = INSTR.filter(function (x) { return x.id === S.instr; })[0];
+    $("doneLedger").innerHTML = [["Paket", KELAS[S.n] + " " + S.t + ", " + (S.n + S.sim) + " sesi"], ["Cabang dan instruktur", br.name + " · " + ins.name], ["Sesi pertama", fmt(b.ds[0].d) + ", " + b.ds[0].h + ".00"], ["Total tagihan", rp(b.total)], ["DP minimal", rp(b.dp) + " · " + $("fPay").value.toLowerCase()]].map(function (r) { return "<div><span>" + r[0] + "</span><span>" + r[1] + "</span></div>"; }).join("");
+    $("regForm").hidden = true; $("regDone").hidden = false; window.scrollTo(0, 0);
+  });
+
+  function syncAll() {
+    if (S.t === "matic") { var b = BRANCHES.filter(function (x) { return x.id === S.branch; })[0]; if (!b.a) S.branch = "tembalang"; }
+    ["hTrans", "fTrans"].forEach(function (id) { setSeg(id, S.t); });
+    ["hSess", "fSess"].forEach(function (id) { setSeg(id, S.n); });
+    ["hSim", "fSim"].forEach(function (id) { setSeg(id, S.sim); });
+    renderHome(); renderFlow();
+  }
+  [["hTrans", "t"], ["fTrans", "t"], ["hSess", "n"], ["fSess", "n"], ["hSim", "sim"], ["fSim", "sim"]].forEach(function (p) {
+    $(p[0]).addEventListener("lapak:select", function (e) { S[p[1]] = p[1] === "t" ? e.detail.value : +e.detail.value; syncAll(); });
+  });
+
+  /* ---------- Peta rute siswa ---------- */
+  var DONE = 7;
+  var SDATE = ["Sab, 17 Okt", "Sel, 20 Okt", "Kam, 22 Okt", "Sab, 24 Okt", "Sel, 27 Okt", "Kam, 29 Okt", "Sab, 31 Okt", "Sel, 3 Nov", "Kam, 5 Nov", "Sab, 7 Nov", "Sel, 10 Nov", "Kam, 12 Nov"];
+  var SKILL = [
+    ["Fungsi pedal, tuas, dan panel", "Menghidupkan dan mematikan mesin"], ["Kopling dan gigi 1 ke 2", "Oper gigi tanpa melihat tuas"], ["Maju lurus stabil", "Mundur lurus memakai spion"], ["Rem halus saat maju", "Rem saat mundur"],
+    ["Pindah ke gigi tinggi", "Turun gigi saat melambat"], ["Masuk arus jalan raya", "Menjaga lajur"], ["Naik tanjakan tanpa mundur", "Turun tanjakan dengan gigi rendah"], ["Berhenti di tanjakan", "Berhenti di turunan", "Berangkat lagi tanpa mundur"],
+    ["Jaga jarak", "Tetap tenang di belakang kendaraan lambat"], ["Membaca jarak aman", "Sein, spion, lalu menyusul"], ["Parkir paralel", "Parkir seri"], ["Materi terlemah dipilih bersama instruktur"]
+  ];
+  var NOTES = {
+    0: "Sudah hafal fungsi semua kontrol.", 1: "Masih melihat tuas di awal, membaik di akhir sesi.", 2: "Mundur lurus perlu sedikit koreksi kemudi.", 3: "Pengereman halus.", 4: "Perpindahan gigi sudah lancar.", 5: "Tenang di jalan raya, jaga jarak lebih panjang.", 6: "Turun tanjakan baik. Naik tanjakan sempat mati mesin dua kali, kita ulang di sesi 8."
+  };
+  var sel = 7;
+  function mapPoints(narrow) {
+    if (narrow) return STOPS.map(function (_, i) { return { x: 34, y: 36 + i * 78 }; });
+    return STOPS.map(function (_, i) {
+      var r = Math.floor(i / 4), c = i % 4; if (r === 1) c = 3 - c;
+      return { x: 90 + c * 240, y: 56 + r * 158 };
+    });
+  }
+  function pathTo(pts, k, narrow) {
+    var d = "M" + pts[0].x + " " + pts[0].y;
+    for (var i = 1; i <= k; i++) {
+      var p = pts[i], q = pts[i - 1];
+      if (!narrow && p.y !== q.y) { var r = (p.y - q.y) / 2; d += " A" + r + " " + r + " 0 0 " + (q.x > 400 ? 1 : 0) + " " + p.x + " " + p.y; }
+      else d += " L" + p.x + " " + p.y;
+    }
+    return d;
+  }
+  function renderMap() {
+    var svg = $("map"), narrow = svg.parentElement.clientWidth < 620, pts = mapPoints(narrow);
+    var w = narrow ? 320 : 900, h = narrow ? 36 + 11 * 78 + 40 : 530;
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+    var road = pathTo(pts, 11, narrow), done = pathTo(pts, DONE - 1, narrow);
+    var o = '<path d="' + road + '" fill="none" stroke="#E2E5E3" stroke-width="20" stroke-linecap="round"/>' +
+      '<path d="' + road + '" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="10 12"/>' +
+      '<path d="' + done + '" fill="none" stroke="#44A801" stroke-width="20" stroke-linecap="round"/>';
+    STOPS.forEach(function (s, i) {
+      var p = pts[i], st = i < DONE ? "done" : i === DONE ? "next" : "todo";
+      var bg = st === "done" ? "#B6F08C" : st === "next" ? "#111311" : "#fff", fg = st === "next" ? "#fff" : st === "done" ? "#17350A" : "#646B66";
+      var words = s.split(" "), a = "", b = "";
+      words.forEach(function (x) { if ((a + " " + x).length <= 25 && !b) a = (a + " " + x).trim(); else b = (b + " " + x).trim(); });
+      o += '<g class="stopbtn' + (i === sel ? " is-sel" : "") + '" data-i="' + i + '" tabindex="0" role="button" aria-label="Sesi ' + (i + 1) + ": " + s + '">' +
+        '<circle class="ring" cx="' + p.x + '" cy="' + p.y + '" r="23"/><circle cx="' + p.x + '" cy="' + p.y + '" r="17" fill="' + bg + '" stroke="' + (st === "todo" ? "#CDD2CF" : bg) + '" stroke-width="1.5"/>' +
+        (st === "done" ? '<path d="M' + (p.x - 6) + " " + p.y + " l4.5 4.5 l8 -9" + '" fill="none" stroke="' + fg + '" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' :
+          '<text x="' + p.x + '" y="' + (p.y + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + fg + '">' + (i + 1) + "</text>");
+      if (narrow) {
+        o += '<text class="lbl" x="66" y="' + (p.y - (b ? 4 : -1)) + '">' + a + "</text>" + (b ? '<text class="lbl" x="66" y="' + (p.y + 13) + '">' + b + "</text>" : "") + '<text class="sub" x="66" y="' + (p.y + (b ? 29 : 18)) + '">' + SDATE[i] + "</text>";
+      } else {
+        var anc = (i === 3 || i === 4) ? "end" : (i === 7 || i === 8) ? "start" : "middle", lx = anc === "end" ? p.x + 18 : anc === "start" ? p.x - 18 : p.x;
+        o += '<text class="lbl" x="' + lx + '" y="' + (p.y + 40) + '" text-anchor="' + anc + '">' + a + "</text>" + (b ? '<text class="lbl" x="' + lx + '" y="' + (p.y + 57) + '" text-anchor="' + anc + '">' + b + "</text>" : "") + '<text class="sub" x="' + lx + '" y="' + (p.y + (b ? 74 : 57)) + '" text-anchor="' + anc + '">' + SDATE[i] + "</text>";
+      }
+      o += "</g>";
+    });
+    svg.innerHTML = o;
+  }
+  function renderStop() {
+    var i = sel, st = i < DONE ? "done" : i === DONE ? "next" : "todo";
+    var pill = st === "done" ? '<span class="pill pill--lime">Selesai</span>' : st === "next" ? '<span class="pill pill--ink">Berikutnya</span>' : '<span class="pill">Belum</span>';
+    $("stopCard").innerHTML = '<div class="row" style="justify-content:space-between;margin-bottom:4px"><span class="t-small">Sesi ' + (i + 1) + " · " + SDATE[i] + "</span>" + pill + '</div><p class="t-h3" style="margin-bottom:8px">' + STOPS[i] + '</p><ul class="checks">' +
+      SKILL[i].map(function (s) { return '<li><span class="tick' + (st === "done" ? "" : " tick--off") + '">' + (st === "done" ? '<i data-lucide="check"></i>' : "") + "</span>" + s + "</li>"; }).join("") + "</ul>" +
+      (NOTES[i] ? '<p class="t-meta" style="margin-top:8px"><b style="color:var(--ink);font-weight:600">Catatan instruktur:</b> ' + NOTES[i] + "</p>" : "");
+    icons();
+  }
+  function renderAttend() {
+    $("attend").innerHTML = STOPS.map(function (_, i) {
+      return i < DONE ? '<span class="tick"><i data-lucide="check"></i></span>' : i === DONE ? '<span class="tick tick--next">' + (i + 1) + "</span>" : '<span class="tick tick--off">' + (i + 1) + "</span>";
+    }).join("");
+    var marks = { 3: 1, 5: 1, 7: 1, 10: 1, 12: 1 };
+    var h = "";
+    for (var d = 1; d <= 14; d++) {
+      var dt = new Date(2026, 10, d), name = dt.toLocaleDateString("id-ID", { weekday: "short" });
+      h += '<div class="day' + (marks[d] ? " has" : "") + (d === 1 ? " today" : "") + (d === 3 ? " next" : "") + '"><b>' + d + "</b><i></i>" + name + "</div>";
+    }
+    $("days").innerHTML = h;
+  }
+  $("map").addEventListener("click", function (e) { var g = e.target.closest(".stopbtn"); if (!g) return; sel = +g.getAttribute("data-i"); renderMap(); renderStop(); });
+  $("map").addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { var g = e.target.closest(".stopbtn"); if (g) { e.preventDefault(); sel = +g.getAttribute("data-i"); renderMap(); renderStop(); } } });
+  $("resBtn").addEventListener("click", function () { $("resMsg").hidden = false; this.disabled = true; this.textContent = "Terkirim"; });
+  window.addEventListener("resize", renderMap);
+  window.addEventListener("hashchange", function () { setTimeout(renderMap, 0); });
+
+  /* ---------- Papan kunci ---------- */
+  var CARS = [
+    { c: "M1", type: "Sigra manual", plate: "H 1408 KA", key: "out", who: "Sri Lestari", ini: "SL", until: "10.00", pips: ["done", "now", "", "", "booked", ""],
+      student: "Bagas Nugroho", sess: "Sesi 5 dari 10", item: "Masuk jalan raya", skills: ["Masuk arus jalan raya", "Menjaga lajur", "Jaga jarak"], tip: 25000 },
+    { c: "M2", type: "Sigra manual", plate: "H 1412 KA", key: "out", who: "Bambang Wijoyo", ini: "BW", until: "10.00", pips: ["", "now", "booked", "", "", ""],
+      student: "Laras Pertiwi", sess: "Sesi 3 dari 6", item: "Di belakang kendaraan lambat", skills: ["Jaga jarak", "Tetap tenang di belakang kendaraan lambat"], tip: 25000 },
+    { c: "M3", type: "Calya manual", plate: "H 1477 KA", key: "block", note: "Servis rem ganda", pips: ["block", "block", "block", "block", "block", "block"] },
+    { c: "A1", type: "Calya matic", plate: "H 1503 KA", key: "board", who: "Dwi Hartono", ini: "DH", pips: ["done", "", "booked", "", "", ""],
+      student: "Yosua Tanjung", sess: "Sesi 2 dari 12", item: "Posisi tuas transmisi", skills: ["Posisi tuas P, R, N, D", "Rem kaki kanan saja"], tip: 25000, nextAt: "10.00" },
+    { c: "A2", type: "Sigra matic", plate: "H 1519 KA", key: "board", who: "Dwi Hartono", ini: "DH", pips: ["", "", "", "booked", "", ""],
+      student: "Maya Salsabila", sess: "Sesi 1 dari 8", item: "Mode L dan D", skills: ["Mode L dan D", "Melambat dengan aman"], tip: 25000, nextAt: "13.00" }
+  ];
+  var LOG = [["09.02", "M2 diambil Bambang Wijoyo untuk Laras Pertiwi"], ["09.00", "M1 lanjut ke Bagas Nugroho, tidak kembali ke papan"], ["08.57", "A1 dikembalikan Dwi Hartono"], ["08.00", "M1 dan A1 diambil, 2 sesi pertama berjalan"], ["07.48", "M3 ditandai servis rem ganda oleh Admin"]];
+  var cur = 0, ticks = {};
+  var LABEL = ["08", "09", "10", "13", "14", "15"];
+  function renderHooks() {
+    $("hooks").innerHTML = CARS.map(function (x, i) {
+      var pips = x.pips.map(function (p, k) { return (k === 3 ? '<span class="pips__gap"></span>' : "") + '<span class="pip' + (p ? " pip--" + p : "") + '">' + (p === "block" ? "" : LABEL[k]) + "</span>"; }).join("");
+      var st = x.key === "out" ? '<span class="pill pill--orange">Dibawa sampai ' + x.until + "</span>" : x.key === "block" ? '<span class="pill pill--soft-orange">' + x.note + "</span>" : '<span class="pill pill--lime">Kunci di papan</span>';
+      var who = x.key === "out" ? '<span class="t-small">' + x.who + " · " + x.student + "</span>" : x.key === "block" ? '<span class="t-small">Kembali Senin pagi</span>' : '<span class="t-small">Berikutnya ' + x.nextAt + " · " + x.who + "</span>";
+      return '<button type="button" class="keytag' + (i === cur ? " is-sel" : "") + '" data-c="' + i + '"><span class="row" style="justify-content:space-between"><span class="keytag__code">' + x.c + '</span><span class="t-small">' + x.plate + "</span></span><span class=\"t-small\">" + x.type + "</span>" + st + who + '<span class="pips">' + pips + "</span></button>";
+    }).join("") + '<div class="keytag keytag--empty"><span class="t-h3" style="color:#fff">Cara baca</span><span class="row t-small" style="color:#C9CEC9"><span class="pip pip--done" style="width:28px;height:20px"></span>selesai</span><span class="row t-small" style="color:#C9CEC9"><span class="pip pip--now" style="width:28px;height:20px"></span>berjalan</span><span class="row t-small" style="color:#C9CEC9"><span class="pip pip--booked" style="width:28px;height:20px"></span>terjadwal</span></div>';
+  }
+  function renderPhone() {
+    var x = CARS[cur];
+    if (x.key === "block") {
+      $("phone").innerHTML = '<p class="t-h2">Mobil ' + x.c + ' tidak dipakai</p><div class="tile"><p style="font-weight:600">' + x.note + '</p><p class="t-small">Sesi hari ini sudah dipindah ke M1 dan M2. Kembali ke papan Senin pagi setelah dicek admin.</p></div>';
+      return;
+    }
+    var done = ticks[cur] || [];
+    var finished = x.key === "board" && x.finished;
+    var cta = x.key === "out" ? "Selesai, kembalikan kunci" : finished ? "Kunci sudah di papan" : "Ambil kunci " + x.c;
+    $("phone").innerHTML =
+      '<div class="row"><span class="ava ava--sm">' + x.ini + '</span><div><p style="font-weight:600;line-height:1.2">' + x.who + '</p><p class="t-small">HP instruktur · Tembalang</p></div></div>' +
+      '<div class="tile"><div class="row" style="justify-content:space-between"><span class="t-small">' + (x.key === "out" ? "09.00–10.00 · " + x.c : (x.nextAt || "") + " · " + x.c) + "</span>" + (x.key === "out" ? '<span class="pill pill--orange">Berjalan</span>' : '<span class="pill">Terjadwal</span>') + '</div><p class="t-h3" style="margin-top:4px">' + x.student + '</p><p class="t-small">' + x.sess + " · " + x.item + "</p></div>" +
+      '<div><p style="font-weight:600;font-size:14px;margin-bottom:2px">Tercapai di sesi ini</p>' + x.skills.map(function (s, k) { var on = done.indexOf(k) > -1; return '<button type="button" class="sw" data-s="' + k + '"><span class="tick' + (on ? "" : " tick--off") + '">' + (on ? '<i data-lucide="check"></i>' : "") + "</span>" + s + "</button>"; }).join("") + "</div>" +
+      '<p class="t-small">Centang masuk ke rute siswa. Tips Minggu minimal ' + rp(x.tip) + " dari siswa, di luar tagihan.</p>" +
+      '<button type="button" class="btn btn-primary btn-block" id="keyBtn"' + (finished ? " disabled" : "") + ">" + cta + "</button>";
+    icons();
+  }
+  function renderLog() { $("log").innerHTML = LOG.map(function (l) { return '<li><span class="t-small num">' + l[0] + "</span><span>" + l[1] + "</span></li>"; }).join(""); }
+  $("hooks").addEventListener("click", function (e) { var b = e.target.closest("[data-c]"); if (!b) return; cur = +b.getAttribute("data-c"); renderHooks(); renderPhone(); });
+  $("phone").addEventListener("click", function (e) {
+    var s = e.target.closest("[data-s]");
+    if (s) { var k = +s.getAttribute("data-s"), a = ticks[cur] = ticks[cur] || [], i = a.indexOf(k); if (i > -1) a.splice(i, 1); else a.push(k); renderPhone(); return; }
+    if (e.target.closest("#keyBtn")) {
+      var x = CARS[cur];
+      if (x.key === "out") {
+        x.key = "board"; x.finished = true; x.nextAt = "sesuai jadwal";
+        x.pips = x.pips.map(function (p) { return p === "now" ? "done" : p; });
+        LOG.unshift(["09.20", x.c + " dikembalikan " + x.who + ", laporan " + x.student + " terkirim"]);
+      } else if (x.key === "board") {
+        x.key = "out"; x.until = x.nextAt; LOG.unshift(["09.20", x.c + " diambil " + x.who + " untuk " + x.student]);
+      }
+      renderHooks(); renderPhone(); renderLog();
+    }
+  });
+
+  syncAll(); renderBranchList(); renderAttend(); renderMap(); renderStop(); renderHooks(); renderPhone(); renderLog();
+  icons();
+})();
+</script>
+</body>
+</html>

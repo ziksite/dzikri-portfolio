@@ -1,0 +1,91 @@
+{
+  "slug": "driving-school-website",
+  "kind": "Website",
+  "industry": "Education & Training",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Online Enrollment",
+    "Student Portal"
+  ],
+  "metrics": [
+    {
+      "value": "12",
+      "label": "SESSION ROUTE STOPS",
+      "labelId": "PEMBERHENTIAN RUTE SESI"
+    },
+    {
+      "value": "5",
+      "label": "PACKAGE SIZES",
+      "labelId": "PILIHAN PAKET"
+    },
+    {
+      "value": "2",
+      "label": "TRANSMISSION TYPES",
+      "labelId": "JENIS TRANSMISI"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Course builder showing covered lessons and total price",
+      "captionId": "Penyusun kursus dengan materi tercakup dan total biaya"
+    },
+    {
+      "hash": "daftar",
+      "caption": "Enrollment by package, branch, instructor and weekly schedule",
+      "captionId": "Pendaftaran per paket, cabang, instruktur, dan jadwal mingguan"
+    },
+    {
+      "hash": "progres",
+      "caption": "Student progress as a twelve-session route map",
+      "captionId": "Progres siswa berupa peta rute dua belas sesi"
+    },
+    {
+      "hash": "papan",
+      "caption": "Branch key board with the instructor's phone view",
+      "captionId": "Papan kunci cabang dengan tampilan HP instruktur"
+    }
+  ],
+  "content_en": {
+    "title": "Driving School Website",
+    "type": "DRIVING SCHOOL WEBSITE & STUDENT PORTAL",
+    "category": "Education Platform",
+    "summary": "A redesign for a multi-branch driving school. Visitors build a course by transmission and session count, see the lessons and full cost, then pick a branch, instructor and weekly schedule. Students follow their progress on a route map, and branches track cars through a digital key board.",
+    "challenge": "The old site worked like a news portal, with banners, repeated branch carousels and automotive articles on the homepage. There was no price page: the fee table existed only as a brochure image, and each registration form was tied to one branch and one transmission type.\n\nPrices and terms differed between the forms, the brochure and older articles, the FAQ page had no questions, and the instructor tip appeared only in a note. Schedules could be settled only over WhatsApp, so students could not see when a course would start or finish.",
+    "solution": "The homepage opens with a course builder. Choosing a transmission, a session count and an optional SIM A practice session updates the lessons covered and the price, followed by an open fee table that lists the form fee, Sunday surcharge and tips. Enrollment continues through branch, instructor and a weekly slot grid that calculates every session date, the deposit and the estimated tips. The site makes clear that SIM registration and testing follow the official procedure, with no promise of passing.\n\nStudents see twelve sessions as a route map, each stop holding its skills, instructor notes and date. At the branch, each car appears as a key tag with its day's slots, and instructors tick off skills and return keys from their phone. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Course builder with lesson coverage and live price",
+      "Open fee table including tips and Sunday surcharge",
+      "Branch and instructor options filtered by transmission",
+      "Weekly slot grid that calculates all session dates",
+      "Student route map with skills and instructor notes",
+      "Branch key board with handover log",
+      "Instructor phone view for skill checklists"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Sekolah Mengemudi",
+    "type": "WEBSITE & PORTAL SISWA SEKOLAH MENGEMUDI",
+    "category": "Education Platform",
+    "summary": "Redesign untuk sekolah mengemudi multi-cabang. Pengunjung menyusun kursus dari transmisi dan jumlah sesi, melihat materi dan total biaya, lalu memilih cabang, instruktur, dan jadwal mingguan. Siswa memantau progres di peta rute, dan cabang melacak mobil lewat papan kunci digital.",
+    "challenge": "Situs lama berbentuk portal berita, dengan banner, carousel cabang yang berulang, dan artikel otomotif di beranda. Tidak ada halaman harga: tabel biaya hanya tersedia sebagai gambar brosur, dan setiap form pendaftaran terikat pada satu cabang dan satu jenis transmisi.\n\nHarga dan syarat berbeda antara form, brosur, dan artikel lama, halaman FAQ tidak berisi pertanyaan, dan tips instruktur hanya muncul di catatan. Jadwal baru bisa dipastikan lewat WhatsApp, sehingga siswa tidak tahu kapan kursus dimulai dan selesai.",
+    "solution": "Beranda dibuka dengan penyusun kursus. Pilihan transmisi, jumlah sesi, dan sesi persiapan SIM A langsung mengubah materi yang tercakup dan harganya, disusul tabel biaya terbuka yang mencantumkan formulir, tambahan hari Minggu, dan tips. Pendaftaran berlanjut ke cabang, instruktur, dan grid jam mingguan yang menghitung semua tanggal sesi, DP, serta estimasi tips. Situs menegaskan pendaftaran dan ujian SIM mengikuti prosedur resmi, tanpa janji kelulusan.\n\nSiswa melihat dua belas sesi sebagai peta rute, dengan keterampilan, catatan instruktur, dan tanggal di setiap pemberhentian. Di cabang, setiap mobil tampil sebagai label kunci dengan jadwal harinya, dan instruktur mencentang capaian serta mengembalikan kunci dari HP. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Penyusun kursus dengan cakupan materi dan harga langsung",
+      "Tabel biaya terbuka termasuk tips dan tambahan hari Minggu",
+      "Pilihan cabang dan instruktur tersaring menurut transmisi",
+      "Grid jam mingguan yang menghitung semua tanggal sesi",
+      "Peta rute siswa dengan keterampilan dan catatan instruktur",
+      "Papan kunci cabang dengan catatan serah terima",
+      "Tampilan HP instruktur untuk checklist capaian"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

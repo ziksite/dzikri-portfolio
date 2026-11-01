@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rona Clinic — Program perawatan kulit per sesi di Semarang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/aesthetic-skin-clinic-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="hero">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">rona</a>
+        <nav class="nav"><a class="is-active" href="#home">Keluhan</a><a href="#program">Program</a><a href="#home" data-jump="harga">Harga</a><a href="#home" data-jump="bacaan">Bacaan</a></nav>
+        <div class="header__right"><span class="header__hours">Setiap hari 09.00–17.00</span><a class="btn btn-primary btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a></div>
+      </header>
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <div>
+            <h1 class="t-hero">Mulai dari keluhan kulitmu, bukan dari daftar treatment.</h1>
+            <p class="hero__lead">Pilih keluhan, lihat program beberapa sesi lengkap dengan harga totalnya, lalu kunci semua jadwal sekaligus.</p>
+          </div>
+          <div class="hero__foot">
+            <span><b>Klinik estetika &amp; wellness</b><br>Semarang Selatan</span>
+            <span><b>Konsultasi dokter</b><br>di sesi pertama setiap program</span>
+          </div>
+        </div>
+        <div class="index">
+          <div class="index__head">
+            <p class="t-h3">Apa yang ingin kamu tangani?</p>
+            <div class="pills" id="idxTabs"><button class="pill is-active" data-v="wajah">Wajah</button><button class="pill" data-v="tubuh">Tubuh</button><button class="pill" data-v="lainnya">Lainnya</button></div>
+          </div>
+          <div class="index__list" id="idxList"></div>
+          <a class="index__foot" href="#"><span>Belum yakin keluhanmu yang mana? Tanya dokter lewat WhatsApp.</span><i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap how">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 class="t-h2">Masalah kulit jarang selesai dalam satu kunjungan.</h2>
+        <p style="color:var(--ink-3)">Karena itu setiap perawatan dijual sebagai program. Jumlah sesi, jarak antar sesi, dan harganya terlihat sejak awal.</p>
+        <div class="dots"><span class="dot dot--done"><i data-lucide="check" class="i-sm"></i></span><span class="dot dot--done"><i data-lucide="check" class="i-sm"></i></span><span class="dot dot--done"><i data-lucide="check" class="i-sm"></i></span><span class="dot dot--ghost">4</span><span class="dot dot--ghost">5</span><span class="dot dot--ghost">6</span></div>
+      </div>
+      <div class="how__steps">
+        <div class="how__step"><p class="t-big">Sesi 1</p><b>Dokter menilai kulitmu</b><p>Rekomendasi di situs ini titik awal. Dokter bisa mengubah jumlah sesi atau jenis tindakan setelah pemeriksaan.</p></div>
+        <div class="how__step"><p class="t-big">Sesi 2+</p><b>Terapis mencatat tiap sesi</b><p>Pengaturan alat, reaksi kulit, dan produk tercatat di kartu programmu, jadi terapis berikutnya tahu titik lanjutnya.</p></div>
+        <div class="how__step"><p class="t-big">Selesai</p><b>Kontrol dan perawatan rumah</b><p>Pengingat sesi dikirim lewat WhatsApp. Di akhir program ada kontrol dengan dokter tanpa biaya tambahan.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap section" id="harga">
+    <div class="section__head"><h2 class="t-h2">Harga per sesi</h2><span class="t-meta">Program lebih hemat 5–15% dibanding sesi satuan</span></div>
+    <div class="cols">
+      <div><h3 class="t-h3">Wajah</h3>
+        <p class="price-row"><span>Facial Treatment</span><span>Rp300.000</span></p>
+        <p class="price-row"><span>Acne Treatment</span><span>Rp350.000</span></p>
+        <p class="price-row"><span>Laser Acne</span><span>Rp650.000</span></p>
+        <p class="price-row"><span>Laser Flek</span><span>Rp750.000</span></p>
+        <p class="price-row"><span>Laser Fractional</span><span>Rp950.000</span></p>
+        <p class="price-row"><span>Lifting</span><span>Rp1.250.000</span></p>
+      </div>
+      <div><h3 class="t-h3">Tubuh</h3>
+        <p class="price-row"><span>Slimming &amp; Shaping</span><span>Rp450.000</span></p>
+        <p class="price-row"><span>Hair Removal</span><span>Rp400.000</span></p>
+        <p class="price-row"><span>Whitening</span><span>Rp450.000</span></p>
+        <p class="price-row"><span>Antioksidan</span><span>Rp450.000</span></p>
+        <p class="price-row"><span>Infuse Putih</span><span>Rp500.000</span></p>
+        <p class="price-row"><span>Peeling Kaki</span><span>Rp250.000</span></p>
+      </div>
+      <div><h3 class="t-h3">Laser &amp; lainnya</h3>
+        <p class="price-row"><span>Laser Urat</span><span>Rp700.000</span></p>
+        <p class="price-row"><span>Laser Dark Eye Circle</span><span>Rp600.000</span></p>
+        <p class="price-row"><span>Laser Dark Lips</span><span>Rp600.000</span></p>
+        <p class="price-row"><span>Skin Tag Removal</span><span>Rp350.000</span></p>
+        <p class="price-row"><span>Perawatan Rambut Rontok</span><span>Rp400.000</span></p>
+      </div>
+      <div><h3 class="t-h3">Tindakan dokter</h3>
+        <p class="price-row"><span>Botox</span><span>dari Rp1.500.000</span></p>
+        <p class="price-row"><span>Filler Bibir</span><span>dari Rp2.500.000</span></p>
+        <p class="price-row"><span>Filler Dagu</span><span>dari Rp2.500.000</span></p>
+        <p class="price-row"><span>Filler Kantong Mata</span><span>dari Rp3.000.000</span></p>
+        <p class="price-row"><span>Filler Temporal &amp; Pipi</span><span>dari Rp3.000.000</span></p>
+        <p class="price-row"><span>Threadlift Hidung</span><span>dari Rp4.500.000</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:80px">
+    <div class="clinic">
+      <div class="photo" style="--ar:auto;min-height:340px" data-img="assets/aesthetic-skin-clinic-website/ruang-lounge.webp"></div>
+      <div class="clinic__card clinic__card--orange">
+        <h2 class="t-h2">Satu lokasi, dokter dan terapis dalam satu catatan.</h2>
+        <ul class="clinic__list">
+          <li>Alat dan mesin generasi terbaru</li>
+          <li>Produk bersertifikat</li>
+          <li>Pelatihan rutin untuk terapis</li>
+          <li>Prosedur tertulis untuk setiap tindakan</li>
+        </ul>
+      </div>
+      <div class="clinic__card">
+        <p class="t-h3">Datang ke klinik</p>
+        <div class="kv"><i data-lucide="map-pin"></i><span>Kawasan ruko Candisari, Semarang Selatan</span></div>
+        <div class="kv"><i data-lucide="clock"></i><span>Senin–Minggu, 09.00–17.00</span></div>
+        <div class="kv"><i data-lucide="message-circle"></i><span>WhatsApp 0812-0000-4471</span></div>
+        <a class="btn btn-primary btn-sm" href="#" style="align-self:flex-start;margin-top:auto">Petunjuk arah</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:80px" id="bacaan">
+    <div class="section__head"><h2 class="t-h2">Bacaan sebelum perawatan</h2><a class="t-meta" href="#" style="font-weight:600;color:var(--ink)">Semua artikel</a></div>
+    <div class="read">
+      <a href="#"><span>6 mitos dan fakta tentang jerawat<small>Wajah · 4 menit</small></span><i data-lucide="arrow-up-right"></i></a>
+      <a href="#"><span>Botox vs filler: apa bedanya?<small>Tindakan dokter · 5 menit</small></span><i data-lucide="arrow-up-right"></i></a>
+      <a href="#"><span>Merawat wajah setelah facial di klinik<small>Perawatan rumah · 3 menit</small></span><i data-lucide="arrow-up-right"></i></a>
+      <a href="#"><span>Mengenal telangiectasia dan penanganannya<small>Laser · 4 menit</small></span><i data-lucide="arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div style="display:flex;flex-direction:column;gap:12px"><span class="logo">rona</span><p>Klinik estetika dan wellness di Semarang.<br>Buka setiap hari 09.00–17.00.</p></div>
+        <div><h4>Program</h4><ul><li><a href="#program">Wajah</a></li><li><a href="#program">Tubuh</a></li><li><a href="#program">Laser &amp; lainnya</a></li></ul></div>
+        <div><h4>Pasien</h4><ul><li><a href="#jadwal">Atur jadwal</a></li><li><a href="#">Ubah sesi</a></li><li><a href="#">Bantuan</a></li></ul></div>
+        <div><h4>Rona</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#terapis">Masuk staf</a></li></ul></div>
+      </div>
+      <p class="t-small" style="margin-top:40px;color:var(--ink-3)">© 2026 Rona Clinic. Hasil perawatan berbeda pada setiap orang.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= PROGRAM ================= -->
+<section data-screen="program">
+  <div class="prog-top">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">rona</a>
+        <nav class="nav"><a href="#home">Keluhan</a><a class="is-active" href="#program">Program</a></nav>
+        <div class="header__right"><a class="btn btn-primary btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Tanya dulu</a></div>
+      </header>
+      <div class="prog-chips" id="progChips"></div>
+      <div class="prog-head">
+        <div><h1 class="t-h1" id="pName"></h1><p id="pDesc"></p></div>
+        <div class="tier" id="pTier"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="track" id="pTrack"></div>
+    <div class="prog-body">
+      <div><h3 class="t-h3">Termasuk dalam program</h3><div id="pIncl"></div></div>
+      <div><h3 class="t-h3">Perlu kamu tahu</h3>
+        <div class="check"><i data-lucide="check"></i><span id="pGap"></span></div>
+        <div class="check"><i data-lucide="check"></i><span>Dokter bisa mengubah rencana setelah pemeriksaan di sesi 1. Selisih harga dihitung ulang.</span></div>
+        <div class="check"><i data-lucide="check"></i><span>Sesi bisa digeser sampai 24 jam sebelum jadwal.</span></div>
+      </div>
+      <div class="photo photo--corner" style="--ar:3/2;--pos:center 20%" id="pPhoto"></div>
+    </div>
+  </div>
+  <div class="paybar">
+    <div class="wrap paybar__in">
+      <div class="paybar__item"><small id="pSum">Program</small><b class="num" id="pTotal"></b></div>
+      <div class="paybar__item paybar__item--opt"><small>Rata-rata per sesi</small><b class="num" id="pPer"></b></div>
+      <div class="paybar__item paybar__item--opt"><small>Hemat dari harga satuan</small><b class="num" id="pSave" style="color:var(--lime)"></b></div>
+      <a class="btn btn-lime" href="#jadwal">Pilih jadwal sesi<i data-lucide="arrow-right" class="i-sm"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JADWAL ================= -->
+<section data-screen="jadwal">
+  <div class="wrap">
+    <header class="header"><a class="logo" href="#home">rona</a><div class="header__right"><a class="btn btn-line btn-sm" href="#program"><i data-lucide="arrow-left" class="i-sm"></i>Ubah program</a></div></header>
+    <form id="jdForm" data-demo-form="#jdDone">
+      <div class="plan-top">
+        <p class="crumb"><span>Keluhan</span><i data-lucide="chevron-right" class="i-sm"></i><span>Program</span><i data-lucide="chevron-right" class="i-sm"></i><b>Jadwal</b></p>
+        <h1 class="t-h1" id="jTitle"></h1>
+        <p class="t-meta" style="margin-top:8px">Klik tanggal untuk memilih sesi 1. Sesi berikutnya mengikuti jarak yang dipilih.</p>
+      </div>
+      <div class="ctl-row">
+        <div class="ctl"><span>Jarak antar sesi</span><div class="pills" id="jGap"></div></div>
+        <div class="ctl"><span>Jam untuk semua sesi</span><div class="pills" id="jTime"></div></div>
+        <div class="ctl-nav"><button type="button" class="icon-btn" id="mPrev" aria-label="Bulan sebelumnya"><i data-lucide="chevron-left" class="i-sm"></i></button><button type="button" class="icon-btn" id="mNext" aria-label="Bulan berikutnya"><i data-lucide="chevron-right" class="i-sm"></i></button></div>
+      </div>
+      <div class="months" id="jMonths"></div>
+      <div class="sess" id="jSess"></div>
+      <div class="confirm">
+        <div class="confirm__total">
+          <p style="color:var(--ink-3)" id="jSum"></p>
+          <p class="t-big num" id="jPay"></p>
+          <div class="tier" id="jPayMode"><button type="button" class="is-active" data-v="dp">DP 20%</button><button type="button" data-v="full">Lunas</button></div>
+          <p class="t-small" style="color:var(--ink-3)" id="jRest"></p>
+        </div>
+        <div class="confirm__form">
+          <label class="field">Nama<input required value="Larasati Wibowo"></label>
+          <label class="field">WhatsApp<input required value="0812-0000-1958"></label>
+          <label class="field full">Catatan untuk dokter (alergi, obat rutin, kehamilan)<textarea placeholder="Tulis kalau ada"></textarea></label>
+          <button class="btn btn-lime btn-block full">Kunci jadwal &amp; bayar</button>
+        </div>
+      </div>
+    </form>
+    <div id="jdDone" class="done" hidden>
+      <span class="dot dot--done"><i data-lucide="check"></i></span>
+      <h1 class="t-h1">Semua sesi sudah terkunci</h1>
+      <p class="muted" id="dMsg"></p>
+      <div class="sess sess--plain" id="dList"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#"><i data-lucide="calendar-plus" class="i-sm"></i>Tambah ke kalender</a><a class="btn btn-line" href="#home">Kembali ke beranda</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLET TERAPIS ================= -->
+<section data-screen="terapis">
+  <div class="tab">
+    <nav class="rail">
+      <a class="logo" href="#home">rona</a>
+      <a class="rail__link is-active" href="#terapis"><i data-lucide="clipboard-list"></i><span>Sesi hari ini</span></a>
+      <a class="rail__link" href="#terapis"><i data-lucide="users"></i><span>Klien</span></a>
+      <a class="rail__link" href="#terapis"><i data-lucide="package"></i><span>Stok tindakan</span></a>
+      <a class="rail__link" href="#terapis"><i data-lucide="settings"></i><span>Pengaturan</span></a>
+      <div class="rail__who"><span class="avatar">NA</span><div><b>Nadia</b><br><span class="muted">Terapis</span></div></div>
+    </nav>
+    <div class="queue">
+      <div class="queue__head"><p class="t-h3">Minggu, 1 November</p><span class="t-small" id="qCount"></span></div>
+      <div id="qList" style="display:contents"></div>
+    </div>
+    <div class="work" id="work"></div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var icons = function () { if (window.lucide) lucide.createIcons(); };
+  var rp = function (n) { return "Rp" + Math.round(n).toLocaleString("id-ID"); };
+
+  function loadPhoto(box, src) {
+    var img = new Image(); img.alt = ""; img.onload = function () { box.innerHTML = ""; box.appendChild(img); }; img.src = src;
+  }
+  document.querySelectorAll(".photo[data-img]").forEach(function (b) { loadPhoto(b, b.getAttribute("data-img")); });
+
+  document.querySelectorAll("[data-jump]").forEach(function (a) {
+    a.addEventListener("click", function () { var t = a.getAttribute("data-jump"); setTimeout(function () { var el = $(t); if (el) el.scrollIntoView(); }, 80); });
+  });
+
+  /* ---------- Data program. tx = [nama, harga satuan, menit] ---------- */
+  var IMG = "assets/aesthetic-skin-clinic-website/";
+  var P = {
+    acne: { cat: "wajah", label: "Jerawat aktif", name: "Acne Clear", sub: "Radang, komedo, minyak berlebih", tiers: [4, 6, 8], gap: 14, photo: "terapis-laser.webp",
+      desc: "Menenangkan radang dulu, lalu mengurangi jerawat baru. Laser dan facial bergantian supaya kulit punya waktu pulih.",
+      tx: [["Acne Treatment", 350000, 60], ["Laser Acne", 650000, 45], ["Facial Treatment", 300000, 60]] },
+    flek: { cat: "wajah", label: "Flek & warna tidak rata", name: "Flek Fade", sub: "Flek matahari, noda gelap", tiers: [4, 6, 8], gap: 21, photo: "terapis-laser.webp",
+      desc: "Laser bertahap untuk noda gelap, diselingi facial. Tabir surya wajib selama program supaya flek tidak kembali.",
+      tx: [["Laser Flek", 750000, 45], ["Facial Treatment", 300000, 60]] },
+    scar: { cat: "wajah", label: "Bekas jerawat", name: "Scar Renew", sub: "Bopeng dan tekstur tidak rata", tiers: [3, 4, 6], gap: 28, photo: "terapis-laser.webp",
+      desc: "Laser fractional merangsang perbaikan kulit dari dalam, jadi jarak antar sesi lebih panjang dan perubahan terlihat bertahap.",
+      tx: [["Laser Fractional", 950000, 60]] },
+    dull: { cat: "wajah", label: "Kulit kusam", name: "Bright Reset", sub: "Tampak lelah, kurang segar", tiers: [4, 6, 8], gap: 14, photo: "terapis-laser.webp",
+      desc: "Facial berselang dengan infus untuk kulit yang tampak lelah. Cocok sebagai perawatan rutin setelah program lain selesai.",
+      tx: [["Facial Treatment", 300000, 60], ["Infuse Putih", 500000, 45]] },
+    lift: { cat: "wajah", label: "Kulit mulai kendur", name: "Firm Lift", sub: "Garis rahang, pipi, leher", tiers: [3, 4, 6], gap: 28, photo: "terapis-laser.webp",
+      desc: "Lifting tanpa operasi untuk garis rahang dan pipi. Dokter menilai dulu apakah kamu lebih cocok dengan lifting atau tindakan injeksi.",
+      tx: [["Lifting", 1250000, 60], ["Facial Treatment", 300000, 60]] },
+    slim: { cat: "tubuh", label: "Lingkar perut & paha", name: "Body Shape", sub: "Lemak membandel, kulit kendur", tiers: [6, 8, 10], gap: 7, photo: "ruang-lounge.webp",
+      desc: "Sesi mingguan di area yang kamu pilih. Paling berguna kalau berjalan bersama pola makan dan olahraga, bukan sebagai pengganti.",
+      tx: [["Slimming & Shaping", 450000, 60]] },
+    bulu: { cat: "tubuh", label: "Bulu ketiak & kaki", name: "Smooth Skin", sub: "Lepas dari cukur dan cabut", tiers: [4, 6, 8], gap: 28, photo: "ruang-lounge.webp",
+      desc: "Bulu tumbuh berfase, jadi laser perlu diulang tiap empat minggu. Hindari cabut bulu selama program.",
+      tx: [["Hair Removal", 400000, 30]] },
+    badan: { cat: "tubuh", label: "Kulit tubuh kusam", name: "Body Bright", sub: "Warna kulit tidak merata", tiers: [4, 6, 8], gap: 14, photo: "ruang-lounge.webp",
+      desc: "Whitening badan berselang dengan infus antioksidan. Dokter mengecek riwayat kesehatan sebelum infus pertama.",
+      tx: [["Whitening", 450000, 60], ["Antioksidan", 450000, 45]] },
+    kaki: { cat: "tubuh", label: "Tumit & kaki kasar", name: "Foot Renew", sub: "Kulit kaki menebal dan gelap", tiers: [2, 3, 4], gap: 14, photo: "ruang-lounge.webp",
+      desc: "Peeling bertahap untuk kulit kaki yang menebal dan gelap, dengan perawatan rumah sederhana di antara sesi.",
+      tx: [["Peeling Kaki", 250000, 45]] },
+    urat: { cat: "lainnya", label: "Urat halus terlihat", name: "Vein Clear", sub: "Telangiectasia di wajah atau kaki", tiers: [2, 3, 4], gap: 28, photo: "terapis-laser.webp",
+      desc: "Laser untuk pembuluh halus yang terlihat di permukaan kulit. Dokter memastikan dulu jenis uratnya.",
+      tx: [["Laser Urat", 700000, 30]] },
+    panda: { cat: "lainnya", label: "Lingkar hitam mata", name: "Eye Bright", sub: "Mata panda", tiers: [3, 4, 6], gap: 21, photo: "terapis-laser.webp",
+      desc: "Laser di area bawah mata dengan pelindung khusus. Penyebabnya beragam, jadi dokter menilai dulu seberapa jauh laser membantu.",
+      tx: [["Laser Dark Eye Circle", 600000, 30]] },
+    bibir: { cat: "lainnya", label: "Bibir gelap", name: "Lip Tone", sub: "Warna bibir tidak merata", tiers: [3, 4, 6], gap: 21, photo: "terapis-laser.webp",
+      desc: "Laser ringan untuk warna bibir yang gelap. Selama program, gunakan pelembap bibir dengan pelindung matahari.",
+      tx: [["Laser Dark Lips", 600000, 30]] },
+    rambut: { cat: "lainnya", label: "Rambut rontok", name: "Hair Care", sub: "Rambut menipis", tiers: [4, 6, 8], gap: 14, photo: "terapis-laser.webp",
+      desc: "Perawatan kulit kepala berkala. Dokter mengecek kemungkinan penyebab medis di sesi pertama.",
+      tx: [["Perawatan Rambut Rontok", 400000, 45]] }
+  };
+  var DISC = [0.05, 0.10, 0.15];
+
+  var st = { k: "acne", t: 1, start: new Date(2026, 10, 7), gap: 14, time: "10.00", off: 0, shift: {}, pay: "dp" };
+
+  function sessionsOf(p, n) { var a = []; for (var i = 0; i < n; i++) a.push(p.tx[i % p.tx.length]); return a; }
+  function priceOf(p, n, ti) {
+    var full = sessionsOf(p, n).reduce(function (s, x) { return s + x[1]; }, 0);
+    return { full: full, net: Math.round(full * (1 - DISC[ti]) / 10000) * 10000 };
+  }
+
+  /* ---------- Indeks keluhan di beranda ---------- */
+  function renderIdx(cat) {
+    $("idxList").innerHTML = Object.keys(P).filter(function (k) { return P[k].cat === cat; }).map(function (k) {
+      var p = P[k];
+      return '<button class="index__row" data-k="' + k + '"><span><b>' + p.label.replace("&", "&amp;") + "</b><small>" + p.sub + '</small></span><span class="index__price">' + p.tiers[0] + "–" + p.tiers[2] + " sesi<br>dari " + rp(priceOf(p, p.tiers[0], 0).net) + '</span><span class="index__go"><i data-lucide="arrow-right"></i></span></button>';
+    }).join("");
+    icons();
+  }
+  $("idxTabs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-v]"); if (!b) return;
+    this.querySelectorAll(".pill").forEach(function (x) { x.classList.toggle("is-active", x === b); });
+    renderIdx(b.getAttribute("data-v"));
+  });
+  $("idxList").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-k]"); if (!b) return;
+    pick(b.getAttribute("data-k")); location.hash = "program";
+  });
+
+  /* ---------- Layar program ---------- */
+  function pick(k) { st.k = k; st.t = 1; st.gap = P[k].gap; st.shift = {}; renderProgram(); renderPlan(); }
+
+  function renderProgram() {
+    var p = P[st.k], n = p.tiers[st.t], pr = priceOf(p, n, st.t), list = sessionsOf(p, n);
+    $("progChips").innerHTML = Object.keys(P).map(function (k) { return '<button class="pill' + (k === st.k ? " is-active" : "") + '" data-k="' + k + '">' + P[k].label.replace("&", "&amp;") + "</button>"; }).join("");
+    $("pName").textContent = p.name;
+    $("pDesc").textContent = p.desc;
+    $("pTier").innerHTML = p.tiers.map(function (t, i) { return '<button type="button" class="' + (i === st.t ? "is-active" : "") + '" data-i="' + i + '">' + t + " sesi</button>"; }).join("");
+    $("pTrack").innerHTML = list.map(function (s, i) {
+      return '<div class="track__col"><span class="dot">' + (i + 1) + "</span><b>" + s[0].replace("&", "&amp;") + "</b><span>" + (i === 0 ? "Hari pertama, dengan dokter" : "Minggu ke-" + Math.round(i * p.gap / 7)) + " · " + s[2] + " mnt</span></div>";
+    }).join("");
+    var uniq = {}; list.forEach(function (s) { uniq[s[0]] = (uniq[s[0]] || 0) + 1; });
+    $("pIncl").innerHTML = Object.keys(uniq).map(function (k) { return '<div class="check"><i data-lucide="check"></i><span>' + uniq[k] + " kali " + k.replace("&", "&amp;") + "</span></div>"; }).join("") +
+      '<div class="check"><i data-lucide="check"></i><span>Konsultasi dokter di sesi 1 dan kontrol di akhir program</span></div>';
+    $("pGap").textContent = "Jarak yang disarankan " + p.gap / 7 + " minggu, jadi program selesai dalam sekitar " + (Math.round((n - 1) * p.gap / 30 * 2) / 2).toString().replace(".", ",") + " bulan.";
+    loadPhoto($("pPhoto"), IMG + p.photo);
+    $("pSum").textContent = p.name + " · " + n + " sesi";
+    $("pTotal").textContent = rp(pr.net);
+    $("pPer").textContent = rp(pr.net / n);
+    $("pSave").textContent = rp(pr.full - pr.net);
+    icons();
+  }
+  $("progChips").addEventListener("click", function (e) { var b = e.target.closest("[data-k]"); if (b) pick(b.getAttribute("data-k")); });
+  $("pTier").addEventListener("click", function (e) { var b = e.target.closest("[data-i]"); if (!b) return; st.t = +b.getAttribute("data-i"); st.shift = {}; renderProgram(); renderPlan(); });
+
+  /* ---------- Layar jadwal ---------- */
+  var MONTHS = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  var DAYS = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var CLOSED = { "2026-12-25": 1, "2027-1-1": 1 };
+  var TODAY = new Date(2026, 10, 1);
+  var key = function (d) { return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); };
+  var addDays = function (d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  var fmt = function (d) { return DAYS[d.getDay()] + ", " + d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear(); };
+
+  function planDates() {
+    var p = P[st.k], n = p.tiers[st.t], list = sessionsOf(p, n), out = [];
+    for (var i = 0; i < n; i++) {
+      var d = addDays(st.start, i * st.gap + (st.shift[i] || 0)), moved = false;
+      while (CLOSED[key(d)]) { d = addDays(d, 1); moved = true; }
+      out.push({ d: d, moved: moved, tx: list[i], i: i });
+    }
+    return out;
+  }
+  function renderMonths(plan) {
+    var marks = {}; plan.forEach(function (s) { marks[key(s.d)] = s.i + 1; });
+    var html = "";
+    for (var m = 0; m < 3; m++) {
+      var first = new Date(2026, 10 + st.off + m, 1), last = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate(), cnt = 0;
+      var cells = ["M", "S", "S", "R", "K", "J", "S"].map(function (x) { return '<span class="dow">' + x + "</span>"; }).join("");
+      for (var b = 0; b < first.getDay(); b++) cells += "<span></span>";
+      for (var d = 1; d <= last; d++) {
+        var dt = new Date(first.getFullYear(), first.getMonth(), d), kk = key(dt), mk = marks[kk], cls = "day";
+        if (dt <= TODAY) cls += " is-past";
+        if (CLOSED[kk]) cls += " is-closed";
+        if (mk) { cls += " is-sess"; cnt++; }
+        if (mk === 1) cls += " is-first";
+        cells += '<button type="button" class="' + cls + '" data-d="' + kk + '"' + (mk ? ' aria-label="Sesi ' + mk + '"' : "") + ">" + d + "</button>";
+      }
+      html += '<div class="month"><p class="month__name"><span>' + MONTHS[first.getMonth()] + " " + first.getFullYear() + '</span><span class="t-small">' + (cnt ? cnt + " sesi" : "") + '</span></p><div class="month__grid">' + cells + "</div></div>";
+    }
+    $("jMonths").innerHTML = html;
+    $("mPrev").disabled = st.off <= 0;
+  }
+  function sessRows(plan, editable) {
+    return plan.map(function (s) {
+      var row = '<div class="sess__row"><span class="dot">' + (s.i + 1) + '</span><div><p class="sess__date">' + fmt(s.d) + '</p><p class="t-small">' + st.time + " WIB" + (s.moved ? " · digeser, klinik libur" : "") + '</p></div><p class="sess__tx">' + s.tx[0].replace("&", "&amp;") + ' <span class="t-small">· ' + s.tx[2] + " mnt</span></p>";
+      if (editable) {
+        var sh = st.shift[s.i] || 0;
+        row += '<span class="t-small sess__delta">' + (sh ? (sh > 0 ? "+" : "") + sh + " hari" : "") + '</span><div class="sess__shift"><button type="button" class="icon-btn" data-sh="' + s.i + '" data-by="-1" aria-label="Maju sehari"' + (addDays(s.d, -1) <= TODAY ? " disabled" : "") + '><i data-lucide="minus" class="i-sm"></i></button><button type="button" class="icon-btn" data-sh="' + s.i + '" data-by="1" aria-label="Mundur sehari"><i data-lucide="plus" class="i-sm"></i></button></div>';
+      }
+      return row + "</div>";
+    }).join("");
+  }
+  function renderPay() {
+    var p = P[st.k], n = p.tiers[st.t], pr = priceOf(p, n, st.t);
+    var dp = Math.round(pr.net * 0.2 / 10000) * 10000;
+    $("jSum").textContent = p.name + " · " + n + " sesi · total " + rp(pr.net);
+    $("jPay").textContent = rp(st.pay === "dp" ? dp : pr.net);
+    $("jRest").textContent = st.pay === "dp" ? "Sisa " + rp(pr.net - dp) + " dibayar di klinik saat sesi 1. DP kembali penuh kalau dokter menilai program tidak cocok." : "Lunas sekarang. Sisa sesi tersimpan di kartu programmu.";
+    $("dMsg").textContent = "Kode program RN-" + (2200 + n * 7) + ". Detail dan pengingat dikirim ke WhatsApp 0812-0000-1958 sehari sebelum setiap sesi.";
+  }
+  function renderPlan() {
+    var p = P[st.k], n = p.tiers[st.t], plan = planDates();
+    $("jTitle").textContent = "Atur " + n + " sesi " + p.name;
+    $("jGap").innerHTML = [7, 14, 21, 28].map(function (g) { return '<button type="button" class="pill' + (g === st.gap ? " is-active" : "") + '" data-g="' + g + '">' + g / 7 + " minggu" + (g === p.gap ? " (saran)" : "") + "</button>"; }).join("");
+    $("jTime").innerHTML = ["10.00", "13.00", "15.30"].map(function (t) { return '<button type="button" class="pill' + (t === st.time ? " is-active" : "") + '" data-t="' + t + '">' + t + "</button>"; }).join("");
+    renderMonths(plan);
+    $("jSess").innerHTML = sessRows(plan, true);
+    $("dList").innerHTML = sessRows(plan, false);
+    renderPay();
+    icons();
+  }
+  $("jGap").addEventListener("click", function (e) { var b = e.target.closest("[data-g]"); if (!b) return; st.gap = +b.getAttribute("data-g"); st.shift = {}; renderPlan(); });
+  $("jTime").addEventListener("click", function (e) { var b = e.target.closest("[data-t]"); if (!b) return; st.time = b.getAttribute("data-t"); renderPlan(); });
+  $("jMonths").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-d]"); if (!b) return;
+    var a = b.getAttribute("data-d").split("-"); st.start = new Date(+a[0], +a[1] - 1, +a[2]); st.shift = {}; renderPlan();
+  });
+  $("jSess").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-sh]"); if (!b) return;
+    var i = +b.getAttribute("data-sh"); st.shift[i] = (st.shift[i] || 0) + (+b.getAttribute("data-by")); renderPlan();
+  });
+  $("jdForm").addEventListener("submit", function () { setTimeout(function () { window.scrollTo(0, 0); }, 0); });
+  $("mPrev").addEventListener("click", function () { st.off = Math.max(0, st.off - 1); renderPlan(); });
+  $("mNext").addEventListener("click", function () { st.off += 1; renderPlan(); });
+  $("jPayMode").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-v]"); if (!b) return; st.pay = b.getAttribute("data-v");
+    this.querySelectorAll("button").forEach(function (x) { x.classList.toggle("is-active", x === b); }); renderPay();
+  });
+
+  /* ---------- Tablet terapis. s: d selesai, r selesai setelah digeser, n sesi ini, o belum ---------- */
+  var C = [
+    { t: "09.30", name: "Citra Anindya", prog: "Flek Fade", tx: "Facial Treatment", s: ["d", "d", "d", "d", "d", "d"], st: "done", warn: "Wajib tabir surya, kontrol dokter 15 November", hist: [["1 Nov", "Facial Treatment oleh Nadia. Tanpa reaksi."], ["11 Okt", "Laser Flek oleh Sari. Tanpa reaksi."]] },
+    { t: "11.00", name: "Yuni Hapsari", prog: "Smooth Skin", tx: "Hair Removal", s: ["d", "d", "d", "d", "n", "o"], st: "done", warn: "Jangan cabut bulu di antara sesi", hist: [["1 Nov", "Ketiak oleh Nadia. Tanpa reaksi."], ["4 Okt", "Ketiak oleh Sari. Tanpa reaksi."]] },
+    { t: "13.30", name: "Dinda Prameswari", prog: "Acne Clear", tx: "Laser Acne", s: ["d", "d", "r", "d", "n", "o"], st: "now", warn: "Hindari retinol 3 hari sebelum laser", area: "Dahi, pipi, dagu", energy: "12 J/cm²",
+      hist: [["18 Okt", "Acne Treatment oleh Sari. Radang berkurang di pipi kanan."], ["11 Okt", "Facial Treatment. Digeser klien dari 4 Okt."], ["20 Sep", "Laser Acne oleh Nadia. Merah ringan 2 jam."], ["6 Sep", "Sesi 1 dengan dokter. Kulit berminyak."]] },
+    { t: "15.00", name: "Maya Kusuma", prog: "Scar Renew", tx: "Laser Fractional", s: ["d", "n", "o", "o"], st: "wait", warn: "Kulit sensitif di pipi kiri", area: "Kedua pipi", energy: "",
+      hist: [["4 Okt", "Sesi 1 dengan dokter. Bekas jerawat di kedua pipi."]] },
+    { t: "16.15", name: "Tiara Ningrum", prog: "Eye Bright", tx: "Laser Dark Eye Circle", s: ["n", "o", "o", "o"], st: "wait", warn: "Sesi pertama, konsultasi dokter dulu", area: "Bawah mata", energy: "", hist: [["—", "Belum ada riwayat."]] }
+  ];
+  var cur = 2, reaksi = "Tidak ada", ampul = 1, toast = "";
+  var label = { done: ["Selesai", "status--done"], now: ["Sekarang", "status--now"], wait: ["Menunggu", "status--wait"] };
+  var countDone = function (c) { return c.s.filter(function (x) { return x === "d" || x === "r"; }).length; };
+  var total = function (c) { return c.s.length; };
+
+  function renderQueue() {
+    $("qCount").textContent = C.filter(function (c) { return c.st === "done"; }).length + " dari " + C.length + " selesai";
+    $("qList").innerHTML = C.map(function (c, i) {
+      var lb = label[c.st];
+      return '<button class="q' + (i === cur ? " is-active" : "") + '" data-c="' + i + '"><span class="q__top"><span class="q__name">' + c.name + '</span><span class="status ' + lb[1] + '">' + lb[0] + '</span></span><span class="t-small">' + c.t + " · " + c.tx + '</span><span class="bar"><i style="width:' + Math.round(countDone(c) / total(c) * 100) + '%"></i></span></button>';
+    }).join("");
+  }
+  function renderWork() {
+    var c = C[cur], idx = c.s.indexOf("n"), open = idx >= 0 && c.st !== "done";
+    var dots = c.s.map(function (x, i) {
+      var cls = { d: "dot--done", r: "dot--miss", n: "dot--now", o: "" }[x];
+      var inner = x === "d" ? '<i data-lucide="check" class="i-sm"></i>' : x === "r" ? '<i data-lucide="calendar-clock" class="i-sm"></i>' : (i + 1);
+      return '<span class="dot ' + cls + '">' + inner + "</span>";
+    }).join("");
+    var form = open ? '<div class="card"><p class="t-h3">Catatan sesi ' + (idx + 1) + "</p>" +
+      '<div class="grid2"><label class="field">Area<input value="' + (c.area || "") + '"></label><label class="field">Energi alat<input value="' + (c.energy || "") + '" placeholder="J/cm²"></label></div>' +
+      '<div class="field"><span>Reaksi kulit</span><div class="chipset" id="rx">' + ["Tidak ada", "Merah ringan", "Perih", "Bengkak"].map(function (r) { return '<button type="button" class="pill' + (r === reaksi ? " is-active" : "") + '">' + r + "</button>"; }).join("") + "</div></div>" +
+      '<div class="stepper"><span>Ampul serum dipakai</span><span class="stepper__ctl"><button type="button" data-a="-1" aria-label="Kurangi"><i data-lucide="minus" class="i-sm"></i></button><span class="num" id="amp">' + ampul + '</span><button type="button" data-a="1" aria-label="Tambah"><i data-lucide="plus" class="i-sm"></i></button></span></div>' +
+      '<label class="field">Catatan untuk sesi berikutnya<textarea placeholder="Tulis kalau ada"></textarea></label>' +
+      '<button type="button" class="btn btn-primary btn-block" id="finish">Selesaikan sesi ' + (idx + 1) + "</button></div>"
+      : '<div class="card"><p class="t-h3">Sesi hari ini sudah tercatat</p><p class="t-meta">' + (idx >= 0 ? "Sesi " + (idx + 1) + " sudah dijadwalkan, pengingat dikirim sehari sebelumnya." : "Semua sesi program selesai. Klien tinggal kontrol dengan dokter.") + "</p></div>";
+    $("work").innerHTML =
+      '<div class="card card--lime"><div><p class="t-h2">' + c.name + '</p><p style="font-weight:500;margin-top:4px">' + c.prog + " · " + c.tx + " · " + c.t + ' · Ruang 2</p></div><div class="t-big num card__count">' + countDone(c) + "/" + total(c) + '<small>sesi selesai</small></div><div class="dots">' + dots + "</div></div>" +
+      form +
+      '<div class="card"><p class="t-h3">Riwayat kulit</p>' + (toast ? '<p class="toast">' + toast + "</p>" : "") + '<div class="status status--warn" style="align-self:flex-start">' + c.warn + "</div><div>" + c.hist.map(function (h) { return '<div class="hist"><b>' + h[0] + "</b><span>" + h[1] + "</span></div>"; }).join("") + "</div></div>";
+    icons();
+  }
+  $("qList").addEventListener("click", function (e) { var b = e.target.closest("[data-c]"); if (!b) return; cur = +b.getAttribute("data-c"); toast = ""; reaksi = "Tidak ada"; renderQueue(); renderWork(); });
+  $("work").addEventListener("click", function (e) {
+    var rx = e.target.closest("#rx .pill");
+    if (rx) { reaksi = rx.textContent; renderWork(); return; }
+    var a = e.target.closest("[data-a]");
+    if (a) { ampul = Math.max(0, ampul + (+a.getAttribute("data-a"))); $("amp").textContent = ampul; return; }
+    if (e.target.closest("#finish")) {
+      var c = C[cur], i = c.s.indexOf("n"), nx = c.s.indexOf("o");
+      c.s[i] = "d"; if (nx >= 0) c.s[nx] = "n";
+      c.st = "done";
+      c.hist.unshift(["1 Nov", c.tx + " oleh Nadia. Reaksi: " + reaksi.toLowerCase() + "."]);
+      toast = nx >= 0 ? "Sesi tersimpan. Pengingat sesi " + (nx + 1) + " dikirim ke WhatsApp klien." : "Sesi terakhir tersimpan. Kontrol dokter perlu dijadwalkan.";
+      var w = C.findIndex(function (x) { return x.st === "wait"; }); if (w >= 0) C[w].st = "now";
+      renderQueue(); renderWork();
+    }
+  });
+
+  renderIdx("wajah"); renderProgram(); renderPlan(); renderQueue(); renderWork();
+})();
+</script>
+</body>
+</html>

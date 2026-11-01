@@ -1,0 +1,91 @@
+{
+  "slug": "interior-design-studio-website",
+  "kind": "Website",
+  "industry": "Construction & Engineering",
+  "client": "Confidential",
+  "tags": [
+    "Next.js",
+    "Supabase",
+    "Cost Estimator",
+    "Production Tracking"
+  ],
+  "metrics": [
+    {
+      "value": "8",
+      "label": "ROOM TYPES IN THE PORTFOLIO",
+      "labelId": "TIPE RUANG DI PORTOFOLIO"
+    },
+    {
+      "value": "9",
+      "label": "ROOMS IN THE ESTIMATOR",
+      "labelId": "RUANG DI KALKULATOR"
+    },
+    {
+      "value": "8",
+      "label": "TRACKED PROJECT STAGES",
+      "labelId": "TAHAP PROYEK DIPANTAU"
+    }
+  ],
+  "shots": [
+    {
+      "hash": "home",
+      "caption": "Portfolio browsed by room, with a project data strip under each photo",
+      "captionId": "Portofolio per ruangan dengan strip data proyek di bawah foto"
+    },
+    {
+      "hash": "proyek",
+      "caption": "Project page with numbered photo points linked to materials",
+      "captionId": "Halaman proyek dengan titik bernomor yang tertaut ke material"
+    },
+    {
+      "hash": "estimasi",
+      "caption": "Room-by-room estimate that updates cost and time as an approximate range",
+      "captionId": "Perkiraan per ruang yang memperbarui rentang biaya dan waktu"
+    },
+    {
+      "hash": "produksi",
+      "caption": "Project and stage board linked to the site foreman's phone report",
+      "captionId": "Papan proyek per tahap yang tersambung ke laporan HP mandor"
+    }
+  ],
+  "content_en": {
+    "title": "Interior Design Studio Website",
+    "type": "INTERIOR STUDIO WEBSITE & ESTIMATOR",
+    "category": "Company Profile & Operations",
+    "summary": "A redesign for an interior design and furniture production studio with two showrooms. Visitors browse work by room, estimate a project room by room, and send a consultation request with those details; the team tracks each client project from design to handover.",
+    "challenge": "The original site already looked premium, so a new skin would have added little. Its portfolio could only be filtered by building type, and visitors looking for a kitchen or a bedroom had to open projects one at a time.\n\nThere was no indication of cost anywhere, and every call to action opened WhatsApp with a template message. The studio received enquiries without floor area, rooms or material level, and clients on projects lasting up to 14 months depended on manual updates.",
+    "solution": "The homepage became a portfolio viewer organised by room, with a drawing-style data strip under each photo. Project pages link numbered points on the photo to the materials used. A room-by-room estimator shows a clearly labelled range for cost and time, and the consultation form carries those details to the team.\n\nFor operations, a board maps each active project across eight stages of design, production and installation, connected to a phone checklist for the person responsible on site. Planned stack: Next.js and Supabase for projects, rates and requests, with the WhatsApp API for enquiries and daily reports.",
+    "features": [
+      "Portfolio filtered by room type across all projects",
+      "Project data strip with area, duration and location",
+      "Numbered photo points linked to materials",
+      "Room-by-room estimator by area and material level",
+      "Cost and time shown as approximate ranges",
+      "Consultation request that carries the estimate details",
+      "Stage board with a phone checklist for site foremen"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Studio Desain Interior",
+    "type": "WEBSITE STUDIO INTERIOR & ESTIMATOR",
+    "category": "Company Profile & Operasional",
+    "summary": "Redesign untuk studio desain interior dan produksi furnitur dengan dua showroom. Pengunjung melihat karya per ruangan, menghitung perkiraan per ruang, lalu mengirim permintaan konsultasi beserta rinciannya; tim memantau tiap proyek klien dari desain sampai serah terima.",
+    "challenge": "Situs aslinya sudah terlihat premium, sehingga tampilan baru saja tidak banyak menambah nilai. Portofolionya hanya bisa difilter per tipe bangunan, dan pengunjung yang mencari dapur atau kamar harus membuka proyek satu per satu.\n\nTidak ada indikasi biaya di mana pun, dan semua tombol membuka WhatsApp dengan pesan template. Studio menerima pertanyaan tanpa luas, ruang, atau kelas material, sementara klien dengan proyek hingga 14 bulan bergantung pada pembaruan manual.",
+    "solution": "Beranda menjadi penampil portofolio per ruangan, dengan strip data bergaya gambar kerja di bawah setiap foto. Halaman proyek menautkan titik bernomor pada foto ke material yang dipakai. Kalkulator per ruang menampilkan rentang biaya dan waktu yang jelas disebut perkiraan, dan form konsultasi membawa rincian itu ke tim.\n\nUntuk operasional, papan memetakan tiap proyek berjalan pada delapan tahap desain, produksi, dan instalasi, tersambung dengan checklist HP untuk penanggung jawab di lapangan. Stack rencana: Next.js dan Supabase untuk proyek, tarif, dan permintaan, dengan WhatsApp API untuk permintaan dan laporan harian.",
+    "features": [
+      "Portofolio difilter per tipe ruang lintas proyek",
+      "Strip data proyek berisi luas, durasi, dan lokasi",
+      "Titik bernomor pada foto yang tertaut ke material",
+      "Kalkulator per ruang berdasarkan luas dan kelas material",
+      "Biaya dan waktu ditampilkan sebagai rentang perkiraan",
+      "Permintaan konsultasi yang membawa rincian estimasi",
+      "Papan tahap dengan checklist HP untuk mandor"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
