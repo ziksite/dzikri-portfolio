@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenarilaan — Hotel butik di gedung era kolonial, Salatiga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/boutique-heritage-hotel-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <p class="promo">Harga di situs ini langsung dari hotel: tanpa biaya pemesanan, sudah termasuk pajak dan layanan.</p>
+  <header class="head">
+    <div class="head__top">
+      <span class="head__loc">Salatiga, Jawa Tengah</span>
+      <a class="wordmark" href="#home">Kenarilaan</a>
+      <div class="head__right"><a href="#"><i data-lucide="message-circle" class="i-sm"></i><span>WhatsApp resepsionis</span></a><a href="#okupansi"><span>Staf</span></a></div>
+    </div>
+    <nav class="head__nav"><a href="#kamar">Kamar &amp; suite</a><a href="#" data-go="restoran">Restoran</a><a href="#" data-go="fasilitas">Fasilitas</a><a href="#" data-go="acara">Rapat</a><a href="#" data-go="acara">Pernikahan</a><a href="#" data-go="lokasi">Lokasi</a></nav>
+  </header>
+
+  <div class="hero">
+    <div class="photo" style="--pos:center 62%" data-img="assets/boutique-heritage-hotel-website/lobby.webp"></div>
+    <div class="hero__text">
+      <h1 class="t-hero">Tembok lama,<br>malam tenang</h1>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="strip__bar">
+      <p class="strip__sum js-sum"></p>
+      <p class="strip__hint js-hint"></p>
+      <div class="strip__right">
+        <div class="stepper js-guests" data-stepper data-min="1" data-max="4"><button type="button" aria-label="Kurangi tamu"><i data-lucide="minus" class="i-sm"></i></button><output class="js-guests-out">2</output><button type="button" data-inc aria-label="Tambah tamu"><i data-lucide="plus" class="i-sm"></i></button></div>
+        <a class="btn btn-white" href="#kamar">Lihat kamar</a>
+      </div>
+    </div>
+    <div class="days js-days"></div>
+  </div>
+
+  <section class="section">
+    <h2 class="t-section">Kamar &amp; suite</h2>
+    <div class="tiles">
+      <a class="tile" href="#kamar"><div class="photo" data-img="assets/boutique-heritage-hotel-website/deluxe-king.webp"><span class="tile__label">Deluxe</span></div><span class="tile__price">32 m², mulai Rp1.149.000</span></a>
+      <a class="tile" href="#kamar"><div class="photo" data-img="assets/boutique-heritage-hotel-website/premium-king.webp"><span class="tile__label">Premium</span></div><span class="tile__price">28 m² berbalkon, mulai Rp1.349.000</span></a>
+      <a class="tile" href="#kamar"><div class="photo" data-img="assets/boutique-heritage-hotel-website/executive-balkon.webp"><span class="tile__label">Executive</span></div><span class="tile__price">36 m², mulai Rp1.749.000</span></a>
+      <a class="tile" href="#kamar"><div class="photo" data-img="assets/boutique-heritage-hotel-website/suite-kanopi.webp"><span class="tile__label">Suite</span></div><span class="tile__price">56–92 m², mulai Rp4.499.000</span></a>
+    </div>
+  </section>
+
+  <div class="split">
+    <div class="photo" data-img="assets/boutique-heritage-hotel-website/fasad.webp"></div>
+    <div class="split__body">
+      <h2 class="t-h1">Gedung era kolonial di kawasan permukiman lama</h2>
+      <p>Tiga puluhan kamar di bangunan yang arsitektur aslinya dipertahankan. Dinding panel, jendela tinggi, dan lantai tegel tetap di tempatnya. Kamar mandi dan internetnya yang baru.</p>
+      <div><a class="btn btn-white" href="#kamar">Pilih tanggal menginap</a></div>
+    </div>
+  </div>
+
+  <div class="band" id="restoran">
+    <div class="photo" data-img="assets/boutique-heritage-hotel-website/restoran-tegel.webp"></div>
+    <div class="band__card">
+      <h2 class="t-h2">Restoran Ruang Tegel</h2>
+      <p class="t-meta">Masakan Nusantara dan internasional di ruang makan berlantai tegel hitam-putih, dikelilingi kebun tropis. Di area lobi, buka setiap hari 06.00–22.00.</p>
+    </div>
+  </div>
+
+  <section class="section" id="fasilitas">
+    <h2 class="t-section">Fasilitas</h2>
+    <div class="mosaic">
+      <figure><div class="photo" data-img="assets/boutique-heritage-hotel-website/kolam.webp"></div><figcaption><b>Kolam renang</b><span class="t-small">Khusus tamu hotel, 06.00–22.00</span></figcaption></figure>
+      <figure><div class="photo" data-img="assets/boutique-heritage-hotel-website/kolam-teras.webp"></div><figcaption><b>Teras kolam</b><span class="t-small">Kursi berjemur di tepi kebun tropis</span></figcaption></figure>
+      <figure><div class="photo" data-img="assets/boutique-heritage-hotel-website/spa.webp"></div><figcaption><b>Spa Kemuning</b><span class="t-small">Rempah dan bahan alami, 08.00–23.00</span></figcaption></figure>
+      <figure><div class="photo" data-img="assets/boutique-heritage-hotel-website/perpustakaan.webp"></div><figcaption><b>Perpustakaan</b><span class="t-small">Buku sejarah, budaya, seni, dan permainan papan</span></figcaption></figure>
+      <figure><div class="photo" data-img="assets/boutique-heritage-hotel-website/toko.webp"></div><figcaption><b>Toko Lurik</b><span class="t-small">Kerajinan dan aksesori perajin lokal</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section style="padding-bottom:72px" id="acara">
+    <div class="events">
+      <div>
+        <div class="photo" data-panel="ev:rapat" data-img="assets/boutique-heritage-hotel-website/aula-gala.webp"></div>
+        <div class="photo" data-panel="ev:nikah" hidden data-img="assets/boutique-heritage-hotel-website/aula-pernikahan.webp"></div>
+      </div>
+      <div>
+        <h2 class="t-h1" style="margin-bottom:20px">Rapat &amp; pernikahan</h2>
+        <div class="tabs" data-select data-tabs="ev"><button type="button" class="is-active" data-value="rapat">Paket rapat</button><button type="button" data-value="nikah">Paket pernikahan</button></div>
+        <div data-panel="ev:rapat">
+          <div class="price-row"><div><b>Setengah hari</b><p>6 jam, 1× rehat kopi, 1× makan</p></div><span>Rp400.000/orang</span></div>
+          <div class="price-row"><div><b>Sehari penuh</b><p>10 jam, 2× rehat kopi, 1× makan</p></div><span>Rp550.000/orang</span></div>
+          <div class="price-row"><div><b>Fullboard</b><p>12 jam, 2× rehat kopi, makan siang dan malam</p></div><span>Rp800.000/orang</span></div>
+          <div class="price-row"><div><b>Menginap, kamar berdua</b><p>12 jam + 1 malam Deluxe twin dan sarapan</p></div><span>Rp1.400.000/orang</span></div>
+          <div class="price-row"><div><b>Menginap, kamar sendiri</b><p>12 jam + 1 malam Deluxe dan sarapan</p></div><span>Rp2.000.000/orang</span></div>
+          <p class="t-small" style="margin:14px 0 18px">Balai Kenari sampai 150 orang teater atau 100 kelas, dengan teras luar. Ruang Arsip untuk rapat kecil sampai 12 orang. Semua paket termasuk proyektor, tata suara, dan air mineral.</p>
+        </div>
+        <div data-panel="ev:nikah" hidden>
+          <div class="price-row"><div><b>Bronze</b><p>Prasmanan 50 tamu, ruang 6 jam, 1 malam Deluxe</p></div><span>Rp16.500.000</span></div>
+          <div class="price-row"><div><b>Silver</b><p>Prasmanan 50 tamu, ruang 6 jam, 1 malam Deluxe</p></div><span>Rp18.500.000</span></div>
+          <div class="price-row"><div><b>Gold</b><p>Prasmanan 50 tamu, ruang 6 jam, 1 malam Premium</p></div><span>Rp21.500.000</span></div>
+          <div class="price-row"><div><b>After party</b><p>Pemakaian bar privat 7 jam dengan hiburan</p></div><span>Rp50.000.000</span></div>
+          <p class="t-small" style="margin:14px 0 18px">Semua paket termasuk food tasting 4 orang dan lokasi foto pra-nikah di area hotel. Katering luar dikenakan corkage.</p>
+        </div>
+        <a class="btn btn-line" href="#">Tanya tim acara lewat WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" id="lokasi" style="padding-bottom:64px">
+    <h2 class="t-h2">Dari hotel</h2>
+    <div class="near">
+      <div><b>Rawa Pening</b><span class="t-small">± 30 menit berkendara</span></div>
+      <div><b>Kopeng dan kaki Merbabu</b><span class="t-small">± 35 menit berkendara</span></div>
+      <div><b>Museum Kereta Ambarawa</b><span class="t-small">± 30 menit berkendara</span></div>
+      <div><b>Candi Gedong Songo</b><span class="t-small">± 60 menit berkendara</span></div>
+    </div>
+  </div>
+
+  <div class="tegel"></div>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div><span class="wordmark" style="font-size:28px">Kenarilaan</span><p style="margin-top:12px;max-width:340px">Hotel butik di gedung era kolonial, kawasan permukiman lama Salatiga.</p></div>
+        <div><h4>Menginap</h4><ul><li>Check-in 14.00</li><li>Check-out 12.00</li><li><a href="#kamar">Kamar &amp; suite</a></li></ul></div>
+        <div><h4>Hubungi</h4><ul><li><a href="#">WhatsApp resepsionis</a></li><li><a href="#">halo@kenarilaan.example</a></li></ul></div>
+        <div><h4>Lainnya</h4><ul><li><a href="#" data-go="acara">Rapat &amp; pernikahan</a></li><li><a href="#okupansi">Masuk staf</a></li></ul></div>
+      </div>
+      <p class="foot__copy">© 2026 Kenarilaan Hotel</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= KAMAR: MATRIKS TARIF ================= -->
+<section data-screen="kamar">
+  <header class="mini-head">
+    <a class="wordmark" href="#home">Kenarilaan</a>
+    <div class="steps"><span class="done">Tanggal &amp; tamu</span><b>Kamar &amp; tarif</b><span>Data tamu</span></div>
+  </header>
+  <div class="wrap">
+    <div class="strip strip--light" style="border:0">
+      <div class="strip__bar">
+        <p class="strip__sum js-sum"></p>
+        <p class="strip__hint js-hint"></p>
+        <div class="strip__right">
+          <div class="stepper js-guests" data-stepper data-min="1" data-max="4"><button type="button" aria-label="Kurangi tamu"><i data-lucide="minus" class="i-sm"></i></button><output class="js-guests-out">2</output><button type="button" data-inc aria-label="Tambah tamu"><i data-lucide="plus" class="i-sm"></i></button></div>
+        </div>
+      </div>
+      <div class="days js-days"></div>
+    </div>
+    <div class="chips" data-select id="roomFilter" style="margin-top:16px">
+      <button type="button" class="chip is-active" data-value="all">Semua kamar</button>
+      <button type="button" class="chip" data-value="balkon">Ada balkon</button>
+      <button type="button" class="chip" data-value="lift">Tanpa tangga</button>
+      <button type="button" class="chip" data-value="roda">Akses kursi roda</button>
+      <button type="button" class="chip" data-value="suite">Suite</button>
+    </div>
+    <div class="rt-head"><span style="grid-column:span 2">Total untuk <span class="js-nights"></span>, sudah termasuk pajak</span><span>Tanpa sarapan</span><span>Dengan sarapan</span></div>
+    <div id="rateRows" style="padding-bottom:32px"></div>
+  </div>
+  <div class="paybar">
+    <div class="wrap paybar__in">
+      <div class="paybar__sum"><b id="barRoom"></b><span id="barMeta"></span></div>
+      <div class="paybar__total num" id="barTotal"></div>
+      <a class="btn btn-primary" href="#pesan" id="barGo">Isi data tamu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PESAN: FOLIO + DATA TAMU ================= -->
+<section data-screen="pesan">
+  <div class="book">
+    <aside class="folio">
+      <div class="photo" id="folioPhoto"></div>
+      <div class="folio__body">
+        <div><p class="folio__room" id="folioRoom"></p><p id="folioWhen" style="margin-top:4px"></p></div>
+        <div id="folioLines"></div>
+        <div class="folio__total"><span>Total</span><b class="num" id="folioTotal"></b></div>
+      </div>
+    </aside>
+    <div class="form-side">
+      <div class="form-side__top">
+        <a href="#kamar" style="display:inline-flex;gap:6px;align-items:center;font-size:15px"><i data-lucide="arrow-left" class="i-sm"></i>Ubah kamar</a>
+        <a class="wordmark" style="font-size:22px" href="#home">Kenarilaan</a>
+      </div>
+      <form data-demo-form="#bookDone" id="bookForm" style="display:flex;flex-direction:column;gap:26px">
+        <h1 class="t-h1">Data tamu</h1>
+        <div class="grid-2">
+          <label class="field">Nama sesuai KTP<input required value="Rania Hapsari" id="fName"></label>
+          <label class="field">Nomor WhatsApp<input required value="0812-5550-0147" id="fPhone" inputmode="tel"></label>
+          <label class="field">Email untuk folio<input type="email" value="rania@contoh.example"></label>
+          <label class="field">Perkiraan tiba<select id="fArrive"><option>14.00–16.00</option><option>16.00–18.00</option><option>18.00–21.00</option><option>Setelah 21.00</option></select></label>
+        </div>
+        <div>
+          <p class="t-h3" style="margin-bottom:10px">Permintaan untuk kamar</p>
+          <div class="chips" data-select data-multi><button type="button" class="chip">Lantai atas</button><button type="button" class="chip">Dekat lift</button><button type="button" class="chip is-active">Jauh dari jalan</button><button type="button" class="chip">Check-in lebih awal</button><button type="button" class="chip">Bantal tambahan</button></div>
+        </div>
+        <div>
+          <p class="t-h3" style="margin-bottom:10px">Pembayaran</p>
+          <div data-select="is-selected" id="payPick">
+            <button type="button" class="pay is-selected" data-value="Bayar saat check-in"><span class="pay__mark"></span><span><b>Bayar saat check-in</b><span class="t-small">Kamar ditahan sampai 18.00 di hari kedatangan</span></span></button>
+            <button type="button" class="pay" data-value="Transfer virtual account"><span class="pay__mark"></span><span><b>Transfer virtual account</b><span class="t-small">Kamar dijamin sampai larut malam, batas bayar 2 jam</span></span></button>
+            <button type="button" class="pay" data-value="Kartu kredit atau debit"><span class="pay__mark"></span><span><b>Kartu kredit atau debit</b><span class="t-small">Kamar dijamin sampai larut malam</span></span></button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <button class="btn btn-primary">Konfirmasi pesanan</button>
+          <p class="t-small" style="flex:1;min-width:220px">Batal gratis sampai 2 hari sebelum kedatangan.</p>
+        </div>
+      </form>
+      <div id="bookDone" hidden style="display:flex;flex-direction:column;gap:22px;padding-top:32px">
+        <h1 class="t-h1">Pesanan terkonfirmasi</h1>
+        <p class="done-code num" id="doneCode"></p>
+        <p class="muted" id="doneNote"></p>
+        <dl class="kv-table" style="margin:0">
+          <div><dt>Tamu</dt><dd id="doneGuest"></dd></div>
+          <div><dt>Menginap</dt><dd id="doneWhen"></dd></div>
+          <div><dt>Kamar</dt><dd id="doneRoom"></dd></div>
+          <div><dt>Pembayaran</dt><dd id="donePay"></dd></div>
+        </dl>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#"><i data-lucide="message-circle" class="i-sm"></i>Hubungi resepsionis</a><a class="btn btn-line" href="#okupansi">Lihat di papan hotel</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPERASIONAL: OKUPANSI + HP HOUSEKEEPING ================= -->
+<section data-screen="okupansi">
+  <div class="ops">
+    <div class="ops__main">
+      <div class="ops__top">
+        <a class="wordmark" href="#home">Kenarilaan</a>
+        <nav class="ops__nav"><span class="is-active">Okupansi</span><span>Reservasi</span><span>Housekeeping</span><span>Tarif harian</span></nav>
+      </div>
+      <div class="ops__sub">
+        <h1>1–14 November</h1>
+        <p class="t-meta">Hari ini <b class="num" style="color:var(--ink);font-weight:500" id="opsTiba"></b> tiba, <b class="num" style="color:var(--ink);font-weight:500" id="opsPulang"></b> pulang</p>
+        <div class="legend">
+          <span><i style="background:var(--ultra)"></i>Langsung</span>
+          <span><i style="background:var(--ink)"></i>OTA</span>
+          <span><i style="background:var(--verm)"></i>Grup</span>
+          <span><i class="stay--block" style="position:static"></i>Perbaikan</span>
+        </div>
+      </div>
+      <div class="tape-wrap"><div class="tape" id="tape"></div></div>
+      <div class="legend" style="margin:0;padding:0 24px 16px">
+        <span>Status kamar:</span>
+        <span><i class="hk--kotor"></i>Kotor</span>
+        <span><i class="hk--proses"></i>Dibersihkan</span>
+        <span><i class="hk--bersih"></i>Siap</span>
+        <span><i class="hk--rusak"></i>Tidak dijual</span>
+      </div>
+    </div>
+    <div class="phone-side">
+      <div class="phone">
+        <div class="phone__status"><span>09.41</span><span>Lantai 2</span></div>
+        <div class="phone__head">
+          <h2>Tugas Sari</h2>
+          <p class="t-small"><span id="hkDone"></span> dari <span id="hkAll"></span> kamar selesai, urut dari tamu tiba paling awal</p>
+          <div class="phone__bar" id="hkBar"></div>
+        </div>
+        <div class="phone__list" id="hkList"></div>
+        <div class="phone__tabs"><span class="is-active"><i data-lucide="list-checks" class="i-sm"></i>Tugas</span><span><i data-lucide="wrench" class="i-sm"></i>Lapor rusak</span><span><i data-lucide="shirt" class="i-sm"></i>Linen</span></div>
+      </div>
+      <p class="phone-side__cap">HP petugas. Tombol di sini mengubah status kamar di papan.</p>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/boutique-heritage-hotel-website/";
+  function $(id) { return document.getElementById(id); }
+  function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+  function icons() { if (window.lucide) lucide.createIcons({ attrs: { "stroke-width": 1.5 } }); }
+  function loadPhoto(box) {
+    box.querySelectorAll("img").forEach(function (i) { i.remove(); });
+    var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+  }
+  $$(".photo[data-img]").forEach(loadPhoto);
+
+  // Lompat ke bagian di beranda
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-go]"); if (!a) return;
+    e.preventDefault();
+    var el = $(a.getAttribute("data-go")); if (el) el.scrollIntoView({ behavior: "smooth" });
+  });
+
+  // ---------- Data ----------
+  var WD = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+  var DAYS = []; // indeks 0 = Minggu, 1 Nov 2026
+  for (var i = 0; i < 28; i++) DAYS.push({ d: i + 1, w: i % 7 });
+  var FULL_NIGHT = { 13: 1 }; // Sabtu 14 Nov: hotel penuh
+  var BF = 165000;
+
+  var ROOMS = [
+    { id: "dlx", name: "Deluxe", base: 1149000, size: 32, cap: 2, tags: ["lift"], left: 0, beds: { King: "deluxe-king", Twin: "deluxe-twin" }, desc: "Sofa dan meja kerja. Akses lift, tanpa balkon. Kudapan sambutan di kamar." },
+    { id: "pre", name: "Premium", base: 1349000, size: 28, cap: 2, tags: ["balkon"], left: 2, beds: { King: "premium-king", Twin: "premium-twin" }, desc: "Balkon pribadi, tata ruang sederhana. Naik setengah lantai dengan tangga." },
+    { id: "exb", name: "Executive Balcony", base: 1749000, size: 36, cap: 2, tags: ["balkon"], left: 0, beds: { King: "executive-balkon" }, sold: { 0: 1, 1: 1, 5: 1, 6: 1 }, desc: "Ruang duduk luas dan bak mandi, ranjang king." },
+    { id: "exw", name: "Executive Akses Kursi Roda", base: 1749000, size: 36, cap: 2, tags: ["roda", "lift"], left: 1, beds: { King: "executive-akses" }, desc: "Jalur tanpa tangga dari lobi, ranjang king dan sofa." },
+    { id: "rys", name: "Royal Suite", base: 4499000, size: 56, cap: 3, tags: ["balkon", "suite"], left: 1, beds: { King: "royal-suite" }, desc: "Ruang tamu terpisah, balkon pribadi, shower dan bak mandi terpisah." },
+    { id: "prs", name: "Presidential Suite", base: 8999000, size: 92, cap: 4, tags: ["suite"], left: 1, beds: { "King + Twin": "presidential-suite" }, desc: "Dua kamar tidur dan ruang tamu luas. High tea sore diantar ke kamar." }
+  ];
+
+  var S = { in: 5, out: 7, picking: "in", guests: 2, room: "dlx", bed: "King", plan: "bf", filter: "all", booked: false };
+
+  function rate(r, i) { var w = DAYS[i].w; return (w === 5 || w === 6) ? Math.round(r.base * 1.1 / 1000) * 1000 : r.base; }
+  function nights() { var a = []; for (var i = S.in; i < S.out; i++) a.push(i); return a; }
+  function roomTotal(r) { return nights().reduce(function (t, i) { return t + rate(r, i); }, 0); }
+  function bfTotal() { return BF * S.guests * nights().length; }
+  function soldOut(r) { return nights().some(function (i) { return r.sold && r.sold[i]; }); }
+  function bookable(r) { return !soldOut(r) && S.guests <= r.cap; }
+  function fmt(i) { return WD[DAYS[i].w] + ", " + DAYS[i].d + " Nov"; }
+  function whenText() { return fmt(S.in) + " – " + fmt(S.out); }
+  function rb(n) { return (n / 1000).toLocaleString("id-ID") + "rb"; }
+  function current() { return ROOMS.filter(function (r) { return r.id === S.room; })[0]; }
+
+  // ---------- Papan tarif ----------
+  function renderDays() {
+    var deluxe = ROOMS[0], html = "";
+    DAYS.forEach(function (d, i) {
+      var c = "day", off = FULL_NIGHT[i];
+      if (off) c += " is-off";
+      if (i === S.in) c += " is-in"; else if (i === S.out) c += " is-out"; else if (i > S.in && i < S.out) c += " is-range";
+      var label = i === S.out ? "pulang" : off ? "penuh" : rb(rate(deluxe, i));
+      html += '<button type="button" class="' + c + '" data-i="' + i + '"><span class="day__w">' + WD[d.w] + '</span><span class="day__d">' + d.d + '</span><span class="day__p">' + label + "</span></button>";
+    });
+    $$(".js-days").forEach(function (el) { var sl = el.scrollLeft; el.innerHTML = html; el.scrollLeft = sl; });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".day"); if (!b) return;
+    var i = Number(b.getAttribute("data-i"));
+    if (S.picking === "out" && i > S.in) {
+      for (var n = S.in; n < i; n++) if (FULL_NIGHT[n]) return;
+      S.out = i; S.picking = "in";
+    } else {
+      if (FULL_NIGHT[i] || i === DAYS.length - 1) return;
+      S.in = i; S.out = i + 1; S.picking = "out";
+    }
+    render();
+  });
+
+  // ---------- Matriks tarif ----------
+  function renderRates() {
+    var n = nights().length, html = "";
+    ROOMS.forEach(function (r) {
+      if (S.filter !== "all" && r.tags.indexOf(S.filter) < 0) return;
+      var bed = r.beds[S.bed] ? S.bed : Object.keys(r.beds)[0];
+      var ok = bookable(r), rt = roomTotal(r), bedKeys = Object.keys(r.beds);
+      html += '<article class="rt' + (ok ? "" : " is-out") + '"><div class="photo" data-img="' + A + r.beds[bed] + '.webp"></div><div class="rt__info"><h2 class="rt__name">' + r.name + '</h2><p class="t-meta">' + r.size + " m², maks. " + r.cap + " tamu</p><p>" + r.desc + "</p>";
+      if (bedKeys.length > 1) html += '<div class="bed">' + bedKeys.map(function (k) { return '<button type="button" data-bed="' + k + '" data-room="' + r.id + '"' + (k === bed ? ' class="is-active"' : "") + ">" + k + "</button>"; }).join("") + "</div>";
+      if (ok && r.left) html += '<p class="rt__left">Sisa ' + r.left + " kamar di tanggal ini</p>";
+      html += "</div>";
+      if (ok) {
+        ["ro", "bf"].forEach(function (p) {
+          var t = rt + (p === "bf" ? bfTotal() : 0), on = S.room === r.id && S.plan === p;
+          html += '<button type="button" class="rate' + (on ? " is-picked" : "") + '" data-room="' + r.id + '" data-plan="' + p + '"><span class="rate__t num">' + rupiah(t) + '</span><span class="rate__s num">' + rupiah(t / n) + " per malam</span>" + (p === "bf" ? '<span class="rate__tag num">Sarapan ' + S.guests + " tamu +" + rupiah(bfTotal()) + "</span>" : '<span class="rate__tag">Hanya kamar</span>') + "</button>";
+        });
+      } else if (soldOut(r)) {
+        html += '<div class="rt__none"><b>Habis di tanggal ini</b><span class="t-meta">Kosong untuk malam Sel, 3 sampai Kam, 5 Nov. Geser tanggal di papan atas.</span></div>';
+      } else {
+        html += '<div class="rt__none"><b>Maksimal ' + r.cap + ' tamu per kamar</b><span class="t-meta">Untuk ' + S.guests + " tamu, pilih suite atau pesan dua kamar lewat resepsionis.</span></div>";
+      }
+      html += "</article>";
+    });
+    $("rateRows").innerHTML = html || '<p class="t-meta" style="padding:24px 0">Tidak ada kamar dengan filter ini.</p>';
+    $("rateRows").querySelectorAll(".photo[data-img]").forEach(loadPhoto);
+  }
+  $("rateRows").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-bed]");
+    if (b) { S.room = b.getAttribute("data-room"); S.bed = b.getAttribute("data-bed"); render(); return; }
+    var c = e.target.closest(".rate");
+    if (c) { S.room = c.getAttribute("data-room"); S.plan = c.getAttribute("data-plan"); render(); }
+  });
+  $("roomFilter").addEventListener("lapak:select", function (e) { S.filter = e.detail.value; renderRates(); });
+  document.addEventListener("lapak:change", function (e) {
+    if (!e.target.classList.contains("js-guests")) return;
+    S.guests = e.detail.value; render();
+  });
+
+  // ---------- Bar total, ringkasan, folio ----------
+  function renderSummary() {
+    var n = nights().length, r = current(), ok = bookable(r), bed = r.beds[S.bed] ? S.bed : Object.keys(r.beds)[0];
+    $$(".js-sum").forEach(function (el) { el.textContent = whenText() + ", " + n + " malam"; });
+    $$(".js-hint").forEach(function (el) { el.textContent = S.picking === "out" ? "Sekarang klik tanggal pulang" : "Klik tanggal untuk mengubah. Angka di bawah: tarif Deluxe per malam"; });
+    $$(".js-guests-out").forEach(function (el) { el.textContent = S.guests; });
+    $$(".js-nights").forEach(function (el) { el.textContent = n + " malam, " + S.guests + " tamu"; });
+    if (!ok) {
+      $("barRoom").textContent = "Pilih kamar lain";
+      $("barMeta").textContent = r.name + " tidak tersedia untuk tanggal dan jumlah tamu ini";
+      $("barTotal").textContent = ""; $("barGo").style.pointerEvents = "none"; $("barGo").style.opacity = ".4";
+      return;
+    }
+    $("barGo").style.pointerEvents = ""; $("barGo").style.opacity = "";
+    var bedName = Object.keys(r.beds).length > 1 ? " " + bed : "";
+    var total = roomTotal(r) + (S.plan === "bf" ? bfTotal() : 0);
+    $("barRoom").textContent = r.name + bedName + (S.plan === "bf" ? ", dengan sarapan" : ", tanpa sarapan");
+    $("barMeta").textContent = whenText() + ", " + n + " malam, " + S.guests + " tamu";
+    $("barTotal").textContent = rupiah(total);
+
+    if (S.booked) return; // folio dibekukan setelah konfirmasi
+    var ph = $("folioPhoto"), src = A + r.beds[bed] + ".webp";
+    if (ph.getAttribute("data-img") !== src) { ph.setAttribute("data-img", src); loadPhoto(ph); }
+    $("folioRoom").textContent = r.name + bedName;
+    $("folioWhen").textContent = whenText() + ", " + S.guests + " tamu";
+    var lines = nights().map(function (i) { return '<div class="folio__line"><span>' + fmt(i) + "</span><span>" + rupiah(rate(r, i)) + "</span></div>"; }).join("");
+    if (S.plan === "bf") lines += '<div class="folio__line"><span>Sarapan ' + S.guests + " tamu × " + n + " malam</span><span>" + rupiah(bfTotal()) + "</span></div>";
+    lines += '<div class="folio__line"><span>Pajak dan layanan</span><span>Termasuk</span></div>';
+    $("folioLines").innerHTML = lines;
+    $("folioTotal").textContent = rupiah(total);
+  }
+  function render() { renderDays(); renderRates(); renderSummary(); icons(); }
+
+  // ---------- Papan okupansi ----------
+  var OPS = [
+    ["101", "Deluxe King", "bersih"], ["102", "Deluxe Twin", "bersih"], ["103", "Deluxe King", "bersih"], ["104", "Executive Akses", "bersih"],
+    ["201", "Deluxe King", "kotor"], ["202", "Deluxe Twin", "kotor"], ["203", "Premium King", "kotor"], ["204", "Premium Twin", "kotor"], ["205", "Premium King", "rusak"],
+    ["206", "Exec. Balcony", "kotor"], ["207", "Exec. Balcony", "kotor"], ["208", "Royal Suite", "bersih"], ["209", "Presidential", "bersih"]
+  ];
+  // [kamar, hari mulai (0 = 1 Nov), malam, label, sumber]
+  var STAYS = [
+    ["101", -2, 4, "Hendra W.", "direct"], ["101", 5, 2, "Maya S.", "ota"], ["101", 9, 3, "Rapat Sumber Tirta", "group"],
+    ["102", -1, 3, "Dimas A.", "ota"], ["102", 3, 5, "Galih S.", "direct"], ["102", 9, 3, "Rapat Sumber Tirta", "group"],
+    ["103", 0, 2, "Ratna K.", "direct"], ["103", 4, 3, "Yoga P.", "ota"], ["103", 9, 3, "Rapat Sumber Tirta", "group"],
+    ["104", 1, 3, "Wibowo", "direct"], ["104", 8, 2, "Lestari N.", "direct"],
+    ["201", -3, 3, "Andi F.", "ota"], ["201", 0, 3, "Citra D.", "direct"], ["201", 6, 2, "Reza H.", "direct"],
+    ["202", -2, 2, "Nadia R.", "direct"], ["202", 0, 1, "Eko P.", "ota"], ["202", 5, 4, "Bayu S.", "ota"],
+    ["203", -1, 1, "Tio M.", "ota"], ["203", 0, 2, "Salsa A.", "ota"], ["203", 5, 2, "Bram T.", "direct"], ["203", 10, 3, "Ika W.", "ota"],
+    ["204", -2, 2, "Putri L.", "direct"], ["204", 2, 3, "Agus D.", "direct"], ["204", 7, 2, "Wulan S.", "ota"],
+    ["205", -3, 7, "Perbaikan AC dan kusen", "block"],
+    ["206", -1, 3, "Laras P.", "direct"], ["206", 3, 2, "Fikri R.", "ota"], ["206", 5, 2, "Damar K.", "direct"], ["206", 8, 4, "Yuni A.", "direct"],
+    ["207", -4, 4, "Rio B.", "ota"], ["207", 0, 3, "Tania M.", "ota"], ["207", 5, 3, "Hadi S.", "direct"],
+    ["208", 0, 3, "Gunawan", "direct"], ["208", 7, 2, "Dewi A.", "direct"],
+    ["209", 6, 2, "Santoso", "direct"]
+  ];
+  var TASKS = [
+    { no: "201", kind: "Check-out", note: "Tamu tiba 14.00", urgent: 1, st: "bersih" },
+    { no: "203", kind: "Check-out", note: "Tamu tiba 14.00", urgent: 1, st: "proses" },
+    { no: "207", kind: "Check-out", note: "Tamu tiba 15.00", urgent: 1, st: "kotor" },
+    { no: "202", kind: "Check-out", note: "Tamu tiba 16.00, tambah bantal", st: "kotor" },
+    { no: "204", kind: "Check-out", note: "Belum ada tamu tiba hari ini", st: "kotor" },
+    { no: "206", kind: "Tamu menginap", note: "Ganti handuk, tamu keluar 11.00", st: "kotor" }
+  ];
+  function hkOf(no) { var t = TASKS.filter(function (x) { return x.no === no; })[0]; if (t) return t.st; return OPS.filter(function (o) { return o[0] === no; })[0][2]; }
+
+  function renderTape() {
+    var head = '<div class="tape__head"><div>Kamar</div><div class="tape__days">', n = 14;
+    for (var i = 0; i < n; i++) head += '<span class="' + (i === 0 ? "is-today" : (DAYS[i].w === 5 || DAYS[i].w === 6 ? "is-we" : "")) + '">' + WD[DAYS[i].w] + "<b>" + DAYS[i].d + "</b></span>";
+    head += "</div></div>";
+    var rows = OPS.map(function (o) {
+      var bars = STAYS.filter(function (s) { return s[0] === o[0]; }).map(function (s) {
+        var start = Math.max(s[1], -.5), end = Math.min(s[1] + s[2], 13.5), len = end - start;
+        return '<div class="stay stay--' + s[4] + '" style="--s:' + start + ";--l:" + len + '" title="' + s[3] + '">' + (len >= 1 ? s[3] : "") + "</div>";
+      }).join("");
+      return '<div class="tape__row"><div class="tape__room"><span class="hk hk--' + hkOf(o[0]) + '"></span><b>' + o[0] + "</b><small>" + o[1] + '</small></div><div class="tape__lane">' + bars + "</div></div>";
+    }).join("");
+    $("tape").innerHTML = head + rows;
+    $("opsTiba").textContent = STAYS.filter(function (s) { return s[1] === 0; }).length;
+    $("opsPulang").textContent = STAYS.filter(function (s) { return s[1] + s[2] === 0; }).length;
+  }
+
+  function renderPhone() {
+    var done = TASKS.filter(function (t) { return t.st === "bersih"; }).length;
+    $("hkDone").textContent = done; $("hkAll").textContent = TASKS.length;
+    $("hkBar").innerHTML = TASKS.map(function (t, i) { return "<i" + (i < done ? ' class="is-on"' : "") + "></i>"; }).join("");
+    $("hkList").innerHTML = TASKS.map(function (t, i) {
+      var btn = t.st === "kotor" ? '<button type="button" class="task__btn" data-t="' + i + '">Mulai</button>' : t.st === "proses" ? '<button type="button" class="task__btn task__btn--go" data-t="' + i + '">Selesai</button>' : '<span class="task__ok"><i data-lucide="check" class="i-sm"></i>Siap</span>';
+      return '<div class="task' + (t.st === "bersih" ? " is-done" : "") + '"><span class="task__no num">' + t.no + "</span><p><b>" + t.kind + '</b><span class="' + (t.urgent ? "task__urgent" : "") + '">' + t.note + "</span></p>" + btn + "</div>";
+    }).join("");
+    icons();
+  }
+  $("hkList").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-t]"); if (!b) return;
+    var t = TASKS[Number(b.getAttribute("data-t"))];
+    t.st = t.st === "kotor" ? "proses" : "bersih";
+    renderPhone(); renderTape();
+  });
+
+  // ---------- Konfirmasi: pesanan masuk ke papan ----------
+  var payLabel = "Bayar saat check-in";
+  $("payPick").addEventListener("lapak:select", function (e) { payLabel = e.detail.value; });
+  var OPSTYPE = { dlx: ["101", "103", "201"], pre: ["203", "204"], exb: ["206", "207"], exw: ["104"], rys: ["208"], prs: ["209"] };
+  $("bookForm").addEventListener("submit", function () {
+    var r = current(), code = "KNL-" + (41870 + DAYS[S.in].d * 3);
+    $("doneCode").textContent = code;
+    $("doneNote").textContent = "Detail pesanan dikirim ke WhatsApp " + $("fPhone").value + ". Check-in 14.00, check-out 12.00.";
+    $("doneGuest").textContent = $("fName").value + ", tiba " + $("fArrive").value;
+    $("doneWhen").textContent = whenText() + ", " + nights().length + " malam, " + S.guests + " tamu";
+    $("doneRoom").textContent = $("folioRoom").textContent + (S.plan === "bf" ? ", dengan sarapan" : ", tanpa sarapan");
+    $("donePay").textContent = payLabel + ", " + $("folioTotal").textContent;
+    S.booked = true;
+    var free = (OPSTYPE[r.id] || []).filter(function (no) { return !STAYS.some(function (s) { return s[0] === no && s[1] < S.out && s[1] + s[2] > S.in; }); })[0];
+    if (S.in < 14 && free) { STAYS.push([free, S.in, S.out - S.in, code + " " + $("fName").value.split(" ")[0], "new"]); renderTape(); }
+  });
+
+  render(); renderTape(); renderPhone();
+
+  // Layar sempit: geser papan tarif ke tanggal terpilih
+  function showPicked() {
+    $$(".js-days").forEach(function (el) {
+      if (window.innerWidth <= 1100 && el.scrollWidth > el.clientWidth) { var c = el.querySelector(".is-in"); if (c) el.scrollLeft = c.offsetLeft - el.offsetLeft - 8; }
+    });
+  }
+  window.addEventListener("hashchange", showPicked); showPicked();
+})();
+</script>
+</body>
+</html>

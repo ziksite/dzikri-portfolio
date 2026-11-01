@@ -1,0 +1,58 @@
+{
+  "slug": "boutique-heritage-hotel-website",
+  "kind": "Website",
+  "industry": "Hospitality",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Direct Booking", "Hotel Operations"],
+  "metrics": [
+    { "value": "6", "label": "ROOM TYPES COMPARED", "labelId": "TIPE KAMAR DIBANDINGKAN" },
+    { "value": "14", "label": "NIGHTS ON THE RATE BOARD", "labelId": "MALAM DI PAPAN TARIF" },
+    { "value": "1", "label": "SHARED ROOM STATUS BOARD", "labelId": "PAPAN STATUS KAMAR BERSAMA" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Home with a rate board: pick nights directly on the dates", "captionId": "Beranda dengan papan tarif: pilih malam langsung di tanggal" },
+    { "hash": "kamar", "caption": "Rate matrix comparing room only and breakfast totals", "captionId": "Matriks tarif membandingkan total tanpa dan dengan sarapan" },
+    { "hash": "pesan", "caption": "Guest details beside a night-by-night folio", "captionId": "Data tamu di samping folio rincian per malam" },
+    { "hash": "okupansi", "caption": "Occupancy board synced with the housekeeping phone view", "captionId": "Papan okupansi yang terhubung dengan HP housekeeping" }
+  ],
+  "content_en": {
+    "title": "Boutique Heritage Hotel Website",
+    "type": "DIRECT BOOKING WEBSITE",
+    "category": "Hospitality",
+    "summary": "A redesign for a boutique hotel in a colonial-era building: nightly rates on a date board, a room comparison with live totals, and a shared room status board for front office and housekeeping.",
+    "challenge": "The hotel's website showed only tonight's rate, and a sold-out room offered no other dates. Breakfast options and the final total appeared only after guests moved to a separate booking engine.\n\nSeveral pages had broken content: raw shortcodes above the package prices, an empty offers page, and a facilities button leading to a default post. Access details such as lifts, stairs, and balconies were buried in paragraphs, so guests with specific needs could not filter rooms.",
+    "solution": "The date form was replaced by a 14-night rate board where guests click arrival and departure directly. A rate matrix then compares each room type with and without breakfast, with totals that update as dates and guest numbers change, and filters for balcony, step-free, and wheelchair access.\n\nCheckout sits beside a night-by-night folio. Behind it, an occupancy board lists every room across 14 days and shares its cleaning status with a phone view for housekeeping. Planned stack: Next.js, Supabase, a local payment gateway, and the WhatsApp API.",
+    "features": [
+      "14-night rate board with direct date selection",
+      "Room matrix comparing room only and breakfast totals",
+      "King or twin choice per room type",
+      "Access filters for balcony, step-free, and wheelchair rooms",
+      "Night-by-night folio during checkout",
+      "Occupancy board by room number and booking source",
+      "Housekeeping phone view that updates room status on the board"
+    ],
+    "role": "Audit, UX, design system, and front-end prototype",
+    "impact": "A clearer direct booking path that shows the full price before guests leave the page, and one shared view of room status for front office and housekeeping. Prototype stage, not yet measured with real guests.",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Hotel Butik Heritage",
+    "type": "WEBSITE BOOKING LANGSUNG",
+    "category": "Perhotelan",
+    "summary": "Redesign untuk hotel butik di gedung era kolonial: tarif per malam di papan tanggal, perbandingan kamar dengan total yang langsung berubah, dan papan status kamar bersama untuk resepsionis dan housekeeping.",
+    "challenge": "Website hotel hanya menampilkan tarif malam ini, dan kamar yang habis tidak menawarkan tanggal lain. Pilihan sarapan dan total akhir baru terlihat setelah tamu pindah ke mesin booking terpisah.\n\nBeberapa halaman kontennya rusak: kode shortcode mentah di atas harga paket, halaman penawaran kosong, dan tombol fasilitas yang mengarah ke pos bawaan. Info akses seperti lift, tangga, dan balkon terkubur di paragraf, sehingga tamu dengan kebutuhan khusus sulit menyaring kamar.",
+    "solution": "Form tanggal diganti papan tarif 14 malam tempat tamu mengklik tanggal datang dan pulang langsung. Matriks tarif lalu membandingkan tiap tipe kamar tanpa dan dengan sarapan, dengan total yang berubah mengikuti tanggal dan jumlah tamu, serta filter balkon, tanpa tangga, dan akses kursi roda.\n\nCheckout berada di samping folio rincian per malam. Di belakangnya, papan okupansi menampilkan semua kamar selama 14 hari dan berbagi status kebersihan dengan tampilan HP housekeeping. Rencana stack: Next.js, Supabase, payment gateway lokal, dan WhatsApp API.",
+    "features": [
+      "Papan tarif 14 malam dengan pilihan tanggal langsung",
+      "Matriks kamar membandingkan total tanpa dan dengan sarapan",
+      "Pilihan king atau twin per tipe kamar",
+      "Filter akses balkon, tanpa tangga, dan kursi roda",
+      "Folio rincian per malam saat checkout",
+      "Papan okupansi per nomor kamar dan sumber pesanan",
+      "Tampilan HP housekeeping yang memperbarui status kamar di papan"
+    ],
+    "role": "Audit, UX, design system, dan prototype front-end",
+    "impact": "Alur booking langsung yang menampilkan harga penuh sebelum tamu meninggalkan halaman, dan satu tampilan status kamar untuk resepsionis dan housekeeping. Masih tahap prototype, belum diukur dengan tamu sungguhan.",
+    "testimonial": ""
+  }
+}

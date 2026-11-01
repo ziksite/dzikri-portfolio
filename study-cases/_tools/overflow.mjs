@@ -1,6 +1,6 @@
 import { chromium } from "playwright-core";
 const [slug, hash] = process.argv.slice(2);
-const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const b = await chromium.launch({ executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const p = await b.newPage({ viewport: { width: 390, height: 800 } });
 await p.goto(`file:///D:/Jack%20x%20claude/jack%20porto/public/prototypes/${slug}.html#${hash}`, { waitUntil: "networkidle" });
 await p.waitForTimeout(400);

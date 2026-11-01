@@ -1,6 +1,6 @@
 import { chromium } from "playwright-core";
 const slug = process.argv[2];
-const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const b = await chromium.launch({ executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
 p.on("requestfailed", r => console.log("FAILED", r.url().slice(-60), r.failure()?.errorText));
 await p.goto(`file:///D:/Jack%20x%20claude/jack%20porto/public/prototypes/${slug}.html`, { waitUntil: "networkidle" });

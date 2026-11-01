@@ -2,7 +2,7 @@
 
 Tujuan: mengambil website bisnis nyata (link), lalu membuat **redesign anonim** berupa prototype HTML statis yang terlihat seperti produk nyata, untuk dipajang di portfolio. Hasil yang sudah disetujui pemilik: `public/prototypes/multi-branch-barbershop-website.html` (contoh terbaik), `multi-specialty-clinic-website.html`, `villa-rental-booking-website.html`. Baca salah satunya + `ds/<slug>.css` + `study-cases/<slug>/design-system.md` sebagai contoh standar.
 
-Tanggal hari ini: **Minggu, 18 Oktober 2026**. Semua tanggal contoh di prototype mengacu ke sini.
+Tanggal hari ini: **Minggu, 1 November 2026**. Semua tanggal contoh di prototype mengacu ke sini.
 
 ---
 

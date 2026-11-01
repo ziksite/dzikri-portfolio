@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seri Dental — Harga perawatan gigi yang jelas sebelum datang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/dental-clinic-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">seri dental</a>
+      <div class="header__right">
+        <a class="header__link" href="#perawatan">Perawatan &amp; harga</a>
+        <a class="header__link" href="#jadwal">Jadwal dokter</a>
+        <a class="header__link" href="#kursi">Resepsionis</a>
+        <a class="btn btn-primary btn-sm" href="#perawatan">Buat janji</a>
+      </div>
+    </header>
+  </div>
+
+  <section class="hero">
+    <div class="photo hero__bg" style="--pos:50% 100%" data-img="assets/dental-clinic-website/ruang-tindakan.webp"></div>
+    <div class="wrap">
+      <div class="hero__in">
+        <h1 class="t-hero">Tahu harganya dulu,<br>baru duduk di kursi dokter.</h1>
+        <p class="hero__sub">Pilih keluhan, lihat perawatan dan harganya per gigi, lalu ambil jadwal di klinik terdekat.</p>
+        <form class="search" id="heroSearch">
+          <label class="search__seg"><i data-lucide="search" class="i-sm"></i><select id="heroComplaint" aria-label="Keluhan"></select></label>
+          <label class="search__seg"><i data-lucide="map-pin" class="i-sm"></i><select aria-label="Klinik" id="heroBranch"><option>Sawojajar, Malang</option><option>Dinoyo, Malang</option><option>Batu</option></select></label>
+          <label class="search__seg"><i data-lucide="calendar" class="i-sm"></i><select aria-label="Kapan"><option>Minggu ini</option><option>Besok</option><option>Akhir pekan</option></select></label>
+          <button class="btn btn-yellow">Lihat harga</button>
+        </form>
+        <div class="chips-o" id="heroChips"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Paling sering dipesan</h2><a class="see-all" href="#perawatan">Lihat semua<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      <div class="deals" id="deals"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Daftar harga lengkap</h2><span class="t-meta">Sama di tiga klinik. Harga final dikonfirmasi dokter setelah pemeriksaan.</span></div>
+      <div class="price-acc" id="priceAcc"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Jadwal kosong terdekat</h2><a class="see-all" href="#jadwal">Lihat semua<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      <div class="nexts" id="nexts"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Dokter gigi</h2><a class="see-all" href="#jadwal">Lihat jadwal<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      <div class="docs" id="docs"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Tiga klinik, buka setiap hari</h2></div>
+      <div class="cols-3">
+        <div class="place"><p class="t-h3">Seri Sawojajar</p><p class="t-meta">Sawojajar, Kota Malang</p><p class="t-meta">Senin–Minggu 10.00–19.00</p><a class="see-all" href="#">Petunjuk arah<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+        <div class="place"><p class="t-h3">Seri Dinoyo</p><p class="t-meta">Dinoyo, Kota Malang</p><p class="t-meta">Senin–Minggu 10.00–19.00</p><a class="see-all" href="#">Petunjuk arah<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+        <div class="place"><p class="t-h3">Seri Batu</p><p class="t-meta">Kota Batu</p><p class="t-meta">Senin–Minggu 10.00–19.00</p><a class="see-all" href="#">Petunjuk arah<i data-lucide="chevron-right" class="i-sm"></i></a></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Kata pasien</h2></div>
+      <div class="cols-3" id="quotes"></div>
+    </section>
+
+    <section class="sec">
+      <div class="band">
+        <div class="band__txt">
+          <h2 class="t-h2">Belum tahu perlu perawatan apa?</h2>
+          <p class="muted">Konsultasi online gratis. Ceritakan keluhannya lewat WhatsApp, admin membantu menghubungkan dengan dokter sebelum Anda datang.</p>
+          <a class="btn btn-primary" href="#" style="margin-top:6px"><i data-lucide="message-circle" class="i-sm"></i>Tanya lewat WhatsApp</a>
+        </div>
+        <div class="photo" data-img="assets/dental-clinic-website/ruang-peralatan.webp"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__panel">
+        <div style="display:flex;flex-direction:column;gap:10px"><span class="logo">seri dental</span><p>Praktik dokter gigi di Malang dan Batu. Senin–Minggu 10.00–19.00.</p></div>
+        <div><h4>Perawatan</h4><ul><li><a href="#perawatan">Scaling</a></li><li><a href="#perawatan">Tambal gigi</a></li><li><a href="#perawatan">Behel</a></li><li><a href="#perawatan">Gigi anak</a></li></ul></div>
+        <div><h4>Klinik</h4><ul><li><a href="#jadwal">Sawojajar</a></li><li><a href="#jadwal">Dinoyo</a></li><li><a href="#jadwal">Batu</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul><li><a href="#">WhatsApp admin</a></li><li><a href="#">Instagram</a></li><li><a href="#">© 2026 Seri Dental</a></li></ul></div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= KELUHAN & HARGA ================= -->
+<section data-screen="perawatan">
+  <div class="head-line">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">seri dental</a>
+        <div class="steps"><b>Keluhan &amp; harga</b><i data-lucide="chevron-right" class="i-sm"></i><a href="#jadwal">Jadwal</a><i data-lucide="chevron-right" class="i-sm"></i><span>Konfirmasi</span></div>
+        <div class="header__right"><a class="btn btn-line btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Tanya admin</a></div>
+      </header>
+    </div>
+  </div>
+  <div class="wrap pick-wrap">
+    <div class="pick-top">
+      <h1 class="t-h1">Apa yang Anda rasakan?</h1>
+      <div class="chips" id="complaints"></div>
+    </div>
+    <div class="pick">
+      <div class="chart">
+        <div class="chart__head"><p class="t-h3" id="chartTitle">Tandai gigi yang bermasalah</p><span class="t-small" id="chartHint">Harga dihitung per gigi</span></div>
+        <div id="chartBox"></div>
+      </div>
+      <div class="opts">
+        <div id="optList" class="opts"></div>
+        <ol class="visit"><li><b>Periksa</b>Dokter memeriksa gigi yang ditandai</li><li><b>Setuju</b>Tindakan dan biaya disepakati dulu</li><li><b>Tindakan</b>Dikerjakan di kursi sesuai rencana</li><li><b>Bayar</b>Di kasir setelah selesai</li></ol>
+        <p class="note"><i data-lucide="info" class="i-sm" style="margin-top:2px"></i><span>Ini perkiraan. Dokter memeriksa dulu dan memberi tahu kalau ada perubahan tindakan atau biaya sebelum mulai.</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="dock">
+    <div class="wrap dock__in">
+      <div class="dock__item"><small>Perawatan</small><b id="dkName"></b></div>
+      <div class="dock__item dock__item--opt"><small>Durasi</small><b id="dkDur"></b></div>
+      <div class="dock__item dock__total"><small>Perkiraan biaya</small><b id="dkTotal"></b></div>
+      <a class="btn btn-yellow" href="#jadwal">Pilih jadwal<i data-lucide="arrow-right" class="i-sm"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JADWAL ================= -->
+<section data-screen="jadwal">
+  <div class="head-line">
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href="#home">seri dental</a>
+        <div class="steps"><a href="#perawatan">Keluhan &amp; harga</a><i data-lucide="chevron-right" class="i-sm"></i><b>Jadwal</b><i data-lucide="chevron-right" class="i-sm"></i><span>Konfirmasi</span></div>
+        <div class="header__right"><a class="btn btn-line btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>Tanya admin</a></div>
+      </header>
+    </div>
+  </div>
+  <form data-demo-form="#bkDone" id="bkForm">
+    <div class="wrap">
+      <div class="sch-top">
+        <div style="display:flex;flex-direction:column;gap:10px;min-width:0;max-width:100%">
+          <h1 class="t-h1">2–8 November 2026</h1>
+          <div class="seg" data-select id="branchSeg" style="align-self:flex-start"><button type="button" class="is-active" data-value="Seri Sawojajar">Sawojajar</button><button type="button" data-value="Seri Dinoyo">Dinoyo</button><button type="button" data-value="Seri Batu">Batu</button></div>
+        </div>
+        <div class="doc-pick" data-select id="docPick"></div>
+      </div>
+      <div class="sch-scroll"><div class="sch" id="sch"></div></div>
+      <div class="patient">
+        <label class="field">Nama pasien<input value="Bima Saputra" id="pName"></label>
+        <label class="field">Nomor WhatsApp<input value="0812-0000-4471" inputmode="tel"></label>
+        <label class="field">Catatan untuk dokter (boleh kosong)<input placeholder="Mis. ngilu saat minum dingin, sedang hamil, alergi obat"></label>
+      </div>
+    </div>
+    <div class="dock">
+      <div class="wrap dock__in">
+        <div class="dock__item"><small>Perawatan</small><b id="dk2Name"></b></div>
+        <div class="dock__item"><small id="dk2Branch"></small><b id="dk2When"></b></div>
+        <div class="dock__item dock__item--opt dock__total"><small>Perkiraan biaya</small><b id="dk2Total"></b></div>
+        <button class="btn btn-yellow">Konfirmasi janji<i data-lucide="check" class="i-sm"></i></button>
+      </div>
+    </div>
+  </form>
+  <div class="wrap">
+    <div class="done" id="bkDone" hidden>
+      <span class="done__ic"><i data-lucide="check"></i></span>
+      <h1 class="t-h1">Janji terkonfirmasi</h1>
+      <p class="muted">Detail dan link ubah jadwal sudah dikirim lewat WhatsApp. Datang 10 menit lebih awal untuk mengisi data pasien baru.</p>
+      <div class="rows">
+        <div><span>Kode janji</span><span>SRD-2418</span></div>
+        <div><span>Waktu</span><span id="dnWhen"></span></div>
+        <div><span>Klinik &amp; dokter</span><span id="dnPlace"></span></div>
+        <div><span>Perawatan</span><span id="dnTreat"></span></div>
+        <div><span>Perkiraan biaya</span><span id="dnTotal"></span></div>
+      </div>
+      <p class="t-small">Bayar di kasir setelah tindakan. Reschedule gratis sampai 3 jam sebelum jadwal.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#"><i data-lucide="calendar-plus" class="i-sm"></i>Tambah ke kalender</a><a class="btn btn-line" href="#home">Kembali ke beranda</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN KURSI (TABLET RESEPSIONIS) ================= -->
+<section data-screen="kursi">
+  <div class="desk">
+    <div class="tablet">
+      <div class="t-screen">
+        <div class="t-bar">
+          <a class="logo" href="#home" style="font-size:20px">seri dental</a>
+          <nav class="t-tabs"><a class="is-active" href="#kursi"><i data-lucide="armchair" class="i-sm"></i>Papan kursi</a><a href="#kursi"><i data-lucide="calendar-days" class="i-sm"></i>Janji</a><a href="#kursi"><i data-lucide="users" class="i-sm"></i>Pasien</a><a href="#kursi"><i data-lucide="wallet" class="i-sm"></i>Kasir</a></nav>
+          <div class="t-right"><span class="muted">Min, 1 Nov · <b class="num" style="color:var(--ink)">14.20</b></span><span class="pill pill--mute">Seri Sawojajar</span></div>
+        </div>
+        <div class="t-main">
+          <div class="t-col">
+            <div class="chairs" id="chairs"></div>
+            <div class="card card--gantt">
+              <div class="card__h"><p class="t-h3">Hari ini per kursi</p><span class="t-small">Tutup 19.00</span></div>
+              <div class="gantt" id="gantt"></div>
+            </div>
+          </div>
+          <div class="t-col">
+            <div class="card">
+              <div class="card__h"><p class="t-h3">Antrean</p><span class="t-small" id="qCount"></span></div>
+              <div id="queue"></div>
+            </div>
+            <div class="card">
+              <div class="card__h"><p class="t-h3">Bayar di kasir</p><span class="t-small" id="payCount"></span></div>
+              <div id="pay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var rp = function (n) { return window.rupiah(n); };
+  var STAR = '<svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.7 7.3L12 17.8 5.5 21.7l1.7-7.3L1.5 9.5 9 8.9z"/></svg>';
+
+  /* ---------- Data ---------- */
+  var FRONT = [13, 12, 11, 21, 22, 23, 33, 32, 31, 41, 42, 43];
+  var T = {
+    tambal:   { n: "Tambal gigi komposit", d: "Resin sewarna gigi, kuat dan estetik", p: 329000, u: "gigi", m: 45, hi: [36] },
+    psa:      { n: "Perawatan saluran akar", d: "Untuk gigi belakang yang sarafnya terkena, termasuk penambalan", p: 3182000, u: "gigi", m: 90, hi: [46] },
+    crownp:   { n: "Crown porcelain PFM", d: "Mahkota porselen untuk gigi yang rusak besar", p: 2106000, u: "gigi", m: 60, hi: [16] },
+    crowne:   { n: "Crown porcelain Emax", d: "Mahkota full porselen, warna lebih alami", p: 2888000, u: "gigi", m: 60, hi: [11] },
+    cabut:    { n: "Cabut gigi", d: "Pencabutan gigi dewasa dengan bius lokal", p: 349000, u: "gigi", m: 45, hi: [37] },
+    odonto:   { n: "Operasi gigi bungsu kelas 1", d: "Odontektomi oleh dokter gigi untuk gigi bungsu terpendam", p: 2943000, u: "gigi", m: 90, hi: [38, 48] },
+    scaling:  { n: "Scaling & polishing", d: "Pembersihan karang gigi dan plak dengan ultrasonic scaler", p: 299000, u: "mulut", m: 45, hi: "all" },
+    whiten:   { n: "Teeth whitening", d: "Bleaching in-office 40 menit, bahan less-sensitive", p: 1299000, u: "mulut", m: 40, hi: FRONT },
+    vdirect:  { n: "Direct veneer komposit", d: "Dibentuk langsung di kursi, satu kali kunjungan", p: 612000, u: "gigi", m: 60, hi: [12, 11, 21, 22] },
+    vindir:   { n: "Indirect veneer porcelain", d: "Dibuat di lab, minimal dua kali kunjungan", p: 3202000, u: "gigi", m: 90, hi: [13, 12, 11, 21, 22, 23] },
+    bmetal:   { n: "Behel metal", d: "Termasuk scaling, polishing, dan cetak gigi", p: 3228000, u: "mulut", m: 90, hi: "all" },
+    bsaph:    { n: "Behel sapphire clear", d: "Bracket bening, termasuk scaling dan cetak gigi", p: 6678000, u: "mulut", m: 90, hi: "all" },
+    bself:    { n: "Behel self ligating metal", d: "Tanpa karet, termasuk scaling dan cetak gigi", p: 7828000, u: "mulut", m: 90, hi: "all" },
+    aligner:  { n: "Clear aligner basic", d: "Aligner bening lepas pasang, termasuk scaling dan cetak gigi", p: 11278000, u: "mulut", m: 60, hi: "all" },
+    retainer: { n: "Retainer Hawley 1 rahang", d: "Penahan hasil behel, termasuk cetak gigi", p: 1085000, u: "rahang", m: 30, hi: "all" },
+    akrilik:  { n: "Gigi tiruan akrilik", d: "Plat, 1 gigi, dan cetak gigi", p: 864000, u: "plat", m: 45, hi: [36, 37] },
+    flexy:    { n: "Gigi tiruan valplast", d: "Plat lentur, 1 gigi, dan cetak gigi", p: 1094000, u: "plat", m: 45, hi: [45, 46] },
+    anak:     { n: "Perawatan gigi anak", d: "Cabut, tambal, atau saluran akar gigi susu, ada souvenir tiap perawatan", p: 149000, pm: 249000, u: "tindakan", m: 30, hi: [36, 46] },
+    fluor:    { n: "Fluoride anak + pembersihan", d: "Pencegahan gigi berlubang pada anak", p: 229000, u: "anak", m: 30, hi: "all" }
+  };
+  var C = [
+    { k: "lubang", n: "Gigi berlubang", t: ["tambal", "psa", "crownp"] },
+    { k: "sakit", n: "Sakit gigi", t: ["psa", "cabut", "tambal"] },
+    { k: "karang", n: "Karang gigi & gusi berdarah", t: ["scaling"] },
+    { k: "kuning", n: "Gigi kuning", t: ["whiten", "vdirect", "vindir"] },
+    { k: "bungsu", n: "Gigi bungsu", t: ["odonto", "cabut"] },
+    { k: "rapi", n: "Ingin gigi rapi", t: ["bmetal", "bsaph", "bself", "aligner", "retainer"] },
+    { k: "hilang", n: "Gigi hilang", t: ["akrilik", "flexy", "crowne"] },
+    { k: "anak", n: "Gigi anak", t: ["anak", "fluor"] }
+  ];
+  var ACC = [
+    ["Pembersihan", ["scaling", "fluor"]], ["Tambal & saraf", ["tambal", "psa"]], ["Cabut & bedah", ["cabut", "odonto"]], ["Estetik", ["whiten", "vdirect", "vindir"]],
+    ["Behel & aligner", ["bmetal", "bsaph", "bself", "aligner"]], ["Mahkota", ["crownp", "crowne"]], ["Gigi tiruan", ["akrilik", "flexy", "retainer"]], ["Gigi anak", ["anak", "fluor"]]
+  ];
+  var D = [
+    { n: "Nadia", full: "drg. Nadia Prameswari", since: 2016, r: "4,9", c: 318 },
+    { n: "Rani", full: "drg. Rani Kusumawati", since: 2019, r: "4,9", c: 204 },
+    { n: "Tiara", full: "drg. Tiara Maharani", since: 2018, r: "4,8", c: 176 },
+    { n: "Salma", full: "drg. Salma Hanifah", since: 2017, r: "5,0", c: 241 }
+  ];
+  var DOCIMG = function (d, cls) { var i = d.full.replace("drg. ", "").split(" ").map(function (w) { return w[0]; }).join(""); return '<div class="initials ' + cls + '">' + i + '</div>'; };
+
+  var state = { c: "lubang", t: "tambal", teeth: [36, 46], branch: "Seri Sawojajar", doc: "all", day: 1, hour: 15, docName: "Rani" };
+
+  /* ---------- Lengkung gigi: oval dua rahang seperti odontogram ---------- */
+  var W = [22, 19, 22, 24, 24, 33, 33, 30]; // lebar dari gigi seri ke geraham bungsu
+  function quarter(cx, cy, rx, ry, sign) {
+    // Titik sepanjang seperempat elips, dari garis tengah ke ujung rahang
+    var pts = [], L = 0, px = 0, py = -ry, i, a;
+    for (i = 1; i <= 400; i++) {
+      a = (i / 400) * (Math.PI * .485);
+      var x = rx * Math.sin(a), y = -ry * Math.cos(a);
+      L += Math.hypot(x - px, y - py); pts.push({ l: L, x: x, y: y, a: a }); px = x; py = y;
+    }
+    var sum = W.reduce(function (s, v) { return s + v; }, 0), k = L / sum, run = 0, out = [];
+    W.forEach(function (w) {
+      var mid = (run + w / 2) * k; run += w;
+      var p = pts.find(function (q) { return q.l >= mid; }) || pts[pts.length - 1];
+      out.push({ x: p.x, y: p.y, a: p.a * 180 / Math.PI, w: w * k * .9 });
+    });
+    return out;
+  }
+  function archSVG(opts) {
+    var Q = quarter(0, 0, 150, 170), h = "", on = opts.on, nums = opts.nums;
+    function tooth(fdi, q, sx, sy) {
+      var x = 210 + sx * q.x, y = (sy < 0 ? 200 : 230) + (sy < 0 ? q.y : -q.y) * 1;
+      var rot = sx * q.a * (sy < 0 ? 1 : -1);
+      var lit = on === "all" || (on && on.indexOf(fdi) > -1);
+      var t = '<g class="tooth' + (lit ? " is-on" : "") + '" data-t="' + fdi + '"' + (opts.mini ? "" : ' role="button" tabindex="0" aria-label="Gigi ' + fdi + '"') + ">";
+      var R = '<rect x="' + (-q.w / 2).toFixed(1) + '" y="-15" width="' + q.w.toFixed(1) + '" height="30" rx="8" transform="translate(' + x.toFixed(1) + " " + y.toFixed(1) + ") rotate(" + rot.toFixed(1) + ')"' + (opts.mini ? ' style="fill:' + (lit ? "var(--blue)" : "#fff") + ";stroke-width:2;stroke:" + (lit ? "var(--blue)" : "#b9c1cd") + '"' : "") + "/>";
+      t += R; if (nums) t += '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '">' + fdi + "</text>";
+      return t + "</g>";
+    }
+    for (var i = 0; i < 8; i++) {
+      h += tooth(11 + i, Q[i], -1, -1) + tooth(21 + i, Q[i], 1, -1) + tooth(41 + i, Q[i], -1, 1) + tooth(31 + i, Q[i], 1, 1);
+    }
+    var center = opts.center || "";
+    return '<svg viewBox="30 0 360 430" role="group" aria-label="Peta gigi">' + h + center + "</svg>";
+  }
+
+  /* ---------- Beranda ---------- */
+  $("heroComplaint").innerHTML = C.map(function (c) { return '<option value="' + c.k + '">' + c.n + "</option>"; }).join("");
+  $("heroChips").innerHTML = C.map(function (c) { return '<button type="button" class="chip-o" data-c="' + c.k + '">' + c.n + "</button>"; }).join("");
+  function fmtP(t) { return t.pm ? rp(t.p).replace(".000", "") + "–" + rp(t.pm).replace("Rp", "").replace(".000", "") + " rb" : rp(t.p); }
+  var top5 = [["scaling", "karang"], ["tambal", "lubang"], ["whiten", "kuning"], ["bmetal", "rapi"], ["anak", "anak"]];
+  $("deals").innerHTML = top5.map(function (x) {
+    var t = T[x[0]];
+    return '<button class="deal" data-c="' + x[1] + '" data-t2="' + x[0] + '"><div class="deal__media">' + archSVG({ on: t.hi, mini: true }) + '<span class="deal__price">' + fmtP(t) + (t.u === "gigi" ? " / gigi" : "") + '</span></div><span class="deal__name">' + t.n + '</span><span class="t-meta">' + t.m + ' mnt · semua klinik</span></button>';
+  }).join("");
+  $("priceAcc").innerHTML = ACC.map(function (g, i) {
+    return '<details class="acc"' + (i < 4 ? " open" : "") + '><summary>' + g[0] + '<i data-lucide="chevron-down" class="i-sm"></i></summary><ul>' + g[1].map(function (id) { var t = T[id]; return "<li><span>" + t.n + "</span><span>" + fmtP(t) + "</span></li>"; }).join("") + "</ul></details>";
+  }).join("");
+  var nx = [["Sen, 2 Nov · 10.30", 0, "Sawojajar", "tambal"], ["Sen, 2 Nov · 13.00", 3, "Batu", "scaling"], ["Sel, 3 Nov · 15.00", 1, "Sawojajar", "cabut"], ["Sel, 3 Nov · 17.30", 2, "Dinoyo", "whiten"], ["Rab, 4 Nov · 11.00", 0, "Dinoyo", "tambal"]];
+  $("nexts").innerHTML = nx.map(function (n) {
+    var d = D[n[1]], t = T[n[3]];
+    return '<div class="next"><div class="next__top num">' + n[0] + '<span class="tag">' + t.m + ' mnt</span></div><div class="next__who">' + DOCIMG(d, "ava") + '<div><p style="font-weight:600;line-height:1.3">' + d.full + '</p><p class="t-small">Seri ' + n[2] + '</p></div></div><div class="next__bot"><a class="btn btn-line btn-sm" href="#jadwal">Ambil</a><span class="t-small">' + t.n.replace(/ &.*$/, "").split(" ").slice(0, 2).join(" ") + "</span></div></div>";
+  }).join("");
+  $("docs").innerHTML = D.map(function (d) {
+    return '<a class="doc" href="#jadwal">' + DOCIMG(d, "") + '<span class="t-h3">' + d.full + '</span><span class="t-meta">Dokter gigi umum · praktik sejak ' + d.since + '</span><span class="rate">' + STAR + d.r + ' <span class="muted" style="font-weight:400">(' + d.c + " ulasan)</span></span></a>";
+  }).join("");
+  var R = [["Maya L.", "Pasang behel", "Dokternya ramah dan menjelaskan detail. Biaya sudah saya tahu sebelum datang, jadi tidak ada kaget di kasir."], ["Nindy A.", "Pemeriksaan saat hamil", "Pertama kali ke dokter gigi. Tempatnya nyaman, penjelasannya mudah dimengerti, dan dokter hati-hati karena saya sedang hamil."], ["Bram S.", "Cabut gigi", "Sudah tiga kali ke sini, dari scaling sampai cabut gigi. Petugas cekatan dan enak diajak diskusi soal tindakan."]];
+  $("quotes").innerHTML = R.map(function (r) { return '<div class="quote"><span class="stars">' + STAR.repeat(5) + "</span><p>" + r[2] + '</p><p class="t-small"><b style="color:var(--ink)">' + r[0] + "</b> · " + r[1] + "</p></div>"; }).join("");
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-c]"); if (!b || !b.closest("[data-screen=home]")) return;
+    setComplaint(b.getAttribute("data-c"), b.getAttribute("data-t2")); location.hash = "perawatan";
+  });
+  $("heroSearch").addEventListener("submit", function (e) { e.preventDefault(); setComplaint($("heroComplaint").value); location.hash = "perawatan"; });
+
+  /* ---------- Keluhan & harga ---------- */
+  function qty() { return T[state.t].u === "gigi" ? state.teeth.length : 1; }
+  function total() { return T[state.t].p * qty(); }
+  function totalTxt() { var t = T[state.t]; return t.pm ? rp(t.p) + "–" + rp(t.pm).replace("Rp", "") : rp(total()); }
+  function nameTxt() { var t = T[state.t]; return t.n + (t.u === "gigi" ? " × " + qty() : ""); }
+  function setComplaint(k, tid) {
+    state.c = k; var c = C.find(function (x) { return x.k === k; });
+    state.t = tid || c.t[0];
+    var hi = T[state.t].hi; if (T[state.t].u === "gigi" && hi !== "all") state.teeth = hi.slice();
+    renderPick();
+  }
+  function renderPick() {
+    var c = C.find(function (x) { return x.k === state.c; }), t = T[state.t], perT = t.u === "gigi";
+    $("complaints").innerHTML = C.map(function (x) { return '<button type="button" class="chip' + (x.k === state.c ? " is-active" : "") + '" data-ck="' + x.k + '">' + x.n + "</button>"; }).join("");
+    $("optList").innerHTML = c.t.map(function (id) {
+      var o = T[id], on = id === state.t, unit = o.u === "gigi" ? "per gigi" : o.u === "mulut" ? "satu mulut" : o.u === "rahang" ? "per rahang" : o.u === "plat" ? "plat + 1 gigi" : "per " + o.u;
+      return '<button type="button" class="opt' + (on ? " is-on" : "") + '" data-opt="' + id + '"><span class="opt__radio"></span><span><span class="opt__name">' + o.n + '</span><br><span class="opt__desc">' + o.d + '</span><span class="opt__tags"><span class="tag">' + o.m + ' mnt</span></span></span><span class="opt__price">' + (o.pm ? fmtP(o) : rp(o.p)) + "<small>" + unit + "</small></span></button>";
+    }).join("");
+    $("chartTitle").textContent = perT ? "Tandai gigi yang bermasalah" : "Area perawatan";
+    $("chartHint").textContent = perT ? "Harga dihitung per gigi" : "Tidak dihitung per gigi";
+    var center = '<text class="chart__c1" x="210" y="212">' + (perT ? state.teeth.length : (t.hi === "all" ? "Semua" : t.hi.length)) + '</text><text class="chart__c2" x="210" y="234">' + (perT ? "gigi dipilih" : t.hi === "all" ? "gigi" : "gigi terlihat") + '</text><text class="side-lab" x="104" y="218">Kanan</text><text class="side-lab" x="316" y="218">Kiri</text>';
+    $("chartBox").className = perT ? "" : "is-whole";
+    $("chartBox").innerHTML = archSVG({ on: perT ? state.teeth : t.hi, nums: true, center: center });
+    $("dkName").textContent = nameTxt(); $("dkDur").textContent = "±" + (Math.round((t.m + (perT ? (qty() - 1) * t.m / 2 : 0)) / 5) * 5) + " menit"; $("dkTotal").textContent = totalTxt();
+    renderDock2();
+  }
+  $("complaints").addEventListener("click", function (e) { var b = e.target.closest("[data-ck]"); if (b) setComplaint(b.getAttribute("data-ck")); });
+  $("optList").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-opt]"); if (!b) return; state.t = b.getAttribute("data-opt");
+    if (T[state.t].u === "gigi" && !state.teeth.length) state.teeth = [36];
+    renderPick();
+  });
+  function toggleTooth(e) {
+    var g = e.target.closest(".tooth"); if (!g || T[state.t].u !== "gigi") return;
+    var n = Number(g.getAttribute("data-t")), i = state.teeth.indexOf(n);
+    if (i > -1) { if (state.teeth.length > 1) state.teeth.splice(i, 1); } else state.teeth.push(n);
+    renderPick();
+  }
+  $("chartBox").addEventListener("click", toggleTooth);
+  $("chartBox").addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleTooth(e); } });
+
+  /* ---------- Jadwal ---------- */
+  var DAYS = [["Sen", 2, "Senin"], ["Sel", 3, "Selasa"], ["Rab", 4, "Rabu"], ["Kam", 5, "Kamis"], ["Jum", 6, "Jumat"], ["Sab", 7, "Sabtu"], ["Min", 8, "Minggu"]];
+  var HRS = [10, 11, 12, 13, 14, 15, 16, 17, 18];
+  $("docPick").innerHTML = '<button type="button" class="doc-pill doc-pill--all is-active" data-value="all">Semua dokter</button>' + D.map(function (d) { return '<button type="button" class="doc-pill" data-value="' + d.n + '">' + DOCIMG(d, "ava ava--sm") + d.n + "</button>"; }).join("");
+  function slotDoc(dI, h) {
+    // Jadwal contoh yang stabil: sebagian sel penuh, tiap sel satu dokter
+    if (dI === 1 && h === 15) return D[1];
+    var seed = (dI * 7 + h * 3 + state.branch.length) % 11;
+    if (seed % 3 === 0) return null;
+    return D[(dI + h) % 4];
+  }
+  function renderSch() {
+    var h = '<div class="sch__d"></div>' + DAYS.map(function (d) { return '<div class="sch__d">' + d[0] + "<b>" + d[1] + "</b></div>"; }).join("");
+    HRS.forEach(function (hr, r) {
+      h += '<div class="sch__t' + (r ? "" : " sch__t--0") + '">' + hr + ".00</div>";
+      DAYS.forEach(function (d, i) {
+        var doc = slotDoc(i, hr), show = doc && (state.doc === "all" || state.doc === doc.n), sel = show && state.day === i && state.hour === hr;
+        h += '<div class="cell' + (r ? "" : " cell--0") + '">' + (show ? '<button type="button" class="slot' + (sel ? " is-selected" : "") + '" data-d="' + i + '" data-h="' + hr + '" data-n="' + doc.n + '">' + doc.n + "</button>" : '<span class="slot-off"></span>') + "</div>";
+      });
+    });
+    $("sch").innerHTML = h;
+  }
+  function whenTxt() { var d = DAYS[state.day]; return d[2] + ", " + d[1] + " Nov · " + state.hour + ".00"; }
+  function renderDock2() {
+    $("dk2Name").textContent = nameTxt(); $("dk2Total").textContent = totalTxt();
+    $("dk2Branch").textContent = state.branch + " · drg. " + state.docName; $("dk2When").textContent = whenTxt();
+  }
+  $("sch").addEventListener("click", function (e) {
+    var b = e.target.closest(".slot"); if (!b) return;
+    state.day = +b.getAttribute("data-d"); state.hour = +b.getAttribute("data-h"); state.docName = b.getAttribute("data-n");
+    renderSch(); renderDock2();
+  });
+  $("branchSeg").addEventListener("lapak:select", function (e) { state.branch = e.detail.value; renderSch(); renderDock2(); });
+  $("docPick").addEventListener("lapak:select", function (e) { state.doc = e.detail.value; renderSch(); loadPhotos(); });
+  $("bkForm").addEventListener("submit", function () {
+    var d = D.find(function (x) { return x.n === state.docName; });
+    $("dnWhen").textContent = whenTxt(); $("dnPlace").textContent = state.branch + " · " + d.full; $("dnTreat").textContent = nameTxt(); $("dnTotal").textContent = totalTxt();
+    window.scrollTo(0, 0);
+  });
+
+  /* ---------- Papan kursi ---------- */
+  var chairs = [
+    { id: 1, st: "busy", who: "Dewi Anggraini", tr: "Scaling & polishing", doc: "drg. Nadia", price: 299000, end: "14.40", left: 20, pct: 55 },
+    { id: 2, st: "clean", checks: [true, false, false], tr: "Selesai: cabut gigi" },
+    { id: 3, st: "free" }
+  ];
+  var queue = [
+    { t: "14.30", n: "Bima Saputra", tr: "Tambal komposit × 2", doc: "drg. Rani", price: 658000, here: true },
+    { t: "15.00", n: "Fitri Handayani", tr: "Teeth whitening", doc: "drg. Nadia", price: 1299000, here: true },
+    { t: "15.45", n: "Arga Pratama", tr: "Direct veneer × 2", doc: "drg. Rani", price: 1224000, here: false },
+    { t: "16.30", n: "Raka (anak)", tr: "Perawatan gigi anak", doc: "drg. Nadia", price: 199000, here: false }
+  ];
+  var pay = [{ n: "Yusuf Hidayat", tr: "Cabut gigi", price: 349000 }];
+  var CHECK = ["Alat masuk autoklaf", "Permukaan & unit dilap", "Suction dan selang dibilas"];
+  function renderBoard() {
+    var hereNext = queue.find(function (q) { return q.here; });
+    $("chairs").innerHTML = chairs.map(function (c, i) {
+      var h = '<div class="ch ch--' + c.st + '"><div class="ch__top"><span class="t-h3">Kursi ' + c.id + "</span>";
+      if (c.st === "busy") {
+        h += '<span class="pill pill--busy">Dalam tindakan</span></div><p class="ch__who">' + c.who + '</p><div><p>' + c.tr + '</p><p class="t-meta">' + c.doc + '</p></div><div class="ch__prog"><i style="width:' + c.pct + '%"></i></div><p class="t-small">Selesai sekitar ' + c.end + " · sisa " + c.left + ' mnt</p><div class="ch__foot"><p class="t-small">Estimasi ' + rp(c.price) + '</p><button class="btn btn-primary" data-act="finish" data-i="' + i + '">Selesai, kirim ke kasir</button></div>';
+      } else if (c.st === "clean") {
+        var ok = c.checks.every(Boolean);
+        h += '<span class="pill pill--clean">Sterilisasi</span></div><p class="t-meta">' + c.tr + "</p>" + CHECK.map(function (t, k) { return '<label class="check"><input type="checkbox" data-chk="' + i + "," + k + '"' + (c.checks[k] ? " checked" : "") + ">" + t + "</label>"; }).join("") + '<div class="ch__foot"><button class="btn btn-primary" data-act="ready" data-i="' + i + '"' + (ok ? "" : " disabled") + ">Kursi siap dipakai</button></div>";
+      } else {
+        h += '<span class="pill pill--free">Kosong</span></div><p class="t-meta">Siap dipakai.</p><div class="ch__foot">' + (hereNext ? '<p class="t-small">Berikutnya: <b style="color:var(--ink)">' + hereNext.n + "</b>, " + hereNext.tr + '</p><button class="btn btn-primary" data-act="call" data-i="' + i + '">Panggil ke kursi ' + c.id + "</button>" : '<p class="t-small">Belum ada pasien yang hadir.</p>') + "</div>";
+      }
+      return h + "</div>";
+    }).join("");
+    $("queue").innerHTML = queue.length ? queue.map(function (q) {
+      return '<div class="q' + (q.here ? "" : " q--wait") + '"><span class="q__t">' + q.t + '</span><div style="min-width:0"><p class="q__n">' + q.n + '</p><p class="q__m">' + q.tr + " · " + q.doc + '</p></div><span class="pill ' + (q.here ? "pill--free" : "pill--mute") + '" data-here="' + q.n + '" style="cursor:pointer">' + (q.here ? "Hadir" : "Belum") + "</span></div>";
+    }).join("") : '<p class="t-meta">Antrean kosong.</p>';
+    $("qCount").textContent = queue.filter(function (q) { return q.here; }).length + " hadir dari " + queue.length;
+    $("pay").innerHTML = pay.length ? pay.map(function (p, i) {
+      return '<div class="q q--pay"><div style="min-width:0"><p class="q__n">' + p.n + '</p><p class="q__m">' + p.tr + " · " + rp(p.price) + '</p></div><button class="btn btn-line btn-sm" data-act="paid" data-i="' + i + '">Lunas</button></div>';
+    }).join("") : '<p class="t-meta">Tidak ada tagihan.</p>';
+    $("payCount").textContent = pay.length + " tagihan";
+  }
+  $("chairs").addEventListener("change", function (e) {
+    var a = e.target.getAttribute("data-chk"); if (!a) return; var p = a.split(",");
+    chairs[+p[0]].checks[+p[1]] = e.target.checked; renderBoard();
+  });
+  document.querySelector("[data-screen=kursi]").addEventListener("click", function (e) {
+    var tog = e.target.closest("[data-here]");
+    if (tog) { var q = queue.find(function (x) { return x.n === tog.getAttribute("data-here"); }); q.here = !q.here; renderBoard(); return; }
+    var b = e.target.closest("[data-act]"); if (!b || b.disabled) return;
+    var act = b.getAttribute("data-act"), i = +b.getAttribute("data-i"), c = chairs[i];
+    if (act === "finish") { pay.push({ n: c.who, tr: c.tr, price: c.price }); chairs[i] = { id: c.id, st: "clean", checks: [false, false, false], tr: "Selesai: " + c.tr.toLowerCase() }; }
+    if (act === "ready") chairs[i] = { id: c.id, st: "free" };
+    if (act === "paid") pay.splice(i, 1);
+    if (act === "call") {
+      var k = queue.findIndex(function (x) { return x.here; }), n = queue.splice(k, 1)[0];
+      chairs[i] = { id: c.id, st: "busy", who: n.n, tr: n.tr, doc: n.doc, price: n.price, end: "15.10", left: 45, pct: 3 };
+    }
+    renderBoard();
+  });
+  (function gantt() {
+    var L = [
+      ["Kursi 1", [[0, .75, "done", "Rizal"], [1, 1, "done", "Ayu"], [2.5, .75, "done", "Dimas"], [3.9, .75, "now", "Dewi"], [5, 1.5, "", "Fitri"], [7, .75, "", "Hana"]]],
+      ["Kursi 2", [[.5, 1.5, "done", "Lukman"], [2.25, 1, "done", "Citra"], [3.5, .75, "done", "Yusuf"], [4.25, .25, "clean", ""], [5.75, 1, "", "Arga"], [7.5, .75, "", "Vina"]]],
+      ["Kursi 3", [[0, 1, "done", "Tono"], [1.5, 1.5, "done", "Mega"], [4.5, .75, "", "Bima"], [6.5, .5, "", "Raka"]]]
+    ];
+    var h = '<div class="g-hours"><span></span>' + [10, 11, 12, 13, 14, 15, 16, 17, 18].map(function (x) { return "<span>" + x + ".00</span>"; }).join("") + "</div>";
+    L.forEach(function (r) {
+      h += '<div class="g-row"><span class="t-small">' + r[0] + '</span><div class="g-lane">' + r[1].map(function (b) { return '<span class="g-b ' + (b[2] ? "g-b--" + b[2] : "") + '" style="--s:' + b[0] + ";--d:" + b[1] + '">' + b[3] + "</span>"; }).join("") + '<span class="g-now" style="--s:4.33"></span></div></div>';
+    });
+    $("gantt").innerHTML = h;
+  })();
+
+  /* ---------- Foto ---------- */
+  function loadPhotos() {
+    document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+      if (box.querySelector("img")) return;
+      var img = new Image(); img.alt = ""; img.onload = function () { if (!box.querySelector("img")) box.appendChild(img); }; img.src = box.getAttribute("data-img");
+    });
+  }
+
+  renderPick(); renderSch(); renderDock2(); renderBoard(); loadPhotos();
+  if (window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

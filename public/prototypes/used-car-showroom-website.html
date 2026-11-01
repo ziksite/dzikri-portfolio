@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lajur Motor — Mobil bekas, dipilih dari cicilan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/used-car-showroom-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="#home">Lajur Motor</a>
+      <nav class="nav"><a href="#katalog" data-nav="katalog">Stok</a><a href="#unit" data-nav="unit">Simulasi kredit</a><a href="#lot" data-nav="lot">Papan lot</a></nav>
+      <div class="header__right"><span class="stock-note">105 unit · update Minggu, 1 Nov</span><a class="btn btn-primary btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a></div>
+    </header>
+
+    <section class="budget">
+      <h1 class="budget__line">Cicilan <b id="hBudgetT">Rp5,5 jt</b> per bulan, TDP <b id="hTdpT">Rp30 jt</b>, tenor <b id="hTenT">59 kali</b>. Ini mobil yang masuk.</h1>
+      <div class="budget__dials">
+        <div class="dial"><div class="dial__top"><span>Cicilan per bulan</span><b id="hBudgetV">Rp5,5 jt</b></div><input class="range" id="hBudget" type="range" min="3000000" max="10500000" step="100000" value="5500000" aria-label="Cicilan per bulan"></div>
+        <div class="dial"><div class="dial__top"><span>Uang muka (TDP)</span><b id="hTdpV">Rp30 jt</b></div><input class="range" id="hTdp" type="range" min="15" max="60" step="1" value="30" aria-label="Uang muka"></div>
+        <div class="dial"><div class="dial__top"><span>Tenor</span><b id="hTenV">59 kali</b></div><input class="range" id="hTen" type="range" min="0" max="2" step="1" value="2" aria-label="Tenor"></div>
+        <div class="budget__result"><b id="hCount">0 unit</b><span id="hCountSub">masuk budget</span></div>
+      </div>
+    </section>
+
+    <div class="lineup" id="hLineup"></div>
+
+    <section class="sec two">
+      <div class="panel">
+        <h2 class="t-h2">Dua harga, tertulis sejak awal</h2>
+        <p class="t-meta" style="margin-top:6px">Setiap unit menampilkan harga kredit dan harga tunai. Paket TDP dan angsuran ikut tayang, jadi hitungan di layar sama dengan yang dibawa sales.</p>
+        <div class="price-pair">
+          <div><span class="t-small">Harga kredit Honda HR-V SE</span><b>Rp295 jt</b></div>
+          <div><span class="t-small">Harga tunai unit yang sama</span><b>Rp320 jt</b></div>
+        </div>
+        <a class="btn btn-outline btn-sm" href="#unit">Coba simulasi unit ini<i data-lucide="arrow-right" class="i-sm"></i></a>
+      </div>
+      <div class="panel">
+        <h2 class="t-h2">Dicek sebelum tayang</h2>
+        <ol class="steps">
+          <li><div><b>Bebas banjir</b>Karpet, rel kursi, dan kolong diperiksa.</div></li>
+          <li><div><b>Rangka tidak tabrak</b>Sasis dan tiang pintu diukur.</div></li>
+          <li><div><b>Kilometer asli</b>Odometer dicocokkan dengan catatan servis.</div></li>
+          <li><div><b>Surat lengkap</b>BPKB, STNK, dan faktur dicek ke Samsat.</div></li>
+          <li><div><b>Garansi 1 tahun</b>Mesin dan transmisi, untuk pembelian kredit.</div></li>
+          <li><div><b>Bantuan darurat 24 jam</b>Mogok di jalan, satu nomor hotline.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head"><h2 class="t-h2">Empat cabang</h2><a class="btn btn-outline btn-sm" href="#katalog">Lihat semua stok</a></div>
+      <div class="rows">
+        <a class="row" href="#katalog" data-branch="Banyumanik"><b>Banyumanik, Semarang</b><span class="t-meta">44 unit</span><span class="t-meta">Setiap hari 09.00–18.00</span><i data-lucide="chevron-right" class="i-sm"></i></a>
+        <a class="row" href="#katalog" data-branch="Majapahit"><b>Majapahit, Semarang</b><span class="t-meta">40 unit</span><span class="t-meta">Setiap hari 09.00–18.00</span><i data-lucide="chevron-right" class="i-sm"></i></a>
+        <a class="row" href="#katalog" data-branch="Ungaran"><b>Ungaran</b><span class="t-meta">12 unit</span><span class="t-meta">Setiap hari 09.00–17.00</span><i data-lucide="chevron-right" class="i-sm"></i></a>
+        <a class="row" href="#katalog" data-branch="Kudus"><b>Kudus</b><span class="t-meta">9 unit</span><span class="t-meta">Senin–Sabtu 09.00–17.00</span><i data-lucide="chevron-right" class="i-sm"></i></a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div><h2 class="t-h2">Mobil lama bisa jadi TDP</h2><p style="margin-top:6px">Kirim foto dan STNK lewat WhatsApp. Sales menaksir, lalu nilainya dipotongkan dari unit yang kamu pilih.</p></div>
+      <a class="btn btn-primary" href="#"><i data-lucide="repeat" class="i-sm"></i>Taksir tukar tambah</a>
+    </section>
+  </div>
+  <footer class="footer"><div class="wrap footer__in"><span class="logo" style="font-size:19px;color:var(--ink)">Lajur Motor</span><span>Kredit melalui empat perusahaan pembiayaan rekanan. Hotline 24 jam 0800-1-525-870.</span><span>© 2026 Lajur Motor</span></div></footer>
+</section>
+
+<!-- ================= KATALOG ================= -->
+<section data-screen="katalog">
+  <div class="wrap" style="padding-bottom:64px">
+    <header class="header header--line">
+      <a class="logo" href="#home">Lajur Motor</a>
+      <nav class="nav"><a href="#katalog" data-nav="katalog">Stok</a><a href="#unit" data-nav="unit">Simulasi kredit</a><a href="#lot" data-nav="lot">Papan lot</a></nav>
+      <div class="header__right"><a class="btn btn-primary btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a></div>
+    </header>
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;margin:20px 0 12px;flex-wrap:wrap">
+      <div><h1 class="t-h1">Stok unit</h1><p class="t-meta">Update Minggu, 1 November. Unit terjual tetap tampil 7 hari.</p></div>
+      <div class="field" style="width:220px"><label for="fSort">Urutkan</label><select class="select" id="fSort"><option value="new">Terbaru masuk</option><option value="cheap">Harga termurah</option><option value="high">Harga termahal</option><option value="km">Kilometer terendah</option></select></div>
+    </div>
+    <div class="pills" id="fBrand"></div>
+    <div class="filters">
+      <div class="field"><label for="fPrice">Harga maksimal <b id="fPriceV">Rp300 jt</b></label><input class="range" id="fPrice" type="range" min="110" max="300" step="5" value="300"></div>
+      <div class="field"><span>Transmisi</span><div class="seg" id="fTrans"></div></div>
+      <div class="field"><label for="fYear">Tahun mulai</label><select class="select" id="fYear"><option value="0">Semua tahun</option><option value="2024">2024 ke atas</option><option value="2023">2023 ke atas</option><option value="2021">2021 ke atas</option><option value="2017">2017 ke atas</option></select></div>
+      <div class="field"><label for="fBranch">Cabang</label><select class="select" id="fBranch"><option value="">Semua cabang</option><option>Banyumanik</option><option>Majapahit</option><option>Ungaran</option><option>Kudus</option></select></div>
+      <div class="field"><label for="fBody">Bentuk</label><select class="select" id="fBody"><option value="">Semua bentuk</option><option>MPV</option><option>SUV</option><option>Hatchback</option></select></div>
+    </div>
+    <p class="t-meta" style="margin:16px 0 12px"><b id="fCount" style="color:var(--ink)">0</b> dari 15 unit terbaru. Stok lengkap 105 unit.</p>
+    <div class="grid-units" id="fGrid"></div>
+    <div class="empty" id="fEmpty" hidden><p class="t-h3">Tidak ada unit yang cocok</p><p class="t-meta">Longgarkan harga atau tahun, atau minta sales mencarikan dari stok lengkap.</p><button class="btn btn-outline btn-sm" id="fReset">Hapus semua filter</button></div>
+  </div>
+</section>
+
+<!-- ================= DETAIL UNIT ================= -->
+<section data-screen="unit">
+  <div class="wrap">
+    <header class="header header--line">
+      <a class="logo" href="#home">Lajur Motor</a>
+      <nav class="nav"><a href="#katalog" data-nav="katalog">Stok</a><a href="#unit" data-nav="unit">Simulasi kredit</a><a href="#lot" data-nav="lot">Papan lot</a></nav>
+      <div class="header__right"><a class="btn btn-primary btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp</a></div>
+    </header>
+    <p class="crumb"><a href="#katalog">Stok</a><i data-lucide="chevron-right" class="i-sm"></i><span id="uCrumb"></span></p>
+    <div class="unit">
+      <div class="unit__col">
+        <div>
+          <div class="unit__head">
+            <div><h1 class="t-h1" id="uName"></h1><p class="t-meta" id="uSub"></p></div>
+            <span class="status" id="uStatus"></span>
+          </div>
+          <div class="stage"><img id="uStage" alt=""><span class="stocktab" id="uTab"></span></div>
+          <div class="thumbs" id="uThumbs"></div>
+          <div class="specs" id="uSpecs"></div>
+        </div>
+        <div>
+          <div class="sec__head" style="margin-bottom:6px"><h2 class="t-h2">Hasil inspeksi</h2><span class="status" id="uScore"></span></div>
+          <p class="t-meta" style="margin-bottom:8px">Dicek mekanik cabang sebelum unit tayang. Catatan ditulis apa adanya.</p>
+          <ul class="check" id="uCheck"></ul>
+        </div>
+        <div>
+          <h2 class="t-h2" style="margin-bottom:6px">Riwayat unit</h2>
+          <ul class="hist" id="uHist"></ul>
+        </div>
+      </div>
+
+      <aside class="cfg">
+        <div id="stepCredit" style="display:flex;flex-direction:column;gap:8px">
+          <div class="cfg__title"><p class="t-h3">Simulasi kredit</p><div class="seg" id="uMode" style="height:38px"><button class="is-active" data-v="kredit">Kredit</button><button data-v="tunai">Tunai</button></div></div>
+          <div id="credBox" style="display:flex;flex-direction:column;gap:8px">
+            <div class="cfg__card">
+              <div class="field"><label for="uTdp">TDP <b id="uTdpV"></b></label><input class="range" id="uTdp" type="range"></div>
+              <div class="pkg" id="uPkg"></div>
+            </div>
+            <div class="cfg__card">
+              <div class="field"><span>Tenor angsuran</span><div class="seg" id="uTen"></div></div>
+            </div>
+            <div class="cfg__card">
+              <div class="pay"><span>Angsuran per bulan</span><b id="uPay"></b></div>
+              <hr style="border:0;border-top:1px solid var(--line);margin:12px 0">
+              <div class="bill">
+                <div><span>Harga kredit</span><b id="uBillPrice"></b></div>
+                <div><span>TDP dibayar di awal</span><b id="uBillTdp"></b></div>
+                <div><span>Total angsuran</span><b id="uBillTotal"></b></div>
+              </div>
+              <p class="t-small" style="margin-top:10px" id="uNote"></p>
+            </div>
+          </div>
+          <div class="cfg__card" id="cashBox" hidden>
+            <div class="pay"><span>Harga tunai</span><b id="uCash"></b></div>
+            <p class="t-small" style="margin-top:10px">Lunas saat serah terima. Selisih dengan harga kredit tertulis di sini, supaya tidak ada kejutan di showroom.</p>
+          </div>
+          <button class="btn btn-primary btn-block" id="toDrive"><i data-lucide="calendar-check" class="i-sm"></i>Jadwalkan test drive</button>
+        </div>
+
+        <div id="stepDrive" hidden style="display:flex;flex-direction:column;gap:8px">
+          <div class="cfg__title"><p class="t-h3">Jadwal test drive</p><button class="btn btn-outline btn-sm" id="backCredit" style="height:34px"><i data-lucide="arrow-left" class="i-sm"></i>Simulasi</button></div>
+          <form id="tdForm" data-demo-form="#tdDone" style="display:flex;flex-direction:column;gap:8px">
+            <div class="cfg__card">
+              <p class="t-small" style="margin-bottom:8px" id="tdWhere"></p>
+              <div class="days" data-select="is-selected" id="tdDays"></div>
+              <div class="slots" data-select="is-selected" id="tdSlots"></div>
+            </div>
+            <div class="cfg__card" style="display:flex;flex-direction:column;gap:8px">
+              <div class="field"><label for="tdName">Nama</label><input class="input" id="tdName" required value="Bagas Prasetyo"></div>
+              <div class="field"><label for="tdWa">Nomor WhatsApp</label><input class="input" id="tdWa" required value="0812-0000-1942"></div>
+            </div>
+            <button class="btn btn-primary btn-block">Kunci jadwal</button>
+            <p class="t-small" style="padding:0 8px 4px">Bawa SIM A. Unit ditahan 1 jam dari jadwal.</p>
+          </form>
+          <div class="cfg__card" id="tdDone" hidden style="display:flex;flex-direction:column;gap:10px">
+            <span class="done-ico"><i data-lucide="check"></i></span>
+            <p class="t-h3">Jadwal terkunci</p>
+            <p class="t-meta" id="tdSummary"></p>
+            <div class="bill"><div><span>Kode</span><b id="tdCode"></b></div><div><span>Sales</span><b id="tdSales"></b></div></div>
+            <a class="btn btn-outline btn-sm" href="#lot">Lihat di papan lot</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN LOT ================= -->
+<section data-screen="lot">
+  <div class="board">
+    <nav class="rail"><a class="rail__home" href="#home" style="width:auto;height:auto;border-radius:0">Lajur<br>Motor</a><a class="is-active" href="#lot"><i data-lucide="layout-grid"></i></a><a href="#katalog"><i data-lucide="car"></i></a><a href="#unit"><i data-lucide="calculator"></i></a><a href="#lot"><i data-lucide="calendar-check"></i></a></nav>
+    <main class="board__main">
+      <div class="board__top">
+        <div><h1 class="t-h2">Papan lot</h1><p class="t-small">Tablet showroom · Minggu, 1 November · ketuk petak untuk ubah status</p></div>
+        <p class="t-small" style="text-align:right"><b style="color:var(--ink)">A</b> Banyumanik · <b style="color:var(--ink)">B</b> Majapahit · <b style="color:var(--ink)">C</b> Ungaran dan Kudus</p>
+      </div>
+      <div class="legend" id="lotLegend"></div>
+      <div id="lotBoard" style="margin-top:6px"></div>
+      <div class="todo">
+        <p class="t-h3">Perlu ditindak</p>
+        <ul id="lotTodo"></ul>
+      </div>
+    </main>
+    <aside class="board__side">
+      <div class="stcard" id="lotCard"></div>
+      <div class="today">
+        <p class="t-h3" style="margin-bottom:6px">Test drive hari ini</p>
+        <ul id="lotToday"></ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/used-car-showroom-website/";
+  // Harga kredit/tunai, km, pajak, dan paket TDP-angsuran mengikuti data unit situs asli.
+  var U = [
+    { id:"hrv-se", brand:"Honda", name:"HR-V SE", year:2023, tr:"CVT", color:"Abu", body:"SUV", seat:5, km:22000, tax:"Feb 2027", branch:"Banyumanik", code:"A-01", price:295, cash:320, pk:{35:{35:10281000,47:8155000,59:6962000},56:{35:9567000,47:7586000,59:6473000}}, extra:["kursi-depan","kursi-belakang"], in:"27 Okt" },
+    { id:"veloz-q", brand:"Toyota", name:"Veloz Q", year:2024, tr:"CVT", color:"Putih", body:"MPV", seat:7, km:37000, tax:"Mar 2027", branch:"Majapahit", code:"B-03", price:230, cash:245, pk:{25:{35:8069000,47:6488000,59:5494000,71:5351000},39:{35:7565000,47:6102000,59:5165000,71:5038000}}, in:"31 Okt", noDash:1 },
+    { id:"xpander", brand:"Mitsubishi", name:"Xpander Exceed", year:2024, tr:"CVT", color:"Putih", body:"MPV", seat:7, km:25000, tax:"Sep 2027", branch:"Majapahit", code:"B-01", price:220, cash:235, pk:{25:{35:7733000,47:6238000,59:5281000,71:5149000},37:{35:7341000,47:5898000,59:4991000,71:4873000}}, in:"30 Okt", noCabin:1 },
+    { id:"wrv-rs", brand:"Honda", name:"WR-V RS Sensing", year:2023, tr:"CVT", color:"Putih", body:"SUV", seat:5, km:44000, tax:"Mar 2027", branch:"Majapahit", code:"B-05", price:220, cash:237, pk:{25:{35:7733000,47:6238000,59:5281000,71:5149000},38:{35:7285000,47:5875000,59:4971000,71:4854000}}, in:"30 Okt" },
+    { id:"avanza-veloz", brand:"Toyota", name:"Avanza Veloz 1.5 Q", year:2024, tr:"CVT", color:"Putih", body:"MPV", seat:7, km:33000, tax:"Des 2026", branch:"Majapahit", code:"B-02", price:225, cash:240, pk:{25:{35:7929000,47:6374000,59:5397000},38:{35:7481000,47:6011000,59:5087000}}, in:"29 Okt", noDash:1 },
+    { id:"xl7-beta", brand:"Suzuki", name:"XL7 Beta Hybrid", year:2024, tr:"AT", color:"Abu", body:"SUV", seat:7, km:45000, tax:"Jul 2027", branch:"Banyumanik", code:"A-02", price:215, cash:230, pk:{25:{35:7565000,47:6102000,59:5165000,71:5038000},37:{35:7201000,47:5785000,59:4894000,71:4781000}}, in:"29 Okt" },
+    { id:"ertiga-putih", brand:"Suzuki", name:"Ertiga GX Hybrid", year:2023, tr:"AT", color:"Putih", body:"MPV", seat:7, km:60000, tax:"Mar 2027", branch:"Banyumanik", code:"A-03", price:195, cash:210, pk:{20:{35:7005000,47:5648000,59:4778000,71:4670000},32:{35:6612000,47:5331000,59:4507000,71:4394000}}, in:"28 Okt" },
+    { id:"ertiga-hitam", brand:"Suzuki", name:"Ertiga GX Hybrid", year:2022, tr:"AT", color:"Hitam", body:"MPV", seat:7, km:32000, tax:"Feb 2027", branch:"Ungaran", code:"D-01", price:187, cash:197, pk:{20:{35:6556000,47:5286000,59:4488000,71:4376000},31:{35:6192000,47:4991000,59:4217000,71:4118000}}, in:"28 Okt" },
+    { id:"stargazer", brand:"Hyundai", name:"Stargazer Prime", year:2023, tr:"IVT", color:"Putih", body:"MPV", seat:7, km:43000, tax:"Sep 2027", branch:"Ungaran", code:"D-02", price:185, cash:200, pk:{20:{35:6696000,47:5399000,59:4565000,71:4468000},30:{35:6360000,47:5127000,59:4333000,71:4247000}}, in:"27 Okt" },
+    { id:"agya-gr", brand:"Toyota", name:"Agya GR Sport", year:2023, tr:"AT", color:"Kuning", body:"Hatchback", seat:5, km:14000, tax:"Nov 2026", branch:"Ungaran", code:"D-03", price:165, cash:175, pk:{20:{35:6150000,47:4878000,59:4280000,71:3915000},30:{35:5797000,47:4595000,59:4033000,71:3696000}}, in:"26 Okt" },
+    { id:"scross", brand:"Suzuki", name:"SX4 S-Cross", year:2018, tr:"AT", color:"Abu", body:"SUV", seat:5, km:87000, tax:"Mei 2027", branch:"Banyumanik", code:"A-04", price:160, cash:170, pk:{25:{35:5944000,47:4713000,59:4085000,71:3701000},29:{35:5620000,47:4454000,59:3863000,71:3503000}}, in:"26 Okt" },
+    { id:"mazda2", brand:"Mazda", name:"2 R", year:2017, tr:"AT", color:"Hitam", body:"Hatchback", seat:5, km:87000, tax:"Sep 2027", branch:"Kudus", code:"E-01", price:155, cash:165, pk:{15:{35:5944000,47:4736000,59:4085000,71:3701000},28:{35:5473000,47:4359000,59:3762000,71:3412000}}, in:"24 Okt", booked:"Booked 30 Okt" },
+    { id:"sienta", brand:"Toyota", name:"Sienta Q", year:2017, tr:"CVT", color:"Coklat", body:"MPV", seat:7, km:80000, tax:"Mei 2027", branch:"Majapahit", code:"B-04", price:155, cash:165, pk:{15:{35:5702000,47:4560000,59:3939000,71:3787000},29:{35:5220000,47:4174000,59:3604000,71:3456000}}, in:"24 Okt", noDash:1 },
+    { id:"serena", brand:"Nissan", name:"Serena HWS", year:2017, tr:"AT", color:"Putih", body:"MPV", seat:7, km:100000, tax:"Jan 2027", branch:"Majapahit", code:"B-06", price:150, cash:160, pk:{20:{35:5362000,47:4287000,59:3703000,71:3548000},27:{35:5107000,47:4106000,59:3526000,71:3400000}}, in:"23 Okt" },
+    { id:"mobilio-hitam", brand:"Honda", name:"Mobilio E Prestige", year:2015, tr:"AT", color:"Hitam", body:"MPV", seat:7, km:87000, tax:"Mar 2027", branch:"Banyumanik", code:"A-05", price:115, cash:125, pk:{15:{35:4341000,47:3448000,59:2974000,71:2799000},20:{35:4171000,47:3312000,59:2856000,71:2690000}}, in:"22 Okt" }
+  ];
+  U.forEach(function (u, i) {
+    u.tdps = Object.keys(u.pk).map(Number).sort(function (a, b) { return a - b; });
+    u.order = i;
+    u.stock = "L-" + String(1064 - i * 3);
+  });
+  var byId = {}; U.forEach(function (u) { byId[u.id] = u; });
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Angsuran: garis lurus antara dua paket TDP asli tiap unit; tepat di kedua titik paket.
+  function pay(u, tdp, ten) {
+    var a = u.tdps[0], b = u.tdps[1];
+    if (!u.pk[a][ten]) return null;
+    var v = u.pk[a][ten] + (u.pk[b][ten] - u.pk[a][ten]) * (tdp - a) / (b - a);
+    return Math.round(v / 1000) * 1000;
+  }
+  function jtDec(v) { var n = v / 1e6; return "Rp" + (Math.round(n * 10) / 10).toString().replace(".", ",") + " jt"; }
+  function rp(v) { return "Rp" + Math.round(v).toLocaleString("id-ID"); }
+  function fillRange(r) { r.style.setProperty("--p", (r.value - r.min) / (r.max - r.min) * 100 + "%"); }
+  function kmStr(k) { return k.toLocaleString("id-ID") + " km"; }
+  function photo(u, kind) { return A + u.id + "-" + (kind || "samping") + ".webp"; }
+  function icons() { if (window.lucide) lucide.createIcons(); }
+  function open(id) { state.unit = byId[id]; renderUnit(); location.hash = "unit"; }
+
+  function card(u, opts) {
+    opts = opts || {};
+    var cls = "car" + (opts.over ? " is-over" : "") + (u.booked ? " is-booked" : "");
+    var inst = opts.inst || ('<div class="car__inst">mulai<b>' + jtDec(minPay(u)) + "/bln</b></div>");
+    return '<article class="' + cls + '" data-open="' + u.id + '" tabindex="0">' +
+      '<div class="car__photo"><img src="' + photo(u) + '" alt="' + u.brand + " " + u.name + ' tampak samping"><span class="stocktab">' + (u.booked || u.branch) + "</span></div>" +
+      '<div class="car__body"><p class="car__name">' + u.brand + " " + u.name + "</p>" +
+      '<p class="car__meta">' + u.year + " · " + u.tr + " · " + u.color + " · " + kmStr(u.km) + "</p>" +
+      '<div class="car__foot"><p class="car__price"><small>Harga kredit</small>Rp' + u.price + " jt</p>" + inst + "</div></div></article>";
+  }
+  function minPay(u) { var t = u.pk[u.tdps[0]]; return pay(u, u.tdps[1], u.pk[u.tdps[0]][71] ? 71 : 59) || t[59]; }
+
+  /* ---------- Beranda: pilih dari cicilan ---------- */
+  var TENS = [35, 47, 59];
+  function renderHome() {
+    var budget = +$("hBudget").value, tdp = +$("hTdp").value, ten = TENS[+$("hTen").value];
+    ["hBudget", "hTdp", "hTen"].forEach(function (i) { fillRange($(i)); });
+    var bt = jtDec(budget), tt = "Rp" + tdp + " jt", nt = ten + " kali";
+    $("hBudgetT").textContent = bt; $("hBudgetV").textContent = bt;
+    $("hTdpT").textContent = tt; $("hTdpV").textContent = tt;
+    $("hTenT").textContent = nt; $("hTenV").textContent = nt;
+    var rows = U.map(function (u) {
+      var t = Math.max(tdp, u.tdps[0]), p = pay(u, t, ten);
+      return { u: u, p: p, fit: p <= budget && tdp >= u.tdps[0] && !u.booked };
+    }).sort(function (a, b) { return (b.fit - a.fit) || (a.fit ? b.p - a.p : a.p - b.p); });
+    var n = rows.filter(function (r) { return r.fit; }).length;
+    $("hCount").textContent = n + " unit";
+    $("hCountSub").textContent = n ? "masuk budget, dari 15 terbaru" : "belum masuk, naikkan TDP";
+    $("hLineup").innerHTML = rows.map(function (r) {
+      var gap = r.p - budget, lab;
+      if (r.fit) lab = '<div class="car__inst is-fit">angsuran<b>' + jtDec(r.p) + "</b></div>";
+      else if (r.u.booked) lab = '<div class="car__inst">sudah<b>Booked</b></div>';
+      else if (tdp < r.u.tdps[0]) lab = '<div class="car__inst is-over">TDP mulai<b>Rp' + r.u.tdps[0] + " jt</b></div>";
+      else lab = '<div class="car__inst is-over">lebih<b>' + jtDec(gap) + "</b></div>";
+      return card(r.u, { over: !r.fit, inst: lab });
+    }).join("");
+  }
+  ["hBudget", "hTdp", "hTen"].forEach(function (i) { $(i).addEventListener("input", renderHome); });
+
+  /* ---------- Katalog ---------- */
+  var f = { brand: "", price: 300, tr: "", year: 0, branch: "", body: "", sort: "new" };
+  var TR = ["", "AT", "CVT", "IVT"];
+  function passes(u, skip) {
+    return (skip === "brand" || !f.brand || u.brand === f.brand) && u.price <= f.price && (!f.tr || u.tr === f.tr) && u.year >= f.year && (!f.branch || u.branch === f.branch) && (!f.body || u.body === f.body);
+  }
+  function renderCatalog() {
+    var pool = U.filter(function (u) { return passes(u, "brand"); });
+    var brands = ["Toyota", "Honda", "Suzuki", "Hyundai", "Mitsubishi", "Mazda", "Nissan"];
+    $("fBrand").innerHTML = '<button class="pill' + (f.brand ? "" : " is-active") + '" data-b="">Semua<i>' + pool.length + "</i></button>" + brands.map(function (b) {
+      var c = pool.filter(function (u) { return u.brand === b; }).length;
+      return '<button class="pill' + (f.brand === b ? " is-active" : "") + '" data-b="' + b + '">' + b + "<i>" + c + "</i></button>";
+    }).join("");
+    $("fTrans").innerHTML = TR.map(function (t) { return '<button type="button" data-t="' + t + '"' + (f.tr === t ? ' class="is-active"' : "") + ">" + (t || "Semua") + "</button>"; }).join("");
+    $("fPrice").value = f.price; fillRange($("fPrice"));
+    $("fPriceV").textContent = "Rp" + f.price + " jt";
+    var list = U.filter(function (u) { return passes(u); });
+    var sorters = { "new": function (a, b) { return a.order - b.order; }, cheap: function (a, b) { return a.price - b.price; }, high: function (a, b) { return b.price - a.price; }, km: function (a, b) { return a.km - b.km; } };
+    list.sort(sorters[f.sort]);
+    $("fCount").textContent = list.length;
+    $("fGrid").innerHTML = list.map(function (u) { return card(u); }).join("");
+    $("fGrid").hidden = !list.length; $("fEmpty").hidden = !!list.length;
+  }
+  $("fBrand").addEventListener("click", function (e) { var b = e.target.closest("[data-b]"); if (b) { f.brand = b.getAttribute("data-b"); renderCatalog(); } });
+  $("fTrans").addEventListener("click", function (e) { var b = e.target.closest("[data-t]"); if (b) { f.tr = b.getAttribute("data-t"); renderCatalog(); } });
+  $("fPrice").addEventListener("input", function () { f.price = +this.value; renderCatalog(); });
+  $("fYear").addEventListener("change", function () { f.year = +this.value; renderCatalog(); });
+  $("fBranch").addEventListener("change", function () { f.branch = this.value; renderCatalog(); });
+  $("fBody").addEventListener("change", function () { f.body = this.value; renderCatalog(); });
+  $("fSort").addEventListener("change", function () { f.sort = this.value; renderCatalog(); });
+  $("fReset").addEventListener("click", function () {
+    f = { brand: "", price: 300, tr: "", year: 0, branch: "", body: "", sort: "new" };
+    $("fYear").value = "0"; $("fBranch").value = ""; $("fBody").value = ""; $("fSort").value = "new"; renderCatalog();
+  });
+  document.querySelectorAll("[data-branch]").forEach(function (a) {
+    a.addEventListener("click", function () { f.branch = a.getAttribute("data-branch"); $("fBranch").value = f.branch; renderCatalog(); });
+  });
+
+  /* ---------- Detail unit ---------- */
+  var state = { unit: U[0], tdp: 35, ten: 59, mode: "kredit" };
+  var NOTES = [
+    ["Lecet halus di bumper belakang, sudah dipoles", "Oli mesin diganti saat masuk stok", "Kampas rem sisa 60%", "Ban depan produksi 2024"],
+    ["Velg kiri belakang baret ringan", "Aki diganti baru", "Kampas rem sisa 70%", "Ban belakang produksi 2023"],
+    ["Cat ulang pintu kiri, tidak ada dempul tebal", "Filter AC diganti", "Kampas rem sisa 55%", "Keempat ban produksi 2024"]
+  ];
+  function renderUnit() {
+    var u = state.unit, notes = NOTES[u.order % 3];
+    state.tdp = u.tdps[0]; state.ten = u.pk[u.tdps[0]][59] ? 59 : 47;
+    $("uCrumb").textContent = u.brand + " " + u.name + " " + u.year;
+    $("uName").textContent = u.brand + " " + u.name + " " + u.year;
+    $("uSub").textContent = u.color + " · " + u.body + " " + u.seat + " kursi · Cabang " + u.branch + " · Masuk stok " + u.in;
+    $("uStatus").className = "status" + (u.booked ? " status--booked" : "");
+    $("uStatus").innerHTML = '<i data-lucide="' + (u.booked ? "clock" : "circle-check") + '"></i>' + (u.booked ? u.booked : "Siap test drive");
+    var shots = [["samping", "Samping"]];
+    if (!u.noDash) shots.push(["dasbor", "Odometer"]);
+    if (!u.noCabin) shots.push(["kabin", "Kabin"]);
+    (u.extra || []).forEach(function (x) { shots.push([x, x]); });
+    $("uStage").src = photo(u); $("uStage").alt = u.brand + " " + u.name + " tampak samping";
+    $("uTab").textContent = "Stok " + u.stock;
+    $("uThumbs").innerHTML = shots.map(function (s, i) { return '<button class="thumb' + (i ? "" : " is-active") + '" data-shot="' + photo(u, s[0]) + '" aria-label="' + s[1] + '"><img src="' + photo(u, s[0]) + '" alt=""></button>'; }).join("");
+    $("uSpecs").innerHTML = [["Tahun", u.year], ["Kilometer", kmStr(u.km)], ["Transmisi", u.tr], ["Bahan bakar", /Hybrid/.test(u.name) ? "Hybrid" : "Bensin"], ["Pajak s.d.", u.tax], ["Warna", u.color]].map(function (s) { return "<div><span>" + s[0] + "</span><b>" + s[1] + "</b></div>"; }).join("");
+    var items = [["Mesin dan oli", notes[1]], ["Transmisi " + u.tr, "Perpindahan halus, tidak ada hentakan"], ["Rangka dan sasis", "Lurus, tidak ada bekas potong"], ["Bebas banjir", "Karpet dan rel kursi bersih dari lumpur"], ["Bodi dan cat", notes[0], 1], ["Kaki-kaki dan rem", notes[2]], ["Kelistrikan dan AC", "Semua fungsi normal, AC dingin"], ["Ban dan velg", notes[3]]];
+    $("uCheck").innerHTML = items.map(function (c) { return "<li><b>" + c[0] + '</b><span class="status' + (c[2] ? " status--warn" : "") + '"><i data-lucide="' + (c[2] ? "circle-alert" : "circle-check") + '"></i>' + (c[2] ? "Catatan" : "Lolos") + "</span><small>" + c[1] + "</small></li>"; }).join("");
+    $("uScore").innerHTML = '<i data-lucide="circle-check"></i>7 lolos, 1 catatan';
+    $("uHist").innerHTML = [["Pajak", "Berlaku sampai " + u.tax + ". STNK dan BPKB atas nama pemilik pertama."], ["Kilometer", kmStr(u.km) + " di odometer saat masuk stok, cocok dengan catatan servis."], ["Masuk stok", u.in + " 2026 di cabang " + u.branch + ", tukar tambah dari pemilik pribadi."]].map(function (h) { return '<li><span class="t-meta">' + h[0] + "</span><span>" + h[1] + "</span></li>"; }).join("");
+    var r = $("uTdp"); r.min = u.tdps[0]; r.max = Math.max(u.tdps[1], Math.round(u.price * .4)); r.step = 1; r.value = state.tdp;
+    $("uPkg").innerHTML = u.tdps.map(function (t) { return '<button type="button" data-p="' + t + '">Paket TDP ' + t + " jt</button>"; }).join("");
+    $("uTen").innerHTML = [35, 47, 59, 71].map(function (t) { return '<button type="button" data-t="' + t + '"' + (u.pk[u.tdps[0]][t] ? "" : " disabled") + ">" + t + "x</button>"; }).join("");
+    $("uBillPrice").textContent = "Rp" + u.price + " jt";
+    $("uCash").textContent = "Rp" + u.cash + " jt";
+    showStep("credit");
+    setMode("kredit");
+    $("tdWhere").textContent = u.brand + " " + u.name + " · Cabang " + u.branch;
+    $("tdForm").hidden = false; $("tdDone").hidden = true;
+    renderPay(); icons();
+  }
+  function renderPay() {
+    var u = state.unit, p = pay(u, state.tdp, state.ten), r = $("uTdp");
+    fillRange(r);
+    $("uTdpV").textContent = "Rp" + state.tdp + " jt";
+    $("uPay").textContent = rp(p);
+    $("uBillTdp").textContent = "Rp" + state.tdp + " jt";
+    $("uBillTotal").textContent = rp(p * state.ten);
+    document.querySelectorAll("#uPkg [data-p]").forEach(function (b) { b.classList.toggle("is-active", +b.getAttribute("data-p") === state.tdp); });
+    document.querySelectorAll("#uTen [data-t]").forEach(function (b) { b.classList.toggle("is-active", +b.getAttribute("data-t") === state.ten); });
+    var exact = u.tdps.indexOf(state.tdp) > -1;
+    $("uNote").textContent = exact ? "Paket resmi leasing. TDP sudah termasuk angsuran pertama, asuransi, dan administrasi." : "Perkiraan di antara dua paket resmi. Angka final mengikuti persetujuan leasing.";
+  }
+  function setMode(m) {
+    state.mode = m;
+    document.querySelectorAll("#uMode button").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-v") === m); });
+    $("credBox").hidden = m !== "kredit"; $("cashBox").hidden = m === "kredit";
+  }
+  function showStep(s) { $("stepCredit").hidden = s !== "credit"; $("stepDrive").hidden = s !== "drive"; }
+  $("uTdp").addEventListener("input", function () { state.tdp = +this.value; renderPay(); });
+  $("uPkg").addEventListener("click", function (e) { var b = e.target.closest("[data-p]"); if (b) { state.tdp = +b.getAttribute("data-p"); $("uTdp").value = state.tdp; renderPay(); } });
+  $("uTen").addEventListener("click", function (e) { var b = e.target.closest("[data-t]"); if (b && !b.disabled) { state.ten = +b.getAttribute("data-t"); renderPay(); } });
+  $("uMode").addEventListener("click", function (e) { var b = e.target.closest("[data-v]"); if (b) setMode(b.getAttribute("data-v")); });
+  $("uThumbs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-shot]"); if (!b) return;
+    $("uStage").src = b.getAttribute("data-shot");
+    document.querySelectorAll("#uThumbs .thumb").forEach(function (t) { t.classList.toggle("is-active", t === b); });
+  });
+  $("toDrive").addEventListener("click", function () { showStep("drive"); });
+  $("backCredit").addEventListener("click", function () { showStep("credit"); });
+
+  var DAYS = [["Sen", 2], ["Sel", 3], ["Rab", 4], ["Kam", 5], ["Jum", 6], ["Sab", 7], ["Min", 8]];
+  var FULL = { Sen: "Senin", Sel: "Selasa", Rab: "Rabu", Kam: "Kamis", Jum: "Jumat", Sab: "Sabtu", Min: "Minggu" };
+  $("tdDays").innerHTML = DAYS.map(function (d, i) { return '<button type="button" class="day' + (i === 1 ? " is-selected" : "") + '" data-value="' + FULL[d[0]] + ", " + d[1] + ' November">' + d[0] + "<b>" + d[1] + "</b></button>"; }).join("");
+  $("tdSlots").innerHTML = ["10.00", "11.00", "13.00", "14.00", "15.00", "16.00"].map(function (t, i) { var off = i === 1 || i === 4; return '<button type="button" class="slot' + (off ? " is-off" : "") + (i === 2 ? " is-selected" : "") + '" data-value="' + t + '">' + t + "</button>"; }).join("");
+  var when = { day: "Selasa, 3 November", time: "13.00" };
+  $("tdDays").addEventListener("lapak:select", function (e) { when.day = e.detail.value; });
+  $("tdSlots").addEventListener("lapak:select", function (e) { when.time = e.detail.value; });
+  $("tdForm").addEventListener("submit", function () {
+    var u = state.unit, SALES = { Banyumanik: "Rani", Majapahit: "Bayu", Ungaran: "Wulan", Kudus: "Dimas" };
+    $("tdSummary").textContent = when.day + " pukul " + when.time + ", " + u.brand + " " + u.name + " di cabang " + u.branch + ". Detail dikirim ke WhatsApp " + $("tdWa").value + ".";
+    $("tdCode").textContent = "TD-" + u.stock.slice(2);
+    $("tdSales").textContent = SALES[u.branch];
+    var b = lot.filter(function (x) { return x.u === u; })[0]; if (b) { b.st = "drive"; renderLot(); }
+  });
+
+  /* ---------- Papan lot ---------- */
+  var ST = {
+    ready: { t: "Ready", c: "#2fb56a" }, drive: { t: "Test drive", c: "#f0a020" },
+    hold: { t: "Ditahan", c: "#5b8cf0" }, booked: { t: "Booked", c: "#ff3b30" }, sold: { t: "Terjual", c: "#9a9fa3" }
+  };
+  var seq = ["hrv-se", "xl7-beta", "ertiga-putih", "scross", "mobilio-hitam", null, "xpander", "avanza-veloz", "veloz-q", "sienta", "wrv-rs", "serena", "ertiga-hitam", "stargazer", "agya-gr", "mazda2", null, null];
+  var init = { "xl7-beta": "drive", "sienta": "hold", "mazda2": "booked", "agya-gr": "drive", "serena": "sold" };
+  var lot = seq.map(function (id, i) { return { code: "ABC".charAt(Math.floor(i / 6)) + (i % 6 + 1), u: id ? byId[id] : null, st: id ? (init[id] || "ready") : null }; });
+  var pick = lot[1];
+  function renderLot() {
+    $("lotLegend").innerHTML = Object.keys(ST).map(function (k) { var n = lot.filter(function (b) { return b.st === k; }).length; return '<span style="--c:' + ST[k].c + '"><i></i>' + ST[k].t + " <b>" + n + "</b></span>"; }).join("") + '<span style="--c:transparent;border-style:dashed">Petak kosong <b>' + lot.filter(function (b) { return !b.u; }).length + "</b></span>";
+    var html = "";
+    ["A", "B", "C"].forEach(function (L, r) {
+      html += '<div class="lane"><span class="lane__name">' + L + '</span><div class="lane__bays">' + lot.slice(r * 6, r * 6 + 6).map(function (b) {
+        var i = lot.indexOf(b);
+        if (!b.u) return '<button class="bay is-empty" data-bay="' + i + '"><span class="bay__ph">Kosong</span><span class="bay__code"><span>' + b.code + '</span></span><span class="bay__name">Siap diisi</span></button>';
+        return '<button class="bay' + (b === pick ? " is-picked" : "") + '" data-bay="' + i + '" style="--c:' + ST[b.st].c + '"><span class="bay__ph"><img src="' + photo(b.u) + '" alt=""></span><span class="bay__code"><span>' + b.code + '</span><span class="bay__dot"></span></span><span class="bay__name">' + (b.u.brand === "Mazda" ? "Mazda " : "") + b.u.name + "</span></button>";
+      }).join("") + "</div></div>";
+    });
+    $("lotBoard").innerHTML = html;
+    var todo = [["agya-gr", "Pajak habis Nov 2026, perpanjang sebelum serah terima"], ["avanza-veloz", "Pajak habis Des 2026, cek ke Samsat minggu ini"]].map(function (t) { var b = lot.filter(function (x) { return x.u === byId[t[0]]; })[0]; return "<li><b>" + b.code + " · " + b.u.name + "</b><span>" + t[1] + "</span></li>"; });
+    lot.forEach(function (b) { if (b.st === "sold") todo.push("<li><b>" + b.code + " · " + b.u.name + "</b><span>Terjual, tetap tayang 7 hari lalu kosongkan petak</span></li>"); });
+    $("lotTodo").innerHTML = todo.join("");
+    var u = pick.u;
+    if (!u) { $("lotCard").innerHTML = '<div class="board__empty"><p class="t-h3">Petak ' + pick.code + ' kosong</p><p class="t-meta">Pindahkan unit baru ke petak ini saat masuk stok.</p></div>'; return; }
+    var tdLabel = pick.st === "drive" ? "Sedang test drive" : ST[pick.st].t;
+    $("lotCard").innerHTML = '<div class="car__photo"><img src="' + photo(u) + '" alt=""><span class="stocktab">Petak ' + pick.code + " · " + u.stock + "</span></div>" +
+      '<div class="car__body"><p class="car__name">' + u.brand + " " + u.name + " " + u.year + "</p>" +
+      '<p class="car__meta">' + u.tr + " · " + u.color + " · " + kmStr(u.km) + " · Pajak " + u.tax + "</p>" +
+      '<div class="car__foot"><p class="car__price"><small>Kredit / tunai</small>Rp' + u.price + " / " + u.cash + ' jt</p><div class="car__inst">status<b style="color:var(--ink)">' + tdLabel + "</b></div></div></div>" +
+      '<div class="stbtns">' + Object.keys(ST).map(function (k) { return '<button class="stbtn' + (pick.st === k ? " is-active" : "") + '" data-st="' + k + '" style="--c:' + ST[k].c + '"><i></i>' + ST[k].t + "</button>"; }).join("") +
+      '<button class="stbtn" data-open="' + u.id + '"><i data-lucide="external-link" class="i-sm" style="background:none;width:16px;height:16px"></i>Detail</button></div>';
+    icons();
+  }
+  $("lotBoard").addEventListener("click", function (e) { var b = e.target.closest("[data-bay]"); if (b) { pick = lot[+b.getAttribute("data-bay")]; renderLot(); } });
+  $("lotCard").addEventListener("click", function (e) { var b = e.target.closest("[data-st]"); if (b) { pick.st = b.getAttribute("data-st"); renderLot(); } });
+  $("lotToday").innerHTML = [["10.30 · XL7 Beta Hybrid", "Sales Rani"], ["13.00 · Agya GR Sport", "Sales Wulan"], ["15.30 · HR-V SE", "Sales Rani"]].map(function (t) { return "<li><span>" + t[0] + "</span><span>" + t[1] + "</span></li>"; }).join("");
+
+  /* ---------- Buka kartu ---------- */
+  document.addEventListener("click", function (e) { var c = e.target.closest("[data-open]"); if (c) open(c.getAttribute("data-open")); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.matches && e.target.matches("[data-open]")) open(e.target.getAttribute("data-open")); });
+
+  renderHome(); renderCatalog(); renderUnit(); renderLot(); icons();
+})();
+</script>
+</body>
+</html>

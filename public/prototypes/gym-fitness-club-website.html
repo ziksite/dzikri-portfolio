@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laga — Gym 1.100 m² dan 200+ kelas per bulan di Malang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/gym-fitness-club-website.css">
+</head>
+<body>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home">
+  <div class="wrap">
+    <header class="header">
+      <a class="wordmark" href="#home">LAGA</a>
+      <nav class="nav"><a href="#home" data-nav="home">Beranda</a><a href="#jadwal" data-nav="jadwal">Jadwal</a><a href="#gabung" data-nav="gabung">Membership</a><a href="#pintu" data-nav="pintu">Check-in</a></nav>
+      <div class="header__right"><a class="btn btn-outline btn-sm" href="#">WhatsApp</a><a class="btn btn-primary btn-sm" href="#jadwal">Booking kelas</a></div>
+    </header>
+
+    <div class="bento">
+      <div class="bento__left">
+        <h1 class="t-hero">Gym dua lantai, 3 studio, 200+ kelas sebulan.</h1>
+        <p class="t-meta" style="font-size:16px">Free weights, cardio, functional, dan kelas grup dalam 1.100 m² di Blimbing, Malang. Membership mulai Rp150.000.</p>
+        <div class="bento__cta">
+          <a class="btn btn-primary btn-block" href="#jadwal"><i data-lucide="calendar-check"></i>Pilih kelas minggu ini</a>
+          <a class="btn btn-outline btn-block" href="#">Coba 1 hari gratis</a>
+        </div>
+        <div class="card density">
+          <div><p class="t-h3">Jam ramai lantai gym</p><p class="t-small">Rata-rata 4 minggu terakhir, 06.00–21.00</p></div>
+          <div class="dots" id="dots"></div>
+          <div class="density__foot"><span>Sekarang <b>38%</b></span><span>Paling lengang <b>10.00–15.00</b></span></div>
+        </div>
+      </div>
+
+      <div class="bento__right">
+        <div class="banner">
+          <p class="t-h2">Minggu ajak teman gratis.</p>
+          <p>Daftarkan temanmu di resepsionis saat masuk.</p>
+          <div class="notch"><a class="notch__btn" href="#" aria-label="Detail promo"><i data-lucide="arrow-up-right"></i></a></div>
+        </div>
+        <a class="zone-card zone-card--big" href="#jadwal">
+          <div class="photo" data-img="assets/gym-fitness-club-website/kelas-barbel-arena.webp" style="--pos:50% 60%"></div>
+          <div class="zone-card__cap"><b>Arena Studio</b><span class="t-small">120+ sesi per bulan: barbell, combat, dance</span></div>
+          <div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div>
+        </a>
+        <a class="zone-card" href="#jadwal">
+          <div class="photo" data-img="assets/gym-fitness-club-website/kelas-sepeda-spin.webp" style="--pos:60% 50%"></div>
+          <div class="zone-card__cap"><b>Spin Studio</b><span class="t-small">Indoor cycling</span></div>
+          <div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div>
+        </a>
+        <a class="zone-card" href="#jadwal">
+          <div class="photo" data-img="assets/gym-fitness-club-website/kelas-suspensi-flow.webp" style="--pos:50% 55%"></div>
+          <div class="zone-card__cap"><b>Flow Studio</b><span class="t-small">Yoga, pilates, TRX</span></div>
+          <div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div>
+        </a>
+      </div>
+    </div>
+
+    <section class="sec">
+      <div class="sec-head"><h2 class="t-h2">Kelas berikutnya</h2><a class="link" href="#jadwal">Jadwal seminggu<i data-lucide="arrow-right"></i></a></div>
+      <div class="next">
+        <a href="#jadwal" style="--z:var(--red)"><span class="t-small">Hari ini 16.00</span><b>Bodypump</b><span class="t-small">Salsa · Arena</span></a>
+        <a href="#jadwal" style="--z:var(--red)"><span class="t-small">Hari ini 17.00</span><b>Bodycombat</b><span class="t-small">Lita · Arena</span></a>
+        <a href="#jadwal" style="--z:var(--red)"><span class="t-small">Senin 07.00</span><b>Bodypump</b><span class="t-small">Sinta · Arena</span></a>
+        <a href="#jadwal" style="--z:var(--flow)"><span class="t-small">Senin 08.00</span><b>Mindfulness</b><span class="t-small">Fajar · Flow</span></a>
+        <a href="#jadwal" style="--z:var(--spin)"><span class="t-small">Senin 17.00</span><b>RPM</b><span class="t-small">Sinta · Spin</span></a>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head"><h2 class="t-h2">Isi gym</h2><span class="t-meta">Alat dari Rogue, SportsArt, LeMond, TRX</span></div>
+      <div class="split">
+        <div class="panel">
+          <table class="table">
+            <thead><tr><th>Area</th><th>Untuk apa</th></tr></thead>
+            <tbody>
+              <tr><td>Free weights zone</td><td>Area beban bebas yang luas, personal trainer standby di lantai</td></tr>
+              <tr><td>Cardio &amp; selectorized</td><td>Mesin cardio dan mesin beban terarah untuk pemanasan dan pendinginan</td></tr>
+              <tr><td>Functional &amp; stretching</td><td>Area terbuka untuk latihan fungsional dan peregangan</td></tr>
+              <tr><td>Personal training</td><td>Pelatih bersertifikat, fokus teknik dan mencegah cedera</td></tr>
+              <tr><td>Fasilitas</td><td>Hot shower, loker, parkir aman, dan valet</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card" style="overflow:hidden;min-height:340px"><div class="photo" style="position:absolute;inset:0;--pos:40% 50%" data-img="assets/gym-fitness-club-website/area-beban-bebas.webp"></div></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head"><h2 class="t-h2">Kelas grup</h2><span class="t-meta">Termasuk di membership Gym + Kelas</span></div>
+      <div class="class-grid">
+        <a class="class-tile" href="#jadwal"><div class="photo" data-img="assets/gym-fitness-club-website/kelas-zumba.webp"></div><div><p class="t-h3">Zumba</p><p class="t-small">Dance, ritme Latin</p></div></a>
+        <a class="class-tile" href="#jadwal"><div class="photo" data-img="assets/gym-fitness-club-website/kelas-pound.webp" style="--pos:45% 60%"></div><div><p class="t-h3">Pound</p><p class="t-small">Cardio dengan stik drum</p></div></a>
+        <a class="class-tile" href="#jadwal"><div class="photo" data-img="assets/gym-fitness-club-website/kelas-hiphop.webp"></div><div><p class="t-h3">Hip hop</p><p class="t-small">Koreografi, kelincahan</p></div></a>
+        <a class="class-tile" href="#jadwal"><div class="photo" data-img="assets/gym-fitness-club-website/pelatih-muaythai.webp" style="--pos:62% 50%"></div><div><p class="t-h3">Muay Thai</p><p class="t-small">Teknik pad, Senin &amp; Kamis</p></div></a>
+        <a class="class-tile" href="#jadwal"><div class="photo" data-img="assets/gym-fitness-club-website/kelas-yoga.webp" style="--pos:62% 50%"></div><div><p class="t-h3">Yoga</p><p class="t-small">Vinyasa, hatha, yin</p></div></a>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="promo-row">
+        <a class="card promo promo--white" href="#gabung"><p class="t-h2">Mulai Rp150.000</p><p class="t-meta">Standar 12 bulan, ada juga 1, 3, dan 6 bulan. Bayar lunas atau bulanan.</p><div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div></a>
+        <a class="card promo" href="#"><p class="t-h2">Member get member</p><p class="t-meta">Temanmu daftar lewat rekomendasimu, kamu dapat benefit. Tanya resepsionis.</p><div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div></a>
+        <a class="card promo" href="#"><p class="t-h2">Personal training online</p><p class="t-meta">Sesi dengan pelatih yang sama saat tidak sempat datang ke gym.</p><div class="notch"><span class="notch__btn"><i data-lucide="arrow-up-right"></i></span></div></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="wordmark" style="font-size:24px">LAGA</span>
+      <span class="t-meta">Blimbing, Malang · Senin–Sabtu 06.00–22.00 · Minggu 07.00–18.00</span>
+      <a class="link" href="#">Tanya lewat WhatsApp<i data-lucide="arrow-up-right"></i></a>
+    </footer>
+  </div>
+</section>
+
+<!-- ================= JADWAL MINGGUAN ================= -->
+<section data-screen="jadwal">
+  <div class="wrap">
+    <header class="header">
+      <a class="wordmark" href="#home">LAGA</a>
+      <nav class="nav"><a href="#home" data-nav="home">Beranda</a><a href="#jadwal" data-nav="jadwal">Jadwal</a><a href="#gabung" data-nav="gabung">Membership</a><a href="#pintu" data-nav="pintu">Check-in</a></nav>
+      <div class="header__right"><a class="btn btn-outline btn-sm" href="#">WhatsApp</a></div>
+    </header>
+
+    <div class="sched-top">
+      <div><h1 class="t-h1">Jadwal 1–7 November</h1><p class="t-meta">Klik kelas untuk menandai. Booking berlaku setelah membership aktif atau hari coba gratis.</p></div>
+      <div class="seg" id="zoneFilter" data-select>
+        <button class="is-active" data-value="all">Semua studio</button>
+        <button data-value="arena"><span class="z" style="--z:var(--red)"></span>Arena</button>
+        <button data-value="flow"><span class="z" style="--z:var(--flow)"></span>Flow</button>
+        <button data-value="spin"><span class="z" style="--z:var(--spin)"></span>Spin</button>
+      </div>
+    </div>
+
+    <div class="daytabs" id="dayTabs"></div>
+    <div class="daylist" id="dayList"></div>
+    <div class="tt" id="timetable"></div>
+
+    <div class="dock">
+      <span class="dock__count" id="dockCount">0 kelas</span>
+      <div class="dock__list" id="dockList"></div>
+      <a class="btn btn-primary" href="#gabung">Lanjut pilih membership<i data-lucide="arrow-right"></i></a>
+    </div>
+    <div style="height:32px"></div>
+  </div>
+</section>
+
+<!-- ================= MEMBERSHIP & TOTAL ================= -->
+<section data-screen="gabung">
+  <div class="wrap">
+    <header class="header">
+      <a class="wordmark" href="#home">LAGA</a>
+      <nav class="nav"><a href="#home" data-nav="home">Beranda</a><a href="#jadwal" data-nav="jadwal">Jadwal</a><a href="#gabung" data-nav="gabung">Membership</a><a href="#pintu" data-nav="pintu">Check-in</a></nav>
+      <div class="header__right"><a class="btn btn-outline btn-sm" href="#">WhatsApp</a></div>
+    </header>
+
+    <form id="joinForm" data-demo-form="#joinDone">
+      <div class="sched-top" style="padding-top:12px">
+        <div><h1 class="t-h1">Pilih paket dan durasi</h1><p class="t-meta">Harga per bulan. Makin panjang durasinya, makin ringan per bulannya.</p></div>
+      </div>
+
+      <div class="mx" id="matrix" data-select="is-selected">
+        <div class="mx__row mx__row--head"><div>Paket</div><div>1 bulan</div><div>3 bulan</div><div>6 bulan</div><div>12 bulan</div></div>
+      </div>
+
+      <div class="opts">
+        <div class="card opt">
+          <p class="t-h3">Mulai aktif</p>
+          <div class="chips" id="startPick" data-select>
+            <button type="button" class="chip is-active" data-value="Senin, 2 November">Sen 2 Nov</button>
+            <button type="button" class="chip" data-value="Senin, 9 November">Sen 9 Nov</button>
+            <button type="button" class="chip" data-value="Senin, 16 November">Sen 16 Nov</button>
+            <button type="button" class="chip" data-value="Selasa, 1 Desember">Sel 1 Des</button>
+          </div>
+          <p class="t-small">Kamu hanya bayar sejak sesi pertama.</p>
+          <p class="t-h3" style="margin-top:6px">Cara bayar</p>
+          <div class="seg" id="payPick" data-select style="align-self:flex-start;background:var(--surface-2)">
+            <button type="button" class="is-active" data-value="lunas">Lunas di depan</button>
+            <button type="button" data-value="bulanan">Bulanan</button>
+          </div>
+        </div>
+        <div class="card opt">
+          <p class="t-h3">Personal training</p>
+          <p class="t-small">Sesi 1 jam dengan pelatih bersertifikat, Rp250.000 per sesi. Bisa ditambah kapan saja.</p>
+          <div class="opt__line"><span class="num" id="ptSub">Rp0</span><div class="stepper" id="ptStep" data-stepper data-min="0" data-max="24"><button type="button" aria-label="Kurangi"><i data-lucide="minus"></i></button><output>0</output><button type="button" data-inc aria-label="Tambah"><i data-lucide="plus"></i></button></div></div>
+        </div>
+        <div class="card opt">
+          <div class="opt__line"><p class="t-h3">Kelas yang kamu tandai</p><a class="link" href="#jadwal" style="font-size:14px">Ubah</a></div>
+          <div class="picked" id="pickedList"></div>
+          <div class="notice" id="noClass" hidden>Paket Gym tidak termasuk kelas grup. Pilih Gym + Kelas atau All Access agar kelas ini ikut dibooking.</div>
+        </div>
+      </div>
+
+      <div class="total">
+        <div>
+          <p>Total dibayar sekarang</p>
+          <p class="total__sum" id="grand">Rp0</p>
+          <p class="total__lines" id="grandLines"></p>
+        </div>
+        <div class="total__form">
+          <label class="field">Nama<input required name="nama" value="Rani Anggraeni" autocomplete="off"></label>
+          <label class="field">Nomor WhatsApp<input required name="wa" inputmode="tel" value="0812 3400 7788" autocomplete="off"></label>
+          <button class="btn btn-white">Konfirmasi</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="joinDone" hidden>
+      <div class="success" style="margin-top:12px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <h1 class="t-h1" id="doneTitle">Membership tercatat</h1>
+          <p class="t-meta" id="doneSub"></p>
+          <div class="picked" id="doneList"></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#">Bayar lewat WhatsApp</a><a class="btn btn-outline" href="#jadwal">Tambah kelas</a></div>
+        </div>
+        <div class="codebox">
+          <p>Kode check-in</p>
+          <b id="doneCode">6120</b>
+          <p>Ketik kode ini di tablet pintu masuk saat datang.</p>
+          <a class="btn btn-primary btn-sm" href="#pintu" id="doneKiosk" style="margin-top:8px">Coba di tablet check-in</a>
+        </div>
+      </div>
+    </div>
+    <div style="height:40px"></div>
+  </div>
+</section>
+
+<!-- ================= KIOSK TABLET PINTU MASUK ================= -->
+<section data-screen="pintu">
+  <div class="stage">
+    <div class="tablet">
+      <div class="tablet__screen">
+        <div class="result" id="result" data-state="ok">
+          <div class="result__top"><span class="wordmark" style="font-size:26px">LAGA</span><span class="num">Minggu 1 Nov · 15.42</span></div>
+          <div class="result__body">
+            <p class="result__status"><i data-lucide="circle-check" id="resIcon"></i><span id="resStatus"></span></p>
+            <p class="result__name" id="resName"></p>
+            <p class="result__sub" id="resSub"></p>
+          </div>
+          <div class="result__facts">
+            <div class="fact"><span id="f1k"></span><b id="f1v"></b></div>
+            <div class="fact"><span id="f2k"></span><b id="f2v"></b></div>
+            <div class="fact"><span id="f3k"></span><b id="f3v"></b></div>
+          </div>
+        </div>
+        <div class="keys">
+          <p class="keys__title">Ketik 4 digit kode member</p>
+          <div class="pin" id="pin"><i></i><i></i><i></i><i></i></div>
+          <div class="pad" id="pad">
+            <button>1</button><button>2</button><button>3</button>
+            <button>4</button><button>5</button><button>6</button>
+            <button>7</button><button>8</button><button>9</button>
+            <button data-k="del" aria-label="Hapus"><i data-lucide="delete"></i></button><button>0</button><button class="pad__ok" data-k="ok">Masuk</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stage__note"><span>Tablet di pintu masuk, resepsionis melihat hasil yang sama.</span><span>Coba kode:</span><span id="demoCodes" style="display:flex;gap:6px;flex-wrap:wrap"><button>4827</button><button>1093</button><button>7741</button></span><a class="link" href="#home">Kembali ke situs</a></div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (s) { return document.querySelector(s); };
+
+  /* Foto */
+  document.querySelectorAll(".photo[data-img]").forEach(function (box) {
+    var img = new Image(); img.alt = ""; img.src = box.getAttribute("data-img"); box.appendChild(img);
+  });
+
+  /* Peta jam ramai: baris hari, kolom jam 06–21 */
+  var days = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+  var html = "";
+  [1, 2, 3, 4, 5, 6, 0].forEach(function (d) {
+    html += "<span>" + days[d] + "</span>";
+    for (var h = 6; h <= 21; h++) {
+      var weekend = d === 0 || d === 6;
+      var peak = weekend ? (h >= 8 && h <= 10) : (h >= 17 && h <= 20);
+      var mid = weekend ? (h === 7 || h === 11 || h === 16 || h === 17) : (h === 7 || h === 8 || h === 16 || h === 21);
+      var closedSun = d === 0 && (h < 7 || h > 17);
+      var cls = closedSun ? "" : peak ? "l3" : mid ? "l2" : "";
+      if (d === 0 && h === 15) cls += " now";
+      html += '<i class="' + cls + '"></i>';
+    }
+  });
+  $("#dots").innerHTML = html;
+
+  /* Jadwal seminggu. [hari 0=Min, jam, nama, pelatih, studio] */
+  var A = "arena", F = "flow", S = "spin";
+  var raw = [
+    [1,7,"Bodypump","Sinta",A],[2,7,"Metapower","Tim PT",A],[3,7,"Pound","Mira",A],[5,7,"Zumba","Elsa",A],[6,7,"Zumba","Wahyu",A],
+    [0,8,"Power","Esti",F],[0,8,"Bodypump","Sinta",A],[1,8,"Bodycombat","Bagas",A],[1,8,"Mindfulness","Fajar",F],[2,8,"Flowbility","Arif",F],[2,8,"RPM","Sinta",S],[2,8,"Core","Vina",F],[3,8,"Bodypump","Salsa",A],[3,8,"TRX","Vina",F],[4,8,"Insideflow","Vina",F],[4,8,"RPM","Sinta",S],[5,8,"Strong","Intan",A],[5,8,"TRX","Bagas",F],[6,8,"RPM","Bagas",S],[6,8,"Bodycombat","Bagas",A],[6,8,"Pilates","Fajar",F],
+    [0,9,"Bodycombat","Lita",A],[1,9,"Zumba","Elsa",A],[2,9,"Insideflow Basic","Vina",F],[2,9,"Strong","Intan",A],[3,9,"Bodycombat","Bagas",A],[4,9,"Core","Vina",F],[4,9,"Bodypump","Salsa",A],[5,9,"Vinyasa","Yuni",F],[6,9,"Mindfulness","Fajar",F],[6,9,"Bodypump","Bagas",A],
+    [6,10,"Kids Move","Tim PT",A],
+    [0,16,"Bodypump","Salsa",A],[1,16,"Metapower","Tim PT",A],[2,16,"Basic Step","Bella",A],[3,16,"FunctionalFit","Hafiz",A],[4,16,"Metafit","Tim PT",A],[5,16,"FunctionalFit","Oki",A],
+    [0,17,"Bodycombat","Lita",A],[1,17,"RPM","Sinta",S],[1,17,"TRX","Bagas",F],[1,17,"Zumba","Sari",A],[2,17,"Yin","Indah",F],[2,17,"Bodypump","Sinta",A],[3,17,"TRX","Bagas",F],[3,17,"Zumba","Sari",A],[3,17,"RPM","Adit",S],[4,17,"Hatha","Esti",F],[4,17,"Pound","Mira",A],[5,17,"Acro","Fajar",F],[5,17,"Bodycombat","Bagas",A],[6,17,"Zumba","Sari",A],
+    [1,18,"Bodycombat","Bagas",A],[1,18,"Vinyasa","Fajar",F],[2,18,"RPM","Adit",S],[2,18,"Vinyasa","Vina",F],[2,18,"Strong","Intan",A],[3,18,"Exotique","Dion",A],[3,18,"Core","Vina",F],[4,18,"Insideflow","Yuni",F],[4,18,"RPM","Bagas",S],[4,18,"Bodypump","Salsa",A],[5,18,"RPM","Adit",S],[5,18,"Hip Hop","Dion",A],[5,18,"Bodypump","Sinta",A],[6,18,"Metapower","Nadia",A],
+    [1,19,"Bodypump","Bagas",A],[2,19,"Zumba","Elsa",A],[3,19,"Bodycombat","Rara",A],[4,19,"Muay Thai","Ivan",A],[5,19,"Zumba","Elsa",A],
+    [1,20,"Muay Thai","Ivan",A]
+  ];
+  var cap = { arena: 40, flow: 18, spin: 24 };
+  var zoneVar = { arena: "var(--red)", flow: "var(--flow)", spin: "var(--spin)" };
+  var zoneName = { arena: "Arena", flow: "Flow", spin: "Spin" };
+  var dateOf = ["1 Nov", "2 Nov", "3 Nov", "4 Nov", "5 Nov", "6 Nov", "7 Nov"];
+  var longDay = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var hours = [7, 8, 9, 10, 16, 17, 18, 19, 20];
+  var classes = raw.map(function (c, i) {
+    var seed = (c[0] * 7 + c[1] * 3 + i * 5) % 13;
+    var left = seed === 0 ? 0 : Math.min(cap[c[4]] - 1, seed + (c[4] === "arena" ? 3 : 0));
+    return { id: i, day: c[0], hour: c[1], name: c[2], coach: c[3], zone: c[4], left: left, past: c[0] === 0 && c[1] < 16 };
+  });
+  var picked = {};
+  var zone = "all", mobileDay = 1;
+  /* Dua kelas contoh agar alur terlihat utuh */
+  classes.filter(function (c) { return (c.day === 1 && c.hour === 18 && c.name === "Bodycombat") || (c.day === 3 && c.hour === 17 && c.name === "RPM"); })
+    .forEach(function (c) { if (!c.left) c.left = 6; picked[c.id] = true; });
+
+  function label(c) { return longDay[c.day] + " " + dateOf[c.day] + ", " + String(c.hour).padStart(2, "0") + ".00"; }
+  function chip(c) {
+    var off = c.past || c.left === 0;
+    var meta = c.past ? c.coach + " · selesai" : c.left === 0 ? c.coach + " · penuh" : c.coach + " · sisa " + c.left;
+    return '<button class="cls' + (picked[c.id] ? " is-picked" : "") + (zone !== "all" && zone !== c.zone ? " is-hidden" : "") + '" data-id="' + c.id + '" style="--z:' + zoneVar[c.zone] + '"' + (off ? " disabled" : "") + "><b>" + c.name + "</b><span>" + meta + "</span></button>";
+  }
+  function renderGrid() {
+    var h = "<div></div>";
+    for (var d = 0; d < 7; d++) h += '<div class="tt__day' + (d === 0 ? " is-today" : "") + '"><b>' + longDay[d] + "</b><span>" + dateOf[d] + "</span></div>";
+    hours.forEach(function (hr) {
+      h += '<div class="tt__hour">' + String(hr).padStart(2, "0") + ".00</div>";
+      for (var d = 0; d < 7; d++) {
+        h += '<div class="tt__cell">' + classes.filter(function (c) { return c.day === d && c.hour === hr; }).map(chip).join("") + "</div>";
+      }
+    });
+    $("#timetable").innerHTML = h;
+
+    var tabs = "";
+    for (var i = 0; i < 7; i++) tabs += '<button data-day="' + i + '" class="' + (i === mobileDay ? "is-active" : "") + '">' + days[i] + "<b>" + (i + 1) + "</b></button>";
+    $("#dayTabs").innerHTML = tabs;
+    var list = "";
+    hours.forEach(function (hr) {
+      var todays = classes.filter(function (c) { return c.day === mobileDay && c.hour === hr && (zone === "all" || zone === c.zone); });
+      if (todays.length) list += '<p class="daylist__h">' + String(hr).padStart(2, "0") + ".00</p>" + todays.map(chip).join("");
+    });
+    $("#dayList").innerHTML = list || '<p class="t-meta">Tidak ada kelas studio ini di hari tersebut.</p>';
+  }
+  function pickedList() { return classes.filter(function (c) { return picked[c.id]; }).sort(function (a, b) { return a.day - b.day || a.hour - b.hour; }); }
+  function renderPicked() {
+    var p = pickedList();
+    $("#dockCount").textContent = p.length + " kelas ditandai";
+    $("#dockList").innerHTML = p.map(function (c) { return "<span>" + c.name + " · " + days[c.day] + " " + String(c.hour).padStart(2, "0") + ".00</span>"; }).join("");
+    $("#pickedList").innerHTML = p.length ? p.map(function (c) { return '<div class="picked__row"><b>' + c.name + "</b><span>" + label(c) + "</span></div>"; }).join("") : '<p class="t-small">Belum ada kelas. Kamu tetap bisa booking setelah aktif.</p>';
+    refreshTotal();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".cls");
+    if (b && !b.disabled) {
+      var id = b.getAttribute("data-id");
+      if (picked[id]) delete picked[id]; else picked[id] = true;
+      renderGrid(); renderPicked();
+    }
+    var t = e.target.closest("#dayTabs button");
+    if (t) { mobileDay = Number(t.getAttribute("data-day")); renderGrid(); }
+  });
+  $("#zoneFilter").addEventListener("lapak:select", function (e) { zone = e.detail.value; renderGrid(); });
+
+  /* Matriks harga: per bulan */
+  var tiers = [
+    { key: "gym", name: "Gym", desc: "Semua area gym, loker, hot shower", classes: false, p: { 1: 295000, 3: 245000, 6: 195000, 12: 150000 } },
+    { key: "kelas", name: "Gym + Kelas", desc: "Tambah semua kelas di 3 studio", classes: true, p: { 1: 450000, 3: 395000, 6: 345000, 12: 295000 } },
+    { key: "all", name: "All Access", desc: "Tambah 1 sesi personal training per bulan", classes: true, p: { 1: 650000, 3: 590000, 6: 540000, 12: 490000 } }
+  ];
+  var plan = { tier: "kelas", months: 12 };
+  var pay = "lunas", startDate = "Senin, 2 November", pt = 0;
+  var m = "";
+  tiers.forEach(function (t) {
+    m += '<div class="mx__row"><div class="mx__tier"><b>' + t.name + '</b><span class="t-small">' + t.desc + "</span></div>";
+    [1, 3, 6, 12].forEach(function (d) {
+      m += '<button type="button" class="price' + (t.key === plan.tier && d === plan.months ? " is-selected" : "") + '" data-option data-value="' + t.key + ":" + d + '"><em>' + d + " bulan</em><b>" + rupiah(t.p[d]) + "</b><span>" + rupiah(t.p[d] * d) + " total</span></button>";
+    });
+    m += "</div>";
+  });
+  $("#matrix").insertAdjacentHTML("beforeend", m);
+  $("#matrix").addEventListener("lapak:select", function (e) {
+    var v = e.detail.value.split(":"); plan.tier = v[0]; plan.months = Number(v[1]); refreshTotal();
+  });
+  $("#payPick").addEventListener("lapak:select", function (e) { pay = e.detail.value; refreshTotal(); });
+  $("#startPick").addEventListener("lapak:select", function (e) { startDate = e.detail.value; refreshTotal(); });
+  $("#ptStep").addEventListener("lapak:change", function (e) { pt = e.detail.value; refreshTotal(); });
+
+  function currentTier() { return tiers.filter(function (t) { return t.key === plan.tier; })[0]; }
+  function grandTotal() {
+    var t = currentTier(), monthly = t.p[plan.months];
+    return (pay === "lunas" ? monthly * plan.months : monthly) + pt * 250000;
+  }
+  function refreshTotal() {
+    var t = currentTier(), monthly = t.p[plan.months];
+    $("#grand").textContent = rupiah(grandTotal());
+    var line = t.name + " " + plan.months + " bulan · " + (pay === "lunas" ? rupiah(monthly) + " × " + plan.months : "bulan pertama dari " + plan.months);
+    if (pt) line += " · " + pt + " sesi PT";
+    line += " · aktif " + startDate;
+    $("#grandLines").textContent = line;
+    $("#ptSub").textContent = rupiah(pt * 250000);
+    $("#noClass").hidden = t.classes || !pickedList().length;
+  }
+
+  /* Konfirmasi: daftarkan kode baru ke kiosk */
+  var kioskMembers = {
+    "4827": { state: "ok", status: "Selamat datang", name: "Rani", sub: "Bodypump 16.00 di Arena Studio, tempat sudah dibooking.", k: ["Loker", "Kelas berikutnya", "Aktif sampai"], v: ["B-214", "16.00", "12 Jun 2027"] },
+    "1093": { state: "warn", status: "Masuk, membership hampir habis", name: "Dimas", sub: "Berakhir 6 hari lagi. Perpanjang di resepsionis untuk menahan harga lama.", k: ["Loker", "Paket", "Aktif sampai"], v: ["A-087", "Gym", "7 Nov 2026"] },
+    "7741": { state: "stop", status: "Belum bisa masuk", name: "Lukman", sub: "Membership berakhir 29 Oktober. Silakan ke resepsionis untuk perpanjang.", k: ["Paket terakhir", "Perpanjang di", "Berakhir"], v: ["Gym + Kelas", "Resepsionis", "29 Okt 2026"] }
+  };
+  $("#joinForm").addEventListener("submit", function () {
+    var nama = this.nama.value.trim().split(" ")[0] || "Member";
+    var t = currentTier(), p = pickedList();
+    var booked = t.classes ? p : [];
+    $("#doneTitle").textContent = nama + ", membership tercatat";
+    $("#doneSub").textContent = t.name + " " + plan.months + " bulan, aktif " + startDate + ". Total " + rupiah(grandTotal()) + (pay === "lunas" ? " lunas." : " untuk bulan pertama.") + " Bukti dan tautan bayar dikirim ke WhatsApp " + this.wa.value + ".";
+    $("#doneList").innerHTML = booked.length ? booked.map(function (c) { return '<div class="picked__row"><b>' + c.name + " · " + c.coach + "</b><span>" + label(c) + "</span></div>"; }).join("") : '<p class="t-small">Tidak ada kelas yang dibooking.</p>';
+    kioskMembers["6120"] = { state: "ok", status: "Selamat datang", name: nama, sub: booked.length ? booked[0].name + " " + label(booked[0]) + " sudah dibooking." : "Membership baru, staf akan mengantar tur singkat.", k: ["Loker", "Paket", "Mulai aktif"], v: ["C-031", t.name, startDate.split(", ")[1]] };
+    window.scrollTo(0, 0);
+  });
+  $("#doneKiosk").addEventListener("click", function () { setTimeout(function () { show("6120"); }, 0); });
+
+  /* Kiosk */
+  var buf = "";
+  function drawPin(s) { document.querySelectorAll("#pin i").forEach(function (el, i) { el.textContent = s[i] || ""; }); }
+  function show(code) {
+    var m = kioskMembers[code] || { state: "stop", status: "Kode tidak ditemukan", name: "Coba lagi", sub: "Periksa kode di WhatsApp, atau minta bantuan resepsionis.", k: ["Hari ini", "Bantuan", "Coba hari ini"], v: ["Buka", "Resepsionis", "Gratis 1 hari"] };
+    $("#result").setAttribute("data-state", m.state);
+    $("#resStatus").textContent = m.status;
+    $("#resName").textContent = m.name;
+    $("#resSub").textContent = m.sub;
+    ["1", "2", "3"].forEach(function (n, i) { $("#f" + n + "k").textContent = m.k[i]; $("#f" + n + "v").textContent = m.v[i]; });
+    var ic = $("#result .result__status svg, #result .result__status i");
+    if (ic && window.lucide) {
+      var name = m.state === "ok" ? "circle-check" : m.state === "warn" ? "triangle-alert" : "circle-x";
+      ic.outerHTML = '<i data-lucide="' + name + '"></i>';
+      window.lucide.createIcons({ attrs: { "stroke-width": 2 } });
+    }
+    buf = code; drawPin(code);
+  }
+  $("#pad").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var k = b.getAttribute("data-k");
+    if (buf.length === 4 && !k) buf = "";
+    if (k === "del") buf = buf.slice(0, -1);
+    else if (k === "ok") { if (buf.length === 4) show(buf); return; }
+    else if (buf.length < 4) buf += b.textContent;
+    drawPin(buf);
+    if (buf.length === 4 && !k) show(buf);
+  });
+  $("#demoCodes").addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) show(b.textContent); });
+
+  renderGrid(); renderPicked();
+  /* Ikon lucide dibuat lapak.js saat init; jalankan kiosk setelahnya */
+  setTimeout(function () { show("4827"); }, 0);
+})();
+</script>
+</body>
+</html>

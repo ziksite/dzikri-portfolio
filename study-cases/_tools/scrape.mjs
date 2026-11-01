@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { chromium } from "playwright-core";
 const [url, out] = process.argv.slice(2);
-const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const b = await chromium.launch({ executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" });
 const p = await ctx.newPage();
 await p.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });

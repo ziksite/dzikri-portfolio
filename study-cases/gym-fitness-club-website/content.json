@@ -1,0 +1,42 @@
+{
+  "slug": "gym-fitness-club-website",
+  "kind": "Website",
+  "industry": "Sports & Fitness",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Class Booking", "Kiosk Check-in"],
+  "metrics": [
+    { "value": "200+", "label": "CLASSES PER MONTH", "labelId": "KELAS PER BULAN" },
+    { "value": "3", "label": "STUDIOS", "labelId": "STUDIO" },
+    { "value": "4", "label": "SCREENS", "labelId": "LAYAR" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Home with studios and a peak-hour map", "captionId": "Beranda dengan studio dan peta jam ramai" },
+    { "hash": "jadwal", "caption": "Bookable weekly class timetable", "captionId": "Jadwal kelas mingguan yang bisa dibooking" },
+    { "hash": "gabung", "caption": "Membership price matrix and total", "captionId": "Matriks harga membership dan total" },
+    { "hash": "pintu", "caption": "Check-in kiosk tablet at the entrance", "captionId": "Tablet kiosk check-in di pintu masuk" }
+  ],
+  "content_en": {
+    "title": "Gym & Fitness Club Website",
+    "type": "GYM WEBSITE",
+    "category": "Sports & Fitness",
+    "summary": "A redesign concept for a three-studio gym that turns a read-only timetable into a bookable schedule, a transparent membership matrix, and a door check-in kiosk.",
+    "challenge": "The gym runs more than 200 classes a month across three studios, but its website only showed the timetable as a static table. Members could not see remaining spots before arriving.\n\nMembership pricing stopped at a starting price, and most pages ended in a generic learn-more link. There was no direct path from seeing a class to joining.",
+    "solution": "The site is rebuilt around the weekly timetable: visitors mark classes, compare a plan-by-duration price matrix, see the total, and confirm in one flow. Confirmation issues a four-digit code for the door kiosk.\n\nThe kiosk gives a full-panel status readable from a distance, with locker and next class. The planned stack is Next.js, Supabase, Midtrans, and the WhatsApp Business API, with the kiosk as a PWA on a tablet.",
+    "features": ["Bookable weekly timetable by studio", "Remaining spots per class", "Plan-by-duration price matrix", "Live total with personal training add-on", "Upfront or monthly payment choice", "Peak-hour map of the gym floor", "Check-in kiosk with four-digit member code"],
+    "role": "Design system, UX flow, and front-end prototype",
+    "impact": "Concept prototype connecting the class schedule, membership purchase, and door check-in into one flow, ready for validation with real member data.",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Gym & Fitness Club",
+    "type": "WEBSITE GYM",
+    "category": "Olahraga & Kebugaran",
+    "summary": "Konsep redesign gym tiga studio yang mengubah tabel jadwal menjadi jadwal yang bisa dibooking, matriks harga membership yang terbuka, dan kiosk check-in di pintu masuk.",
+    "challenge": "Gym ini menjalankan lebih dari 200 kelas sebulan di tiga studio, tetapi websitenya hanya menampilkan jadwal sebagai tabel statis. Member tidak bisa melihat sisa kuota sebelum datang.\n\nHarga membership berhenti di harga mulai, dan sebagian besar halaman berakhir di tautan selengkapnya. Tidak ada jalur langsung dari melihat kelas ke mendaftar.",
+    "solution": "Situs dibangun ulang dengan jadwal mingguan sebagai pusat: pengunjung menandai kelas, membandingkan matriks paket dan durasi, melihat total, lalu konfirmasi dalam satu alur. Konfirmasi menghasilkan kode empat digit untuk kiosk pintu masuk.\n\nKiosk menampilkan status satu panel penuh yang terbaca dari jauh, lengkap dengan loker dan kelas berikutnya. Stack yang direncanakan: Next.js, Supabase, Midtrans, dan WhatsApp Business API, dengan kiosk sebagai PWA di tablet.",
+    "features": ["Jadwal mingguan per studio yang bisa dibooking", "Sisa kuota tiap kelas", "Matriks harga paket dan durasi", "Total langsung dengan tambahan personal training", "Pilihan bayar lunas atau bulanan", "Peta jam ramai lantai gym", "Kiosk check-in dengan kode member empat digit"],
+    "role": "Design system, alur UX, dan prototype front-end",
+    "impact": "Prototype konsep yang menghubungkan jadwal kelas, pembelian membership, dan check-in pintu dalam satu alur, siap divalidasi dengan data member nyata.",
+    "testimonial": ""
+  }
+}

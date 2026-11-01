@@ -1,0 +1,58 @@
+{
+  "slug": "used-car-showroom-website",
+  "kind": "Website",
+  "industry": "Automotive",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Credit Simulator", "Inventory Management"],
+  "metrics": [
+    { "value": "4", "label": "BRANCHES ON ONE BOARD", "labelId": "CABANG DALAM SATU PAPAN" },
+    { "value": "4", "label": "TENOR OPTIONS", "labelId": "PILIHAN TENOR" },
+    { "value": "6", "label": "CATALOG FILTERS", "labelId": "FILTER KATALOG" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage that matches stock to a monthly instalment", "captionId": "Beranda yang mencocokkan stok dengan cicilan bulanan" },
+    { "hash": "katalog", "caption": "Stock catalog with working brand, price, transmission and year filters", "captionId": "Katalog stok dengan filter merek, harga, transmisi, dan tahun yang berfungsi" },
+    { "hash": "unit", "caption": "Unit page with credit simulation, inspection results and test drive booking", "captionId": "Halaman unit dengan simulasi kredit, hasil inspeksi, dan jadwal test drive" },
+    { "hash": "lot", "caption": "Showroom tablet board with parking bays and unit status", "captionId": "Papan lot tablet showroom dengan petak parkir dan status unit" }
+  ],
+  "content_en": {
+    "title": "Used Car Showroom Website",
+    "type": "USED CAR CATALOG & CREDIT SIMULATOR",
+    "category": "Website",
+    "summary": "A redesign for a multi-branch used car showroom. Buyers start from the instalment they can afford, compare stock with real filters, simulate credit per unit, and book a test drive, while the showroom tracks every unit on a parking bay board.",
+    "challenge": "The showroom listed about 100 units, yet each card showed only a credit price. The higher cash price and the leasing packages sat in free text on each unit page, so buyers could not test another down payment or tenor without contacting sales.\n\nFilters stopped at brand, price and location, and every call to action led to a list of WhatsApp contacts. Stock data also drifted: a down payment entered as a price, and a mileage figure that did not match the odometer photo. Test drives and unit status had no shared record.",
+    "solution": "The homepage turns instalment, down payment and tenor into one sentence with three sliders, and the stock line-up reorders as they move. The catalog adds transmission, year and body filters, and each unit page shows both prices, inspection notes and a simulator built on that unit's own leasing packages, with interpolated values labelled as estimates.\n\nA test drive can be booked from the same panel, and it updates the showroom tablet, where staff tap a parking bay to change a unit's status. Planned stack: Next.js and Supabase for units, packages, bookings and status, with WhatsApp Business for confirmations.",
+    "features": [
+      "Instalment-first homepage with live stock matching",
+      "Catalog filters for brand, price, transmission, year, branch and body",
+      "Credit and cash prices shown side by side",
+      "Credit simulator based on each unit's leasing packages",
+      "Inspection results and unit history per car",
+      "Test drive booking with date and time slots",
+      "Showroom tablet board for parking bays and unit status"
+    ],
+    "role": "UX design, design system and front-end prototype",
+    "impact": "Prototype stage. Designed so buyers can check affordability before contacting sales and so the showroom keeps one status for each unit.",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Showroom Mobil Bekas",
+    "type": "KATALOG MOBIL BEKAS & SIMULASI KREDIT",
+    "category": "Website",
+    "summary": "Redesign untuk showroom mobil bekas dengan beberapa cabang. Pembeli memulai dari cicilan yang sanggup dibayar, menyaring stok dengan filter nyata, mensimulasikan kredit per unit, lalu menjadwalkan test drive, sementara showroom memantau setiap unit di papan petak parkir.",
+    "challenge": "Showroom menayangkan sekitar 100 unit, tetapi tiap kartu hanya menampilkan harga kredit. Harga tunai yang lebih tinggi dan paket leasing berada di teks bebas halaman unit, sehingga pembeli tidak bisa mencoba TDP atau tenor lain tanpa menghubungi sales.\n\nFilter berhenti di merek, harga, dan lokasi, dan semua tombol berujung pada daftar kontak WhatsApp. Data stok juga melenceng: TDP masuk kolom harga, dan angka kilometer tidak cocok dengan foto odometer. Test drive dan status unit tidak punya catatan bersama.",
+    "solution": "Beranda mengubah cicilan, TDP, dan tenor menjadi satu kalimat dengan tiga slider, dan deret stok berubah urutan saat slider digeser. Katalog menambah filter transmisi, tahun, dan bentuk, sedangkan halaman unit menampilkan dua harga, catatan inspeksi, dan simulasi dari paket leasing unit itu sendiri, dengan nilai di antara paket berlabel perkiraan.\n\nTest drive dijadwalkan dari panel yang sama dan langsung memperbarui tablet showroom, tempat staf mengetuk petak parkir untuk mengubah status unit. Stack rencana: Next.js dan Supabase untuk unit, paket, jadwal, dan status, dengan WhatsApp Business untuk konfirmasi.",
+    "features": [
+      "Beranda berbasis cicilan dengan pencocokan stok langsung",
+      "Filter katalog merek, harga, transmisi, tahun, cabang, dan bentuk",
+      "Harga kredit dan tunai tampil berdampingan",
+      "Simulasi kredit dari paket leasing tiap unit",
+      "Hasil inspeksi dan riwayat per mobil",
+      "Jadwal test drive dengan pilihan tanggal dan jam",
+      "Papan tablet showroom untuk petak parkir dan status unit"
+    ],
+    "role": "Desain UX, design system, dan prototype front-end",
+    "impact": "Tahap prototype. Dirancang agar pembeli bisa mengecek kemampuan bayar sebelum menghubungi sales dan showroom punya satu status untuk tiap unit.",
+    "testimonial": ""
+  }
+}

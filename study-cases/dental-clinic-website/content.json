@@ -1,0 +1,58 @@
+{
+  "slug": "dental-clinic-website",
+  "kind": "Website",
+  "industry": "Healthcare",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Online Booking", "Dental Chart"],
+  "metrics": [
+    { "value": "19", "label": "TREATMENTS WITH PRICES", "labelId": "PERAWATAN BERHARGA" },
+    { "value": "8", "label": "COMPLAINT STARTING POINTS", "labelId": "TITIK MULAI KELUHAN" },
+    { "value": "32", "label": "TEETH ON THE PRICE CHART", "labelId": "GIGI DI PETA HARGA" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with complaint search and visible prices", "captionId": "Beranda dengan pencarian keluhan dan harga yang terlihat" },
+    { "hash": "perawatan", "caption": "Marking teeth on a dental chart to estimate the cost", "captionId": "Menandai gigi di peta gigi untuk memperkirakan biaya" },
+    { "hash": "jadwal", "caption": "Weekly schedule by clinic and dentist", "captionId": "Jadwal mingguan per klinik dan dokter" },
+    { "hash": "kursi", "caption": "Chair board on the receptionist tablet", "captionId": "Papan kursi di tablet resepsionis" }
+  ],
+  "content_en": {
+    "title": "Dental Clinic Website",
+    "type": "DENTAL CLINIC WEBSITE & BOOKING",
+    "category": "Booking System",
+    "summary": "A redesign for a small dental clinic group. Patients start from what they feel, see treatments and costs per tooth, and pick a dentist and time; reception runs the day from a chair board on a tablet.",
+    "challenge": "The old site was a single page where both the reservation and price list buttons led to a page of links, and no price list could be found there. Only four treatments showed a price, while the rest were mentioned in a long paragraph.\n\nBooking meant messaging a WhatsApp number per branch with no view of open times or dentist schedules. Large before-and-after mouth photos sat in the middle of the page, and the site and its link page listed a different number of branches.",
+    "solution": "The homepage opens with a search by complaint, then popular treatments, the full price list in expandable groups, the nearest open times, dentists and clinics. Choosing a complaint opens a two-arch dental chart beside the matching treatments: patients mark the affected teeth and the estimate updates in a bar along the bottom of the screen.\n\nThat estimate carries into a weekly grid of hours and days, filtered by clinic and dentist, and on to a confirmation code. At the front desk, a tablet board shows each chair as in treatment, being sterilised with a checklist, or free, alongside the queue, a timeline per chair and bills waiting at the cashier. The planned production stack is Next.js with Supabase.",
+    "features": [
+      "Complaint search as the starting point",
+      "Full price list with units for 19 treatments",
+      "Two-arch dental chart that calculates cost per tooth",
+      "Estimate bar carried from treatment to confirmation",
+      "Weekly schedule grid by clinic and dentist",
+      "Chair board with a sterilisation checklist before reuse",
+      "Reception queue, chair timeline and cashier list"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Klinik Gigi",
+    "type": "WEBSITE & BOOKING KLINIK GIGI",
+    "category": "Booking System",
+    "summary": "Redesign untuk klinik gigi kecil dengan beberapa cabang. Pasien mulai dari keluhan, melihat perawatan dan biaya per gigi, lalu memilih dokter dan jam; resepsionis mengatur hari dari papan kursi di tablet.",
+    "challenge": "Situs lama hanya satu halaman, dan tombol reservasi maupun daftar harga sama-sama mengarah ke halaman kumpulan tautan yang tidak berisi daftar harga. Hanya empat perawatan yang menampilkan harga, sedangkan sisanya disebut dalam paragraf panjang.\n\nReservasi berarti mengirim pesan ke nomor WhatsApp per cabang, tanpa gambaran jam kosong atau jadwal dokter. Foto mulut before-after berukuran besar ada di tengah halaman, dan jumlah cabang di situs berbeda dengan di halaman tautannya.",
+    "solution": "Beranda dibuka dengan pencarian keluhan, lalu perawatan populer, daftar harga lengkap dalam grup yang bisa dibuka, jam kosong terdekat, dokter, dan klinik. Memilih keluhan membuka peta gigi dua rahang di samping perawatan yang sesuai: pasien menandai gigi yang bermasalah dan perkiraan biaya berubah di bilah bawah layar.\n\nPerkiraan itu terbawa ke kisi mingguan jam dan hari, yang bisa difilter per klinik dan dokter, sampai kode konfirmasi. Di meja depan, papan di tablet menampilkan setiap kursi sebagai dalam tindakan, sedang disterilkan dengan checklist, atau kosong, bersama antrean, garis waktu per kursi, dan tagihan di kasir. Stack produksi yang direncanakan adalah Next.js dengan Supabase.",
+    "features": [
+      "Pencarian keluhan sebagai titik mulai",
+      "Daftar harga lengkap dengan satuan untuk 19 perawatan",
+      "Peta gigi dua rahang yang menghitung biaya per gigi",
+      "Bilah perkiraan yang terbawa dari perawatan sampai konfirmasi",
+      "Kisi jadwal mingguan per klinik dan dokter",
+      "Papan kursi dengan checklist sterilisasi sebelum dipakai lagi",
+      "Antrean resepsionis, garis waktu kursi, dan daftar kasir"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}

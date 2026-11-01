@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 const [slug, ...hashes] = process.argv.slice(2);
 const W = Number(process.env.W || 1440);
-const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const b = await chromium.launch({ executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const p = await b.newPage({ viewport: { width: W, height: 900 } });
 p.on("pageerror", e => console.log("PAGEERROR", e.message));
 p.on("console", m => { if (m.type() === "error" && !m.text().includes("ERR_FILE_NOT_FOUND")) console.log("CONSOLE", m.text()); });

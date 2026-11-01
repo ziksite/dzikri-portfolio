@@ -7,7 +7,7 @@ const W = 1440, H = 900, BAR = 44;
 const content = JSON.parse(fs.readFileSync(`${REPO}/study-cases/${slug}/content.json`, "utf8"));
 const frame = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${BAR}"><rect width="${W}" height="${BAR}" fill="#141414"/><circle cx="22" cy="22" r="6" fill="#ff5f57"/><circle cx="42" cy="22" r="6" fill="#febc2e"/><circle cx="62" cy="22" r="6" fill="#28c840"/><rect x="96" y="12" width="1248" height="20" rx="10" fill="#2a2a2a"/></svg>`);
 const outDir = `${REPO}/public/images/projects/${slug}`; fs.mkdirSync(outDir, { recursive: true });
-const b = await chromium.launch({ executablePath: "C:/Users/dzikr/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe" });
+const b = await chromium.launch({ executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const p = await b.newPage({ viewport: { width: W, height: H } });
 p.on("pageerror", e => console.log("PAGEERROR", e.message));
 await p.goto(`file:///${encodeURI(REPO)}/public/prototypes/${slug}.html`, { waitUntil: "networkidle" });
