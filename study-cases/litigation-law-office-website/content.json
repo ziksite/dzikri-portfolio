@@ -1,0 +1,42 @@
+{
+  "slug": "litigation-law-office-website",
+  "kind": "Website",
+  "industry": "Legal",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Client Intake", "Case Board"],
+  "metrics": [
+    { "value": "8", "label": "GUIDED MATTER TYPES", "labelId": "JENIS PERKARA TERPANDU" },
+    { "value": "2", "label": "OFFICES", "labelId": "KANTOR" },
+    { "value": "5", "label": "CASE STAGES ON THE BOARD", "labelId": "TAHAP DI PAPAN PERKARA" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Home built around the problem a visitor is facing, not legal categories", "captionId": "Beranda yang berangkat dari masalah pengunjung, bukan istilah hukum" },
+    { "hash": "panduan", "caption": "Staged guide with general steps, time notices, and documents to prepare", "captionId": "Panduan bertahap berisi tahapan umum, peringatan waktu, dan dokumen" },
+    { "hash": "jadwal", "caption": "Document checklist and consultation scheduling on one page", "captionId": "Ceklis dokumen dan jadwal konsultasi dalam satu halaman" },
+    { "hash": "perkara", "caption": "Internal case board by stage with a two-week hearing agenda", "captionId": "Papan perkara internal per tahap dengan agenda sidang dua minggu" }
+  ],
+  "content_en": {
+    "title": "Litigation Law Office Website",
+    "type": "LAW OFFICE WEBSITE",
+    "category": "Legal",
+    "summary": "An anonymous redesign of a two-city law office website: a problem-first guide that leads to document preparation and a consultation slot, with a case board for the internal team.",
+    "challenge": "The original site opened with ranking claims and success statistics, which sit poorly with the limits on self-promotion in the Indonesian advocates' code of ethics. Services were listed by legal category, so a visitor had to know the correct term before finding help.\n\nContact came down to a general form and one WhatsApp number. Visitors were not told what to bring, and the office received enquiries without the context needed to prepare.",
+    "solution": "The home page became an index of plain situations, built on a portal layout with no stock imagery. Short questions per matter type lead to the usual stages, any time-sensitive notice, and a document list, all labelled as general information rather than legal advice.\n\nThe same documents carry into a scheduling page with a conflict-of-interest step. The team sees matters on a stage board with a two-week agenda and anonymised clients. Planned stack: Next.js, Supabase, and the WhatsApp API.",
+    "features": ["Problem-first index of 8 situations", "Staged guide per matter type", "Time-sensitive notices based on answers", "Document checklist that follows the matter", "Consultation calendar with meeting mode", "Conflict-of-interest and no-engagement notices", "Case board with deadlines and stage moves"],
+    "role": "Audit, UX flow, design system, and clickable prototype",
+    "impact": "A concept prototype that replaces promotional claims with practical guidance. Not launched, and the guide text needs review by a practising advocate.",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Kantor Advokat Litigasi",
+    "type": "WEBSITE KANTOR ADVOKAT",
+    "category": "Legal",
+    "summary": "Redesign anonim website kantor hukum di dua kota: panduan yang berangkat dari masalah, berlanjut ke persiapan dokumen dan jadwal konsultasi, ditambah papan perkara untuk tim internal.",
+    "challenge": "Situs asli dibuka dengan klaim peringkat dan statistik keberhasilan, yang kurang sejalan dengan batasan iklan diri dalam Kode Etik Advokat Indonesia. Layanan disusun menurut istilah hukum, sehingga pengunjung harus tahu istilah yang tepat sebelum menemukan bantuan.\n\nKontak hanya berupa satu form umum dan satu nomor WhatsApp. Pengunjung tidak diberi tahu apa yang perlu dibawa, dan kantor menerima pertanyaan tanpa konteks untuk bersiap.",
+    "solution": "Beranda diubah menjadi indeks keadaan sehari-hari dalam tata letak portal, tanpa foto stok. Pertanyaan singkat per jenis perkara mengarah ke tahapan umum, peringatan waktu bila relevan, dan daftar dokumen, semuanya ditandai sebagai informasi umum dan bukan nasihat hukum.\n\nDokumen yang sama terbawa ke halaman jadwal yang memuat pemeriksaan benturan kepentingan. Tim melihat perkara di papan per tahap dengan agenda dua minggu dan nama klien disamarkan. Rencana stack: Next.js, Supabase, dan WhatsApp API.",
+    "features": ["Indeks 8 keadaan berbasis masalah", "Panduan bertahap per jenis perkara", "Peringatan waktu sesuai jawaban", "Ceklis dokumen yang mengikuti perkara", "Kalender konsultasi dengan pilihan cara bertemu", "Keterangan benturan kepentingan dan batas hubungan klien", "Papan perkara dengan tenggat dan perpindahan tahap"],
+    "role": "Audit, alur UX, design system, dan prototype yang bisa diklik",
+    "impact": "Prototype konsep yang mengganti klaim promosi dengan panduan praktis. Belum diluncurkan, dan isi panduan perlu ditinjau advokat praktik.",
+    "testimonial": ""
+  }
+}

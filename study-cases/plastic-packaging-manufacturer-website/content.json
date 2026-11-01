@@ -1,0 +1,58 @@
+{
+  "slug": "plastic-packaging-manufacturer-website",
+  "kind": "Website",
+  "industry": "Industrial & Manufacturing",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "RFQ Workflow", "Production Planning"],
+  "metrics": [
+    { "value": "25", "label": "SEARCHABLE SPECIFICATIONS", "labelId": "SPESIFIKASI TERCARI" },
+    { "value": "100 KG", "label": "MOQ CHECK PER ITEM", "labelId": "CEK MOQ PER ITEM" },
+    { "value": "9×9", "label": "MACHINE AND SHIFT BOARD", "labelId": "PAPAN MESIN DAN SHIFT" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with a working bag weight calculator", "captionId": "Beranda dengan kalkulator berat kantong yang berfungsi" },
+    { "hash": "katalog", "caption": "Specification finder with a detail panel for each bag", "captionId": "Pencari spesifikasi dengan panel detail tiap kantong" },
+    { "hash": "penawaran", "caption": "Configurator with a live technical drawing, weight formula and MOQ check", "captionId": "Konfigurator dengan gambar teknik, rumus berat, dan cek MOQ" },
+    { "hash": "mesin", "caption": "Machine board by shift with job status and an unscheduled queue", "captionId": "Papan mesin per shift dengan status job dan antrean belum terjadwal" }
+  ],
+  "content_en": {
+    "title": "Plastic Packaging Manufacturer Website",
+    "type": "B2B CATALOG & RFQ WEBSITE",
+    "category": "Manufacturing",
+    "summary": "A redesign for a plastic bag factory producing PE, PP, HDPE and rotogravure-printed packaging. Buyers find a specification, estimate weight against the MOQ, and send one quotation request for several items.",
+    "challenge": "The original site used an online shop layout, but it showed no prices and listed the thickness of almost every product as variable. Sizes were placed inside product images, so buyers could not search or compare them.\n\nThe minimum order is set in kilograms while buyers think in pieces, and no tool connected the two. Every product ended at the same enquiry button, the catalog sat behind a form, and a multi-item request had to be explained by hand in chat.",
+    "solution": "The site is rebuilt as a working tool. A specification finder filters by material, colour, width, thickness and print capability, and a configurator draws the bag from the entered size, shows its weight formula, and checks the order against the MOQ. Items collect into one quotation request.\n\nFor the factory, a machine board plans extruder, rotogravure and cutting lines by shift, and unscheduled jobs can be placed into the first free slot. Planned stack: Next.js, Supabase and the WhatsApp API.",
+    "features": [
+      "Bag weight calculator on the homepage",
+      "Specification finder with five filters",
+      "Material comparison by intended use",
+      "Technical drawing that follows the entered size",
+      "Visible weight formula and MOQ check",
+      "Multi-item quotation request",
+      "Machine board by shift with an unscheduled queue"
+    ],
+    "role": "Site audit, UX design, design system and interactive prototype",
+    "impact": "Prototype stage. Buyers can reach a specification and an estimated weight before contacting sales, and sales receives requests with sizes and quantities already filled in.",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Pabrik Kemasan Plastik",
+    "type": "WEBSITE KATALOG & RFQ B2B",
+    "category": "Manufaktur",
+    "summary": "Redesign untuk pabrik kantong plastik yang memproduksi kemasan PE, PP, HDPE, dan cetak rotogravure. Pembeli mencari spesifikasi, memperkirakan berat terhadap MOQ, lalu mengirim satu permintaan penawaran untuk beberapa item.",
+    "challenge": "Situs asli memakai tampilan toko online, tetapi tidak menampilkan harga dan menulis ketebalan hampir semua produk sebagai variatif. Ukuran ditempatkan di dalam gambar produk, sehingga pembeli tidak bisa mencari atau membandingkannya.\n\nMinimum order ditetapkan dalam kilogram, sementara pembeli berpikir dalam pieces, dan tidak ada alat yang menghubungkan keduanya. Setiap produk berakhir di tombol tanya yang sama, katalog terkunci di balik formulir, dan permintaan multi-item harus dijelaskan manual lewat chat.",
+    "solution": "Situs dibangun ulang sebagai alat kerja. Pencari spesifikasi menyaring bahan, warna, lebar, ketebalan, dan kemampuan cetak, sedangkan konfigurator menggambar kantong dari ukuran yang diisi, menampilkan rumus beratnya, dan memeriksa pesanan terhadap MOQ. Item terkumpul dalam satu permintaan penawaran.\n\nUntuk pabrik, papan mesin merencanakan lini extruder, rotogravure, dan potong per shift, dan job yang belum terjadwal bisa ditempatkan ke slot kosong pertama. Rencana stack: Next.js, Supabase, dan WhatsApp API.",
+    "features": [
+      "Kalkulator berat kantong di beranda",
+      "Pencari spesifikasi dengan lima filter",
+      "Perbandingan material berdasarkan kegunaan",
+      "Gambar teknik yang mengikuti ukuran",
+      "Rumus berat terlihat dan cek MOQ",
+      "Permintaan penawaran multi-item",
+      "Papan mesin per shift dengan antrean belum terjadwal"
+    ],
+    "role": "Audit situs, desain UX, design system, dan prototype interaktif",
+    "impact": "Tahap prototype. Pembeli bisa menemukan spesifikasi dan perkiraan berat sebelum menghubungi sales, dan sales menerima permintaan dengan ukuran serta jumlah yang sudah terisi.",
+    "testimonial": ""
+  }
+}

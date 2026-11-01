@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labuh Seafood — Pilih dari etalase, timbang, masak sesuai selera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/seafood-restaurant-website.css">
+</head>
+<body>
+
+<div class="m-top">
+  <a class="logo" href="#home">labuh<span> seafood</span></a>
+  <label class="branch-select"><i data-lucide="map-pin" class="i-sm"></i><select class="js-branch" aria-label="Pilih cabang"></select><i data-lucide="chevron-down" class="i-sm chev"></i></label>
+</div>
+
+<div class="app">
+  <aside class="rail">
+    <a class="logo rail__logo" href="#home">labuh<span> seafood</span></a>
+    <label class="branch-select"><i data-lucide="map-pin" class="i-sm"></i><select class="js-branch" aria-label="Pilih cabang"></select><i data-lucide="chevron-down" class="i-sm chev"></i></label>
+    <nav class="rail__nav">
+      <a data-nav="home" href="#home"><i data-lucide="house" class="i"></i>Beranda</a>
+      <a data-nav="etalase" href="#etalase"><i data-lucide="fish" class="i"></i>Etalase &amp; menu<span class="badge-n num js-count">0</span></a>
+      <a data-nav="reservasi" href="#reservasi"><i data-lucide="armchair" class="i"></i>Pesan meja</a>
+      <a href="#home" data-jump="cabang"><i data-lucide="store" class="i"></i>Cabang</a>
+      <a href="#home" data-jump="ruang"><i data-lucide="users" class="i"></i>Ruang privat</a>
+    </nav>
+    <div class="rail__promo">
+      <p class="t-h3" style="color:#fff">Labuh Reserve</p>
+      <p>Tier fine dining kami, dibuka di Medan Desember ini.</p>
+      <a href="#home" data-jump="reserve">Daftar lebih dulu</a>
+    </div>
+    <a class="rail__staff" href="#papan"><i data-lucide="layout-grid" class="i-sm"></i>Papan cabang (staf)</a>
+  </aside>
+
+  <main class="main">
+
+    <!-- ================= BERANDA ================= -->
+    <section data-screen="home">
+      <div class="topbar">
+        <a class="search" href="#etalase"><i data-lucide="search" class="i-sm"></i><span style="font-size:14px">Cari kepiting, kakap, udang</span></a>
+        <div class="topbar__r">
+          <a class="btn btn-line" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp cabang</a>
+          <a class="btn btn-primary" href="#reservasi">Pesan meja</a>
+        </div>
+      </div>
+
+      <div class="hero-g">
+        <div class="hero">
+          <div class="hero__t">
+            <h1 class="t-hero">Pilih dari etalase. Kami timbang, lalu masak.</h1>
+            <p>Lihat harga per 100 gram sebelum datang, tentukan berat dan cara masaknya, lalu tahu total tagihan sejak dari rumah.</p>
+            <div class="hero__cta">
+              <a class="btn btn-white" href="#etalase">Buka etalase</a>
+              <a class="btn btn-ghost" href="#reservasi">Pesan meja</a>
+            </div>
+          </div>
+          <div class="photo" data-img="assets/seafood-restaurant-website/king-crab.webp" style="--pos:center 62%"></div>
+        </div>
+        <div class="card slots">
+          <div><p class="t-h3">Meja malam ini</p><p class="t-small"><span class="js-city">Malang</span> · Minggu, 1 Nov</p></div>
+          <div id="slotRows" style="display:contents"></div>
+          <p class="t-small">Buka sampai 22.00. Ruang privat untuk 8 orang ke atas.</p>
+        </div>
+      </div>
+
+      <section class="sec">
+        <div class="sec__h"><div><h2 class="t-h2">Di etalase hari ini</h2><p class="t-meta">Harga per 100 gram, berubah mengikuti tangkapan</p></div><a class="btn btn-line btn-sm" href="#etalase">Semua etalase</a></div>
+        <div class="market" id="homeMarket"></div>
+      </section>
+
+      <section class="sec">
+        <div class="sec__h"><div><h2 class="t-h2">Andalan dapur</h2><p class="t-meta">Harga tetap per porsi, tanpa perlu ditimbang</p></div></div>
+        <div class="dishes" id="homeDishes"></div>
+      </section>
+
+      <section class="sec" id="cabang">
+        <div class="sec__h"><h2 class="t-h2">Lima cabang</h2></div>
+        <div class="chips chips--scroll" data-select id="branchTabs" style="margin-bottom:12px"></div>
+        <div class="card branch">
+          <div class="photo" id="brPhoto"></div>
+          <div class="branch__b">
+            <div><h3 class="t-h2" id="brName"></h3><p class="t-meta" id="brHours"></p></div>
+            <p id="brLine"></p>
+            <ul class="facts" id="brFacts"></ul>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px"><a class="btn btn-primary btn-sm" href="#reservasi">Pesan meja di sini</a><a class="btn btn-line btn-sm" href="#">Petunjuk arah</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="ruang">
+        <div class="sec__h"><div><h2 class="t-h2">Ruang privat dan rombongan</h2><p class="t-meta">Untuk rapat, arisan, ulang tahun, dan jamuan kantor</p></div></div>
+        <div class="card rooms">
+          <div class="photo" data-img="assets/seafood-restaurant-website/ruang-aula.webp"></div>
+          <div class="rooms__t">
+            <div class="room"><div><p class="t-h3">Ruang Karang</p><p class="t-small">Proyektor, mikrofon nirkabel</p></div><span class="pill num">8–24 orang</span></div>
+            <div class="room"><div><p class="t-h3">Ruang Teluk</p><p class="t-small">Pintu penghubung, set menu atau prasmanan</p></div><span class="pill num">12–60 orang</span></div>
+            <div class="room"><div><p class="t-h3">Ruang Tanjung</p><p class="t-small">Karaoke, meja bundar putar</p></div><span class="pill num">8–10 orang</span></div>
+            <div class="room"><div><p class="t-h3">Aula besar</p><p class="t-small">Mataram saja, parkir untuk 30 bus</p></div><span class="pill num">s.d. 200 orang</span></div>
+            <a class="btn btn-line btn-sm" href="#" style="margin-top:6px"><i data-lucide="message-circle" class="i-sm"></i>Minta penawaran rombongan</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="reserve">
+        <div class="reserve">
+          <div class="photo" data-img="assets/seafood-restaurant-website/kepiting-karamel.webp" style="--pos:center 70%"></div>
+          <div class="reserve__b">
+            <h2 class="t-h1">Labuh Reserve</h2>
+            <p>Tier fine dining dari keluarga yang sama. Ruang lebih tenang, seafood dipilih bersama chef, menu mengikuti tangkapan.</p>
+            <ol class="acts">
+              <li><b class="num">1</b><span><b>Pilih bersama chef.</b> Tangkapan ditimbang di depan tamu.</span></li>
+              <li><b class="num">2</b><span><b>Bumbu yang sama, diracik ulang.</b> Porsi dan penyajian per orang.</span></li>
+              <li><b class="num">3</b><span><b>Ruang privat di setiap outlet.</b> Jamuan bisnis sampai lamaran.</span></li>
+            </ol>
+            <p class="t-small" style="color:#aebbc9">Medan, Desember 2026 · Tangerang, awal 2027</p>
+            <form class="reserve__form" data-demo-form="#resvOk">
+              <input type="text" placeholder="Nomor WhatsApp" aria-label="Nomor WhatsApp" required>
+              <button class="btn btn-white">Daftar lebih dulu</button>
+            </form>
+            <p id="resvOk" hidden style="color:#fff">Tercatat. Kami kabari saat meja pembukaan dibuka.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="sec__h"><h2 class="t-h2">Pertanyaan yang sering ditanya</h2></div>
+        <div class="card faq">
+          <details open><summary>Berat yang saya pilih pasti sama?</summary><p>Hampir. Seafood ditimbang lagi saat Anda tiba, dan tagihan mengikuti berat di timbangan. Selisihnya tampil di nota sebelum dimasak.</p></details>
+          <details><summary>Perlu pesan meja dulu?</summary><p>Tidak wajib, tetapi disarankan untuk akhir pekan, rombongan, dan acara khusus.</p></details>
+          <details><summary>Apakah ramah untuk keluarga dan anak?</summary><p>Ya. Tersedia area bermain anak dan musala. Seluruh cabang bersertifikat halal.</p></details>
+          <details><summary>Metode pembayaran apa saja?</summary><p>Tunai, debit, kartu kredit, dan QRIS.</p></details>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© 2026 Labuh Seafood. Lima cabang, buka setiap hari.</p>
+        <div class="footer__l"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Karier</a><a href="#papan">Papan cabang (staf)</a></div>
+      </footer>
+    </section>
+
+    <!-- ================= ETALASE + MENU ================= -->
+    <section data-screen="etalase">
+      <div class="split">
+        <div class="split__m">
+          <div class="topbar">
+            <label class="search"><i data-lucide="search" class="i-sm"></i><input id="q" type="search" placeholder="Cari di etalase" aria-label="Cari"></label>
+            <div class="topbar__r"><a class="btn btn-primary" href="#reservasi">Lanjut pilih meja</a></div>
+          </div>
+          <div class="crumb"><span class="js-city">Malang</span><i data-lucide="chevron-right" class="i-sm"></i><b>Pilih seafood</b><i data-lucide="chevron-right" class="i-sm"></i><span>Pilih meja</span><i data-lucide="chevron-right" class="i-sm"></i><span>Konfirmasi</span></div>
+          <h1 class="t-h1" style="margin-bottom:14px">Etalase <span class="js-city">Malang</span></h1>
+          <div class="chips chips--scroll" data-select id="cats" style="margin-bottom:16px"></div>
+          <div id="grid"></div>
+        </div>
+
+        <aside class="panel" id="wPanel">
+          <div class="panel__scroll">
+            <div id="wBox"></div>
+            <div class="nota" id="notaA"></div>
+          </div>
+          <div class="panel__f">
+            <p>Perkiraan total<b class="num js-total">Rp0</b></p>
+            <a class="btn btn-primary" href="#reservasi">Pilih meja</a>
+          </div>
+        </aside>
+      </div>
+      <div class="dock"><span><b class="num js-total">Rp0</b> · <span class="num js-items">0 item</span></span><button class="btn btn-white btn-sm" id="dockOpen">Lihat nota</button></div>
+    </section>
+
+    <!-- ================= RESERVASI ================= -->
+    <section data-screen="reservasi">
+      <div class="split">
+        <div class="split__m">
+          <div class="crumb"><span class="js-city">Malang</span><i data-lucide="chevron-right" class="i-sm"></i><a href="#etalase">Pilih seafood</a><i data-lucide="chevron-right" class="i-sm"></i><b>Pilih meja</b><i data-lucide="chevron-right" class="i-sm"></i><span>Konfirmasi</span></div>
+          <h1 class="t-h1">Pilih meja di denah</h1>
+          <div class="res-bar">
+            <div><span class="lab">Tanggal</span><div class="chips" data-select id="rDate"></div></div>
+            <div><span class="lab">Jam tiba</span><div class="chips" data-select id="rTime"></div></div>
+            <div><span class="lab">Tamu</span><div class="stepper" data-stepper data-min="1" data-max="60" id="rPax"><button type="button" aria-label="Kurangi">−</button><output>4</output><button type="button" data-inc aria-label="Tambah">+</button></div></div>
+          </div>
+          <div class="card floor-card">
+            <div class="floor-card__h">
+              <p class="t-h3">Lantai utama <span class="js-city">Malang</span></p>
+              <div class="legend"><span><i></i>Kosong</span><span><i class="is-pick"></i>Pilihan Anda</span><span><i class="is-off"></i>Terisi atau kurang kursi</span></div>
+            </div>
+            <div class="floor-scroll"><div class="floor" id="floor"></div></div>
+          </div>
+        </div>
+
+        <aside class="panel panel--static-m" id="rPanel">
+          <div class="panel__scroll">
+            <form data-demo-form="#rOk" id="rForm">
+              <div class="panel__h"><div><h2 class="t-h2" id="rT">Pilih meja</h2><p class="t-meta" id="rM"></p></div></div>
+              <div class="nota" id="notaB"></div>
+              <div class="sum" id="rSum"></div>
+              <div class="form">
+                <p class="note" id="rNote" hidden></p>
+                <div><label for="fN">Nama</label><input class="input" id="fN" value="Rina Maharani" required></div>
+                <div><label for="fW">WhatsApp</label><input class="input" id="fW" value="0812 0000 4471" required inputmode="tel"></div>
+                <p class="t-small">Seafood pilihan Anda disisihkan sampai 30 menit setelah jam tiba, lalu ditimbang ulang.</p>
+                <button class="btn btn-primary btn-block" id="rBtn" disabled>Konfirmasi meja</button>
+              </div>
+            </form>
+            <div class="ok-box" id="rOk" hidden>
+              <span class="ok-mark"><i data-lucide="check" class="i"></i></span>
+              <h2 class="t-h2" id="okT"></h2>
+              <p class="muted" id="okD"></p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary btn-sm" href="#">Kirim ke WhatsApp</a><a class="btn btn-line btn-sm" href="#papan">Lihat di papan cabang</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= PAPAN OPERASIONAL ================= -->
+    <section data-screen="papan">
+      <div class="board">
+        <div class="board__top">
+          <a class="logo" href="#home">labuh</a>
+          <span class="t-h3">Papan cabang <span class="js-city">Malang</span></span>
+          <div class="board__meta"><span id="bLoad" class="num"></span><span class="num">Min, 1 Nov · 19.12</span><span class="avatar" title="Kapten">WD</span></div>
+        </div>
+        <div class="board__g">
+          <div class="pane">
+            <div class="pane__h"><h2 class="t-h3">Meja</h2><button class="t-small" id="bClear" hidden>Tampilkan semua</button></div>
+            <div class="tgrid" id="bTables"></div>
+            <div class="tkey"><span><i style="background:var(--blue-soft)"></i>Reservasi</span><span><i style="background:var(--warn-soft)"></i>Tunggu timbang</span><span><i style="background:var(--ok-soft)"></i>Makan</span><span><i style="background:var(--navy)"></i>Minta bill</span></div>
+          </div>
+          <div class="lanes" id="bLanes"></div>
+          <div class="pane">
+            <div class="pane__h"><h2 class="t-h3">Stok etalase</h2><span class="t-small">kg tersisa</span></div>
+            <ul class="stock" id="bStock"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<nav class="tabbar">
+  <a data-nav="home" href="#home"><i data-lucide="house" class="i"></i>Beranda</a>
+  <a data-nav="etalase" href="#etalase"><i data-lucide="fish" class="i"></i>Etalase</a>
+  <a data-nav="reservasi" href="#reservasi"><i data-lucide="armchair" class="i"></i>Pesan meja</a>
+</nav>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var A = "assets/seafood-restaurant-website/";
+  var rp = function (n) { return "Rp" + Math.round(n).toLocaleString("id-ID"); };
+  var kg = function (g) { return g >= 1000 ? (g / 1000).toLocaleString("id-ID", { maximumFractionDigits: 2 }) + " kg" : g + " g"; };
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return document.querySelectorAll(s); };
+  function photos() {
+    $$(".photo[data-img]").forEach(function (b) {
+      var src = b.getAttribute("data-img"), i = b.querySelector("img");
+      if (i) { if (i.getAttribute("src") !== src) i.src = src; return; }
+      i = new Image(); i.alt = ""; i.src = src; b.appendChild(i);
+    });
+  }
+  function icons() { if (window.lucide) lucide.createIcons(); }
+
+  /* ---------- Data ---------- */
+  var BR = [
+    { k: "malang", n: "Malang", tz: "WIB", h: "Sen–Sab 11.00–22.00 · Min 10.00–22.00", img: "ruang-pohon.webp", line: "Dua lantai dengan live music dan etalase seafood hidup.", f: ["±180 kursi, dalam dan luar ruang", "2 ruang privat ber-AC", "Live music siang dan malam", "Area bermain anak", "Musala", "Parkir mobil dan bus"] },
+    { k: "solo", n: "Solo", tz: "WIB", h: "Sen–Sab 11.00–22.00 · Min 10.00–22.00", img: "ruang-aula.webp", line: "Tiga ruang privat berpintu penghubung untuk rapat dan gathering.", f: ["Gabung ruang sampai 84 orang", "Proyektor dan Smart TV", "Set menu atau prasmanan", "Area bermain anak", "Musala", "Parkir luas"] },
+    { k: "bogor", n: "Bogor", tz: "WIB", h: "Sen–Sab 11.00–22.00 · Min 10.00–22.00", img: "ruang-teras.webp", line: "Ramah anak, dekat pusat kota, teras di bawah pohon.", f: ["Area bermain anak", "Teras luar ruang", "Live music", "Ruang privat", "Layanan pesan antar", "Wi-Fi"] },
+    { k: "mataram", n: "Mataram", tz: "WITA", h: "Setiap hari 11.00–21.00", img: "bangunan.webp", line: "Halaman parkir besar dan aula untuk 200 orang, di jalur wisata.", f: ["Parkir 30 bus dan 150 mobil", "Aula sampai 200 orang", "Live music", "Halaman dengan air mancur", "Opsi vegetarian", "Banyak toilet dan ruang bilas"] },
+    { k: "balikpapan", n: "Balikpapan", tz: "WITA", h: "Sen–Sab 11.00–22.00 · Min 10.00–22.00", img: "ruang-makan.webp", line: "Cabang terbaru dengan karaoke dan tiga ruang privat.", f: ["Kapasitas 180 orang", "Aula utama sampai 115 orang", "3 ruang privat", "Karaoke", "Ruang rapat", "Akuarium seafood hidup"] }
+  ];
+  var CK = {
+    bakar: ["Bakar bumbu Labuh", 20000], padang: ["Saus Padang", 30000], lada: ["Lada hitam", 30000], karamel: ["Karamel bawang", 35000],
+    tim: ["Tim Hongkong", 30000], asam: ["Kukus asam jawa", 30000], tepung: ["Goreng tepung", 25000], sing: ["Saus Singapura", 40000], rebus: ["Rebus jahe", 15000]
+  };
+  var SP = [
+    { id: "gurame", n: "Gurame", c: "ikan", r: 19000, img: "ikan-es.webp", st: [620, 740, 810, 960, 1120], u: "ekor", kg: 14.2, cap: 20, m: ["bakar", "asam", "tepung", "tim"] },
+    { id: "kakap", n: "Kakap merah", c: "ikan", r: 28000, img: "ikan-bakar.webp", st: [840, 980, 1150, 1320, 1600], u: "ekor", kg: 9.6, cap: 18, m: ["bakar", "tim", "asam", "padang"] },
+    { id: "kepiting", n: "Kepiting bakau", c: "krus", r: 38000, img: "raw-kepiting.webp", st: [460, 580, 640, 780, 900], u: "ekor", kg: 3.1, cap: 16, m: ["padang", "lada", "karamel", "sing"] },
+    { id: "lobster", n: "Lobster", c: "krus", r: 72000, img: "lobster-closeup.webp", st: [320, 410, 520, 640], u: "ekor", kg: 4.4, cap: 8, m: ["bakar", "lada", "sing", "karamel"] },
+    { id: "king", n: "King crab", c: "krus", r: 195000, img: "king-crab.webp", st: [800, 1000, 1200], u: "potong", kg: 1.6, cap: 6, m: ["sing", "lada", "rebus"] },
+    { id: "udang", n: "Udang windu", c: "kecil", r: 26000, img: "raw-udang.webp", min: 200, max: 1500, step: 50, kg: 11.5, cap: 15, m: ["padang", "lada", "bakar", "tepung"] },
+    { id: "cumi", n: "Cumi segar", c: "kecil", r: 17000, img: "cumi-padang.webp", min: 200, max: 1500, step: 50, kg: 8.3, cap: 12, m: ["padang", "tepung", "lada", "bakar"] },
+    { id: "kerang", n: "Kerang dara", c: "kecil", r: 9000, img: "raw-kerang.webp", min: 300, max: 2000, step: 100, kg: 2.2, cap: 14, m: ["rebus", "padang", "bakar"] }
+  ];
+  var sp = {}; SP.forEach(function (s) { sp[s.id] = s; });
+  var MN = [
+    { id: "m1", n: "Nampan Laut Lobster", c: "dapur", d: "Untuk 3–4 orang", p: 585000, img: "platter-lobster.webp" },
+    { id: "m2", n: "Nampan Laut Kepiting", c: "dapur", d: "Untuk 3–4 orang", p: 525000, img: "platter-kepiting.webp" },
+    { id: "m3", n: "Kepiting Saus Rempah", c: "dapur", d: "Satu ekor dalam daun pisang", p: 198000, img: "kepiting-rempah.webp" },
+    { id: "m4", n: "Kepiting Saus Labuh", c: "dapur", d: "Dua ekor kecil, saus racikan rumah", p: 245000, img: "kepiting-saus.webp" },
+    { id: "m5", n: "Rahang Tuna Bakar", c: "dapur", d: "Tiga sambal, lalapan", p: 165000, img: "rahang-tuna.webp" },
+    { id: "m6", n: "Udang Saus Selat", c: "dapur", d: "Gurih manis, serai dan kayu manis", p: 128000, img: "udang-selat.webp" },
+    { id: "d1", n: "Es Serut Mangga", c: "manis", d: "Mangga, jeli, biskuit", p: 38000, img: "es-serut.webp" },
+    { id: "d2", n: "Mangga Sagu", c: "manis", d: "Mangga, sagu, tobiko jeli", p: 42000, img: "mangga-sagu.webp" },
+    { id: "d3", n: "Es Pisang Ijo", c: "manis", d: "Santan, sirup, mangga", p: 36000, img: "pisang-ijo.webp" },
+    { id: "d4", n: "Rujak Es Krim", c: "manis", d: "Buah segar, es krim stroberi", p: 40000, img: "rujak-es.webp" },
+    { id: "d5", n: "Sorbet Mangga", c: "manis", d: "Mangga, kacang, ceri", p: 40000, img: "sorbet.webp" }
+  ];
+  var mn = {}; MN.forEach(function (m) { mn[m.id] = m; });
+  var CATS = [["all", "Semua"], ["ikan", "Ikan"], ["krus", "Kepiting & lobster"], ["kecil", "Udang, cumi, kerang"], ["dapur", "Menu dapur"], ["manis", "Penutup"]];
+
+  /* ---------- Nota ---------- */
+  var lineId = 1, nota = [
+    { lid: lineId++, sp: "kepiting", g: 780, m: "padang" },
+    { lid: lineId++, sp: "udang", g: 500, m: "bakar" },
+    { lid: lineId++, mn: "d2", q: 2 }
+  ];
+  function lineTotal(l) {
+    if (l.mn) return mn[l.mn].p * l.q;
+    return sp[l.sp].r * l.g / 100 + CK[l.m][1];
+  }
+  function sums() { var s = 0; nota.forEach(function (l) { s += lineTotal(l); }); s = Math.round(s); var t = Math.round(s * .1); return { s: s, t: t, g: s + t }; }
+  function notaHTML(removable) {
+    var h = '<div class="nota__h"><p class="t-h3">Nota pesanan</p><span class="t-small num">' + nota.length + " item</span></div>";
+    if (!nota.length) return h + '<p class="nota__e">Belum ada pesanan. Pilih dari etalase, atau pesan saat tiba.</p>';
+    return h + "<ul>" + nota.map(function (l) {
+      var t = l.mn ? mn[l.mn].n : sp[l.sp].n, sub = l.mn ? l.q + " porsi" : kg(l.g) + " · " + CK[l.m][0];
+      return "<li><p>" + t + "<small>" + sub + '</small></p><span class="num">' + rp(lineTotal(l)) + "</span>" + (removable ? '<button type="button" class="nota__x" data-rm="' + l.lid + '" aria-label="Hapus"><i data-lucide="x" class="i-sm"></i></button>' : "<span></span>") + "</li>";
+    }).join("") + "</ul>";
+  }
+  function refreshNota() {
+    var c = sums(), n = nota.length;
+    $("#notaA").innerHTML = notaHTML(true);
+    $("#notaB").innerHTML = notaHTML(false);
+    $("#rSum").innerHTML = n ? "<div><span>Subtotal</span><span class='num'>" + rp(c.s) + "</span></div><div><span>Pajak 10%</span><span class='num'>" + rp(c.t) + "</span></div><div class='sum__t'><span>Perkiraan</span><span class='num'>" + rp(c.g) + "</span></div>" : "";
+    $$(".js-total").forEach(function (e) { e.textContent = rp(c.g); });
+    $$(".js-items").forEach(function (e) { e.textContent = n + " item"; });
+    $$(".js-count").forEach(function (e) { e.textContent = n; });
+    icons();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-rm]"); if (!b) return;
+    var id = +b.getAttribute("data-rm"); nota = nota.filter(function (l) { return l.lid !== id; });
+    refreshNota(); renderGrid();
+  });
+  function menuQty(id) { var q = 0; nota.forEach(function (l) { if (l.mn === id) q = l.q; }); return q; }
+  function setMenu(id, q) {
+    nota = nota.filter(function (l) { return l.mn !== id; });
+    if (q) nota.push({ lid: lineId++, mn: id, q: q });
+    refreshNota();
+  }
+
+  /* ---------- Kartu ---------- */
+  function lowOf(s) { return s.kg / s.cap < .25; }
+  function spCard(s) {
+    return '<div class="dish dish--sp' + (W.id === s.id ? " is-sel" : "") + '" role="button" tabindex="0" data-sp="' + s.id + '">' +
+      (lowOf(s) ? '<span class="pill pill--low dish__tag">Sisa sedikit</span>' : "") +
+      '<div class="photo" style="--ar:16/10" data-img="' + A + s.img + '"></div><div class="dish__b"><p class="t-h3">' + s.n + '</p><p class="t-small">' + (s.st ? s.st.length + " " + s.u + " · " + kg(s.st[0]) + "–" + kg(s.st[s.st.length - 1]) : "Per " + s.step + " gram") + '</p><div class="dish__f"><span class="price num">' + rp(s.r) + ' <small>/100 g</small></span><span class="dish__go"><i data-lucide="scale" class="i-sm"></i></span></div></div></div>';
+  }
+  function mnCard(m) {
+    var q = menuQty(m.id);
+    return '<div class="dish"><div class="photo" style="--ar:16/10" data-img="' + A + m.img + '"></div><div class="dish__b"><p class="t-h3">' + m.n + '</p><p class="t-small">' + m.d + '</p><div class="dish__f"><span class="price num">' + rp(m.p) + '</span><div class="stepper" data-stepper data-min="0" data-max="20" data-mn="' + m.id + '"><button type="button" aria-label="Kurangi">−</button><output>' + q + '</output><button type="button" data-inc aria-label="Tambah">+</button></div></div></div></div>';
+  }
+
+  /* ---------- Etalase ---------- */
+  var W = { id: "kepiting", i: 3, g: 780, m: "padang" }, cat = "all", query = "";
+  function fit(t) { return !query || t.toLowerCase().indexOf(query) > -1; }
+  function renderGrid() {
+    var a = SP.filter(function (s) { return (cat === "all" || s.c === cat) && fit(s.n); });
+    var b = MN.filter(function (m) { return (cat === "all" || m.c === cat) && fit(m.n); });
+    var h = "";
+    if (a.length) h += '<div class="dishes">' + a.map(spCard).join("") + "</div>";
+    if (cat === "all" && b.length) h += '<h2 class="t-h2" style="margin:26px 0 12px">Menu dapur dan penutup</h2>';
+    if (b.length) h += '<div class="dishes">' + b.map(mnCard).join("") + "</div>";
+    $("#grid").innerHTML = h || '<p class="muted">Tidak ada yang cocok.</p>';
+    photos(); icons();
+  }
+  function fill(el) { el.style.setProperty("--fill", ((el.value - el.min) / (el.max - el.min) * 100) + "%"); }
+  function calcHTML() {
+    var s = sp[W.id], base = s.r * W.g / 100, fee = CK[W.m][1];
+    return "<div><span class='num'>" + kg(W.g) + " × " + rp(s.r) + "/100 g</span><span class='num'>" + rp(base) + "</span></div><div><span>" + CK[W.m][0] + "</span><span class='num'>" + rp(fee) + "</span></div><div class='calc__t'><span>Subtotal</span><span class='num'>" + rp(base + fee) + "</span></div>";
+  }
+  function renderWeigh() {
+    var s = sp[W.id], whole = !!s.st;
+    var min = whole ? 0 : s.min, max = whole ? s.st.length - 1 : s.max, step = whole ? 1 : s.step, val = whole ? W.i : W.g;
+    $("#wBox").innerHTML =
+      '<div class="photo w-photo" data-img="' + A + s.img + '"></div>' +
+      '<div class="panel__h"><div><h2 class="t-h2">' + s.n + '</h2><p class="t-meta num">' + rp(s.r) + " per 100 g</p></div>" + '<button type="button" class="panel__close" id="wClose" aria-label="Tutup"><i data-lucide="x" class="i-sm"></i></button></div>' +
+      '<div class="w-body" style="padding-top:0">' +
+      '<div class="scale"><div class="scale__top"><span class="scale__g" id="wG">' + W.g + ' <small>g</small></span><span class="t-small">' + (whole ? "Geser untuk pilih " + s.u : "Geser untuk atur berat") + '</span></div>' +
+      '<input type="range" id="wR" min="' + min + '" max="' + max + '" step="' + step + '" value="' + val + '" aria-label="Berat">' +
+      '<div class="scale__ends num"><span>' + kg(whole ? s.st[0] : s.min) + "</span><span>" + kg(whole ? s.st[s.st.length - 1] : s.max) + "</span></div></div>" +
+      '<div><span class="lab">Cara masak</span><div class="cook" id="wCook">' + s.m.map(function (k) { return '<button type="button" data-ck="' + k + '" class="' + (W.m === k ? "is-active" : "") + '">' + CK[k][0] + '<small class="num">+' + rp(CK[k][1]) + "</small></button>"; }).join("") + "</div></div>" +
+      '<div class="calc" id="wCalc">' + calcHTML() + "</div>" +
+      '<button type="button" class="btn btn-blue btn-block" id="wAdd">Masukkan ke nota</button></div>';
+    fill($("#wR")); photos(); icons();
+  }
+  $("#wBox").addEventListener("input", function (e) {
+    if (e.target.id !== "wR") return;
+    var s = sp[W.id], v = +e.target.value;
+    if (s.st) { W.i = v; W.g = s.st[v]; } else W.g = v;
+    $("#wG").innerHTML = W.g + " <small>g</small>"; $("#wCalc").innerHTML = calcHTML(); fill(e.target);
+  });
+  $("#wBox").addEventListener("click", function (e) {
+    var c = e.target.closest("[data-ck]");
+    if (c) { W.m = c.getAttribute("data-ck"); renderWeigh(); return; }
+    if (e.target.closest("#wClose")) { $("#wPanel").classList.remove("is-open"); return; }
+    if (e.target.closest("#wAdd")) {
+      nota.push({ lid: lineId++, sp: W.id, g: W.g, m: W.m }); refreshNota();
+      var pan = $("#wPanel .panel__scroll"); pan.scrollTo({ top: pan.scrollHeight, behavior: "smooth" });
+    }
+  });
+  function pick(id, open) {
+    var s = sp[id]; W.id = id; W.m = s.m[0];
+    if (s.st) { W.i = Math.floor(s.st.length / 2); W.g = s.st[W.i]; } else W.g = s.min * 2 > s.max ? s.min : s.min + s.step * 6;
+    renderWeigh(); renderGrid();
+    if (open) $("#wPanel").classList.add("is-open");
+  }
+  $("#grid").addEventListener("click", function (e) { if (e.target.closest(".stepper")) return; var c = e.target.closest("[data-sp]"); if (c) pick(c.getAttribute("data-sp"), true); });
+  $("#grid").addEventListener("keydown", function (e) { if (e.key !== "Enter") return; var c = e.target.closest("[data-sp]"); if (c) pick(c.getAttribute("data-sp"), true); });
+  $("#grid").addEventListener("lapak:change", function (e) { setMenu(e.target.getAttribute("data-mn"), e.detail.value); });
+  $("#cats").innerHTML = CATS.map(function (c, i) { return '<button class="chip' + (i ? "" : " is-active") + '" data-value="' + c[0] + '">' + c[1] + "</button>"; }).join("");
+  $("#cats").addEventListener("lapak:select", function (e) { cat = e.detail.value; renderGrid(); });
+  $("#q").addEventListener("input", function (e) { query = e.target.value.trim().toLowerCase(); renderGrid(); });
+  $("#dockOpen").addEventListener("click", function () { $("#wPanel").classList.add("is-open"); });
+
+  /* ---------- Beranda ---------- */
+  $("#homeMarket").innerHTML = ["kepiting", "kakap", "udang", "gurame", "lobster"].map(function (id) {
+    var s = sp[id];
+    return '<a class="tile" href="#etalase" data-go="' + id + '"><div class="photo" style="--ar:4/3" data-img="' + A + s.img + '"></div><div class="tile__b"><p>' + s.n + '</p><p class="tile__rate num">' + rp(s.r) + " <small>/100 g</small></p></div></a>";
+  }).join("");
+  $("#homeDishes").innerHTML = ["m1", "m5", "m6"].concat(["m3", "m4", "d2"]).map(function (id) { return mnCard(mn[id]); }).join("");
+  $("#homeDishes").addEventListener("lapak:change", function (e) { setMenu(e.target.getAttribute("data-mn"), e.detail.value); renderGrid(); });
+  $("#homeMarket").addEventListener("click", function (e) { var a = e.target.closest("[data-go]"); if (a) pick(a.getAttribute("data-go")); });
+
+  var brI = 0;
+  function renderBranch() {
+    var b = BR[brI];
+    $("#brPhoto").setAttribute("data-img", A + b.img);
+    $("#brName").textContent = "Labuh " + b.n;
+    $("#brHours").textContent = b.h + " " + b.tz;
+    $("#brLine").textContent = b.line;
+    $("#brFacts").innerHTML = b.f.map(function (x) { return '<li><i data-lucide="check" class="i-sm"></i>' + x + "</li>"; }).join("");
+    $$(".js-city").forEach(function (e) { e.textContent = b.n; });
+    $$(".js-branch").forEach(function (s) { s.value = b.k; });
+    $("#branchTabs").querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-active", c.getAttribute("data-value") === b.k); });
+    photos(); icons();
+  }
+  $("#branchTabs").innerHTML = BR.map(function (b) { return '<button class="chip" data-value="' + b.k + '">' + b.n + "</button>"; }).join("");
+  $$(".js-branch").forEach(function (s) {
+    s.innerHTML = BR.map(function (b) { return '<option value="' + b.k + '">Labuh ' + b.n + "</option>"; }).join("");
+    s.addEventListener("change", function () { brI = s.selectedIndex; renderBranch(); });
+  });
+  $("#branchTabs").addEventListener("lapak:select", function (e) { BR.forEach(function (b, i) { if (b.k === e.detail.value) brI = i; }); renderBranch(); });
+
+  $$("[data-jump]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var id = a.getAttribute("data-jump");
+      setTimeout(function () { var t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+    });
+  });
+
+  /* ---------- Reservasi ---------- */
+  var ZONES = [
+    ["market", "Etalase, timbang, dan akuarium", 1.5, 2.5, 64, 11], ["kitchen", "Dapur", 66.5, 2.5, 32, 11],
+    ["aula", "Aula utama", 1.5, 15.5, 41, 82], ["teras", "Teras taman", 44, 15.5, 22, 82],
+    ["room", "Ruang privat", 67.5, 15.5, 31, 82]
+  ];
+  var T = [
+    ["A1", "aula", 2, 8, 30, "r"], ["A2", "aula", 4, 22, 30, "r"], ["A3", "aula", 4, 35, 30, "r"],
+    ["A4", "aula", 4, 8, 57, ""], ["A5", "aula", 6, 23, 57, "w"], ["A6", "aula", 6, 36, 57, ""],
+    ["A7", "aula", 8, 12, 83, "w"], ["A8", "aula", 10, 31, 83, "w"],
+    ["T1", "teras", 2, 49, 30, "r"], ["T2", "teras", 2, 61, 30, "r"], ["T3", "teras", 4, 49, 57, "r"],
+    ["T4", "teras", 4, 61, 57, "r"], ["T5", "teras", 6, 49, 83, "r"], ["T6", "teras", 6, 61, 83, "r"],
+    ["R1", "room", 24, 83, 32, "b"], ["R2", "room", 60, 83, 58, "b"], ["R3", "room", 10, 83, 83, "b"]
+  ].map(function (a) { return { id: a[0], z: a[1], s: a[2], x: a[3], y: a[4], f: a[5] }; });
+  var RN = { R1: "Ruang Karang", R2: "Ruang Teluk", R3: "Ruang Tanjung" };
+  var ZN = { aula: "Aula utama", teras: "Teras taman", room: "Ruang privat" };
+  var DATES = ["Min 1 Nov", "Sen 2 Nov", "Sel 3 Nov", "Rab 4 Nov", "Kam 5 Nov"], TIMES = ["19.30", "20.00", "20.30", "21.00"];
+  var R = { d: 0, t: 0, pax: 4, tb: "A3", booked: {} };
+  $("#rDate").innerHTML = DATES.map(function (d, i) { return '<button type="button" class="chip' + (i ? "" : " is-active") + '" data-value="' + i + '">' + d + "</button>"; }).join("");
+  $("#rTime").innerHTML = TIMES.map(function (d, i) { return '<button type="button" class="chip num' + (i === 0 ? " is-active" : "") + '" data-value="' + i + '">' + d + "</button>"; }).join("");
+  function zoneTag(z) { return '<div class="zone zone--' + z[0] + '" style="left:' + z[2] + "%;top:" + z[3] + "%;width:" + z[4] + "%;height:" + z[5] + '%">' + z[1] + "</div>"; }
+  function taken(t, i, d, tm) {
+    if (R.booked[d + "-" + tm + "-" + t.id]) return true;
+    if (d === 0 && H[t.id] && H[t.id].st === "reservasi" && H[t.id].jam === TIMES[tm]) return true;
+    if (t.id === "A3" && d === 0 && tm === 0) return false;
+    return t.z !== "room" && (i * 5 + d * 3 + tm * 7) % 4 === 1;
+  }
+  function renderSlots() {
+    $("#slotRows").innerHTML = TIMES.map(function (tm, n) {
+      var free = T.filter(function (t, i) { return !taken(t, i, 0, n); }).length;
+      return '<a class="slots__row" href="#reservasi" data-slot="' + n + '"><b class="num">' + tm + '</b><span class="pill ' + (free <= 5 ? "pill--low" : free <= 9 ? "pill--warn" : "pill--ok") + '">' + free + " meja</span></a>";
+    }).join("");
+  }
+  $("#slotRows").addEventListener("click", function (e) {
+    var a = e.target.closest("[data-slot]"); if (!a) return;
+    R.t = +a.getAttribute("data-slot");
+    $("#rTime").querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-active", +c.getAttribute("data-value") === R.t); });
+    renderFloor();
+  });
+  function renderFloor() {
+    $("#floor").innerHTML = ZONES.map(zoneTag).join("") + T.map(function (t, i) {
+      var small = t.z === "room" && R.pax < 8, off = taken(t, i, R.d, R.t) || (t.z === "room" ? small || R.pax > t.s : t.s < R.pax);
+      if (off && R.tb === t.id) R.tb = null;
+      var cls = "tb" + (t.f === "r" ? " tb--round" : t.f === "w" ? " tb--wide" : t.f === "b" ? " tb--room" : "") + (R.tb === t.id ? " is-selected" : "");
+      var sub = t.z === "room" ? (small ? "min 8 orang" : "s.d. " + t.s + " orang") : t.s + " kursi";
+      return '<button type="button" class="' + cls + '" data-t="' + t.id + '" style="left:' + t.x + "%;top:" + t.y + '%"' + (off ? " disabled" : "") + ">" + (t.z === "room" ? RN[t.id].replace("Ruang ", "") : t.id) + "<small>" + sub + "</small></button>";
+    }).join("");
+    var t = T.filter(function (x) { return x.id === R.tb; })[0];
+    $("#rT").textContent = t ? (t.z === "room" ? RN[t.id] : "Meja " + t.id) : "Pilih meja";
+    $("#rM").textContent = (t ? ZN[t.z] + " · " : "") + R.pax + " tamu · " + DATES[R.d] + ", " + TIMES[R.t];
+    $("#rBtn").disabled = !t;
+    $("#rNote").hidden = !(t && t.z === "room");
+    $("#rNote").textContent = "Ruang privat memakai DP Rp500.000, dipotong dari tagihan.";
+  }
+  $("#floor").addEventListener("click", function (e) { var b = e.target.closest(".tb"); if (!b || b.disabled) return; R.tb = b.getAttribute("data-t"); renderFloor(); });
+  $("#rDate").addEventListener("lapak:select", function (e) { R.d = +e.detail.value; renderFloor(); });
+  $("#rTime").addEventListener("lapak:select", function (e) { R.t = +e.detail.value; renderFloor(); });
+  $("#rPax").addEventListener("lapak:change", function (e) { R.pax = e.detail.value; renderFloor(); });
+  $("#rForm").addEventListener("submit", function () {
+    R.booked[R.d + "-" + R.t + "-" + R.tb] = 1; renderSlots();
+    var c = sums(), nm = $("#fN").value, label = R.tb.charAt(0) === "R" ? RN[R.tb] : "Meja " + R.tb;
+    $("#okT").textContent = label + " tersimpan";
+    $("#okD").textContent = DATES[R.d] + " pukul " + TIMES[R.t] + " untuk " + R.pax + " tamu atas nama " + nm + ". " + (nota.length ? nota.length + " item tercatat, " + nota.filter(function (l) { return l.sp; }).length + " di antaranya masuk antrean timbang. Perkiraan " + rp(c.g) + ", dibayar di restoran." : "Seafood dipilih saat tiba.");
+    if (R.d === 0) {
+      H[R.tb] = { st: "reservasi", pax: R.pax, jam: TIMES[R.t] };
+      nota.forEach(function (l) { if (l.sp) Q.push({ id: qId++, t: R.tb, sp: l.sp, est: l.g, m: l.m, stage: 0, min: 0, act: l.g, guest: nm.split(" ")[0] }); });
+      bSel = R.tb; renderBoard();
+    }
+  });
+
+  /* ---------- Papan operasional ---------- */
+  var H = {
+    A1: { st: "makan", pax: 2 }, A2: { st: "bayar", pax: 4 }, A4: { st: "makan", pax: 4 }, A5: { st: "timbang", pax: 5 },
+    A7: { st: "makan", pax: 8 }, A8: { st: "reservasi", pax: 9, jam: "19.30" }, T1: { st: "bayar", pax: 2 }, T3: { st: "timbang", pax: 3 },
+    T5: { st: "makan", pax: 6 }, T6: { st: "reservasi", pax: 5, jam: "20.00" }, R1: { st: "makan", pax: 18 }, R3: { st: "reservasi", pax: 9, jam: "20.30" }
+  };
+  var qId = 1, Q = [
+    { id: qId++, t: "A5", sp: "kepiting", est: 780, act: 790, m: "padang", stage: 0, min: 2 },
+    { id: qId++, t: "A5", sp: "udang", est: 600, act: 620, m: "bakar", stage: 0, min: 2 },
+    { id: qId++, t: "T3", sp: "kakap", est: 1150, act: 1150, m: "tim", stage: 0, min: 4 },
+    { id: qId++, t: "A7", sp: "gurame", est: 960, act: 960, m: "asam", stage: 1, min: 9 },
+    { id: qId++, t: "A7", sp: "cumi", est: 500, act: 480, m: "padang", stage: 1, min: 7 },
+    { id: qId++, t: "R1", sp: "lobster", est: 520, act: 530, m: "lada", stage: 1, min: 14 },
+    { id: qId++, t: "T5", sp: "kerang", est: 800, act: 800, m: "rebus", stage: 2, min: 1 },
+    { id: qId++, t: "A1", sp: "udang", est: 400, act: 410, m: "tepung", stage: 2, min: 3 }
+  ];
+  var ST_L = { reservasi: "Reservasi", makan: "Makan", timbang: "Timbang", bayar: "Minta bill" };
+  var LN = ["Perlu ditimbang", "Dimasak", "Siap antar"];
+  var bSel = null, done = 41;
+  function tName(id) { return id.charAt(0) === "R" ? RN[id].replace("Ruang ", "") : id; }
+  function jobHTML(q) {
+    var s = sp[q.sp], d = q.act - q.est, h = '<div class="job" data-job="' + q.id + '"><div class="job__h"><span class="pill pill--blue">' + tName(q.t) + '</span><span class="t-small num">' + q.min + " mnt</span></div><p class=\"job__n\">" + s.n + '</p><p class="job__m">' + CK[q.m][0] + "</p>";
+    if (q.stage === 0) {
+      h += '<div class="job__w"><input type="number" class="num" value="' + q.act + '" step="10" min="50" aria-label="Berat aktual gram" data-w="' + q.id + '"><span class="t-small">g</span></div>' +
+        '<p class="job__d" data-d="' + q.id + '">' + diffHTML(q) + "</p>" + '<button class="btn btn-primary" data-adv="' + q.id + '">Konfirmasi timbang</button>';
+    } else {
+      h += '<p class="job__m num">' + kg(q.act) + " · " + rp(s.r * q.act / 100 + CK[q.m][1]) + '</p><button class="btn btn-line" data-adv="' + q.id + '">' + (q.stage === 1 ? "Selesai masak" : "Sudah diantar") + "</button>";
+    }
+    return h + "</div>";
+  }
+  function diffHTML(q) {
+    var d = q.act - q.est, c = sp[q.sp].r * d / 100;
+    if (!d) return "Pesan " + kg(q.est) + ", sama dengan timbangan";
+    return "Pesan " + kg(q.est) + ", selisih <b>" + (d > 0 ? "+" : "−") + Math.abs(d) + " g · " + (d > 0 ? "+" : "−") + rp(Math.abs(c)) + "</b>";
+  }
+  function renderBoard() {
+    var used = T.filter(function (t) { return H[t.id] && H[t.id].st !== "reservasi"; }).length;
+    $("#bLoad").textContent = used + "/" + T.length + " meja terisi · " + Q.length + " di antrean · " + done + " selesai hari ini";
+    $("#bClear").hidden = !bSel;
+    $("#bTables").innerHTML = T.map(function (t) {
+      var d = H[t.id], st = d ? d.st : "kosong";
+      return '<button class="tt' + (bSel === t.id ? " is-sel" : "") + '" data-s="' + st + '" data-tt="' + t.id + '">' + tName(t.id) + "<small>" + (d ? (st === "reservasi" ? d.jam : ST_L[st]) + "</small><small>" + d.pax + " orang" : t.s + " kursi") + "</small></button>";
+    }).join("");
+    var list = Q.filter(function (q) { return !bSel || q.t === bSel; });
+    $("#bLanes").innerHTML = LN.map(function (n, i) {
+      var it = list.filter(function (q) { return q.stage === i; });
+      return '<div class="lane"><div class="lane__h"><span>' + n + '</span><span class="lane__n num">' + it.length + "</span></div>" + (it.length ? it.map(jobHTML).join("") : '<p class="lane__e">Kosong.</p>') + "</div>";
+    }).join("");
+    $("#bStock").innerHTML = SP.slice().sort(function (a, b) { return a.kg / a.cap - b.kg / b.cap; }).map(function (s) {
+      var pct = Math.max(0, Math.min(100, s.kg / s.cap * 100)), low = lowOf(s);
+      return '<li><div class="stock__r"><span>' + s.n + '</span><span class="num">' + s.kg.toLocaleString("id-ID", { maximumFractionDigits: 1 }) + ' kg</span></div><div class="bar' + (low ? " is-low" : "") + '"><i style="width:' + pct + '%"></i></div></li>';
+    }).join("");
+  }
+  $("#bTables").addEventListener("click", function (e) { var b = e.target.closest("[data-tt]"); if (!b) return; var id = b.getAttribute("data-tt"); bSel = bSel === id ? null : id; renderBoard(); });
+  $("#bClear").addEventListener("click", function () { bSel = null; renderBoard(); });
+  $("#bLanes").addEventListener("input", function (e) {
+    var id = e.target.getAttribute("data-w"); if (!id) return;
+    var q = Q.filter(function (x) { return x.id === +id; })[0]; q.act = +e.target.value || 0;
+    $('[data-d="' + id + '"]').innerHTML = diffHTML(q);
+  });
+  $("#bLanes").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-adv]"); if (!b) return;
+    var q = Q.filter(function (x) { return x.id === +b.getAttribute("data-adv"); })[0];
+    if (q.stage === 0) { var s = sp[q.sp]; s.kg = Math.max(0, s.kg - q.act / 1000); var h = H[q.t]; if (h && Q.filter(function (x) { return x.t === q.t && x.stage === 0 && x !== q; }).length === 0) h.st = "makan"; }
+    q.stage++; q.min = 0;
+    if (q.stage > 2) { Q = Q.filter(function (x) { return x !== q; }); done++; }
+    renderBoard(); renderGrid();
+  });
+
+  /* ---------- Shell ---------- */
+  function staff() {
+    var on = location.hash === "#papan"; document.body.classList.toggle("is-staff", on);
+    $("#wPanel").classList.remove("is-open");
+  }
+  window.addEventListener("hashchange", staff);
+
+  /* Panel reservasi tetap terlihat di layar kecil */
+  function mobPanel() { $("#rPanel").classList.toggle("panel--static", window.innerWidth <= 900); }
+  window.addEventListener("resize", mobPanel);
+
+  renderBranch(); renderWeigh(); renderGrid(); refreshNota(); renderFloor(); renderBoard(); renderSlots(); mobPanel(); staff(); photos(); icons();
+})();
+</script>
+</body>
+</html>

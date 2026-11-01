@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lentur Plastik — Pabrik kantong PE, PP, HDPE, dan cetak rotogravure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds/plastic-packaging-manufacturer-website.css">
+</head>
+<body>
+<div class="app">
+
+<aside class="side">
+  <a class="logo" href="#home">lentur</a>
+  <nav class="side__nav">
+    <a class="side__link" href="#home" data-nav="home"><i data-lucide="layout-grid"></i>Beranda</a>
+    <a class="side__link" href="#katalog" data-nav="katalog"><i data-lucide="layers"></i>Katalog material</a>
+    <div class="side__sub">
+      <a href="#katalog" data-mat="PE">Polyethylene (PE)</a>
+      <a href="#katalog" data-mat="PP">Polypropylene (PP)</a>
+      <a href="#katalog" data-mat="HDPE">High-density PE (HDPE)</a>
+      <a href="#katalog" data-mat="Sampah">Plastik sampah</a>
+      <a href="#katalog" data-mat="Custom">Custom rotogravure</a>
+    </div>
+    <a class="side__link" href="#penawaran" data-nav="penawaran"><i data-lucide="calculator"></i>Hitung &amp; minta harga<span class="side__count num" id="sideCount">1</span></a>
+    <a class="side__link" href="#mesin" data-nav="mesin"><i data-lucide="factory"></i>Papan mesin</a>
+  </nav>
+  <div class="side__foot">
+    <div class="side__card">
+      <b>Tim sales</b>
+      <span>Senin–Jumat 07.30–16.00<br>Sabtu 07.30–13.00</span>
+      <a class="btn btn-ghost btn-sm" href="#"><i data-lucide="message-circle" class="i-sm"></i>WhatsApp sales</a>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+<!-- ================= BERANDA ================= -->
+<section data-screen="home" class="main">
+  <div class="topbar">
+    <p class="topbar__title">Pabrik kantong plastik, Pasuruan</p>
+    <div class="topbar__right"><a class="btn btn-secondary btn-sm" href="#"><i data-lucide="download" class="i-sm"></i>Katalog PDF</a></div>
+  </div>
+  <div class="stack">
+    <div class="hero">
+      <div class="panel hero__main">
+        <h1 class="t-hero">Kantong plastik dipesan per spesifikasi, bukan per tebakan.</h1>
+        <p style="font-size:17px;max-width:680px" class="muted">Lentur memproduksi plastik PE, PP, HDPE, plastik sampah, dan kantong cetak rotogravure di pabrik sendiri sejak 1994. Tentukan ukuran dan ketebalan, lihat perkiraan beratnya, lalu minta penawaran untuk beberapa item sekaligus.</p>
+        <div class="hero__actions"><a class="btn btn-primary" href="#katalog">Cari spesifikasi<i data-lucide="arrow-right" class="i-sm"></i></a><a class="btn btn-secondary" href="#penawaran">Minta penawaran</a></div>
+        <div class="hero__strip"><div class="photo" style="--pos:center 62%" data-img="assets/plastic-packaging-manufacturer-website/gudang-roll-film.webp"></div><div class="photo" style="--pos:center 40%" data-img="assets/plastic-packaging-manufacturer-website/mesin-potong-kantong.webp"></div><div class="photo" style="--pos:center 62%" data-img="assets/plastic-packaging-manufacturer-website/kemasan-snack.webp"></div></div>
+      </div>
+      <form class="quick" id="quick" onsubmit="return false">
+        <div><p class="t-h2">Hitung cepat</p><p class="t-meta">Perkiraan berat satu kantong datar.</p></div>
+        <label class="field"><span>Bahan</span><select class="select" id="qMat"><option value="PP">PP (0,90 g/cm³)</option><option value="PE">PE (0,92 g/cm³)</option><option value="HDPE">HDPE (0,95 g/cm³)</option></select></label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <label class="field"><span>Lebar</span><div class="input-unit"><input class="input" id="qW" type="number" min="1" value="20"><em>cm</em></div></label>
+          <label class="field"><span>Tinggi</span><div class="input-unit"><input class="input" id="qH" type="number" min="1" value="30"><em>cm</em></div></label>
+        </div>
+        <label class="field"><span>Ketebalan <b id="qTl">40 µm</b></span><input id="qT" type="range" min="10" max="120" step="5" value="40"></label>
+        <div class="quick__out">
+          <div><small>Per kantong</small><b id="qG">4,3 g</b></div>
+          <div><small>Isi 100 kg (MOQ)</small><b id="qP">23.148</b></div>
+        </div>
+        <button class="btn btn-primary btn-block" id="qGo" type="button">Lanjutkan ke konfigurator</button>
+        <p class="t-small" style="color:#a4a7b8">Perkiraan teoretis dari ukuran, ketebalan, dan massa jenis bahan. Berat aktual dipastikan saat produksi.</p>
+      </form>
+    </div>
+
+    <div class="grid-4 facts">
+      <div class="fact"><span class="tile-icon"><i data-lucide="weight"></i></span><div><b>Mulai 100 kg</b><p class="t-small">Minimum order per spesifikasi</p></div></div>
+      <div class="fact"><span class="tile-icon"><i data-lucide="printer"></i></span><div><b>Hingga 3 warna</b><p class="t-small">Cetak rotogravure</p></div></div>
+      <div class="fact"><span class="tile-icon"><i data-lucide="calendar-clock"></i></span><div><b>21 hari</b><p class="t-small">Pesanan cetak siap kirim</p></div></div>
+      <div class="fact"><span class="tile-icon tile-icon--red"><i data-lucide="shield-check"></i></span><div><b>Ganti 2× lipat</b><p class="t-small">Per pack jika gagal produksi</p></div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head"><div><h2 class="t-h2">Pilih plastik sesuai kebutuhan</h2><p class="t-meta">Mulai dari isi kemasannya, lalu bandingkan sifat tiap bahan.</p></div><a class="btn btn-secondary btn-sm" id="useLink" href="#katalog"><span>Lihat <span id="useLinkName">PE</span> di katalog</span><i data-lucide="arrow-right" class="i-sm"></i></a></div>
+      <div class="compare">
+        <div class="uses" data-select id="uses">
+          <button class="use is-active" data-value="PE"><i data-lucide="droplets" class="i-sm"></i>Minyak, santan, es batu</button>
+          <button class="use" data-value="PP"><i data-lucide="cookie" class="i-sm"></i>Snack dan makanan kering</button>
+          <button class="use" data-value="HDPE"><i data-lucide="shopping-bag" class="i-sm"></i>Belanja dan kemasan harian</button>
+          <button class="use" data-value="Sampah"><i data-lucide="trash-2" class="i-sm"></i>Sampah kantor dan industri</button>
+          <button class="use" data-value="Custom"><i data-lucide="stamp" class="i-sm"></i>Branding kemasan retail</button>
+        </div>
+        <div style="overflow-x:auto;min-width:0">
+          <table class="mtable" id="mtable">
+            <thead><tr><th>Jenis plastik</th><th>Transparansi</th><th>Kekuatan</th><th>Elastisitas</th><th class="hide-m">Digunakan untuk</th></tr></thead>
+            <tbody>
+              <tr data-mat="PE" class="is-match"><td><b>PE</b></td><td><div class="level" data-l="2"><div class="level__bar"><i></i><i></i><i></i></div>Sedang</div></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td class="hide-m muted">Es batu, sembako, barang berat</td></tr>
+              <tr data-mat="PP"><td><b>PP</b></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td><div class="level" data-l="2"><div class="level__bar"><i></i><i></i><i></i></div>Sedang</div></td><td><div class="level" data-l="1"><div class="level__bar"><i></i><i></i><i></i></div>Rendah</div></td><td class="hide-m muted">Makanan kering, snack, kemasan bening</td></tr>
+              <tr data-mat="HDPE"><td><b>HDPE</b></td><td><div class="level" data-l="1"><div class="level__bar"><i></i><i></i><i></i></div>Rendah</div></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td><div class="level" data-l="2"><div class="level__bar"><i></i><i></i><i></i></div>Sedang</div></td><td class="hide-m muted">Kantong kresek, belanjaan, kemasan harian</td></tr>
+              <tr data-mat="Sampah"><td><b>Sampah</b></td><td><div class="level" data-l="1"><div class="level__bar"><i></i><i></i><i></i></div>Rendah</div></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td><div class="level" data-l="2"><div class="level__bar"><i></i><i></i><i></i></div>Sedang</div></td><td class="hide-m muted">Rumah tangga, industri, kantor</td></tr>
+              <tr data-mat="Custom"><td><b>Rotogravure</b></td><td><div class="level" data-l="v"><div class="level__bar"><i></i><i></i><i></i></div>Sesuai bahan</div></td><td><div class="level" data-l="3"><div class="level__bar"><i></i><i></i><i></i></div>Tinggi</div></td><td><div class="level" data-l="v"><div class="level__bar"><i></i><i></i><i></i></div>Sesuai bahan</div></td><td class="hide-m muted">Branding produk, kemasan retail, promosi</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head"><div><h2 class="t-h2">Dari resin sampai kantong</h2><p class="t-meta">Lini PE, PP, dan HDPE dipisahkan supaya mutu tiap bahan tetap terjaga.</p></div></div>
+      <div class="steps">
+        <div class="step"><div class="photo" style="--ar:4/5" data-img="assets/plastic-packaging-manufacturer-website/resin-ke-hopper.webp"></div><p class="step__n">01</p><p class="t-h3">Resin murni</p><p class="t-meta">Bahan tanpa daur ulang masuk ke hopper mesin.</p></div>
+        <div class="step"><div class="photo" style="--ar:4/5;--pos:center 48%" data-img="assets/plastic-packaging-manufacturer-website/roll-film-di-mesin.webp"></div><p class="step__n">02</p><p class="t-h3">Extruder film</p><p class="t-meta">Resin ditiup menjadi film sesuai lebar dan ketebalan.</p></div>
+        <div class="step"><div class="photo" style="--ar:4/5" data-img="assets/plastic-packaging-manufacturer-website/gudang-roll-film.webp"></div><p class="step__n">03</p><p class="t-h3">Roll dan cetak</p><p class="t-meta">Roll film disimpan per bahan, lalu dicetak rotogravure hingga 3 warna bila memakai desain.</p></div>
+        <div class="step"><div class="photo" style="--ar:4/5" data-img="assets/plastic-packaging-manufacturer-website/mesin-potong-kantong.webp"></div><p class="step__n">04</p><p class="t-h3">Potong dan seal</p><p class="t-meta">Film dibentuk jadi kantong, lalu dikemas per pack.</p></div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="panel">
+        <h2 class="t-h2" style="margin-bottom:10px">Industri yang dilayani</h2>
+        <div class="industry"><div class="photo" style="--ar:3/2;border-radius:10px" data-img="assets/plastic-packaging-manufacturer-website/kemasan-pasar.webp"></div><div><p class="t-h3">Makanan dan minuman</p><p class="t-meta">Kemasan produk makanan, bumbu, dan minuman serbuk.</p></div></div>
+        <div class="industry"><div class="photo" style="--ar:3/2;border-radius:10px" data-img="assets/plastic-packaging-manufacturer-website/kresek-kotak-makanan.webp"></div><div><p class="t-h3">Ritel dan minimarket</p><p class="t-meta">Kantong belanja untuk toko, warung, dan minimarket.</p></div></div>
+        <div class="industry"><div class="photo" style="--ar:3/2;border-radius:10px" data-img="assets/plastic-packaging-manufacturer-website/kemasan-curah.webp"></div><div><p class="t-h3">Barang curah dan FMCG</p><p class="t-meta">Gula, biji-bijian, snack, dan kebutuhan rumah tangga.</p></div></div>
+        <div class="industry"><div class="photo" style="--ar:3/2;border-radius:10px" data-img="assets/plastic-packaging-manufacturer-website/sayur-dalam-plastik.webp"></div><div><p class="t-h3">Distributor dan reseller</p><p class="t-meta">Suplai rutin untuk dijual kembali di wilayah masing-masing.</p></div></div>
+      </div>
+      <div class="stack">
+        <div class="guarantee"><span class="tile-icon tile-icon--red" style="flex:none"><i data-lucide="truck"></i></span><div><p class="t-h3">Pengiriman ke seluruh Indonesia</p><p class="t-meta" style="color:#c9cbd8">Jawa, Sumatera, Kalimantan, hingga Papua, melalui jaringan distributor dan reseller.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div><b>PT Lentur Prima Kemasindo</b>Kawasan industri Pasuruan, Jawa Timur<br>© 2026 Lentur Plastik</div>
+    <div class="foot__cols">
+      <div><b>Kontak</b>(0343) 555-0142<br>sales@lentur.example</div>
+      <div><b>Jam kerja</b>Senin–Jumat 07.30–16.00<br>Sabtu 07.30–13.00, Minggu libur</div>
+    </div>
+  </footer>
+</section>
+
+<!-- ================= KATALOG / PENCARI SPESIFIKASI ================= -->
+<section data-screen="katalog" class="main">
+  <div class="topbar">
+    <h1 class="t-h1">Katalog material</h1>
+    <div class="topbar__right"><span class="t-meta" id="skuCount" style="margin-right:6px"></span><a class="btn btn-secondary btn-sm" href="#penawaran"><span>Permintaan (<span id="catCount" class="num">1</span>)</span></a></div>
+  </div>
+  <div class="stack">
+    <div class="panel" style="padding:18px 20px">
+      <div class="finder">
+        <div class="field"><span>Jenis</span><div class="seg" id="fMat"><button class="is-active" data-v="">Semua</button><button data-v="PE">PE</button><button data-v="PP">PP</button><button data-v="HDPE">HDPE</button><button data-v="Sampah">Sampah</button><button data-v="Custom">Custom</button></div></div>
+        <div class="field"><span>Warna</span><div class="swatches" id="fCol"></div></div>
+        <label class="field"><span>Lebar minimal</span><div class="input-unit"><input class="input" id="fW" type="number" min="0" placeholder="0"><em>cm</em></div></label>
+        <label class="field"><span>Ketebalan <b id="fTl" class="num">Semua</b></span><input id="fT" type="range" min="10" max="100" step="5" value="10"></label>
+        <label class="toggle"><input type="checkbox" id="fP">Bisa dicetak</label>
+      </div>
+    </div>
+    <div class="cat-layout">
+      <div class="panel" style="padding:18px 14px;overflow-x:auto">
+        <table class="sku-table">
+          <thead><tr><th>Produk</th><th class="hide-m">Bahan</th><th>Ukuran</th><th class="hide-m">Ketebalan</th><th class="hide-m">Kapasitas</th><th class="hide-m">Cetak</th><th></th></tr></thead>
+          <tbody id="skuBody"></tbody>
+        </table>
+        <p class="t-meta" id="skuEmpty" hidden style="padding:24px 10px">Tidak ada spesifikasi yang cocok. Ukuran dan ketebalan khusus bisa diproduksi lewat konfigurator.</p>
+      </div>
+      <aside class="panel detail" id="skuDetail"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONFIGURATOR & RFQ ================= -->
+<section data-screen="penawaran" class="main">
+  <div class="topbar">
+    <h1 class="t-h1">Hitung &amp; minta harga</h1>
+    <div class="topbar__right"><a class="btn btn-secondary btn-sm" href="#katalog"><i data-lucide="arrow-left" class="i-sm"></i>Katalog</a></div>
+  </div>
+  <div class="stack">
+    <div class="panel config-panel" style="padding:20px">
+      <div class="config">
+        <div class="config__form">
+          <div class="field wide"><span>Bahan</span><div class="seg" id="cMat"><button class="is-active" data-v="HDPE">HDPE</button><button data-v="PE">PE</button><button data-v="PP">PP</button></div></div>
+          <div class="field wide"><span>Bentuk</span><div class="seg" id="cShape"><button class="is-active" data-v="kresek">Kresek berhandel</button><button data-v="datar">Kantong datar</button></div></div>
+          <label class="field"><span>Lebar</span><div class="input-unit"><input class="input" id="cW" type="number" min="1" value="28"><em>cm</em></div></label>
+          <label class="field"><span>Tinggi</span><div class="input-unit"><input class="input" id="cH" type="number" min="1" value="48"><em>cm</em></div></label>
+          <label class="field"><span>Lipatan</span><div class="input-unit"><input class="input" id="cG" type="number" min="0" value="8"><em>cm</em></div></label>
+          <label class="field wide"><span>Ketebalan <b id="cTl" class="num">20 µm</b></span><input id="cT" type="range" min="10" max="120" step="5" value="20"></label>
+          <div class="field wide"><span>Warna <b id="cColName">Merah</b></span><div class="swatches" id="cCol"></div></div>
+          <div class="field wide"><span>Cetak rotogravure</span><div class="seg" id="cPrint"><button class="is-active" data-v="0">Polos</button><button data-v="1">1 warna</button><button data-v="2">2 warna</button><button data-v="3">3 warna</button></div></div>
+          <div class="field wide"><span>Jumlah</span><div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px"><input class="input num" id="cQ" type="number" min="1" value="20000"><div class="seg" id="cUnit"><button class="is-active" data-v="pcs">pcs</button><button data-v="kg">kg</button></div></div></div>
+        </div>
+        <div style="min-width:0">
+          <div class="blueprint">
+            <svg id="draw" viewBox="0 0 640 340" role="img" aria-label="Gambar teknik kantong sesuai ukuran"></svg>
+            <p class="formula" id="formula"></p>
+          </div>
+          <div class="results">
+            <div class="card"><p class="t-small">Berat per pcs</p><p class="t-value" id="rG"></p></div>
+            <div class="card"><p class="t-small">Isi per kg</p><p class="t-value" id="rP"></p></div>
+            <div class="card"><p class="t-small">Total berat</p><p class="t-value" id="rK"></p></div>
+            <div class="card"><p class="t-small">MOQ 100 kg per spesifikasi</p><div class="meter" id="rM"><i></i></div><p class="t-small" id="rMoq"></p></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap">
+            <p class="t-small" style="max-width:560px">Perkiraan teoretis, bisa berbeda sekitar ±5% dari hasil produksi. Harga tidak ditampilkan karena bergantung harga resin dan dikirim sales dalam penawaran.</p>
+            <button class="btn btn-primary" id="addItem" type="button"><i data-lucide="plus" class="i-sm"></i>Tambah ke permintaan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div id="rfqWrap">
+        <div class="panel__head" style="margin-bottom:10px"><h2 class="t-h2">Permintaan penawaran</h2><span class="t-meta" id="rfqSum"></span></div>
+        <div style="overflow-x:auto">
+          <table class="sku-table">
+            <thead><tr><th>Item</th><th class="hide-m">Spesifikasi</th><th>Jumlah</th><th>Perkiraan</th><th class="hide-m">Status MOQ</th><th></th></tr></thead>
+            <tbody id="rfqBody"></tbody>
+          </table>
+        </div>
+        <form class="rfq-form" data-demo-form="#rfqDone" id="rfqForm">
+          <label class="field"><span>Nama perusahaan</span><input class="input" id="rfqCo" placeholder="CV Sambal Nusantara"></label>
+          <label class="field"><span>Nama PIC</span><input class="input" placeholder="Nama Anda"></label>
+          <label class="field"><span>WhatsApp</span><input class="input" placeholder="08xx-xxxx-xxxx" inputmode="tel"></label>
+          <label class="field"><span>Kota kirim</span><input class="input" placeholder="Kota tujuan"></label>
+          <label class="field wide"><span>Catatan</span><input class="input" placeholder="Isi kemasan, target tanggal, atau jadwal pesanan rutin"></label>
+          <label class="field"><span>File desain</span><input class="input" type="file" style="padding-top:8px"></label>
+          <div class="rfq-form__end"><p class="t-small">Sales membalas maksimal 3 × 24 jam kerja lewat WhatsApp.</p><button class="btn btn-primary"><i data-lucide="send" class="i-sm"></i>Kirim permintaan</button></div>
+        </form>
+      </div>
+      <div class="done" id="rfqDone" hidden>
+        <span class="tile-icon" style="background:var(--ok)"><i data-lucide="check"></i></span>
+        <h2 class="t-h1">Permintaan RFQ-2611-0148 terkirim</h2>
+        <p class="muted" id="doneText"></p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="#"><i data-lucide="message-circle" class="i-sm"></i>Lanjut di WhatsApp</a><a class="btn btn-secondary" href="#katalog">Kembali ke katalog</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPAN MESIN ================= -->
+<section data-screen="mesin">
+  <div class="ops">
+    <nav class="rail"><span>lentur</span><a class="is-active" href="#mesin" aria-label="Papan mesin"><i data-lucide="gantt-chart"></i></a><a href="#mesin" aria-label="Antrean RFQ"><i data-lucide="inbox"></i></a><a href="#mesin" aria-label="Stok resin"><i data-lucide="boxes"></i></a><a href="#home" aria-label="Situs pelanggan"><i data-lucide="log-out"></i></a></nav>
+    <div class="ops__main">
+      <div class="ops__bar">
+        <div><h1 class="t-h2">Papan mesin</h1><p class="t-small">Dibuka Minggu, 1 Nov. Pabrik libur, rencana mulai Senin shift I.</p></div>
+        <div class="seg" id="oDept"><button class="is-active" data-v="">Semua</button><button data-v="ex">Extruder</button><button data-v="rg">Rotogravure</button><button data-v="pt">Potong</button></div>
+        <div class="legend">
+          <span class="chip chip--ok"><i data-lucide="check"></i>Siap</span>
+          <span class="chip chip--warn"><i data-lucide="package-x"></i>Tunggu resin</span>
+          <span class="chip chip--info"><i data-lucide="pen-tool"></i>Tunggu ACC</span>
+          <span class="chip"><i data-lucide="wrench"></i>Perawatan</span>
+          <span id="oFill" class="num" style="font-weight:600;color:var(--ink)"></span>
+        </div>
+      </div>
+      <div class="ops__grid">
+        <div class="panel board"><div class="gantt-wrap"><div class="gantt" id="gantt"></div></div></div>
+        <div class="ops__side">
+          <div class="panel" id="oDetail"></div>
+          <div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h2 class="t-h3">Belum terjadwal</h2><span class="chip num" id="oQc"></span></div><div class="queue" id="oQueue"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/lapak.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var A = "assets/plastic-packaging-manufacturer-website/";
+  function icons() { if (window.lucide) lucide.createIcons(); }
+  function photos(root) {
+    (root || document).querySelectorAll(".photo[data-img]").forEach(function (box) {
+      if (box.querySelector("img")) return;
+      var img = new Image(); img.alt = ""; img.onload = function () { box.appendChild(img); }; img.src = box.getAttribute("data-img");
+    });
+  }
+  function n(v, d) { return Number(v).toLocaleString("id-ID", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function seg(el, cb) {
+    el.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      setSeg(el, b.getAttribute("data-v")); if (cb) cb(b.getAttribute("data-v"));
+    });
+  }
+  function setSeg(el, v) { el.querySelectorAll("button").forEach(function (x) { x.classList.toggle("is-active", x.getAttribute("data-v") === v); }); }
+
+  /* ---------- Rumus berat (perkiraan) ----------
+     g/pcs = 2 × (lebar + lipatan) × tinggi × tebal(cm) × massa jenis × faktor bentuk
+     Faktor kresek 0,88 = perkiraan potongan handle. */
+  var RHO = { PP: 0.90, PE: 0.92, HDPE: 0.95 }, SHAPE = { kresek: 0.88, datar: 1 };
+  function grams(s) { return 2 * (s.w + s.g) * s.h * (s.t / 10000) * RHO[s.mat] * SHAPE[s.shape]; }
+
+  var COL = { bening: ["Bening", "#ffffff", 1], putih: ["Putih susu", "#f4f1ea"], merah: ["Merah", "#d81920"], pink: ["Pink", "#ec4f9c"], hitam: ["Hitam", "#20212b"] };
+
+  /* ---------- Data katalog ---------- */
+  function S(code, name, cat, mat, shape, w, h, g, t0, t1, col, cap, print, foto) { return { code: code, name: name, cat: cat, mat: mat, shape: shape, w: w, h: h, g: g, t0: t0, t1: t1, col: col, cap: cap, print: print, foto: foto }; }
+  var fHD = "kresek-bening-makanan", fPP = "kemasan-snack", fPE = "kemasan-curah", fSP = "kantong-warna", fCU = "mesin-potong-kantong";
+  var SKU = [
+    S("HD-BN-15", "Kresek bening", "HDPE", "HDPE", "kresek", 15, 30, 4, 15, 30, "bening", "2 kg", 0, fHD),
+    S("HD-BN-24", "Kresek bening", "HDPE", "HDPE", "kresek", 24, 40, 7, 15, 30, "bening", "5 kg", 0, fHD),
+    S("HD-PS-15", "Kresek putih susu", "HDPE", "HDPE", "kresek", 15, 30, 4, 15, 30, "putih", "2 kg", 0, fHD),
+    S("HD-PS-17", "Kresek putih susu", "HDPE", "HDPE", "kresek", 17, 32.5, 5, 15, 30, "putih", "2 kg", 0, fHD),
+    S("HD-PS-24", "Kresek putih susu", "HDPE", "HDPE", "kresek", 24, 40, 7, 15, 30, "putih", "5 kg", 0, fHD),
+    S("HD-PS-28", "Kresek putih susu", "HDPE", "HDPE", "kresek", 28, 48, 8, 20, 35, "putih", "10 kg", 0, fHD),
+    S("HD-PS-35", "Kresek putih susu", "HDPE", "HDPE", "kresek", 35, 55, 10, 20, 40, "putih", "15 kg", 0, fHD),
+    S("HD-PS-40", "Kresek putih susu", "HDPE", "HDPE", "kresek", 40, 60, 12, 25, 45, "putih", "20 kg", 0, fHD),
+    S("HD-MR-28", "Kresek merah", "HDPE", "HDPE", "kresek", 28, 48, 8, 20, 35, "merah", "10 kg", 0, fHD),
+    S("HD-MR-35", "Kresek merah", "HDPE", "HDPE", "kresek", 35, 55, 10, 20, 40, "merah", "15 kg", 0, fHD),
+    S("HD-MR-40", "Kresek merah", "HDPE", "HDPE", "kresek", 40, 60, 12, 25, 45, "merah", "20 kg", 0, fHD),
+    S("HD-PK-30", "Kresek pink", "HDPE", "HDPE", "kresek", 30, 50, 9, 20, 35, "pink", "10 kg", 0, fHD),
+    S("PP-0508", "Kantong PP", "PP", "PP", "datar", 5, 8, 0, 30, 60, "bening", "-", 1, fPP),
+    S("PP-1525", "Kantong PP", "PP", "PP", "datar", 15, 25, 0, 30, 60, "bening", "-", 1, fPP),
+    S("PP-2030", "Kantong PP", "PP", "PP", "datar", 20, 30, 0, 30, 80, "bening", "-", 1, fPP),
+    S("PP-60100", "Kantong PP", "PP", "PP", "datar", 60, 100, 0, 50, 100, "bening", "-", 1, fPP),
+    S("PE-2535", "Kantong PE", "PE", "PE", "datar", 25, 35, 0, 40, 80, "bening", "-", 1, fPE),
+    S("PE-3550", "Kantong PE tebal", "PE", "PE", "datar", 35, 50, 0, 60, 100, "bening", "-", 1, fPE),
+    S("SP-4060", "Sampah aroma lemon, kecil", "Sampah", "PE", "datar", 40, 60, 0, 20, 40, "hitam", "Rumah tangga", 0, fSP),
+    S("SP-5075", "Sampah aroma lemon, sedang", "Sampah", "PE", "datar", 50, 75, 0, 20, 40, "hitam", "Kantor, UMKM", 0, fSP),
+    S("SP-60100", "Sampah, sedang panjang", "Sampah", "PE", "datar", 60, 100, 0, 25, 50, "hitam", "Kantor, ritel", 0, fSP),
+    S("SP-80100", "Sampah, besar", "Sampah", "PE", "datar", 80, 100, 0, 30, 60, "hitam", "Industri", 0, fSP),
+    S("SP-90120", "Sampah, besar panjang", "Sampah", "PE", "datar", 90, 120, 0, 30, 60, "hitam", "Industri", 0, fSP),
+    S("CU-HD", "Kresek custom cetak", "Custom", "HDPE", "kresek", 30, 50, 9, 20, 45, "putih", "Sesuai ukuran", 1, fCU),
+    S("CU-PP", "Kantong PP custom cetak", "Custom", "PP", "datar", 20, 30, 0, 30, 80, "bening", "Sesuai ukuran", 1, fCU)
+  ];
+  SKU.forEach(function (s) { s.t = Math.round((s.t0 + s.t1) / 10) * 5; });
+
+  /* ---------- Permintaan ---------- */
+  var rfq = [{ name: "Kresek merah", spec: { mat: "HDPE", shape: "kresek", w: 28, h: 48, g: 8, t: 25 }, col: "merah", print: 0, pcs: 22000 }];
+  function itemKg(it) { return grams(it.spec) * it.pcs / 1000; }
+  function drawRfq() {
+    var html = "", tot = 0;
+    rfq.forEach(function (it, i) {
+      var kg = itemKg(it), ok = kg >= 100; tot += kg; var s = it.spec;
+      html += "<tr style='cursor:default'><td class='name'>" + it.name + "<div class='t-small' style='font-weight:400'>" + s.mat + " · " + COL[it.col][0] + (it.print ? " · cetak " + it.print + " warna" : "") + "</div></td>"
+        + "<td class='hide-m mono'>" + n(s.w, s.w % 1 ? 1 : 0) + " × " + n(s.h, s.h % 1 ? 1 : 0) + (s.g ? " + " + s.g : "") + " cm · " + s.t + " µm</td>"
+        + "<td class='num'>" + n(it.pcs) + " pcs</td><td class='num'><b>±" + n(kg) + " kg</b><div class='t-small'>" + n(grams(s), 1) + " g/pcs</div></td>"
+        + "<td class='hide-m'><span class='chip " + (ok ? "chip--ok'>Memenuhi" : "chip--warn'>Kurang " + n(100 - kg) + " kg") + "</span></td>"
+        + "<td style='text-align:right'><button class='icon-btn' type='button' data-del='" + i + "' aria-label='Hapus item'><i data-lucide='trash-2' class='i-sm'></i></button></td></tr>";
+    });
+    $("rfqBody").innerHTML = html || "<tr style='cursor:default'><td colspan='6' class='muted'>Belum ada item. Tambahkan dari konfigurator atau katalog.</td></tr>";
+    $("rfqSum").textContent = rfq.length + " item · perkiraan total ±" + n(tot) + " kg";
+    $("sideCount").textContent = rfq.length; $("catCount").textContent = rfq.length;
+    icons();
+  }
+  $("rfqBody").addEventListener("click", function (e) { var b = e.target.closest("[data-del]"); if (b) { rfq.splice(+b.getAttribute("data-del"), 1); drawRfq(); } });
+  $("rfqForm").addEventListener("submit", function () {
+    var co = $("rfqCo").value.trim(), tot = rfq.reduce(function (a, b) { return a + itemKg(b); }, 0);
+    $("doneText").textContent = (co ? co + ": " : "") + rfq.length + " item, perkiraan total ±" + n(tot) + " kg. Sales mengirim penawaran dan konfirmasi waktu produksi maksimal 3 × 24 jam kerja.";
+  });
+
+  /* ---------- Katalog ---------- */
+  var F = { mat: "", col: "", w: 0, t: 0, p: false }, picked = SKU[8];
+  $("fCol").innerHTML = "<button class='btn btn-secondary btn-sm is-all' data-c='' style='height:30px;padding:0 10px'>Semua</button>" + Object.keys(COL).map(function (k) { return "<button class='swatch" + (COL[k][2] ? " swatch--clear" : "") + "' style='--c:" + COL[k][1] + "' data-c='" + k + "' title='" + COL[k][0] + "' aria-label='" + COL[k][0] + "'></button>"; }).join("");
+  $("fCol").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-c]"); if (!b) return; F.col = b.getAttribute("data-c");
+    this.querySelectorAll(".swatch").forEach(function (x) { x.classList.toggle("is-active", x === b); }); drawSku();
+  });
+  function drawSku() {
+    var rows = SKU.filter(function (s) {
+      return (!F.mat || s.cat === F.mat) && (!F.col || s.col === F.col) && s.w >= F.w && (!F.t || (F.t >= s.t0 && F.t <= s.t1)) && (!F.p || s.print);
+    });
+    $("skuBody").innerHTML = rows.map(function (s) {
+      return "<tr data-code='" + s.code + "'" + (s === picked ? " class='is-picked'" : "") + "><td class='name'><span class='dot" + (COL[s.col][2] ? " dot--clear" : "") + "' style='--c:" + COL[s.col][1] + "' title='" + COL[s.col][0] + "'></span>" + s.name + "</td><td class='hide-m'><span class='chip'>" + s.mat + "</span></td><td class='mono'>" + n(s.w, s.w % 1 ? 1 : 0) + " × " + n(s.h, s.h % 1 ? 1 : 0) + "</td><td class='hide-m num'>" + s.t0 + "–" + s.t1 + " µm</td><td class='hide-m'>" + s.cap + "</td><td class='hide-m'>" + (s.print ? "<span class='chip chip--red'>3 warna</span>" : "<span class='muted'>Polos</span>") + "</td><td style='text-align:right'><button class='icon-btn' data-add='" + s.code + "' aria-label='Tambah ke permintaan'><i data-lucide='plus' class='i-sm'></i></button></td></tr>";
+    }).join("");
+    $("skuEmpty").hidden = rows.length > 0;
+    $("skuCount").textContent = rows.length + " dari " + SKU.length + " spesifikasi";
+    icons();
+  }
+  function drawDetail() {
+    var s = picked, g = grams(s);
+    $("skuDetail").innerHTML = "<div class='photo' style='--ar:16/10' data-img='" + A + s.foto + ".webp'></div>"
+      + "<div><p class='mono t-small'>" + s.code + "</p><h2 class='t-h2'>" + s.name + "</h2></div>"
+      + "<dl class='spec' style='margin:0'><dt>Bahan</dt><dd>" + s.mat + "</dd><dt>Ukuran</dt><dd>" + n(s.w, s.w % 1 ? 1 : 0) + " × " + n(s.h, s.h % 1 ? 1 : 0) + " cm</dd><dt>Ketebalan umum</dt><dd>" + s.t0 + "–" + s.t1 + " µm</dd><dt>Warna</dt><dd>" + COL[s.col][0] + "</dd><dt>Kapasitas</dt><dd>" + (s.cap === "-" ? "Sesuai isi" : s.cap) + "</dd></dl>"
+      + "<div class='mini'><div class='card'><b>±" + n(g, 1) + " g</b><span class='t-small'>per pcs di " + s.t + " µm</span></div><div class='card'><b>±" + n(1000 / g) + "</b><span class='t-small'>pcs per kg</span></div></div>"
+      + "<button class='btn btn-primary btn-block' id='dCfg' type='button'>Atur di konfigurator</button><button class='btn btn-secondary btn-block' id='dAdd' type='button'>Tambah 100 kg ke permintaan</button>";
+    photos($("skuDetail"));
+    $("dCfg").onclick = function () { loadCfg(s); location.hash = "penawaran"; };
+    $("dAdd").onclick = function () { addSku(s, this); };
+  }
+  function addSku(s, btn) {
+    var spec = { mat: s.mat, shape: s.shape, w: s.w, h: s.h, g: s.g, t: s.t };
+    rfq.push({ name: s.name, spec: spec, col: s.col, print: 0, pcs: Math.ceil(100000 / grams(spec)) });
+    drawRfq();
+    if (btn) { var t = btn.innerHTML; btn.textContent = "Ditambahkan"; setTimeout(function () { btn.innerHTML = t; icons(); }, 1100); }
+  }
+  $("skuBody").addEventListener("click", function (e) {
+    var add = e.target.closest("[data-add]"), tr = e.target.closest("tr[data-code]"); if (!tr) return;
+    var s = SKU.filter(function (x) { return x.code === tr.getAttribute("data-code"); })[0];
+    if (add) { addSku(s); add.classList.add("is-added"); add.innerHTML = "<i data-lucide='check' class='i-sm'></i>"; icons(); return; }
+    picked = s; drawDetail(); document.querySelectorAll("#skuBody tr").forEach(function (r) { r.classList.toggle("is-picked", r === tr); });
+  });
+  seg($("fMat"), function (v) { F.mat = v; drawSku(); });
+  $("fW").addEventListener("input", function () { F.w = +this.value || 0; drawSku(); });
+  $("fT").addEventListener("input", function () { F.t = +this.value > 10 ? +this.value : 0; $("fTl").textContent = F.t ? F.t + " µm" : "Semua"; drawSku(); });
+  $("fP").addEventListener("change", function () { F.p = this.checked; drawSku(); });
+  document.querySelectorAll(".side__sub a[data-mat]").forEach(function (a) { a.addEventListener("click", function () { var v = a.getAttribute("data-mat"); F.mat = v; setSeg($("fMat"), v); drawSku(); }); });
+
+  /* ---------- Beranda ---------- */
+  function drawQuick() {
+    var s = { mat: $("qMat").value, shape: "datar", w: +$("qW").value || 0, h: +$("qH").value || 0, g: 0, t: +$("qT").value };
+    var g = grams(s); $("qTl").textContent = s.t + " µm"; $("qG").textContent = n(g, 1) + " g"; $("qP").textContent = g ? n(100000 / g) : "–";
+    return s;
+  }
+  ["qMat", "qW", "qH", "qT"].forEach(function (id) { $(id).addEventListener("input", drawQuick); });
+  $("qGo").onclick = function () { var s = drawQuick(); loadCfg({ mat: s.mat, shape: "datar", w: s.w, h: s.h, g: 0, t: s.t, col: "bening", name: "Kantong " + s.mat }); location.hash = "penawaran"; };
+  $("uses").addEventListener("click", function (e) {
+    var b = e.target.closest(".use"); if (!b) return; var v = b.getAttribute("data-value");
+    document.querySelectorAll("#mtable tbody tr").forEach(function (r) { r.classList.toggle("is-match", r.getAttribute("data-mat") === v); });
+    $("useLinkName").textContent = v; $("useLink").dataset.v = v;
+  });
+  $("useLink").addEventListener("click", function () { var v = this.dataset.v || "PE"; F.mat = v; setSeg($("fMat"), v); drawSku(); });
+
+  /* ---------- Konfigurator ---------- */
+  var C = { mat: "HDPE", shape: "kresek", col: "merah", print: 0, unit: "pcs", name: "" };
+  function spec() { return { mat: C.mat, shape: C.shape, w: Math.max(+$("cW").value || 0, 0), h: Math.max(+$("cH").value || 0, 0), g: Math.max(+$("cG").value || 0, 0), t: +$("cT").value }; }
+  function pcsOf(s) { var q = Math.max(+$("cQ").value || 0, 0), g = grams(s); return C.unit === "pcs" ? q : (g ? Math.round(q * 1000 / g) : 0); }
+  $("cCol").innerHTML = Object.keys(COL).map(function (k) { return "<button class='swatch" + (COL[k][2] ? " swatch--clear" : "") + (k === C.col ? " is-active" : "") + "' type='button' style='--c:" + COL[k][1] + "' data-c='" + k + "' aria-label='" + COL[k][0] + "'></button>"; }).join("");
+  $("cCol").addEventListener("click", function (e) { var b = e.target.closest("[data-c]"); if (!b) return; C.col = b.getAttribute("data-c"); drawCfg(); });
+  seg($("cMat"), function (v) { C.mat = v; drawCfg(); });
+  seg($("cShape"), function (v) { C.shape = v; drawCfg(); });
+  seg($("cPrint"), function (v) { C.print = +v; drawCfg(); });
+  seg($("cUnit"), function (v) {
+    var s = spec(), g = grams(s), q = +$("cQ").value || 0;
+    if (v !== C.unit && g) $("cQ").value = v === "kg" ? Math.round(q * g / 1000) : Math.round(q * 1000 / g);
+    C.unit = v; drawCfg();
+  });
+  ["cW", "cH", "cG", "cT", "cQ"].forEach(function (id) { $(id).addEventListener("input", drawCfg); });
+  function loadCfg(s) {
+    C.mat = s.mat; C.shape = s.shape; C.col = s.col; C.print = 0; C.unit = "pcs"; C.name = s.name;
+    $("cW").value = s.w; $("cH").value = s.h; $("cG").value = s.g; $("cT").value = Math.min(120, Math.max(10, s.t));
+    var gr = grams({ mat: s.mat, shape: s.shape, w: s.w, h: s.h, g: s.g, t: +$("cT").value });
+    $("cQ").value = gr ? Math.ceil(100000 / gr) : 0;
+    setSeg($("cMat"), s.mat); setSeg($("cShape"), s.shape); setSeg($("cPrint"), "0"); setSeg($("cUnit"), "pcs"); drawCfg();
+  }
+  function dim(x1, y1, x2, y2, label, vert) {
+    var R = "#ff8a8d", t = vert
+      ? "<text x='" + (x1 + 12) + "' y='" + ((y1 + y2) / 2 + 5) + "' font-size='14' style='fill:" + R + "'>" + label + "</text>"
+      : "<text x='" + ((x1 + x2) / 2) + "' y='" + (y1 + 20) + "' font-size='14' text-anchor='middle' style='fill:" + R + "'>" + label + "</text>";
+    var tick = vert ? "M" + (x1 - 6) + " " + y1 + "h12M" + (x2 - 6) + " " + y2 + "h12" : "M" + x1 + " " + (y1 - 6) + "v12M" + x2 + " " + (y2 - 6) + "v12";
+    return "<path d='M" + x1 + " " + y1 + "L" + x2 + " " + y2 + tick + "' stroke='" + R + "' fill='none'/>" + t;
+  }
+  function drawCfg() {
+    var s = spec(), g = grams(s), pcs = pcsOf(s), kg = g * pcs / 1000, c = COL[C.col];
+    document.querySelectorAll("#cCol .swatch").forEach(function (x) { x.classList.toggle("is-active", x.getAttribute("data-c") === C.col); });
+    $("cTl").textContent = s.t + " µm"; $("cColName").textContent = c[0];
+    var lab = function (v) { return n(v, v % 1 ? 1 : 0); };
+    var fw = lab(s.w), fh = lab(s.h);
+    $("formula").textContent = "2 × (" + fw + " + " + lab(s.g) + ") × " + fh + " × " + n(s.t / 10000, 4) + " cm × " + n(RHO[s.mat], 2) + " g/cm³" + (s.shape === "kresek" ? " × 0,88 handle" : "") + " ≈ " + n(g, 1) + " g/pcs";
+    $("rG").textContent = "±" + n(g, 1) + " g"; $("rP").textContent = g ? "±" + n(1000 / g) + " pcs" : "–"; $("rK").textContent = "±" + n(kg, kg < 100 ? 1 : 0) + " kg";
+    var short = kg < 100; $("rM").classList.toggle("is-short", short); $("rM").firstElementChild.style.width = Math.min(100, kg) + "%";
+    $("rMoq").innerHTML = short ? "Kurang " + n(100 - kg, 1) + " kg. <button class='linkbtn' type='button' id='toMoq'>Naikkan ke " + n(Math.ceil(100000 / (g || 1))) + " pcs</button>" : "Memenuhi." + (C.print ? " Cetak siap kirim 21 hari." : " Waktu produksi dikonfirmasi sales.");
+    var tm = $("toMoq"); if (tm) tm.onclick = function () { C.unit = "pcs"; setSeg($("cUnit"), "pcs"); $("cQ").value = Math.ceil(100000 / g); drawCfg(); };
+
+    /* gambar teknik: skala mengikuti ukuran */
+    var VW = window.innerWidth < 720 ? 420 : 640, W = s.w || 1, H = s.h || 1, k = Math.min((VW - 240) / W, 240 / H), bw = W * k, bh = H * k, x = (VW - bw) / 2 - 20, y = 26 + (240 - bh) / 2, g2 = s.g / 2 * k;
+    var fill = C.col === "bening" ? "rgba(255,255,255,.06)" : c[1], fo = C.col === "bening" ? 1 : .9, stroke = "#fff", path;
+    if (s.shape === "kresek") {
+      var hw = bw * .23, cut = bh * .26;
+      path = "M" + x + " " + (y + bh) + "V" + y + "h" + hw + "V" + (y + cut * .4) + "C" + (x + hw) + " " + (y + cut * 1.25) + " " + (x + bw - hw) + " " + (y + cut * 1.25) + " " + (x + bw - hw) + " " + (y + cut * .4) + "V" + y + "h" + hw + "V" + (y + bh) + "Z";
+    } else { path = "M" + x + " " + y + "h" + bw + "v" + bh + "h-" + bw + "Z"; }
+    var o = "<path d='" + path + "' fill='" + fill + "' fill-opacity='" + fo + "' stroke='" + stroke + "' stroke-width='1.5' stroke-linejoin='round'/>";
+    o += "<path d='M" + x + " " + (y + bh - 7) + "h" + bw + "' stroke='" + (C.col === "putih" ? "#8b8ea0" : "#fff") + "' stroke-opacity='.6' stroke-dasharray='5 4'/>";
+    if (s.g > 0 && g2 < bw / 2) {
+      var top = y, dc = C.col === "putih" ? "#8b8ea0" : "#fff";
+      o += "<path d='M" + (x + g2) + " " + top + "V" + (y + bh) + "M" + (x + bw - g2) + " " + top + "V" + (y + bh) + "' stroke='" + dc + "' stroke-opacity='.6' stroke-dasharray='5 4'/>";
+    }
+    if (C.print) {
+      var pw = bw * .5, ph = bh * .3, py = y + bh * .52;
+      o += "<rect x='" + (x + (bw - pw) / 2) + "' y='" + py + "' width='" + pw + "' height='" + ph + "' fill='#12131f' fill-opacity='.72' stroke='#fff' stroke-dasharray='3 3'/><text x='" + (x + bw / 2) + "' y='" + (py + ph / 2 + 4) + "' font-size='12' text-anchor='middle'>" + (bw > 150 ? "cetak " : "") + C.print + " warna</text>";
+    }
+    o += dim(x, y + bh + 22, x + bw, y + bh + 22, fw + " cm");
+    o += dim(x + bw + 22, y, x + bw + 22, y + bh, fh + " cm", true);
+    o += "<text x='8' y='18' font-size='13'>" + s.mat + "</text><text x='8' y='37' font-size='13' style='fill:#c9cbd8'>" + s.t + " µm</text>";
+    if (s.g) o += "<text x='8' y='56' font-size='13' style='fill:#c9cbd8'>lipatan " + lab(s.g) + " cm</text>";
+    $("draw").setAttribute("viewBox", "0 0 " + VW + " 340"); $("draw").innerHTML = o;
+  }
+  $("addItem").addEventListener("click", function () {
+    var s = spec(), pcs = pcsOf(s); if (!pcs || !grams(s)) return;
+    rfq.push({ name: C.name || (s.shape === "kresek" ? "Kresek " : "Kantong ") + COL[C.col][0].toLowerCase(), spec: s, col: C.col, print: C.print, pcs: pcs });
+    drawRfq(); var b = this, t = b.innerHTML; b.textContent = "Ditambahkan ke permintaan"; setTimeout(function () { b.innerHTML = t; icons(); }, 1200);
+  });
+
+  /* ---------- Papan mesin ---------- */
+  var MACH = [
+    ["EX-1", "ex", "HDPE, film tipis"], ["EX-2", "ex", "HDPE, film tipis"], ["EX-3", "ex", "PE"], ["EX-4", "ex", "PP"],
+    ["RG-1", "rg", "Rotogravure 3 warna"], ["RG-2", "rg", "Rotogravure 3 warna"],
+    ["PT-1", "pt", "Potong kresek"], ["PT-2", "pt", "Potong kresek"], ["PT-3", "pt", "Potong datar"]
+  ];
+  var ST = { siap: ["check", "Siap"], bahan: ["package-x", "Tunggu resin"], acc: ["pen-tool", "Tunggu ACC desain"], rawat: ["wrench", "Perawatan"] };
+  function J(id, m, start, len, name, kg, st, buyer, spec, next) { return { id: id, m: m, start: start, len: len, name: name, kg: kg, st: st, buyer: buyer, spec: spec, next: next }; }
+  var JOBS = [
+    J("J-2641", "EX-1", 0, 3, "Kresek merah 28", 840, "siap", "Distributor, Malang", "HDPE · 28 × 48 + 8 cm · 25 µm", "Potong di PT-1 mulai Selasa"),
+    J("J-2644", "EX-1", 4, 2, "Putih susu 35", 520, "siap", "Ritel, Denpasar", "HDPE · 35 × 55 + 10 cm · 30 µm", "Potong di PT-2"),
+    J("J-2638", "EX-2", 0, 2, "Bening 24", 460, "siap", "Stok gudang", "HDPE · 24 × 40 + 7 cm · 20 µm", "Potong di PT-2"),
+    J("J-2647", "EX-2", 3, 3, "Pink 30", 780, "bahan", "Distributor, Kediri", "HDPE · 30 × 50 + 9 cm · 25 µm", "Masterbatch pink tiba Selasa pagi"),
+    J("J-2640", "EX-3", 1, 2, "Kantong PE 25 × 35", 430, "siap", "Pabrik es, Probolinggo", "PE · 25 × 35 cm · 60 µm", "Potong di PT-3"),
+    J("R-07", "EX-3", 5, 1, "Ganti screen die", 0, "rawat", "Internal", "Perawatan terjadwal 8 jam", "Teknisi shift I"),
+    J("J-2636", "EX-4", 0, 2, "PP 20 × 30", 300, "siap", "Usaha snack, Jember", "PP · 20 × 30 cm · 40 µm", "Lanjut cetak RG-1"),
+    J("J-2649", "EX-4", 3, 2, "PP 15 × 25", 280, "bahan", "Usaha bumbu, Blitar", "PP · 15 × 25 cm · 40 µm", "Resin PP tiba Senin sore"),
+    J("J-2636", "RG-1", 2, 2, "Snack 2 warna", 300, "acc", "Usaha snack, Jember", "PP · cetak 2 warna", "Proof dikirim, menunggu ACC pelanggan"),
+    J("J-2642", "RG-1", 5, 2, "Ritel herbal 3 warna", 260, "siap", "Ritel herbal, Solo", "HDPE · cetak 3 warna", "Silinder selesai"),
+    J("J-2645", "RG-2", 1, 3, "Bumbu 3 warna", 420, "siap", "Usaha bumbu, Tuban", "PP · cetak 3 warna", "Potong di PT-3"),
+    J("J-2641", "PT-1", 3, 3, "Kresek merah 28", 840, "siap", "Distributor, Malang", "Handel kresek · pack 5 kg", "Kirim Kamis"),
+    J("J-2638", "PT-2", 2, 2, "Bening 24", 460, "siap", "Stok gudang", "Handel kresek · pack 5 kg", "Masuk gudang"),
+    J("J-2644", "PT-2", 6, 2, "Putih susu 35", 520, "siap", "Ritel, Denpasar", "Handel kresek · pack 5 kg", "Kirim Jumat"),
+    J("J-2640", "PT-3", 3, 2, "Kantong PE 25 × 35", 430, "siap", "Pabrik es, Probolinggo", "Seal bawah · pack 10 kg", "Kirim Kamis")
+  ];
+  var QUE = [
+    { id: "J-2651", name: "Kresek hitam 40", kg: 620, dept: "EX-", len: 2, buyer: "Pasar induk, Sidoarjo", spec: "HDPE · 40 × 60 + 12 cm · 30 µm", next: "Asal RFQ-2610-0131" },
+    { id: "J-2652", name: "Kantong PP 30 × 50", kg: 240, dept: "EX-4", len: 1, buyer: "Konveksi, Bangil", spec: "PP · 30 × 50 cm · 50 µm", next: "Asal RFQ-2610-0137" },
+    { id: "J-2653", name: "Sampah 60 × 100", kg: 350, dept: "PT-3", len: 1, buyer: "Hotel, Batu", spec: "PE · 60 × 100 cm · 30 µm", next: "Asal RFQ-2610-0142" }
+  ];
+  var dept = "", selJob = JOBS[0], newId = "";
+  var DAYS = ["Sen, 2 Nov", "Sel, 3 Nov", "Rab, 4 Nov"], SHIFT = ["I 07–15", "II 15–23", "III 23–07"];
+  function drawBoard() {
+    var h = "<div class='g-day' style='grid-column:1'></div><div class='g-shift' style='grid-column:1;padding-left:0'>Mesin</div>", i, j;
+    DAYS.forEach(function (d, i) { h += "<div class='g-day' style='grid-column:" + (2 + i * 3) + "/span 3'>" + d + "</div>"; });
+    for (i = 0; i < 9; i++) h += "<div class='g-shift' style='grid-column:" + (i + 2) + "'>" + SHIFT[i % 3] + "</div>";
+    h += "<div class='g-shift' style='grid-column:11;padding-left:0;text-align:right' title='Porsi shift terisi'>Isi</div>";
+    MACH.forEach(function (m, r) {
+      var row = r + 3, on = !dept || m[1] === dept, cls = on ? "" : " is-faded";
+      var used = JOBS.filter(function (x) { return x.m === m[0]; }).reduce(function (a, b) { return a + b.len; }, 0);
+      h += "<div class='g-mach" + cls + "' style='grid-row:" + row + ";grid-column:1'><b>" + m[0] + "</b><small>" + m[2] + "</small></div>";
+      for (j = 0; j < 9; j++) h += "<div class='g-cell" + (j % 3 === 0 ? " is-daystart" : "") + cls + "' style='grid-row:" + row + ";grid-column:" + (j + 2) + "'></div>";
+      h += "<div class='g-util" + cls + "' style='grid-row:" + row + ";grid-column:11'>" + Math.round(used / 9 * 100) + "%</div>";
+    });
+    JOBS.forEach(function (x, idx) {
+      var r = MACH.map(function (m) { return m[0]; }).indexOf(x.m), m = MACH[r], on = !dept || m[1] === dept;
+      h += "<button class='job job--" + x.st + (x === selJob ? " is-picked" : "") + (x.id === newId ? " is-new" : "") + (on ? "" : " is-faded") + "' data-j='" + idx + "' style='grid-row:" + (r + 3) + ";grid-column:" + (x.start + 2) + "/span " + x.len + "' title='" + ST[x.st][1] + ": " + x.name + "'><b><i data-lucide='" + ST[x.st][0] + "'></i>" + (x.st === "rawat" ? "Servis" : x.id) + "</b><span>" + x.name + (x.kg ? " · " + n(x.kg) + " kg" : "") + "</span></button>";
+    });
+    $("gantt").innerHTML = h;
+    var slots = JOBS.reduce(function (a, b) { return a + b.len; }, 0);
+    $("oFill").textContent = slots + " dari 81 slot shift terisi";
+    $("oQc").textContent = QUE.length;
+    $("oQueue").innerHTML = QUE.length ? QUE.map(function (q, i) { return "<div class='q-item'><p><b class='mono'>" + q.id + "</b><br>" + q.name + " · " + n(q.kg) + " kg</p><button class='btn btn-dark btn-sm' data-q='" + i + "'>Jadwalkan</button></div>"; }).join("") : "<p class='t-meta'>Semua job sudah terjadwal.</p>";
+    var x = selJob, s = ST[x.st], chip = { siap: "chip--ok", bahan: "chip--warn", acc: "chip--info", rawat: "" }[x.st];
+    $("oDetail").innerHTML = "<div style='display:flex;justify-content:space-between;gap:8px;align-items:center'><h2 class='t-h3 mono'>" + (x.st === "rawat" ? x.id : "#" + x.id) + "</h2><span class='chip " + chip + "'>" + s[1] + "</span></div><p style='font-weight:600;margin-top:4px'>" + x.name + "</p><p class='t-small'>" + x.spec + "</p><dl class='spec t-small' style='margin:10px 0 0;font-size:13px'><dt>Mesin</dt><dd>" + x.m + "</dd><dt>Mulai</dt><dd>" + DAYS[Math.floor(x.start / 3)] + ", shift " + ["I", "II", "III"][x.start % 3] + "</dd><dt>Durasi</dt><dd>" + x.len + " shift</dd>" + (x.kg ? "<dt>Target</dt><dd>" + n(x.kg) + " kg</dd>" : "") + "<dt>Pemesan</dt><dd>" + x.buyer + "</dd></dl><p class='t-small' style='margin-top:10px;padding-top:10px;border-top:1px solid var(--line)'>" + x.next + "</p>";
+    icons();
+  }
+  function firstSlot(q) {
+    var ms = MACH.filter(function (m) { return m[0].indexOf(q.dept) === 0; });
+    for (var st = 0; st + q.len <= 9; st++) for (var i = 0; i < ms.length; i++) {
+      var free = !JOBS.some(function (x) { return x.m === ms[i][0] && st < x.start + x.len && x.start < st + q.len; });
+      if (free) return { m: ms[i][0], start: st };
+    }
+    return null;
+  }
+  $("gantt").addEventListener("click", function (e) { var b = e.target.closest("[data-j]"); if (b) { selJob = JOBS[+b.getAttribute("data-j")]; newId = ""; drawBoard(); } });
+  $("oQueue").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-q]"); if (!b) return;
+    var i = +b.getAttribute("data-q"), q = QUE[i], s = firstSlot(q); if (!s) { b.textContent = "Penuh"; return; }
+    QUE.splice(i, 1); var job = J(q.id, s.m, s.start, q.len, q.name, q.kg, "siap", q.buyer, q.spec, q.next);
+    JOBS.push(job); selJob = job; newId = q.id; drawBoard();
+  });
+  seg($("oDept"), function (v) { dept = v; drawBoard(); });
+
+  /* ---------- Mulai ---------- */
+  photos(); drawQuick(); drawCfg(); drawRfq(); drawSku(); drawDetail(); drawBoard(); icons();
+})();
+</script>
+</body>
+</html>

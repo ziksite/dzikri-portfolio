@@ -1,0 +1,58 @@
+{
+  "slug": "seafood-restaurant-website",
+  "kind": "Website",
+  "industry": "Food & Beverage",
+  "client": "Confidential",
+  "tags": ["Next.js", "Supabase", "Table Reservation", "Weight-Based Pricing"],
+  "metrics": [
+    { "value": "5", "label": "CITIES", "labelId": "KOTA" },
+    { "value": "100 G", "label": "LIVE PRICE UNIT", "labelId": "SATUAN HARGA ETALASE" },
+    { "value": "3", "label": "KITCHEN BOARD STAGES", "labelId": "TAHAP PAPAN DAPUR" }
+  ],
+  "shots": [
+    { "hash": "home", "caption": "Homepage with tonight's tables and the day's counter prices", "captionId": "Beranda dengan meja malam ini dan harga etalase hari ini" },
+    { "hash": "etalase", "caption": "Picking seafood by weight and cooking style with a live price", "captionId": "Memilih seafood per berat dan cara masak dengan harga langsung" },
+    { "hash": "reservasi", "caption": "Choosing a table on the floor plan with the order carried over", "captionId": "Memilih meja di denah dengan nota yang terbawa" },
+    { "hash": "papan", "caption": "Branch board for weighing, cooking, serving and counter stock", "captionId": "Papan cabang untuk timbang, masak, antar, dan stok etalase" }
+  ],
+  "content_en": {
+    "title": "Seafood Restaurant Website",
+    "type": "RESTAURANT WEBSITE & RESERVATIONS",
+    "category": "Restaurant System",
+    "summary": "A redesign for a family seafood restaurant in five cities with a fine dining tier on the way. Guests pick seafood from the counter by weight and cooking style, see the price change by the gram, choose a table on a floor plan, and the order lands on the branch's weighing board.",
+    "challenge": "The old site promised that guests could choose their own fresh seafood, but it showed no prices. Seafood sold by weight is exactly where guests worry about the bill, and the site gave them nothing to estimate it with.\n\nReservations ended in a WhatsApp chat with each branch, with no view of tables, times or orders. A popup asking guests to pick between the family restaurant and the premium tier appeared before any content, and parts of the site still carried sample reviews and unfinished content.",
+    "solution": "The site works like a point-of-sale screen opened up to guests: navigation on the left, work in the middle, the order on the right. A weight slider picks an actual whole fish or a quantity of shellfish, and the price formula updates with each step. The same order carries through to the floor plan.\n\nStaff get a captain's tablet with table status, three stages from weighing to serving, a field for the actual weight that shows the price difference, and counter stock that falls as items are confirmed. Planned stack: Next.js, Supabase, an admin panel for daily prices per branch, and official WhatsApp notifications.",
+    "features": [
+      "Counter prices per 100 g, by branch",
+      "Weight slider with live price formula",
+      "Cooking style selection with visible fees",
+      "Order carried from counter to reservation",
+      "Floor plan reservations with private rooms",
+      "Weighing board with actual weight and price difference",
+      "Counter stock tracking with low-stock flags"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  },
+  "content_id": {
+    "title": "Website Restoran Seafood",
+    "type": "WEBSITE RESTORAN & RESERVASI",
+    "category": "Sistem Restoran",
+    "summary": "Redesign untuk restoran seafood keluarga di lima kota dengan tier fine dining yang akan dibuka. Tamu memilih seafood dari etalase per berat dan cara masak, melihat harga berubah per gram, memilih meja di denah, dan pesanannya masuk ke papan timbang cabang.",
+    "challenge": "Situs lama menjanjikan tamu bisa memilih sendiri seafood segar, tetapi tidak menampilkan harga. Seafood yang dijual per berat justru membuat tamu khawatir soal tagihan, dan situs tidak memberi cara untuk memperkirakannya.\n\nReservasi berakhir di chat WhatsApp per cabang, tanpa gambaran meja, jam, atau pesanan. Pop-up pilihan restoran keluarga dan tier premium muncul sebelum konten, dan sebagian situs masih memuat ulasan contoh serta konten yang belum selesai.",
+    "solution": "Situs bekerja seperti layar kasir yang dibuka untuk tamu: navigasi di kiri, kerja di tengah, nota di kanan. Slider berat memilih ikan utuh yang tersedia atau jumlah hasil laut curah, dan rumus harga berubah di setiap langkah. Nota yang sama terbawa sampai denah meja.\n\nStaf mendapat tablet kapten dengan status meja, tiga tahap dari timbang sampai antar, kolom berat aktual yang menunjukkan selisih harga, dan stok etalase yang berkurang saat item dikonfirmasi. Stack rencana: Next.js, Supabase, panel admin harga harian per cabang, dan notifikasi WhatsApp resmi.",
+    "features": [
+      "Harga etalase per 100 g, per cabang",
+      "Slider berat dengan rumus harga langsung",
+      "Pilihan cara masak dengan biaya terlihat",
+      "Nota terbawa dari etalase ke reservasi",
+      "Reservasi di denah dengan ruang privat",
+      "Papan timbang dengan berat aktual dan selisih harga",
+      "Pelacakan stok etalase dengan penanda stok tipis"
+    ],
+    "role": "",
+    "impact": "",
+    "testimonial": ""
+  }
+}
